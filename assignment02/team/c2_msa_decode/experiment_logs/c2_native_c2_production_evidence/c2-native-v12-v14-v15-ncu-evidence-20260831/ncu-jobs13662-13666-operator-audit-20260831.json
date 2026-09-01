@@ -1,0 +1,72 @@
+{
+  "schema": "c2-native-v12-v14-v15-ncu-operator-audit-v1",
+  "generated_utc": "2026-08-31T10:39:08Z",
+  "failed_pre_collection_attempt": {
+    "job": 13662,
+    "operator_observed_scheduler_state": "FAILED",
+    "operator_observed_exit_code": "1:0",
+    "operator_observed_runtime_seconds": 1,
+    "submitted_profile_sha256": "b7ca528028c53b7690925bba3d430a79442e71552cfc0d4f788c45a8e3421b78",
+    "boundary": "Bash set -u rejected snapshot() before the first GPU snapshot, evidence-bundle validation, preflight, or NCU invocation because tag was referenced in the same local declaration that assigned it. The finalizer reached the same helper defect, so no final-status exists. This job provides only fail-closed script/log audit and no GPU, correctness, counter, or performance datum.",
+    "retained_files": {
+      "slurm_log_sha256": "7cb68e677a12d1aba5b2124b79045f815ba83ecfaa2bd9b5005762ab148e9299",
+      "driver_log_sha256": "f050ebcc934a178437492b0d15db12e147d8294a1a9b2bd060987a092774ccc3",
+      "submitted_script_sha256": "b7ca528028c53b7690925bba3d430a79442e71552cfc0d4f788c45a8e3421b78"
+    },
+    "reviewed_fix": "Split the local declaration from tag assignment and path construction; the replacement profile SHA-256 is 8314a34199fb61128dd0f52b354b808d495f56890f9c20730c9cf9ab1c237665."
+  },
+  "accepted_mechanism_collection": {
+    "job": 13666,
+    "operator_observed_scheduler_state": "COMPLETED",
+    "operator_observed_exit_code": "0:0",
+    "operator_observed_runtime_seconds": 43,
+    "start_utc": "2026-08-31T10:15:39Z",
+    "end_utc": "2026-08-31T10:16:22Z",
+    "submitted_profile_sha256": "8314a34199fb61128dd0f52b354b808d495f56890f9c20730c9cf9ab1c237665",
+    "final_status": "FINAL_RC=0 ORIGINAL_RC=0 FINALIZER_ERROR=0 TEE_RC=0 RUNTIME_CLEANUP_RC=0 MANIFEST_RC=0 POST_APPS_EMPTY=true",
+    "gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "result_sha256": "4d6769b83afca56639919e757497f8c703c7a0e814a5af51e7e37c49d943dbc7",
+    "outputs_manifest_sha256": "eae329cf63c6f13650eddfa66c8bf9fcc51b8dfbd3e338a68e17255aa8fb1af0",
+    "final_status_sha256": "6b14e291b641224497044fcbc371f309a95b6e8a80d5dda4e67a7d67df35f6f6",
+    "final_status_sidecar_sha256": "9d4a917a0cc03b91303f35a8667a4436e0f3f0bc01a3a8d0820115a627c599fd",
+    "collection_contract": {
+      "versions": ["v12", "v14", "v15"],
+      "counter_count": 15,
+      "seed": 20260829,
+      "same_input_manifest_sha256": "2ab58f24fe3bafa892219d051d5a9507e850a822ff4701e3e505443094c136ec",
+      "same_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "separate_python_processes": true,
+      "single_native_kernel_action_each": true,
+      "timing_valid_for_benchmark": false
+    },
+    "selected_counter_ratios": {
+      "v14_over_v12": {
+        "shared_load_bank_conflicts": 0.337808980436787,
+        "shared_load_wavefronts": 0.790080573291272,
+        "long_scoreboard_stall": 0.9923739399119057,
+        "wait_stall": 0.9613771645021645,
+        "tensor_instructions": 1.0
+      },
+      "v15_over_v12": {
+        "shared_load_bank_conflicts": 1.082355423911487,
+        "shared_load_wavefronts": 1.0261072754886602,
+        "long_scoreboard_stall": 1.0009203865623562,
+        "wait_stall": 0.9996617965367964,
+        "tensor_instructions": 1.0
+      }
+    },
+    "interpretation_boundary": "The counters support or reject the proposed shared-layout mechanism only. NCU replay, cycles, and all NCU-derived quantities do not promote a candidate, recompute ABBA timing, or establish service performance."
+  },
+  "archive": {
+    "first_attempt_script_sha256": "a2c67dd955e4b4c081a96f89917488c94f1ed4913c65586ae6ec4c658a794b08",
+    "first_attempt_boundary": "No archive output was published. After the immediate COMPLETED/0:0 observation, slurmctld purged job13666 and slurmdbd was unavailable, so the first archive gate failed closed while querying scheduler state.",
+    "accepted_archive_script_sha256": "dbb9a0d6b0dbefef62947c552f3410043606931f93ee429acf43057881ad2fe3",
+    "accepted_archive_sha256": "8ccfb059901a718511b9ebe38a5b01d3191ca42f90e876731186707fc5843322",
+    "accepted_manifest_sha256": "376d7092207d22d5f1305354279dc948224acb1d084550553d1228973719f3df",
+    "accepted_sidecar_sha256": "eba407010b299afd34152c6beac44c98c9296ceeb63188464b74c3a24e9ee8eb",
+    "manifest_records": 30,
+    "tar_members": 31,
+    "local_verification": "The downloaded archive matched the remote SHA-256; every tar member was a unique safe regular file; all 30 manifest records passed local SHA-256 verification; the mechanism ratios were independently recomputed from the archived absolute counters.",
+    "scheduler_retention_boundary": "The accepted archive independently validates immutable job outputs but cannot reconstruct scheduler-only state after controller retention expired. The COMPLETED/0:0 state above is an operator observation captured immediately after completion and is not claimed to be an archive-contained scheduler attestation."
+  }
+}

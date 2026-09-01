@@ -1,0 +1,218 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -47,11 +47,18 @@ constexpr int kTokenTiles = kPageSize / kTile;
+ constexpr int kMbarrierArrivals = kProducerCtas;
+ constexpr int kMbarrierParity = 0;
+ constexpr int kMbarrierMaxPolls = 1 << 24;
++constexpr int kMergeHeadsPerCta = kGqaGroup / kClusterCtas;
++constexpr int kMergeElementsPerCta =
++    kGqaGroup * kHeadDim / kClusterCtas;
+ constexpr float kLog2e = 1.4426950408889634f;
+ 
+ static_assert(kGqaGroup == kTile);
+ static_assert(kTokenTiles == kWarps);
+ static_assert(kHeadDim / kTile == kWarps);
++static_assert((kGqaGroup * kHeadDim) % kClusterCtas == 0);
++static_assert(kMergeHeadsPerCta * kClusterCtas == kGqaGroup);
++static_assert(kMergeElementsPerCta == kMergeHeadsPerCta * kHeadDim);
++static_assert(kMergeElementsPerCta % kThreads == 0);
+ 
+ __device__ __forceinline__ __nv_bfloat16 scaled_fp8(
+     const __nv_fp8_e4m3* ptr, std::int64_t offset, float scale) {
+@@ -98,6 +105,11 @@ __global__ void native_c2_msa_decode_kernel(
+   __shared__ int tile_active[kGqaGroup];
+   __shared__ __align__(32) __nv_bfloat16 weights[kGqaGroup][kTile];
+   __shared__ __align__(32) float pv_contribution[kWarps][kTile][kGqaGroup];
++  // This CTA owns four contiguous output heads.  Cache their four producer
++  // weights and denominator once, then let all 256 threads consume them.
++  // Placing this after the final aligned array adds exactly 80 static bytes.
++  __shared__ float merge_weights[kMergeHeadsPerCta][kProducerCtas];
++  __shared__ float merge_denominator[kMergeHeadsPerCta];
+ 
+   cg::cluster_group cluster = cg::this_cluster();
+   int const role = static_cast<int>(cluster.block_rank());
+@@ -110,7 +122,10 @@ __global__ void native_c2_msa_decode_kernel(
+   int const sequence_length = seq_lens[batch];
+   int const query_position = sequence_length - 1;
+ 
+-  if (role == kMergeCta && thread == 0) {
++  // Every CTA owns one local barrier.  Once producer state is complete, each
++  // producer arrives at all four barriers so all ranks may independently merge
++  // their disjoint output slice without a second cluster-wide rendezvous.
++  if (thread == 0) {
+     cuda::ptx::mbarrier_init(&producer_ready_barrier, kMbarrierArrivals);
+     producer_ready = 0;
+   }
+@@ -332,14 +347,21 @@ __global__ void native_c2_msa_decode_kernel(
+ 
+   __syncthreads();
+   if (role < kProducerCtas && thread == 0) {
+-    std::uint64_t* remote_merge_barrier =
+-        cluster.map_shared_rank(&producer_ready_barrier, kMergeCta);
+-    cuda::ptx::mbarrier_arrive(cuda::ptx::sem_release,
+-                               cuda::ptx::scope_cluster,
+-                               cuda::ptx::space_cluster,
+-                               remote_merge_barrier);
++    // The four release arrivals to a given CTA-local barrier publish every
++    // producer's local_partial/local_lse before that CTA consumes DSM data.
++#pragma unroll
++    for (int merge_rank = 0; merge_rank < kClusterCtas; ++merge_rank) {
++      std::uint64_t* const merge_barrier =
++          merge_rank == role
++              ? &producer_ready_barrier
++              : cluster.map_shared_rank(&producer_ready_barrier, merge_rank);
++      cuda::ptx::mbarrier_arrive(cuda::ptx::sem_release,
++                                 cuda::ptx::scope_cluster,
++                                 cuda::ptx::space_cluster,
++                                 merge_barrier);
++    }
+   }
+-  if (role == kMergeCta && thread == 0) {
++  if (thread == 0) {
+     bool ready = false;
+ #pragma unroll 1
+     for (int poll = 0; poll < kMbarrierMaxPolls; ++poll) {
+@@ -354,60 +376,90 @@ __global__ void native_c2_msa_decode_kernel(
+   }
+   __syncthreads();
+ 
+-  if (role == kMergeCta && thread < kGqaGroup) {
+-    std::int64_t const output_base =
+-        static_cast<std::int64_t>(batch) * output_token_stride +
+-        static_cast<std::int64_t>(kv_head * kGqaGroup + thread) *
+-            output_head_stride;
+-    if (producer_ready == 0) {
+-      // A timed-out cluster protocol must be observably invalid; returning a
+-      // plausible zero tensor would hide a liveness/correctness failure.
+-      for (int dim = 0; dim < kHeadDim; ++dim) {
+-        output[output_base + dim] = __float2bfloat16_rn(NAN);
+-      }
+-    } else {
+-      __nv_bfloat16 const* remote_partial1 =
+-          cluster.map_shared_rank(local_partial, 1);
+-      __nv_bfloat16 const* remote_partial2 =
+-          cluster.map_shared_rank(local_partial, 2);
+-      __nv_bfloat16 const* remote_partial3 =
+-          cluster.map_shared_rank(local_partial, 3);
+-      float const* remote_lse1 = cluster.map_shared_rank(local_lse, 1);
+-      float const* remote_lse2 = cluster.map_shared_rank(local_lse, 2);
+-      float const* remote_lse3 = cluster.map_shared_rank(local_lse, 3);
+-      float const lse0 = local_lse[thread];
+-      float const lse1 = remote_lse1[thread];
+-      float const lse2 = remote_lse2[thread];
+-      float const lse3 = remote_lse3[thread];
+-      float const lse_max =
+-          fmaxf(fmaxf(lse0, lse1), fmaxf(lse2, lse3));
+-      float const weight0 = isfinite(lse0) ? exp2f(lse0 - lse_max) : 0.0f;
+-      float const weight1 = isfinite(lse1) ? exp2f(lse1 - lse_max) : 0.0f;
+-      float const weight2 = isfinite(lse2) ? exp2f(lse2 - lse_max) : 0.0f;
+-      float const weight3 = isfinite(lse3) ? exp2f(lse3 - lse_max) : 0.0f;
+-      float const denominator = weight0 + weight1 + weight2 + weight3;
+-      for (int dim = 0; dim < kHeadDim; ++dim) {
+-        float const partial0 =
+-            __bfloat162float(local_partial[thread * kHeadDim + dim]);
+-        float const partial1 = __bfloat162float(
+-            remote_partial1[thread * kHeadDim + dim]);
+-        float const partial2 = __bfloat162float(
+-            remote_partial2[thread * kHeadDim + dim]);
+-        float const partial3 = __bfloat162float(
+-            remote_partial3[thread * kHeadDim + dim]);
+-        float const merged = denominator > 0.0f
+-                                 ? (partial0 * weight0 +
+-                                    partial1 * weight1 +
+-                                    partial2 * weight2 +
+-                                    partial3 * weight3) /
+-                                       denominator
+-                                 : 0.0f;
+-        output[output_base + dim] = __float2bfloat16_rn(merged);
+-      }
++  // The initial cluster.sync() published all four barrier initializations.
++  // Every rank then receives exactly four release arrivals, so each CTA can
++  // merge one disjoint contiguous quarter of the 2,048 output elements.
++  if (producer_ready == 0) {
++    // A timed-out cluster protocol must be observably invalid; returning a
++    // plausible zero tensor would hide a liveness/correctness failure.
++    for (int element = role * kMergeElementsPerCta + thread;
++         element < (role + 1) * kMergeElementsPerCta; element += kThreads) {
++      int const head = element / kHeadDim;
++      int const dim = element % kHeadDim;
++      std::int64_t const output_offset =
++          static_cast<std::int64_t>(batch) * output_token_stride +
++          static_cast<std::int64_t>(kv_head * kGqaGroup + head) *
++              output_head_stride +
++          dim;
++      output[output_offset] = __float2bfloat16_rn(NAN);
++    }
++  } else {
++    if (thread < kMergeHeadsPerCta) {
++      int const head = role * kMergeHeadsPerCta + thread;
++      float const* const lse0 =
++          role == 0 ? local_lse : cluster.map_shared_rank(local_lse, 0);
++      float const* const lse1 =
++          role == 1 ? local_lse : cluster.map_shared_rank(local_lse, 1);
++      float const* const lse2 =
++          role == 2 ? local_lse : cluster.map_shared_rank(local_lse, 2);
++      float const* const lse3 =
++          role == 3 ? local_lse : cluster.map_shared_rank(local_lse, 3);
++      float const lse_max = fmaxf(fmaxf(lse0[head], lse1[head]),
++                                  fmaxf(lse2[head], lse3[head]));
++      merge_weights[thread][0] =
++          isfinite(lse0[head]) ? exp2f(lse0[head] - lse_max) : 0.0f;
++      merge_weights[thread][1] =
++          isfinite(lse1[head]) ? exp2f(lse1[head] - lse_max) : 0.0f;
++      merge_weights[thread][2] =
++          isfinite(lse2[head]) ? exp2f(lse2[head] - lse_max) : 0.0f;
++      merge_weights[thread][3] =
++          isfinite(lse3[head]) ? exp2f(lse3[head] - lse_max) : 0.0f;
++      merge_denominator[thread] = merge_weights[thread][0] +
++                                  merge_weights[thread][1] +
++                                  merge_weights[thread][2] +
++                                  merge_weights[thread][3];
++    }
++    __syncthreads();
++
++    __nv_bfloat16 const* const partial0 =
++        role == 0 ? local_partial : cluster.map_shared_rank(local_partial, 0);
++    __nv_bfloat16 const* const partial1 =
++        role == 1 ? local_partial : cluster.map_shared_rank(local_partial, 1);
++    __nv_bfloat16 const* const partial2 =
++        role == 2 ? local_partial : cluster.map_shared_rank(local_partial, 2);
++    __nv_bfloat16 const* const partial3 =
++        role == 3 ? local_partial : cluster.map_shared_rank(local_partial, 3);
++
++    for (int element = role * kMergeElementsPerCta + thread;
++         element < (role + 1) * kMergeElementsPerCta; element += kThreads) {
++      int const head = element / kHeadDim;
++      int const dim = element % kHeadDim;
++      int const local_head = head - role * kMergeHeadsPerCta;
++      int const partial_offset = head * kHeadDim + dim;
++      float const weight0 = merge_weights[local_head][0];
++      float const weight1 = merge_weights[local_head][1];
++      float const weight2 = merge_weights[local_head][2];
++      float const weight3 = merge_weights[local_head][3];
++      float const denominator = merge_denominator[local_head];
++      float const value0 = __bfloat162float(partial0[partial_offset]);
++      float const value1 = __bfloat162float(partial1[partial_offset]);
++      float const value2 = __bfloat162float(partial2[partial_offset]);
++      float const value3 = __bfloat162float(partial3[partial_offset]);
++      float const merged = denominator > 0.0f
++                               ? (value0 * weight0 + value1 * weight1 +
++                                  value2 * weight2 + value3 * weight3) /
++                                     denominator
++                               : 0.0f;
++      std::int64_t const output_offset =
++          static_cast<std::int64_t>(batch) * output_token_stride +
++          static_cast<std::int64_t>(kv_head * kGqaGroup + head) *
++              output_head_stride +
++          dim;
++      output[output_offset] = __float2bfloat16_rn(merged);
+     }
+   }
+-  // Retain every producer's shared-memory lifetime until rank 0 finishes the
+-  // four-way DSM merge and all threads reach the cluster-wide rendezvous.
++  // Retain every producer's shared-memory lifetime until all four CTAs finish
++  // their disjoint DSM merge and reach this cluster-wide rendezvous.
+   cluster.sync();
+ }
+ 

@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v6_b1": 0,
+    "candidate_v6_b2": 0,
+    "reference_v5_a": 0,
+    "reference_v5_a2": 0
+  },
+  "schema": "c2-native-plugin-v6-worker-exit-status-v1"
+}

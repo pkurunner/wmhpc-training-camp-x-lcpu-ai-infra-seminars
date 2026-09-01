@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v12_q_row_padding_b1": 0,
+    "candidate_v12_q_row_padding_b2": 0,
+    "reference_v11_a": 0,
+    "reference_v11_a2": 0
+  },
+  "schema": "c2-native-plugin-v12-q-row-padding-worker-exit-status-v1"
+}

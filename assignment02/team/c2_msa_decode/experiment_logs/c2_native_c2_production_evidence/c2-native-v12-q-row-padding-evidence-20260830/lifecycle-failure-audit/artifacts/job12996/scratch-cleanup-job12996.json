@@ -1,0 +1,8 @@
+{
+  "cleanup_rc": 0,
+  "node_local_install": true,
+  "runtime_absent_after_cleanup": true,
+  "runtime_parent": "/tmp",
+  "runtime_path": "/tmp/c2-v12-lifecycle-12996.lZzcYu",
+  "schema": "c2-native-plugin-v12-lifecycle-scratch-cleanup-v1"
+}

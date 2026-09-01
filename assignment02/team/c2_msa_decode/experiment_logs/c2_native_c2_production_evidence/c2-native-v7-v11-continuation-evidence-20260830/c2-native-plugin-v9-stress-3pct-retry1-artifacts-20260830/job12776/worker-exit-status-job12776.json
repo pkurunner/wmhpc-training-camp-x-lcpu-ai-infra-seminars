@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v9_parallel_merge_b1": 0,
+    "candidate_v9_parallel_merge_b2": 0,
+    "reference_v7_a": 0,
+    "reference_v7_a2": 0
+  },
+  "schema": "c2-native-plugin-v9-parallel-merge-worker-exit-status-v1"
+}

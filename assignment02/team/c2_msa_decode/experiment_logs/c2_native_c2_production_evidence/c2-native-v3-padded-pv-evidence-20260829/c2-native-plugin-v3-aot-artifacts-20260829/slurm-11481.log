@@ -1,0 +1,68 @@
+UTC=2026-08-29T11:27:51Z JOB=11481 HOST=dev-slurm CPUS=64
+native-v1-source SHA256=f67495586759b3b8f718dbbf60627c499f917842f2ed6ecf89d2344f1c82bc4b path=/home/lcpu/85117379/native_c2_decode.plugin-v1.cu
+schema-patch SHA256=53e7cd4b09a8999010442934c863427c30b019fc549d7f0cf0f3d16ccc1e2e6e path=/home/lcpu/85117379/native_c2_plugin_schema_20260829.patch
+cmake-patch SHA256=5b145f36ce5f8b12dae71ce02e77d65545a29eefcb5a6045f591348bc325ac35 path=/home/lcpu/85117379/exact_d4_native_c2_plugin_cmake_20260829.patch
+dispatch-patch SHA256=1ca224ec4f94adf8ee97580a0e08321552224555570784c308c0edcda34bcd91 path=/home/lcpu/85117379/exact_d4_python_dispatch_20260829.patch
+loader-patch SHA256=9cb3a22216048083d7a4802ba700fa07fd892436151871dc6e909c77239adb33 path=/home/lcpu/85117379/exact_d4_native_c2_plugin_python_loader_20260829.patch
+warp-owned-pv-v2-patch SHA256=2fa34736ba80a50cd6d4a40377ad419709941349eff5c26e745541cfd8862816 path=/home/lcpu/85117379/native_c2_v2_warp_owned_pv_20260829.patch
+padded-pv-v3-patch SHA256=65d29067d04dbae4f6281bb2fde8b7d1bd9919e51c25c840600ae048eae71da3 path=/home/lcpu/85117379/native_c2_v3_padded_pv_20260829.patch
+da5e086dab31d63815acafdac9a9c5893b1c69e2
+80434d7f67877c6570ca19cac444b84bc9855dac
+eb61c911471867a5fd2466bfd8f29306cea6ebf8
+TORCH 2.13.0+cu130 13.0
+cmake version 4.4.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+1.13.0.git.kitware.jobserver-pipe-1
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+Cloning into '/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481'...
+Note: switching to 'd4da0c55af3aa231b6209bf77871f3ed36eab0d2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at d4da0c5 [Model][Frontend] Add Ling 3.0 Flash BF16, MTP, and parser support (#51045)
+copied-native-v1-source SHA256=f67495586759b3b8f718dbbf60627c499f917842f2ed6ecf89d2344f1c82bc4b path=/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+checking file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+patching file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+checking file CMakeLists.txt
+patching file CMakeLists.txt
+checking file vllm/_custom_ops.py
+checking file vllm/config/attention.py
+checking file vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+checking file vllm/models/minimax_m3/nvidia/sparse_attention_msa.py
+checking file vllm/v1/attention/backends/registry.py
+patching file vllm/_custom_ops.py
+patching file vllm/config/attention.py
+patching file vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+patching file vllm/models/minimax_m3/nvidia/sparse_attention_msa.py
+patching file vllm/v1/attention/backends/registry.py
+checking file vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+patching file vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+plugin-v1-source-before-v2 SHA256=8fee086f8ba4f5b2710347025211f9733ce64c61b04e44e710016d59b336f406 path=/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+plugin-cmake SHA256=6662b0400eb04c590b56c15346848b4a26c45d86e796a69e1bcb4a0d91523734 path=/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481/CMakeLists.txt
+plugin-adapter SHA256=6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412 path=/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+checking file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+patching file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+post-v2-warp-owned-pv-source SHA256=f2aae9c9c62e646b3cd38b136f224009d400298c21a99b9b1cf5a402f944acc4 path=/home/lcpu/85117379/vllm-d4-native-c2-plugin-v3-padded-pv-20260829-job11481/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+checking file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+Hunk #1 FAILED at 97.
+Hunk #2 succeeded at 273 (offset 1 line).
+1 out of 2 hunks FAILED
+FINAL_RC=1 UTC=2026-08-29T11:27:53Z

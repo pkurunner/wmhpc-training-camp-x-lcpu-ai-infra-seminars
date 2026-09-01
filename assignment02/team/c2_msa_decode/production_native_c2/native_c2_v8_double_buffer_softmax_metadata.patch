@@ -1,0 +1,109 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -94,9 +94,12 @@ __global__ void native_c2_msa_decode_kernel(
+ 
+   __shared__ float running_max[kGqaGroup];
+   __shared__ float normalizer[kGqaGroup];
+-  __shared__ float alpha_tile[kGqaGroup];
+-  __shared__ int tile_active[kGqaGroup];
+-  __shared__ __align__(32) __nv_bfloat16 weights[kGqaGroup][kTile];
++  // Softmax metadata is double-buffered by token tile.  Exactly one slot is
++  // written by every head in the softmax phase, then read by every warp in
++  // the PV/update phase for that same tile.
++  __shared__ float alpha_tile[2][kGqaGroup];
++  __shared__ int tile_active[2][kGqaGroup];
++  __shared__ __align__(32) __nv_bfloat16 weights[2][kGqaGroup][kTile];
+   __shared__ __align__(32) float pv_contribution[kWarps][kTile][kGqaGroup];
+ 
+   cg::cluster_group cluster = cg::this_cluster();
+@@ -137,8 +140,6 @@ __global__ void native_c2_msa_decode_kernel(
+     if (thread < kGqaGroup) {
+       running_max[thread] = -INFINITY;
+       normalizer[thread] = 0.0f;
+-      alpha_tile[thread] = 1.0f;
+-      tile_active[thread] = 0;
+     }
+     __syncthreads();
+ 
+@@ -193,6 +194,16 @@ __global__ void native_c2_msa_decode_kernel(
+       __syncthreads();
+ 
+       for (int tile = 0; tile < kTokenTiles; ++tile) {
++        // Slot lifetime is S_t = tile & 1.  All softmax stores to S_t happen
++        // before the CTA barrier below, which publishes them to every PV
++        // warp.  A reader consumes S_t before it can enter the next tile's
++        // softmax; therefore the next barrier B_(t+1) proves all S_t readers
++        // have finished before any warp can reach t+2 and overwrite S_t.
++        // This permits overlap of PV/update(t) with softmax(t+1) without a
++        // CTA barrier at the tail of t, while retaining the publication
++        // barrier between softmax(t) and PV/update(t).
++        int const metadata_slot = tile & 1;
++
+         // All eight warps participate in softmax/weight generation.  Each
+         // warp owns two heads and each 16-lane subgroup owns one token row.
+         int const subgroup_lane = lane & (kTile - 1);
+@@ -214,10 +225,11 @@ __global__ void native_c2_msa_decode_kernel(
+               __shfl_xor_sync(subgroup_mask, tile_max, offset, kTile));
+         }
+         if (!isfinite(tile_max)) {
+-          weights[head][subgroup_lane] = __float2bfloat16_rn(0.0f);
++          weights[metadata_slot][head][subgroup_lane] =
++              __float2bfloat16_rn(0.0f);
+           if (subgroup_lane == 0) {
+-            tile_active[head] = 0;
+-            alpha_tile[head] = 1.0f;
++            tile_active[metadata_slot][head] = 0;
++            alpha_tile[metadata_slot][head] = 1.0f;
+           }
+         } else {
+           float const previous_max = running_max[head];
+@@ -228,7 +240,7 @@ __global__ void native_c2_msa_decode_kernel(
+           float const beta =
+               valid ? exp2f(scaled_score - next_max) : 0.0f;
+           __nv_bfloat16 const rounded = __float2bfloat16_rn(beta);
+-          weights[head][subgroup_lane] = rounded;
++          weights[metadata_slot][head][subgroup_lane] = rounded;
+           float tile_sum = __bfloat162float(rounded);
+ #pragma unroll
+           for (int offset = kTile / 2; offset > 0; offset >>= 1) {
+@@ -238,8 +250,8 @@ __global__ void native_c2_msa_decode_kernel(
+           if (subgroup_lane == 0) {
+             running_max[head] = next_max;
+             normalizer[head] = alpha * normalizer[head] + tile_sum;
+-            alpha_tile[head] = alpha;
+-            tile_active[head] = 1;
++            alpha_tile[metadata_slot][head] = alpha;
++            tile_active[metadata_slot][head] = 1;
+           }
+         }
+         __syncthreads();
+@@ -270,7 +282,8 @@ __global__ void native_c2_msa_decode_kernel(
+             pv_fragment;
+         wmma::fill_fragment(pv_fragment, 0.0f);
+         wmma::load_matrix_sync(value_fragment, &fp8_stage[warp][0][0], kTile);
+-        wmma::load_matrix_sync(weight_fragment, &weights[0][0], kTile);
++        wmma::load_matrix_sync(weight_fragment,
++                               &weights[metadata_slot][0][0], kTile);
+         wmma::mma_sync(pv_fragment, value_fragment, weight_fragment,
+                        pv_fragment);
+         wmma::store_matrix_sync(&pv_contribution[warp][0][0], pv_fragment,
+@@ -282,8 +295,8 @@ __global__ void native_c2_msa_decode_kernel(
+         // of round-tripping the 2,048-element numerator through shared memory.
+         int const accumulator_head = lane & (kTile - 1);
+         int const accumulator_parity = lane / kTile;
+-        if (tile_active[accumulator_head] != 0) {
+-          float const alpha = alpha_tile[accumulator_head];
++        if (tile_active[metadata_slot][accumulator_head] != 0) {
++          float const alpha = alpha_tile[metadata_slot][accumulator_head];
+ #pragma unroll
+           for (int i = 0; i < kTile / 2; ++i) {
+             int const dim_in_warp = 2 * i + accumulator_parity;
+@@ -292,7 +305,6 @@ __global__ void native_c2_msa_decode_kernel(
+                 pv_contribution[warp][dim_in_warp][accumulator_head];
+           }
+         }
+-        __syncthreads();
+       }
+     }
+ 

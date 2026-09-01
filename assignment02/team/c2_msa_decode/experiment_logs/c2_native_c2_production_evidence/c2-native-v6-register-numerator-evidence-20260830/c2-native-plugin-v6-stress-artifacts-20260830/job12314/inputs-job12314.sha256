@@ -1,0 +1,20 @@
+9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538  /home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so
+0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4  /home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so
+6409a54689ebbdd1f72fad76c2d72dfe588f79d3b8dd6c4dbaf1df5b630f0931  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28  /home/lcpu/85117379/native_c2_operator_bench_20260829.py
+448450f22c7bd7667a0caafefbf0c5549ae32b84a76a7a55d0133bd37cc676d3  /home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds.pt
+59b350ffa0591fb645597dc15fd3bc8683888c85de5d9b4bf08bac366f3d0a78  /home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds-meta.json
+5528b649c162ef60ed0e2e63c5de8d0547f7c042c3d0e663e3326431e0dca7d0  /home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/write_fixed_fixtures.py
+1d356a8a2d10decc93fca38b62049174de33e6dd9818d0c2e31aef105f8abbcf  /home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/run_fixed_fixture_worker.py
+3d6af25828ff41c44f6c770ed21bf7896174bddb8fa07ed910f602ec18aebe59  /var/lib/slurm/slurmd/job12314/slurm_script
+  
+  
+  
+  
+  
+  
+  
+  
+2f5d0898888446b79808b02c709dd2f0b33309679629cdc335c263482a965560  /home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/plugin-resource-gate-job12278.txt
+e2067f586f338139283fdf54b9cd6cc2b57ac5a2d189f04bfa3dfc732e0839d8  /home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/plugin-v6-provenance-job12278.sha256

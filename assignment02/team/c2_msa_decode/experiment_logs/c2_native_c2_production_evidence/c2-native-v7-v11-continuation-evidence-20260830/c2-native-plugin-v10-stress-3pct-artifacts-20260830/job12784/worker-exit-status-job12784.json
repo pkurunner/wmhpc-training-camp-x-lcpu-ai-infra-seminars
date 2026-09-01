@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v10_k_prefetch_b1": 1,
+    "candidate_v10_k_prefetch_b2": 0,
+    "reference_v7_a": 0,
+    "reference_v7_a2": 0
+  },
+  "schema": "c2-native-plugin-v10-k-prefetch-worker-exit-status-v1"
+}

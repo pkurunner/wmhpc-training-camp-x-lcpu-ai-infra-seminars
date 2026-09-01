@@ -1,0 +1,46 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1191,6 +1191,42 @@ if(VLLM_GPU_LANG STREQUAL "CUDA" OR VLLM_GPU_LANG STREQUAL "HIP")
+       target_link_libraries(_C_stable_libtorch PRIVATE ${_STABLE_TORCH_AMDHIP64})
+     endif()
+   endif()
++
++  # Standalone B300 C2 sparse-decode plugin.  Keep this target separate from
++  # _C_stable_libtorch: its static schema/implementation registrations are
++  # loaded explicitly through torch.ops.load_library by the production adapter.
++  # It is intentionally one-source and SM103-family-only.
++  if(VLLM_GPU_LANG STREQUAL "CUDA" AND
++     DEFINED CMAKE_CUDA_COMPILER_VERSION AND
++     CMAKE_CUDA_COMPILER_VERSION VERSION_GREATER_EQUAL 13.0)
++    cuda_archs_loose_intersection(NATIVE_C2_PLUGIN_ARCHS "10.3f" "${CUDA_ARCHS}")
++    if(NATIVE_C2_PLUGIN_ARCHS)
++      set(NATIVE_C2_PLUGIN_SRC
++        "csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu")
++      set_gencode_flags_for_srcs(
++        SRCS "${NATIVE_C2_PLUGIN_SRC}"
++        CUDA_ARCHS "${NATIVE_C2_PLUGIN_ARCHS}")
++      message(STATUS "Building standalone native C2 plugin for archs: ${NATIVE_C2_PLUGIN_ARCHS}")
++      define_extension_target(
++        _native_c2_msa_decode_plugin
++        DESTINATION vllm
++        LANGUAGE CUDA
++        SOURCES ${NATIVE_C2_PLUGIN_SRC}
++        COMPILE_FLAGS ${VLLM_GPU_FLAGS}
++        INCLUDE_DIRECTORIES ${CUTLASS_INCLUDE_DIR} ${CUTLASS_TOOLS_UTIL_INCLUDE_DIR}
++        USE_SABI 3
++        WITH_SOABI)
++
++      # Mirror the stable target's supported C-shim contract and CUDA access;
++      # define_extension_target supplies csrc, torch, cudart and cuda_driver.
++      target_compile_definitions(_native_c2_msa_decode_plugin PRIVATE
++        TORCH_TARGET_VERSION=0x020B000000000000ULL
++        USE_CUDA
++        CUTLASS_ENABLE_DIRECT_CUDA_DRIVER_CALL=1)
++    else()
++      message(STATUS "Not building standalone native C2 plugin: B300 10.3f is absent")
++    endif()
++  endif()
+ endif()
+ 
+ #

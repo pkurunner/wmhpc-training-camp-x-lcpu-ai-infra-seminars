@@ -1,0 +1,40 @@
+{
+  "accepted": true,
+  "aggregate_sha256": "85b9489cc36155a18c239729f4fcea7b746c67c7c3bed8b10944c73ddd7635b9",
+  "all_correctness_and_resource_identity_gates_pass": true,
+  "comparison_boundary": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "cross_gpu_claim": "none; this is a same-physical-GPU comparison only.",
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "6d96a7437616c672c8640592ac99da0b722d0d6f4e7d8f78b18a3a6652b59128",
+    "candidate_resource_gate": "f82d6890d14be7cfb1df54ec12fdff0b2de3096204591b554c46eb02862d5ab4",
+    "candidate_v11_plugin": "501b9c56a29a81f779a35a34b2808b4122af7dcb23e8108d8c590306be43d957",
+    "candidate_v11_q_fragment_reuse_source": "0e82b278b7aa44a034a96d2ddd19946a27928d95a9f9d03e8e1fe9f30680c5b4",
+    "driver_script": "62f21263d545b1cd50619e48d555883e1ae68f008994c67a588be2db2073a6c1",
+    "fixed_fixture": "89d0860d7b829f1b77872e30b936005be25f3c9eab37d300c7b52d76e2663a3e",
+    "fixture_metadata": "6f3f43523987b3150cb5ea9328171465fa5fafd9fd59f6938cd2443eb8a3a6c0",
+    "fresh_v11_directed_final_status": "a8d67a71b4f74b5dbc236e0cbeb0322a39ad9d7f8ed2219bfd0f637faeb3e521",
+    "fresh_v11_directed_final_status_sidecar": "f7665b3e4814bfd581e6b58a6ab6f3431f4fa3d1667ce22bfc10973ab436c13e",
+    "fresh_v11_directed_outputs_manifest": "9b3d7fb69065ba5923131d5b00cb0bb1357fc8d0376cb1e85d1b2363793c6edf",
+    "fresh_v11_directed_result": "7567626bc80950303bde34bf3e9e5062be2338bb927c19a4184b4245dde58f93",
+    "fresh_v11_directed_run_manifest": "1af137f33adcb3ab52a2fce09f5926afc5d8bccc2c008af473b2d6cdcad640c6",
+    "reference_v9_job12701_plugin": "a98a7bee3a5983cce7e824d8539381fc0c2f8e82cdb6f65c9ebfea18284fc592",
+    "worker_harness": "a4b7a940555114e644a27d2030cdd18564f6116a0900b7053422bcfd58d94094"
+  },
+  "issues": [],
+  "one_physical_gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+  "performance": {
+    "bootstrap_95pct_lower_bound_fraction": 0.12782150442086837,
+    "paired_median_improvement_fraction": 0.12814628042666487,
+    "required_bootstrap_lower_bound_fraction": 0.0,
+    "required_improvement_fraction": 0.03,
+    "required_improvement_relation": "strictly greater than"
+  },
+  "rejection_policy": "If any identity/correctness/comparability gate fails return 2. If valid but performance gates fail return 3; retain the frozen accepted v9 reference and do not package v11.",
+  "schema": "c2-native-plugin-v11-q-fragment-reuse-vs-v9-3pct-incremental-decision-v1",
+  "threshold_provenance": "User-defined strict >3% significance criterion for the current four-hour optimization continuation; this is the single-change incremental v9-to-v11 gate."
+}

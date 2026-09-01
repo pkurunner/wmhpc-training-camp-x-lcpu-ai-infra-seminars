@@ -1,0 +1,54 @@
+
+===== PRE UTC=2026-08-30T08:02:29Z =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+uv 0.12.1 (x86_64-unknown-linux-gnu)
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job12366/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/v6-vs-v5-fixed-fixture-aggregate-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/candidate-v6-b1-round-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v5-wheel-runtime-artifacts-20260829/job11775/plugin-v5-wheel-full-backend-job11775.json: OK
+/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py: OK
+sha256sum: WARNING: 8 lines are improperly formatted
+harness/__init__.py: OK
+harness/data.py: OK
+harness/reference.py: OK
+harness/triton_baseline.py: OK
+vllm_msa_ref/sparse_attn.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job12366/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/v6-vs-v5-fixed-fixture-aggregate-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/candidate-v6-b1-round-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v5-wheel-runtime-artifacts-20260829/job11775/plugin-v5-wheel-full-backend-job11775.json: OK
+/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job12366/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/v6-vs-v5-fixed-fixture-aggregate-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/candidate-v6-b1-round-job12314.json: OK
+/home/lcpu/85117379/c2-native-plugin-v5-wheel-runtime-artifacts-20260829/job11775/plugin-v5-wheel-full-backend-job11775.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-fresh-backend-artifacts-20260830/job12366/support-source-job12366.sha256: OK
+sha256sum: WARNING: 8 lines are improperly formatted
+Using CPython 3.12.11 interpreter at: venv-vllm-d4da0c5/bin/python
+Resolved 1 package in 3ms
+Prepared 1 package in 665ms
+Installed 1 package in 467ms
+ + vllm==0.26.1rc1.dev370+gd4da0c55a (from file:///home/lcpu/85117379/c2-native-plugin-v6-wheel-artifacts-20260830/job12331/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl)
+harness/__init__.py: OK
+harness/data.py: OK
+harness/reference.py: OK
+harness/triton_baseline.py: OK
+vllm_msa_ref/sparse_attn.py: OK
+Traceback (most recent call last):
+  File "<stdin>", line 90, in <module>
+AssertionError: vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD
+FINAL_RC=1 UTC=2026-08-30T08:02:36Z RUN_ID=12366

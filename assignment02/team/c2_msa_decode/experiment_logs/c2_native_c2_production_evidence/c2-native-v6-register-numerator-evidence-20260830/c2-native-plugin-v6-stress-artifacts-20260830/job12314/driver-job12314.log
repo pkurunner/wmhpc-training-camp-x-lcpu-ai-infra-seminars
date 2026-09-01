@@ -1,0 +1,166 @@
+
+===== PRE UTC=2026-08-30T07:25:33Z =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4  /home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so
+c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+{"base_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28", "contract": {"k_scale": 0.25, "max_logical_pages": 32, "num_physical_pages": 64, "q_scale": 0.25, "scale": 0.08838834764831843, "v_scale": 0.5}, "fixture_sha256": "448450f22c7bd7667a0caafefbf0c5549ae32b84a76a7a55d0133bd37cc676d3", "per_seed_tensor_sha256": {"17": ["43c22c57f318155846afcc5bd73998592eba2ce8a4527f133b9ff2d8cf2f224c", "b35b033dc00602ac705cf6ddd04dc693274d90ca6d878ff65eb4d12fd1df22bb", "917f85d65fccec630e5e87df34af6ebbf4964be4ca12738c57bc73547725e6c6", "d0670f9be5546604b8cd9ab20613260e042705f712199e0cf3170291a379a628", "764ca2cb72c10696d035ffe8610b8a060aa551a1dba4dca3706cc7ba199bfe56"], "2024": ["9ef536dd044cafbd6de549d116fba268902b004792f28b246863ac561a805516", "8bb60bc3691a544534a44c155546cf6dfc99d329c36f5ed6559698fbb3382de5", "85986fe6167424d257d2af5237b4969a0326d73204c57f9307a42e12e0361485", "badcfa4393b381d9c9049f1338405adcb442b11a7dba420f22511edc09c0ffb3", "cbb6b449f03d14303356f5f809a3427e9570b4f0f99e302efa2438e4cf58f409"], "20260801": ["e7e13a66102f5e2c01badaeedcf804dc585843f3d7cd3ad5d28a9203b5ca0b44", "d7e2d5dc870eb4debc522fa41c37a022bf0430fa30ae9c67fc2f0b9d8da6af34", "1faebd3b915a79ec5e34008ed363a35de7dbcc990e59ad1cbb675b253b2d18f8", "592960544157d01264f9b8094de2f4b4604d1392fff045ecd300153defcf411a", "1bbc561ab7367c2408b559f3cfe7036208f2739558ff6b505f1ca66670ba473c"], "20260815": ["05733992e04eeb1c992566c6736fce18f121a6024819a9eb4593003570f25175", "890dfc2dd5cb857281f8386426dc5d02fc304100f72e6c5f34b47cea1f2e0991", "52a4adcda928d18a7b7d2a738c5f8f8d31e8558f838fc54e823882d36193318b", "8c65d7003e8ce2dda9cf687e81de668ea65ce0dd29fad8c27fe58512e020919d", "e8f604dd9c5c63a827a4d1c826d68ab1f7023febc2c8662164cfdc2d3b111627"], "20260829": ["976f91ab51f67b8c9aba05bee51d7a505c405a4d15472485fa419b2768d73dce", "b76c90e5fd41501651f9e9641406538141d8cf7c39120e48d6a3c67f31f56dfc", "f1f84ccb68e54f16fc679cb72e9f4ba698e166de50c5e83ed57b8a953499afaf", "f70d5e74b8ba9bb5236953c6954139faa62236aaf81e98965deb91ff97ae4212", "3b6de846c732b7ca03e899cf8ebcc0ff6ccf5b430ae62ca2d98a87e09f9c3012"], "23": ["78bf0c24b0b30eff1ccfaf03fd46bac21dffd6b93b405b051cadd1fb7a3bd6cb", "11ba50d73d3015896c8409806feb4df049da90962466c9a6e6704f8d04cfd755", "5685e112f8b5ccca457c7efde3e7a4f55e3d975730823147d2ae41950b432f84", "f5dc449d3e915fcb63e8ea7996ef2731c19555d815f048779e4685d7f2d28961", "ded4b479b9a51118883225e2c0349b59977fa342912799658609ba42a7f836f6"], "314159": ["b71a2afe4303fe8be2bb38cb1dd8aba8d72cb8392770a4af65b21ff213edd75e", "668b623d7502679a713bc781a6b22e8b09e40d69dd5445bf3e8fd0ca29f48394", "1c6f2baae578f0a39e7cd1bac3f6cbbe24abf962970d1ed5510dddaf3e747b24", "4bb4450eb8468fe6a5558a6690235d4b12a670b9f5591d487aed849cbc633107", "75bf3d1c2f131d9d854d1e35948005c664abbb92ae8f960381e7df9b86a0a1cd"], "42": ["9434339a84f7545c1f6e883449e81d7ab0a27c6be25446dd408682b8e3c59028", "a74f7970035a12f0ee2a926503716e54d31ec91a5508d16282a36d2614bff514", "f20420c87324ffaf6416704dd56c10e5399bdf6d55b15b16ec7751f24c3d1fd1", "75b5a67b4f0dba54b8470770ab7b94186a79f015a6650daa4d7762024d398c73", "132c6864d8d61779d33810f92d2313d6265b2ed12ec124ed2cfff34a8fc36987"]}, "schema": "c2-native-v6-fixed-fixtures-v1", "seeds": [17, 23, 42, 2024, 314159, 20260801, 20260815, 20260829]}
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds.pt: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds-meta.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/write_fixed_fixtures.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/run_fixed_fixture_worker.py: OK
+/var/lib/slurm/slurmd/job12314/slurm_script: OK
+sha256sum: WARNING: 8 lines are improperly formatted
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds.pt: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/fixtures-8-seeds-meta.json: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/write_fixed_fixtures.py: OK
+/home/lcpu/85117379/c2-native-plugin-v6-stress-artifacts-20260830/job12314/run_fixed_fixture_worker.py: OK
+/var/lib/slurm/slurmd/job12314/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/plugin-resource-gate-job12278.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/plugin-v6-provenance-job12278.sha256: OK
+sha256sum: WARNING: 8 lines are improperly formatted
+{'python': '3.12.11', 'torch': '2.13.0+cu130', 'cuda': '13.0'}
+	linux-vdso.so.1 (0x00007fff60512000)
+	libtorch.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch.so (0x0000741edb5ec000)
+	libcudart.so.13 => /usr/local/cuda/lib64/libcudart.so.13 (0x0000741edb200000)
+	libtorch_cpu.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so (0x0000741ec6200000)
+	libtorch_cuda.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so (0x0000741ead800000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000741ead400000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000741edb5b2000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000741ead000000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000741edb613000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x0000741edb5ad000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x0000741edb5a8000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x0000741edb5a3000)
+	libc10.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libc10.so (0x0000741edb0ba000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000741edb4b8000)
+	libgomp.so.1 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libgomp.so.1 (0x0000741eacc00000)
+	libcupti.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcupti.so.13 (0x0000741eac600000)
+	libtorch_nvshmem.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_nvshmem.so (0x0000741eac200000)
+	libc10_cuda.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libc10_cuda.so (0x0000741edb01a000)
+	libcusparse.so.12 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcusparse.so.12 (0x0000741ea2400000)
+	libcufft.so.12 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcufft.so.12 (0x0000741e90a00000)
+	libcufile.so.0 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcufile.so.0 (0x0000741e90600000)
+	libcusparseLt.so.0 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cusparselt/lib/libcusparseLt.so.0 (0x0000741e82400000)
+	libnccl.so.2 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/nccl/lib/libnccl.so.2 (0x0000741e76600000)
+	libcurand.so.10 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcurand.so.10 (0x0000741e6de00000)
+	libcublas.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcublas.so.13 (0x0000741e6a800000)
+	libcublasLt.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcublasLt.so.13 (0x0000741e44800000)
+	libcudnn.so.9 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cudnn/lib/libcudnn.so.9 (0x0000741e44400000)
+	libnvrtc.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libnvrtc.so.13 (0x0000741e3d800000)
+	libutil.so.1 => /lib/x86_64-linux-gnu/libutil.so.1 (0x0000741edb015000)
+	libnvshmem_host.so.3 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/nvshmem/lib/libnvshmem_host.so.3 (0x0000741e3ae00000)
+	libnvJitLink.so.13 => /usr/local/cuda/lib64/libnvJitLink.so.13 (0x0000741e34e00000)
+	linux-vdso.so.1 (0x00007ffef73be000)
+	libtorch.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch.so (0x00007ef584b77000)
+	libcudart.so.13 => /usr/local/cuda/lib64/libcudart.so.13 (0x00007ef584800000)
+	libtorch_cpu.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so (0x00007ef56f800000)
+	libtorch_cuda.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so (0x00007ef556e00000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ef556a00000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ef584b3d000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ef556600000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007ef584b9e000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ef584b38000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ef584b33000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007ef584b2e000)
+	libc10.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libc10.so (0x00007ef5846ba000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ef556d17000)
+	libgomp.so.1 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libgomp.so.1 (0x00007ef556200000)
+	libcupti.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcupti.so.13 (0x00007ef555c00000)
+	libtorch_nvshmem.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch_nvshmem.so (0x00007ef555800000)
+	libc10_cuda.so => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libc10_cuda.so (0x00007ef58461a000)
+	libcusparse.so.12 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcusparse.so.12 (0x00007ef54ba00000)
+	libcufft.so.12 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcufft.so.12 (0x00007ef53a000000)
+	libcufile.so.0 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcufile.so.0 (0x00007ef539c00000)
+	libcusparseLt.so.0 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cusparselt/lib/libcusparseLt.so.0 (0x00007ef52ba00000)
+	libnccl.so.2 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/nccl/lib/libnccl.so.2 (0x00007ef51fc00000)
+	libcurand.so.10 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcurand.so.10 (0x00007ef517400000)
+	libcublas.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcublas.so.13 (0x00007ef513e00000)
+	libcublasLt.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libcublasLt.so.13 (0x00007ef4ede00000)
+	libcudnn.so.9 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cudnn/lib/libcudnn.so.9 (0x00007ef4eda00000)
+	libnvrtc.so.13 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/cu13/lib/libnvrtc.so.13 (0x00007ef4e6e00000)
+	libutil.so.1 => /lib/x86_64-linux-gnu/libutil.so.1 (0x00007ef584b21000)
+	libnvshmem_host.so.3 => /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/../../nvidia/nvshmem/lib/libnvshmem_host.so.3 (0x00007ef4e4400000)
+	libnvJitLink.so.13 => /usr/local/cuda/lib64/libnvJitLink.so.13 (0x00007ef4de400000)
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:40 1645290:1645290 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:44 1645436:1645436 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:48 1645552:1645552 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 07:25:52 1645679:1645679 SyncActivityProfilerHandler.cpp:59] profiler_stop
+{"accepted": true, "aggregate_sha256": "70f484efdb60ee366dcfdc1a5e9cbf7a8f902c1366db53635a28a5dc75bf2426", "all_correctness_and_resource_identity_gates_pass": true, "comparison_boundary": {"reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration", "same_python_process": false, "same_slurm_step": true}, "cross_gpu_claim": "none; this is a same-physical-GPU comparison only.", "input_checksums": {"base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28", "candidate_provenance": "e2067f586f338139283fdf54b9cd6cc2b57ac5a2d189f04bfa3dfc732e0839d8", "candidate_resource_gate": "2f5d0898888446b79808b02c709dd2f0b33309679629cdc335c263482a965560", "candidate_v6_job12278_plugin": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4", "candidate_v6_source": "c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02", "driver_script": "3d6af25828ff41c44f6c770ed21bf7896174bddb8fa07ed910f602ec18aebe59", "fixed_fixture": "448450f22c7bd7667a0caafefbf0c5549ae32b84a76a7a55d0133bd37cc676d3", "fixture_metadata": "59b350ffa0591fb645597dc15fd3bc8683888c85de5d9b4bf08bac366f3d0a78", "reference_v5_job11760_plugin": "9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538", "worker_harness": "1d356a8a2d10decc93fca38b62049174de33e6dd9818d0c2e31aef105f8abbcf"}, "issues": [], "one_physical_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1", "performance": {"bootstrap_95pct_lower_bound_fraction": 0.07749162883589655, "paired_median_improvement_fraction": 0.07795777856212582, "required_bootstrap_lower_bound_fraction": 0.0, "required_improvement_fraction": 0.05}, "rejection_policy": "If any identity/correctness/comparability gate fails return 2. If valid but performance gates fail return 3; retain promoted v5 and do not build/package v6.", "schema": "c2-native-plugin-v6-vs-v5-promotion-decision-v1"}
+
+===== POST UTC=2026-08-30T07:25:53Z =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+FINAL_RC=0 UTC=2026-08-30T07:25:53Z

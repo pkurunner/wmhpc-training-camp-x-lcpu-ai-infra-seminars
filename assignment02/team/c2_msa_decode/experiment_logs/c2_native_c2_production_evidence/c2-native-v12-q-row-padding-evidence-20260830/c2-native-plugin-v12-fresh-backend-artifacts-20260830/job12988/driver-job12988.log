@@ -1,0 +1,57 @@
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/wheel-driver-verification-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/promotion-prerequisites-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/outputs-job12987.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/final-status-job12987.txt: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job12988/slurm_script: OK
+/home/lcpu/85117379/validate_native_c2_plugin_v12_fresh_backend_20260830.slurm: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-manifest.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/promotion-prerequisites-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/wheel-driver-verification-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/result-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/submitted-script-job12983.slurm: OK
+/home/lcpu/85117379/native_c2_decode.plugin-v1.cu: OK
+/home/lcpu/85117379/native_c2_plugin_schema_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_native_c2_plugin_cmake_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_python_dispatch_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_native_c2_plugin_python_loader_20260829.patch: OK
+/home/lcpu/85117379/c2-native-plugin-v9-aot-artifacts-20260830/job12701/native_c2_decode.v9-parallel-merge.cu: OK
+/home/lcpu/85117379/native_c2_v11_q_fragment_reuse_20260830.patch: OK
+/home/lcpu/85117379/native_c2_v12_q_row_padding_20260830.patch: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v12-q-row-padding-20260830-job12983/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v12-q-row-padding-build-20260830-job12983/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/finalizer-diagnostics-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/final-status-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/v12-q-row-padding-directed-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/run-manifest-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/inputs-job12984.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-pre-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-post-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/finalizer-diagnostics-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/final-status-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-a-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-b1-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-b2-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-a2-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/worker-exit-status-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-aggregate-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-decision-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/fixtures-8-seeds-meta.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/fixture-writer-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/inputs-job12985.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-plugin-ldd-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-plugin-ldd-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/gpu-pre-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/gpu-post-job12985.txt: OK
+Using CPython 3.12.11 interpreter at: venv-vllm-d4da0c5/bin/python
+Resolved 1 package in 3ms
+Prepared 1 package in 591ms
+error: Failed to install: vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl (vllm==0.26.1rc1.dev370+gd4da0c55a (from file:///home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl))
+  Caused by: Failed to copy to `/home/lcpu/85117379/c2-native-plugin-v12-fresh-runtime-20260830/job12988/vllm/vllm_flash_attn/.tmpU5ONpP/_vllm_fa3_C.abi3.so`
+  Caused by: failed to copy file from /home/lcpu/.uv-cache/archive-v0/whbmcQHCZApwjv3l/vllm/vllm_flash_attn/_vllm_fa3_C.abi3.so to /home/lcpu/85117379/c2-native-plugin-v12-fresh-runtime-20260830/job12988/vllm/vllm_flash_attn/.tmpU5ONpP/_vllm_fa3_C.abi3.so: Disk quota exceeded (os error 122)
+FINAL_RC=2 UTC=2026-08-30T20:37:11Z RUN_ID=12988

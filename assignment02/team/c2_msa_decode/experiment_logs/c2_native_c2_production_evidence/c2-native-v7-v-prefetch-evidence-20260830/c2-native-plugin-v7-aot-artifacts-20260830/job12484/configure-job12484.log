@@ -1,0 +1,213 @@
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Build type: RelWithDebInfo
+-- Target device: cuda
+-- Found Python: /home/lcpu/85117379/venv-vllm-d4da0c5/bin/python (found version "3.12.11") found components: Interpreter Development.Module Development.SABIModule
+-- Found python matching: /home/lcpu/85117379/venv-vllm-d4da0c5/bin/python.
+-- Found CUDA: /usr/local/cuda (found version "13.0")
+-- The CUDA compiler identification is NVIDIA 13.0.88 with host compiler GNU 13.3.0
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDAToolkit: /usr/local/cuda/include (found version "13.0.88")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- PyTorch: CUDA detected: 13.0
+-- PyTorch: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- PyTorch: CUDA toolkit directory: /usr/local/cuda
+-- PyTorch: Header version is: 13.0
+-- Found Python: /home/lcpu/85117379/venv-vllm-d4da0c5/bin/python (found version "3.12.11") found components: Interpreter
+-- /usr/local/cuda/lib64/libnvrtc.so shorthash is a49e67e8
+-- USE_CUDNN is set to 0. Compiling without cuDNN support
+-- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+-- USE_CUDSS is set to 0. Compiling without cuDSS support
+-- USE_CUFILE is set to 0. Compiling without cuFile support
+CMake Warning at /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/share/cmake/Caffe2/public/cuda.cmake:332 (message):
+  pytorch is not compatible with `CMAKE_CUDA_ARCHITECTURES` and will ignore
+  its value.  Please configure `TORCH_CUDA_ARCH_LIST` instead.
+Call Stack (most recent call first):
+  /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:86 (include)
+  /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:62 (find_package)
+  CMakeLists.txt:112 (find_package)
+
+
+-- Added CUDA NVCC flags for: -gencode;arch=compute_103f,code=sm_103f
+CMake Warning at /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  library kineto not found.
+Call Stack (most recent call first):
+  /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:119 (append_torchlib_if_found)
+  CMakeLists.txt:112 (find_package)
+
+
+-- Found Torch: /home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/torch/lib/libtorch.so
+-- CUDA target architectures: 10.3f
+-- CUDA supported target architectures: 10.0
+-- FetchContent base directory: /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484
+-- Enabling cumem allocator extension.
+-- The VLLM_CUTLASS_SRC_DIR is set, using /home/lcpu/85117379/cutlass-v4.4.2-c2-20260829 for compilation
+-- CMake Version: 4.4.2
+-- CUTLASS 4.4.2
+-- Found CUDAToolkit: /usr/local/cuda/targets/x86_64-linux/include;/usr/local/cuda/targets/x86_64-linux/include/cccl (found version "13.0.88")
+-- CUDART: /usr/local/cuda/lib64/libcudart.so
+-- CUDA Driver: /usr/local/cuda/lib64/stubs/libcuda.so
+-- NVRTC: /usr/local/cuda/lib64/libnvrtc.so
+-- Default Install Location: /home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/install
+-- Found Python3: /home/lcpu/85117379/c2-native-tools-20260829/bin/python3.12 (found suitable version "3.12.11", minimum required is "3.5") found components: Interpreter
+-- CUDA Compilation Architectures: 70;72;75;80;86;87;89;90;90a;100;100a;120;120a;121;121a;110;110a;100f;120f;121f;103a;103f;110f;110;110a
+-- Enable caching of reference results in conv unit tests
+-- Enable rigorous conv problem sizes in conv unit tests
+-- Grid Dependency Control (GDC) is enabled for SM100 kernels (required for programmatic dependent launches).
+-- Using the following NVCC flags: 
+  --expt-relaxed-constexpr
+  -ftemplate-backtrace-limit=0
+  -DCUTLASS_TEST_LEVEL=0
+  -DCUTLASS_TEST_ENABLE_CACHED_RESULTS=1
+  -DCUTLASS_CONV_UNIT_TEST_RIGOROUS_SIZE_ENABLED=1
+  -DCUTLASS_DEBUG_TRACE_LEVEL=0
+  -DCUTLASS_SM100_FAMILY_ARCHS_ENABLED
+  -DCUTLASS_SM100_FAMILY_ARCHS_ENABLED
+  -Xcompiler=-Wconversion
+  -Xcompiler=-fno-strict-aliasing
+  -lineinfo
+-- Configuring cublas ...
+-- cuBLAS Disabled.
+-- Configuring cuBLAS ... done.
+-- Not building Machete kernels as no compatible archs found in CUDA target architectures
+-- Marlin generation script hash: 82e94a64bad7c6239dfa4bebe9f1de9f(ARCH:10.0)
+-- Last run Marlin generate script hash: 
+-- Marlin generation completed successfully.
+-- Building Marlin kernels for archs: 8.0+PTX
+-- Building dsv3_fused_a_gemm for archs: 10.0f
+-- Building fp32_router_gemm for archs: 10.0f
+-- Not building AllSpark kernels as no compatible archs found in CUDA target architectures
+-- Not building scaled_mm_c3x_sm90 as no compatible archs found in CUDA target architectures
+-- Not building scaled_mm_c3x_120 as no compatible archs found in CUDA target architectures
+-- Building scaled_mm_c3x_sm100 for archs: 10.0f
+-- Building scaled_mm_c2x for archs: 8.9+PTX
+-- Not building grouped_mm_c3x as no compatible archs found in CUDA target architectures.
+-- Building grouped_mm_c3x for archs: 10.0f
+-- Building moe_data for archs: 10.0f
+-- Not building SM12x NVFP4 as no compatible archs were found.
+-- Building SM10x/11x NVFP4/MXFP4 for archs: 10.0f
+-- Not building W4A8 kernels as no compatible archs found in CUDA target architectures
+-- Building CUTLASS MLA for archs: 10.0f
+-- Building fused KDA decode for archs: 10.0f
+-- Building Kimi K3 AttnRes for archs: 10.0f
+-- Building hadacore
+-- Enabling C_stable extension.
+-- Building standalone native C2 plugin for archs: 10.0
+-- Marlin MOE generation script hash with arch: 6aba15a546d84e079b704ba4f0026527(ARCH:10.0)
+-- Last run Marlin MOE generate script hash with arch: 
+-- Marlin MOE generation completed successfully.
+-- Building Marlin MOE kernels for archs: 8.0+PTX
+-- Building DSV3 router GEMM kernels for archs: 10.0f
+-- Enabling MoE C_stable extension.
+-- [triton_kernels] Fetch from https://github.com/triton-lang/triton.git:v3.5.1
+-- [triton_kernels] triton_kernels is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/triton_kernels-src/python/triton_kernels/triton_kernels/
+-- Populating deepgemm
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/deepgemm-subbuild
+[1/9] Creating directories for 'deepgemm-populate'
+[1/9] Performing download step (git clone) for 'deepgemm-populate'
+Cloning into 'deepgemm-src'...
+remote: Enumerating objects: 2956, done.        
+remote: Counting objects:   1% (1/66)        remote: Counting objects:   3% (2/66)        remote: Counting objects:   4% (3/66)        remote: Counting objects:   6% (4/66)        remote: Counting objects:   7% (5/66)        remote: Counting objects:   9% (6/66)        remote: Counting objects:  10% (7/66)        remote: Counting objects:  12% (8/66)        remote: Counting objects:  13% (9/66)        remote: Counting objects:  15% (10/66)        remote: Counting objects:  16% (11/66)        remote: Counting objects:  18% (12/66)        remote: Counting objects:  19% (13/66)        remote: Counting objects:  21% (14/66)        remote: Counting objects:  22% (15/66)        remote: Counting objects:  24% (16/66)        remote: Counting objects:  25% (17/66)        remote: Counting objects:  27% (18/66)        remote: Counting objects:  28% (19/66)        remote: Counting objects:  30% (20/66)        remote: Counting objects:  31% (21/66)        remote: Counting objects:  33% (22/66)        remote: Counting objects:  34% (23/66)        remote: Counting objects:  36% (24/66)        remote: Counting objects:  37% (25/66)        remote: Counting objects:  39% (26/66)        remote: Counting objects:  40% (27/66)        remote: Counting objects:  42% (28/66)        remote: Counting objects:  43% (29/66)        remote: Counting objects:  45% (30/66)        remote: Counting objects:  46% (31/66)        remote: Counting objects:  48% (32/66)        remote: Counting objects:  50% (33/66)        remote: Counting objects:  51% (34/66)        remote: Counting objects:  53% (35/66)        remote: Counting objects:  54% (36/66)        remote: Counting objects:  56% (37/66)        remote: Counting objects:  57% (38/66)        remote: Counting objects:  59% (39/66)        remote: Counting objects:  60% (40/66)        remote: Counting objects:  62% (41/66)        remote: Counting objects:  63% (42/66)        remote: Counting objects:  65% (43/66)        remote: Counting objects:  66% (44/66)        remote: Counting objects:  68% (45/66)        remote: Counting objects:  69% (46/66)        remote: Counting objects:  71% (47/66)        remote: Counting objects:  72% (48/66)        remote: Counting objects:  74% (49/66)        remote: Counting objects:  75% (50/66)        remote: Counting objects:  77% (51/66)        remote: Counting objects:  78% (52/66)        remote: Counting objects:  80% (53/66)        remote: Counting objects:  81% (54/66)        remote: Counting objects:  83% (55/66)        remote: Counting objects:  84% (56/66)        remote: Counting objects:  86% (57/66)        remote: Counting objects:  87% (58/66)        remote: Counting objects:  89% (59/66)        remote: Counting objects:  90% (60/66)        remote: Counting objects:  92% (61/66)        remote: Counting objects:  93% (62/66)        remote: Counting objects:  95% (63/66)        remote: Counting objects:  96% (64/66)        remote: Counting objects:  98% (65/66)        remote: Counting objects: 100% (66/66)        remote: Counting objects: 100% (66/66), done.        
+remote: Compressing objects:   2% (1/50)        remote: Compressing objects:   4% (2/50)        remote: Compressing objects:   6% (3/50)        remote: Compressing objects:   8% (4/50)        remote: Compressing objects:  10% (5/50)        remote: Compressing objects:  12% (6/50)        remote: Compressing objects:  14% (7/50)        remote: Compressing objects:  16% (8/50)        remote: Compressing objects:  18% (9/50)        remote: Compressing objects:  20% (10/50)        remote: Compressing objects:  22% (11/50)        remote: Compressing objects:  24% (12/50)        remote: Compressing objects:  26% (13/50)        remote: Compressing objects:  28% (14/50)        remote: Compressing objects:  30% (15/50)        remote: Compressing objects:  32% (16/50)        remote: Compressing objects:  34% (17/50)        remote: Compressing objects:  36% (18/50)        remote: Compressing objects:  38% (19/50)        remote: Compressing objects:  40% (20/50)        remote: Compressing objects:  42% (21/50)        remote: Compressing objects:  44% (22/50)        remote: Compressing objects:  46% (23/50)        remote: Compressing objects:  48% (24/50)        remote: Compressing objects:  50% (25/50)        remote: Compressing objects:  52% (26/50)        remote: Compressing objects:  54% (27/50)        remote: Compressing objects:  56% (28/50)        remote: Compressing objects:  58% (29/50)        remote: Compressing objects:  60% (30/50)        remote: Compressing objects:  62% (31/50)        remote: Compressing objects:  64% (32/50)        remote: Compressing objects:  66% (33/50)        remote: Compressing objects:  68% (34/50)        remote: Compressing objects:  70% (35/50)        remote: Compressing objects:  72% (36/50)        remote: Compressing objects:  74% (37/50)        remote: Compressing objects:  76% (38/50)        remote: Compressing objects:  78% (39/50)        remote: Compressing objects:  80% (40/50)        remote: Compressing objects:  82% (41/50)        remote: Compressing objects:  84% (42/50)        remote: Compressing objects:  86% (43/50)        remote: Compressing objects:  88% (44/50)        remote: Compressing objects:  90% (45/50)        remote: Compressing objects:  92% (46/50)        remote: Compressing objects:  94% (47/50)        remote: Compressing objects:  96% (48/50)        remote: Compressing objects:  98% (49/50)        remote: Compressing objects: 100% (50/50)        remote: Compressing objects: 100% (50/50), done.        
+Receiving objects:   0% (1/2956)Receiving objects:   1% (30/2956)Receiving objects:   2% (60/2956)Receiving objects:   3% (89/2956)Receiving objects:   4% (119/2956)Receiving objects:   5% (148/2956)Receiving objects:   6% (178/2956)Receiving objects:   7% (207/2956)Receiving objects:   8% (237/2956)Receiving objects:   9% (267/2956)Receiving objects:  10% (296/2956)Receiving objects:  11% (326/2956)Receiving objects:  12% (355/2956)Receiving objects:  13% (385/2956)Receiving objects:  14% (414/2956)Receiving objects:  15% (444/2956)Receiving objects:  16% (473/2956)Receiving objects:  17% (503/2956)Receiving objects:  18% (533/2956)Receiving objects:  19% (562/2956)Receiving objects:  20% (592/2956)Receiving objects:  21% (621/2956)Receiving objects:  22% (651/2956)Receiving objects:  23% (680/2956)Receiving objects:  24% (710/2956)Receiving objects:  25% (739/2956)Receiving objects:  26% (769/2956)Receiving objects:  27% (799/2956)Receiving objects:  28% (828/2956)Receiving objects:  29% (858/2956)Receiving objects:  30% (887/2956)Receiving objects:  31% (917/2956)Receiving objects:  32% (946/2956)Receiving objects:  33% (976/2956)Receiving objects:  34% (1006/2956)Receiving objects:  35% (1035/2956)Receiving objects:  36% (1065/2956)Receiving objects:  37% (1094/2956)Receiving objects:  38% (1124/2956)Receiving objects:  39% (1153/2956)Receiving objects:  40% (1183/2956)Receiving objects:  41% (1212/2956)Receiving objects:  42% (1242/2956)Receiving objects:  43% (1272/2956)Receiving objects:  44% (1301/2956)Receiving objects:  45% (1331/2956)Receiving objects:  46% (1360/2956)Receiving objects:  47% (1390/2956)Receiving objects:  48% (1419/2956)Receiving objects:  49% (1449/2956)Receiving objects:  50% (1478/2956)Receiving objects:  51% (1508/2956)Receiving objects:  52% (1538/2956)Receiving objects:  53% (1567/2956)Receiving objects:  54% (1597/2956)Receiving objects:  55% (1626/2956)Receiving objects:  56% (1656/2956)Receiving objects:  57% (1685/2956)Receiving objects:  58% (1715/2956)Receiving objects:  59% (1745/2956)Receiving objects:  60% (1774/2956)Receiving objects:  61% (1804/2956)Receiving objects:  62% (1833/2956)Receiving objects:  63% (1863/2956)Receiving objects:  64% (1892/2956)Receiving objects:  65% (1922/2956)Receiving objects:  66% (1951/2956)Receiving objects:  67% (1981/2956)Receiving objects:  68% (2011/2956)Receiving objects:  69% (2040/2956)Receiving objects:  70% (2070/2956)Receiving objects:  71% (2099/2956)Receiving objects:  72% (2129/2956)Receiving objects:  73% (2158/2956)Receiving objects:  74% (2188/2956)Receiving objects:  75% (2217/2956)Receiving objects:  76% (2247/2956)Receiving objects:  77% (2277/2956)Receiving objects:  78% (2306/2956)Receiving objects:  79% (2336/2956)Receiving objects:  80% (2365/2956)Receiving objects:  81% (2395/2956)Receiving objects:  82% (2424/2956)Receiving objects:  83% (2454/2956)Receiving objects:  84% (2484/2956)Receiving objects:  85% (2513/2956)Receiving objects:  86% (2543/2956)Receiving objects:  87% (2572/2956)Receiving objects:  88% (2602/2956)Receiving objects:  89% (2631/2956)Receiving objects:  90% (2661/2956)Receiving objects:  91% (2690/2956)Receiving objects:  92% (2720/2956)Receiving objects:  93% (2750/2956)remote: Total 2956 (delta 42), reused 16 (delta 16), pack-reused 2890 (from 2)        
+Receiving objects:  94% (2779/2956)Receiving objects:  95% (2809/2956)Receiving objects:  96% (2838/2956)Receiving objects:  97% (2868/2956)Receiving objects:  98% (2897/2956)Receiving objects:  99% (2927/2956)Receiving objects: 100% (2956/2956)Receiving objects: 100% (2956/2956), 1.92 MiB | 10.22 MiB/s, done.
+Resolving deltas:   0% (0/1811)Resolving deltas:   1% (19/1811)Resolving deltas:   2% (38/1811)Resolving deltas:   3% (56/1811)Resolving deltas:   4% (73/1811)Resolving deltas:   5% (91/1811)Resolving deltas:   6% (110/1811)Resolving deltas:   7% (127/1811)Resolving deltas:   8% (145/1811)Resolving deltas:   9% (165/1811)Resolving deltas:  10% (182/1811)Resolving deltas:  11% (200/1811)Resolving deltas:  12% (218/1811)Resolving deltas:  13% (236/1811)Resolving deltas:  14% (255/1811)Resolving deltas:  15% (274/1811)Resolving deltas:  16% (290/1811)Resolving deltas:  17% (308/1811)Resolving deltas:  18% (326/1811)Resolving deltas:  19% (345/1811)Resolving deltas:  20% (364/1811)Resolving deltas:  21% (382/1811)Resolving deltas:  22% (399/1811)Resolving deltas:  23% (418/1811)Resolving deltas:  24% (435/1811)Resolving deltas:  25% (453/1811)Resolving deltas:  26% (473/1811)Resolving deltas:  27% (489/1811)Resolving deltas:  28% (508/1811)Resolving deltas:  29% (526/1811)Resolving deltas:  30% (545/1811)Resolving deltas:  31% (562/1811)Resolving deltas:  32% (582/1811)Resolving deltas:  33% (598/1811)Resolving deltas:  34% (616/1811)Resolving deltas:  35% (634/1811)Resolving deltas:  36% (652/1811)Resolving deltas:  37% (671/1811)Resolving deltas:  38% (689/1811)Resolving deltas:  39% (709/1811)Resolving deltas:  40% (725/1811)Resolving deltas:  41% (745/1811)Resolving deltas:  42% (761/1811)Resolving deltas:  43% (779/1811)Resolving deltas:  44% (797/1811)Resolving deltas:  45% (816/1811)Resolving deltas:  46% (836/1811)Resolving deltas:  47% (852/1811)Resolving deltas:  48% (870/1811)Resolving deltas:  49% (888/1811)Resolving deltas:  50% (907/1811)Resolving deltas:  51% (924/1811)Resolving deltas:  52% (945/1811)Resolving deltas:  53% (962/1811)Resolving deltas:  54% (979/1811)Resolving deltas:  55% (997/1811)Resolving deltas:  56% (1017/1811)Resolving deltas:  57% (1033/1811)Resolving deltas:  58% (1053/1811)Resolving deltas:  59% (1070/1811)Resolving deltas:  60% (1087/1811)Resolving deltas:  61% (1105/1811)Resolving deltas:  62% (1123/1811)Resolving deltas:  63% (1142/1811)Resolving deltas:  64% (1160/1811)Resolving deltas:  65% (1180/1811)Resolving deltas:  66% (1196/1811)Resolving deltas:  67% (1220/1811)Resolving deltas:  68% (1232/1811)Resolving deltas:  69% (1253/1811)Resolving deltas:  70% (1268/1811)Resolving deltas:  71% (1289/1811)Resolving deltas:  72% (1304/1811)Resolving deltas:  73% (1323/1811)Resolving deltas:  74% (1342/1811)Resolving deltas:  75% (1359/1811)Resolving deltas:  76% (1377/1811)Resolving deltas:  77% (1395/1811)Resolving deltas:  78% (1415/1811)Resolving deltas:  79% (1431/1811)Resolving deltas:  80% (1449/1811)Resolving deltas:  81% (1467/1811)Resolving deltas:  82% (1486/1811)Resolving deltas:  83% (1504/1811)Resolving deltas:  84% (1523/1811)Resolving deltas:  85% (1541/1811)Resolving deltas:  86% (1559/1811)Resolving deltas:  87% (1576/1811)Resolving deltas:  88% (1594/1811)Resolving deltas:  89% (1612/1811)Resolving deltas:  90% (1630/1811)Resolving deltas:  91% (1649/1811)Resolving deltas:  92% (1667/1811)Resolving deltas:  93% (1686/1811)Resolving deltas:  94% (1703/1811)Resolving deltas:  95% (1722/1811)Resolving deltas:  96% (1739/1811)Resolving deltas:  97% (1757/1811)Resolving deltas:  98% (1775/1811)Resolving deltas:  99% (1794/1811)Resolving deltas: 100% (1811/1811)Resolving deltas: 100% (1811/1811), done.
+HEAD is now at e21c821 [Build] Include CUDA FP8 type in MQA layout header
+Submodule 'third-party/cutlass' (https://github.com/NVIDIA/cutlass.git) registered for path 'third-party/cutlass'
+Submodule 'third-party/fmt' (https://github.com/fmtlib/fmt.git) registered for path 'third-party/fmt'
+Cloning into '/home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/deepgemm-src/third-party/cutlass'...
+Cloning into '/home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/deepgemm-src/third-party/fmt'...
+Submodule path 'third-party/cutlass': checked out 'f3fde58372d33e9a5650ba7b80fc48b3b49d40c8'
+Submodule path 'third-party/fmt': checked out '553ec11ec06fbe0beebfbb45f9dc3c9eabd83d28'
+[2/9] Performing update step for 'deepgemm-populate'
+-- Already at requested ref: e21c821f39a2056d68067a466c64ddc942200106
+[3/9] No patch step for 'deepgemm-populate'
+[5/9] No configure step for 'deepgemm-populate'
+[6/9] No build step for 'deepgemm-populate'
+[7/9] No install step for 'deepgemm-populate'
+[8/9] No test step for 'deepgemm-populate'
+[9/9] Completed 'deepgemm-populate'
+-- DeepGEMM is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/deepgemm-src
+-- DeepGEMM CUDA architectures: 10.0f
+-- DeepGEMM _C will be built for: /home/lcpu/85117379/venv-vllm-d4da0c5/bin/python
+CMake Warning (author) at /home/lcpu/85117379/c2-native-tools-20260829/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FetchContent.cmake:1968 (message):
+  Calling FetchContent_Populate(fmha_sm100) is deprecated, call
+  FetchContent_MakeAvailable(fmha_sm100) instead.  Policy CMP0169 can be set
+  to OLD to allow FetchContent_Populate(fmha_sm100) to be called directly for
+  now, but the ability to call it with declared details will be removed
+  completely in a future version.
+Call Stack (most recent call first):
+  cmake/external_projects/fmha_sm100.cmake:29 (FetchContent_Populate)
+  CMakeLists.txt:1538 (include)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- fmha_sm100 is available at /home/lcpu/85117379/msa-official
+-- FlashMLA is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/flashmla-src
+-- FlashMLA CUDA architectures: 10.0f
+-- FlashKDA is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/flashkda-src
+-- FlashKDA CUDA architectures: 10.0f
+-- Populating qutlass
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/qutlass-subbuild
+[1/9] Creating directories for 'qutlass-populate'
+[1/9] Performing download step (git clone) for 'qutlass-populate'
+Cloning into 'qutlass-src'...
+remote: Enumerating objects: 448, done.        
+remote: Counting objects:   0% (1/220)        remote: Counting objects:   1% (3/220)        remote: Counting objects:   2% (5/220)        remote: Counting objects:   3% (7/220)        remote: Counting objects:   4% (9/220)        remote: Counting objects:   5% (11/220)        remote: Counting objects:   6% (14/220)        remote: Counting objects:   7% (16/220)        remote: Counting objects:   8% (18/220)        remote: Counting objects:   9% (20/220)        remote: Counting objects:  10% (22/220)        remote: Counting objects:  11% (25/220)        remote: Counting objects:  12% (27/220)        remote: Counting objects:  13% (29/220)        remote: Counting objects:  14% (31/220)        remote: Counting objects:  15% (33/220)        remote: Counting objects:  16% (36/220)        remote: Counting objects:  17% (38/220)        remote: Counting objects:  18% (40/220)        remote: Counting objects:  19% (42/220)        remote: Counting objects:  20% (44/220)        remote: Counting objects:  21% (47/220)        remote: Counting objects:  22% (49/220)        remote: Counting objects:  23% (51/220)        remote: Counting objects:  24% (53/220)        remote: Counting objects:  25% (55/220)        remote: Counting objects:  26% (58/220)        remote: Counting objects:  27% (60/220)        remote: Counting objects:  28% (62/220)        remote: Counting objects:  29% (64/220)        remote: Counting objects:  30% (66/220)        remote: Counting objects:  31% (69/220)        remote: Counting objects:  32% (71/220)        remote: Counting objects:  33% (73/220)        remote: Counting objects:  34% (75/220)        remote: Counting objects:  35% (77/220)        remote: Counting objects:  36% (80/220)        remote: Counting objects:  37% (82/220)        remote: Counting objects:  38% (84/220)        remote: Counting objects:  39% (86/220)        remote: Counting objects:  40% (88/220)        remote: Counting objects:  41% (91/220)        remote: Counting objects:  42% (93/220)        remote: Counting objects:  43% (95/220)        remote: Counting objects:  44% (97/220)        remote: Counting objects:  45% (99/220)        remote: Counting objects:  46% (102/220)        remote: Counting objects:  47% (104/220)        remote: Counting objects:  48% (106/220)        remote: Counting objects:  49% (108/220)        remote: Counting objects:  50% (110/220)        remote: Counting objects:  51% (113/220)        remote: Counting objects:  52% (115/220)        remote: Counting objects:  53% (117/220)        remote: Counting objects:  54% (119/220)        remote: Counting objects:  55% (121/220)        remote: Counting objects:  56% (124/220)        remote: Counting objects:  57% (126/220)        remote: Counting objects:  58% (128/220)        remote: Counting objects:  59% (130/220)        remote: Counting objects:  60% (132/220)        remote: Counting objects:  61% (135/220)        remote: Counting objects:  62% (137/220)        remote: Counting objects:  63% (139/220)        remote: Counting objects:  64% (141/220)        remote: Counting objects:  65% (143/220)        remote: Counting objects:  66% (146/220)        remote: Counting objects:  67% (148/220)        remote: Counting objects:  68% (150/220)        remote: Counting objects:  69% (152/220)        remote: Counting objects:  70% (154/220)        remote: Counting objects:  71% (157/220)        remote: Counting objects:  72% (159/220)        remote: Counting objects:  73% (161/220)        remote: Counting objects:  74% (163/220)        remote: Counting objects:  75% (165/220)        remote: Counting objects:  76% (168/220)        remote: Counting objects:  77% (170/220)        remote: Counting objects:  78% (172/220)        remote: Counting objects:  79% (174/220)        remote: Counting objects:  80% (176/220)        remote: Counting objects:  81% (179/220)        remote: Counting objects:  82% (181/220)        remote: Counting objects:  83% (183/220)        remote: Counting objects:  84% (185/220)        remote: Counting objects:  85% (187/220)        remote: Counting objects:  86% (190/220)        remote: Counting objects:  87% (192/220)        remote: Counting objects:  88% (194/220)        remote: Counting objects:  89% (196/220)        remote: Counting objects:  90% (198/220)        remote: Counting objects:  91% (201/220)        remote: Counting objects:  92% (203/220)        remote: Counting objects:  93% (205/220)        remote: Counting objects:  94% (207/220)        remote: Counting objects:  95% (209/220)        remote: Counting objects:  96% (212/220)        remote: Counting objects:  97% (214/220)        remote: Counting objects:  98% (216/220)        remote: Counting objects:  99% (218/220)        remote: Counting objects: 100% (220/220)        remote: Counting objects: 100% (220/220), done.        
+remote: Compressing objects:   0% (1/107)        remote: Compressing objects:   1% (2/107)        remote: Compressing objects:   2% (3/107)        remote: Compressing objects:   3% (4/107)        remote: Compressing objects:   4% (5/107)        remote: Compressing objects:   5% (6/107)        remote: Compressing objects:   6% (7/107)        remote: Compressing objects:   7% (8/107)        remote: Compressing objects:   8% (9/107)        remote: Compressing objects:   9% (10/107)        remote: Compressing objects:  10% (11/107)        remote: Compressing objects:  11% (12/107)        remote: Compressing objects:  12% (13/107)        remote: Compressing objects:  13% (14/107)        remote: Compressing objects:  14% (15/107)        remote: Compressing objects:  15% (17/107)        remote: Compressing objects:  16% (18/107)        remote: Compressing objects:  17% (19/107)        remote: Compressing objects:  18% (20/107)        remote: Compressing objects:  19% (21/107)        remote: Compressing objects:  20% (22/107)        remote: Compressing objects:  21% (23/107)        remote: Compressing objects:  22% (24/107)        remote: Compressing objects:  23% (25/107)        remote: Compressing objects:  24% (26/107)        remote: Compressing objects:  25% (27/107)        remote: Compressing objects:  26% (28/107)        remote: Compressing objects:  27% (29/107)        remote: Compressing objects:  28% (30/107)        remote: Compressing objects:  29% (32/107)        remote: Compressing objects:  30% (33/107)        remote: Compressing objects:  31% (34/107)        remote: Compressing objects:  32% (35/107)        remote: Compressing objects:  33% (36/107)        remote: Compressing objects:  34% (37/107)        remote: Compressing objects:  35% (38/107)        remote: Compressing objects:  36% (39/107)        remote: Compressing objects:  37% (40/107)        remote: Compressing objects:  38% (41/107)        remote: Compressing objects:  39% (42/107)        remote: Compressing objects:  40% (43/107)        remote: Compressing objects:  41% (44/107)        remote: Compressing objects:  42% (45/107)        remote: Compressing objects:  43% (47/107)        remote: Compressing objects:  44% (48/107)        remote: Compressing objects:  45% (49/107)        remote: Compressing objects:  46% (50/107)        remote: Compressing objects:  47% (51/107)        remote: Compressing objects:  48% (52/107)        remote: Compressing objects:  49% (53/107)        remote: Compressing objects:  50% (54/107)        remote: Compressing objects:  51% (55/107)        remote: Compressing objects:  52% (56/107)        remote: Compressing objects:  53% (57/107)        remote: Compressing objects:  54% (58/107)        remote: Compressing objects:  55% (59/107)        remote: Compressing objects:  56% (60/107)        remote: Compressing objects:  57% (61/107)        remote: Compressing objects:  58% (63/107)        remote: Compressing objects:  59% (64/107)        remote: Compressing objects:  60% (65/107)        remote: Compressing objects:  61% (66/107)        remote: Compressing objects:  62% (67/107)        remote: Compressing objects:  63% (68/107)        remote: Compressing objects:  64% (69/107)        remote: Compressing objects:  65% (70/107)        remote: Compressing objects:  66% (71/107)        remote: Compressing objects:  67% (72/107)        remote: Compressing objects:  68% (73/107)        remote: Compressing objects:  69% (74/107)        remote: Compressing objects:  70% (75/107)        remote: Compressing objects:  71% (76/107)        remote: Compressing objects:  72% (78/107)        remote: Compressing objects:  73% (79/107)        remote: Compressing objects:  74% (80/107)        remote: Compressing objects:  75% (81/107)        remote: Compressing objects:  76% (82/107)        remote: Compressing objects:  77% (83/107)        remote: Compressing objects:  78% (84/107)        remote: Compressing objects:  79% (85/107)        remote: Compressing objects:  80% (86/107)        remote: Compressing objects:  81% (87/107)        remote: Compressing objects:  82% (88/107)        remote: Compressing objects:  83% (89/107)        remote: Compressing objects:  84% (90/107)        remote: Compressing objects:  85% (91/107)        remote: Compressing objects:  86% (93/107)        remote: Compressing objects:  87% (94/107)        remote: Compressing objects:  88% (95/107)        remote: Compressing objects:  89% (96/107)        remote: Compressing objects:  90% (97/107)        remote: Compressing objects:  91% (98/107)        remote: Compressing objects:  92% (99/107)        remote: Compressing objects:  93% (100/107)        remote: Compressing objects:  94% (101/107)        remote: Compressing objects:  95% (102/107)        remote: Compressing objects:  96% (103/107)        remote: Compressing objects:  97% (104/107)        remote: Compressing objects:  98% (105/107)        remote: Compressing objects:  99% (106/107)        remote: Compressing objects: 100% (107/107)        remote: Compressing objects: 100% (107/107), done.        
+Receiving objects:   0% (1/448)Receiving objects:   1% (5/448)Receiving objects:   2% (9/448)Receiving objects:   3% (14/448)Receiving objects:   4% (18/448)Receiving objects:   5% (23/448)Receiving objects:   6% (27/448)Receiving objects:   7% (32/448)Receiving objects:   8% (36/448)Receiving objects:   9% (41/448)Receiving objects:  10% (45/448)Receiving objects:  11% (50/448)Receiving objects:  12% (54/448)Receiving objects:  13% (59/448)Receiving objects:  14% (63/448)Receiving objects:  15% (68/448)Receiving objects:  16% (72/448)Receiving objects:  17% (77/448)Receiving objects:  18% (81/448)Receiving objects:  19% (86/448)Receiving objects:  20% (90/448)Receiving objects:  21% (95/448)Receiving objects:  22% (99/448)Receiving objects:  23% (104/448)Receiving objects:  24% (108/448)Receiving objects:  25% (112/448)Receiving objects:  26% (117/448)Receiving objects:  27% (121/448)Receiving objects:  28% (126/448)Receiving objects:  29% (130/448)Receiving objects:  30% (135/448)Receiving objects:  31% (139/448)Receiving objects:  32% (144/448)Receiving objects:  33% (148/448)Receiving objects:  34% (153/448)Receiving objects:  35% (157/448)Receiving objects:  36% (162/448)Receiving objects:  37% (166/448)Receiving objects:  38% (171/448)Receiving objects:  39% (175/448)Receiving objects:  40% (180/448)Receiving objects:  41% (184/448)Receiving objects:  42% (189/448)Receiving objects:  43% (193/448)Receiving objects:  44% (198/448)Receiving objects:  45% (202/448)Receiving objects:  46% (207/448)Receiving objects:  47% (211/448)Receiving objects:  48% (216/448)Receiving objects:  49% (220/448)Receiving objects:  50% (224/448)Receiving objects:  51% (229/448)Receiving objects:  52% (233/448)Receiving objects:  53% (238/448)Receiving objects:  54% (242/448)Receiving objects:  55% (247/448)Receiving objects:  56% (251/448)Receiving objects:  57% (256/448)Receiving objects:  58% (260/448)Receiving objects:  59% (265/448)Receiving objects:  60% (269/448)Receiving objects:  61% (274/448)Receiving objects:  62% (278/448)Receiving objects:  63% (283/448)Receiving objects:  64% (287/448)Receiving objects:  65% (292/448)Receiving objects:  66% (296/448)Receiving objects:  67% (301/448)Receiving objects:  68% (305/448)Receiving objects:  69% (310/448)Receiving objects:  70% (314/448)Receiving objects:  71% (319/448)Receiving objects:  72% (323/448)Receiving objects:  73% (328/448)Receiving objects:  74% (332/448)Receiving objects:  75% (336/448)Receiving objects:  76% (341/448)Receiving objects:  77% (345/448)Receiving objects:  78% (350/448)Receiving objects:  79% (354/448)remote: Total 448 (delta 134), reused 164 (delta 113), pack-reused 228 (from 1)        
+Receiving objects:  80% (359/448)Receiving objects:  81% (363/448)Receiving objects:  82% (368/448)Receiving objects:  83% (372/448)Receiving objects:  84% (377/448)Receiving objects:  85% (381/448)Receiving objects:  86% (386/448)Receiving objects:  87% (390/448)Receiving objects:  88% (395/448)Receiving objects:  89% (399/448)Receiving objects:  90% (404/448)Receiving objects:  91% (408/448)Receiving objects:  92% (413/448)Receiving objects:  93% (417/448)Receiving objects:  94% (422/448)Receiving objects:  95% (426/448)Receiving objects:  96% (431/448)Receiving objects:  97% (435/448)Receiving objects:  98% (440/448)Receiving objects:  99% (444/448)Receiving objects: 100% (448/448)Receiving objects: 100% (448/448), 442.51 KiB | 4.92 MiB/s, done.
+Resolving deltas:   0% (0/246)Resolving deltas:   1% (3/246)Resolving deltas:   2% (5/246)Resolving deltas:   3% (9/246)Resolving deltas:   4% (10/246)Resolving deltas:   5% (13/246)Resolving deltas:   6% (16/246)Resolving deltas:   7% (18/246)Resolving deltas:   8% (20/246)Resolving deltas:   9% (23/246)Resolving deltas:  10% (25/246)Resolving deltas:  11% (28/246)Resolving deltas:  13% (32/246)Resolving deltas:  14% (35/246)Resolving deltas:  15% (38/246)Resolving deltas:  16% (40/246)Resolving deltas:  17% (42/246)Resolving deltas:  18% (45/246)Resolving deltas:  19% (47/246)Resolving deltas:  21% (52/246)Resolving deltas:  22% (55/246)Resolving deltas:  23% (57/246)Resolving deltas:  24% (60/246)Resolving deltas:  25% (62/246)Resolving deltas:  26% (66/246)Resolving deltas:  27% (67/246)Resolving deltas:  28% (69/246)Resolving deltas:  29% (72/246)Resolving deltas:  30% (74/246)Resolving deltas:  33% (82/246)Resolving deltas:  34% (85/246)Resolving deltas:  35% (88/246)Resolving deltas:  36% (89/246)Resolving deltas:  37% (92/246)Resolving deltas:  38% (94/246)Resolving deltas:  39% (96/246)Resolving deltas:  40% (99/246)Resolving deltas:  42% (104/246)Resolving deltas:  43% (106/246)Resolving deltas:  44% (109/246)Resolving deltas:  45% (112/246)Resolving deltas:  47% (116/246)Resolving deltas:  48% (119/246)Resolving deltas:  49% (121/246)Resolving deltas:  50% (123/246)Resolving deltas:  51% (127/246)Resolving deltas:  52% (128/246)Resolving deltas:  53% (132/246)Resolving deltas:  54% (133/246)Resolving deltas:  56% (138/246)Resolving deltas:  57% (141/246)Resolving deltas:  58% (144/246)Resolving deltas:  59% (146/246)Resolving deltas:  60% (148/246)Resolving deltas:  61% (151/246)Resolving deltas:  63% (155/246)Resolving deltas:  64% (159/246)Resolving deltas:  65% (160/246)Resolving deltas:  66% (163/246)Resolving deltas:  67% (165/246)Resolving deltas:  68% (168/246)Resolving deltas:  69% (170/246)Resolving deltas:  70% (173/246)Resolving deltas:  71% (175/246)Resolving deltas:  72% (179/246)Resolving deltas:  73% (180/246)Resolving deltas:  74% (183/246)Resolving deltas:  75% (185/246)Resolving deltas:  76% (187/246)Resolving deltas:  77% (191/246)Resolving deltas:  78% (192/246)Resolving deltas:  79% (196/246)Resolving deltas:  80% (197/246)Resolving deltas:  81% (200/246)Resolving deltas:  82% (202/246)Resolving deltas:  83% (205/246)Resolving deltas:  84% (207/246)Resolving deltas:  85% (211/246)Resolving deltas:  86% (212/246)Resolving deltas:  87% (215/246)Resolving deltas:  88% (217/246)Resolving deltas:  89% (220/246)Resolving deltas:  90% (222/246)Resolving deltas:  91% (224/246)Resolving deltas:  93% (229/246)Resolving deltas:  94% (232/246)Resolving deltas:  95% (234/246)Resolving deltas:  96% (237/246)Resolving deltas:  97% (239/246)Resolving deltas:  98% (242/246)Resolving deltas:  99% (244/246)Resolving deltas: 100% (246/246)Resolving deltas: 100% (246/246), done.
+HEAD is now at e74319e Merge pull request #12 from cleonard530/migrate_to_torch_stable_abi
+Submodule 'third_party/cutlass' (https://github.com/NVIDIA/cutlass) registered for path 'third_party/cutlass'
+Cloning into '/home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/qutlass-src/third_party/cutlass'...
+Submodule path 'third_party/cutlass': checked out 'b2ca083d2bb96c41d9b3c5a930637c641f6669bf'
+[2/9] Performing update step for 'qutlass-populate'
+-- Already at requested ref: e74319e3405ce6d71965732880f5dc1f52371f64
+[3/9] No patch step for 'qutlass-populate'
+[5/9] No configure step for 'qutlass-populate'
+[6/9] No build step for 'qutlass-populate'
+[7/9] No install step for 'qutlass-populate'
+[8/9] No test step for 'qutlass-populate'
+[9/9] Completed 'qutlass-populate'
+-- [QUTLASS] QuTLASS is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/qutlass-src
+CMake Warning (author) at /home/lcpu/85117379/c2-native-tools-20260829/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FetchContent.cmake:1968 (message):
+  Calling FetchContent_Populate(tml_fa4) is deprecated, call
+  FetchContent_MakeAvailable(tml_fa4) instead.  Policy CMP0169 can be set to
+  OLD to allow FetchContent_Populate(tml_fa4) to be called directly for now,
+  but the ability to call it with declared details will be removed completely
+  in a future version.
+Call Stack (most recent call first):
+  cmake/external_projects/tml_fa4.cmake:25 (FetchContent_Populate)
+  CMakeLists.txt:1542 (include)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- tml-fa4 is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/tml_fa4-src
+-- Build type: RelWithDebInfo
+-- Target device: cuda
+-- Found Python: /home/lcpu/85117379/venv-vllm-d4da0c5/bin/python (found version "3.12.11") found components: Interpreter Development.Module Development.SABIModule
+CMake Warning at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/vllm-flash-attn-src/CMakeLists.txt:77 (message):
+  Pytorch version 2.4.0 expected for CUDA build, saw 2.13.0 instead.
+
+
+-- CUDA target architectures: 10.0
+-- CUDA supported target architectures: 10.0
+-- FA2_ARCHS: 8.0+PTX
+-- FA3_ARCHS: 
+-- vllm-flash-attn is available at /home/lcpu/85117379/c2-native-plugin-v7-aot-deps-20260830-job12484/vllm-flash-attn-src
+-- Configuring done (106.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/lcpu/85117379/vllm-d4-native-c2-plugin-v7-v-prefetch-build-20260830-job12484

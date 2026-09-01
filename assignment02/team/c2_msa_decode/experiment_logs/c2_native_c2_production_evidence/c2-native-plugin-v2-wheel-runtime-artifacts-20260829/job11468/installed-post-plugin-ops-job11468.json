@@ -1,0 +1,24 @@
+{
+  "added_ops": [
+    "_C::native_c2_msa_decode"
+  ],
+  "all_baseline_op_names_schemas_and_dispatch_surfaces_preserved": true,
+  "loader": {
+    "adapter_member": "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+    "adapter_sha256": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+    "callable": "_load_native_c2_plugin_once",
+    "first_return_is_true": true,
+    "module": "vllm.models.minimax_m3.nvidia.msa_native_c2_decode",
+    "module_file": "/home/lcpu/85117379/c2-native-plugin-v2-wheel-runtime-20260829/job11468/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+    "module_file_matches_wheel_adapter": true,
+    "second_call_snapshot_unchanged": true,
+    "second_return_is_true": true,
+    "style": "noargs"
+  },
+  "missing_baseline_ops": [],
+  "native_c2_has_cuda_kernel": true,
+  "plugin_archive_member": "vllm/_native_c2_msa_decode_plugin.abi3.so",
+  "plugin_path": "/home/lcpu/85117379/c2-native-plugin-v2-wheel-runtime-20260829/job11468/vllm/_native_c2_msa_decode_plugin.abi3.so",
+  "plugin_sha256": "73d769ca9c82e6a1cd3433fd7fcd1603b64935ddde989e04be1f184ea66debb5",
+  "schema": "c2-native-plugin-v2-installed-postloader-surface-v1"
+}

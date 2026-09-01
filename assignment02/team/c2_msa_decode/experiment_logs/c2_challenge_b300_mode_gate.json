@@ -1,0 +1,189 @@
+{
+  "schema": "c2-final-gate-v2-mode-aware",
+  "status": "pass",
+  "config": {
+    "chunk_policy": "selected",
+    "chunk_policy_definition": {
+      "batch_order": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "bf16": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "fp8-scalar": [
+        16,
+        4,
+        8,
+        4
+      ],
+      "fp8-token": [
+        4,
+        16,
+        16,
+        4
+      ]
+    },
+    "decode_warps": 4,
+    "merge_warps": 4,
+    "seed": 20260819,
+    "max_seq_len": 4096,
+    "batches": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "storage_modes": [
+      "bf16",
+      "fp8-scalar",
+      "fp8-token"
+    ],
+    "rtol": 0.03,
+    "atol": 0.03
+  },
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "device_name": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [
+      10,
+      3
+    ]
+  },
+  "source_sha256": {
+    "challenge/cli.py": "ae6aabbb86a32d10f321d0319c801d201b6403779b05cb14daf83b83ba683768",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "harness/triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "harness/data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "harness/reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967"
+  },
+  "results": [
+    {
+      "batch": 1,
+      "storage": "bf16",
+      "chunks": 1,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 2.0406037037901115e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 1,
+      "storage": "fp8-scalar",
+      "chunks": 16,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.6192329844197957e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 1,
+      "storage": "fp8-token",
+      "chunks": 4,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 4.621854714059737e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "bf16",
+      "chunks": 1,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 2.081210141113843e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-scalar",
+      "chunks": 4,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.6185538192512468e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-token",
+      "chunks": 16,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.6135237425914966e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "bf16",
+      "chunks": 1,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 2.058081463474082e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-scalar",
+      "chunks": 8,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 3.583481884561479e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-token",
+      "chunks": 16,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.6790187298029196e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "bf16",
+      "chunks": 1,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 2.0488669179030694e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-scalar",
+      "chunks": 4,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5042646686633816e-06,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-token",
+      "chunks": 4,
+      "decode_warps": 4,
+      "merge_warps": 4,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.629164322977886e-06,
+      "status": "pass"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "all_correctness_and_comparability_gates_pass": true,
+  "allocated_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+  "bootstrap": {
+    "confidence": 0.95,
+    "lower_bound_fraction": 0.034053072960836483,
+    "method": "10,000 deterministic paired-seed resamples; statistic=1-median(candidate)/median(reference)",
+    "required_lower_bound_fraction": 0.0,
+    "required_lower_bound_relation": "strictly greater than",
+    "seed": 20260830
+  },
+  "candidate_paired_median_ms": 0.06355415898375213,
+  "candidate_seed_mean_ms": [
+    0.06349559891968964,
+    0.06344375921413303,
+    0.0636995188333094,
+    0.06345647906884552,
+    0.06361271904781461,
+    0.06368727875873446,
+    0.06369391890242695,
+    0.06343367919325829
+  ],
+  "gpu_uuids": [
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1"
+  ],
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "65bb886cece4a49b7ef7d7d4cab00588e4cc1f9238d2aa45dd5cf36f6952d2a2",
+    "candidate_resource_gate": "c4a6cd69617ce82e99459fcd7a975a37fbfad497e51b36a6ec09945ffa97d6c0",
+    "candidate_v12_plugin": "064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6",
+    "candidate_v12_q_row_padding_source": "535d90b856ed1062aa7b8a105eb2c5f236c450826e65496e646d0d5a27eb8aaf",
+    "driver_script": "262fec98bbf60a4fc5fec6de8e67ff781619cc516acad0af4010433f81b1e5fe",
+    "fixed_fixture": "c1ae99e02d2bd759553eee2efec90011cd2210fefaea9dadc0ab17fb44b55285",
+    "fixture_metadata": "6241cd97ec1a22de690451236be977577d09680da7402f2dcff77667d21f7110",
+    "fresh_v12_directed_final_status": "16026037d3916cf0dc741317e35ca258536ab3a8012f2671a0886e2c49ee2758",
+    "fresh_v12_directed_final_status_sidecar": "9da4e355841c9448683cd82d3281112753e2accdf519b7fdad05b60f8a3bbc5a",
+    "fresh_v12_directed_outputs_manifest": "0b1b512ef6bf0c8a5b461561f6fd4b5b768e4922f75c0285ce8bac37b793bf7a",
+    "fresh_v12_directed_result": "240b683c1b6921981cc814084697ff945a7714de1bace5956f74a09ea38765c8",
+    "fresh_v12_directed_run_manifest": "d07f6028ed6ff0815cb0019a3df30235edc3a3b918cded23b413feaaf94bacde",
+    "reference_v11_job12825_plugin": "501b9c56a29a81f779a35a34b2808b4122af7dcb23e8108d8c590306be43d957",
+    "worker_harness": "32afd7d773b76ba7b9d743a4b00741cd2f5972f4f316a82ee8b3c87ce9b87452"
+  },
+  "issues": [],
+  "paired_median_improvement_fraction": 0.036491182231437325,
+  "paired_seed_improvement_fraction": [
+    0.03638499102295745,
+    0.03745802621383165,
+    0.034217767654155073,
+    0.03804147222954746,
+    0.03585888833157569,
+    0.03495817924684008,
+    0.0337025823355952,
+    0.03884987269990148
+  ],
+  "process_isolation": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "reference_paired_median_ms": 0.06596115968190133,
+  "reference_seed_mean_ms": [
+    0.06589311948046088,
+    0.06591271959245204,
+    0.065956399589777,
+    0.06596591977402567,
+    0.06597863972187043,
+    0.0659943200275302,
+    0.06591543942689895,
+    0.06599768068641423
+  ],
+  "round_order": [
+    "reference_v11_a",
+    "candidate_v12_q_row_padding_b1",
+    "candidate_v12_q_row_padding_b2",
+    "reference_v11_a2"
+  ],
+  "schema": "c2-native-plugin-v12-q-row-padding-vs-v11-3pct-incremental-aggregate-v1",
+  "threshold_provenance": "User-defined strict >3% significance criterion for the current four-hour optimization continuation; this is the single-change incremental v11-to-v12 gate.",
+  "worker_exit_status": {
+    "exit_status": {
+      "candidate_v12_q_row_padding_b1": 0,
+      "candidate_v12_q_row_padding_b2": 0,
+      "reference_v11_a": 0,
+      "reference_v11_a2": 0
+    },
+    "schema": "c2-native-plugin-v12-q-row-padding-worker-exit-status-v1"
+  }
+}

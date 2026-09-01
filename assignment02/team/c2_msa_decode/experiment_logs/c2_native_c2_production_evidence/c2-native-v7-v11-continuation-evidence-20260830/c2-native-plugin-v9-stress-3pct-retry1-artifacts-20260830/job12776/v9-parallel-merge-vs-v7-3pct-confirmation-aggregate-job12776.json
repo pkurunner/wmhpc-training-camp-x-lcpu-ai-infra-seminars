@@ -1,0 +1,86 @@
+{
+  "all_correctness_and_comparability_gates_pass": true,
+  "allocated_gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+  "bootstrap": {
+    "confidence": 0.95,
+    "lower_bound_fraction": 0.2792246601029489,
+    "method": "10,000 deterministic paired-seed resamples; statistic=1-median(candidate)/median(reference)",
+    "seed": 20260830
+  },
+  "candidate_paired_median_ms": 0.12861411936581135,
+  "candidate_seed_mean_ms": [
+    0.12855471938848495,
+    0.12880751941353083,
+    0.12862287931144237,
+    0.128564479239285,
+    0.1286053594201803,
+    0.1287372798472643,
+    0.12889431908726692,
+    0.12857743941247463
+  ],
+  "gpu_uuids": [
+    "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "GPU-0c223cf1-4325-822f-1e38-43ae57897edd"
+  ],
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "1e165d86ef30f38d04952f585dcd4ec82b653a4fc24042b366e68594861c2396",
+    "candidate_resource_gate": "f346fa28c6aaa98b3f3cf0c41c37fce84155c798e06e87d4a7182488ee7c7b01",
+    "candidate_v9_parallel_merge_source": "9956b6b659c8867a00e4651a2482a063e2a1f5f361ef62be93528b97970806ed",
+    "candidate_v9_plugin": "a98a7bee3a5983cce7e824d8539381fc0c2f8e82cdb6f65c9ebfea18284fc592",
+    "driver_script": "f9523fca68dfa36214577efc286c346d41c1f83d246089a7d0165e353169aafc",
+    "fixed_fixture": "4e43a37ee79f0a795d3690198a14a5aa2ad266afe8b605bc02665e8d861ebee6",
+    "fixture_metadata": "bc0740ee9a75f4f1ddfabb300fcf32c2106acee58cac1bf29f31d93d3ca5e5c5",
+    "fresh_v9_directed_final_status": "90a04f93b2e6c52fd94cc09cb2726365a45b4578557723c31f51427d59fcb020",
+    "fresh_v9_directed_result": "a37418941be8ecd47fe30e0d7f0a25539f43acee9958414266868b0356916186",
+    "reference_v7_job12484_plugin": "0873af3cf48ef756f9945fc6e711a03dd1208fcc6d4ce20a8041cf9a587e97db",
+    "worker_harness": "253a23131989a5a3b457c7e8cb7352018d3f0f094beb7aef429134f436ed1b00"
+  },
+  "issues": [],
+  "paired_median_improvement_fraction": 0.28101799262408667,
+  "paired_seed_improvement_fraction": [
+    0.27938015126008753,
+    0.2808108855845588,
+    0.2792246601029489,
+    0.28216147201702435,
+    0.2805809800179586,
+    0.280815322065609,
+    0.27840457818215725,
+    0.2824910110792467
+  ],
+  "process_isolation": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "reference_paired_median_ms": 0.17888364110141994,
+  "reference_seed_mean_ms": [
+    0.17839464124292137,
+    0.17910104148089884,
+    0.17845072131603956,
+    0.17909944120794535,
+    0.17876280143857004,
+    0.17900448076426984,
+    0.17862408101558686,
+    0.17919976111501457
+  ],
+  "round_order": [
+    "reference_v7_a",
+    "candidate_v9_parallel_merge_b1",
+    "candidate_v9_parallel_merge_b2",
+    "reference_v7_a2"
+  ],
+  "schema": "c2-native-plugin-v9-parallel-merge-vs-v7-3pct-confirmation-aggregate-v1",
+  "threshold_provenance": "User-defined strict >3% significance criterion for the current four-hour optimization continuation; this is an incremental v7-to-v9 gate.",
+  "worker_exit_status": {
+    "exit_status": {
+      "candidate_v9_parallel_merge_b1": 0,
+      "candidate_v9_parallel_merge_b2": 0,
+      "reference_v7_a": 0,
+      "reference_v7_a2": 0
+    },
+    "schema": "c2-native-plugin-v9-parallel-merge-worker-exit-status-v1"
+  }
+}

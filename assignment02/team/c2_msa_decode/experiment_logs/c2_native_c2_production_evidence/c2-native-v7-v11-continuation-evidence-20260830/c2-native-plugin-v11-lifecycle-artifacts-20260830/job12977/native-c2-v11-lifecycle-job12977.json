@@ -1,0 +1,859 @@
+{
+  "all_gates_pass": true,
+  "arguments": {
+    "graph_replays_per_static_query": 100,
+    "memory_bound_bytes": 8388608,
+    "seed": 20260830,
+    "steady_iterations": 1000
+  },
+  "boundary": {
+    "covered": "fresh adapter first load, real MiniMaxM3SparseMSAImpl.forward, caller-owned output, FP32 oracle, CUDA Graph replay/static input mutation, native selection matrix, and exact decode sequence-length boundaries",
+    "memory_scope": "synchronized PyTorch allocated/reserved live and peak counters plus cudaMemGetInfo free-memory deltas; this is not a CUDA memory sanitizer",
+    "not_covered": "full model weights, scheduler/server integration, multi-process loading, and an assertion that an unsupported native shape actually executes Triton"
+  },
+  "cuda_graph": {
+    "capture": {
+      "output_pointer": 137728760741888,
+      "query_fp8_pointer": 137729249655808,
+      "real_forward": "MiniMaxM3SparseMSAImpl.forward inside torch.cuda.graph",
+      "shared_bf16_query_pointer": 137729250164736
+    },
+    "checks": {
+      "capture_preserved_output_pointer": true,
+      "graph_output_changes_after_static_input_update": true,
+      "in_place_query_update_second_oracle": true,
+      "original_query_replays": true,
+      "query_fp8_static_pointer_unchanged": true,
+      "second_oracle_differs_from_first": true,
+      "shared_bf16_query_static_pointer_unchanged": true
+    },
+    "original_query": {
+      "oracle_checksum": "2f72268f79b6deae1fbf27377941d4d81a99d2bd6ed7147a55c1f5ddd7139ef2",
+      "query_fp8_checksum": "ab5e90b3f866d7291f2c12ff517c9abad890729715992f2f009ea470194251be",
+      "replays": {
+        "canonical_output_checksum": "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23",
+        "checks": {
+          "allocated_reserved_peak_and_device_free_bounded": true,
+          "at_least_100_replays": true,
+          "bitwise_repeatable_every_replay": true,
+          "caller_owned_output_pointer_every_replay": true,
+          "fp32_oracle_every_replay": true,
+          "memory_allocated_samples_bounded": true
+        },
+        "cuda_memory_counters": {
+          "after": {
+            "allocated_bytes": 102381056,
+            "device_free_bytes": 286374100992,
+            "device_total_bytes": 287428640768,
+            "reserved_bytes": 140509184
+          },
+          "before": {
+            "allocated_bytes": 102118912,
+            "device_free_bytes": 286376198144,
+            "device_total_bytes": 287428640768,
+            "reserved_bytes": 138412032
+          },
+          "bound_bytes": 8388608,
+          "checks": {
+            "device_free_drop_bounded": true,
+            "device_total_unchanged": true,
+            "end_allocated_growth_bounded": true,
+            "end_reserved_growth_bounded": true,
+            "peak_allocated_growth_bounded": true,
+            "peak_reserved_growth_bounded": true
+          },
+          "pass": true,
+          "peak_allocated_bytes": 106051072,
+          "peak_reserved_bytes": 140509184,
+          "positive_growth": {
+            "device_free_drop_bytes": 2097152,
+            "end_allocated_bytes": 262144,
+            "end_reserved_bytes": 2097152,
+            "peak_allocated_bytes": 3932160,
+            "peak_reserved_bytes": 2097152
+          }
+        },
+        "first_and_last_output_checksums": [
+          "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23",
+          "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23"
+        ],
+        "max_abs_over_replays": 6.103515625e-05,
+        "max_mean_abs_over_replays": 3.5164921428076923e-06,
+        "memory_allocated": {
+          "baseline_bytes": 102118912,
+          "bound_bytes": 8388608,
+          "checks": {
+            "within_absolute_bound_from_baseline": true,
+            "within_observed_range_bound": true
+          },
+          "max_bytes": 102381056,
+          "max_minus_baseline_bytes": 262144,
+          "max_minus_min_bytes": 0,
+          "min_bytes": 102381056,
+          "pass": true
+        },
+        "pass": true,
+        "replays": 100
+      },
+      "shared_bf16_checksum": "d08cf81439a11adda1a91c91e40c1b4d0ab128782f39f0c75f75058f96ae2b0f"
+    },
+    "pass": true,
+    "updated_query": {
+      "oracle_checksum": "9f9c26494f5a88f953e5d6969b086adffc641a6c2512c2d85c608dba23a3b785",
+      "query_fp8_checksum": "5d888751aefbf2796537e9cb1e7ff46eeca29b756241a0b3c33348c0964bac93",
+      "replays": {
+        "canonical_output_checksum": "43f39f58e586c54dc3a5c109c922f730bb0be3c0c8193db5e8cb8e048b618ac6",
+        "checks": {
+          "allocated_reserved_peak_and_device_free_bounded": true,
+          "at_least_100_replays": true,
+          "bitwise_repeatable_every_replay": true,
+          "caller_owned_output_pointer_every_replay": true,
+          "fp32_oracle_every_replay": true,
+          "memory_allocated_samples_bounded": true
+        },
+        "cuda_memory_counters": {
+          "after": {
+            "allocated_bytes": 102774272,
+            "device_free_bytes": 285700915200,
+            "device_total_bytes": 287428640768,
+            "reserved_bytes": 813694976
+          },
+          "before": {
+            "allocated_bytes": 102512128,
+            "device_free_bytes": 285700915200,
+            "device_total_bytes": 287428640768,
+            "reserved_bytes": 813694976
+          },
+          "bound_bytes": 8388608,
+          "checks": {
+            "device_free_drop_bounded": true,
+            "device_total_unchanged": true,
+            "end_allocated_growth_bounded": true,
+            "end_reserved_growth_bounded": true,
+            "peak_allocated_growth_bounded": true,
+            "peak_reserved_growth_bounded": true
+          },
+          "pass": true,
+          "peak_allocated_bytes": 106444288,
+          "peak_reserved_bytes": 813694976,
+          "positive_growth": {
+            "device_free_drop_bytes": 0,
+            "end_allocated_bytes": 262144,
+            "end_reserved_bytes": 0,
+            "peak_allocated_bytes": 3932160,
+            "peak_reserved_bytes": 0
+          }
+        },
+        "first_and_last_output_checksums": [
+          "43f39f58e586c54dc3a5c109c922f730bb0be3c0c8193db5e8cb8e048b618ac6",
+          "43f39f58e586c54dc3a5c109c922f730bb0be3c0c8193db5e8cb8e048b618ac6"
+        ],
+        "max_abs_over_replays": 6.103515625e-05,
+        "max_mean_abs_over_replays": 3.5016487345274072e-06,
+        "memory_allocated": {
+          "baseline_bytes": 102512128,
+          "bound_bytes": 8388608,
+          "checks": {
+            "within_absolute_bound_from_baseline": true,
+            "within_observed_range_bound": true
+          },
+          "max_bytes": 102774272,
+          "max_minus_baseline_bytes": 262144,
+          "max_minus_min_bytes": 0,
+          "min_bytes": 102774272,
+          "pass": true
+        },
+        "pass": true,
+        "replays": 100
+      },
+      "shared_bf16_checksum": "71496aefbc68b02b6266ea9254006d7abaa1d623fb657fe54a25972cb47fdcb3"
+    }
+  },
+  "dispatcher_surface_after_lifecycle": {
+    "after_all_lifecycle_checks": {
+      "dispatch_sha256": "47343f41e755b9cd1fba03a5fc17a80e73da641f4d9cec9971ce5ed83ed5b9c9",
+      "native_cuda_registered": true,
+      "native_schema": [
+        "_C::native_c2_msa_decode(Tensor($0! -> ) output, Tensor query_fp8, Tensor kv_cache, Tensor topk, Tensor block_table, Tensor seq_lens, float scale, float q_scale, float k_scale, float v_scale) -> ()"
+      ],
+      "op_count": 102,
+      "ops_sha256": "4e359ae3e5369f9229776529cd67c59bed38be24bc7d1a12db631d90f08eba4a",
+      "schemas_sha256": "c4f0ab79f1ece7f72a26fb8c18203ed2cfcd00272b90c64faa96cbd88d60f203"
+    },
+    "after_first_load": {
+      "dispatch_sha256": "47343f41e755b9cd1fba03a5fc17a80e73da641f4d9cec9971ce5ed83ed5b9c9",
+      "native_cuda_registered": true,
+      "native_schema": [
+        "_C::native_c2_msa_decode(Tensor($0! -> ) output, Tensor query_fp8, Tensor kv_cache, Tensor topk, Tensor block_table, Tensor seq_lens, float scale, float q_scale, float k_scale, float v_scale) -> ()"
+      ],
+      "op_count": 102,
+      "ops_sha256": "4e359ae3e5369f9229776529cd67c59bed38be24bc7d1a12db631d90f08eba4a",
+      "schemas_sha256": "c4f0ab79f1ece7f72a26fb8c18203ed2cfcd00272b90c64faa96cbd88d60f203"
+    },
+    "checks": {
+      "complete_dispatch_tables_unchanged_after_first_load": true,
+      "native_cuda_kernel_still_registered": true,
+      "op_names_unchanged_after_first_load": true,
+      "schemas_unchanged_after_first_load": true
+    },
+    "pass": true
+  },
+  "dynamic_rejection_gate": {
+    "fallback_boundary": "False is only a native selection/rejection result; Triton execution is not asserted.",
+    "mode": "selection_only",
+    "pass": true,
+    "rows": [
+      {
+        "case": "batch_1",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "batch_4",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "batch_8",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "decode_query_len_2_rows_32",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "topk_15",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "page_size_64",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "query_dtype_bfloat16",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      },
+      {
+        "case": "nonpositive_scale",
+        "checks": {
+          "native_selection_rejected": true,
+          "rejected_call_did_not_modify_output": true,
+          "zero_native_cuda_kernel_events": true,
+          "zero_native_dispatcher_events": true
+        },
+        "dispatcher_event_count": 0,
+        "native_cuda_kernel_event_count": 0,
+        "pass": true
+      }
+    ]
+  },
+  "environment": {
+    "base_harness": "/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py",
+    "base_harness_sha256": "7883edc25df48e3b69a9f4948775a1baafd3ba0b1bd17edcfeac6644aa7b4762",
+    "gpu": {
+      "compute_capability": [
+        10,
+        3
+      ],
+      "cuda_device": "cuda:0",
+      "cuda_visible_devices": "0",
+      "name": "NVIDIA B300 SXM6 AC",
+      "nvidia_smi_error": null,
+      "nvidia_smi_visible_uuids": [
+        "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a"
+      ]
+    },
+    "torch_cuda": "13.0",
+    "torch_version": "2.13.0+cu130",
+    "vllm_import_root": "/home/lcpu/85117379/c2-native-plugin-v11-lifecycle-runtime-20260830/job12977/vllm"
+  },
+  "first_load": {
+    "added_ops": [
+      "_C::native_c2_msa_decode"
+    ],
+    "added_schema_keys": [
+      "_C::native_c2_msa_decode"
+    ],
+    "after": {
+      "dispatch_sha256": "47343f41e755b9cd1fba03a5fc17a80e73da641f4d9cec9971ce5ed83ed5b9c9",
+      "native_cuda_registered": true,
+      "native_schema": [
+        "_C::native_c2_msa_decode(Tensor($0! -> ) output, Tensor query_fp8, Tensor kv_cache, Tensor topk, Tensor block_table, Tensor seq_lens, float scale, float q_scale, float k_scale, float v_scale) -> ()"
+      ],
+      "op_count": 102,
+      "ops_sha256": "4e359ae3e5369f9229776529cd67c59bed38be24bc7d1a12db631d90f08eba4a",
+      "schemas_sha256": "c4f0ab79f1ece7f72a26fb8c18203ed2cfcd00272b90c64faa96cbd88d60f203"
+    },
+    "before": {
+      "dispatch_sha256": "0b66e9cada28386ce69b169c223b31a2922a393fc828664214304f737ca053ed",
+      "native_cuda_registered": false,
+      "native_schema": [],
+      "op_count": 101,
+      "ops_sha256": "57530e322cf0936a13cb42be3a9b6d86f287f3649ef210a122048d4bd1622032",
+      "schemas_sha256": "93ac0f7df057dfac32b10ae45dc0ccb4d3a16fa4e029f3e9292d839b690f411b"
+    },
+    "checks": {
+      "eight_thread_first_load": true,
+      "native_cuda_kernel_registered": true,
+      "native_op_absent_before_loader": true,
+      "only_native_op_added": true,
+      "only_native_schema_added": true,
+      "preexisting_dispatch_tables_unchanged": true,
+      "preexisting_schemas_unchanged": true
+    },
+    "concurrent_loader": {
+      "alive_thread_indices": [],
+      "barrier": "threading.Barrier(8), then adapter._load_native_c2_plugin_once",
+      "checks": {
+        "all_loader_results_true": true,
+        "all_threads_joined": true,
+        "exactly_eight_threads": true,
+        "exactly_one_real_load_library_call": true,
+        "no_thread_exception": true
+      },
+      "errors": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instrumentation": "counted torch.ops.load_library with 0.1 s GIL-releasing delay before the real call",
+      "load_library_call_count": 1,
+      "pass": true,
+      "thread_count": 8,
+      "values": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "pass": true,
+    "removed_ops": [],
+    "removed_schema_keys": []
+  },
+  "gates": {
+    "cuda_graph_capture_replay_and_static_query_update": true,
+    "dispatcher_surface_persists_through_lifecycle": true,
+    "dynamic_native_rejection_without_fallback_claim": true,
+    "fresh_adapter_eight_thread_first_load": true,
+    "native_forward_sequence_boundaries": true,
+    "native_support_predicate_matrix": true,
+    "real_forward_reaches_dispatcher_and_native_cuda_kernel": true,
+    "steady_1000_real_forward_lifecycle": true
+  },
+  "lifecycle_core": {
+    "cuda_graph_replays_per_static_query": 100,
+    "exactly_eight_threads": 8,
+    "schema": "c2-native-c2-v11-lifecycle-core-binding-v1",
+    "sha256": "5ca35d63101de99ab5827470e37e275f7019a7f68dcbf7a6dcaec2ef892a0788",
+    "staged_path": "/home/lcpu/85117379/c2-native-plugin-v11-lifecycle-runtime-20260830/job12977/c2_lifecycle_core.py",
+    "steady_real_forwards": 1000
+  },
+  "profiled_real_forward": {
+    "checks": {
+      "caller_owned_output_pointer": true,
+      "one_dispatcher_event": true,
+      "one_native_cuda_kernel_event": true,
+      "oracle_correct": true
+    },
+    "correctness": {
+      "allclose": true,
+      "atol": 0.0001,
+      "finite": true,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5164921428076923e-06,
+      "oracle": "frozen base FP32 selected-page oracle over exact native BF16-staged FP8 inputs",
+      "pass": true,
+      "rtol": 0.001
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "key": "_C::native_c2_msa_decode"
+      }
+    ],
+    "pass": true
+  },
+  "schema": "c2-native-c2-v11-production-lifecycle-v1",
+  "sequence_length_boundaries": {
+    "execution_boundary": "Each row executes real MiniMaxM3SparseMSAImpl.forward. A selection pass is not a claimed Triton fallback test.",
+    "pass": true,
+    "rows": [
+      {
+        "checks": {
+          "caller_owned_output_pointer": true,
+          "exact_requested_sequence_length": true,
+          "fp32_oracle_correctness": true,
+          "native_metadata_without_cutlass_plan": true,
+          "native_static_selection": true,
+          "one_token_boundary_is_tolerance_sensitive": true,
+          "profiled_native_dispatcher_and_kernel": true
+        },
+        "correctness": {
+          "allclose": true,
+          "atol": 0.0001,
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 3.49439142155461e-06,
+          "oracle": "frozen base FP32 selected-page oracle over exact native BF16-staged FP8 inputs",
+          "pass": true,
+          "rtol": 0.001
+        },
+        "input_checksums": {
+          "kv_fp8": "8c4aadbdbe7d5749647904c44a5ee0ed87602a89d31b1df0ac35bd414d4e0b15",
+          "query_fp8": "32e428706e2f53d186516e48a5417d5cf0c021db0bd14c65fa900ef5a3d988b4",
+          "seq_lens": "8a80095ab70a9e4f16465f2e172d4ceed20b02596de67e63d42bc3f68d74988d",
+          "topk_token_major": "354f4c770b9a88979585edac38240ab3684fe26bad8c8f0f98211af27aea1bea"
+        },
+        "one_token_short_negative_control": {
+          "comparison_against_actual": {
+            "allclose": false,
+            "atol": 0.0001,
+            "finite": true,
+            "max_abs": 0.000202178955078125,
+            "mean_abs": 3.890482184942812e-05,
+            "oracle": "one-token-short FP32 negative control; this oracle must not pass the production tolerance",
+            "pass": false,
+            "rtol": 0.001
+          },
+          "oracle_checksum": "b0b20729f6aa2408b4bd4cc353d8f60521f13ac7b0091b7c1581bfb51c622ac0",
+          "pass": true,
+          "sequence_length": 2047
+        },
+        "output_checksum": "77359f56dd76c83cbece164511c9f3cc59f5b55548bfb263ad543b9662415e61",
+        "pass": true,
+        "profile": {
+          "cuda_kernel_events": [
+            {
+              "count": 1,
+              "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+            }
+          ],
+          "dispatcher_events": [
+            {
+              "count": 1,
+              "key": "_C::native_c2_msa_decode"
+            }
+          ]
+        },
+        "sequence_length": 2048
+      },
+      {
+        "checks": {
+          "caller_owned_output_pointer": true,
+          "exact_requested_sequence_length": true,
+          "fp32_oracle_correctness": true,
+          "native_metadata_without_cutlass_plan": true,
+          "native_static_selection": true,
+          "one_token_boundary_is_tolerance_sensitive": true,
+          "profiled_native_dispatcher_and_kernel": true
+        },
+        "correctness": {
+          "allclose": true,
+          "atol": 0.0001,
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 3.643790478236042e-06,
+          "oracle": "frozen base FP32 selected-page oracle over exact native BF16-staged FP8 inputs",
+          "pass": true,
+          "rtol": 0.001
+        },
+        "input_checksums": {
+          "kv_fp8": "f9f08ec06e74074c300116e4ae79c8218d2c0eac498e69732dfe922a8bd5458b",
+          "query_fp8": "11700800a8fcd298ec38ebddccb99be02a96bab468022bf039a4d0ad4013e7e4",
+          "seq_lens": "3f4b7ee126a668ea7cc5b7998a60b2b057d7d0e053c3483f7d12d1f19ee374c8",
+          "topk_token_major": "ee946311c1f564286a6b1ece7f82304856da6de2043ad0dd225cdf7dc5d503a2"
+        },
+        "one_token_short_negative_control": {
+          "comparison_against_actual": {
+            "allclose": false,
+            "atol": 0.0001,
+            "finite": true,
+            "max_abs": 0.00025177001953125,
+            "mean_abs": 4.1186467569787055e-05,
+            "oracle": "one-token-short FP32 negative control; this oracle must not pass the production tolerance",
+            "pass": false,
+            "rtol": 0.001
+          },
+          "oracle_checksum": "e49413e31b9a4173b2ab2f7773a9c51982ed5ba1729ec01331f92e13ac39000d",
+          "pass": true,
+          "sequence_length": 2048
+        },
+        "output_checksum": "cd0deb4182adb1222d2f6cfad5c751b98b0bbe90c0761a2701d0d58a3ee906b1",
+        "pass": true,
+        "profile": {
+          "cuda_kernel_events": [
+            {
+              "count": 1,
+              "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+            }
+          ],
+          "dispatcher_events": [
+            {
+              "count": 1,
+              "key": "_C::native_c2_msa_decode"
+            }
+          ]
+        },
+        "sequence_length": 2049
+      },
+      {
+        "checks": {
+          "caller_owned_output_pointer": true,
+          "exact_requested_sequence_length": true,
+          "fp32_oracle_correctness": true,
+          "native_metadata_without_cutlass_plan": true,
+          "native_static_selection": true,
+          "one_token_boundary_is_tolerance_sensitive": true,
+          "profiled_native_dispatcher_and_kernel": true
+        },
+        "correctness": {
+          "allclose": true,
+          "atol": 0.0001,
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 3.5234741062595276e-06,
+          "oracle": "frozen base FP32 selected-page oracle over exact native BF16-staged FP8 inputs",
+          "pass": true,
+          "rtol": 0.001
+        },
+        "input_checksums": {
+          "kv_fp8": "1cce490ff0bc653717ad977a7e51bbdd0d32beda00e7efa4b5b9039819f151b2",
+          "query_fp8": "6d41462aec54eeb017793aff467e020d2223825454c6aa5aefecf04f996734e2",
+          "seq_lens": "3977624c1173b241c238ceb51ff77cf951de69def95de22240572b34bfbbac8d",
+          "topk_token_major": "762d8bf61f27f1ef132bc96664eb61d0b8965c93be07a5b8e5921fa579697052"
+        },
+        "one_token_short_negative_control": {
+          "comparison_against_actual": {
+            "allclose": false,
+            "atol": 0.0001,
+            "finite": true,
+            "max_abs": 0.0001983642578125,
+            "mean_abs": 3.860431752400473e-05,
+            "oracle": "one-token-short FP32 negative control; this oracle must not pass the production tolerance",
+            "pass": false,
+            "rtol": 0.001
+          },
+          "oracle_checksum": "3c023eebe2320d55dccc9dba5e856f98379d1fa1d2742c0a39f877a13cb761e4",
+          "pass": true,
+          "sequence_length": 4094
+        },
+        "output_checksum": "f8359b749292f2629de5233e212c140c4025c882955cc14b4fb1dfdb10aee67b",
+        "pass": true,
+        "profile": {
+          "cuda_kernel_events": [
+            {
+              "count": 1,
+              "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+            }
+          ],
+          "dispatcher_events": [
+            {
+              "count": 1,
+              "key": "_C::native_c2_msa_decode"
+            }
+          ]
+        },
+        "sequence_length": 4095
+      },
+      {
+        "checks": {
+          "caller_owned_output_pointer": true,
+          "exact_requested_sequence_length": true,
+          "fp32_oracle_correctness": true,
+          "native_metadata_without_cutlass_plan": true,
+          "native_static_selection": true,
+          "one_token_boundary_is_tolerance_sensitive": true,
+          "profiled_native_dispatcher_and_kernel": true
+        },
+        "correctness": {
+          "allclose": true,
+          "atol": 0.0001,
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 3.5266216400486883e-06,
+          "oracle": "frozen base FP32 selected-page oracle over exact native BF16-staged FP8 inputs",
+          "pass": true,
+          "rtol": 0.001
+        },
+        "input_checksums": {
+          "kv_fp8": "d3d7914589f0c9ea689c26e5253d0635d08731f21d3deaa903881a14dfbd457c",
+          "query_fp8": "170487921ed35e7582b627e1b42fd4690db89bb88cee79514f272936469afeeb",
+          "seq_lens": "13b8eecbdb7564a076514f1ce6c8a874ea22c11db0d92814262dc08f58f67a10",
+          "topk_token_major": "762d8bf61f27f1ef132bc96664eb61d0b8965c93be07a5b8e5921fa579697052"
+        },
+        "one_token_short_negative_control": {
+          "comparison_against_actual": {
+            "allclose": false,
+            "atol": 0.0001,
+            "finite": true,
+            "max_abs": 0.000213623046875,
+            "mean_abs": 3.959062087233178e-05,
+            "oracle": "one-token-short FP32 negative control; this oracle must not pass the production tolerance",
+            "pass": false,
+            "rtol": 0.001
+          },
+          "oracle_checksum": "bbe6a80c868cf2ca048b71681ad4206776b41ead334ba15ba01a4ec945d9131f",
+          "pass": true,
+          "sequence_length": 4095
+        },
+        "output_checksum": "43f4a760784064acac1781ad47960d58be81eeb66551cfa86f0866d7c11673a3",
+        "pass": true,
+        "profile": {
+          "cuda_kernel_events": [
+            {
+              "count": 1,
+              "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+            }
+          ],
+          "dispatcher_events": [
+            {
+              "count": 1,
+              "key": "_C::native_c2_msa_decode"
+            }
+          ]
+        },
+        "sequence_length": 4096
+      }
+    ]
+  },
+  "steady_lifecycle": {
+    "canonical_output_checksum": "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23",
+    "checks": {
+      "allocated_reserved_peak_and_device_free_bounded": true,
+      "at_least_1000_real_forward_calls": true,
+      "bitwise_repeatable_every_call": true,
+      "caller_owned_output_pointer_every_call": true,
+      "fp32_oracle_every_call": true,
+      "memory_allocated_samples_bounded": true
+    },
+    "cuda_memory_counters": {
+      "after": {
+        "allocated_bytes": 102117888,
+        "device_free_bytes": 285778509824,
+        "device_total_bytes": 287428640768,
+        "reserved_bytes": 811597824
+      },
+      "before": {
+        "allocated_bytes": 102117888,
+        "device_free_bytes": 285778509824,
+        "device_total_bytes": 287428640768,
+        "reserved_bytes": 811597824
+      },
+      "bound_bytes": 8388608,
+      "checks": {
+        "device_free_drop_bounded": true,
+        "device_total_unchanged": true,
+        "end_allocated_growth_bounded": true,
+        "end_reserved_growth_bounded": true,
+        "peak_allocated_growth_bounded": true,
+        "peak_reserved_growth_bounded": true
+      },
+      "pass": true,
+      "peak_allocated_bytes": 105787904,
+      "peak_reserved_bytes": 811597824,
+      "positive_growth": {
+        "device_free_drop_bytes": 0,
+        "end_allocated_bytes": 0,
+        "end_reserved_bytes": 0,
+        "peak_allocated_bytes": 3670016,
+        "peak_reserved_bytes": 0
+      }
+    },
+    "first_and_last_output_checksums": [
+      "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23",
+      "2640ea59ac91ed4c976a0328dc632562e276a9ec787e28d437504893250a4f23"
+    ],
+    "iterations": 1000,
+    "max_abs_over_calls": 6.103515625e-05,
+    "max_mean_abs_over_calls": 3.5164921428076923e-06,
+    "memory_allocated": {
+      "baseline_bytes": 102117888,
+      "bound_bytes": 8388608,
+      "checks": {
+        "within_absolute_bound_from_baseline": true,
+        "within_observed_range_bound": true
+      },
+      "max_bytes": 102117888,
+      "max_minus_baseline_bytes": 0,
+      "max_minus_min_bytes": 0,
+      "min_bytes": 102117888,
+      "pass": true
+    },
+    "pass": true
+  },
+  "support_predicate_matrix": {
+    "fallback_boundary": "False proves only that native selection rejects the contract. This harness does not claim that a vLLM Triton fallback kernel executed.",
+    "pass": true,
+    "rows": [
+      {
+        "actual": true,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 4,
+          "num_q_heads": 64,
+          "page_size": 128,
+          "topk_blocks": 16
+        },
+        "case": "exact_native_contract",
+        "expected": true,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "triton",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 4,
+          "num_q_heads": 64,
+          "page_size": 128,
+          "topk_blocks": 16
+        },
+        "case": "triton_backend",
+        "expected": false,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 4,
+          "num_q_heads": 32,
+          "page_size": 128,
+          "topk_blocks": 16
+        },
+        "case": "wrong_query_heads",
+        "expected": false,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 8,
+          "num_q_heads": 64,
+          "page_size": 128,
+          "topk_blocks": 16
+        },
+        "case": "wrong_kv_heads",
+        "expected": false,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e5m2",
+          "num_kv_heads": 4,
+          "num_q_heads": 64,
+          "page_size": 128,
+          "topk_blocks": 16
+        },
+        "case": "unsupported_fp8_format",
+        "expected": false,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 4,
+          "num_q_heads": 64,
+          "page_size": 64,
+          "topk_blocks": 16
+        },
+        "case": "wrong_page_size",
+        "expected": false,
+        "pass": true
+      },
+      {
+        "actual": false,
+        "arguments": {
+          "decode_backend": "native_c2",
+          "kv_cache_dtype": "fp8_e4m3",
+          "num_kv_heads": 4,
+          "num_q_heads": 64,
+          "page_size": 128,
+          "topk_blocks": 8
+        },
+        "case": "wrong_topk",
+        "expected": false,
+        "pass": true
+      }
+    ],
+    "selector": "supports_native_c2_sparse_decode"
+  }
+}

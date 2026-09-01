@@ -1,0 +1,23 @@
+
+===== PRE UTC 2026-08-28T22:22:29Z job=10873 =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/audited-reference/runner SHA256 --
+8f4c36d61f023e74a1fae64f00c022ed7dee002f9ce4c506f90113cee65003da  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_batch_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+a9fb937e2687e47cad260a5d89cceb206cb50a015a92e35a6139cecaeb35ba69  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_warp_batch_abba_clean.sh
+{"evidence": {"scalar": {"ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "ptx_shuffle_down": 0, "ptx_shuffle_index": 0, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1, "sass_shuffle_down": 0, "sass_shuffle_index": 0}, "warp": {"ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "ptx_shuffle_down": 160, "ptx_shuffle_index": 32, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1, "sass_shuffle_down": 160, "sass_shuffle_index": 32}}, "symbol_scoped_instruction_gate": "pass"}
+{"json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_warp_batch_abba/c2_cluster_attention_warp_batch_abba_clean_20260828T222229Z_job10873.json", "per_batch_promotion": {"1": true, "16": true, "4": true, "8": true}, "secondary_gate": "pass"}
+
+===== POST UTC 2026-08-28T22:22:46Z job=10873 =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/audited-reference/runner SHA256 --
+8f4c36d61f023e74a1fae64f00c022ed7dee002f9ce4c506f90113cee65003da  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_batch_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+a9fb937e2687e47cad260a5d89cceb206cb50a015a92e35a6139cecaeb35ba69  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_warp_batch_abba_clean.sh
+Native batched ABI scalar/warp ABBA completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_warp_batch_abba/c2_cluster_attention_warp_batch_abba_clean_20260828T222229Z_job10873.json
+
+===== FINAL_RC=0 =====

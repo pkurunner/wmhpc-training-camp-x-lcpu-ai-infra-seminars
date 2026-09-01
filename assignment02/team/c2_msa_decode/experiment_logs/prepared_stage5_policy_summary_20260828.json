@@ -1,0 +1,79 @@
+{
+  "schema": "c2-prepared-stage5-policy-summary-v1",
+  "generated_at_utc": "2026-08-28T19:18:00Z",
+  "boundary": "B300 SM103, BF16, prepared C=1 decode; stage-3 control versus stage-5 candidate; B=4/8 two-base-seed policy evidence",
+  "slurm_job": 10684,
+  "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+  "wrapper_final_rc": 3,
+  "wrapper_rc_contract": "RC=3 means at least one validated comparison missed the predeclared 1.10 speedup threshold; it is not a correctness, isolation, or evidence failure.",
+  "protocol": {
+    "storage": "bf16",
+    "num_topk_chunks": 1,
+    "merge_bypassed": true,
+    "control_decode_stages": 3,
+    "candidate_decode_stages": 5,
+    "only_changed_field": "decode_num_stages",
+    "warmup_each": 30,
+    "abba_pairs": 101,
+    "samples_per_path": 202,
+    "base_seeds": [20260828, 20260829],
+    "batches": [4, 8],
+    "strict_speedup_threshold": 1.1,
+    "oracle": "independent FP32 selected-page causal-attention reference"
+  },
+  "runs": [
+    {
+      "batch": 4,
+      "base_seed": 20260828,
+      "problem_seed": 20260832,
+      "control_median_us": 29.08799983561039,
+      "candidate_median_us": 29.039999470114708,
+      "speedup_stage5_vs_stage3": 1.0016529051780831,
+      "strict_10_percent_target_met": false,
+      "correctness_and_evidence_gates": true
+    },
+    {
+      "batch": 4,
+      "base_seed": 20260829,
+      "problem_seed": 20260833,
+      "control_median_us": 29.08799983561039,
+      "candidate_median_us": 29.055999591946602,
+      "speedup_stage5_vs_stage3": 1.0011013299873757,
+      "strict_10_percent_target_met": false,
+      "correctness_and_evidence_gates": true
+    },
+    {
+      "batch": 8,
+      "base_seed": 20260828,
+      "problem_seed": 20260836,
+      "control_median_us": 29.152000322937965,
+      "candidate_median_us": 28.543999418616295,
+      "speedup_stage5_vs_stage3": 1.021300480546014,
+      "strict_10_percent_target_met": false,
+      "correctness_and_evidence_gates": true
+    },
+    {
+      "batch": 8,
+      "base_seed": 20260829,
+      "problem_seed": 20260837,
+      "control_median_us": 29.200000688433647,
+      "candidate_median_us": 28.495999984443188,
+      "speedup_stage5_vs_stage3": 1.0247052465038882,
+      "strict_10_percent_target_met": false,
+      "correctness_and_evidence_gates": true
+    }
+  ],
+  "decision": {
+    "batch_4": "Keep stage 3; both seeds show about 0.1 percent, far below the 10 percent policy threshold.",
+    "batch_8": "Keep stage 3; both seeds show about 2.1-2.5 percent, far below the 10 percent policy threshold.",
+    "batch_1": "Unchanged: stage 5 remains an opt-in B300 BF16 C=1 specialization based on two-GPU evidence.",
+    "fp8": "Still requires a separately frozen experiment because scale mode and selected C differ from BF16."
+  },
+  "evidence": {
+    "directory": "experiment_logs/prepared_stage5_policy_abba",
+    "manifest": "experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_job10684.sha256",
+    "runner_sha256": "2e717b3f95e406ef4af4ad8a44a63c8960fbbc80a9e96f19f5414e365a6a981c",
+    "pre_and_post_gpu_empty": true,
+    "all_four_json_validated": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "aggregate_sha256": "c79c6de05741bba52706788744d171270a7f35307ede795e1ceb399e1e20962e",
+  "all_correctness_and_resource_identity_gates_pass": true,
+  "cross_gpu_claim": "none; same physical GPU only.",
+  "performance": {
+    "bootstrap_95pct_lower_bound_fraction": 0.02294664234650312,
+    "paired_median_improvement_fraction": 0.024045255515675545,
+    "required_bootstrap_lower_bound_fraction": 0.0,
+    "required_bootstrap_lower_bound_relation": "strictly greater than",
+    "required_improvement_fraction": 0.03,
+    "required_improvement_relation": "strictly greater than"
+  },
+  "rejection_policy": "Return 3 if valid but non-significant; retain v12. Return 2 if identity/correctness/comparability fails.",
+  "schema": "c2-native-plugin-v14-kv-stage-padding-vs-v12-3pct-incremental-decision-v1"
+}

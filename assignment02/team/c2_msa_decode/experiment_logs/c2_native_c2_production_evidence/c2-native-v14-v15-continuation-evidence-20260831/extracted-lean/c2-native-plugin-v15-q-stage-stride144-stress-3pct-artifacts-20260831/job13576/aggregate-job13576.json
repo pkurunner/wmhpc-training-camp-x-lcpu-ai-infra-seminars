@@ -1,0 +1,65 @@
+{
+  "allocated_gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+  "bootstrap": {
+    "confidence": 0.95,
+    "lower_bound_fraction": -0.0011928154335800745,
+    "method": "10,000 deterministic paired-seed resamples; statistic=median(1-candidate/reference)",
+    "required_lower_bound_fraction": 0.0,
+    "seed": 20260831
+  },
+  "candidate_seed_mean_ms": [
+    0.10966352170333266,
+    0.10960304154083134,
+    0.10972000151872635,
+    0.10963696153834462,
+    0.10989384146407247,
+    0.10965360159054399,
+    0.10979560144245624,
+    0.10971472153440118
+  ],
+  "fixture_meta_sha256": "263f105802039fef5c6ac623d8e6263da40eea1a5656fc75efd14ff9a0371a9e",
+  "fixture_sha256": "25769f0f09a68989e533e067ef64a1441ea577ada3d4b910262bfdedf9103242",
+  "paired_median_improvement_fraction": -0.0009713217042129907,
+  "paired_seed_improvement_fraction": [
+    -0.0009463410593391064,
+    -0.0006259284297447376,
+    -0.0010079488043619467,
+    -0.0005636370036437022,
+    -0.002486384898459315,
+    -0.0011928154335800745,
+    -0.000996302349086875,
+    -0.0006238297101761603
+  ],
+  "process_isolation": {
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "reference_seed_mean_ms": [
+    0.10955984072759747,
+    0.10953448079526425,
+    0.10960952073335647,
+    0.10957520090043545,
+    0.10962128076702357,
+    0.10952296091243624,
+    0.10968632070347667,
+    0.10964632090181112
+  ],
+  "round_order": [
+    "A",
+    "B1",
+    "B2",
+    "A2"
+  ],
+  "schema": "c2-native-plugin-v15-q-stage-stride144-vs-v12-3pct-incremental-aggregate-v1",
+  "seeds": [
+    17,
+    23,
+    42,
+    2024,
+    314159,
+    20260801,
+    20260815,
+    20260829
+  ],
+  "threshold_provenance": "Strict >3% point improvement plus bootstrap LCB >0, single-change v12-to-v15 gate."
+}

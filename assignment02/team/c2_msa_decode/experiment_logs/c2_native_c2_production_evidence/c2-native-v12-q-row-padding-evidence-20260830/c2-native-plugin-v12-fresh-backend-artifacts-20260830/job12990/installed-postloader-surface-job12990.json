@@ -1,0 +1,9 @@
+{
+  "added_ops": [
+    "_C::native_c2_msa_decode"
+  ],
+  "all_baseline_op_names_preserved": true,
+  "native_c2_has_cuda_kernel": true,
+  "plugin_sha256": "064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6",
+  "schema": "c2-native-plugin-v12-installed-postloader-surface-v1"
+}

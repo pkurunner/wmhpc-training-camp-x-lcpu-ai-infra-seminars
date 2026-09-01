@@ -1,0 +1,15 @@
+{
+  "bootstrap_95pct_lower_bound_fraction": 0.12782150442086837,
+  "directed_all_gates_pass": true,
+  "directed_job_id": 12904,
+  "inputs_sha256": {
+    "directed_result": "7567626bc80950303bde34bf3e9e5062be2338bb927c19a4184b4245dde58f93",
+    "stress_aggregate": "85b9489cc36155a18c239729f4fcea7b746c67c7c3bed8b10944c73ddd7635b9",
+    "stress_decision": "ae34d33010be4f71bc9bfbbd2a0f8857e04c6071099314f538c6b406735b1569"
+  },
+  "one_physical_gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+  "paired_median_improvement_fraction": 0.12814628042666487,
+  "schema": "c2-native-plugin-v11-wheel-promotion-prerequisites-v1",
+  "stress_accepted": true,
+  "stress_job_id": 12905
+}

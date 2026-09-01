@@ -1,0 +1,113 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -92,7 +92,6 @@ __global__ void native_c2_msa_decode_kernel(
+   __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
+   __shared__ __align__(32) float score_tiles[kTokenTiles][kGqaGroup][kTile];
+ 
+-  __shared__ __align__(32) float numerator[kHeadDim][kGqaGroup];
+   __shared__ float running_max[kGqaGroup];
+   __shared__ float normalizer[kGqaGroup];
+   __shared__ float alpha_tile[kGqaGroup];
+@@ -119,6 +118,10 @@ __global__ void native_c2_msa_decode_kernel(
+   cluster.sync();
+ 
+   if (role < kProducerCtas) {
++    // Each lane owns one head and eight dimensions in this warp's disjoint
++    // 16-dimension slice.  These accumulators persist across all page tiles.
++    float numerator_accumulator[kTile / 2] = {};
++
+     int const selected_begin = role * kPagesPerProducer;
+     for (int element = thread; element < kGqaGroup * kHeadDim;
+          element += kThreads) {
+@@ -130,7 +133,6 @@ __global__ void native_c2_msa_decode_kernel(
+               q_head_stride +
+           dim;
+       q_tile[group_head][dim] = scaled_fp8(query, q_offset, q_scale);
+-      numerator[dim][group_head] = 0.0f;
+     }
+     if (thread < kGqaGroup) {
+       running_max[thread] = -INFINITY;
+@@ -275,54 +277,41 @@ __global__ void native_c2_msa_decode_kernel(
+                                 kGqaGroup, wmma::mem_row_major);
+         __syncwarp();
+ 
+-        // Every warp owns one disjoint 16-dimension slice.  Updating that
+-        // slice directly avoids a CTA-wide rendezvous after the WMMA store;
+-        // the barrier below still protects weights/alpha reuse by tile+1.
+-        for (int element = lane; element < kTile * kGqaGroup;
+-             element += kWarpSize) {
+-          int const dim_in_warp = element / kGqaGroup;
+-          int const head = element % kGqaGroup;
+-          int const dim = warp * kTile + dim_in_warp;
+-          if (tile_active[head] != 0) {
+-            numerator[dim][head] =
+-                alpha_tile[head] * numerator[dim][head] +
+-                pv_contribution[warp][dim_in_warp][head];
++        // Every warp still owns one disjoint 16-dimension slice, but each
++        // lane now retains one head's eight dimensions in registers instead
++        // of round-tripping the 2,048-element numerator through shared memory.
++        int const accumulator_head = lane & (kTile - 1);
++        int const accumulator_parity = lane / kTile;
++        if (tile_active[accumulator_head] != 0) {
++          float const alpha = alpha_tile[accumulator_head];
++#pragma unroll
++          for (int i = 0; i < kTile / 2; ++i) {
++            int const dim_in_warp = 2 * i + accumulator_parity;
++            numerator_accumulator[i] =
++                alpha * numerator_accumulator[i] +
++                pv_contribution[warp][dim_in_warp][accumulator_head];
+           }
+         }
+         __syncthreads();
+       }
+     }
+ 
+-    int const dim0 = lane;
+-    int const dim1 = lane + kWarpSize;
+-    int const dim2 = lane + 2 * kWarpSize;
+-    int const dim3 = lane + 3 * kWarpSize;
++    int const accumulator_head = lane & (kTile - 1);
++    int const accumulator_parity = lane / kTile;
++    float const z = normalizer[accumulator_head];
++    std::int64_t const partial_base =
++        static_cast<std::int64_t>(accumulator_head) * kHeadDim;
+ #pragma unroll
+-    for (int head_in_warp = 0; head_in_warp < kHeadsPerWarp;
+-         ++head_in_warp) {
+-      int const group_head = warp * kHeadsPerWarp + head_in_warp;
+-      float const z = normalizer[group_head];
+-      std::int64_t const partial_base =
+-          static_cast<std::int64_t>(group_head) * kHeadDim;
+-      if (z > 0.0f) {
+-        local_partial[partial_base + dim0] =
+-            __float2bfloat16_rn(numerator[dim0][group_head] / z);
+-        local_partial[partial_base + dim1] =
+-            __float2bfloat16_rn(numerator[dim1][group_head] / z);
+-        local_partial[partial_base + dim2] =
+-            __float2bfloat16_rn(numerator[dim2][group_head] / z);
+-        local_partial[partial_base + dim3] =
+-            __float2bfloat16_rn(numerator[dim3][group_head] / z);
+-        if (lane == 0) {
+-          local_lse[group_head] = running_max[group_head] + log2f(z);
+-        }
+-      } else {
+-        local_partial[partial_base + dim0] = __float2bfloat16_rn(0.0f);
+-        local_partial[partial_base + dim1] = __float2bfloat16_rn(0.0f);
+-        local_partial[partial_base + dim2] = __float2bfloat16_rn(0.0f);
+-        local_partial[partial_base + dim3] = __float2bfloat16_rn(0.0f);
+-        if (lane == 0) local_lse[group_head] = -INFINITY;
+-      }
++    for (int i = 0; i < kTile / 2; ++i) {
++      int const dim = warp * kTile + 2 * i + accumulator_parity;
++      local_partial[partial_base + dim] =
++          z > 0.0f
++              ? __float2bfloat16_rn(numerator_accumulator[i] / z)
++              : __float2bfloat16_rn(0.0f);
++    }
++    if (warp == 0 && lane < kGqaGroup) {
++      local_lse[accumulator_head] =
++          z > 0.0f ? running_max[accumulator_head] + log2f(z) : -INFINITY;
+     }
+   }
+ 

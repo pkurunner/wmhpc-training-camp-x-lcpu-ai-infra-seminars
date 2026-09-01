@@ -1,0 +1,10 @@
+classification=prestart-cancelled-scheduling-only-not-an-experiment-result
+job_id=12980
+state_before_cancel=PENDING(Resources)
+squeue_estimated_start_utc=2026-08-31T02:45:38
+start_observed=false
+artifact_directory_created=false
+reason=The CPU partition estimate was outside the four-hour experiment window, so the pending job was cancelled before allocation and the identical AOT logic was moved to the GPU partition.
+gpu_partition_replacement_job=12983
+gpu_partition_submission_script_sha256=64a40eaaf436363038d58eef38fdd96d9a4fe25470d4d2ab43030a51a5f166a7
+evidence_boundary=job12980 must not be cited as AOT, correctness, resource, or performance evidence.

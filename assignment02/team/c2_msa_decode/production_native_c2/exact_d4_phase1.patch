@@ -1,0 +1,46 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3ae0ec3..0efc7cc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -447,6 +447,22 @@ if(VLLM_GPU_LANG STREQUAL "CUDA" OR VLLM_GPU_LANG STREQUAL "HIP")
+ 
+     endif()
+   endif()
++
++  # MiniMax M3 native C2 sparse decode.  The first production contract is
++  # deliberately B300/SM103-only and consumes packed E4M3 KV directly.
++  if(VLLM_GPU_LANG STREQUAL "CUDA" AND
++     DEFINED CMAKE_CUDA_COMPILER_VERSION AND
++     CMAKE_CUDA_COMPILER_VERSION VERSION_GREATER_EQUAL 13.0)
++    cuda_archs_loose_intersection(NATIVE_C2_MSA_ARCHS "10.3f" "${CUDA_ARCHS}")
++    if(NATIVE_C2_MSA_ARCHS)
++      set(NATIVE_C2_MSA_SRC
++        "csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu")
++      set_gencode_flags_for_srcs(
++        SRCS "${NATIVE_C2_MSA_SRC}"
++        CUDA_ARCHS "${NATIVE_C2_MSA_ARCHS}")
++      list(APPEND VLLM_STABLE_EXT_SRC "${NATIVE_C2_MSA_SRC}")
++    endif()
++  endif()
+ 
+   if(VLLM_GPU_LANG STREQUAL "CUDA")
+     SET(CUTLASS_ENABLE_HEADERS_ONLY ON CACHE BOOL "Enable only the header library")
+diff --git a/csrc/libtorch_stable/torch_bindings.cpp b/csrc/libtorch_stable/torch_bindings.cpp
+index f600f23..b7b8a45 100644
+--- a/csrc/libtorch_stable/torch_bindings.cpp
++++ b/csrc/libtorch_stable/torch_bindings.cpp
+@@ -315,6 +315,14 @@ STABLE_TORCH_LIBRARY_FRAGMENT(_C, ops) {
+       "sm100_cutlass_mla_get_workspace_size(int max_seq_len, int num_batches,"
+       "                                     int sm_count, int num_kv_splits) "
+       "-> int");
++
++  // MiniMax M3 B300 native C2 sparse decode.  The CUDA implementation owns no
++  // output allocation and reads the packed E4M3 KV cache without a bridge.
++  ops.def(
++      "native_c2_msa_decode(Tensor! output, Tensor query_fp8, Tensor kv_cache,"
++      "                     Tensor topk, Tensor block_table, Tensor seq_lens,"
++      "                     float scale, float q_scale, float k_scale,"
++      "                     float v_scale) -> ()");
+   // Quantized GEMM for AWQ.
+   ops.def(
+       "awq_gemm(Tensor _in_feats, Tensor _kernel, Tensor _scaling_factors, "

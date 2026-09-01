@@ -1,0 +1,86 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -91,7 +91,7 @@
+   __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
+   __shared__ __align__(32) float score_tiles[kTokenTiles][kGqaGroup][kTile];
+ 
+-  __shared__ __align__(32) float numerator[kGqaGroup][kHeadDim];
++  __shared__ __align__(32) float numerator[kHeadDim][kGqaGroup];
+   __shared__ float running_max[kGqaGroup];
+   __shared__ float normalizer[kGqaGroup];
+   __shared__ float alpha_tile[kGqaGroup];
+@@ -129,7 +129,7 @@
+               q_head_stride +
+           dim;
+       q_tile[group_head][dim] = scaled_fp8(query, q_offset, q_scale);
+-      numerator[group_head][dim] = 0.0f;
++      numerator[dim][group_head] = 0.0f;
+     }
+     if (thread < kGqaGroup) {
+       running_max[thread] = -INFINITY;
+@@ -274,16 +274,20 @@
+                        pv_fragment);
+         wmma::store_matrix_sync(&pv_contribution[warp][0][0], pv_fragment,
+                                 kGqaGroup, wmma::mem_row_major);
+-        __syncthreads();
+-
+-        for (int element = thread; element < kGqaGroup * kHeadDim;
+-             element += kThreads) {
+-          int const head = element / kHeadDim;
+-          int const dim = element % kHeadDim;
++        __syncwarp();
++
++        // Every warp owns one disjoint 16-dimension slice.  Updating that
++        // slice directly avoids a CTA-wide rendezvous after the WMMA store;
++        // the barrier below still protects weights/alpha reuse by tile+1.
++        for (int element = lane; element < kTile * kGqaGroup;
++             element += kWarpSize) {
++          int const dim_in_warp = element / kGqaGroup;
++          int const head = element % kGqaGroup;
++          int const dim = warp * kTile + dim_in_warp;
+           if (tile_active[head] != 0) {
+-            numerator[head][dim] =
+-                alpha_tile[head] * numerator[head][dim] +
+-                pv_contribution[dim / kTile][dim % kTile][head];
++            numerator[dim][head] =
++                alpha_tile[head] * numerator[dim][head] +
++                pv_contribution[warp][dim_in_warp][head];
+           }
+         }
+         __syncthreads();
+@@ -303,13 +307,13 @@
+           static_cast<std::int64_t>(group_head) * kHeadDim;
+       if (z > 0.0f) {
+         local_partial[partial_base + dim0] =
+-            __float2bfloat16_rn(numerator[group_head][dim0] / z);
++            __float2bfloat16_rn(numerator[dim0][group_head] / z);
+         local_partial[partial_base + dim1] =
+-            __float2bfloat16_rn(numerator[group_head][dim1] / z);
++            __float2bfloat16_rn(numerator[dim1][group_head] / z);
+         local_partial[partial_base + dim2] =
+-            __float2bfloat16_rn(numerator[group_head][dim2] / z);
++            __float2bfloat16_rn(numerator[dim2][group_head] / z);
+         local_partial[partial_base + dim3] =
+-            __float2bfloat16_rn(numerator[group_head][dim3] / z);
++            __float2bfloat16_rn(numerator[dim3][group_head] / z);
+         if (lane == 0) {
+           local_lse[group_head] = running_max[group_head] + log2f(z);
+         }
+@@ -483,7 +487,7 @@
+   config.attrs = &attribute;
+   config.numAttrs = 1;
+ 
+-  cudaLaunchKernelEx(
++  error = cudaLaunchKernelEx(
+       &config, native_c2_msa_decode_kernel,
+       reinterpret_cast<const __nv_fp8_e4m3*>(query_fp8.const_data_ptr()),
+       reinterpret_cast<const __nv_fp8_e4m3*>(kv_cache.const_data_ptr()),
+@@ -498,7 +502,6 @@
+       static_cast<int>(block_table.size(1)),
+       static_cast<float>(scale) * kLog2e, static_cast<float>(q_scale),
+       static_cast<float>(k_scale), static_cast<float>(v_scale));
+-  error = cudaGetLastError();
+   STD_TORCH_CHECK(error == cudaSuccess,
+                   "native_c2 cluster launch failed: ",
+                   cudaGetErrorString(error));

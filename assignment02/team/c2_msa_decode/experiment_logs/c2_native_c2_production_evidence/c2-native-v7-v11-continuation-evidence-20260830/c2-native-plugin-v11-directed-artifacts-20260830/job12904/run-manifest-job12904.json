@@ -1,0 +1,73 @@
+{
+  "candidate": "v11-q-fragment-reuse",
+  "frozen_harness_schema": "c2-native-c2-v6-register-numerator-directed-v1",
+  "inputs": [
+    {
+      "label": "v11_q_fragment_reuse_plugin",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "sha256": "501b9c56a29a81f779a35a34b2808b4122af7dcb23e8108d8c590306be43d957",
+      "size_bytes": 615792
+    },
+    {
+      "label": "v11_q_fragment_reuse_source",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/native_c2_decode.v11-q-fragment-reuse.cu",
+      "sha256": "0e82b278b7aa44a034a96d2ddd19946a27928d95a9f9d03e8e1fe9f30680c5b4",
+      "size_bytes": 28779
+    },
+    {
+      "label": "v11_q_fragment_reuse_resource_gate",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/plugin-resource-gate-job12825.txt",
+      "sha256": "f82d6890d14be7cfb1df54ec12fdff0b2de3096204591b554c46eb02862d5ab4",
+      "size_bytes": 137
+    },
+    {
+      "label": "v11_q_fragment_reuse_provenance",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/plugin-v11-provenance-job12825.sha256",
+      "sha256": "6d96a7437616c672c8640592ac99da0b722d0d6f4e7d8f78b18a3a6652b59128",
+      "size_bytes": 1706
+    },
+    {
+      "label": "v11_aot_final_status",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/final-status-job12825.txt",
+      "sha256": "69bd4be581ea5a6d519753c6bf746083ad1b393e6add3fcaf6e93c0e9b2653d3",
+      "size_bytes": 69
+    },
+    {
+      "label": "v11_aot_final_status_sidecar",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/final-status-job12825.sha256",
+      "sha256": "153b2a792dcef3d8834805a66a6b626b291b6522c151d75b54b1cbdbec7881d1",
+      "size_bytes": 165
+    },
+    {
+      "label": "v11_aot_outputs_manifest",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/outputs-job12825.sha256",
+      "sha256": "f60b3307a1a343cb0d7be9107526b410351b4793f8f8ce6bf71b9e2c93984f75",
+      "size_bytes": 3751
+    },
+    {
+      "label": "base_harness",
+      "path": "/home/lcpu/85117379/native_c2_operator_bench_20260829.py",
+      "sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "size_bytes": 11438
+    },
+    {
+      "label": "v5_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py",
+      "sha256": "43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1",
+      "size_bytes": 18912
+    },
+    {
+      "label": "frozen_v6_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py",
+      "sha256": "c38ec0bc7ffb9d85567d3cbbf4c2991077eb6cb3a52874778ddac01d107577a5",
+      "size_bytes": 20703
+    },
+    {
+      "label": "v11_q_fragment_reuse_directed_script",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v11-directed-artifacts-20260830/job12904/submitted-script-job12904.slurm",
+      "sha256": "8cb6fb8265c9558484eadfacb09e2137c8bf521ba050e5d8e2814c4f74d6a2e5",
+      "size_bytes": 22275
+    }
+  ],
+  "schema": "c2-native-c2-v11-q-fragment-reuse-directed-input-manifest-v1"
+}

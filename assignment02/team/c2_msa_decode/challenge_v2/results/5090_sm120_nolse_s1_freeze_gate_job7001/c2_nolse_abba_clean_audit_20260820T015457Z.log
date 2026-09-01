@@ -1,0 +1,33 @@
+
+===== PRE UTC 2026-08-20T01:54:57Z =====
+NVIDIA GeForce RTX 5090, GPU-04a5a4c1-bcd8-d070-2531-cecfeec61a26, 580.142, 32607, 0, 2
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+a06e116b05dfcc894a4f33eb503468d58e0fef4e99f195c1269fbfb7d163271a  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/reference.py
+907d7125ae39df1c0191b7a06a8ad501b2638635326da51627828632808efb96  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+===== fixed AB/BA batch B=4 =====
+{"batch": 4, "candidate_ab_median_us": 64.57599997520447, "candidate_ba_median_us": 62.55999952554703, "candidate_us": 63.551999628543854, "control_ab_median_us": 80.9599980711937, "control_ba_median_us": 78.97599786520004, "control_us": 79.96799796819687, "json": "/home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_b4_bf16_c1_clean_20260820T015457Z.json", "speedup": 1.2583081324836851, "strict_10_percent_target_met": true}
+
+===== POST UTC 2026-08-20T01:55:12Z =====
+NVIDIA GeForce RTX 5090, GPU-04a5a4c1-bcd8-d070-2531-cecfeec61a26, 580.142, 32607, 0, 0
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+a06e116b05dfcc894a4f33eb503468d58e0fef4e99f195c1269fbfb7d163271a  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/reference.py
+907d7125ae39df1c0191b7a06a8ad501b2638635326da51627828632808efb96  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+C2 no-LSE fixed AB/BA audit completed: /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_clean_audit_20260820T015457Z.log

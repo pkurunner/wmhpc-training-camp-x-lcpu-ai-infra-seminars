@@ -1,0 +1,344 @@
+diff --git a/vllm/_custom_ops.py b/vllm/_custom_ops.py
+index 8c1cc105e..5088efa83 100644
+--- a/vllm/_custom_ops.py
++++ b/vllm/_custom_ops.py
+@@ -3244,6 +3244,39 @@ def sm100_cutlass_mla_get_workspace_size(
+     )
+ 
+ 
++def native_c2_msa_decode(
++    output: torch.Tensor,
++    query_fp8: torch.Tensor,
++    kv_cache: torch.Tensor,
++    topk: torch.Tensor,
++    block_table: torch.Tensor,
++    seq_lens: torch.Tensor,
++    scale: float,
++    q_scale: float,
++    k_scale: float,
++    v_scale: float,
++) -> torch.Tensor:
++    """Run the B300-only MiniMax M3 native C2 sparse-decode operator.
++
++    This wrapper deliberately owns no output allocation or layout conversion.
++    Callers must first satisfy the narrow native-C2 eligibility contract; the
++    normal MSA dispatch falls back to Triton when that contract does not hold.
++    """
++    torch.ops._C.native_c2_msa_decode(
++        output,
++        query_fp8,
++        kv_cache,
++        topk,
++        block_table,
++        seq_lens,
++        scale,
++        q_scale,
++        k_scale,
++        v_scale,
++    )
++    return output
++
++
+ def dsv3_fused_a_gemm(
+     output: torch.Tensor,
+     mat_a: torch.Tensor,
+diff --git a/vllm/config/attention.py b/vllm/config/attention.py
+index 994be05f5..9e96be7a8 100644
+--- a/vllm/config/attention.py
++++ b/vllm/config/attention.py
+@@ -11,7 +11,7 @@ from vllm.v1.attention.backends.mla.prefill.registry import MLAPrefillBackendEnu
+ from vllm.v1.attention.backends.registry import AttentionBackendEnum
+ 
+ IndexerKVDType = Literal["bf16", "fp8", "mxfp4", "nvfp4"]
+-MiniMaxM3MSADecodeBackend = Literal["triton", "cutlass"]
++MiniMaxM3MSADecodeBackend = Literal["triton", "cutlass", "native_c2"]
+ 
+ 
+ @config
+@@ -107,6 +107,7 @@ class AttentionConfig:
+         msa_aliases: dict[AttentionBackendEnum, MiniMaxM3MSADecodeBackend] = {
+             AttentionBackendEnum.CUTLASS_MSA: "cutlass",
+             AttentionBackendEnum.TRITON_MSA: "triton",
++            AttentionBackendEnum.NATIVE_C2_MSA: "native_c2",
+         }
+         if self.backend in msa_aliases:
+             self.minimax_m3_msa_decode_backend = msa_aliases[self.backend]
+diff --git a/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py b/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+new file mode 100644
+index 000000000..d1c472525
+--- /dev/null
++++ b/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+@@ -0,0 +1,143 @@
++# SPDX-License-Identifier: Apache-2.0
++# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++"""Strict dispatch gate for the B300 native C2 MiniMax M3 decode operator."""
++
++from __future__ import annotations
++
++import math
++from numbers import Real
++
++import torch
++
++from vllm import _custom_ops as ops
++from vllm.config.attention import MiniMaxM3MSADecodeBackend
++from vllm.platforms import current_platform
++
++_BATCH = 16
++_QUERY_HEADS = 64
++_KV_HEADS = 4
++_HEAD_DIM = 128
++_PAGE_SIZE = 128
++_TOPK = 16
++
++
++def supports_native_c2_sparse_decode(
++    *,
++    decode_backend: MiniMaxM3MSADecodeBackend,
++    num_q_heads: int,
++    num_kv_heads: int,
++    kv_cache_dtype: str,
++    page_size: int,
++    topk_blocks: int,
++) -> bool:
++    """Return whether static model geometry is eligible for native C2.
++
++    Runtime tensor and device checks intentionally remain in
++    :func:`native_c2_msa_decode`.  This function must not imply that a
++    particular decode call will take the native branch.
++    """
++    return (
++        decode_backend == "native_c2"
++        and current_platform.is_cuda()
++        and num_q_heads == _QUERY_HEADS
++        and num_kv_heads == _KV_HEADS
++        and kv_cache_dtype in ("fp8", "fp8_e4m3")
++        and page_size == _PAGE_SIZE
++        and topk_blocks == _TOPK
++    )
++
++
++def _has_native_c2_operator() -> bool:
++    return hasattr(torch.ops, "_C") and hasattr(torch.ops._C, "native_c2_msa_decode")
++
++
++def _positive_finite_scalar(value: object) -> bool:
++    return (
++        isinstance(value, Real)
++        and math.isfinite(float(value))
++        and float(value) > 0.0
++    )
++
++
++def _is_b300_device(device: torch.device) -> bool:
++    if device.type != "cuda":
++        return False
++    return torch.cuda.get_device_capability(device) == (10, 3)
++
++
++def native_c2_msa_decode(
++    *,
++    output: torch.Tensor,
++    query_fp8: torch.Tensor,
++    kv_cache: torch.Tensor,
++    topk: torch.Tensor,
++    block_table: torch.Tensor,
++    seq_lens: torch.Tensor,
++    scale: float,
++    q_scale: float,
++    k_scale: float,
++    v_scale: float,
++) -> bool:
++    """Run native C2 only for its exact ABI; otherwise return ``False``.
++
++    There are deliberately no calls to ``contiguous``, ``split``, casting, or
++    output allocation here.  A ``False`` result tells the caller to use the
++    existing Triton path with its original tensors.
++    """
++    if not _has_native_c2_operator():
++        return False
++    if (
++        output.dtype != torch.bfloat16
++        or query_fp8.dtype != torch.float8_e4m3fn
++        or kv_cache.dtype != torch.float8_e4m3fn
++        or topk.dtype != torch.int32
++        or block_table.dtype != torch.int32
++        or seq_lens.dtype != torch.int32
++    ):
++        return False
++    tensors = (output, query_fp8, kv_cache, topk, block_table, seq_lens)
++    if not all(tensor.is_cuda and tensor.is_contiguous() for tensor in tensors):
++        return False
++    if not all(tensor.device == output.device for tensor in tensors):
++        return False
++    if not _is_b300_device(output.device):
++        return False
++    if query_fp8.shape != (_BATCH, _QUERY_HEADS, _HEAD_DIM):
++        return False
++    if output.shape != (_BATCH, _QUERY_HEADS, _HEAD_DIM):
++        return False
++    if (
++        kv_cache.ndim != 4
++        or kv_cache.shape[0] <= 0
++        or tuple(kv_cache.shape[1:]) != (_KV_HEADS, _PAGE_SIZE, 2 * _HEAD_DIM)
++    ):
++        return False
++    if topk.shape != (_BATCH, _KV_HEADS, _TOPK):
++        return False
++    if (
++        block_table.ndim != 2
++        or block_table.shape[0] != _BATCH
++        or block_table.shape[1] <= 0
++    ):
++        return False
++    if seq_lens.shape != (_BATCH,):
++        return False
++    if not all(
++        _positive_finite_scalar(value)
++        for value in (scale, q_scale, k_scale, v_scale)
++    ):
++        return False
++
++    ops.native_c2_msa_decode(
++        output,
++        query_fp8,
++        kv_cache,
++        topk,
++        block_table,
++        seq_lens,
++        float(scale),
++        float(q_scale),
++        float(k_scale),
++        float(v_scale),
++    )
++    return True
+diff --git a/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py b/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py
+index d29e1346b..c19acdb08 100644
+--- a/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py
++++ b/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py
+@@ -26,6 +26,10 @@ from vllm.models.minimax_m3.common.sparse_attention import (
+     MiniMaxM3SparseMetadata,
+     MiniMaxM3SparseMetadataBuilder,
+ )
++from vllm.models.minimax_m3.nvidia.msa_native_c2_decode import (
++    native_c2_msa_decode,
++    supports_native_c2_sparse_decode,
++)
+ from vllm.models.minimax_m3.nvidia.msa_cutlass_sparse_decode import (
+     MSACutlassDecodeMetadata,
+     MSACutlassDecodePlanCache,
+@@ -67,6 +71,14 @@ class MiniMaxM3SparseTritonBackend(MiniMaxM3SparseMSABackend):
+         return "TRITON_MSA"
+ 
+ 
++class MiniMaxM3SparseNativeC2Backend(MiniMaxM3SparseMSABackend):
++    """Attention-backend alias selecting the guarded native C2 decode."""
++
++    @staticmethod
++    def get_name() -> str:
++        return "NATIVE_C2_MSA"
++
++
+ @dataclass
+ class MiniMaxM3SparseMSADecodeMetadata(MiniMaxM3SparseDecodeMetadata):
+     msa_cutlass: MSACutlassDecodeMetadata | None = None
+@@ -143,7 +155,7 @@ class MiniMaxM3SparseMSAMetadataBuilder(MiniMaxM3SparseMetadataBuilder):
+ 
+ 
+ class MiniMaxM3SparseMSAImpl(MiniMaxM3SparseImpl):
+-    """MSA block-sparse attention with guarded CUTLASS sparse decode."""
++    """MSA block-sparse attention with guarded native and CUTLASS decode."""
+ 
+     def __init__(
+         self,
+@@ -166,6 +178,14 @@ class MiniMaxM3SparseMSAImpl(MiniMaxM3SparseImpl):
+             topk_blocks=topk_blocks,
+             sparse_block_size=sparse_block_size,
+         )
++        self.use_native_c2_decode = supports_native_c2_sparse_decode(
++            decode_backend=msa_decode_backend,
++            num_q_heads=self.num_heads,
++            num_kv_heads=self.num_kv_heads,
++            kv_cache_dtype=self.kv_cache_dtype,
++            page_size=self.block_size,
++            topk_blocks=self.topk_blocks,
++        )
+         self.use_cutlass_decode = supports_cutlass_sparse_decode(
+             decode_backend=msa_decode_backend,
+             num_q_heads=self.num_heads,
+@@ -176,11 +196,15 @@ class MiniMaxM3SparseMSAImpl(MiniMaxM3SparseImpl):
+         )
+         logger.info_once(
+             "MiniMax M3 MSA sparse decode selected %s",
+-            "CUTLASS" if self.use_cutlass_decode else "Triton",
++            (
++                "native_c2"
++                if self.use_native_c2_decode
++                else "CUTLASS" if self.use_cutlass_decode else "Triton"
++            ),
+         )
+ 
+     def should_use_msa_decode(self, layer_name: str) -> bool:
+-        if not self.use_cutlass_decode:
++        if not (self.use_native_c2_decode or self.use_cutlass_decode):
+             return False
+         attn_metadata = get_forward_context().attn_metadata
+         if not isinstance(attn_metadata, dict):
+@@ -189,6 +213,12 @@ class MiniMaxM3SparseMSAImpl(MiniMaxM3SparseImpl):
+         if not isinstance(main_md, MiniMaxM3SparseMetadata):
+             return False
+         decode = main_md.decode
++        if self.use_native_c2_decode:
++            return (
++                decode is not None
++                and main_md.num_decodes == 16
++                and decode.decode_query_len == 1
++            )
+         return (
+             isinstance(decode, MiniMaxM3SparseMSADecodeMetadata)
+             and decode.msa_cutlass is not None
+@@ -228,12 +258,28 @@ class MiniMaxM3SparseMSAImpl(MiniMaxM3SparseImpl):
+         if main_md.num_decodes > 0:
+             d = main_md.decode
+             assert d is not None
++            native_c2_ran = False
++            if self.use_native_c2_decode and query_fp8 is not None:
++                native_c2_ran = native_c2_msa_decode(
++                    output=out[:nd],
++                    query_fp8=query_fp8[:nd].view(-1, self.num_heads, hd),
++                    kv_cache=kv_cache,
++                    topk=topk[:nd],
++                    block_table=d.block_table,
++                    seq_lens=d.seq_lens,
++                    scale=self.scale,
++                    q_scale=getattr(layer, "_q_scale_float", 1.0),
++                    k_scale=getattr(layer, "_k_scale_float", 1.0),
++                    v_scale=getattr(layer, "_v_scale_float", 1.0),
++                )
+             msa_metadata = (
+                 d.msa_cutlass
+                 if isinstance(d, MiniMaxM3SparseMSADecodeMetadata)
+                 else None
+             )
+-            if self.use_cutlass_decode and msa_metadata is not None:
++            if native_c2_ran:
++                pass
++            elif self.use_cutlass_decode and msa_metadata is not None:
+                 assert query_fp8 is not None
+                 msa_cutlass_sparse_decode(
+                     query_fp8[:nd].view(-1, self.num_heads, hd),
+diff --git a/vllm/v1/attention/backends/registry.py b/vllm/v1/attention/backends/registry.py
+index 5ed38eced..a6a79382e 100644
+--- a/vllm/v1/attention/backends/registry.py
++++ b/vllm/v1/attention/backends/registry.py
+@@ -109,6 +109,10 @@ class AttentionBackendEnum(Enum, metaclass=_AttentionBackendEnumMeta):
+         "vllm.models.minimax_m3.nvidia.sparse_attention_msa."
+         "MiniMaxM3SparseTritonBackend"
+     )
++    NATIVE_C2_MSA = (
++        "vllm.models.minimax_m3.nvidia.sparse_attention_msa."
++        "MiniMaxM3SparseNativeC2Backend"
++    )
+     NO_ATTENTION = "vllm.v1.attention.backends.no_attention.NoAttentionBackend"
+     FLEX_ATTENTION = "vllm.v1.attention.backends.flex_attention.FlexAttentionBackend"
+     # HPC Attention Backend:

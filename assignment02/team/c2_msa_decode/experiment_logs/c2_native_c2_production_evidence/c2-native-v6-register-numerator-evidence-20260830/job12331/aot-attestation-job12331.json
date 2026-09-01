@@ -1,0 +1,18 @@
+{
+  "aot_files_sha256": {
+    "final_status": "898d77659852171987f11ce22ee29de5b1683cc463b80a81308f009a4a62e032",
+    "provenance": "e2067f586f338139283fdf54b9cd6cc2b57ac5a2d189f04bfa3dfc732e0839d8",
+    "resource_gate": "2f5d0898888446b79808b02c709dd2f0b33309679629cdc335c263482a965560"
+  },
+  "aot_final_rc": 0,
+  "aot_job_id": 12278,
+  "resource_gate": {
+    "LOCAL": 0,
+    "REG": 64,
+    "SHARED": 30560,
+    "STACK": 0
+  },
+  "schema": "c2-native-plugin-v6-aot-attestation-v1",
+  "v6_plugin_sha256": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4",
+  "v6_source_sha256": "c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02"
+}

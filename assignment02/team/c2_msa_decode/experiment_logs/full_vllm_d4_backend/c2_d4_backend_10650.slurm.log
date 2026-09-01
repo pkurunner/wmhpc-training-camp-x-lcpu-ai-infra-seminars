@@ -1,0 +1,794 @@
+===== PRE_AUDIT =====
+2026-08-28T18:53:14+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== ENVIRONMENT_AND_PROVENANCE =====
+Python 3.12.11
+torch=2.13.0+cu130
+triton=3.7.1
+vllm_version=0.26.1rc1.dev370+gd4da0c55a
+vllm_module=/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/__init__.py
+d4da0c55af3aa231b6209bf77871f3ed36eab0d2
+087c161814d4d9c735b46c21212a09e5f8eb92fa
+91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06  /home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl
+73d5fdafcebb426efeb753eba88fdb179f3da0c4162c1d5e28ef936fb4e6820b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/full_vllm_d4_backend_bench.py
+a62808e627e73e82edd6b995b104875c04e161bb070c052d9f39dcb7e48cfe0d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/run_full_vllm_d4_backend_audit.sh
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+===== EXACT_D4_BACKEND_ABBA =====
+INFO 08-28 18:53:23 [sparse_attention_msa.py:177] MiniMax M3 MSA sparse decode selected CUTLASS
+INFO 08-28 18:53:23 [sparse_attention_msa.py:177] MiniMax M3 MSA sparse decode selected Triton
+{
+  "schema": "c2-full-vllm-d4-backend-layer-abba-v1",
+  "boundary": "exact full-vLLM backend layer path; no model weights/server scheduler",
+  "all_gates_pass": true,
+  "gates": {
+    "pin_and_source": true,
+    "real_builder_and_plan_reuse": true,
+    "correctness": true,
+    "dispatch": true,
+    "timing": true
+  },
+  "source_pins": {
+    "expected": {
+      "vllm_commit": "d4da0c55af3aa231b6209bf77871f3ed36eab0d2",
+      "msa_commit": "087c161814d4d9c735b46c21212a09e5f8eb92fa",
+      "cutlass_submodule_commit": "eb61c911471867a5fd2466bfd8f29306cea6ebf8",
+      "wheel_sha256": "91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06",
+      "version_fragment": "gd4da0c55a"
+    },
+    "actual": {
+      "vllm_root": "/home/lcpu/85117379/vllm-d4da0c5",
+      "vllm_git_head": "d4da0c55af3aa231b6209bf77871f3ed36eab0d2",
+      "msa_root": "/home/lcpu/85117379/msa-vllm-d4",
+      "msa_git_head": "087c161814d4d9c735b46c21212a09e5f8eb92fa",
+      "wheel": "/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06",
+      "installed_vllm_root": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm",
+      "installed_version": "0.26.1rc1.dev370+gd4da0c55a",
+      "distribution_vllm_root": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm"
+    },
+    "source_hashes": {
+      "installed_vllm_key_sources": {
+        "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py",
+          "checkout_path": "/home/lcpu/85117379/vllm-d4da0c5/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py",
+          "installed_sha256": "c483658d8a63b66a6ce2b758e6e07010af24d1ba9c183636cf812d80a9ddfae3",
+          "checkout_sha256": "c483658d8a63b66a6ce2b758e6e07010af24d1ba9c183636cf812d80a9ddfae3",
+          "match": true
+        },
+        "vllm/models/minimax_m3/nvidia/msa_cutlass_sparse_decode.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/models/minimax_m3/nvidia/msa_cutlass_sparse_decode.py",
+          "checkout_path": "/home/lcpu/85117379/vllm-d4da0c5/vllm/models/minimax_m3/nvidia/msa_cutlass_sparse_decode.py",
+          "installed_sha256": "5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f",
+          "checkout_sha256": "5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f",
+          "match": true
+        },
+        "vllm/models/minimax_m3/common/ops/sparse_attn.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/models/minimax_m3/common/ops/sparse_attn.py",
+          "checkout_path": "/home/lcpu/85117379/vllm-d4da0c5/vllm/models/minimax_m3/common/ops/sparse_attn.py",
+          "installed_sha256": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967",
+          "checkout_sha256": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967",
+          "match": true
+        }
+      },
+      "installed_fmha_key_sources": {
+        "__init__.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/third_party/fmha_sm100/__init__.py",
+          "msa_source_path": "/home/lcpu/85117379/msa-vllm-d4/python/fmha_sm100/__init__.py",
+          "installed_sha256": "2221f7d078405274da96b3aae6ab5b1126f50e93ce6f44403335e492a1e968fc",
+          "msa_source_sha256": "2221f7d078405274da96b3aae6ab5b1126f50e93ce6f44403335e492a1e968fc",
+          "match": true
+        },
+        "api.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/third_party/fmha_sm100/api.py",
+          "msa_source_path": "/home/lcpu/85117379/msa-vllm-d4/python/fmha_sm100/api.py",
+          "installed_sha256": "c4c58ed675b5906511e0c46a118af9c731e6a2197bbd4a6ba11fb1b49efb992d",
+          "msa_source_sha256": "c4c58ed675b5906511e0c46a118af9c731e6a2197bbd4a6ba11fb1b49efb992d",
+          "match": true
+        },
+        "jit.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/third_party/fmha_sm100/jit.py",
+          "msa_source_path": "/home/lcpu/85117379/msa-vllm-d4/python/fmha_sm100/jit.py",
+          "installed_sha256": "00bdea4e47a235a44c5ccc3dbfab7639161044bd1f7d978be20a6713c21db3d5",
+          "msa_source_sha256": "00bdea4e47a235a44c5ccc3dbfab7639161044bd1f7d978be20a6713c21db3d5",
+          "match": true
+        },
+        "sparse.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/third_party/fmha_sm100/sparse.py",
+          "msa_source_path": "/home/lcpu/85117379/msa-vllm-d4/python/fmha_sm100/sparse.py",
+          "installed_sha256": "2a82bfd40b2fe842d5bacf0a8df5e3a77d8ca004107c71a1b68460a0b746dd4b",
+          "msa_source_sha256": "2a82bfd40b2fe842d5bacf0a8df5e3a77d8ca004107c71a1b68460a0b746dd4b",
+          "match": true
+        },
+        "sparse_fmha_adapter.py": {
+          "installed_path": "/home/lcpu/85117379/venv-vllm-d4da0c5/lib/python3.12/site-packages/vllm/third_party/fmha_sm100/sparse_fmha_adapter.py",
+          "msa_source_path": "/home/lcpu/85117379/msa-vllm-d4/python/fmha_sm100/sparse_fmha_adapter.py",
+          "installed_sha256": "51a66a1ae50717aead927af2dec30621016d28e87646bb9109cb757fbfdf88db",
+          "msa_source_sha256": "51a66a1ae50717aead927af2dec30621016d28e87646bb9109cb757fbfdf88db",
+          "match": true
+        }
+      },
+      "fmha_full_tree_audit": {
+        "installed_fmha_full_tree": {
+          "file_count": 960,
+          "sha256": "9933ba9022899843d18f77f1cae6d39d616184c96c64ce0957ef769e1fb03cd1"
+        },
+        "wheel_fmha_full_tree": {
+          "file_count": 960,
+          "sha256": "9933ba9022899843d18f77f1cae6d39d616184c96c64ce0957ef769e1fb03cd1"
+        },
+        "installed_non_cutlass_tree": {
+          "file_count": 86,
+          "sha256": "0eaa8a4250264314152f3f43f6fe1b0818ff440f94b8d3b04a281d161bb007bb"
+        },
+        "msa_non_cutlass_tree": {
+          "file_count": 86,
+          "sha256": "0eaa8a4250264314152f3f43f6fe1b0818ff440f94b8d3b04a281d161bb007bb"
+        },
+        "checks": {
+          "installed_matches_wheel_full_cmake_tree": true,
+          "installed_non_cutlass_matches_msa_full_source_tree": true,
+          "cutlass_submodule_pin": true
+        }
+      }
+    },
+    "checks": {
+      "vllm_git_head": true,
+      "msa_git_head": true,
+      "vllm_git_clean": true,
+      "msa_git_clean": true,
+      "wheel_sha256": true,
+      "installed_version": true,
+      "distribution_matches_import": true,
+      "import_is_not_checkout": true,
+      "installed_three_vllm_and_fmha_sources_match": true
+    },
+    "pass": true
+  },
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "device": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [
+      10,
+      3
+    ]
+  },
+  "data_contract": {
+    "generator": "make_decode_problem(B=16, storage_dtype='fp8-scalar', qlen=1, max_seq_len=4096)",
+    "same_input_for_both_paths": true,
+    "topk_sorted_once_and_shared": true,
+    "q_dtype": "bfloat16",
+    "query_fp8_dtype": "float8_e4m3fn",
+    "q_scale": 0.25,
+    "k_scale": 0.25,
+    "v_scale": 0.5,
+    "page_size": 128,
+    "topk": 16,
+    "q_heads": 64,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "checksums": {
+      "q_bf16": "7cd351398faa85798e04317419fc87602d7485e9c34ec7d142d80a234b47c0c1",
+      "query_fp8": "4940358c0509a4e5105963e2eac0464780406df7fe1c33cdc98b37ccc6ccd2d9",
+      "kv_fp8": "8c30213d9b651ef1d6908389383ea56d0eebac7e2d777d6c0545f0909c8732f9",
+      "block_table_i32": "82dec3296d078a431f0cfee9d1b59d475b60f1c41e90be940c619b813ae22d28",
+      "topk_hkv_q_k_sorted_i32": "451c29378c38d7cde44242344bb4fee2fff5ef114104f815bfedc30413eaca8f",
+      "topk_q_hkv_k_i32": "e0123495afb5f037d5607d9fb3977e64159ef4d7e7386419d1e647a1e159f286",
+      "seq_lens_i32": "5907fd1ff14f8902e0fb18bb449566a25dc7657c95c0bf84f988cb1c531d120e"
+    }
+  },
+  "real_vllm_api": {
+    "builder": "MiniMaxM3SparseMSAMetadataBuilder.build",
+    "metadata": "CommonAttentionMetadata",
+    "kv_spec": "AttentionSpec(dtype=torch.uint8, kv_quant_mode=KVQuantMode.FP8_PER_TENSOR)",
+    "forward_context": "ForwardContext + override_forward_context",
+    "forward": "MiniMaxM3SparseMSAImpl.forward",
+    "minimal_shell": "SimpleNamespace only for fields read by installed config/layer APIs"
+  },
+  "builder": {
+    "checks": {
+      "cutlass_metadata_nonempty": true,
+      "cutlass_plan_cache_reused": true,
+      "triton_metadata_empty": true,
+      "triton_plan_cache_empty": true
+    },
+    "cutlass_plan_cache_size": 1,
+    "triton_plan_cache_size": 0,
+    "pass": true
+  },
+  "correctness": {
+    "cutlass": {
+      "reference": "harness.reference.dense_sparse_attention_reference (independent FP32 selected-page causal oracle)",
+      "rtol": 0.03,
+      "atol": 0.03,
+      "finite": true,
+      "max_abs": 0.013336181640625,
+      "mean_abs": 0.002823698567226529,
+      "pass": true
+    },
+    "triton": {
+      "reference": "harness.reference.dense_sparse_attention_reference (independent FP32 selected-page causal oracle)",
+      "rtol": 0.03,
+      "atol": 0.03,
+      "finite": true,
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5648959055833984e-06,
+      "pass": true
+    },
+    "caller_owned_output": {
+      "cutlass": true,
+      "triton": true
+    },
+    "pass": true
+  },
+  "dispatch": {
+    "cutlass_smoke_counts": {
+      "cutlass": 1,
+      "triton": 0
+    },
+    "triton_smoke_counts": {
+      "cutlass": 0,
+      "triton": 1
+    },
+    "checks": {
+      "cutlass_impl_should_use_msa_decode": true,
+      "triton_impl_should_use_msa_decode": true,
+      "cutlass_smoke_calls_only_cutlass": true,
+      "triton_smoke_calls_only_triton": true
+    },
+    "pass": true
+  },
+  "timing": {
+    "protocol": "warmup excluded; ABBA=CUTLASS,TRITON,TRITON,CUTLASS; one default stream; CUDA events; no inter-call synchronization",
+    "warmup": 5,
+    "repetitions": 50,
+    "raw_cycles_ms": [
+      {
+        "cutlass_a_0": 0.05913599953055382,
+        "triton_b_1": 0.07081600278615952,
+        "triton_b_2": 0.06111999973654747,
+        "cutlass_a_3": 0.046751998364925385
+      },
+      {
+        "cutlass_a_0": 0.042688000947237015,
+        "triton_b_1": 0.060896001756191254,
+        "triton_b_2": 0.05804799869656563,
+        "cutlass_a_3": 0.04662400111556053
+      },
+      {
+        "cutlass_a_0": 0.04156799986958504,
+        "triton_b_1": 0.0631679967045784,
+        "triton_b_2": 0.06707199662923813,
+        "cutlass_a_3": 0.04575999826192856
+      },
+      {
+        "cutlass_a_0": 0.04163200035691261,
+        "triton_b_1": 0.05999999865889549,
+        "triton_b_2": 0.05804799869656563,
+        "cutlass_a_3": 0.04368000105023384
+      },
+      {
+        "cutlass_a_0": 0.047775998711586,
+        "triton_b_1": 0.05897599831223488,
+        "triton_b_2": 0.054976001381874084,
+        "cutlass_a_3": 0.044576000422239304
+      },
+      {
+        "cutlass_a_0": 0.039583999663591385,
+        "triton_b_1": 0.056992001831531525,
+        "triton_b_2": 0.052928000688552856,
+        "cutlass_a_3": 0.04451199993491173
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05692800134420395,
+        "triton_b_2": 0.055904000997543335,
+        "cutlass_a_3": 0.0414079986512661
+      },
+      {
+        "cutlass_a_0": 0.03855999931693077,
+        "triton_b_1": 0.06111999973654747,
+        "triton_b_2": 0.054976001381874084,
+        "cutlass_a_3": 0.043776001781225204
+      },
+      {
+        "cutlass_a_0": 0.03840000182390213,
+        "triton_b_1": 0.05689600110054016,
+        "triton_b_2": 0.0549440011382103,
+        "cutlass_a_3": 0.04867200180888176
+      },
+      {
+        "cutlass_a_0": 0.04064000025391579,
+        "triton_b_1": 0.05798399820923805,
+        "triton_b_2": 0.054016001522541046,
+        "cutlass_a_3": 0.045632001012563705
+      },
+      {
+        "cutlass_a_0": 0.040511999279260635,
+        "triton_b_1": 0.05689600110054016,
+        "triton_b_2": 0.054976001381874084,
+        "cutlass_a_3": 0.04371200129389763
+      },
+      {
+        "cutlass_a_0": 0.039455998688936234,
+        "triton_b_1": 0.05795200169086456,
+        "triton_b_2": 0.05180799961090088,
+        "cutlass_a_3": 0.04054399952292442
+      },
+      {
+        "cutlass_a_0": 0.038495998829603195,
+        "triton_b_1": 0.06412799656391144,
+        "triton_b_2": 0.05795200169086456,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.04044799879193306,
+        "triton_b_1": 0.05795200169086456,
+        "triton_b_2": 0.06204799935221672,
+        "cutlass_a_3": 0.043616000562906265
+      },
+      {
+        "cutlass_a_0": 0.039712000638246536,
+        "triton_b_1": 0.057760000228881836,
+        "triton_b_2": 0.05283199995756149,
+        "cutlass_a_3": 0.04464000090956688
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05689600110054016,
+        "triton_b_2": 0.05289600044488907,
+        "cutlass_a_3": 0.04041599854826927
+      },
+      {
+        "cutlass_a_0": 0.038495998829603195,
+        "triton_b_1": 0.05897599831223488,
+        "triton_b_2": 0.05488000065088272,
+        "cutlass_a_3": 0.04054399952292442
+      },
+      {
+        "cutlass_a_0": 0.04774399846792221,
+        "triton_b_1": 0.057023998349905014,
+        "triton_b_2": 0.053888000547885895,
+        "cutlass_a_3": 0.042688000947237015
+      },
+      {
+        "cutlass_a_0": 0.04054399952292442,
+        "triton_b_1": 0.0568000003695488,
+        "triton_b_2": 0.06268800050020218,
+        "cutlass_a_3": 0.04156799986958504
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.06409599632024765,
+        "triton_b_2": 0.05289600044488907,
+        "cutlass_a_3": 0.04047999903559685
+      },
+      {
+        "cutlass_a_0": 0.038495998829603195,
+        "triton_b_1": 0.05795200169086456,
+        "triton_b_2": 0.05385600030422211,
+        "cutlass_a_3": 0.04156799986958504
+      },
+      {
+        "cutlass_a_0": 0.04054399952292442,
+        "triton_b_1": 0.05500800162553787,
+        "triton_b_2": 0.05270399898290634,
+        "cutlass_a_3": 0.04668800160288811
+      },
+      {
+        "cutlass_a_0": 0.03932800143957138,
+        "triton_b_1": 0.05795200169086456,
+        "triton_b_2": 0.05385600030422211,
+        "cutlass_a_3": 0.04054399952292442
+      },
+      {
+        "cutlass_a_0": 0.041471999138593674,
+        "triton_b_1": 0.06508799642324448,
+        "triton_b_2": 0.05488000065088272,
+        "cutlass_a_3": 0.04156799986958504
+      },
+      {
+        "cutlass_a_0": 0.03830400109291077,
+        "triton_b_1": 0.0568000003695488,
+        "triton_b_2": 0.05177599936723709,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.04054399952292442,
+        "triton_b_1": 0.0578560009598732,
+        "triton_b_2": 0.052799999713897705,
+        "cutlass_a_3": 0.038495998829603195
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05503999814391136,
+        "triton_b_2": 0.05369599908590317,
+        "cutlass_a_3": 0.04873599857091904
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05894400179386139,
+        "triton_b_2": 0.05283199995756149,
+        "cutlass_a_3": 0.03951999917626381
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.06425599753856659,
+        "triton_b_2": 0.05382400006055832,
+        "cutlass_a_3": 0.04054399952292442
+      },
+      {
+        "cutlass_a_0": 0.03939199820160866,
+        "triton_b_1": 0.054976001381874084,
+        "triton_b_2": 0.05273599922657013,
+        "cutlass_a_3": 0.041600000113248825
+      },
+      {
+        "cutlass_a_0": 0.03948799893260002,
+        "triton_b_1": 0.05385600030422211,
+        "triton_b_2": 0.05385600030422211,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.039583999663591385,
+        "triton_b_1": 0.05596800148487091,
+        "triton_b_2": 0.052928000688552856,
+        "cutlass_a_3": 0.04899200052022934
+      },
+      {
+        "cutlass_a_0": 0.03830400109291077,
+        "triton_b_1": 0.05692800134420395,
+        "triton_b_2": 0.052928000688552856,
+        "cutlass_a_3": 0.04265600070357323
+      },
+      {
+        "cutlass_a_0": 0.039423998445272446,
+        "triton_b_1": 0.06393600255250931,
+        "triton_b_2": 0.05289600044488907,
+        "cutlass_a_3": 0.04169600084424019
+      },
+      {
+        "cutlass_a_0": 0.03743999823927879,
+        "triton_b_1": 0.05897599831223488,
+        "triton_b_2": 0.050783999264240265,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.03859199956059456,
+        "triton_b_1": 0.05788800120353699,
+        "triton_b_2": 0.05283199995756149,
+        "cutlass_a_3": 0.04064000025391579
+      },
+      {
+        "cutlass_a_0": 0.040608000010252,
+        "triton_b_1": 0.0568000003695488,
+        "triton_b_2": 0.12252800166606903,
+        "cutlass_a_3": 0.05084799975156784
+      },
+      {
+        "cutlass_a_0": 0.03855999931693077,
+        "triton_b_1": 0.060095999389886856,
+        "triton_b_2": 0.05446400120854378,
+        "cutlass_a_3": 0.0522879995405674
+      },
+      {
+        "cutlass_a_0": 0.039455998688936234,
+        "triton_b_1": 0.05692800134420395,
+        "triton_b_2": 0.05385600030422211,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.03961599990725517,
+        "triton_b_1": 0.05596800148487091,
+        "triton_b_2": 0.05395200103521347,
+        "cutlass_a_3": 0.04572800174355507
+      },
+      {
+        "cutlass_a_0": 0.03948799893260002,
+        "triton_b_1": 0.056992001831531525,
+        "triton_b_2": 0.05273599922657013,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.04566400125622749,
+        "triton_b_1": 0.05897599831223488,
+        "triton_b_2": 0.04975999891757965,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05484800040721893,
+        "triton_b_2": 0.061055999249219894,
+        "cutlass_a_3": 0.04259200021624565
+      },
+      {
+        "cutlass_a_0": 0.039583999663591385,
+        "triton_b_1": 0.0560000017285347,
+        "triton_b_2": 0.05289600044488907,
+        "cutlass_a_3": 0.04064000025391579
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.059967998415231705,
+        "triton_b_2": 0.05395200103521347,
+        "cutlass_a_3": 0.03961599990725517
+      },
+      {
+        "cutlass_a_0": 0.03951999917626381,
+        "triton_b_1": 0.05584000051021576,
+        "triton_b_2": 0.05273599922657013,
+        "cutlass_a_3": 0.04064000025391579
+      },
+      {
+        "cutlass_a_0": 0.045632001012563705,
+        "triton_b_1": 0.05795200169086456,
+        "triton_b_2": 0.04975999891757965,
+        "cutlass_a_3": 0.04156799986958504
+      },
+      {
+        "cutlass_a_0": 0.03961599990725517,
+        "triton_b_1": 0.055904000997543335,
+        "triton_b_2": 0.060095999389886856,
+        "cutlass_a_3": 0.0416640006005764
+      },
+      {
+        "cutlass_a_0": 0.038495998829603195,
+        "triton_b_1": 0.054816000163555145,
+        "triton_b_2": 0.05392000079154968,
+        "cutlass_a_3": 0.042527999728918076
+      },
+      {
+        "cutlass_a_0": 0.038495998829603195,
+        "triton_b_1": 0.055904000997543335,
+        "triton_b_2": 0.05283199995756149,
+        "cutlass_a_3": 0.041600000113248825
+      }
+    ],
+    "cutlass": {
+      "raw_ms": [
+        0.05913599953055382,
+        0.046751998364925385,
+        0.042688000947237015,
+        0.04662400111556053,
+        0.04156799986958504,
+        0.04575999826192856,
+        0.04163200035691261,
+        0.04368000105023384,
+        0.047775998711586,
+        0.044576000422239304,
+        0.039583999663591385,
+        0.04451199993491173,
+        0.03951999917626381,
+        0.0414079986512661,
+        0.03855999931693077,
+        0.043776001781225204,
+        0.03840000182390213,
+        0.04867200180888176,
+        0.04064000025391579,
+        0.045632001012563705,
+        0.040511999279260635,
+        0.04371200129389763,
+        0.039455998688936234,
+        0.04054399952292442,
+        0.038495998829603195,
+        0.04259200021624565,
+        0.04044799879193306,
+        0.043616000562906265,
+        0.039712000638246536,
+        0.04464000090956688,
+        0.03951999917626381,
+        0.04041599854826927,
+        0.038495998829603195,
+        0.04054399952292442,
+        0.04774399846792221,
+        0.042688000947237015,
+        0.04054399952292442,
+        0.04156799986958504,
+        0.03951999917626381,
+        0.04047999903559685,
+        0.038495998829603195,
+        0.04156799986958504,
+        0.04054399952292442,
+        0.04668800160288811,
+        0.03932800143957138,
+        0.04054399952292442,
+        0.041471999138593674,
+        0.04156799986958504,
+        0.03830400109291077,
+        0.04259200021624565,
+        0.04054399952292442,
+        0.038495998829603195,
+        0.03951999917626381,
+        0.04873599857091904,
+        0.03951999917626381,
+        0.03951999917626381,
+        0.03951999917626381,
+        0.04054399952292442,
+        0.03939199820160866,
+        0.041600000113248825,
+        0.03948799893260002,
+        0.04259200021624565,
+        0.039583999663591385,
+        0.04899200052022934,
+        0.03830400109291077,
+        0.04265600070357323,
+        0.039423998445272446,
+        0.04169600084424019,
+        0.03743999823927879,
+        0.04259200021624565,
+        0.03859199956059456,
+        0.04064000025391579,
+        0.040608000010252,
+        0.05084799975156784,
+        0.03855999931693077,
+        0.0522879995405674,
+        0.039455998688936234,
+        0.04259200021624565,
+        0.03961599990725517,
+        0.04572800174355507,
+        0.03948799893260002,
+        0.04259200021624565,
+        0.04566400125622749,
+        0.04259200021624565,
+        0.03951999917626381,
+        0.04259200021624565,
+        0.039583999663591385,
+        0.04064000025391579,
+        0.03951999917626381,
+        0.03961599990725517,
+        0.03951999917626381,
+        0.04064000025391579,
+        0.045632001012563705,
+        0.04156799986958504,
+        0.03961599990725517,
+        0.0416640006005764,
+        0.038495998829603195,
+        0.042527999728918076,
+        0.038495998829603195,
+        0.041600000113248825
+      ],
+      "sample_count": 100,
+      "p10_ms": 0.038495998829603195,
+      "median_ms": 0.04064000025391579,
+      "p90_ms": 0.04662400111556053,
+      "p10_us": 38.495998829603195,
+      "median_us": 40.64000025391579,
+      "p90_us": 46.62400111556053
+    },
+    "triton": {
+      "raw_ms": [
+        0.07081600278615952,
+        0.06111999973654747,
+        0.060896001756191254,
+        0.05804799869656563,
+        0.0631679967045784,
+        0.06707199662923813,
+        0.05999999865889549,
+        0.05804799869656563,
+        0.05897599831223488,
+        0.054976001381874084,
+        0.056992001831531525,
+        0.052928000688552856,
+        0.05692800134420395,
+        0.055904000997543335,
+        0.06111999973654747,
+        0.054976001381874084,
+        0.05689600110054016,
+        0.0549440011382103,
+        0.05798399820923805,
+        0.054016001522541046,
+        0.05689600110054016,
+        0.054976001381874084,
+        0.05795200169086456,
+        0.05180799961090088,
+        0.06412799656391144,
+        0.05795200169086456,
+        0.05795200169086456,
+        0.06204799935221672,
+        0.057760000228881836,
+        0.05283199995756149,
+        0.05689600110054016,
+        0.05289600044488907,
+        0.05897599831223488,
+        0.05488000065088272,
+        0.057023998349905014,
+        0.053888000547885895,
+        0.0568000003695488,
+        0.06268800050020218,
+        0.06409599632024765,
+        0.05289600044488907,
+        0.05795200169086456,
+        0.05385600030422211,
+        0.05500800162553787,
+        0.05270399898290634,
+        0.05795200169086456,
+        0.05385600030422211,
+        0.06508799642324448,
+        0.05488000065088272,
+        0.0568000003695488,
+        0.05177599936723709,
+        0.0578560009598732,
+        0.052799999713897705,
+        0.05503999814391136,
+        0.05369599908590317,
+        0.05894400179386139,
+        0.05283199995756149,
+        0.06425599753856659,
+        0.05382400006055832,
+        0.054976001381874084,
+        0.05273599922657013,
+        0.05385600030422211,
+        0.05385600030422211,
+        0.05596800148487091,
+        0.052928000688552856,
+        0.05692800134420395,
+        0.052928000688552856,
+        0.06393600255250931,
+        0.05289600044488907,
+        0.05897599831223488,
+        0.050783999264240265,
+        0.05788800120353699,
+        0.05283199995756149,
+        0.0568000003695488,
+        0.12252800166606903,
+        0.060095999389886856,
+        0.05446400120854378,
+        0.05692800134420395,
+        0.05385600030422211,
+        0.05596800148487091,
+        0.05395200103521347,
+        0.056992001831531525,
+        0.05273599922657013,
+        0.05897599831223488,
+        0.04975999891757965,
+        0.05484800040721893,
+        0.061055999249219894,
+        0.0560000017285347,
+        0.05289600044488907,
+        0.059967998415231705,
+        0.05395200103521347,
+        0.05584000051021576,
+        0.05273599922657013,
+        0.05795200169086456,
+        0.04975999891757965,
+        0.055904000997543335,
+        0.060095999389886856,
+        0.054816000163555145,
+        0.05392000079154968,
+        0.055904000997543335,
+        0.05283199995756149
+      ],
+      "sample_count": 100,
+      "p10_ms": 0.052799999713897705,
+      "median_ms": 0.05596800148487091,
+      "p90_ms": 0.06204799935221672,
+      "p10_us": 52.799999713897705,
+      "median_us": 55.96800148487091,
+      "p90_us": 62.04799935221672
+    },
+    "triton_over_cutlass_median_speedup": 1.3771653822634566,
+    "pass": true,
+    "skipped": false
+  },
+  "timing_excluded": [
+    "metadata/build",
+    "MSA plan",
+    "FP32 oracle",
+    "query FP8 quantization",
+    "correctness checks"
+  ]
+}
+JSON_STRICT_GATE=PASS B=16 FP8-E4M3 exact-d4-backend-layer ABBA
+===== POST_AUDIT =====
+2026-08-28T18:53:26+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/full_vllm_d4_backend/c2_full_vllm_d4_backend_formal_b300_job10650_20260828T185314Z.json
+LOG=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/full_vllm_d4_backend/c2_full_vllm_d4_backend_formal_b300_job10650_20260828T185314Z.log
+FINAL_RC=0

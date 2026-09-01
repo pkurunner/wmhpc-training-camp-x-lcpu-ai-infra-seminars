@@ -1,0 +1,41 @@
+{
+  "inputs": [
+    {
+      "label": "plugin",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v6-aot-artifacts-20260830/job12278/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "sha256": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4",
+      "size_bytes": 615800
+    },
+    {
+      "label": "v6_source",
+      "path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-v6-register-numerator-20260830-job12278/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu",
+      "sha256": "c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02",
+      "size_bytes": 23256
+    },
+    {
+      "label": "base_harness",
+      "path": "/home/lcpu/85117379/native_c2_operator_bench_20260829.py",
+      "sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "size_bytes": 11438
+    },
+    {
+      "label": "v5_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py",
+      "sha256": "43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1",
+      "size_bytes": 18912
+    },
+    {
+      "label": "v6_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py",
+      "sha256": "fa9899b894d4766289fb27d979cd293187e3df607dacf26c2161116b82b66ede",
+      "size_bytes": 20094
+    },
+    {
+      "label": "v6_directed_script",
+      "path": "/var/lib/slurm/slurmd/job12318/slurm_script",
+      "sha256": "9eb5136afdf0067eedeed44b2cc42a7986088b0c619964938d774462351d8c8e",
+      "size_bytes": 11336
+    }
+  ],
+  "schema": "c2-native-c2-v6-directed-input-manifest-v1"
+}

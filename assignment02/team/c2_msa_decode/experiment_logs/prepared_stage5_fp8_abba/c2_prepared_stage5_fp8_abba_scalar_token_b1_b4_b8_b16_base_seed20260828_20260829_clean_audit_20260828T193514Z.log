@@ -1,0 +1,95 @@
+
+===== PRE UTC 2026-08-28T19:35:14Z (Slurm job 10711) =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 0
+-- compute apps --
+-- source and runner SHA256 --
+9daa9d65da8b7e8c4fc6eb630a9bbff5c1aa071016f222cdeb634b244ea03661  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_stage_fp8_abba_cli.py
+f69fb6c54c0cf61d5981024689d62a4d3af7026c4b403e9df43f81c7d9834f04  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_fp8_abba_clean.sh
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+AUDIT_EXECUTION slurm_job_id=10711 gpu_uuid=GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=1 base_seed=20260828 row_seed=20260829 C=16 =====
+{"base_seed": 20260828, "batch": 1, "candidate_us": 37.58399933576584, "control_us": 37.59999945759773, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b1_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260829, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 1.0004257163185044, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=1 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=4 base_seed=20260828 row_seed=20260832 C=4 =====
+{"base_seed": 20260828, "batch": 4, "candidate_us": 39.29600119590759, "control_us": 39.264000952243805, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b4_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260832, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.9991856615764985, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=4 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=8 base_seed=20260828 row_seed=20260836 C=8 =====
+{"base_seed": 20260828, "batch": 8, "candidate_us": 39.07199949026108, "control_us": 38.67200016975403, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b8_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260836, "selected_num_topk_chunks": 8, "speedup_stage5_vs_stage3": 0.98976250701972, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=8 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=16 base_seed=20260828 row_seed=20260844 C=4 =====
+{"base_seed": 20260828, "batch": 16, "candidate_us": 39.77600112557411, "control_us": 39.744000881910324, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b16_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260844, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.9991954886675822, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=16 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=1 base_seed=20260829 row_seed=20260830 C=16 =====
+{"base_seed": 20260829, "batch": 1, "candidate_us": 37.29600086808205, "control_us": 37.18400001525879, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b1_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260830, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 0.9969969742005473, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=1 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=4 base_seed=20260829 row_seed=20260833 C=4 =====
+{"base_seed": 20260829, "batch": 4, "candidate_us": 39.32800143957138, "control_us": 39.36000168323517, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b4_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260833, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 1.0008136758160202, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=4 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=8 base_seed=20260829 row_seed=20260837 C=8 =====
+{"base_seed": 20260829, "batch": 8, "candidate_us": 38.784001022577286, "control_us": 38.52799907326698, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b8_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260837, "selected_num_topk_chunks": 8, "speedup_stage5_vs_stage3": 0.9933992898473452, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=8 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-scalar B=16 base_seed=20260829 row_seed=20260845 C=4 =====
+{"base_seed": 20260829, "batch": 16, "candidate_us": 39.984000846743584, "control_us": 40.44799879193306, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-scalar_b16_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260845, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 1.0116045902201722, "storage": "fp8-scalar", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-scalar B=16 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=1 base_seed=20260828 row_seed=20260829 C=4 =====
+{"base_seed": 20260828, "batch": 1, "candidate_us": 39.423998445272446, "control_us": 38.4799987077713, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b1_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260829, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.9760552005192578, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=1 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=4 base_seed=20260828 row_seed=20260832 C=16 =====
+{"base_seed": 20260828, "batch": 4, "candidate_us": 37.74400055408478, "control_us": 37.74400055408478, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b4_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260832, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 1.0, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=4 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=8 base_seed=20260828 row_seed=20260836 C=16 =====
+{"base_seed": 20260828, "batch": 8, "candidate_us": 40.720000863075256, "control_us": 38.7520007789135, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b8_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260836, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 0.9516699400184362, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=8 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=16 base_seed=20260828 row_seed=20260844 C=4 =====
+{"base_seed": 20260828, "batch": 16, "candidate_us": 39.93599861860275, "control_us": 39.712000638246536, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b16_base_seed20260828_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260844, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.9943910760190212, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=16 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=1 base_seed=20260829 row_seed=20260830 C=4 =====
+{"base_seed": 20260829, "batch": 1, "candidate_us": 39.36000168323517, "control_us": 38.51199895143509, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b1_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260830, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.978455216068721, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=1 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=4 base_seed=20260829 row_seed=20260833 C=16 =====
+{"base_seed": 20260829, "batch": 4, "candidate_us": 37.696000188589096, "control_us": 37.66399994492531, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b4_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260833, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 0.9991510971056957, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=4 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=8 base_seed=20260829 row_seed=20260837 C=16 =====
+{"base_seed": 20260829, "batch": 8, "candidate_us": 40.84799997508526, "control_us": 39.16800022125244, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b8_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260837, "selected_num_topk_chunks": 16, "speedup_stage5_vs_stage3": 0.9588719213949884, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=8 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen FP8 full-prepared AB/BA storage=fp8-token B=16 base_seed=20260829 row_seed=20260845 C=4 =====
+{"base_seed": 20260829, "batch": 16, "candidate_us": 40.64000025391579, "control_us": 39.64800015091896, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_fp8-token_b16_base_seed20260829_full_prepared_clean_20260828T193514Z.json", "row_seed": 20260845, "selected_num_topk_chunks": 4, "speedup_stage5_vs_stage3": 0.9755905487992401, "storage": "fp8-token", "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for storage=fp8-token B=16 base_seed=20260829; retaining validated evidence and continuing.
+
+===== POST UTC 2026-08-28T19:36:01Z (Slurm job 10711) =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 1
+-- compute apps --
+-- source and runner SHA256 --
+9daa9d65da8b7e8c4fc6eb630a9bbff5c1aa071016f222cdeb634b244ea03661  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_stage_fp8_abba_cli.py
+f69fb6c54c0cf61d5981024689d62a4d3af7026c4b403e9df43f81c7d9834f04  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_fp8_abba_clean.sh
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+
+Prepared stage-5 FP8 B=1/4/8/16 two-seed full-dispatch AB/BA audit completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_scalar_token_b1_b4_b8_b16_base_seed20260828_20260829_clean_audit_20260828T193514Z.log
+
+===== FINAL_RC=3 =====

@@ -1,0 +1,42 @@
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/native_c2_decode.v15-q-stage-stride144.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-resource-gate-job13564.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-v15-provenance-job13564.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/outputs-job13564.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/var/lib/slurm/slurmd/job13575/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/submitted-script-job13575.slurm: OK
+===== pre UTC=2026-08-31T09:15:23Z =====
+NVIDIA B300 SXM6 AC, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 580.126.09, 275040, 0, 0, 10.3
+COMPUTE_APPS
+0c5ac4a1c890cac886fd41989746bce2740619965dee3e85bf8d85e05dd2f97d  /home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/vllm/_native_c2_msa_decode_plugin.abi3.so
+USDT:2026-08-31 09:15:28 1634133:1634133 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-31 09:15:28 1634133:1634133 SyncActivityProfilerHandler.cpp:59] profiler_stop
+===== post UTC=2026-08-31T09:15:30Z =====
+NVIDIA B300 SXM6 AC, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 580.126.09, 275040, 0, 1, 10.3
+COMPUTE_APPS
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/native_c2_decode.v15-q-stage-stride144.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-resource-gate-job13564.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-v15-provenance-job13564.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/outputs-job13564.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/submitted-script-job13575.slurm: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/run-manifest-job13575.json: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/gpu-pre-job13575.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/v15-q-stage-stride144-directed-job13575.json: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/run-manifest-job13575.json: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/inputs-job13575.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/gpu-pre-job13575.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/gpu-post-job13575.txt: OK
+===== final-post UTC=2026-08-31T09:15:30Z =====
+NVIDIA B300 SXM6 AC, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 580.126.09, 275040, 0, 1, 10.3
+COMPUTE_APPS

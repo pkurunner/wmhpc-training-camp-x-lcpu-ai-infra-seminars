@@ -1,0 +1,104 @@
+diff --git a/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py b/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+index d1c4725..c3b1d08 100644
+--- a/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
++++ b/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py
+@@ -6,6 +6,9 @@ from __future__ import annotations
+ 
+ import math
+ from numbers import Real
++from pathlib import Path
++from threading import Lock
++from typing import Final
+ 
+ import torch
+ 
+@@ -20,6 +23,12 @@ _HEAD_DIM = 128
+ _PAGE_SIZE = 128
+ _TOPK = 16
+ 
++_NATIVE_C2_PLUGIN_FILENAME: Final = "_native_c2_msa_decode_plugin.abi3.so"
++_NATIVE_C2_PLUGIN_LOAD_LOCK = Lock()
++_NATIVE_C2_PLUGIN_LOAD_ATTEMPTED = False
++_NATIVE_C2_PLUGIN_LOADED = False
++_NATIVE_C2_PLUGIN_LOAD_ERROR: str | None = None
++
+ 
+ def supports_native_c2_sparse_decode(
+     *,
+@@ -47,8 +56,75 @@ def supports_native_c2_sparse_decode(
+     )
+ 
+ 
++def _native_c2_operator_registered() -> bool:
++    """Return true only when the operator has a CUDA implementation."""
++    try:
++        if not (
++            hasattr(torch.ops, "_C")
++            and hasattr(torch.ops._C, "native_c2_msa_decode")
++        ):
++            return False
++        return torch._C._dispatch_has_kernel_for_dispatch_key(
++            "_C::native_c2_msa_decode", "CUDA"
++        )
++    except Exception:
++        # A partially registered schema, an older PyTorch API, or a dispatcher
++        # query failure must leave the existing Triton route intact.
++        return False
++
++
++def _native_c2_plugin_path() -> Path:
++    # This module is vllm/models/minimax_m3/nvidia/<file>; parents[3] is the
++    # installed vllm package directory.  Wheels are installed as real files,
++    # which torch.ops.load_library requires for dlopen.
++    return Path(__file__).resolve().parents[3] / _NATIVE_C2_PLUGIN_FILENAME
++
++
++def _load_native_c2_plugin_once() -> bool:
++    """Load the wheel-internal C2 DSO once, returning false on safe fallback.
++
++    The DSO is intentionally not imported as a Python extension: it has no
++    ``PyInit_*`` entry point.  ``torch.ops.load_library`` dlopens it and runs
++    the static STABLE_TORCH_LIBRARY schema and CUDA implementation
++    registrations.  This is a production load path, not a JIT build or a
++    test-only monkeypatch.
++    """
++    global _NATIVE_C2_PLUGIN_LOAD_ATTEMPTED
++    global _NATIVE_C2_PLUGIN_LOADED
++    global _NATIVE_C2_PLUGIN_LOAD_ERROR
++
++    # An earlier compatible plugin (or a controlled embedding) may already
++    # have registered the op.  Avoid a duplicate-schema dlopen in that case.
++    if _native_c2_operator_registered():
++        return True
++
++    with _NATIVE_C2_PLUGIN_LOAD_LOCK:
++        if _native_c2_operator_registered():
++            return True
++        if _NATIVE_C2_PLUGIN_LOAD_ATTEMPTED:
++            return _NATIVE_C2_PLUGIN_LOADED
++
++        _NATIVE_C2_PLUGIN_LOAD_ATTEMPTED = True
++        plugin_path = _native_c2_plugin_path()
++        if not plugin_path.is_file():
++            _NATIVE_C2_PLUGIN_LOAD_ERROR = f"missing plugin: {plugin_path}"
++            return False
++        try:
++            torch.ops.load_library(str(plugin_path))
++        except Exception as error:  # dlopen/schema failure must preserve Triton.
++            _NATIVE_C2_PLUGIN_LOAD_ERROR = f"{type(error).__name__}: {error}"
++            return False
++
++        _NATIVE_C2_PLUGIN_LOADED = _native_c2_operator_registered()
++        if not _NATIVE_C2_PLUGIN_LOADED:
++            _NATIVE_C2_PLUGIN_LOAD_ERROR = (
++                "plugin loaded but did not register _C::native_c2_msa_decode"
++            )
++        return _NATIVE_C2_PLUGIN_LOADED
++
++
+ def _has_native_c2_operator() -> bool:
+-    return hasattr(torch.ops, "_C") and hasattr(torch.ops._C, "native_c2_msa_decode")
++    return _load_native_c2_plugin_once()
+ 
+ 
+ def _positive_finite_scalar(value: object) -> bool:

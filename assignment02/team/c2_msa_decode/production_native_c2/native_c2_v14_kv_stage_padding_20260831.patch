@@ -1,0 +1,58 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+index c278fe1..a3e57fe 100644
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -47,6 +47,11 @@ constexpr int kWarpSize = 32;
+ constexpr int kWarps = kThreads / kWarpSize;
+ constexpr int kHeadsPerWarp = kGqaGroup / kWarps;
+ constexpr int kTile = 16;
++// v14 changes only the reusable K/V staging row stride.  The 16 live BF16
++// elements stay at columns [0, 15]; eight padding elements rotate successive
++// rows by four 32-bit shared-memory banks while preserving a WMMA-legal
++// leading dimension.
++constexpr int kStageStride = kTile + 8;
+ constexpr int kTokenTiles = kPageSize / kTile;
+ constexpr int kMbarrierArrivals = kProducerCtas;
+ constexpr int kMbarrierParity = 0;
+@@ -57,6 +62,7 @@ static_assert(kGqaGroup == kTile);
+ static_assert(kTokenTiles == kWarps);
+ static_assert(kHeadDim / kTile == kWarps);
+ static_assert(kQTileStride % 8 == 0);
++static_assert(kStageStride % 8 == 0);
+ 
+ __device__ __forceinline__ __nv_bfloat16 scaled_fp8(
+     const __nv_fp8_e4m3* ptr, std::int64_t offset, float scale) {
+@@ -96,9 +102,10 @@ __global__ void native_c2_msa_decode_kernel(
+   __shared__ float merge_denominator[kGqaGroup];
+ 
+   __shared__ __align__(32) __nv_bfloat16 q_tile[kGqaGroup][kQTileStride];
+-  // Reused for the current K or V 16x16 tile owned by each warp.  Staging is
+-  // inside the kernel and timed; no split/contiguous/BF16 bridge exists.
+-  __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
++  // Reused for the current K or V 16x16 tile owned by each warp.  Only the
++  // first 16 columns are live; kStageStride adds bank-rotation padding.
++  __shared__ __align__(32)
++      __nv_bfloat16 fp8_stage[kWarps][kTile][kStageStride];
+   __shared__ __align__(32) float score_tiles[kTokenTiles][kGqaGroup][kTile];
+ 
+   __shared__ float running_max[kGqaGroup];
+@@ -226,7 +233,8 @@ __global__ void native_c2_msa_decode_kernel(
+               scaled_fp8(kv_cache, cache_offset, k_scale);
+         }
+         __syncwarp();
+-        wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
++        wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0],
++                               kStageStride);
+         // The unrolled offsets below select a concrete fragment object; this
+         // preserves register residency without dynamic fragment indexing.
+         switch (k_offset) {
+@@ -361,7 +369,8 @@ __global__ void native_c2_msa_decode_kernel(
+         wmma::fragment<wmma::accumulator, kTile, kTile, kTile, float>
+             pv_fragment;
+         wmma::fill_fragment(pv_fragment, 0.0f);
+-        wmma::load_matrix_sync(value_fragment, &fp8_stage[warp][0][0], kTile);
++        wmma::load_matrix_sync(value_fragment, &fp8_stage[warp][0][0],
++                               kStageStride);
+         wmma::load_matrix_sync(weight_fragment, &weights[0][0], kTile);
+         wmma::mma_sync(pv_fragment, value_fragment, weight_fragment,
+                        pv_fragment);

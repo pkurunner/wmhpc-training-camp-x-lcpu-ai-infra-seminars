@@ -1,0 +1,46 @@
+
+===== PRE UTC 2026-08-20T02:04:04Z =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+a06e116b05dfcc894a4f33eb503468d58e0fef4e99f195c1269fbfb7d163271a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+907d7125ae39df1c0191b7a06a8ad501b2638635326da51627828632808efb96  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+===== fixed AB/BA batch B=1 =====
+{"batch": 1, "candidate_ab_median_us": 28.44800055027008, "candidate_ba_median_us": 28.44800055027008, "candidate_us": 28.44800055027008, "control_ab_median_us": 30.49599938094616, "control_ba_median_us": 30.559999868273735, "control_us": 30.559999868273735, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_b1_bf16_c1_clean_20260820T020404Z.json", "speedup": 1.0742406945005352, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=1; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=4 =====
+{"batch": 4, "candidate_ab_median_us": 30.49599938094616, "candidate_ba_median_us": 30.49599938094616, "candidate_us": 30.49599938094616, "control_ab_median_us": 28.44800055027008, "control_ba_median_us": 28.416000306606293, "control_us": 28.44800055027008, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_b4_bf16_c1_clean_20260820T020404Z.json", "speedup": 0.9328436886067205, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=4; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=8 =====
+{"batch": 8, "candidate_ab_median_us": 30.559999868273735, "candidate_ba_median_us": 30.49599938094616, "candidate_us": 30.527999624609947, "control_ab_median_us": 28.48000079393387, "control_ba_median_us": 28.48000079393387, "control_us": 28.48000079393387, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_b8_bf16_c1_clean_20260820T020404Z.json", "speedup": 0.9329140835999913, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=8; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=16 =====
+{"batch": 16, "candidate_ab_median_us": 32.575998455286026, "candidate_ba_median_us": 32.54399821162224, "candidate_us": 32.54399821162224, "control_ab_median_us": 30.432000756263733, "control_ba_median_us": 30.49599938094616, "control_us": 30.46399913728237, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_b16_bf16_c1_clean_20260820T020404Z.json", "speedup": 0.9360865539380147, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=16; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== POST UTC 2026-08-20T02:04:15Z =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 1
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+a06e116b05dfcc894a4f33eb503468d58e0fef4e99f195c1269fbfb7d163271a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+907d7125ae39df1c0191b7a06a8ad501b2638635326da51627828632808efb96  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+C2 no-LSE fixed AB/BA audit completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_clean_audit_20260820T020404Z.log

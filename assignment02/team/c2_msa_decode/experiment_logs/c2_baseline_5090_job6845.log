@@ -1,0 +1,344 @@
+===== PRE_AUDIT =====
+2026-08-19T20:41:53+08:00
+gj-5090-1
+SLURM_JOB_ID=6845 CUDA_VISIBLE_DEVICES=0
+0, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 00000000:16:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB, 2400 MHz, 61.97 W
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+torch=2.13.0+cu130
+triton=3.7.1
+cuda=13.0
+===== PROFILE_BASELINE_B1 =====
+/home/lcpu/85117379/c1env-cu130/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+USDT:2026-08-19 20:42:18 3007258:3007258 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-19 20:42:18 3007258:3007258 SyncActivityProfilerHandler.cpp:59] profiler_stop
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                           Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+      _gqa_sparse_decode_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      35.041us        70.83%      35.041us       3.504us           0 B           0 B           0 B           0 B            10  
+    _merge_topk_attn_out_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      14.432us        29.17%      14.432us       1.443us           0 B           0 B           0 B           0 B            10  
+               aten::empty_like         2.23%     153.615us         6.77%     467.115us      46.711us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     160.00 KB           0 B            10  
+            aten::empty_strided         4.54%     313.500us         4.54%     313.500us      31.350us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     160.00 KB     160.00 KB            10  
+                    aten::empty         3.94%     272.236us         3.94%     272.236us      13.612us       0.000us         0.00%       0.000us       0.000us           0 B           0 B       2.54 MB       2.54 MB            20  
+        Activity Buffer Request        78.06%       5.388ms        78.06%       5.388ms       5.388ms       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             1  
+               cuLaunchKernelEx        10.66%     736.048us        10.66%     736.048us      36.802us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B            20  
+                       [memory]         0.00%       0.000us         0.00%       0.000us       0.000us       0.000us         0.00%       0.000us       0.000us           0 B           0 B      -2.70 MB      -2.70 MB            30  
+          cudaDeviceSynchronize         0.56%      38.672us         0.56%      38.672us      19.336us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             2  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 6.902ms
+Self CUDA time total: 49.473us
+
+{"trace": "/home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/c2_baseline_5090_b1_trace.json"}
+===== PROFILE_BASELINE_B4 =====
+/home/lcpu/85117379/c1env-cu130/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+USDT:2026-08-19 20:42:26 3010131:3010131 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-19 20:42:26 3010131:3010131 SyncActivityProfilerHandler.cpp:59] profiler_stop
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                           Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+      _gqa_sparse_decode_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      83.967us        80.71%      83.967us       8.397us           0 B           0 B           0 B           0 B            10  
+    _merge_topk_attn_out_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      20.064us        19.29%      20.064us       2.006us           0 B           0 B           0 B           0 B            10  
+               aten::empty_like         1.61%      99.635us         4.98%     307.643us      30.764us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     640.00 KB           0 B            10  
+            aten::empty_strided         3.37%     208.008us         3.37%     208.008us      20.801us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     640.00 KB     640.00 KB            10  
+                    aten::empty         3.51%     216.862us         3.51%     216.862us      10.843us       0.000us         0.00%       0.000us       0.000us           0 B           0 B      10.16 MB      10.16 MB            20  
+        Activity Buffer Request        85.41%       5.277ms        85.41%       5.277ms       5.277ms       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             1  
+               cuLaunchKernelEx         5.66%     349.786us         5.66%     349.786us      17.489us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B            20  
+                       [memory]         0.00%       0.000us         0.00%       0.000us       0.000us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     -10.78 MB     -10.78 MB            30  
+          cudaDeviceSynchronize         0.44%      27.393us         0.44%      27.393us      13.697us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             2  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 6.178ms
+Self CUDA time total: 104.031us
+
+{"trace": "/home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/c2_baseline_5090_b4_trace.json"}
+===== PROFILE_BASELINE_B8 =====
+/home/lcpu/85117379/c1env-cu130/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+USDT:2026-08-19 20:42:34 3010556:3010556 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-19 20:42:34 3010556:3010556 SyncActivityProfilerHandler.cpp:59] profiler_stop
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                           Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+      _gqa_sparse_decode_kernel         0.00%       0.000us         0.00%       0.000us       0.000us     131.712us        82.88%     131.712us      13.171us           0 B           0 B           0 B           0 B            10  
+    _merge_topk_attn_out_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      27.201us        17.12%      27.201us       2.720us           0 B           0 B           0 B           0 B            10  
+               aten::empty_like         1.83%      98.310us         6.22%     334.898us      33.490us       0.000us         0.00%       0.000us       0.000us           0 B           0 B       1.25 MB           0 B            10  
+            aten::empty_strided         4.39%     236.588us         4.39%     236.588us      23.659us       0.000us         0.00%       0.000us       0.000us           0 B           0 B       1.25 MB       1.25 MB            10  
+                    aten::empty         3.69%     198.508us         3.69%     198.508us       9.925us       0.000us         0.00%       0.000us       0.000us           0 B           0 B      10.16 MB      10.16 MB            20  
+        Activity Buffer Request        83.02%       4.471ms        83.02%       4.471ms       4.471ms       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             1  
+               cuLaunchKernelEx         6.42%     345.840us         6.42%     345.840us      17.292us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B            20  
+                       [memory]         0.00%       0.000us         0.00%       0.000us       0.000us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     -11.41 MB     -11.41 MB            30  
+          cudaDeviceSynchronize         0.66%      35.620us         0.66%      35.620us      17.810us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             2  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 5.386ms
+Self CUDA time total: 158.913us
+
+{"trace": "/home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/c2_baseline_5090_b8_trace.json"}
+===== PROFILE_BASELINE_B16 =====
+/home/lcpu/85117379/c1env-cu130/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+USDT:2026-08-19 20:42:43 3010747:3010747 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-19 20:42:43 3010747:3010747 SyncActivityProfilerHandler.cpp:59] profiler_stop
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                           Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+      _gqa_sparse_decode_kernel         0.00%       0.000us         0.00%       0.000us       0.000us     217.795us        89.39%     217.795us      21.780us           0 B           0 B           0 B           0 B            10  
+    _merge_topk_attn_out_kernel         0.00%       0.000us         0.00%       0.000us       0.000us      25.855us        10.61%      25.855us       2.586us           0 B           0 B           0 B           0 B            10  
+               aten::empty_like         1.74%     111.049us         5.95%     378.972us      37.897us       0.000us         0.00%       0.000us       0.000us           0 B           0 B       2.50 MB           0 B            10  
+            aten::empty_strided         4.21%     267.923us         4.21%     267.923us      26.792us       0.000us         0.00%       0.000us       0.000us           0 B           0 B       2.50 MB       2.50 MB            10  
+                    aten::empty         4.28%     272.412us         4.28%     272.412us      13.621us       0.000us         0.00%       0.000us       0.000us           0 B           0 B      10.16 MB      10.16 MB            20  
+        Activity Buffer Request        83.97%       5.344ms        83.97%       5.344ms       5.344ms       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             1  
+               cuLaunchKernelEx         5.21%     331.632us         5.21%     331.632us      16.582us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B            20  
+                       [memory]         0.00%       0.000us         0.00%       0.000us       0.000us       0.000us         0.00%       0.000us       0.000us           0 B           0 B     -12.66 MB     -12.66 MB            30  
+          cudaDeviceSynchronize         0.59%      37.292us         0.59%      37.292us      18.646us       0.000us         0.00%       0.000us       0.000us           0 B           0 B           0 B           0 B             2  
+-------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 6.364ms
+Self CUDA time total: 243.650us
+
+{"trace": "/home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/c2_baseline_5090_b16_trace.json"}
+===== CORRECTNESS_ALL_MODES =====
+/home/lcpu/85117379/c1env-cu130/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+{
+  "correctness": [
+    {
+      "batch": 1,
+      "storage": "bf16",
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 3.561483708836022e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 1,
+      "storage": "fp8-scalar",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5726529858948197e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 1,
+      "storage": "fp8-token",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.5851543291064445e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "bf16",
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 3.523700570440269e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-scalar",
+      "max_abs": 3.0517578125e-05,
+      "mean_abs": 3.588128947740188e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-token",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.620660547516309e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "bf16",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5123910038237227e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-scalar",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5707405459106667e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-token",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.620039362634998e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "bf16",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.545263098203577e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-scalar",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.5564166864787694e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-token",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 4.633982825907879e-06,
+      "rtol": 0.03,
+      "atol": 0.03,
+      "status": "pass"
+    }
+  ]
+}
+===== BENCHMARK_bf16 =====
+{
+  "benchmark": [
+    {
+      "batch": 1,
+      "storage": "bf16",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.129784,
+      "p10_ms": 0.126706,
+      "p90_ms": 0.137033
+    },
+    {
+      "batch": 4,
+      "storage": "bf16",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.128665,
+      "p10_ms": 0.125446,
+      "p90_ms": 0.131541
+    },
+    {
+      "batch": 8,
+      "storage": "bf16",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.131343,
+      "p10_ms": 0.129085,
+      "p90_ms": 0.135347
+    },
+    {
+      "batch": 16,
+      "storage": "bf16",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.130325,
+      "p10_ms": 0.127721,
+      "p90_ms": 0.138232
+    }
+  ]
+}
+===== BENCHMARK_fp8-scalar =====
+{
+  "benchmark": [
+    {
+      "batch": 1,
+      "storage": "fp8-scalar",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.132309,
+      "p10_ms": 0.129473,
+      "p90_ms": 0.13701
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-scalar",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.129197,
+      "p10_ms": 0.127076,
+      "p90_ms": 0.132728
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-scalar",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.130104,
+      "p10_ms": 0.128558,
+      "p90_ms": 0.133707
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-scalar",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.132755,
+      "p10_ms": 0.130421,
+      "p90_ms": 0.152757
+    }
+  ]
+}
+===== BENCHMARK_fp8-token =====
+{
+  "benchmark": [
+    {
+      "batch": 1,
+      "storage": "fp8-token",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.200713,
+      "p10_ms": 0.129087,
+      "p90_ms": 0.228664
+    },
+    {
+      "batch": 4,
+      "storage": "fp8-token",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.138378,
+      "p10_ms": 0.129366,
+      "p90_ms": 0.211233
+    },
+    {
+      "batch": 8,
+      "storage": "fp8-token",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.132645,
+      "p10_ms": 0.129979,
+      "p90_ms": 0.137903
+    },
+    {
+      "batch": 16,
+      "storage": "fp8-token",
+      "warmup": 20,
+      "repetitions": 100,
+      "median_ms": 0.132552,
+      "p10_ms": 0.130679,
+      "p90_ms": 0.135294
+    }
+  ]
+}
+===== POST_AUDIT =====
+2026-08-19T20:43:20+08:00
+0, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 00000000:16:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB, 2400 MHz, 60.43 W
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

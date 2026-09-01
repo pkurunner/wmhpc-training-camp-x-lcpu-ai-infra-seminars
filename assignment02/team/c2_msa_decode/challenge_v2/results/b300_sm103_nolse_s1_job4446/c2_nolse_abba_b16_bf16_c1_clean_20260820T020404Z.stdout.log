@@ -1,0 +1,186 @@
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+{
+  "schema": "c2-c1-online-softmax-no-lse-abba-v1",
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "cuda": "13.0",
+    "device": "NVIDIA B300 SXM6 AC",
+    "capability": [
+      10,
+      3
+    ]
+  },
+  "source_sha256": {
+    "challenge_v2/cli.py": "0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284",
+    "challenge_v2/prepared_tuned.py": "2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "harness/triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "harness/data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "harness/reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967",
+    "challenge_v2/head_shard.py": "2c7d96976717d8ef04bf0bab3ce74dbb9a678f682108e112081d639284d62e07",
+    "challenge_v2/head_shard_cli.py": "27dcdb610883b75ca587d74c5122a8bfa65190e6af214138968903dd445a45c9",
+    "challenge_v2/c1_no_lse.py": "7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa",
+    "challenge_v2/c1_no_lse_cli.py": "68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739",
+    "challenge_v2/c1_no_lse_abba_cli.py": "a06e116b05dfcc894a4f33eb503468d58e0fef4e99f195c1269fbfb7d163271a",
+    "challenge_v2/c1_static_topk16.py": "1a9c508fc088f8530255f3a6f6b0d4495c83f020129df0378231e0d064b66a6f",
+    "challenge_v2/c1_static_topk16_probe_cli.py": "b4e64d9a65898a99a6afbd2d173740b22e4bb4b1feb31e4e006627cbbfe45c18"
+  },
+  "frozen_configuration": {
+    "control": {
+      "num_topk_chunks": 1,
+      "decode_num_warps": 4,
+      "merge_num_warps": 4,
+      "decode_num_stages": 3,
+      "merge_num_stages": 3,
+      "pdl_mode": "auto",
+      "decode_maxnreg": null,
+      "merge_maxnreg": null
+    },
+    "candidate": {
+      "gqa_shards": 1,
+      "num_warps": 4,
+      "num_stages": 3,
+      "pdl_mode": "off",
+      "maxnreg": null
+    },
+    "selection_rule": "specified before this AB/BA run; not reselected from its event samples",
+    "bf16_c1_only": true
+  },
+  "fairness_contract": {
+    "same_input_seed_per_batch": true,
+    "caller_owned_output": true,
+    "persistent_workspace_outside_timing": true,
+    "selected_chunks": 1,
+    "no_merge": true,
+    "oracle": "independent harness.reference dense FP32 selected-page causal attention",
+    "tolerance": {
+      "rtol": 0.03,
+      "atol": 0.03
+    },
+    "single_call_per_cuda_event": true,
+    "AB_BA_interleaved": true
+  },
+  "results": [
+    {
+      "batch": 16,
+      "storage": "bf16",
+      "seed": 20260835,
+      "problem": {
+        "q_shape": [
+          16,
+          64,
+          128
+        ],
+        "kv_dtype": "torch.bfloat16"
+      },
+      "control": {
+        "config": {
+          "num_topk_chunks": 1,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 3,
+          "merge_num_stages": 3,
+          "pdl_mode": "auto",
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        },
+        "metadata": {
+          "num_topk_chunks": 1,
+          "merge_bypassed": true,
+          "caller_output_bytes": 262144,
+          "unique_workspace_bytes": 4096,
+          "pdl_mode_requested": "auto",
+          "pdl_effective": true,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 3,
+          "merge_num_stages": 3,
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        },
+        "correctness": {
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 2.0488669179030694e-06
+        }
+      },
+      "candidate": {
+        "config": {
+          "gqa_shards": 1,
+          "num_warps": 4,
+          "num_stages": 3,
+          "pdl_mode": "off",
+          "maxnreg": null
+        },
+        "metadata": {
+          "gqa_shards": 1,
+          "num_warps": 4,
+          "num_stages": 3,
+          "pdl_mode": "off",
+          "maxnreg": null,
+          "gqa_shard_size": 16,
+          "grid_y": 4,
+          "merge_bypassed": true,
+          "lse_workspace_bytes": 0,
+          "caller_output_bytes": 262144,
+          "pdl_effective": false
+        },
+        "correctness": {
+          "finite": true,
+          "max_abs": 6.103515625e-05,
+          "mean_abs": 2.0490397218964063e-06
+        }
+      },
+      "status": "pass",
+      "timing": {
+        "protocol": "warmup_each_then_ABBA_pairs_one_runner_call_per_cuda_event_pair_one_stream",
+        "warmup_each": 30,
+        "abba_pairs": 101,
+        "samples_per_runner": 202,
+        "AB_BA_interleaved": true,
+        "current_prepared_control": {
+          "all": {
+            "p10_us": 30.30399978160858,
+            "median_us": 30.46399913728237,
+            "p90_us": 30.7839997112751
+          },
+          "when_launch_order_is_AB": {
+            "p10_us": 29.40800040960312,
+            "median_us": 30.432000756263733,
+            "p90_us": 30.7839997112751
+          },
+          "when_launch_order_is_BA": {
+            "p10_us": 30.33600002527237,
+            "median_us": 30.49599938094616,
+            "p90_us": 30.751999467611313
+          }
+        },
+        "c1_online_softmax_no_lse": {
+          "all": {
+            "p10_us": 32.3840007185936,
+            "median_us": 32.54399821162224,
+            "p90_us": 33.31200033426285
+          },
+          "when_launch_order_is_AB": {
+            "p10_us": 32.416000962257385,
+            "median_us": 32.575998455286026,
+            "p90_us": 33.376000821590424
+          },
+          "when_launch_order_is_BA": {
+            "p10_us": 32.35200047492981,
+            "median_us": 32.54399821162224,
+            "p90_us": 32.80000016093254
+          }
+        }
+      },
+      "control_median_us": 30.46399913728237,
+      "candidate_median_us": 32.54399821162224,
+      "speedup_vs_current_prepared_control": 0.9360865539380147,
+      "strict_10_percent_target_met": false
+    }
+  ],
+  "all_contexts_strict_10_percent": false
+}

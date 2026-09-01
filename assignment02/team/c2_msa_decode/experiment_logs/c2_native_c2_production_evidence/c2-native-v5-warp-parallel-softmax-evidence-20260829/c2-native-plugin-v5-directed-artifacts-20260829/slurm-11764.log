@@ -1,0 +1,8 @@
+
+===== PRE UTC=2026-08-29T18:50:28Z =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/native_c2_decode.v5-warp-parallel-softmax.cu: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+FINAL_RC=1 UTC=2026-08-29T18:50:30Z

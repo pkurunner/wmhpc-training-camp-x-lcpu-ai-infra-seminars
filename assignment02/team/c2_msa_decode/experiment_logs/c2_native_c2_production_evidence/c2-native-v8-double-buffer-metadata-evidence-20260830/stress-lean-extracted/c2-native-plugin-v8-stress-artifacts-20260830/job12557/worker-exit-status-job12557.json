@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v8_double_buffer_metadata_b1": 0,
+    "candidate_v8_double_buffer_metadata_b2": 0,
+    "reference_v6_a": 0,
+    "reference_v6_a2": 0
+  },
+  "schema": "c2-native-plugin-v8-double-buffer-metadata-worker-exit-status-v1"
+}

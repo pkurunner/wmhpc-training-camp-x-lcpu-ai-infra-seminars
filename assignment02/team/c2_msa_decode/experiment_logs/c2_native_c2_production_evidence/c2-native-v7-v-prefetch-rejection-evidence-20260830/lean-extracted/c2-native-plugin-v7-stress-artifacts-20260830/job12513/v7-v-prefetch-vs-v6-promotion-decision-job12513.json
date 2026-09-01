@@ -1,0 +1,35 @@
+{
+  "accepted": false,
+  "aggregate_sha256": "33aedaa8dcbdddd06f5b247799e578a88e380e0e3be2539c18ed0e534568674a",
+  "all_correctness_and_resource_identity_gates_pass": true,
+  "comparison_boundary": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "cross_gpu_claim": "none; this is a same-physical-GPU comparison only.",
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "943e0f84afba0982bb0453cb6fabdd9f4156787aa6bb6b8240b91cd88ad27e02",
+    "candidate_resource_gate": "b81de9672602acb339a7e0cb471bf42dd02fdfb3039409da19d48188a75fddda",
+    "candidate_v7_job12484_plugin": "0873af3cf48ef756f9945fc6e711a03dd1208fcc6d4ce20a8041cf9a587e97db",
+    "candidate_v7_v_prefetch_source": "1d638ce66c3b17b2b83298fa98f44770b14b94154c0f56cf5ff84d508a12e9a3",
+    "driver_script": "7e949e21b611296d8d504678e6a5d73b7343775de11d0020bfa56bc9dab9cbf9",
+    "fixed_fixture": "057844dea95ba8221f3ce7acdfd31a8503d2d5b41c9db5c99ac69e105aa89957",
+    "fixture_metadata": "8dca7a99c1bf1cd3c1b3226fa239f3e425b5629d5b587d3e382f3b062bae64a1",
+    "fresh_v7_directed_final_status_job12501": "42e141e25aaa89241e8483946eb774120cc511b2bbdd857e3c16af1b2632d35e",
+    "fresh_v7_directed_result_job12501": "fd3cacc517cbe27545dd858e0b93cb98d72ee9773827664e3fa7cd5893a30fb6",
+    "reference_v6_job12278_plugin": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4",
+    "worker_harness": "791b10148a9b47530468076ad31507ddbb45ce2452937ef392ffbfe02012d3a6"
+  },
+  "issues": [],
+  "one_physical_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+  "performance": {
+    "bootstrap_95pct_lower_bound_fraction": 0.04756298644848367,
+    "paired_median_improvement_fraction": 0.04827842064589061,
+    "required_bootstrap_lower_bound_fraction": 0.0,
+    "required_improvement_fraction": 0.05
+  },
+  "rejection_policy": "If any identity/correctness/comparability gate fails return 2. If valid but performance gates fail return 3; retain the frozen v6 reference and do not build/package v7.",
+  "schema": "c2-native-plugin-v7-v-prefetch-vs-v6-promotion-decision-v1"
+}

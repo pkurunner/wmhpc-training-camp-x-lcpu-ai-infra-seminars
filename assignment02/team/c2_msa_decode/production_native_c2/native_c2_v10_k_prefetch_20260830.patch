@@ -1,0 +1,164 @@
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -90,6 +90,11 @@
+   // Reused for the current K or V 16x16 tile owned by each warp.  Staging is
+   // inside the kernel and timed; no split/contiguous/BF16 bridge exists.
+   __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
++  // One selected-page lookahead stores the unscaled E4M3 K encodings.  Its
++  // [8 warps][8 K chunks][16 tokens][16 dimensions] layout is 16 KiB and is
++  // disjoint from the BF16 tile that WMMA consumes for the current page.
++  __shared__ __align__(32)
++      __nv_fp8_e4m3 k_prefetch[kWarps][kTokenTiles][kTile][kTile];
+   __shared__ __align__(32) float score_tiles[kTokenTiles][kGqaGroup][kTile];
+ 
+   __shared__ float running_max[kGqaGroup];
+@@ -140,6 +145,9 @@
+       alpha_tile[thread] = 1.0f;
+       tile_active[thread] = 0;
+     }
++    // This is an exact selected-page index, never a boolean.  Uniform CTA
++    // control keeps each thread's lane-private copy identical.
++    int prefetched_selected = -1;
+     __syncthreads();
+ 
+     for (int selected = selected_begin;
+@@ -148,12 +156,40 @@
+           static_cast<std::int64_t>(batch) * topk_token_stride +
+           static_cast<std::int64_t>(kv_head) * topk_head_stride + selected;
+       int const logical_page = topk[topk_offset];
+-      if (logical_page < 0 || logical_page >= max_logical_pages) continue;
+-      int const physical_page =
+-          block_table[static_cast<std::int64_t>(batch) *
+-                          block_table_batch_stride +
+-                      logical_page];
+-      if (physical_page < 0 || physical_page >= num_physical_pages) continue;
++      int physical_page = -1;
++      if (logical_page >= 0 && logical_page < max_logical_pages) {
++        physical_page =
++            block_table[static_cast<std::int64_t>(batch) *
++                            block_table_batch_stride +
++                        logical_page];
++      }
++      bool const page_metadata_valid =
++          physical_page >= 0 && physical_page < num_physical_pages;
++      if (!page_metadata_valid) {
++        // An invalid logical/physical gap cannot permit a later page to
++        // consume a raw buffer that was prepared for a different index.
++        prefetched_selected = -1;
++        continue;
++      }
++
++      bool const use_prefetched_k = prefetched_selected == selected;
++      int next_physical_page = -1;
++      if (selected + 1 < selected_begin + kPagesPerProducer) {
++        std::int64_t const next_topk_offset =
++            static_cast<std::int64_t>(batch) * topk_token_stride +
++            static_cast<std::int64_t>(kv_head) * topk_head_stride +
++            selected + 1;
++        int const next_logical_page = topk[next_topk_offset];
++        if (next_logical_page >= 0 &&
++            next_logical_page < max_logical_pages) {
++          next_physical_page =
++              block_table[static_cast<std::int64_t>(batch) *
++                              block_table_batch_stride +
++                          next_logical_page];
++        }
++      }
++      bool const prefetch_next_k =
++          next_physical_page >= 0 && next_physical_page < num_physical_pages;
+ 
+       int const token_begin = warp * kTile;
+       wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
+@@ -172,14 +208,21 @@
+              element += kWarpSize) {
+           int const token = element / kTile;
+           int const dim = element % kTile;
+-          std::int64_t const cache_offset =
+-              static_cast<std::int64_t>(physical_page) * kv_page_stride +
+-              static_cast<std::int64_t>(kv_head) * kv_head_stride +
+-              static_cast<std::int64_t>(token_begin + token) *
+-                  kv_token_stride +
+-              k_offset + dim;
+-          fp8_stage[warp][token][dim] =
+-              scaled_fp8(kv_cache, cache_offset, k_scale);
++          if (use_prefetched_k) {
++            fp8_stage[warp][token][dim] = __float2bfloat16_rn(
++                static_cast<float>(k_prefetch[warp][k_offset / kTile][token]
++                                             [dim]) *
++                k_scale);
++          } else {
++            std::int64_t const cache_offset =
++                static_cast<std::int64_t>(physical_page) * kv_page_stride +
++                static_cast<std::int64_t>(kv_head) * kv_head_stride +
++                static_cast<std::int64_t>(token_begin + token) *
++                    kv_token_stride +
++                k_offset + dim;
++            fp8_stage[warp][token][dim] =
++                scaled_fp8(kv_cache, cache_offset, k_scale);
++          }
+         }
+         __syncwarp();
+         wmma::load_matrix_sync(q_fragment, &q_tile[0][k_offset], kHeadDim);
+@@ -193,6 +236,28 @@
+       __syncthreads();
+ 
+       for (int tile = 0; tile < kTokenTiles; ++tile) {
++        // Each softmax tile also fetches one 2 KiB K chunk for exactly the
++        // immediately next selected page.  It remains lane-private through
++        // the current page's softmax/PV work, then enters its own raw-FP8
++        // shared buffer before the existing CTA barrier publishes it.
++        __nv_fp8_e4m3 key_prefetch[kTile / 2];
++        if (prefetch_next_k) {
++#pragma unroll
++          for (int i = 0; i < kTile / 2; ++i) {
++            int const element = lane + i * kWarpSize;
++            int const token = element / kTile;
++            int const dim = element % kTile;
++            std::int64_t const cache_offset =
++                static_cast<std::int64_t>(next_physical_page) *
++                    kv_page_stride +
++                static_cast<std::int64_t>(kv_head) * kv_head_stride +
++                static_cast<std::int64_t>(token_begin + token) *
++                    kv_token_stride +
++                tile * kTile + dim;
++            key_prefetch[i] = kv_cache[cache_offset];
++          }
++        }
++
+         // Each lane owns eight elements of this warp's 16x16 V tile.  Fetch
+         // their original FP8 encodings before softmax so its latency can
+         // overlap the unchanged score/weight work below.  The values remain
+@@ -263,6 +328,20 @@
+         }
+         __syncthreads();
+ 
++        // Retire the K lookahead registers as soon as softmax finishes.  This
++        // raw buffer is disjoint from the BF16 V stage used below; the CTA
++        // barrier at the end of the tile still publishes these stores before
++        // any subsequent page can consume them.
++        if (prefetch_next_k) {
++          for (int element = lane; element < kTile * kTile;
++               element += kWarpSize) {
++            int const token = element / kTile;
++            int const dim = element % kTile;
++            k_prefetch[warp][tile][token][dim] =
++                key_prefetch[element / kWarpSize];
++          }
++        }
++
+         int const dim_begin = warp * kTile;
+         for (int element = lane; element < kTile * kTile;
+              element += kWarpSize) {
+@@ -307,6 +386,12 @@
+                 pv_contribution[warp][dim_in_warp][accumulator_head];
+           }
+         }
++        if (tile == kTokenTiles - 1) {
++          // All K stores happen-before the unchanged terminal CTA barrier;
++          // every thread advances its identical lane-private index at this
++          // converged point, and the next page requires an exact match.
++          prefetched_selected = prefetch_next_k ? selected + 1 : -1;
++        }
+         __syncthreads();
+       }
+     }

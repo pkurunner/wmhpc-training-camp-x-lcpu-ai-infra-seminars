@@ -1,0 +1,9 @@
+{
+  "exit_status": {
+    "candidate_v11_q_fragment_reuse_b1": 0,
+    "candidate_v11_q_fragment_reuse_b2": 0,
+    "reference_v9_a": 0,
+    "reference_v9_a2": 0
+  },
+  "schema": "c2-native-plugin-v11-q-fragment-reuse-worker-exit-status-v1"
+}

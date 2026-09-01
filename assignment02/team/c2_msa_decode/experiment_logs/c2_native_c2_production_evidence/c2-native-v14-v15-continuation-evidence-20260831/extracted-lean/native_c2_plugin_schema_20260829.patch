@@ -1,0 +1,22 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -506,6 +506,18 @@ void native_c2_msa_decode(
+ 
+ }  // namespace vllm::native_c2
+ 
++// This schema deliberately lives in the standalone plugin DSO rather than
++// csrc/libtorch_stable/torch_bindings.cpp.  torch.ops.load_library loads the
++// DSO and executes these static registrations without importing it as a
++// Python module, so the plugin has no PyInit symbol and does not replace the
++// wheel's _C_stable_libtorch.abi3.so.
++STABLE_TORCH_LIBRARY_FRAGMENT(_C, m) {
++  m.def(
++      "native_c2_msa_decode(Tensor! output, Tensor query_fp8, Tensor kv_cache,"
++      " Tensor topk, Tensor block_table, Tensor seq_lens, float scale,"
++      " float q_scale, float k_scale, float v_scale) -> ()");
++}
++
+ STABLE_TORCH_LIBRARY_IMPL(_C, CUDA, m) {
+   m.impl("native_c2_msa_decode",
+          TORCH_BOX(&vllm::native_c2::native_c2_msa_decode));

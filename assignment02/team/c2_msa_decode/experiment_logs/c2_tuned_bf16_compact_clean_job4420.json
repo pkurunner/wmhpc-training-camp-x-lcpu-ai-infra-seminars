@@ -1,0 +1,2269 @@
+{
+  "schema": "c2-tuned-prepared-sweep-v1",
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "cuda": "13.0",
+    "device": "NVIDIA B300 SXM6 AC",
+    "capability": [
+      10,
+      3
+    ]
+  },
+  "source_sha256": {
+    "challenge_v2/cli.py": "8eff62aace8d15443be84108fc58e51b5a622c1de73c7f5e65e1a3c612b4c78e",
+    "challenge_v2/prepared_tuned.py": "2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "harness/triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "harness/data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "harness/reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967"
+  },
+  "fairness_contract": {
+    "same_seed_and_problem_within_context": true,
+    "caller_owned_output": true,
+    "persistent_workspace_outside_events": true,
+    "oracle": "harness.reference.dense_sparse_attention_reference FP32 selected-page causal attention",
+    "tolerance": {
+      "rtol": 0.03,
+      "atol": 0.03
+    },
+    "event_protocol": "one kernel-call path invocation per CUDA event pair",
+    "compile_and_warmup_excluded": true
+  },
+  "sweep": {
+    "style": "compact",
+    "chunks": "selected",
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "pdl_modes": [
+      "auto",
+      "on",
+      "off"
+    ],
+    "maxnregs": [
+      null,
+      64,
+      96,
+      128,
+      160
+    ],
+    "decode_warps": [
+      4
+    ],
+    "merge_warps": [
+      4
+    ],
+    "seed": 20260819,
+    "max_seq_len": 4096
+  },
+  "results": [
+    {
+      "batch": 1,
+      "storage": "bf16",
+      "seed": 20260820,
+      "resolved_chunks": 1,
+      "problem": {
+        "q_shape": [
+          1,
+          64,
+          128
+        ],
+        "kv_dtype": "torch.bfloat16"
+      },
+      "candidates": [
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 30.30399978160858,
+            "median_us": 30.527999624609947,
+            "p90_us": 31.647998839616776
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 36.479998379945755,
+            "median_us": 36.51199862360954,
+            "p90_us": 37.248000502586365
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.8361086978369298
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.255999088287354,
+            "median_us": 28.351999819278717,
+            "p90_us": 29.503999277949333
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0767494292889914
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 30.271999537944794,
+            "median_us": 30.368000268936157,
+            "p90_us": 30.592000111937523
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0052686826349069
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 26.655999943614006,
+            "median_us": 27.295999228954315,
+            "p90_us": 30.368000268936157
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.1184056450378002
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "on",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 29.279999434947968,
+            "median_us": 30.400000512599945,
+            "p90_us": 31.231999397277832
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "on",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0042104970345955
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "off",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 29.37600016593933,
+            "median_us": 30.368000268936157,
+            "p90_us": 31.39200061559677
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "off",
+            "pdl_effective": false,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0052686826349069
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 60.99199876189232,
+            "median_us": 61.08799949288368,
+            "p90_us": 62.880001962184906
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "speedup_vs_same_contract_baseline": 0.49973808076930465
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 40.54399952292442,
+            "median_us": 40.672000497579575,
+            "p90_us": 42.59200021624565
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "speedup_vs_same_contract_baseline": 0.7505900681336463
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 33.440001308918,
+            "median_us": 34.46400165557861,
+            "p90_us": 34.46400165557861
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "speedup_vs_same_contract_baseline": 0.8857938184223725
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.0406037037901115e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 32.32000023126602,
+            "median_us": 32.44800120592117,
+            "p90_us": 34.36800092458725
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260820,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 16384,
+            "unique_workspace_bytes": 256,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "speedup_vs_same_contract_baseline": 0.9408283558322582
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "baseline_median_us": 30.527999624609947,
+        "winner_median_us": 27.295999228954315,
+        "winner_speedup": 1.1184056450378002,
+        "strict_10_percent_target_met": true,
+        "winner_config": {
+          "num_topk_chunks": 1,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 5,
+          "merge_num_stages": 5,
+          "pdl_mode": "auto",
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "storage": "bf16",
+      "seed": 20260823,
+      "resolved_chunks": 1,
+      "problem": {
+        "q_shape": [
+          4,
+          64,
+          128
+        ],
+        "kv_dtype": "torch.bfloat16"
+      },
+      "candidates": [
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.12799997627735,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 36.41600161790848,
+            "median_us": 36.51199862360954,
+            "p90_us": 37.21600025892258
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.7756354251531586
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.224000707268715,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.255999088287354,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 27.327999472618103,
+            "median_us": 28.416000306606293,
+            "p90_us": 29.472000896930695
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.9966215959334346
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "on",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.224000707268715,
+            "median_us": 28.351999819278717,
+            "p90_us": 29.311999678611755
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "on",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.9988713232270117
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "off",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.255999088287354,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "off",
+            "pdl_effective": false,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 60.99199876189232,
+            "median_us": 61.08799949288368,
+            "p90_us": 63.13599646091461
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "speedup_vs_same_contract_baseline": 0.4635935013539608
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 40.57599976658821,
+            "median_us": 40.608000010252,
+            "p90_us": 41.21600091457367
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "speedup_vs_same_contract_baseline": 0.6973995165599189
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 33.31200033426285,
+            "median_us": 34.46400165557861,
+            "p90_us": 34.623999148607254
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "speedup_vs_same_contract_baseline": 0.8217269677106933
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.081210141113843e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 32.32000023126602,
+            "median_us": 32.48000144958496,
+            "p90_us": 33.40800106525421
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260823,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 65536,
+            "unique_workspace_bytes": 1024,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "speedup_vs_same_contract_baseline": 0.8719211302860582
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "baseline_median_us": 28.31999957561493,
+        "winner_median_us": 28.31999957561493,
+        "winner_speedup": 1.0,
+        "strict_10_percent_target_met": false,
+        "winner_config": {
+          "num_topk_chunks": 1,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 3,
+          "merge_num_stages": 3,
+          "pdl_mode": "auto",
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        }
+      }
+    },
+    {
+      "batch": 8,
+      "storage": "bf16",
+      "seed": 20260827,
+      "resolved_chunks": 1,
+      "problem": {
+        "q_shape": [
+          8,
+          64,
+          128
+        ],
+        "kv_dtype": "torch.bfloat16"
+      },
+      "candidates": [
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.224000707268715,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 36.448001861572266,
+            "median_us": 36.51199862360954,
+            "p90_us": 36.639999598264694
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.7756354251531586
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.16000021994114,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.16000021994114,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.343999922275543
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.31999957561493,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.311999678611755
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "on",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.255999088287354,
+            "median_us": 28.351999819278717,
+            "p90_us": 29.311999678611755
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "on",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.9988713232270117
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "off",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.224000707268715,
+            "median_us": 28.351999819278717,
+            "p90_us": 29.184000566601753
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "off",
+            "pdl_effective": false,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.9988713232270117
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 61.08799949288368,
+            "median_us": 63.07200342416763,
+            "p90_us": 63.26399743556976
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "speedup_vs_same_contract_baseline": 0.44901062338481873
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 40.64000025391579,
+            "median_us": 42.65600070357323,
+            "p90_us": 42.7200011909008
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "speedup_vs_same_contract_baseline": 0.6639159580950261
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 33.47200155258179,
+            "median_us": 34.46400165557861,
+            "p90_us": 35.2960005402565
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "speedup_vs_same_contract_baseline": 0.8217269677106933
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 3.0517578125e-05,
+            "mean_abs": 2.058081463474082e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 32.32000023126602,
+            "median_us": 32.416000962257385,
+            "p90_us": 33.24799984693527
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260827,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 131072,
+            "unique_workspace_bytes": 2048,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "speedup_vs_same_contract_baseline": 0.8736426065814993
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "baseline_median_us": 28.31999957561493,
+        "winner_median_us": 28.31999957561493,
+        "winner_speedup": 1.0,
+        "strict_10_percent_target_met": false,
+        "winner_config": {
+          "num_topk_chunks": 1,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 3,
+          "merge_num_stages": 3,
+          "pdl_mode": "auto",
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        }
+      }
+    },
+    {
+      "batch": 16,
+      "storage": "bf16",
+      "seed": 20260835,
+      "resolved_chunks": 1,
+      "problem": {
+        "q_shape": [
+          16,
+          64,
+          128
+        ],
+        "kv_dtype": "torch.bfloat16"
+      },
+      "candidates": [
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 31.136000528931618,
+            "median_us": 32.416000962257385,
+            "p90_us": 32.54399821162224
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 42.49599948525429,
+            "median_us": 42.65600070357323,
+            "p90_us": 42.847998440265656
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 1,
+            "merge_num_stages": 1,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 0.7599399950202539
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 31.168000772595406,
+            "median_us": 32.416000962257385,
+            "p90_us": 32.575998455286026
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 2,
+            "merge_num_stages": 2,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 30.432000756263733,
+            "median_us": 32.35200047492981,
+            "p90_us": 32.51200169324875
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 4,
+            "merge_num_stages": 4,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.001978254401213
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "pdl_mode": "auto",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 28.224000707268715,
+            "median_us": 28.31999957561493,
+            "p90_us": 29.40800040960312
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 5,
+            "merge_num_stages": 5,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.1446328194923188
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "on",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 31.231999397277832,
+            "median_us": 32.416000962257385,
+            "p90_us": 32.575998455286026
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "on",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.0
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "off",
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 30.368000268936157,
+            "median_us": 32.287999987602234,
+            "p90_us": 32.44800120592117
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "off",
+            "pdl_effective": false,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": null,
+            "merge_maxnreg": null
+          },
+          "speedup_vs_same_contract_baseline": 1.003964351297829
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 70.01599669456482,
+            "median_us": 71.32799923419952,
+            "p90_us": 71.42399996519089
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 64,
+            "merge_maxnreg": 64
+          },
+          "speedup_vs_same_contract_baseline": 0.4544639035201612
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 46.592000871896744,
+            "median_us": 46.751998364925385,
+            "p90_us": 47.61600121855736
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 96,
+            "merge_maxnreg": 96
+          },
+          "speedup_vs_same_contract_baseline": 0.6933607566725265
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 36.448001861572266,
+            "median_us": 36.639999598264694,
+            "p90_us": 38.62399980425835
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 128,
+            "merge_maxnreg": 128
+          },
+          "speedup_vs_same_contract_baseline": 0.8847161931680981
+        },
+        {
+          "config": {
+            "num_topk_chunks": 1,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "pdl_mode": "auto",
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "status": "pass",
+          "correctness": {
+            "finite": true,
+            "max_abs": 6.103515625e-05,
+            "mean_abs": 2.0488669179030694e-06
+          },
+          "timing": {
+            "protocol": "warmup_then_per_call_cuda_event_pair_one_stream_no_intercall_sync",
+            "warmup": 20,
+            "repetitions": 41,
+            "p10_us": 36.38400137424469,
+            "median_us": 36.51199862360954,
+            "p90_us": 36.57599911093712
+          },
+          "contract": {
+            "caller_owned_output": true,
+            "persistent_workspace_created_before_timing": true,
+            "same_problem_seed": 20260835,
+            "single_call_per_event": true
+          },
+          "metadata": {
+            "num_topk_chunks": 1,
+            "merge_bypassed": true,
+            "caller_output_bytes": 262144,
+            "unique_workspace_bytes": 4096,
+            "pdl_mode_requested": "auto",
+            "pdl_effective": true,
+            "decode_num_warps": 4,
+            "merge_num_warps": 4,
+            "decode_num_stages": 3,
+            "merge_num_stages": 3,
+            "decode_maxnreg": 160,
+            "merge_maxnreg": 160
+          },
+          "speedup_vs_same_contract_baseline": 0.8878177635911833
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "baseline_median_us": 32.416000962257385,
+        "winner_median_us": 28.31999957561493,
+        "winner_speedup": 1.1446328194923188,
+        "strict_10_percent_target_met": true,
+        "winner_config": {
+          "num_topk_chunks": 1,
+          "decode_num_warps": 4,
+          "merge_num_warps": 4,
+          "decode_num_stages": 5,
+          "merge_num_stages": 5,
+          "pdl_mode": "auto",
+          "decode_maxnreg": null,
+          "merge_maxnreg": null
+        }
+      }
+    }
+  ],
+  "all_context_baselines_pass": true,
+  "strict_10_percent_target_met_in_every_requested_context": false
+}

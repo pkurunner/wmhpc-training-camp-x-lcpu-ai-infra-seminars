@@ -1,0 +1,11 @@
+classification=prestart-cancelled-not-an-experiment-result
+job_id=12979
+submission_time_utc=not-recorded-by-squeue
+state_before_cancel=PENDING(Resources)
+start_observed=false
+artifact_directory_created=false
+reason=Static review of the generated v12 AOT script found that V11_PATCH was referenced by the input and patch-application gates but had no declaration.  The submitter cancelled this pending job before allocation, then regenerated the script with an explicit V11_PATCH declaration and immutable hash gate.
+first_replacement_job=12980
+first_replacement_boundary=cancelled while PENDING(Resources) after squeue --start estimated 2026-08-31T02:45:38 UTC, outside the four-hour experiment window; it did not execute and produced no artifact
+gpu_partition_replacement_job=12983
+evidence_boundary=job12979 must not be cited as AOT, correctness, resource, or performance evidence.

@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "all_correctness_and_comparability_gates_pass": true,
+  "rejection_policy": "If accepted is false, retain v1; this script never overwrites v1 artifacts.",
+  "relative_improvement_fraction": 0.1769708425245291,
+  "required_improvement_fraction": 0.05,
+  "required_v2_max_ms": 0.27879839241504667,
+  "schema": "c2-native-plugin-v2-vs-v1-promotion-v1",
+  "v1_native_median_ms": 0.2934719920158386,
+  "v2_native_median_ms": 0.2415360063314438
+}

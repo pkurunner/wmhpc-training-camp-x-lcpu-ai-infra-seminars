@@ -1,0 +1,6 @@
+Remote-only lifecycle failure audit, 2026-08-30.
+job12992: only Slurm log; pre-artifact root guard failed.
+job12993: pre-install Python-symlink guard and finalizer failure; no final status.
+job12994: pre-install dated harness path missing; fail-closed final status; no lifecycle gates.
+job12996: all bound inputs verified and wheel installed to scratch; post-install no-symlink gate failed before installed-wheel audit or real lifecycle gates.
+No file here establishes a v12 lifecycle pass.  Older submitted-script versions are not claimed because they were not durably copied before preflight failure.

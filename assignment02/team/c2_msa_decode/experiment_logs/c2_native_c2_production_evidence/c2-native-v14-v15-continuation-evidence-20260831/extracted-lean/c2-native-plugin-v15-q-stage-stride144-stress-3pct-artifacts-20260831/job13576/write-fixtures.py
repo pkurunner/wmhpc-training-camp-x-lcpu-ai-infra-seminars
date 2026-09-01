@@ -1,0 +1,5 @@
+import argparse,hashlib,importlib.util,json,sys
+from pathlib import Path
+import torch
+p=argparse.ArgumentParser();p.add_argument('--base',type=Path);p.add_argument('--seeds');p.add_argument('--fixture',type=Path);p.add_argument('--meta',type=Path);a=p.parse_args();sp=importlib.util.spec_from_file_location('v15_fix',a.base);b=importlib.util.module_from_spec(sp);sys.modules[sp.name]=b;sp.loader.exec_module(b)
+x=type('A',(),{'num_physical_pages':64,'max_logical_pages':32,'scale':1/(128**.5),'q_scale':.25,'k_scale':.25,'v_scale':.5,'atol':1e-4,'rtol':1e-3})();c=b._validate_args(x);ss=[int(q)for q in a.seeds.split(',')];assert len(ss)==8 and len(set(ss))==8;obj={'schema':'c2-native-c2-v15-q-stage-stride144-fixed-fixtures-v1','seeds':ss,'contract':c.__dict__,'rows':[{'seed':q,'inputs':tuple(v.cpu().contiguous()for v in b._make_inputs(c,q))}for q in ss]};torch.save(obj,a.fixture);a.meta.write_text(json.dumps({'schema':obj['schema'],'seeds':ss,'fixture_sha256':hashlib.sha256(a.fixture.read_bytes()).hexdigest(),'base_harness_sha256':hashlib.sha256(a.base.read_bytes()).hexdigest(),'contract':obj['contract']},sort_keys=True,indent=2)+'\n')

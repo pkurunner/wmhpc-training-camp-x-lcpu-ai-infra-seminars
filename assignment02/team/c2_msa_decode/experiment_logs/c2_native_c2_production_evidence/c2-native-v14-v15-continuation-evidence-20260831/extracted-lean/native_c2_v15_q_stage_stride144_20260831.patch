@@ -1,0 +1,18 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -32,10 +32,10 @@ constexpr int kQueryHeads = 64;
+ constexpr int kKvHeads = 4;
+ constexpr int kGqaGroup = kQueryHeads / kKvHeads;
+ constexpr int kHeadDim = 128;
+-// v12 changes only the leading dimension of the shared Q tile.  A 136-BF16
+-// stride is still WMMA-legal (a multiple of eight elements) and rotates each
+-// successive row by four 32-bit shared-memory banks.
+-constexpr int kQTileStride = kHeadDim + 8;
++// v15 changes only the leading dimension of the shared Q tile.  A 144-BF16
++// stride is WMMA-legal (a multiple of eight elements) and rotates each
++// successive row by eight 32-bit shared-memory banks.
++constexpr int kQTileStride = kHeadDim + 16;
+ constexpr int kPageSize = 128;
+ constexpr int kSelectedPages = 16;
+ constexpr int kClusterCtas = 4;

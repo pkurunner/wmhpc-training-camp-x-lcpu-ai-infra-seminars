@@ -1,0 +1,23 @@
+
+===== PRE UTC=2026-08-29T10:10:28Z =====
+NVIDIA B300 SXM6 AC, GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+uv 0.12.1 (x86_64-unknown-linux-gnu)
+/home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job11451/slurm_script: OK
+42048803bc7312dfecbfd1c6a9b6d3562e42105af07f9f63b4da5c263cfb6060  /home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl
+9fa6b676ce8cfd3c00c4e2dadba010e1a2c48010abd0837958822baab102aeb7  /home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/c2-native-plugin-overlay-provenance.json
+7883edc25df48e3b69a9f4948775a1baafd3ba0b1bd17edcfeac6644aa7b4762  /home/lcpu/85117379/native_c2_full_backend_bench_20260829.py
+ce542e1ae0303fb13291fa69502d3cd94fc57d5ce17a8c0999a5109b88a9c334  /var/lib/slurm/slurmd/job11451/slurm_script
+Using CPython 3.12.11 interpreter at: venv-vllm-d4da0c5/bin/python
+Resolved 1 package in 3ms
+Prepared 1 package in 777ms
+Installed 1 package in 437ms
+ + vllm==0.26.1rc1.dev370+gd4da0c55a (from file:///home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl)
+/home/lcpu/85117379/c2-native-plugin-wheel-runtime-artifacts-20260829/job11451/installed-members.json
+Traceback (most recent call last):
+  File "<stdin>", line 85, in <module>
+AssertionError
+FINAL_RC=1 UTC=2026-08-29T10:10:41Z

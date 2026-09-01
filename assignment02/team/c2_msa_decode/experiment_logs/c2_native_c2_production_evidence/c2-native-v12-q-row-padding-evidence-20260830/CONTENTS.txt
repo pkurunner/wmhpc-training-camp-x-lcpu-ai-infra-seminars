@@ -1,0 +1,3 @@
+scope=job12983 AOT, job12984 directed, job12985 one-shot ABBA, job12986 NCU mechanism, plus job12979/job12980 pre-start scheduling audits
+fixture_payload_omitted=fixtures-8-seeds.pt (fixture-writer metadata and SHA-bearing manifests retained)
+decision_boundary=job12985 clean CUDA-event ABBA is the only performance decision; job12986 NCU is mechanism-only

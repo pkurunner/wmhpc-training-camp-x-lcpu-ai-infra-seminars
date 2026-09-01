@@ -1,0 +1,373 @@
+{
+  "schema": "c2-native-c2-production-closure-v7-v16-ncu-fresh-second-uuid-attempt",
+  "generated_utc": "2026-08-31T14:00:51Z",
+  "scope": "Additive successor closure for the accepted v16 lane-private raw-FP8 K-chunk lookahead, its AOT-to-overlay-wheel-to-installed-wheel single-process lifecycle chain, matching v12/v16 NCU mechanism collection, the independent eight-seed fresh-wheel real-MiniMax native-versus-Triton observation, and one controlled second-UUID allocation attempt. It retains the predecessor byte-for-byte and does not reinterpret, add, multiply, or extrapolate historical adjacent comparisons.",
+  "predecessor": {
+    "path": "c2_native_c2_production_closure_20260831.json",
+    "sha256": "f380d63de4ba8678170d4cc5542abb9be47a85122d764ebce257825171c6de0c",
+    "retained_boundary": "The predecessor remains the source of record for v12 lifecycle closure, v13 stop-loss, v14/v15 rejection, and prior NCU evidence. This file only adds v16 evidence."
+  },
+  "v16_k_chunk_lookahead": {
+    "mechanism": "Starting from frozen accepted v12, alter only the within-page raw-FP8 K lookahead schedule: each lane advances a lane-private K chunk. Cross-page semantics, PV, softmax, merge, ABI, the frozen direct-plugin contract, and the v12 comparator are unchanged.",
+    "source_sha256": "a01b78c89205a8ded07d65c82cdcf9d2eb5b39df4fc45a2fd992d92200b84180",
+    "patch_sha256": "586d15cfcac5c9a1bbe1efa94e89e9031f090eb19a376ec817f10599ba8e11be",
+    "aot": {
+      "job": 13773,
+      "final_rc": 0,
+      "plugin_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+      "provenance_sha256": "3c640900ab67f25f53eee07f5e94106bb3f849d258b6d3863aab6f8c1b5068eb",
+      "resource_gate_sha256": "806183180358cde9c25334c50ff2478546e40a2374ddcf64da7fd0c4f4b1a3a6",
+      "resources": {
+        "registers_per_thread": 128,
+        "stack_bytes": 0,
+        "shared_bytes": 31136,
+        "local_bytes": 0
+      },
+      "binary_contract": {
+        "single_sm_100_cubin": true,
+        "ptx_absent": true
+      },
+      "final_status_sha256": "649066423b484d5269661d4644f5dd5cbd1e89f79b33cd7e0d863dc319dbeae6",
+      "final_status_sidecar_sha256": "6e66751ee1c635c308f027cae10880328fbd116d93257298567e1fef84af66a9",
+      "outputs_manifest_sha256": "4e25f4aeb2f3a56bd55e05b240db930601e050bc2a9afd5a0efc06e69b7b6dc4"
+    },
+    "directed": {
+      "job": 13786,
+      "final_rc": 0,
+      "result_sha256": "cff227a42cd243bc49a33eaa6a7fe1ee2d332a19eedcb64f2a77c27f2f1e9944",
+      "run_manifest_sha256": "490a2966c6861bb66f4d8b680a72c8704b91164ed44446a5fe52ecc939a1631e",
+      "all_v12_hard_gates_pass": true,
+      "additional_cases": [
+        "transition",
+        "last",
+        "stale-shifted"
+      ],
+      "monkeypatch_used": false,
+      "identity_and_clean_gpu": "PRE, POST, and final-POST observed one identical B300 UUID and empty compute-apps."
+    },
+    "clean_abba_performance": {
+      "job": 13789,
+      "final_rc": 0,
+      "accepted": true,
+      "comparison": "v16 versus v12 direct plugin only",
+      "process_order": [
+        "v12_A",
+        "v16_B1",
+        "v16_B2",
+        "v12_A2"
+      ],
+      "process_isolation": "four isolated Python processes",
+      "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+      "seed_count": 8,
+      "warmups_per_seed": 30,
+      "timing_iterations_per_seed": 200,
+      "paired_median_improvement_fraction": 0.06283871625815551,
+      "paired_median_improvement_percent": 6.283871625815551,
+      "bootstrap_95pct_lcb_fraction": 0.06122688955094935,
+      "bootstrap_95pct_lcb_percent": 6.122688955094935,
+      "acceptance_rule": "strict paired-median improvement greater than 0.03 and deterministic paired bootstrap 95-percent lower bound greater than 0, after correctness, identity, resource, fixture, and comparability gates.",
+      "all_eight_paired_seed_improvements_positive": true,
+      "decision_sha256": "3763ce31dbda5482896aa00c0192af1aca0ba8e322a4e555b52a6c7ad491bed9",
+      "aggregate_sha256": "95c456509add154bf11747a78b3b5203cc6580ad08bccf31cc562b3815172984",
+      "round_sha256": {
+        "A": "dd5f4aa7481c4f5e5e00572ca4f1bf11ef34bdf885e6d7aa7d013b1917600c37",
+        "B1": "4cf5290826b8a2f6114fc93592ded335ca112c909d7fcf9e4cd8757fe2728bf2",
+        "B2": "47f90440bee3a75d46e7846e326d8879ee2f77a824b0e4160e4cb7f1018805fc",
+        "A2": "6261eefd7b1399db17c15887fe082cd0b6222ac82c2d0e38c51460a3d0184f77"
+      },
+      "final_status_sha256": "996fe73ff2e20556751a6e92cd5d74eab9488985979c9b449afb0dfc1e65fb63",
+      "final_status_sidecar_sha256": "4dc631671c51e335a49a51009effc4c15ba38b5afd696efc83572d6ea1b464af",
+      "outputs_manifest_sha256": "507bb58ff618e21b6520a0772d25f9f4ba1487012207e378c856ba694267ec5e",
+      "historical_comparison_boundary": "This is one independent v16-versus-v12 adjacent direct-plugin decision. It must not be added to or multiplied with v7/v6, v9/v7, v11/v9, or v12/v11 results, and does not establish Triton parity, full-model, or service performance."
+    },
+    "overlay_wheel": {
+      "job": 13832,
+      "final_rc": 0,
+      "cleanup_rc": 0,
+      "wheel_sha256": "3947fab41739c98a30a8fd5486b867347b932f3419def3bfbd846db458ba90a9",
+      "wheel_size_bytes": 313122399,
+      "plugin_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+      "overlay_provenance_sha256": "6228ea8d84d2e15408ed365a3ae341809913e02c3ed1c731b5e186abaae49467",
+      "driver_verification_sha256": "f3d74b3932307b3b754f2e06da4265ffc8825c014d905457c765cd5436cd77c9",
+      "promotion_prerequisites_sha256": "279906ea6e4ef2375f92c65d8588c16668f3738379da6e0549671e4b4bbde573",
+      "payload_and_record_gates_pass": true,
+      "stable_member_byte_identical": true,
+      "outputs_manifest_sha256": "af8cdc0ec460a3b04e91dba0fcb3e1b325edc9ea7d7ff6257d245b9593de3d02",
+      "final_output_manifest_sha256": "705b898b3ffb31d4f61ecb9e107cc03d4035eaac7a7447fb68c1dc7e78a105d4",
+      "final_status_sha256": "77ee692757cb613eefe773b9927588789dfddf94c57f7181e122bffaa3c4363b"
+    },
+    "installed_wheel_lifecycle": {
+      "job": 13845,
+      "all_gates_pass": true,
+      "final_status": {
+        "final_rc": 0,
+        "original_rc": 0,
+        "finalizer_error": 0,
+        "tee_rc": 0,
+        "manifest_rc": 0,
+        "cleanup_rc": 0,
+        "post_apps_empty": true
+      },
+      "coverage": "Node-local installation of the exact overlay wheel; eight concurrent first-load threads with exactly one real load_library call; real backend forward; 1000 steady real forwards; original-query and in-place-mutated-query CUDA Graph replays of 100 each; caller-owned output; support/selection and dynamic rejection matrices; exact decode sequence boundaries; dispatcher persistence; 8 MiB live/peak-memory bound; clean-GPU identity; and scratch cleanup.",
+      "not_covered": "Multi-process loading, long-running scheduler/server integration, full-model weights, an assertion that rejected native shapes execute Triton, upstream/release acceptance, or service-level performance.",
+      "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+      "lifecycle_result_sha256": "b3c45988ad20daf352f598f74a8be287f20e417b12b1e8e6b18aee62ad991ade",
+      "accepted_evidence_attestation_sha256": "f8860613c63950ef741c5ccb2e0f6ad413d798fb2ba3d65f2f92f685ed3020c9",
+      "runtime_symlink_audit_sha256": "4b157f1967fa9401f6fe14fce50093dc69c7986651a01941d5aff0735d405f7b",
+      "lifecycle_core_sha256": "5ca35d63101de99ab5827470e37e275f7019a7f68dcbf7a6dcaec2ef892a0788",
+      "harness_sha256": "36a52047c22296c0b0678093e11a8978a7d0e5eaba967bcc36106cea98b369d8",
+      "submitted_script_sha256": "2182d24b2e5a67860ea373bdabe8f5df15d1189f8b6fc01eb012547b461e65a0",
+      "outputs_manifest_sha256": "5cc19ed7732bc1eeb16f5fc62dae0ca8500717e71b3693b7ffee16cf7a6588b9",
+      "final_status_sha256": "ed69b4477aa54d20c595515c190c78b68aad85c6efd413f9db02da297ac6e884",
+      "final_status_sidecar_sha256": "3f72104cbc6d544536d5403fb3d801e3e61e3e1938db633fde241381dbd1077d"
+    }
+  },
+  "v12_v16_matching_ncu": {
+    "job": 13868,
+    "final_rc": 0,
+    "collection_contract": {
+      "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+      "same_input_manifest_sha256": "2ab58f24fe3bafa892219d051d5a9507e850a822ff4701e3e505443094c136ec",
+      "same_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "counter_catalog_size": 15,
+      "separate_python_processes": true,
+      "single_matching_native_kernel_action_each": true,
+      "pre_post_uuid_same_and_compute_apps_empty": true
+    },
+    "resource_comparison": {
+      "v12": {
+        "registers_per_thread": 127,
+        "stack_bytes": 0,
+        "shared_bytes": 31136,
+        "local_bytes": 0
+      },
+      "v16": {
+        "registers_per_thread": 128,
+        "stack_bytes": 0,
+        "shared_bytes": 31136,
+        "local_bytes": 0
+      }
+    },
+    "selected_v16_over_v12_counter_ratios": {
+      "elapsed_cycles": 0.9217246609262822,
+      "tensor_active_percent": 1.0818181818181818,
+      "tensor_instructions": 1.0,
+      "dram_read_bytes": 1.0,
+      "long_scoreboard_stall": 1.1131976016340515
+    },
+    "mechanism_interpretation": "The equal tensor-instruction and DRAM-read controls, lower instrumented cycles, and higher tensor-active fraction support a limited same-workload statement: the matching profiled action used fewer cycles under this collection. The long-scoreboard ratio is above one, so this collection does not prove that v16 reduced long-scoreboard stalls, and it does not identify K-load latency hiding as the sole or primary cause.",
+    "benchmark_boundary": "timing_valid_for_benchmark=false and duration_metric_requested=false. NCU cycles, replay, and ratios are mechanism evidence only: they do not produce a speedup, alter the job13789 clean-ABBA acceptance, or constitute a second-UUID performance reproduction.",
+    "result_sha256": "37cae5eabac16afbaf097fd3be66cc1a4c6c509e724de0877dc460acfdcbe4aa",
+    "outputs_manifest_sha256": "bb11fd954e5e9d917ae2029a5619778fde2fe4360ee8fd63e51f92883cf7897c",
+    "final_status_sha256": "0a10cfac5b82706528d0de572dcaef81e8d0fb0ace381a6e85042b3e9f0ddfca",
+    "final_status_sidecar_sha256": "1aba96eaefa68879052b9c63f4aa0d9fb772e0bdaae817c54ee3a8f36cc8d8eb",
+    "profile_script_sha256": "ab179715d1b218263b66ed100c298574eecc3874cb359ed6bb0d293d9b72cf62"
+  },
+  "v16_fresh_wheel_real_backend": {
+    "job": 13900,
+    "submitted_script_sha256": "4f934f8b4d47bd14b13f42c8032d4f69e8d70de54ff710beb4b1dcd68d198223",
+    "harness_sha256": "7883edc25df48e3b69a9f4948775a1baafd3ba0b1bd17edcfeac6644aa7b4762",
+    "wheel_sha256": "3947fab41739c98a30a8fd5486b867347b932f3419def3bfbd846db458ba90a9",
+    "plugin_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+    "gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "seed_count": 8,
+    "seeds": [
+      17,
+      23,
+      42,
+      2024,
+      314159,
+      20260801,
+      20260815,
+      20260829
+    ],
+    "fresh_python_process_per_seed": true,
+    "timing_contract": {
+      "order": "ABBA=native,triton,triton,native",
+      "warmups_per_seed": 10,
+      "repetitions_per_seed": 50,
+      "samples_per_arm_per_seed": 100,
+      "independent_fp32_oracle": true
+    },
+    "performance_observation": {
+      "native_median_of_seed_medians_ms": 0.10097600147128105,
+      "triton_median_of_seed_medians_ms": 0.04848000034689903,
+      "median_of_per_seed_native_over_triton_ratios": 2.0819997629825875,
+      "per_seed_native_over_triton_ratios": [
+        2.085893662776003,
+        2.0805014823269175,
+        2.0845442820738627,
+        2.0810810831551483,
+        2.093532354752195,
+        2.08250826375885,
+        2.079867979647067,
+        2.081491262206325
+      ],
+      "triton_parity_achieved": false,
+      "triton_parity_was_a_hard_gate": false
+    },
+    "integration_and_identity": {
+      "all_eight_seed_correctness_and_integration_gates_pass": true,
+      "real_minimax_backend_forward": true,
+      "caller_output_pointer_unchanged": true,
+      "one_cpu_dispatcher_and_one_native_cuda_kernel_event_per_trace": true,
+      "record_install_stable_dso_and_loader_surface_gates_pass": true,
+      "pre_post_and_final_post_same_uuid": true,
+      "pre_post_and_final_post_compute_apps_empty": true,
+      "runtime_cleanup_pass": true
+    },
+    "final_status": {
+      "final_rc": 0,
+      "original_rc": 0,
+      "finalizer_error": 0,
+      "tee_rc": 0,
+      "manifest_rc": 0,
+      "cleanup_rc": 0,
+      "post_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd"
+    },
+    "summary_sha256": "a917653daac70115c778228e1aa2fac98c5a0eb37f68b69dfc1cbff6537e0ded",
+    "decision_sha256": "5ac91dc577523bfbb91ee31382a4d6b3f4c5b98e2153828298caf4ef166612ad",
+    "outputs_manifest_sha256": "e910c840256502555789538c0f339ec9362238f42e14e6b7e188951d72e6b83a",
+    "final_status_sha256": "c5c3f88d95662a88398b062b63796a0e5840d590fabd887102c64182182e2c47",
+    "final_status_sidecar_sha256": "c1cd0bba239de9c08e5cb4b6e5a4afed4e08681514c95c651eb227a034e1f99a",
+    "comparison_boundary": "This job closes fresh installation and real-backend integration for the exact v16 wheel and reports its native-over-Triton ratio. It has no installed v12 fresh-wheel comparator, is not a v16-versus-v12 promotion decision, must not be arithmetically combined with job13789, and is not full-model, service-E2E, or strict second-GPU performance reproduction evidence."
+  },
+  "second_uuid_replay_attempt": {
+    "job": 13942,
+    "reviewed_script_sha256": "93f4beb869361622500fbbd09221bb443c6f5406b436d9aa50a1e8022b3ff4a1",
+    "original_job13789_script_sha256": "3210f7aff183a909f4c0a32bfc3f8268709b30b96b685a8fd8686116ef379e30",
+    "pre_registered_rule": "Proceed only if the allocated B300 UUID differs from job13789; otherwise return RC3 before fixture copy or any performance action, retain the allocation evidence, and do not retry opportunistically.",
+    "frozen_replay_inputs": {
+      "fixture_sha256": "2c571f37c94c744492bed673741930be8a4738b1d35d4d547aa71caab6f1d4a7",
+      "fixture_meta_sha256": "6abbad750e8df0a8954bc843c5081edede582b5684cd28674773b2b34a37bf63",
+      "operator_pre_submit_hash_check_pass": true
+    },
+    "original_job13789_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "allocated_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "allocation_was_original_uuid": true,
+    "stopped_before_fixture_copy": true,
+    "stopped_before_A_or_B_worker": true,
+    "performance_measurement_produced": false,
+    "aggregate_or_decision_produced": false,
+    "final_status": {
+      "final_rc": 3,
+      "original_rc": 3,
+      "finalizer_error": 0,
+      "pre_and_final_post_uuid_same": true,
+      "pre_and_final_post_compute_apps_empty": true
+    },
+    "evidence_hashes": {
+      "submitted_script": "93f4beb869361622500fbbd09221bb443c6f5406b436d9aa50a1e8022b3ff4a1",
+      "gpu_pre": "a821847f80313be8c534a61c0be551b56c7631ed677a634b60ffb738abd53863",
+      "gpu_final_post": "e862e104a634424b01d38b980b597492fc4cb1b284eb1aa043b8acb2cb57323a",
+      "driver_log": "e0cfaed2c8ffa838f04f6b8960126e01e5cf7b85f57f3da21fbe6eb279dd9b6a",
+      "final_status": "04372ad5553712dcfb7058b0f16e28256ec40a94e5f32e362d7869a43dab8043",
+      "final_status_sidecar": "beed4e84ae4dcbefc8e3e2948bfffbb4b222c13af3f181716d76dc5ab110a4e3"
+    },
+    "classification": "Controlled allocation rejection only. It is not an infrastructure failure, candidate rejection, performance result, or second-UUID reproduction, and it does not alter job13789 acceptance."
+  },
+  "failure_audit": [
+    {
+      "job": 13767,
+      "stage": "v16 AOT before compilation",
+      "evidence": "External Git/submodule ref-listing/flush network failure.",
+      "classification": "Infrastructure failure, not a candidate failure; no compilation, resource, correctness, or performance datum was produced.",
+      "closure": "A clean-root retry, job13773, completed the valid AOT chain."
+    },
+    {
+      "job": 13783,
+      "stage": "v16 directed preflight",
+      "evidence": "The original Slurm log is zero bytes, so it contains no self-attributing failure cause.",
+      "classification": "The later diagnosis came only from a deterministic operator preflight replay: the script expected a date-suffixed harness path that had not been staged. The replay diagnosis is not misrepresented as information present in the original empty log.",
+      "closure": "After placing identical frozen harness bytes at the expected dated path, job13786 completed the directed gate."
+    }
+  ],
+  "archive": {
+    "v16_local_lean": {
+      "root": "c2_native_c2_production_evidence/c2-native-v16-k-chunk-lookahead-evidence-20260831",
+      "tar_sha256": "a9ce039b9ca9cbf151c49a82f5cdbf5800ff84fa00182c03a1fe59ab80afccd8",
+      "manifest_sha256": "be213b6427b173e77930c7881b041e4d2de86750b30949edcdfb5fd356984a59",
+      "sidecar_sha256": "1b3040b34b59128e786119567b932fc6257928fa7b272928916be223b8b46895",
+      "manifest_records": 122,
+      "regular_file_tar_members": 122,
+      "local_manifest_to_tar_byte_bijection_verified": true,
+      "contains_symlink": false,
+      "contains_wheel_payload": false,
+      "contains_stress_fixture": false,
+      "boundary": "The lean archive retains hash-gated wheel and lifecycle metadata but intentionally excludes the 313122399-byte wheel payload and the 68219593-byte stress fixture."
+    },
+    "v16_remote_full_replay": {
+      "tar_sha256": "784a0d8de98b6ffba3532f55c11e65a3c7c35bb2528b72994f5c4f1496bd104f",
+      "manifest_sha256": "1d84120486a0b0ec613cbb63c696d698de5cb5235bdcd9ff8893febb6564d6c0",
+      "sidecar_sha256": "8048f1d14875d4684b1877d737be911986bba39c09d9f2dde0a773d312379c40",
+      "manifest_records": 87,
+      "tar_members": 87,
+      "fixture": {
+        "bytes": 68219593,
+        "sha256": "2c571f37c94c744492bed673741930be8a4738b1d35d4d547aa71caab6f1d4a7",
+        "retained": true
+      },
+      "local_download_boundary": "The full remote tar remains canonical and retained remotely. No interrupted local partial transfer is evidence."
+    },
+    "v12_v16_ncu_local": {
+      "root": "c2_native_c2_production_evidence/c2-native-v12-v16-ncu-evidence-20260831",
+      "tar_sha256": "9d8e2c6ca0eddec8b2ae6d140005f594593a87c0e549bffa029f0b0f21a7a983",
+      "manifest_sha256": "b1583ca0e7bfc937db7e311c4dfd9f471efe30a5d53e4afd94e6874452dae18e",
+      "sidecar_sha256": "064e7caf27872d8ef209fbc3edd7353bdf389a3240b79823b796278a7d13953b",
+      "manifest_records": 25,
+      "safe_member_and_manifest_to_tar_byte_bijection_verified": true
+    },
+    "v16_fresh_backend_local": {
+      "root": "c2_native_c2_production_evidence/c2-native-v16-fresh-backend-evidence-20260831",
+      "tar_sha256": "4e93c6902fce7e90da5021f987d1673f86dae549987185ddcb40445d453c9743",
+      "manifest_sha256": "a03a029505eda9b3685f5d1a90b30ec3d4328aef9ed3b5dde8a14c0af87c3914",
+      "sidecar_sha256": "901a8adca66bbf0d0202738484d5da138166b4e6538033b20c49d626970878cd",
+      "archive_script_sha256": "f5a08af8f164b05207c8637cbcdefadecb62777d807580a14a0dc344fec202a6",
+      "job_files": 39,
+      "manifest_records": 42,
+      "regular_file_tar_members": 42,
+      "local_manifest_to_tar_byte_bijection_verified": true,
+      "verified_members_extracted": true,
+      "contains_symlink_or_special_file": false,
+      "contains_wheel_or_node_local_runtime_payload": false
+    },
+    "second_uuid_attempt_local": {
+      "root": "c2_native_c2_production_evidence/c2-native-v16-second-uuid-attempt-evidence-20260831",
+      "operator_audit_sha256": "9fef2284e09e988fb973e7518f37f03c2de2e4d1f463476cd7b9bfcc5b4e7961",
+      "manifest_records": 7,
+      "manifest_to_local_files_verified": true,
+      "contains_performance_result": false
+    }
+  },
+  "claims_boundary_and_priority": {
+    "closed_in_this_successor": [
+      "v16 AOT, directed correctness and liveness, clean direct-plugin v16-versus-v12 ABBA promotion, overlay wheel, and controlled installed-wheel lifecycle",
+      "matching v12/v16 NCU mechanism collection with a deliberately limited interpretation",
+      "eight-seed fresh-wheel real-MiniMax integration and native-versus-Triton gap observation"
+    ],
+    "highest_actionable_priority": {
+      "direction": "Reduce the measured v16 native-versus-Triton kernel gap using matching profile and SASS dependency evidence, one attributable variable at a time.",
+      "current_ratio": 2.0819997629825875,
+      "acceptance_and_stop_rule": "Retain the independent oracle, fresh-process identity, clean-GPU and trace gates; accept only a strict improvement above 3 percent with a positive uncertainty bound where the protocol provides one, otherwise stop the candidate."
+    },
+    "still_open": {
+      "triton_parity": true,
+      "strict_second_gpu_v16_vs_v12_performance_reproduction": true,
+      "full_model_and_service_e2e": true,
+      "official_upstream_release_and_ci": true,
+      "multi_process_and_long_running_service_lifecycle": true,
+      "broad_out_of_contract_shape_and_request_distribution": true
+    },
+    "blocked_or_non_actionable_now": {
+      "second_gpu_reason": "The exact physical UUID cannot be selected under the current single-GPU scheduling contract, a previous two-GPU request was rejected by QOSMaxGRESPerUser, and the one-shot job13942 replay was allocated the original job13789 UUID and stopped before measurement.",
+      "full_model_reason": "No B300-accessible MiniMax checkpoint, config, tokenizer, TP configuration, or launch contract has been supplied."
+    },
+    "claim_boundaries": [
+      "job13789 is the only accepted v16-versus-v12 performance promotion result and must not be added to or multiplied with earlier adjacent version results",
+      "job13868 NCU timing and counters are mechanism evidence only and do not alter the performance scoreboard",
+      "job13900 establishes fresh integration and a native-over-Triton observation but has no v12 fresh comparator and does not establish second-GPU v16-versus-v12 reproduction",
+      "job13942 is a controlled same-UUID allocation rejection with no fixture copy, ABBA worker, aggregate, decision, or performance datum; it does not close cross-GPU reproduction",
+      "native rejection outside the frozen contract is not evidence that Triton fallback was executed"
+    ]
+  }
+}

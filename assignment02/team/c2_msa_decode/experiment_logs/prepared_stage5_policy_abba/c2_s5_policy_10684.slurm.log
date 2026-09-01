@@ -1,0 +1,50 @@
+
+===== PRE UTC 2026-08-28T19:16:25Z (Slurm job 10684) =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 0
+-- compute apps --
+-- source SHA256 --
+d356f1365c658e0cc375b69e0293a85723eee8d9695b6be14cb1f43ba0b40fd2  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_stage_abba_cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+9e14c422d90136a386950ea4922b5ad31e8191efae3f23cfbdc40158b9cbeb45  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_abba_clean.sh
+2e717b3f95e406ef4af4ad8a44a63c8960fbbc80a9e96f19f5414e365a6a981c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_policy_abba_clean.sh
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+
+===== frozen prepared policy AB/BA B=4 base_seed=20260828 row_seed=20260832 =====
+{"base_seed": 20260828, "batch": 4, "candidate_ab_median_us": 29.08799983561039, "candidate_ba_median_us": 28.44800055027008, "candidate_us": 29.039999470114708, "control_ab_median_us": 29.08799983561039, "control_ba_median_us": 29.120000079274178, "control_us": 29.08799983561039, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_b4_base_seed20260828_bf16_c1_clean_20260828T191625Z.json", "row_seed": 20260832, "speedup_stage5_vs_stage3": 1.0016529051780831, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=4 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen prepared policy AB/BA B=8 base_seed=20260828 row_seed=20260836 =====
+{"base_seed": 20260828, "batch": 8, "candidate_ab_median_us": 28.543999418616295, "candidate_ba_median_us": 28.543999418616295, "candidate_us": 28.543999418616295, "control_ab_median_us": 29.152000322937965, "control_ba_median_us": 29.184000566601753, "control_us": 29.152000322937965, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_b8_base_seed20260828_bf16_c1_clean_20260828T191625Z.json", "row_seed": 20260836, "speedup_stage5_vs_stage3": 1.021300480546014, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=8 base_seed=20260828; retaining validated evidence and continuing.
+
+===== frozen prepared policy AB/BA B=4 base_seed=20260829 row_seed=20260833 =====
+{"base_seed": 20260829, "batch": 4, "candidate_ab_median_us": 29.120000079274178, "candidate_ba_median_us": 28.60799990594387, "candidate_us": 29.055999591946602, "control_ab_median_us": 29.21600081026554, "control_ba_median_us": 28.64000014960766, "control_us": 29.08799983561039, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_b4_base_seed20260829_bf16_c1_clean_20260828T191625Z.json", "row_seed": 20260833, "speedup_stage5_vs_stage3": 1.0011013299873757, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=4 base_seed=20260829; retaining validated evidence and continuing.
+
+===== frozen prepared policy AB/BA B=8 base_seed=20260829 row_seed=20260837 =====
+{"base_seed": 20260829, "batch": 8, "candidate_ab_median_us": 28.511999174952507, "candidate_ba_median_us": 28.48000079393387, "candidate_us": 28.495999984443188, "control_ab_median_us": 29.21600081026554, "control_ba_median_us": 28.736000880599022, "control_us": 29.200000688433647, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_b8_base_seed20260829_bf16_c1_clean_20260828T191625Z.json", "row_seed": 20260837, "speedup_stage5_vs_stage3": 1.0247052465038882, "strict_10_percent_target_met": false}
+STRICT-10 GATE FAILED for B=8 base_seed=20260829; retaining validated evidence and continuing.
+
+===== POST UTC 2026-08-28T19:16:35Z (Slurm job 10684) =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 0
+-- compute apps --
+-- source SHA256 --
+d356f1365c658e0cc375b69e0293a85723eee8d9695b6be14cb1f43ba0b40fd2  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_stage_abba_cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+9e14c422d90136a386950ea4922b5ad31e8191efae3f23cfbdc40158b9cbeb45  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_abba_clean.sh
+2e717b3f95e406ef4af4ad8a44a63c8960fbbc80a9e96f19f5414e365a6a981c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_prepared_stage5_policy_abba_clean.sh
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+
+Prepared stage-5 B=4/8 two-seed policy AB/BA audit completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/prepared_stage5_policy_abba/c2_prepared_stage5_policy_abba_b4_b8_base_seed20260828_20260829_clean_audit_20260828T191625Z.log
+
+===== FINAL_RC=3 =====

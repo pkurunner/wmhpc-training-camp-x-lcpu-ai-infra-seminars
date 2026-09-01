@@ -1,0 +1,32 @@
+{
+  "candidate": {
+    "ptx_bf16_wmma_mma": 72,
+    "ptx_cluster_arrive": 2,
+    "ptx_cluster_wait": 2,
+    "ptx_mbarrier_acquire_wait": 1,
+    "ptx_mbarrier_init": 1,
+    "ptx_mbarrier_release_arrive": 1,
+    "sass_cluster_arrive": 2,
+    "sass_cluster_wait": 2,
+    "sass_hmma_16816_f32_bf16": 144,
+    "sass_mbarrier_acquire_wait": 1,
+    "sass_mbarrier_init": 1,
+    "sass_mbarrier_release_arrive": 1
+  },
+  "control": {
+    "ptx_bf16_wmma_mma": 64,
+    "ptx_cluster_arrive": 2,
+    "ptx_cluster_wait": 2,
+    "ptx_mbarrier_acquire_wait": 1,
+    "ptx_mbarrier_init": 1,
+    "ptx_mbarrier_release_arrive": 1,
+    "sass_cluster_arrive": 2,
+    "sass_cluster_wait": 2,
+    "sass_hmma_16816_f32_bf16": 128,
+    "sass_mbarrier_acquire_wait": 1,
+    "sass_mbarrier_init": 1,
+    "sass_mbarrier_release_arrive": 1
+  },
+  "schema": "c2-tc-qk-pv-instruction-v1",
+  "status": "pass"
+}

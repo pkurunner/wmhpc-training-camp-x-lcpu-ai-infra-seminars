@@ -1,0 +1,9 @@
+{
+  "all_gates_pass": true,
+  "installed_record_full_verification": true,
+  "plugin_sha256": "064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6",
+  "schema": "c2-native-plugin-v12-installed-members-v1",
+  "stable_member_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+  "wheel_payload_except_installer_rewritten_record_byte_identical": true,
+  "wheel_record_full_verification": true
+}

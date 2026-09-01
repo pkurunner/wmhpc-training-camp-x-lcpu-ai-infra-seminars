@@ -1,0 +1,24 @@
+schema=c2-native-external-dependencies-audit-v1
+generated_utc=2026-08-30T06:30:43Z
+=== frozen replay jobs ===
+sacct: error: slurm_persist_conn_open_without_init: failed to open persistent connection to host:localhost:6819: Connection refused
+sacct: error: Sending PersistInit msg: Connection refused
+sacct: error: Problem talking to the database: Connection refused
+=== replay GPU UUIDs ===
+job12213 NVIDIA B300 SXM6 AC, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 580.126.09, 275040, 0, 0, 10.3
+job12214 NVIDIA B300 SXM6 AC, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 580.126.09, 275040, 0, 0, 10.3
+=== two-GPU allocation test ===
+sbatch: error: QOSMaxGRESPerUser
+allocation failure: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+two_gpu_test_rc=1
+=== model roots ===
+absent /home/lcpu/85117379/.cache/huggingface/hub
+absent /home/lcpu/85117379/.cache/modelscope/hub
+absent /home/lcpu/85117379/models
+absent /models
+absent /data/models
+absent /mnt/models
+=== model asset files under home maxdepth5 ===
+model_asset_match_count=0
+=== exact d4 checkout ===
+d4da0c55af3aa231b6209bf77871f3ed36eab0d2

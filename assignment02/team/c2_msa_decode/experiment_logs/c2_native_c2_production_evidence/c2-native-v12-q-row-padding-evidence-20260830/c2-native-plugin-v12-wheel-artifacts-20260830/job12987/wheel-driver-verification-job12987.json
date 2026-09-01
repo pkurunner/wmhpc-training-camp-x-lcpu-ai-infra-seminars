@@ -1,0 +1,33 @@
+{
+  "all_gates_pass": true,
+  "only_existing_dispatch_replacements": [
+    "vllm/_custom_ops.py",
+    "vllm/config/attention.py",
+    "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+    "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py",
+    "vllm/v1/attention/backends/registry.py"
+  ],
+  "only_expected_new_members": [
+    "vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py"
+  ],
+  "plugin_sha256": "064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6",
+  "record": {
+    "baseline": {
+      "all_payload_entries_validated": true,
+      "payload_count": 4746,
+      "record_member": "vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD"
+    },
+    "derived": {
+      "all_payload_entries_validated": true,
+      "payload_count": 4748,
+      "record_member": "vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD"
+    }
+  },
+  "schema": "c2-native-plugin-v12-overlay-wheel-driver-verification-v1",
+  "stable_member_byte_identical": true,
+  "stable_member_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+  "unchanged_baseline_payload_count": 4742,
+  "wheel": "/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+  "wheel_sha256": "b730e5610bf1135bf8042627143b7bb4b27c98421900bf2f1817fe3e8a7cc67b"
+}

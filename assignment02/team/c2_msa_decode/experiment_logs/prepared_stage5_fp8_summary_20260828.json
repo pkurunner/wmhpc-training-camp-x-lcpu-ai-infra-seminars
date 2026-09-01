@@ -1,0 +1,51 @@
+{
+  "schema": "c2-prepared-stage5-fp8-policy-summary-v1",
+  "decision": "retain decode_num_stages=3 for every tested FP8 storage and batch context",
+  "scope": "complete prepared sparse-decode dispatch (decode plus required merge), not model/server end-to-end",
+  "execution": {
+    "slurm_job_id": "10711",
+    "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+    "device": "NVIDIA B300 SXM6 AC",
+    "timestamp_utc": "2026-08-28T19:35:14Z",
+    "final_rc": 3,
+    "final_rc_semantics": "expected policy miss: all correctness/evidence gates passed and at least one context missed the strict 1.10x target"
+  },
+  "protocol": {
+    "storage_modes": ["fp8-scalar", "fp8-token"],
+    "batches": [1, 4, 8, 16],
+    "base_seeds": [20260828, 20260829],
+    "warmups_per_runner": 30,
+    "abba_pairs": 101,
+    "samples_per_runner": 202,
+    "control_decode_num_stages": 3,
+    "candidate_decode_num_stages": 5,
+    "merge_num_stages_both": 3,
+    "strict_speedup_target": 1.10,
+    "validated_contexts": 16,
+    "strict_target_hits": 0
+  },
+  "aggregate": {
+    "speedup_definition": "control_stage3_median_us / candidate_stage5_median_us",
+    "all_speedup_min": 0.9516699400184362,
+    "all_speedup_max": 1.0116045902201722,
+    "fp8_scalar_mean_speedup": 0.9989229879582988,
+    "fp8_token_mean_speedup": 0.97927312499067
+  },
+  "by_storage_and_batch": [
+    {"storage": "fp8-scalar", "batch": 1, "selected_chunks": 16, "speedups": [1.0004257163185044, 0.9969969742005473], "mean_speedup": 0.9987113452595259},
+    {"storage": "fp8-scalar", "batch": 4, "selected_chunks": 4, "speedups": [0.9991856615764985, 1.0008136758160202], "mean_speedup": 0.9999996686962593},
+    {"storage": "fp8-scalar", "batch": 8, "selected_chunks": 8, "speedups": [0.98976250701972, 0.9933992898473452], "mean_speedup": 0.9915808984335326},
+    {"storage": "fp8-scalar", "batch": 16, "selected_chunks": 4, "speedups": [0.9991954886675822, 1.0116045902201722], "mean_speedup": 1.0054000394438773},
+    {"storage": "fp8-token", "batch": 1, "selected_chunks": 4, "speedups": [0.9760552005192578, 0.978455216068721], "mean_speedup": 0.9772552082939894},
+    {"storage": "fp8-token", "batch": 4, "selected_chunks": 16, "speedups": [1.0, 0.9991510971056957], "mean_speedup": 0.9995755485528479},
+    {"storage": "fp8-token", "batch": 8, "selected_chunks": 16, "speedups": [0.9516699400184362, 0.9588719213949884], "mean_speedup": 0.9552709307067123},
+    {"storage": "fp8-token", "batch": 16, "selected_chunks": 4, "speedups": [0.9943910760190212, 0.9755905487992401], "mean_speedup": 0.9849908124091307}
+  ],
+  "source_sha256": {
+    "challenge_v2/prepared_stage_fp8_abba_cli.py": "9daa9d65da8b7e8c4fc6eb630a9bbff5c1aa071016f222cdeb634b244ea03661",
+    "challenge_v2/run_prepared_stage5_fp8_abba_clean.sh": "f69fb6c54c0cf61d5981024689d62a4d3af7026c4b403e9df43f81c7d9834f04",
+    "challenge_v2/prepared_tuned.py": "2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79"
+  },
+  "evidence_manifest": "prepared_stage5_fp8_abba/c2_prepared_stage5_fp8_abba_job10711.sha256"
+}

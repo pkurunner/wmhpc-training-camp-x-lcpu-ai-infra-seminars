@@ -1,0 +1,47 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -193,6 +193,25 @@
+       __syncthreads();
+ 
+       for (int tile = 0; tile < kTokenTiles; ++tile) {
++        // Each lane owns eight elements of this warp's 16x16 V tile.  Fetch
++        // their original FP8 encodings before softmax so its latency can
++        // overlap the unchanged score/weight work below.  The values remain
++        // in lane-private registers until the existing BF16 staging store.
++        __nv_fp8_e4m3 value_prefetch[kTile / 2];
++#pragma unroll
++        for (int i = 0; i < kTile / 2; ++i) {
++          int const element = lane + i * kWarpSize;
++          int const token = element / kTile;
++          int const dim = element % kTile;
++          std::int64_t const cache_offset =
++              static_cast<std::int64_t>(physical_page) * kv_page_stride +
++              static_cast<std::int64_t>(kv_head) * kv_head_stride +
++              static_cast<std::int64_t>(tile * kTile + token) *
++                  kv_token_stride +
++              kHeadDim + warp * kTile + dim;
++          value_prefetch[i] = kv_cache[cache_offset];
++        }
++
+         // All eight warps participate in softmax/weight generation.  Each
+         // warp owns two heads and each 16-lane subgroup owns one token row.
+         int const subgroup_lane = lane & (kTile - 1);
+@@ -249,14 +268,10 @@
+              element += kWarpSize) {
+           int const token = element / kTile;
+           int const dim = element % kTile;
+-          std::int64_t const cache_offset =
+-              static_cast<std::int64_t>(physical_page) * kv_page_stride +
+-              static_cast<std::int64_t>(kv_head) * kv_head_stride +
+-              static_cast<std::int64_t>(tile * kTile + token) *
+-                  kv_token_stride +
+-              kHeadDim + dim_begin + dim;
+           fp8_stage[warp][token][dim] =
+-              scaled_fp8(kv_cache, cache_offset, v_scale);
++              __float2bfloat16_rn(
++                  static_cast<float>(value_prefetch[element / kWarpSize]) *
++                  v_scale);
+         }
+         __syncwarp();
+ 

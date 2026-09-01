@@ -1,0 +1,101 @@
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -1,4 +1,5 @@
+ // Production-facing MiniMax M3 C2 sparse-decode prototype for exact vLLM d4.
++// v16 single-change candidate: intra-page K-chunk raw-FP8 lookahead on v12.
+ //
+ // This source is intentionally an AOT stable-Torch operator, not a standalone
+ // benchmark.  It consumes the production packed E4M3 KV cache directly,
+@@ -210,26 +211,62 @@
+           score_fragment;
+       wmma::fill_fragment(score_fragment, 0.0f);
+ 
++      {
++        // v16 keeps the same current-tile FP8->BF16 conversion, CTA-local
++        // staging, and WMMA sequence as v12.  The only change is a
++        // lane-private raw-FP8 fetch for the immediately next K chunk of this
++        // same physical page.  This lexical scope ends before the V tile loop,
++        // so the K and existing V prefetch register lifetimes cannot overlap.
++        __nv_fp8_e4m3 key_prefetch[kTile / 2];
+ #pragma unroll
+-      for (int k_offset = 0; k_offset < kHeadDim; k_offset += kTile) {
+-        for (int element = lane; element < kTile * kTile;
+-             element += kWarpSize) {
+-          int const token = element / kTile;
+-          int const dim = element % kTile;
+-          std::int64_t const cache_offset =
+-              static_cast<std::int64_t>(physical_page) * kv_page_stride +
+-              static_cast<std::int64_t>(kv_head) * kv_head_stride +
+-              static_cast<std::int64_t>(token_begin + token) *
+-                  kv_token_stride +
+-              k_offset + dim;
+-          fp8_stage[warp][token][dim] =
+-              scaled_fp8(kv_cache, cache_offset, k_scale);
+-        }
+-        __syncwarp();
+-        wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
+-        // The unrolled offsets below select a concrete fragment object; this
+-        // preserves register residency without dynamic fragment indexing.
+-        switch (k_offset) {
++        for (int k_offset = 0; k_offset < kHeadDim; k_offset += kTile) {
++          for (int element = lane; element < kTile * kTile;
++               element += kWarpSize) {
++            int const token = element / kTile;
++            int const dim = element % kTile;
++            // The fully-unrolled first iteration is the only one without a
++            // predecessor.  Every later iteration consumes its immediately
++            // preceding lane-private raw-FP8 lookahead.
++            if (k_offset == 0) {
++              std::int64_t const cache_offset =
++                  static_cast<std::int64_t>(physical_page) * kv_page_stride +
++                  static_cast<std::int64_t>(kv_head) * kv_head_stride +
++                  static_cast<std::int64_t>(token_begin + token) *
++                      kv_token_stride +
++                  k_offset + dim;
++              fp8_stage[warp][token][dim] =
++                  scaled_fp8(kv_cache, cache_offset, k_scale);
++            } else {
++              fp8_stage[warp][token][dim] = __float2bfloat16_rn(
++                  static_cast<float>(key_prefetch[element / kWarpSize]) *
++                  k_scale);
++            }
++          }
++          __syncwarp();
++          wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
++
++          // The final chunk has no successor and does not issue a prefetch.
++          // Every in-between raw read remains inside this selected page and
++          // keeps v12's delayed FP8->BF16 rounding.
++          if (k_offset + kTile < kHeadDim) {
++#pragma unroll
++            for (int i = 0; i < kTile / 2; ++i) {
++              int const element = lane + i * kWarpSize;
++              int const token = element / kTile;
++              int const dim = element % kTile;
++              std::int64_t const next_cache_offset =
++                  static_cast<std::int64_t>(physical_page) * kv_page_stride +
++                  static_cast<std::int64_t>(kv_head) * kv_head_stride +
++                  static_cast<std::int64_t>(token_begin + token) *
++                      kv_token_stride +
++                  (k_offset + kTile) + dim;
++              key_prefetch[i] = kv_cache[next_cache_offset];
++            }
++          }
++
++          // The unrolled offsets below select a concrete fragment object; this
++          // preserves register residency without dynamic fragment indexing.
++          switch (k_offset) {
+           case 0 * kTile:
+             wmma::mma_sync(score_fragment, q_fragment_0, k_fragment,
+                            score_fragment);
+@@ -262,8 +299,9 @@
+             wmma::mma_sync(score_fragment, q_fragment_7, k_fragment,
+                            score_fragment);
+             break;
++          }
++          __syncwarp();
+         }
+-        __syncwarp();
+       }
+       wmma::store_matrix_sync(&score_tiles[warp][0][0], score_fragment, kTile,
+                               wmma::mem_row_major);

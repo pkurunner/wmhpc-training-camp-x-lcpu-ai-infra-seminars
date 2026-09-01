@@ -1,0 +1,177 @@
+{
+  "schema": "c2-prepared-stage5-roofline-summary-v1",
+  "generated_at_utc": "2026-08-28T19:04:22Z",
+  "boundary": "B300 SM103, BF16, B=1, prepared C=1 decode kernel; merge bypass; not full-vLLM service E2E",
+  "configuration": {
+    "batch": 1,
+    "query_heads": 64,
+    "kv_heads": 4,
+    "gqa_group_size": 16,
+    "head_dim": 128,
+    "page_size": 128,
+    "selected_pages": 16,
+    "selected_kv_length": 2048,
+    "storage": "bf16",
+    "num_topk_chunks": 1,
+    "merge_bypassed": true
+  },
+  "flop_contract": {
+    "qk_flops": 33554432,
+    "pv_flops": 33554432,
+    "total_matrix_flops": 67108864,
+    "formula": "F = 2*B*Hq*L*D + 2*B*Hq*L*D",
+    "excluded": [
+      "softmax scalar operations",
+      "index/address arithmetic",
+      "quantization (not present in BF16 run)",
+      "merge (bypassed for C=1)"
+    ]
+  },
+  "logical_bytes": {
+    "q": 16384,
+    "k": 2097152,
+    "v": 2097152,
+    "caller_output": 16384,
+    "main_tensor_total": 4227072,
+    "lse_workspace": 256,
+    "topk_indices": 256,
+    "block_table": 128,
+    "sequence_length": 4,
+    "including_metadata_total": 4227716,
+    "main_tensor_ai_flop_per_byte": 15.875968992248062,
+    "including_metadata_ai_flop_per_byte": 15.873550635851604,
+    "note": "Logical bytes count one read/write of each named object; measured DRAM bytes may be lower because setup data can be served from cache."
+  },
+  "b300_peak_contract": {
+    "bf16_dense_flop_per_second": 2250000000000000,
+    "hbm_bytes_per_second": 8000000000000,
+    "ridge_flop_per_byte": 281.25,
+    "bf16_peak_derivation": "NVIDIA reports 36 PFLOP/s FP16/BF16 Tensor Core for an 8-GPU HGX B300 platform with sparsity; dense per-GPU value is inferred as 36/2/8 = 2.25 PFLOP/s.",
+    "bandwidth_derivation": "NVIDIA reports up to 8 TB/s HBM3e bandwidth per B300 GPU.",
+    "sources": {
+      "hgx_platform": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "hgx_ai_factory_components": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html"
+    }
+  },
+  "ncu_contract": {
+    "metric_set_identical": true,
+    "timing_valid_for_benchmark": false,
+    "timing_caveat": "NCU replay, clock/cache control, and serialization affect duration; all performance values use independent CUDA-event ABBA timing.",
+    "profiling_guide": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html",
+    "runs": [
+      {
+        "slurm_job": 10100,
+        "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+        "stage3": {
+          "dram_bytes": 4161536,
+          "l2_bytes": 6624896,
+          "tensor_active_percent": 13.18,
+          "tensor_instructions": 16384,
+          "long_scoreboard_percent": 164.86,
+          "wait_stall_percent": 147.66,
+          "active_warps_per_cycle_active": 1,
+          "measured_dram_ai_flop_per_byte": 16.125984251968504
+        },
+        "stage5": {
+          "dram_bytes": 4165888,
+          "l2_bytes": 6676064,
+          "tensor_active_percent": 18.21,
+          "tensor_instructions": 16384,
+          "long_scoreboard_percent": 22.46,
+          "wait_stall_percent": 144.46,
+          "active_warps_per_cycle_active": 1,
+          "measured_dram_ai_flop_per_byte": 16.10913783567873
+        },
+        "derived": {
+          "dram_change_percent": 0.10457677165354173,
+          "l2_change_percent": 0.7723592943949642,
+          "tensor_active_ratio": 1.3816388467374812,
+          "long_scoreboard_reduction_percent": 86.37631930122528
+        }
+      },
+      {
+        "slurm_job": 10640,
+        "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+        "stage3": {
+          "dram_bytes": 4162816,
+          "l2_bytes": 6734080,
+          "tensor_active_percent": 13.15,
+          "tensor_instructions": 16384,
+          "long_scoreboard_percent": 165.88,
+          "wait_stall_percent": 147.63,
+          "active_warps_per_cycle_active": 1,
+          "measured_dram_ai_flop_per_byte": 16.12102576717299
+        },
+        "stage5": {
+          "dram_bytes": 4166144,
+          "l2_bytes": 6678432,
+          "tensor_active_percent": 18.38,
+          "tensor_instructions": 16384,
+          "long_scoreboard_percent": 26.24,
+          "wait_stall_percent": 144.43,
+          "active_warps_per_cycle_active": 1,
+          "measured_dram_ai_flop_per_byte": 16.108147966080864
+        },
+        "derived": {
+          "dram_change_percent": 0.07994588278703585,
+          "l2_change_percent": -0.8263638091617564,
+          "tensor_active_ratio": 1.397718631178707,
+          "long_scoreboard_reduction_percent": 84.18133590547383
+        }
+      }
+    ]
+  },
+  "valid_abba_timing": [
+    {
+      "slurm_job": 10018,
+      "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+      "stage3_median_us": 30.848000198602676,
+      "stage5_median_us": 27.295999228954315,
+      "stage3_tflop_per_second": 2.175468865662152,
+      "stage5_tflop_per_second": 2.458560444594901,
+      "paired_with_ncu_job": 10100,
+      "stage3_effective_dram_gb_per_second": 134.9045634468229,
+      "stage5_effective_dram_gb_per_second": 152.61899610478528,
+      "stage3_percent_of_hbm_peak": 1.6863070430852862,
+      "stage5_percent_of_hbm_peak": 1.907737451309816,
+      "stage3_percent_of_dense_bf16_peak": 0.0966875051405401,
+      "stage5_percent_of_dense_bf16_peak": 0.10926935309310672
+    },
+    {
+      "slurm_job": 9943,
+      "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+      "stage3_median_us": 30.559999868273735,
+      "stage5_median_us": 27.35999971628189,
+      "stage3_tflop_per_second": 2.195970690093816,
+      "stage5_tflop_per_second": 2.452809382160323,
+      "stage3_percent_of_dense_bf16_peak": 0.09759869733750293,
+      "stage5_percent_of_dense_bf16_peak": 0.1090137503182366,
+      "paired_ncu_same_gpu": false
+    }
+  ],
+  "cross_run_estimate": {
+    "warning": "NCU job 10640 ran on GPU-dadf while the second valid ABBA run used GPU-3924; the following bandwidth values combine identical-workload evidence across different GPUs and are not same-run measurements.",
+    "stage3_effective_dram_gb_per_second": 136.2178016342756,
+    "stage5_effective_dram_gb_per_second": 152.2713466082653
+  },
+  "roofline_decision": {
+    "memory_side_of_ridge": true,
+    "measured_ai_range_flop_per_byte": [16.108147966080864, 16.125984251968504],
+    "memory_roof_range_tflop_per_second": [128.8651837286469, 129.00787401574803],
+    "observed_tflop_per_second_range": [2.175468865662152, 2.458560444594901],
+    "conclusion": "The point lies on the memory side of the ideal roofline, but it uses only about 1.69-1.91% of peak HBM bandwidth. Combined with one active warp and large long-scoreboard stalls, this is latency/low-concurrency/occupancy limited rather than saturated-bandwidth limited.",
+    "stage5_mechanism": "Stage 5 keeps DRAM traffic and Tensor instruction count effectively fixed while reducing long-scoreboard stalls and increasing Tensor-active percentage on both profiled GPUs."
+  },
+  "evidence": {
+    "ncu_v1_directory": "experiment_logs/prepared_stage5_ncu_counters_v1",
+    "ncu_v2_directory": "experiment_logs/prepared_stage5_ncu_counters_v2",
+    "abba_summary": "experiment_logs/prepared_stage5_followup_summary_20260828.json",
+    "all_manifest_entries_verified": true,
+    "sha256": {
+      "ncu_v1_exact_manifest": "bfd4a9829d366a2dd6a446e6a823c2f1c8d9c5aa0e51585daa3cfed0fd5a5027",
+      "ncu_v1_slurm_log": "3da72ccfe4c41b8040c92bc58b6775c5c4c42fa7261dd4da7102f6becff08cd7",
+      "ncu_v2_exact_manifest": "76fcd689c3a78034859e384624e74160638e1ff134fbc2e17be8769f32b47a06",
+      "ncu_v2_slurm_log": "08fe1b3464b96cfba6c77472d4e8145add5d6f848726c65558ecb94dc96fd823"
+    }
+  }
+}

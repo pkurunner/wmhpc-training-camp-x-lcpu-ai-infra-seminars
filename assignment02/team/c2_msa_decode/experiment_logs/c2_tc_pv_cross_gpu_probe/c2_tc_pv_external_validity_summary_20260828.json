@@ -1,0 +1,56 @@
+{
+  "schema": "c2-tc-pv-external-validity-probe-v1",
+  "date_utc": "2026-08-28",
+  "status": "same-device-repeat-complete-second-device-blocked",
+  "formal_reference": {
+    "job_id": 10935,
+    "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "speedup_control_over_candidate": 1.4509372,
+    "final_rc": 0
+  },
+  "same_device_repeats": [
+    {
+      "job_id": 10938,
+      "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+      "speedup_control_over_candidate": 1.45234372,
+      "speedup_ab": 1.45250616,
+      "speedup_ba": 1.45191068,
+      "all_correct": true,
+      "promoted": true,
+      "final_rc": 0
+    },
+    {
+      "job_id": 10939,
+      "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+      "speedup_control_over_candidate": 1.45290527,
+      "speedup_ab": 1.4537062,
+      "speedup_ba": 1.45139291,
+      "all_correct": true,
+      "promoted": true,
+      "final_rc": 0
+    }
+  ],
+  "scheduler_probes": {
+    "two_gpu_request": {
+      "requested_gpus": 2,
+      "accepted": false,
+      "error": "QOSMaxGRESPerUser",
+      "evidence": "qos_two_gpu_request.log"
+    },
+    "single_gpu_map_request": {
+      "job_id": 10941,
+      "requested_gpu_bind": "map_gpu:1",
+      "slurm_job_gpus": "0",
+      "cuda_visible_devices": "0",
+      "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+      "evidence": "map1_10941.slurm.log"
+    }
+  },
+  "second_gpu_uuid_achieved": false,
+  "supported_claim": "Three clean formal runs support same-device repeatability for the frozen B=1,C=2 workload.",
+  "unsupported_claims": [
+    "second-GPU replication",
+    "cross-node replication",
+    "production or service external validity"
+  ]
+}

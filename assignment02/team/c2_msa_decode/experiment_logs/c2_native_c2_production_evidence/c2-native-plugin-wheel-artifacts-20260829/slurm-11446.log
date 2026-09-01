@@ -1,0 +1,18 @@
+UTC=2026-08-29T10:02:30Z
+SLURM_JOB_ID=11446 HOST=dev-slurm CPUS=16
+BASE_WHEEL=/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl
+PLUGIN_CHECKOUT=/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443
+PLUGIN_LIBRARY=/home/lcpu/85117379/c2-native-plugin-aot-artifacts-20260829/job11443/vllm/_native_c2_msa_decode_plugin.abi3.so
+PLUGIN_ARCHIVE_MEMBER=vllm/_native_c2_msa_decode_plugin.abi3.so
+PACKAGER=/home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py
+ARTIFACT_DIR=/home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11446
+Python 3.12.11
+d4da0c55af3aa231b6209bf77871f3ed36eab0d2
+/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-aot-artifacts-20260829/job11443/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py: OK
+91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06  /home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl
+f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d  /home/lcpu/85117379/c2-native-plugin-aot-artifacts-20260829/job11443/vllm/_native_c2_msa_decode_plugin.abi3.so
+1075a46970a9f2e5f5f869aae6cfa2dd8881d0ab73f949addfacadb5df29547a  /home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py
+ERROR: baseline wheel lacks reviewed dispatch members: ['vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py']
+FINAL_RC=1 UTC=2026-08-29T10:02:36Z

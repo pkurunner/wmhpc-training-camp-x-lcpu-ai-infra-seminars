@@ -1,0 +1,160 @@
+{
+  "all_collection_and_comparison_gates_pass": true,
+  "candidate": {
+    "action_id": "0",
+    "kernel_name": "native_c2_msa_decode_kernel(const __nv_fp8_e4m3 *, const __nv_fp8_e4m3 *, const int *, const int *, const int *, __nv_bfloat16 *, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+    "plugin_sha256": "9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538",
+    "source_sha256": "6409a54689ebbdd1f72fad76c2d72dfe588f79d3b8dd6c4dbaf1df5b630f0931",
+    "summary": "/home/lcpu/85117379/c2-native-plugin-v5-ncu-artifacts-20260829/job11779/native-c2-v5-ncu-job11779.json",
+    "version": "v5"
+  },
+  "decision_boundary": "NCU replay counters are mechanism evidence only. No aggregate counter direction, including shared wavefronts, is a v5 promotion/rejection gate; FP64 correctness and clean non-NCU ABBA performance make that decision.",
+  "launch_metadata": {
+    "expected_v4_registers_per_thread": 58,
+    "expected_v5_registers_per_thread": 64,
+    "v4_job11506": {
+      "launch__barrier_count": "1.00",
+      "launch__cluster_max_active": "142.00",
+      "launch__cluster_max_potential_size": "8.00",
+      "launch__cluster_size": "4.00",
+      "launch__occupancy_cluster_gpu_pct": "6.00",
+      "launch__occupancy_cluster_pct": "11.99",
+      "launch__registers_per_thread": "58.00",
+      "launch__shared_mem_per_block": "38752.00"
+    },
+    "v5": {
+      "launch__barrier_count": "1.00",
+      "launch__cluster_max_active": "142.00",
+      "launch__cluster_max_potential_size": "8.00",
+      "launch__cluster_size": "4.00",
+      "launch__occupancy_cluster_gpu_pct": "6.00",
+      "launch__occupancy_cluster_pct": "11.99",
+      "launch__registers_per_thread": "64.00",
+      "launch__shared_mem_per_block": "38752.00"
+    },
+    "v5_aot_resource_expectation": {
+      "local": 0,
+      "shared_bytes": 38752,
+      "stack": 0
+    }
+  },
+  "mechanism_observations": {
+    "barrier_stall_decreased": true,
+    "external_traffic_counters": [
+      "dram__bytes_read.sum",
+      "dram__bytes_write.sum",
+      "lts__t_bytes.sum"
+    ],
+    "shared_load_bank_conflicts_decreased": true,
+    "shared_load_wavefronts_decreased": true,
+    "shared_store_bank_conflicts_decreased": true,
+    "shared_store_wavefronts_decreased": true,
+    "tensor_instruction_count_unchanged": true,
+    "wait_stall_decreased": true
+  },
+  "reference": {
+    "action_id": "0",
+    "job": 11506,
+    "kernel_name": "native_c2_msa_decode_kernel(const __nv_fp8_e4m3 *, const __nv_fp8_e4m3 *, const int *, const int *, const int *, __nv_bfloat16 *, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+    "summary": "/home/lcpu/85117379/c2-native-v4-ncu-artifacts-20260829/native-c2-ncu-job11506.json",
+    "summary_sha256": "1dc181ea69e771574949e192cffcd417831384ec6937371bcd6135aeafa22f4b",
+    "version": "v4"
+  },
+  "same_collection_contract": {
+    "same_kernel_filter": "regex:.*native_c2_msa_decode_kernel.*",
+    "same_metric_set": true,
+    "seed": 20260829,
+    "single_kernel_action_each": true
+  },
+  "schema": "c2-native-c2-v5-v4-ncu-mechanism-comparison-v1",
+  "v5_counter_values": {
+    "dram__bytes_read.sum": {
+      "unit": "byte",
+      "value": 8462592.0
+    },
+    "dram__bytes_write.sum": {
+      "unit": "byte",
+      "value": 0.0
+    },
+    "gpu__time_duration.sum": {
+      "unit": "ns",
+      "value": 126880.0
+    },
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": {
+      "unit": "",
+      "value": 3005927.0
+    },
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": {
+      "unit": "",
+      "value": 885689.0
+    },
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": {
+      "unit": "",
+      "value": 5885903.0
+    },
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": {
+      "unit": "",
+      "value": 3416937.0
+    },
+    "lts__t_bytes.sum": {
+      "unit": "byte",
+      "value": 57870528.0
+    },
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+      "unit": "%",
+      "value": 1.6
+    },
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": {
+      "unit": "inst",
+      "value": 4.11
+    },
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {
+      "unit": "%",
+      "value": 367.67
+    },
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {
+      "unit": "%",
+      "value": 159.58
+    },
+    "smsp__inst_executed_pipe_tensor.sum": {
+      "unit": "inst",
+      "value": 262144.0
+    },
+    "smsp__warps_active.avg.per_cycle_active": {
+      "unit": "warp",
+      "value": 3.58
+    }
+  },
+  "v5_minus_v4": {
+    "dram__bytes_read.sum": -4352.0,
+    "dram__bytes_write.sum": 0.0,
+    "gpu__time_duration.sum": -38592.0,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": -1797065.0,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": -335971.0,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": -1876659.0,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": -172469.0,
+    "lts__t_bytes.sum": -365280.0,
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 0.3700000000000001,
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": -3.8599999999999994,
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": -69.90999999999997,
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": -29.189999999999998,
+    "smsp__inst_executed_pipe_tensor.sum": 0.0,
+    "smsp__warps_active.avg.per_cycle_active": -0.009999999999999787
+  },
+  "v5_over_v4": {
+    "dram__bytes_read.sum": 0.9994860010884683,
+    "dram__bytes_write.sum": null,
+    "gpu__time_duration.sum": 0.7667762521755946,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": 0.625844681815002,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": 0.7249881309038522,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": 0.7582423174204599,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": 0.9519505455777363,
+    "lts__t_bytes.sum": 0.9937275705009536,
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 1.3008130081300815,
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": 0.5156838143036387,
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": 0.8402349284702226,
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": 0.845367378291042,
+    "smsp__inst_executed_pipe_tensor.sum": 1.0,
+    "smsp__warps_active.avg.per_cycle_active": 0.9972144846796658
+  }
+}

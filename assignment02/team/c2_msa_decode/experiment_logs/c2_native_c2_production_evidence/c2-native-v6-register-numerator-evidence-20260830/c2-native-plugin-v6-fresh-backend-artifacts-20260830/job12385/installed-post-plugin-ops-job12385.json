@@ -1,0 +1,19 @@
+{
+  "added_ops": [
+    "_C::native_c2_msa_decode"
+  ],
+  "all_baseline_op_names_schemas_and_dispatch_surfaces_preserved": true,
+  "loader": {
+    "callable": "_load_native_c2_plugin_once",
+    "first_return_is_true": true,
+    "module": "vllm.models.minimax_m3.nvidia.msa_native_c2_decode",
+    "second_call_snapshot_unchanged": true,
+    "second_return_is_true": true,
+    "style": "noargs"
+  },
+  "missing_baseline_ops": [],
+  "native_c2_has_cuda_kernel": true,
+  "plugin_path": "/home/lcpu/85117379/c2-native-plugin-v6-fresh-runtime-20260830/job12385/vllm/_native_c2_msa_decode_plugin.abi3.so",
+  "plugin_sha256": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4",
+  "schema": "c2-native-plugin-v6-installed-postloader-surface-v1"
+}

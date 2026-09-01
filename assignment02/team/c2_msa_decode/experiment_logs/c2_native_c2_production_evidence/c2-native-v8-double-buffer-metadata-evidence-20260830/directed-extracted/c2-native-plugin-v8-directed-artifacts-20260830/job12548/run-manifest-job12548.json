@@ -1,0 +1,55 @@
+{
+  "candidate": "v8-double-buffer-metadata",
+  "frozen_harness_schema": "c2-native-c2-v6-register-numerator-directed-v1",
+  "inputs": [
+    {
+      "label": "v8_double_buffer_metadata_plugin",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v8-aot-artifacts-20260830/job12534/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "sha256": "2ecfe9b090c3e9cb741de04e0c635064bf38d5f298470bce543ec8ecb8d97c8c",
+      "size_bytes": 615808
+    },
+    {
+      "label": "v8_double_buffer_metadata_source",
+      "path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-v8-double-buffer-metadata-20260830-job12534/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu",
+      "sha256": "9c4317c3ed3790091c0d60f84a753ae85c57d14685c9dd467c1e82160b04f6a1",
+      "size_bytes": 24184
+    },
+    {
+      "label": "v8_double_buffer_metadata_resource_gate",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v8-aot-artifacts-20260830/job12534/plugin-resource-gate-job12534.txt",
+      "sha256": "798376ca215c9894497da2f116be55fe337cd98df275c515e643834ad19b5a25",
+      "size_bytes": 135
+    },
+    {
+      "label": "v8_double_buffer_metadata_provenance",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v8-aot-artifacts-20260830/job12534/plugin-v8-provenance-job12534.sha256",
+      "sha256": "69c96a02351f46ad59ddbab7a897b46dc8299187f6158ca5de2e2d8cf6b54950",
+      "size_bytes": 1671
+    },
+    {
+      "label": "base_harness",
+      "path": "/home/lcpu/85117379/native_c2_operator_bench_20260829.py",
+      "sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "size_bytes": 11438
+    },
+    {
+      "label": "v5_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py",
+      "sha256": "43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1",
+      "size_bytes": 18912
+    },
+    {
+      "label": "frozen_v6_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py",
+      "sha256": "c38ec0bc7ffb9d85567d3cbbf4c2991077eb6cb3a52874778ddac01d107577a5",
+      "size_bytes": 20703
+    },
+    {
+      "label": "v8_double_buffer_metadata_directed_script",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v8-directed-artifacts-20260830/job12548/submitted-script-job12548.slurm",
+      "sha256": "665debb269cf402d3f6509778ce37757db7313d9d4edc63dff19f3f9e6fc5069",
+      "size_bytes": 16763
+    }
+  ],
+  "schema": "c2-native-c2-v8-double-buffer-metadata-directed-input-manifest-v1"
+}

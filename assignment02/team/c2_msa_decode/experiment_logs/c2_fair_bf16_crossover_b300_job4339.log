@@ -1,0 +1,767 @@
+===== PRE_AUDIT =====
+2026-08-19T15:47:37+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== PIN_AND_SOURCE_AUDIT =====
+Python 3.12.3
+torch=2.13.0+cu130
+triton=3.7.1
+fmha_sm100=/home/lcpu/85117379/msa-official/python/fmha_sm100/__init__.py
+80434d7f67877c6570ca19cac444b84bc9855dac
+ eb61c911471867a5fd2466bfd8f29306cea6ebf8 python/fmha_sm100/cutlass (v4.3.0-51-geb61c911)
+47173175711e3fb2516a066cbb2e62e24b8d7f96e53aae34068ae8fb0f64691d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/fair_crossover_bench.py
+09248acea93f17fdd1cbdd4e21fe6178bce11bd681ac8af45254b00a8c704bb9  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/run_fair_crossover_audit.sh
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/msa_cutlass_sparse_decode.py
+===== SAME_DATA_BF16_FAIR_CROSSOVER =====
+{
+  "schema": "c2-fair-bf16-crossover-v2-three-path",
+  "source_pins": {
+    "official_msa": {
+      "expected_commit": "80434d7f67877c6570ca19cac444b84bc9855dac",
+      "actual_commit": "80434d7f67877c6570ca19cac444b84bc9855dac",
+      "pin_verified": true,
+      "module_path": "/home/lcpu/85117379/msa-official/python/fmha_sm100/__init__.py"
+    },
+    "cutlass": {
+      "expected_commit": "eb61c911471867a5fd2466bfd8f29306cea6ebf8",
+      "pin_verified": true,
+      "submodule_status": [
+        "eb61c911471867a5fd2466bfd8f29306cea6ebf8 python/fmha_sm100/cutlass (v4.3.0-51-geb61c911)"
+      ]
+    },
+    "vendored_vllm": {
+      "declared_snapshot_pin": "d4da0c5",
+      "verification": "TASK.md declaration plus source checksums; snapshot is not a git checkout"
+    }
+  },
+  "source_hashes": {
+    "fair_crossover_bench.py": "47173175711e3fb2516a066cbb2e62e24b8d7f96e53aae34068ae8fb0f64691d",
+    "data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967",
+    "vllm_msa_ref/msa_cutlass_sparse_decode.py": "5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f"
+  },
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "device": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [
+      10,
+      3
+    ]
+  },
+  "fairness_contract": {
+    "same_data": "same BF16 make_decode_problem data, seed, random table, sorted topk and seq_lens",
+    "oracle": "same independent FP32 oracle",
+    "tolerance": {
+      "rtol": 0.03,
+      "atol": 0.03
+    },
+    "caller_owned_output": true,
+    "primary_boundary": "source wrapper vs official core have different internal workspace lifetimes; prepared Triton C=1 is reported separately",
+    "excluded": [
+      "K/V bridge",
+      "MSA plan",
+      "oracle",
+      "correctness"
+    ]
+  },
+  "results": [
+    {
+      "batch": 1,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260820,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2124
+        ],
+        "checksums": {
+          "q_bf16": "166a942d7cf338c695df354bdb96e70fe9e666c32458fa940334d139d4457602",
+          "kv_cache_interleaved_bf16": "6eb8444e56f62af1c82fcfad02d9c097f9820b85b49556072635b6f57922f21c",
+          "block_table_i32": "83b73be089b3465cc6d3960e43385fcfcb6f432b1a8427aa227837f5142531bc",
+          "topk_sorted_i32_hkv_q_k": "9b2519ea37945ee33cd2ff40e7806d5b8dc0062050ba5f3344ff74e4736e789f",
+          "seq_lens_i32": "be8b60dcb77d219eb0d09d81ae15d3e1885c2f1867767c38e69bd8de7c5f72e6",
+          "official_k_bf16": "23a9b89f5031afbc84cc90e73d13d5b084f2a4711f6799ecd8c2b19f83605150",
+          "official_v_bf16": "e2e49f2ce73a63f23c2af03cb0ae0be64638ec7e9b838ea9b60489a945d50662",
+          "official_indices_i32": "83b73be089b3465cc6d3960e43385fcfcb6f432b1a8427aa227837f5142531bc",
+          "official_topk_i32_q_hkv_k": "9b2519ea37945ee33cd2ff40e7806d5b8dc0062050ba5f3344ff74e4736e789f"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2124
+          ],
+          "qo_offset": [
+            2123
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          1,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 4.2362138628959656e-05,
+          "mean_abs": 4.504724529397208e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 2.5287270545959473e-05,
+          "mean_abs": 3.4682429941312876e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.653019666671753e-05,
+          "mean_abs": 4.42898772234912e-06,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.04694399982690811,
+          "median_ms": 0.04827199876308441,
+          "p90_ms": 0.054687999188899994,
+          "p10_us": 46.94399982690811,
+          "median_us": 48.27199876308441,
+          "p90_us": 54.687999188899994
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02937600016593933,
+          "median_ms": 0.031279999762773514,
+          "p90_ms": 0.031488001346588135,
+          "p10_us": 29.37600016593933,
+          "median_us": 31.279999762773514,
+          "p90_us": 31.488001346588135
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02611199952661991,
+          "median_ms": 0.027216000482439995,
+          "p90_ms": 0.02940800040960312,
+          "p10_us": 26.11199952661991,
+          "median_us": 27.216000482439995,
+          "p90_us": 29.40800040960312
+        },
+        "official_over_source_wrapper_median_speedup": 1.7736624745516865,
+        "official_over_prepared_median_speedup": 1.149323898011967
+      }
+    },
+    {
+      "batch": 4,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260823,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2200,
+          2102,
+          3277,
+          2443
+        ],
+        "checksums": {
+          "q_bf16": "24db17348038ba7a5e1d40e2e7839e7b356302ba63dfa2cc0eefcba81ee5ca61",
+          "kv_cache_interleaved_bf16": "283ce4823c7c81c1b9539f2ac62f98bd6fb02494ef01d3ee84a5bd4d520f2a63",
+          "block_table_i32": "422152a0f74dc9dd86d4aeaaa97a9460a185b626b018d7dd3303e90c8376f0e8",
+          "topk_sorted_i32_hkv_q_k": "347c26f03b45197d294a4a452c50b5580918bcd0f071786337c4071883ad5602",
+          "seq_lens_i32": "ddd4ede0402faf845a3dbacb8f3e94d7c071c2c2d1c5d7a5176a561136527f87",
+          "official_k_bf16": "713075c94e04c518db17ec5e0718a88efa79f23e99cbb6aa2c2097bbcf74c950",
+          "official_v_bf16": "cfe49d77a901835b9a4c910cfaa268792182c028484ad1f936ed9f7df09117f9",
+          "official_indices_i32": "422152a0f74dc9dd86d4aeaaa97a9460a185b626b018d7dd3303e90c8376f0e8",
+          "official_topk_i32_q_hkv_k": "0899fb018513fa2ab594a86c0e5456b31ba2b2af5031d817e1878dfa26298acb"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2200,
+            2102,
+            3277,
+            2443
+          ],
+          "qo_offset": [
+            2199,
+            2101,
+            3276,
+            2442
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          4,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.0885450541973114e-05,
+          "mean_abs": 4.641086889023427e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.0885450541973114e-05,
+          "mean_abs": 3.487895810394548e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.0111136669293046,
+          "mean_abs": 0.001906716264784336,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.045791998505592346,
+          "median_ms": 0.04689599946141243,
+          "p90_ms": 0.052671998739242554,
+          "p10_us": 45.791998505592346,
+          "median_us": 46.89599946141243,
+          "p90_us": 52.671998739242554
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02812799997627735,
+          "median_ms": 0.029152000322937965,
+          "p90_ms": 0.02921600081026554,
+          "p10_us": 28.12799997627735,
+          "median_us": 29.152000322937965,
+          "p90_us": 29.21600081026554
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.025087999179959297,
+          "median_ms": 0.026159999892115593,
+          "p90_ms": 0.029184000566601753,
+          "p10_us": 25.087999179959297,
+          "median_us": 26.159999892115593,
+          "p90_us": 29.184000566601753
+        },
+        "official_over_source_wrapper_median_speedup": 1.7926605372634767,
+        "official_over_prepared_median_speedup": 1.1143731056254376
+      }
+    },
+    {
+      "batch": 8,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260827,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2893,
+          3315,
+          3474,
+          2128,
+          4071,
+          3491,
+          3171,
+          4030
+        ],
+        "checksums": {
+          "q_bf16": "89e80be048bef2a3e165c43b48488acc47cea300e75baf4d13db38ce3e9f61ad",
+          "kv_cache_interleaved_bf16": "b095bffda3e4706f3df789581a7ca46fa0385cbe4b347d5422aba33157260b1b",
+          "block_table_i32": "1e5fadbcfbe993b5db80634a948b4a0a524d9195042a1418ce76a71729d231f0",
+          "topk_sorted_i32_hkv_q_k": "3cfbaffecbc26b8f1d55faf76630d8511fbc1c56c9d72a5a528b30d97a5af42c",
+          "seq_lens_i32": "cfb47e4313a3aa8aaffc0002668b027268c008e905e779e51173f7abe8dac09d",
+          "official_k_bf16": "ae60ddef78856714134cdacdf08679cf0c3dbf5c2ce7e2e7b12e5ab5b5657028",
+          "official_v_bf16": "5bc907951c3dfbc8a6d14467687ff2b01dac1f8d02102cf61a03f7c1f541908a",
+          "official_indices_i32": "1e5fadbcfbe993b5db80634a948b4a0a524d9195042a1418ce76a71729d231f0",
+          "official_topk_i32_q_hkv_k": "07eb240462617830fe148f36ff2e33afc6b4168db314e85b9b64f1b5b14b52e3"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2893,
+            3315,
+            3474,
+            2128,
+            4071,
+            3491,
+            3171,
+            4030
+          ],
+          "qo_offset": [
+            2892,
+            3314,
+            3473,
+            2127,
+            4070,
+            3490,
+            3170,
+            4029
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          8,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.413110971450806e-05,
+          "mean_abs": 4.489462298806757e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 2.1371990442276e-05,
+          "mean_abs": 3.409024657230475e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.011128450743854046,
+          "mean_abs": 0.0021414337679743767,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.046911999583244324,
+          "median_ms": 0.04819200001657009,
+          "p90_ms": 0.07052800059318542,
+          "p10_us": 46.911999583244324,
+          "median_us": 48.19200001657009,
+          "p90_us": 70.52800059318542
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02812799997627735,
+          "median_ms": 0.029152000322937965,
+          "p90_ms": 0.029279999434947968,
+          "p10_us": 28.12799997627735,
+          "median_us": 29.152000322937965,
+          "p90_us": 29.279999434947968
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.026079999282956123,
+          "median_ms": 0.02711999975144863,
+          "p90_ms": 0.029279999434947968,
+          "p10_us": 26.079999282956123,
+          "median_us": 27.11999975144863,
+          "p90_us": 29.279999434947968
+        },
+        "official_over_source_wrapper_median_speedup": 1.7769911673393686,
+        "official_over_prepared_median_speedup": 1.0749262754466211
+      }
+    },
+    {
+      "batch": 16,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260835,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2697,
+          4046,
+          3547,
+          3835,
+          3453,
+          4047,
+          3342,
+          2570,
+          2716,
+          2819,
+          3820,
+          2581,
+          3412,
+          3087,
+          3196,
+          3117
+        ],
+        "checksums": {
+          "q_bf16": "1ae6c4a1bda89d5bf78bb1ad9e9aa65aa96ab9ecb9c1eda79ba1e5a15b72b5d5",
+          "kv_cache_interleaved_bf16": "e14ed2e68a317ef3f191a3613871166f7a519e93ea63ec67dbd478976a569f40",
+          "block_table_i32": "2986b763cfde44f27ecdee7eafd0d8f1cdd333bb0d55058bbc0b14a95d4108e6",
+          "topk_sorted_i32_hkv_q_k": "066b0023b12ce12a4de7514af4035d20e8e84b54cb91605598661d94b9b0346e",
+          "seq_lens_i32": "dcd851ae1be02f66bb83e520dd8b0a7a3ca8f77dfc191a7056fb49fa9f81e488",
+          "official_k_bf16": "0a7abcab7155e91e91607406ef4609a564f09e4d877b7e51931425320d93f54d",
+          "official_v_bf16": "5d3da6d31669f66b2d6fb898121705e41768fa042d005c976c96c33e55fd623a",
+          "official_indices_i32": "2986b763cfde44f27ecdee7eafd0d8f1cdd333bb0d55058bbc0b14a95d4108e6",
+          "official_topk_i32_q_hkv_k": "4ce1412f6fb4784881da44f799d9ac712a06590d7306fdb0259a5064174bb0d6"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2697,
+            4046,
+            3547,
+            3835,
+            3453,
+            4047,
+            3342,
+            2570,
+            2716,
+            2819,
+            3820,
+            2581,
+            3412,
+            3087,
+            3196,
+            3117
+          ],
+          "qo_offset": [
+            2696,
+            4045,
+            3546,
+            3834,
+            3452,
+            4046,
+            3341,
+            2569,
+            2715,
+            2818,
+            3819,
+            2580,
+            3411,
+            3086,
+            3195,
+            3116
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          16,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.496930003166199e-05,
+          "mean_abs": 4.430213266459759e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.1822361052036285e-05,
+          "mean_abs": 3.369917976669967e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.01089918427169323,
+          "mean_abs": 0.0022087092511355877,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.04569600149989128,
+          "median_ms": 0.0469760000705719,
+          "p90_ms": 0.0530879981815815,
+          "p10_us": 45.69600149989128,
+          "median_us": 46.9760000705719,
+          "p90_us": 53.0879981815815
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.031007999554276466,
+          "median_ms": 0.031199999153614044,
+          "p90_ms": 0.03136000037193298,
+          "p10_us": 31.007999554276466,
+          "median_us": 31.199999153614044,
+          "p90_us": 31.360000371932983
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.025087999179959297,
+          "median_ms": 0.02696000039577484,
+          "p90_ms": 0.02812799997627735,
+          "p10_us": 25.087999179959297,
+          "median_us": 26.96000039577484,
+          "p90_us": 28.12799997627735
+        },
+        "official_over_source_wrapper_median_speedup": 1.7424332114599657,
+        "official_over_prepared_median_speedup": 1.1572699812906417
+      }
+    }
+  ],
+  "all_correctness_pass": true
+}
+JSON_STRICT_GATE=PASS batches=1,4,8,16 paths=source-wrapper,prepared-c1,official
+JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_fair_bf16_crossover_b300_job4339.json
+LOG=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_fair_bf16_crossover_b300_job4339.log
+===== POST_AUDIT =====
+2026-08-19T15:47:46+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

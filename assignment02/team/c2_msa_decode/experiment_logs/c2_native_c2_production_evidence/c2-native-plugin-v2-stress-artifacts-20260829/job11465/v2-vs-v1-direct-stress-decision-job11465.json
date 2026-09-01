@@ -1,0 +1,86 @@
+{
+  "accepted": true,
+  "all_correctness_and_comparability_gates_pass": true,
+  "candidate": {
+    "library": "/home/lcpu/85117379/c2-native-plugin-v2-aot-artifacts-20260829/job11464/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "median_of_16_seed_means_ms": 0.24152736090123653,
+    "seed_mean_ms": [
+      0.24133872121572494,
+      0.2413414414227009,
+      0.24135856136679648,
+      0.24136352136731148,
+      0.24139360122382642,
+      0.2414094415307045,
+      0.24143184140324592,
+      0.2415035207569599,
+      0.24155120104551314,
+      0.2416091212630272,
+      0.241620961278677,
+      0.24163376100361347,
+      0.24165152169764043,
+      0.24167824111878872,
+      0.24182080164551734,
+      0.24183376096189022
+    ]
+  },
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "stress_harness": "0a929ead3a6d0513c8555ec74df543f2f69cc0ce0e3d84fffb0a924913420068",
+    "v1_job11443_plugin": "f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d",
+    "v2_plugin": "73d769ca9c82e6a1cd3433fd7fcd1603b64935ddde989e04be1f184ea66debb5"
+  },
+  "reference": {
+    "job": 11443,
+    "library": "/home/lcpu/85117379/c2-native-plugin-aot-artifacts-20260829/job11443/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "median_of_16_seed_means_ms": 0.2936567184329033,
+    "seed_mean_ms": [
+      0.2933116792142391,
+      0.2933302389085293,
+      0.2934900784492493,
+      0.29354431852698326,
+      0.2935604791343212,
+      0.29356655925512315,
+      0.2936124785244465,
+      0.2936318379640579,
+      0.29368159890174866,
+      0.29372895911335944,
+      0.2937463976442814,
+      0.2938203172385693,
+      0.29383439883589746,
+      0.29386303782463075,
+      0.2939643184840679,
+      0.29405871748924256
+    ]
+  },
+  "rejection_policy": "If accepted is false, do not submit the v2 wheel job; retain v1.",
+  "relative_improvement_fraction": 0.17751801426459668,
+  "required_improvement_fraction": 0.05,
+  "required_v2_max_ms": 0.27897388251125815,
+  "schema": "c2-native-plugin-v2-vs-v1-direct-stress-promotion-v1",
+  "shared_contract": {
+    "atol": 0.0001,
+    "comparison_processes": "ABBA: four distinct Python processes",
+    "four_run_contract_identical": true,
+    "iters": 200,
+    "oracle_dtype": "float64",
+    "rtol": 0.001,
+    "run_order": [
+      "v1_a",
+      "v2_b1",
+      "v2_b2",
+      "v1_a2"
+    ],
+    "seeds": [
+      17,
+      23,
+      42,
+      2024,
+      314159,
+      20260801,
+      20260815,
+      20260829
+    ],
+    "stability_repeats": 4,
+    "warmup": 30
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "all_integration_and_correctness_gates_pass": true,
+  "fresh_process_per_seed": true,
+  "native_median_of_seed_medians_ms": 0.10097600147128105,
+  "native_over_triton_ratio_of_seed_medians": 2.0819997629825875,
+  "one_physical_gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+  "schema": "c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-summary-v1",
+  "seed_count": 8,
+  "seeds": [
+    {
+      "native_median_ms": 0.10102400183677673,
+      "native_over_triton_latency_ratio": 2.085893662776003,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed17-job13900.json",
+      "result_sha256": "15739ed9b1fe1264b0daeffb9515ba5a8877a68ab98b8c8703f4a2d8af2b582c",
+      "seed": 17,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed17-job13900.chrome.json",
+      "triton_median_ms": 0.04843199998140335
+    },
+    {
+      "native_median_ms": 0.10089600086212158,
+      "native_over_triton_latency_ratio": 2.0805014823269175,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed23-job13900.json",
+      "result_sha256": "46d75786485d4c8a03a503edb856e241a8c96497a769ee67ef0ade234ddddc16",
+      "seed": 23,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed23-job13900.chrome.json",
+      "triton_median_ms": 0.048496000468730927
+    },
+    {
+      "native_median_ms": 0.10099200159311295,
+      "native_over_triton_latency_ratio": 2.0845442820738627,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed42-job13900.json",
+      "result_sha256": "37046825803e4759ad5f4a2e9ae76802374a9a9b0b72e93fd4f125c1e7635de9",
+      "seed": 42,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed42-job13900.chrome.json",
+      "triton_median_ms": 0.048448000103235245
+    },
+    {
+      "native_median_ms": 0.10102400183677673,
+      "native_over_triton_latency_ratio": 2.0810810831551483,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed2024-job13900.json",
+      "result_sha256": "1c9a993dd434dbe49090e9bebf2f1d4aea98a3cac7d3e1828166f5b7a392027e",
+      "seed": 2024,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed2024-job13900.chrome.json",
+      "triton_median_ms": 0.04854400083422661
+    },
+    {
+      "native_median_ms": 0.10099200159311295,
+      "native_over_triton_latency_ratio": 2.093532354752195,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed314159-job13900.json",
+      "result_sha256": "5ca8cf9ce6802ebeb2380991bd4f3e1b6cbe1f41a81e4eba4c7a0cbc162b7a29",
+      "seed": 314159,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed314159-job13900.chrome.json",
+      "triton_median_ms": 0.04824000038206577
+    },
+    {
+      "native_median_ms": 0.10096000134944916,
+      "native_over_triton_latency_ratio": 2.08250826375885,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260801-job13900.json",
+      "result_sha256": "254fb5ebf3755eda8ae2aa8b125529730a7ad0001294ee29af28e1d07df5dd0c",
+      "seed": 20260801,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260801-job13900.chrome.json",
+      "triton_median_ms": 0.04848000034689903
+    },
+    {
+      "native_median_ms": 0.100832000374794,
+      "native_over_triton_latency_ratio": 2.079867979647067,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260815-job13900.json",
+      "result_sha256": "655d5aa7f869abcf7e28f219e3c61370846094f2e1156adb90909328bc7655b3",
+      "seed": 20260815,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260815-job13900.chrome.json",
+      "triton_median_ms": 0.04848000034689903
+    },
+    {
+      "native_median_ms": 0.10094400122761726,
+      "native_over_triton_latency_ratio": 2.081491262206325,
+      "result": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260829-job13900.json",
+      "result_sha256": "4a4eb9f6e1e5897e9fcc7573eabc124b72394e34c6611a7e14de0012b8ecd7e4",
+      "seed": 20260829,
+      "trace": "/home/lcpu/85117379/c2-native-plugin-v16-k-chunk-lookahead-fresh-backend-artifacts-20260831/job13900/plugin-v16-wheel-full-backend-seed20260829-job13900.chrome.json",
+      "triton_median_ms": 0.048496000468730927
+    }
+  ],
+  "triton_median_of_seed_medians_ms": 0.04848000034689903,
+  "triton_parity_achieved": false,
+  "triton_parity_is_hard_gate": false,
+  "v16_dso_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+  "v16_vs_v12_fresh_wheel_comparator": {
+    "available": false,
+    "comparison_kind": "none",
+    "fresh_native_over_triton_is_not_v16_vs_v12_promotion": true,
+    "reason": "no v12 fresh-wheel comparator is installed in this job; accepted v16-v12 promotion remains the separate direct job13789 same-GPU ABBA result"
+  }
+}

@@ -1,0 +1,23 @@
+
+===== PRE UTC 2026-08-28T19:32:37Z (Slurm job 10706) =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source SHA256 --
+a03559a0dbc60672375ac24792a017d4dcb601bc1baf8f4b70f0a50f92c9b66c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_smoke.cu
+ec6b824fc058d46387df5279b60d20666072c35fba1612feeef339121a197054  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_smoke_clean.sh
+
+===== compile native CUDA C=2 attention smoke =====
+nvcc completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_smoke/c2_cluster_attention_smoke_compile_20260828T193237Z.log
+
+===== run native CUDA C=2 attention smoke (120 second watchdog) =====
+{"json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_smoke/c2_cluster_attention_smoke_clean_20260828T193237Z.json", "max_abs": 0.000158179551, "max_rel": 13.8656559, "mbarrier_phase": "pending/unverified: CUDA 13.0 libcu++ exposes no cuda::thread_scope_cluster barrier; two cooperative_groups::cluster_group::sync phases protect DSM handoff", "secondary_gate": "pass"}
+Native CUDA C=2 attention smoke completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_smoke/c2_cluster_attention_smoke_clean_20260828T193237Z.json
+
+===== POST UTC 2026-08-28T19:32:41Z (Slurm job 10706) =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source SHA256 --
+a03559a0dbc60672375ac24792a017d4dcb601bc1baf8f4b70f0a50f92c9b66c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_smoke.cu
+ec6b824fc058d46387df5279b60d20666072c35fba1612feeef339121a197054  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_smoke_clean.sh
+
+===== FINAL_RC=0 =====

@@ -1,0 +1,116 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -37,12 +37,13 @@ constexpr int kSelectedPages = 16;
+ constexpr int kClusterCtas = 4;
+-constexpr int kProducerCtas = 2;
++constexpr int kProducerCtas = 4;
++constexpr int kMergeCta = 0;
+ constexpr int kPagesPerProducer = kSelectedPages / kProducerCtas;
+ constexpr int kThreads = 256;
+ constexpr int kWarpSize = 32;
+ constexpr int kWarps = kThreads / kWarpSize;
+ constexpr int kHeadsPerWarp = kGqaGroup / kWarps;
+ constexpr int kTile = 16;
+ constexpr int kTokenTiles = kPageSize / kTile;
+-constexpr int kMbarrierArrivals = 2;
++constexpr int kMbarrierArrivals = kProducerCtas;
+ constexpr int kMbarrierParity = 0;
+ constexpr int kMbarrierMaxPolls = 1 << 24;
+@@ -113,4 +114,4 @@ __global__ void native_c2_msa_decode_kernel(
+-  if (role == 2 && thread == 0) {
++  if (role == kMergeCta && thread == 0) {
+     cuda::ptx::mbarrier_init(&producer_ready_barrier, kMbarrierArrivals);
+     producer_ready = 0;
+   }
+@@ -120,4 +121,4 @@ __global__ void native_c2_msa_decode_kernel(
+-  if (role == 0 || role == 1) {
++  if (role < kProducerCtas) {
+     int const selected_begin = role * kPagesPerProducer;
+     for (int element = thread; element < kGqaGroup * kHeadDim;
+          element += kThreads) {
+@@ -327,11 +328,11 @@ __global__ void native_c2_msa_decode_kernel(
+-  if ((role == 0 || role == 1) && thread == 0) {
+-    std::uint64_t* remote_rank2_barrier =
+-        cluster.map_shared_rank(&producer_ready_barrier, 2);
++  if (role < kProducerCtas && thread == 0) {
++    std::uint64_t* remote_merge_barrier =
++        cluster.map_shared_rank(&producer_ready_barrier, kMergeCta);
+     cuda::ptx::mbarrier_arrive(cuda::ptx::sem_release,
+                                cuda::ptx::scope_cluster,
+                                cuda::ptx::space_cluster,
+-                               remote_rank2_barrier);
++                               remote_merge_barrier);
+   }
+-  if (role == 2 && thread == 0) {
++  if (role == kMergeCta && thread == 0) {
+     bool ready = false;
+ #pragma unroll 1
+@@ -350,41 +351,55 @@ __global__ void native_c2_msa_decode_kernel(
+-  if (role == 2 && thread < kGqaGroup) {
++  if (role == kMergeCta && thread < kGqaGroup) {
+     std::int64_t const output_base =
+         static_cast<std::int64_t>(batch) * output_token_stride +
+         static_cast<std::int64_t>(kv_head * kGqaGroup + thread) *
+             output_head_stride;
+     if (producer_ready == 0) {
+       // A timed-out cluster protocol must be observably invalid; returning a
+       // plausible zero tensor would hide a liveness/correctness failure.
+       for (int dim = 0; dim < kHeadDim; ++dim) {
+         output[output_base + dim] = __float2bfloat16_rn(NAN);
+       }
+     } else {
+-      __nv_bfloat16 const* remote_partial0 =
+-          cluster.map_shared_rank(local_partial, 0);
+       __nv_bfloat16 const* remote_partial1 =
+           cluster.map_shared_rank(local_partial, 1);
+-      float const* remote_lse0 = cluster.map_shared_rank(local_lse, 0);
++      __nv_bfloat16 const* remote_partial2 =
++          cluster.map_shared_rank(local_partial, 2);
++      __nv_bfloat16 const* remote_partial3 =
++          cluster.map_shared_rank(local_partial, 3);
+       float const* remote_lse1 = cluster.map_shared_rank(local_lse, 1);
+-      float const lse0 = remote_lse0[thread];
++      float const* remote_lse2 = cluster.map_shared_rank(local_lse, 2);
++      float const* remote_lse3 = cluster.map_shared_rank(local_lse, 3);
++      float const lse0 = local_lse[thread];
+       float const lse1 = remote_lse1[thread];
+-      float const lse_max = fmaxf(lse0, lse1);
++      float const lse2 = remote_lse2[thread];
++      float const lse3 = remote_lse3[thread];
++      float const lse_max =
++          fmaxf(fmaxf(lse0, lse1), fmaxf(lse2, lse3));
+       float const weight0 = isfinite(lse0) ? exp2f(lse0 - lse_max) : 0.0f;
+       float const weight1 = isfinite(lse1) ? exp2f(lse1 - lse_max) : 0.0f;
+-      float const denominator = weight0 + weight1;
++      float const weight2 = isfinite(lse2) ? exp2f(lse2 - lse_max) : 0.0f;
++      float const weight3 = isfinite(lse3) ? exp2f(lse3 - lse_max) : 0.0f;
++      float const denominator = weight0 + weight1 + weight2 + weight3;
+       for (int dim = 0; dim < kHeadDim; ++dim) {
+-        float const partial0 = __bfloat162float(
+-            remote_partial0[thread * kHeadDim + dim]);
++        float const partial0 =
++            __bfloat162float(local_partial[thread * kHeadDim + dim]);
+         float const partial1 = __bfloat162float(
+             remote_partial1[thread * kHeadDim + dim]);
++        float const partial2 = __bfloat162float(
++            remote_partial2[thread * kHeadDim + dim]);
++        float const partial3 = __bfloat162float(
++            remote_partial3[thread * kHeadDim + dim]);
+         float const merged = denominator > 0.0f
+                                  ? (partial0 * weight0 +
+-                                    partial1 * weight1) /
++                                    partial1 * weight1 +
++                                    partial2 * weight2 +
++                                    partial3 * weight3) /
+                                        denominator
+                                  : 0.0f;
+         output[output_base + dim] = __float2bfloat16_rn(merged);
+       }
+     }
+   }
+-  // Retains producer shared-memory lifetime until rank 2 has finished DSM
+-  // reads; rank 3 participates solely in the cluster protocol.
++  // Retain every producer's shared-memory lifetime until rank 0 finishes the
++  // four-way DSM merge and all threads reach the cluster-wide rendezvous.
+   cluster.sync();

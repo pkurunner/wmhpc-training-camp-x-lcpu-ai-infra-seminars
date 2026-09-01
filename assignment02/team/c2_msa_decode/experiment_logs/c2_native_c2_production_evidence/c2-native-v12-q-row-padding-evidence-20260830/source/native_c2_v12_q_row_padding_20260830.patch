@@ -1,0 +1,54 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -32,6 +32,10 @@ constexpr int kQueryHeads = 64;
+ constexpr int kKvHeads = 4;
+ constexpr int kGqaGroup = kQueryHeads / kKvHeads;
+ constexpr int kHeadDim = 128;
++// v12 changes only the leading dimension of the shared Q tile.  A 136-BF16
++// stride is still WMMA-legal (a multiple of eight elements) and rotates each
++// successive row by four 32-bit shared-memory banks.
++constexpr int kQTileStride = kHeadDim + 8;
+ constexpr int kPageSize = 128;
+ constexpr int kSelectedPages = 16;
+ constexpr int kClusterCtas = 4;
+@@ -52,6 +56,7 @@ constexpr float kLog2e = 1.4426950408889634f;
+ static_assert(kGqaGroup == kTile);
+ static_assert(kTokenTiles == kWarps);
+ static_assert(kHeadDim / kTile == kWarps);
++static_assert(kQTileStride % 8 == 0);
+ 
+ __device__ __forceinline__ __nv_bfloat16 scaled_fp8(
+     const __nv_fp8_e4m3* ptr, std::int64_t offset, float scale) {
+@@ -90,7 +95,7 @@ __global__ void native_c2_msa_decode_kernel(
+   __shared__ float merge_weights[kGqaGroup][kProducerCtas];
+   __shared__ float merge_denominator[kGqaGroup];
+ 
+-  __shared__ __align__(32) __nv_bfloat16 q_tile[kGqaGroup][kHeadDim];
++  __shared__ __align__(32) __nv_bfloat16 q_tile[kGqaGroup][kQTileStride];
+   // Reused for the current K or V 16x16 tile owned by each warp.  Staging is
+   // inside the kernel and timed; no split/contiguous/BF16 bridge exists.
+   __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
+@@ -175,14 +180,14 @@ __global__ void native_c2_msa_decode_kernel(
+     wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
+                    wmma::row_major>
+         q_fragment_7;
+-    wmma::load_matrix_sync(q_fragment_0, &q_tile[0][0 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_1, &q_tile[0][1 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_2, &q_tile[0][2 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_3, &q_tile[0][3 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_4, &q_tile[0][4 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_5, &q_tile[0][5 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_6, &q_tile[0][6 * kTile], kHeadDim);
+-    wmma::load_matrix_sync(q_fragment_7, &q_tile[0][7 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_0, &q_tile[0][0 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_1, &q_tile[0][1 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_2, &q_tile[0][2 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_3, &q_tile[0][3 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_4, &q_tile[0][4 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_5, &q_tile[0][5 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_6, &q_tile[0][6 * kTile], kQTileStride);
++    wmma::load_matrix_sync(q_fragment_7, &q_tile[0][7 * kTile], kQTileStride);
+ 
+     for (int selected = selected_begin;
+          selected < selected_begin + kPagesPerProducer; ++selected) {

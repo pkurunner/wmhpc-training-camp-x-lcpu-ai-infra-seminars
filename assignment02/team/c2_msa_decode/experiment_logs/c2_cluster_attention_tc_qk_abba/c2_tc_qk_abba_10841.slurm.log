@@ -1,0 +1,27 @@
+
+===== PRE UTC 2026-08-28T21:56:23Z (Slurm job 10841) =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/import/runner SHA256 --
+523347312f07345487a2591d6e52ef231c94ba8b6fe00e36e1fc16a02bb53431  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+fe750df56938ce45cb2dc5f734548167f8c724a0491f44aa3cc87c1d3fdbebbd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_tc_qk_abba_clean.sh
+
+===== compile warp control versus WMMA-QK candidate =====
+{"control": {"ptx_bf16_mma_sync": 0, "ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_hmma_16816_f32_bf16": 0, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1}, "symbol_scoped_instruction_gate": "pass", "tc_qk": {"ptx_bf16_mma_sync": 64, "ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_hmma_16816_f32_bf16": 128, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1}}
+
+===== run control versus WMMA-QK AB/BA (120 second watchdog) =====
+{"json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_tc_qk_abba/c2_cluster_attention_tc_qk_abba_clean_20260828T215623Z_job10841.json", "promotion": true, "secondary_gate": "pass", "speedup_control_over_tc_qk": 2.3286301247847425}
+
+===== POST UTC 2026-08-28T21:56:32Z (Slurm job 10841) =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/import/runner SHA256 --
+523347312f07345487a2591d6e52ef231c94ba8b6fe00e36e1fc16a02bb53431  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+fe750df56938ce45cb2dc5f734548167f8c724a0491f44aa3cc87c1d3fdbebbd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_tc_qk_abba_clean.sh
+B=1 C=2 warp-control versus WMMA-QK AB/BA completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_tc_qk_abba/c2_cluster_attention_tc_qk_abba_clean_20260828T215623Z_job10841.json
+
+===== FINAL_RC=0 =====

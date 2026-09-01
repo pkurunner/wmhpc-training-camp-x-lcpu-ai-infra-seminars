@@ -1,0 +1,77 @@
+{
+  "action_id": "0",
+  "all_gates_pass": true,
+  "kernel_name": "native_c2_msa_decode_kernel(const __nv_fp8_e4m3 *, const __nv_fp8_e4m3 *, const int *, const int *, const int *, __nv_bfloat16 *, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+  "launch_metadata_if_reported": {
+    "launch__barrier_count": "1.00",
+    "launch__cluster_max_active": "142.00",
+    "launch__cluster_max_potential_size": "8.00",
+    "launch__cluster_size": "4.00",
+    "launch__occupancy_cluster_gpu_pct": "6.00",
+    "launch__occupancy_cluster_pct": "11.99",
+    "launch__registers_per_thread": "58.00",
+    "launch__shared_mem_per_block": "38752.00"
+  },
+  "matching_kernel_rows": 1,
+  "metrics": {
+    "dram__bytes_read.sum": {
+      "unit": "byte",
+      "value": 8466944.0
+    },
+    "dram__bytes_write.sum": {
+      "unit": "byte",
+      "value": 0.0
+    },
+    "gpu__time_duration.sum": {
+      "unit": "ns",
+      "value": 165472.0
+    },
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": {
+      "unit": "",
+      "value": 4802992.0
+    },
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": {
+      "unit": "",
+      "value": 1221660.0
+    },
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": {
+      "unit": "",
+      "value": 7762562.0
+    },
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": {
+      "unit": "",
+      "value": 3589406.0
+    },
+    "lts__t_bytes.sum": {
+      "unit": "byte",
+      "value": 58235808.0
+    },
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+      "unit": "%",
+      "value": 1.23
+    },
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": {
+      "unit": "inst",
+      "value": 7.97
+    },
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {
+      "unit": "%",
+      "value": 437.58
+    },
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {
+      "unit": "%",
+      "value": 188.77
+    },
+    "smsp__inst_executed_pipe_tensor.sum": {
+      "unit": "inst",
+      "value": 262144.0
+    },
+    "smsp__warps_active.avg.per_cycle_active": {
+      "unit": "warp",
+      "value": 3.59
+    }
+  },
+  "schema": "c2-native-c2-ncu-counters-v1",
+  "timing_note": "NCU replay and instrumentation invalidate benchmark timing; use separately collected clean non-NCU CUDA-event ABBA.",
+  "timing_valid_for_benchmark": false
+}

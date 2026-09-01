@@ -1,0 +1,73 @@
+{
+  "candidate": "v12-q-row-padding",
+  "frozen_harness_schema": "c2-native-c2-v6-register-numerator-directed-v1",
+  "inputs": [
+    {
+      "label": "v12_q_row_padding_plugin",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "sha256": "064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6",
+      "size_bytes": 615816
+    },
+    {
+      "label": "v12_q_row_padding_source",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/native_c2_decode.v12-q-row-padding.cu",
+      "sha256": "535d90b856ed1062aa7b8a105eb2c5f236c450826e65496e646d0d5a27eb8aaf",
+      "size_bytes": 29104
+    },
+    {
+      "label": "v12_q_row_padding_resource_gate",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-resource-gate-job12983.txt",
+      "sha256": "c4a6cd69617ce82e99459fcd7a975a37fbfad497e51b36a6ec09945ffa97d6c0",
+      "size_bytes": 137
+    },
+    {
+      "label": "v12_q_row_padding_provenance",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-v12-provenance-job12983.sha256",
+      "sha256": "65bb886cece4a49b7ef7d7d4cab00588e4cc1f9238d2aa45dd5cf36f6952d2a2",
+      "size_bytes": 1829
+    },
+    {
+      "label": "v12_aot_final_status",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.txt",
+      "sha256": "b5fd3d82083165415ba20c37cf574e898ef0209d1a7844866c7491cc438b0f18",
+      "size_bytes": 69
+    },
+    {
+      "label": "v12_aot_final_status_sidecar",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.sha256",
+      "sha256": "912b28b5f81610b7cc04457c54a26165d4e321cfe709bdc79489a3b102041f67",
+      "size_bytes": 165
+    },
+    {
+      "label": "v12_aot_outputs_manifest",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/outputs-job12983.sha256",
+      "sha256": "ca1f37f00f9ce78c0d88bb3a90e8288bbffd83e94315a378b36a9c7998d99419",
+      "size_bytes": 4096
+    },
+    {
+      "label": "base_harness",
+      "path": "/home/lcpu/85117379/native_c2_operator_bench_20260829.py",
+      "sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "size_bytes": 11438
+    },
+    {
+      "label": "v5_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py",
+      "sha256": "43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1",
+      "size_bytes": 18912
+    },
+    {
+      "label": "frozen_v6_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py",
+      "sha256": "c38ec0bc7ffb9d85567d3cbbf4c2991077eb6cb3a52874778ddac01d107577a5",
+      "size_bytes": 20703
+    },
+    {
+      "label": "v12_q_row_padding_directed_script",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/submitted-script-job12984.slurm",
+      "sha256": "8ab0dcdea71d9e2d864afdafaf0f16703593cdccecfa0e18cfe0a2aecd8c4a3a",
+      "size_bytes": 22261
+    }
+  ],
+  "schema": "c2-native-c2-v12-q-row-padding-directed-input-manifest-v1"
+}

@@ -1,0 +1,73 @@
+{
+  "candidate": "v15-q-stage-stride144",
+  "frozen_harness_schema": "c2-native-c2-v6-register-numerator-directed-v1",
+  "inputs": [
+    {
+      "label": "v15_q_stage_stride144_plugin",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "sha256": "0c5ac4a1c890cac886fd41989746bce2740619965dee3e85bf8d85e05dd2f97d",
+      "size_bytes": 615752
+    },
+    {
+      "label": "v15_q_stage_stride144_source",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/native_c2_decode.v15-q-stage-stride144.cu",
+      "sha256": "b71fc21d4cffbe73757d501849eb9048009f32333d96beb0ae1452b49a9912af",
+      "size_bytes": 29100
+    },
+    {
+      "label": "v15_q_stage_stride144_resource_gate",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-resource-gate-job13564.txt",
+      "sha256": "7d51f0c9da5bc4fc55ca649598293adab2f4c961d817893038e17a98784d8404",
+      "size_bytes": 137
+    },
+    {
+      "label": "v15_q_stage_stride144_provenance",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/plugin-v15-provenance-job13564.sha256",
+      "sha256": "5675c3b19638da5b0464f6bafc60d280ccf28afc0f919f6ef801cf422fbf18be",
+      "size_bytes": 1728
+    },
+    {
+      "label": "v15_aot_final_status",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.txt",
+      "sha256": "973bfa1c46db72fa29de41e36ddc6306151f467758162a32b2167934029761ef",
+      "size_bytes": 82
+    },
+    {
+      "label": "v15_aot_final_status_sidecar",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/final-status-job13564.sha256",
+      "sha256": "341595740e0a1783d398afb87ffcc3c10812014516fe41b0cd8f4f8bc4cc2c61",
+      "size_bytes": 183
+    },
+    {
+      "label": "v15_aot_outputs_manifest",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-aot-artifacts-20260831/job13564/outputs-job13564.sha256",
+      "sha256": "8de6a0eeaa2080c9409291116bd0820aa9f5a7e7c898206a11a1ba652c7a50f6",
+      "size_bytes": 4338
+    },
+    {
+      "label": "base_harness",
+      "path": "/home/lcpu/85117379/native_c2_operator_bench_20260829.py",
+      "sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "size_bytes": 11438
+    },
+    {
+      "label": "v5_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py",
+      "sha256": "43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1",
+      "size_bytes": 18912
+    },
+    {
+      "label": "frozen_v6_directed_harness",
+      "path": "/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py",
+      "sha256": "c38ec0bc7ffb9d85567d3cbbf4c2991077eb6cb3a52874778ddac01d107577a5",
+      "size_bytes": 20703
+    },
+    {
+      "label": "v15_q_stage_stride144_directed_script",
+      "path": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-directed-artifacts-20260831/job13575/submitted-script-job13575.slurm",
+      "sha256": "3f56f14af72abb4cde74beb34a25d498fd78fbeb9432a4a44b61c9345f2768d8",
+      "size_bytes": 12156
+    }
+  ],
+  "schema": "c2-native-c2-v15-q-stage-stride144-directed-input-manifest-v1"
+}

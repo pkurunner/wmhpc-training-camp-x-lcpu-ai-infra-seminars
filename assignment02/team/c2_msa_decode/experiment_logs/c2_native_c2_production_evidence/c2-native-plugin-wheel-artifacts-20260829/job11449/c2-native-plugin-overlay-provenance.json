@@ -1,0 +1,160 @@
+{
+  "base_record_full_verification": {
+    "all_payload_entries_validated": true,
+    "content_mismatch_members": [],
+    "duplicate_record_rows": [],
+    "missing_member_rows": [],
+    "payload_member_count": 4746,
+    "record_member": "vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD",
+    "record_row_count": 4747,
+    "record_self_row_valid": true,
+    "row_name_list_sha256": "c463b1799554c8d5609e20be6efe62a822faaa6b88576565c84ecb3779a0b43d",
+    "unexpected_member_rows": []
+  },
+  "baseline_stable_member": {
+    "archive_member": "vllm/_C_stable_libtorch.abi3.so",
+    "baseline_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+    "baseline_size": 80367088,
+    "byte_identical": true,
+    "derived_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+    "derived_size": 80367088
+  },
+  "baseline_wheel": {
+    "filename": "vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+    "path": "/home/lcpu/85117379/vllm-d4-wheel/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+    "sha256": "91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06",
+    "size": 312908384
+  },
+  "created_utc": "2026-08-29T10:09:13Z",
+  "derived_record_full_verification": {
+    "all_payload_entries_validated": true,
+    "content_mismatch_members": [],
+    "duplicate_record_rows": [],
+    "missing_member_rows": [],
+    "payload_member_count": 4748,
+    "record_member": "vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD",
+    "record_row_count": 4749,
+    "record_self_row_valid": true,
+    "row_name_list_sha256": "bef5d42dc2dd18d959ff9f6dd896061084894b2b8d0777b490a8d2ed5395d411",
+    "unexpected_member_rows": []
+  },
+  "derived_wheel": {
+    "filename": "vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+    "path": "/home/lcpu/85117379/c2-native-plugin-wheel-artifacts-20260829/job11449/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl",
+    "same_filename_as_baseline": true,
+    "sha256": "42048803bc7312dfecbfd1c6a9b6d3562e42105af07f9f63b4da5c263cfb6060",
+    "size": 313128721
+  },
+  "expected_dispatch_member_sha256": {
+    "vllm/_custom_ops.py": "b57dfa819424b89bed8bf39924d5a4a3d2ebf327b39f3ae7c2e9e65b61c2398d",
+    "vllm/config/attention.py": "caf68c29d8d36324d252a66f0811a25b26d11da9860732359076fbb76625b5ae",
+    "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+    "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py": "07d00372ca1995aa96159a0b9f8949b1b40f817a63f49224e88aafac1b722200",
+    "vllm/v1/attention/backends/registry.py": "cd539941417fd5faf6672676de0f8ae15c9adb2a915b47cdd508e154c34faea4"
+  },
+  "experimental_overlay_same_distribution_version": true,
+  "member_set": {
+    "baseline_count": 4747,
+    "derived_count": 4749,
+    "new_members": [
+      "vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py"
+    ],
+    "removed_members": []
+  },
+  "overlay_members": [
+    {
+      "action": "add",
+      "archive_member": "vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "kind": "added_native_c2_plugin",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/c2-native-plugin-aot-artifacts-20260829/job11443/vllm/_native_c2_msa_decode_plugin.abi3.so",
+      "source_sha256": "f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d",
+      "source_size": 623992,
+      "zip_sha256": "f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d",
+      "zip_size": 623992
+    },
+    {
+      "action": "replace",
+      "archive_member": "vllm/_custom_ops.py",
+      "expected_post_patch_sha256": "b57dfa819424b89bed8bf39924d5a4a3d2ebf327b39f3ae7c2e9e65b61c2398d",
+      "kind": "replaced_python_dispatch",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443/vllm/_custom_ops.py",
+      "source_sha256": "b57dfa819424b89bed8bf39924d5a4a3d2ebf327b39f3ae7c2e9e65b61c2398d",
+      "source_size": 122484,
+      "zip_sha256": "b57dfa819424b89bed8bf39924d5a4a3d2ebf327b39f3ae7c2e9e65b61c2398d",
+      "zip_size": 122484
+    },
+    {
+      "action": "replace",
+      "archive_member": "vllm/config/attention.py",
+      "expected_post_patch_sha256": "caf68c29d8d36324d252a66f0811a25b26d11da9860732359076fbb76625b5ae",
+      "kind": "replaced_python_dispatch",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443/vllm/config/attention.py",
+      "source_sha256": "caf68c29d8d36324d252a66f0811a25b26d11da9860732359076fbb76625b5ae",
+      "source_size": 7594,
+      "zip_sha256": "caf68c29d8d36324d252a66f0811a25b26d11da9860732359076fbb76625b5ae",
+      "zip_size": 7594
+    },
+    {
+      "action": "replace",
+      "archive_member": "vllm/v1/attention/backends/registry.py",
+      "expected_post_patch_sha256": "cd539941417fd5faf6672676de0f8ae15c9adb2a915b47cdd508e154c34faea4",
+      "kind": "replaced_python_dispatch",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443/vllm/v1/attention/backends/registry.py",
+      "source_sha256": "cd539941417fd5faf6672676de0f8ae15c9adb2a915b47cdd508e154c34faea4",
+      "source_size": 11183,
+      "zip_sha256": "cd539941417fd5faf6672676de0f8ae15c9adb2a915b47cdd508e154c34faea4",
+      "zip_size": 11183
+    },
+    {
+      "action": "add",
+      "archive_member": "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+      "expected_post_patch_sha256": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+      "kind": "added_python_dispatch",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443/vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+      "source_sha256": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+      "source_size": 6959,
+      "zip_sha256": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+      "zip_size": 6959
+    },
+    {
+      "action": "replace",
+      "archive_member": "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py",
+      "expected_post_patch_sha256": "07d00372ca1995aa96159a0b9f8949b1b40f817a63f49224e88aafac1b722200",
+      "kind": "replaced_python_dispatch",
+      "source_matches_zip": true,
+      "source_path": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-20260829-job11443/vllm/models/minimax_m3/nvidia/sparse_attention_msa.py",
+      "source_sha256": "07d00372ca1995aa96159a0b9f8949b1b40f817a63f49224e88aafac1b722200",
+      "source_size": 13063,
+      "zip_sha256": "07d00372ca1995aa96159a0b9f8949b1b40f817a63f49224e88aafac1b722200",
+      "zip_size": 13063
+    }
+  ],
+  "packager": {
+    "path": "/home/lcpu/85117379/build_native_c2_plugin_overlay_wheel_20260829.py",
+    "sha256": "84f607ec46f4535a5d5e3506631d4eeb9a044f9e8d48f4aa0eec57984ca2866e"
+  },
+  "plugin_archive_member": "vllm/_native_c2_msa_decode_plugin.abi3.so",
+  "plugin_checkout_base_git": {
+    "commit": "d4da0c55af3aa231b6209bf77871f3ed36eab0d2",
+    "status_porcelain_sha256": "e94095a8466f7d334b744cc3aeff57571dafddb797e36b321eafa0f872e92afe",
+    "status_porcelain_size": 290,
+    "tracked_diff_sha256": "6dad8d20d367ea8ef7fb83e39be5c5d452cfe6212e538da881c9e5ce6c6e3b6c",
+    "tracked_diff_size": 40651,
+    "untracked_files": []
+  },
+  "plugin_expected_sha256": "f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d",
+  "schema": "c2-native-plugin-overlay-provenance-v1",
+  "unchanged_baseline_members": {
+    "count": 4742,
+    "definition": "baseline non-directory members excluding four reviewed Python dispatch replacements and RECORD",
+    "name_and_content_sha256": "195755f3cfaa2695a53a496c505397e40080b157b5f501270957afdf2bb32a3b",
+    "total_uncompressed_size": 752745606,
+    "unapproved_changed_members": []
+  }
+}

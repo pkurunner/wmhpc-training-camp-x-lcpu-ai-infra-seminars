@@ -1,0 +1,106 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+index bad6c47..4d2957c 100644
+@@ -146,6 +146,44 @@ __global__ void native_c2_msa_decode_kernel(
+     }
+     __syncthreads();
+ 
++    // q_tile is invariant over this producer CTA's four selected pages.  Keep
++    // all eight 16-wide WMMA-A slices live in registers so the page loop does
++    // not reload them from shared memory.  These are deliberately distinct
++    // objects: an array index on a WMMA fragment is not an ABI guarantee and
++    // could introduce dynamic local-memory addressing or a spill.
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_0;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_1;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_2;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_3;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_4;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_5;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_6;
++    wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
++                   wmma::row_major>
++        q_fragment_7;
++    wmma::load_matrix_sync(q_fragment_0, &q_tile[0][0 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_1, &q_tile[0][1 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_2, &q_tile[0][2 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_3, &q_tile[0][3 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_4, &q_tile[0][4 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_5, &q_tile[0][5 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_6, &q_tile[0][6 * kTile], kHeadDim);
++    wmma::load_matrix_sync(q_fragment_7, &q_tile[0][7 * kTile], kHeadDim);
++
+     for (int selected = selected_begin;
+          selected < selected_begin + kPagesPerProducer; ++selected) {
+       std::int64_t const topk_offset =
+@@ -160,9 +198,6 @@ __global__ void native_c2_msa_decode_kernel(
+       if (physical_page < 0 || physical_page >= num_physical_pages) continue;
+ 
+       int const token_begin = warp * kTile;
+-      wmma::fragment<wmma::matrix_a, kTile, kTile, kTile, __nv_bfloat16,
+-                     wmma::row_major>
+-          q_fragment;
+       wmma::fragment<wmma::matrix_b, kTile, kTile, kTile, __nv_bfloat16,
+                      wmma::col_major>
+           k_fragment;
+@@ -186,10 +221,43 @@ __global__ void native_c2_msa_decode_kernel(
+               scaled_fp8(kv_cache, cache_offset, k_scale);
+         }
+         __syncwarp();
+-        wmma::load_matrix_sync(q_fragment, &q_tile[0][k_offset], kHeadDim);
+         wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
+-        wmma::mma_sync(score_fragment, q_fragment, k_fragment,
+-                       score_fragment);
++        // The unrolled offsets below select a concrete fragment object; this
++        // preserves register residency without dynamic fragment indexing.
++        switch (k_offset) {
++          case 0 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_0, k_fragment,
++                           score_fragment);
++            break;
++          case 1 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_1, k_fragment,
++                           score_fragment);
++            break;
++          case 2 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_2, k_fragment,
++                           score_fragment);
++            break;
++          case 3 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_3, k_fragment,
++                           score_fragment);
++            break;
++          case 4 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_4, k_fragment,
++                           score_fragment);
++            break;
++          case 5 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_5, k_fragment,
++                           score_fragment);
++            break;
++          case 6 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_6, k_fragment,
++                           score_fragment);
++            break;
++          case 7 * kTile:
++            wmma::mma_sync(score_fragment, q_fragment_7, k_fragment,
++                           score_fragment);
++            break;
++        }
+         __syncwarp();
+       }
+       wmma::store_matrix_sync(&score_tiles[warp][0][0], score_fragment, kTile,

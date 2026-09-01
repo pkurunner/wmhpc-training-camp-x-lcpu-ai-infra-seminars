@@ -1,0 +1,33 @@
+v12 lifecycle failure audit, 2026-08-30
+
+This directory is a read-only-copy audit of four non-successful lifecycle
+submissions.  None reached the real lifecycle gates: eight concurrent first
+loaders, real MiniMaxM3SparseMSAImpl.forward, 1,000 steady forwards, CUDA
+Graph replay/mutation, native selection/rejection, sequence boundaries, or
+dispatcher persistence.
+
+job12992: pre-artifact preflight.  The original artifact root was absent while
+the first submitted script required it to exist; only its Slurm log exists.
+
+job12993: pre-install preflight.  A generic no-symlink input loop rejected the
+legitimate Python launcher symlink, and the then-current finalizer also failed
+before writing a final status.  The copied directory has only preflight GPU and
+driver files; it is not lifecycle evidence.
+
+job12994: pre-install preflight.  The frozen script expected the dated remote
+v12 harness path, which had not been staged at that time.  It wrote a valid
+fail-closed final status and completed scratch cleanup, but did not install the
+wheel or invoke lifecycle gates.
+
+job12996: final deterministic staging retry.  It verified all bound historical
+inputs and installed the v12 wheel into node-local scratch.  Its strict
+post-install no-symlink gate failed before installed-wheel audit or the real
+lifecycle harness; its final status/outputs manifest and scratch cleanup are
+valid.  This is not a lifecycle pass.
+
+The final local and remote staged wrapper/harness copies and the final submitted
+script are retained.  Older submitted script versions are not claimed here:
+their preflight failures occurred before durable submitted-script copies were
+created.  The relative SHA-256 manifest is the authority for this audit's file
+contents.  The sibling tarball is a transport copy of this directory and does
+not add performance or lifecycle claims.

@@ -1,0 +1,9 @@
+{
+  "all_gates_pass": true,
+  "installed_record_full_verification": true,
+  "plugin_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+  "schema": "c2-native-plugin-v16-k-chunk-lookahead-fresh-installed-members-v1",
+  "stable_member_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+  "wheel_payload_except_installer_rewritten_record_byte_identical": true,
+  "wheel_record_full_verification": true
+}

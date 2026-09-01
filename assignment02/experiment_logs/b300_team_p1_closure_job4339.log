@@ -1,0 +1,1205 @@
+===== TEAM_P1_WAIT_FOR_CLEAN_B300 =====
+2026-08-19T15:47:33+00:00
+dev-slurm
+SLURM_JOB_ID=4339 CUDA_VISIBLE_DEVICES=0 WAIT_SECONDS=1200
+wait_second=0 apps=GPU-778768b4-6c9e-e483-890e-0812760948ae, 1329419, /tmp/.mount_katagoBKpgbG/usr/bin/katago, 1556 MiB
+wait_second=1 apps=GPU-778768b4-6c9e-e483-890e-0812760948ae, 1329419, [No data], 1556 MiB
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+TEAM_P1_CLEAN_WINDOW_ACQUIRED
+===== BEGIN C1_HMMA_TCGEN_FAIR =====
+===== PRE_AUDIT =====
+2026-08-19T15:47:37+00:00
+dev-slurm
+SLURM_JOB_ID=4339 CUDA_VISIBLE_DEVICES=0 ARCH=103a
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== BUILD =====
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+ARCH=103a TILES=4096 WARMUP=20 ITERS=50 REPEATS=7
+f60f8ef983242eadf4794e32e59d6b1029b4fc86e21d786fe1137f71f36af419  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/microbench/hmma_tcgen05_fair.cu
+36df9071597014d6151a1b3b979bc7776e4d09359cb38a500d8c8f78c1f54391  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/microbench/run_hmma_tcgen05_audit.sh
+sh: 1: cudafe++: not found
+===== POST_AUDIT =====
+2026-08-19T15:47:37+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+C1_HMMA_TCGEN05_JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_hmma_tcgen05_same_work_b300_job4339.json
+C1_HMMA_TCGEN05_SASS=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_hmma_tcgen05_same_work_b300_job4339.sass
+C1_HMMA_TCGEN05_FINAL_RC=127
+===== END C1_HMMA_TCGEN_FAIR RC=127 =====
+===== BEGIN C2_TMA_TWO_LEVEL_GATHER =====
+===== PRE_AUDIT =====
+2026-08-19T15:47:37+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== TOOLCHAIN_AND_SOURCE =====
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+9537a7dc0164424e80fb84216e2a0fae07535dfdc7a52986e48f8de75d23f8df  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/tma_gather/tma_two_level_gather.cu
+38b67b74eaf452c32ec300354fadc12b2fcb53627970ba814f8c26d9310ec69f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/tma_gather/run_tma_two_level_gather_audit.sh
+ARCH=100f
+===== BUILD_REAL_TMA_BINARY =====
+sh: 1: cudafe++: not found
+===== POST_AUDIT =====
+2026-08-19T15:47:37+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=127
+===== END C2_TMA_TWO_LEVEL_GATHER RC=127 =====
+===== BEGIN C2_BF16_FAIR_CROSSOVER =====
+===== PRE_AUDIT =====
+2026-08-19T15:47:37+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== PIN_AND_SOURCE_AUDIT =====
+Python 3.12.3
+torch=2.13.0+cu130
+triton=3.7.1
+fmha_sm100=/home/lcpu/85117379/msa-official/python/fmha_sm100/__init__.py
+80434d7f67877c6570ca19cac444b84bc9855dac
+ eb61c911471867a5fd2466bfd8f29306cea6ebf8 python/fmha_sm100/cutlass (v4.3.0-51-geb61c911)
+47173175711e3fb2516a066cbb2e62e24b8d7f96e53aae34068ae8fb0f64691d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/fair_crossover_bench.py
+09248acea93f17fdd1cbdd4e21fe6178bce11bd681ac8af45254b00a8c704bb9  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/run_fair_crossover_audit.sh
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/data.py
+6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/triton_baseline.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/harness/reference.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/sparse_attn.py
+5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/vllm_msa_ref/msa_cutlass_sparse_decode.py
+===== SAME_DATA_BF16_FAIR_CROSSOVER =====
+{
+  "schema": "c2-fair-bf16-crossover-v2-three-path",
+  "source_pins": {
+    "official_msa": {
+      "expected_commit": "80434d7f67877c6570ca19cac444b84bc9855dac",
+      "actual_commit": "80434d7f67877c6570ca19cac444b84bc9855dac",
+      "pin_verified": true,
+      "module_path": "/home/lcpu/85117379/msa-official/python/fmha_sm100/__init__.py"
+    },
+    "cutlass": {
+      "expected_commit": "eb61c911471867a5fd2466bfd8f29306cea6ebf8",
+      "pin_verified": true,
+      "submodule_status": [
+        "eb61c911471867a5fd2466bfd8f29306cea6ebf8 python/fmha_sm100/cutlass (v4.3.0-51-geb61c911)"
+      ]
+    },
+    "vendored_vllm": {
+      "declared_snapshot_pin": "d4da0c5",
+      "verification": "TASK.md declaration plus source checksums; snapshot is not a git checkout"
+    }
+  },
+  "source_hashes": {
+    "fair_crossover_bench.py": "47173175711e3fb2516a066cbb2e62e24b8d7f96e53aae34068ae8fb0f64691d",
+    "data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967",
+    "vllm_msa_ref/msa_cutlass_sparse_decode.py": "5789981bcac5c18b685a9c5a22fb682dca845c28dcfaa6ecc818265863130b9f"
+  },
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "device": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [
+      10,
+      3
+    ]
+  },
+  "fairness_contract": {
+    "same_data": "same BF16 make_decode_problem data, seed, random table, sorted topk and seq_lens",
+    "oracle": "same independent FP32 oracle",
+    "tolerance": {
+      "rtol": 0.03,
+      "atol": 0.03
+    },
+    "caller_owned_output": true,
+    "primary_boundary": "source wrapper vs official core have different internal workspace lifetimes; prepared Triton C=1 is reported separately",
+    "excluded": [
+      "K/V bridge",
+      "MSA plan",
+      "oracle",
+      "correctness"
+    ]
+  },
+  "results": [
+    {
+      "batch": 1,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260820,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2124
+        ],
+        "checksums": {
+          "q_bf16": "166a942d7cf338c695df354bdb96e70fe9e666c32458fa940334d139d4457602",
+          "kv_cache_interleaved_bf16": "6eb8444e56f62af1c82fcfad02d9c097f9820b85b49556072635b6f57922f21c",
+          "block_table_i32": "83b73be089b3465cc6d3960e43385fcfcb6f432b1a8427aa227837f5142531bc",
+          "topk_sorted_i32_hkv_q_k": "9b2519ea37945ee33cd2ff40e7806d5b8dc0062050ba5f3344ff74e4736e789f",
+          "seq_lens_i32": "be8b60dcb77d219eb0d09d81ae15d3e1885c2f1867767c38e69bd8de7c5f72e6",
+          "official_k_bf16": "23a9b89f5031afbc84cc90e73d13d5b084f2a4711f6799ecd8c2b19f83605150",
+          "official_v_bf16": "e2e49f2ce73a63f23c2af03cb0ae0be64638ec7e9b838ea9b60489a945d50662",
+          "official_indices_i32": "83b73be089b3465cc6d3960e43385fcfcb6f432b1a8427aa227837f5142531bc",
+          "official_topk_i32_q_hkv_k": "9b2519ea37945ee33cd2ff40e7806d5b8dc0062050ba5f3344ff74e4736e789f"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2124
+          ],
+          "qo_offset": [
+            2123
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          1,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 4.2362138628959656e-05,
+          "mean_abs": 4.504724529397208e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 2.5287270545959473e-05,
+          "mean_abs": 3.4682429941312876e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.653019666671753e-05,
+          "mean_abs": 4.42898772234912e-06,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.04694399982690811,
+          "median_ms": 0.04827199876308441,
+          "p90_ms": 0.054687999188899994,
+          "p10_us": 46.94399982690811,
+          "median_us": 48.27199876308441,
+          "p90_us": 54.687999188899994
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02937600016593933,
+          "median_ms": 0.031279999762773514,
+          "p90_ms": 0.031488001346588135,
+          "p10_us": 29.37600016593933,
+          "median_us": 31.279999762773514,
+          "p90_us": 31.488001346588135
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02611199952661991,
+          "median_ms": 0.027216000482439995,
+          "p90_ms": 0.02940800040960312,
+          "p10_us": 26.11199952661991,
+          "median_us": 27.216000482439995,
+          "p90_us": 29.40800040960312
+        },
+        "official_over_source_wrapper_median_speedup": 1.7736624745516865,
+        "official_over_prepared_median_speedup": 1.149323898011967
+      }
+    },
+    {
+      "batch": 4,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260823,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2200,
+          2102,
+          3277,
+          2443
+        ],
+        "checksums": {
+          "q_bf16": "24db17348038ba7a5e1d40e2e7839e7b356302ba63dfa2cc0eefcba81ee5ca61",
+          "kv_cache_interleaved_bf16": "283ce4823c7c81c1b9539f2ac62f98bd6fb02494ef01d3ee84a5bd4d520f2a63",
+          "block_table_i32": "422152a0f74dc9dd86d4aeaaa97a9460a185b626b018d7dd3303e90c8376f0e8",
+          "topk_sorted_i32_hkv_q_k": "347c26f03b45197d294a4a452c50b5580918bcd0f071786337c4071883ad5602",
+          "seq_lens_i32": "ddd4ede0402faf845a3dbacb8f3e94d7c071c2c2d1c5d7a5176a561136527f87",
+          "official_k_bf16": "713075c94e04c518db17ec5e0718a88efa79f23e99cbb6aa2c2097bbcf74c950",
+          "official_v_bf16": "cfe49d77a901835b9a4c910cfaa268792182c028484ad1f936ed9f7df09117f9",
+          "official_indices_i32": "422152a0f74dc9dd86d4aeaaa97a9460a185b626b018d7dd3303e90c8376f0e8",
+          "official_topk_i32_q_hkv_k": "0899fb018513fa2ab594a86c0e5456b31ba2b2af5031d817e1878dfa26298acb"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2200,
+            2102,
+            3277,
+            2443
+          ],
+          "qo_offset": [
+            2199,
+            2101,
+            3276,
+            2442
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          4,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.0885450541973114e-05,
+          "mean_abs": 4.641086889023427e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.0885450541973114e-05,
+          "mean_abs": 3.487895810394548e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.0111136669293046,
+          "mean_abs": 0.001906716264784336,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.045791998505592346,
+          "median_ms": 0.04689599946141243,
+          "p90_ms": 0.052671998739242554,
+          "p10_us": 45.791998505592346,
+          "median_us": 46.89599946141243,
+          "p90_us": 52.671998739242554
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02812799997627735,
+          "median_ms": 0.029152000322937965,
+          "p90_ms": 0.02921600081026554,
+          "p10_us": 28.12799997627735,
+          "median_us": 29.152000322937965,
+          "p90_us": 29.21600081026554
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.025087999179959297,
+          "median_ms": 0.026159999892115593,
+          "p90_ms": 0.029184000566601753,
+          "p10_us": 25.087999179959297,
+          "median_us": 26.159999892115593,
+          "p90_us": 29.184000566601753
+        },
+        "official_over_source_wrapper_median_speedup": 1.7926605372634767,
+        "official_over_prepared_median_speedup": 1.1143731056254376
+      }
+    },
+    {
+      "batch": 8,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260827,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2893,
+          3315,
+          3474,
+          2128,
+          4071,
+          3491,
+          3171,
+          4030
+        ],
+        "checksums": {
+          "q_bf16": "89e80be048bef2a3e165c43b48488acc47cea300e75baf4d13db38ce3e9f61ad",
+          "kv_cache_interleaved_bf16": "b095bffda3e4706f3df789581a7ca46fa0385cbe4b347d5422aba33157260b1b",
+          "block_table_i32": "1e5fadbcfbe993b5db80634a948b4a0a524d9195042a1418ce76a71729d231f0",
+          "topk_sorted_i32_hkv_q_k": "3cfbaffecbc26b8f1d55faf76630d8511fbc1c56c9d72a5a528b30d97a5af42c",
+          "seq_lens_i32": "cfb47e4313a3aa8aaffc0002668b027268c008e905e779e51173f7abe8dac09d",
+          "official_k_bf16": "ae60ddef78856714134cdacdf08679cf0c3dbf5c2ce7e2e7b12e5ab5b5657028",
+          "official_v_bf16": "5bc907951c3dfbc8a6d14467687ff2b01dac1f8d02102cf61a03f7c1f541908a",
+          "official_indices_i32": "1e5fadbcfbe993b5db80634a948b4a0a524d9195042a1418ce76a71729d231f0",
+          "official_topk_i32_q_hkv_k": "07eb240462617830fe148f36ff2e33afc6b4168db314e85b9b64f1b5b14b52e3"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2893,
+            3315,
+            3474,
+            2128,
+            4071,
+            3491,
+            3171,
+            4030
+          ],
+          "qo_offset": [
+            2892,
+            3314,
+            3473,
+            2127,
+            4070,
+            3490,
+            3170,
+            4029
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          8,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.413110971450806e-05,
+          "mean_abs": 4.489462298806757e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 2.1371990442276e-05,
+          "mean_abs": 3.409024657230475e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.011128450743854046,
+          "mean_abs": 0.0021414337679743767,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.046911999583244324,
+          "median_ms": 0.04819200001657009,
+          "p90_ms": 0.07052800059318542,
+          "p10_us": 46.911999583244324,
+          "median_us": 48.19200001657009,
+          "p90_us": 70.52800059318542
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.02812799997627735,
+          "median_ms": 0.029152000322937965,
+          "p90_ms": 0.029279999434947968,
+          "p10_us": 28.12799997627735,
+          "median_us": 29.152000322937965,
+          "p90_us": 29.279999434947968
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.026079999282956123,
+          "median_ms": 0.02711999975144863,
+          "p90_ms": 0.029279999434947968,
+          "p10_us": 26.079999282956123,
+          "median_us": 27.11999975144863,
+          "p90_us": 29.279999434947968
+        },
+        "official_over_source_wrapper_median_speedup": 1.7769911673393686,
+        "official_over_prepared_median_speedup": 1.0749262754466211
+      }
+    },
+    {
+      "batch": 16,
+      "problem": {
+        "generator": "make_decode_problem",
+        "seed": 20260835,
+        "dtype": "bfloat16",
+        "scale": "none",
+        "q_heads": 64,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "page_size": 128,
+        "topk": 16,
+        "random_global_block_table": true,
+        "random_topk_sorted_for_both": true,
+        "seq_lens": [
+          2697,
+          4046,
+          3547,
+          3835,
+          3453,
+          4047,
+          3342,
+          2570,
+          2716,
+          2819,
+          3820,
+          2581,
+          3412,
+          3087,
+          3196,
+          3117
+        ],
+        "checksums": {
+          "q_bf16": "1ae6c4a1bda89d5bf78bb1ad9e9aa65aa96ab9ecb9c1eda79ba1e5a15b72b5d5",
+          "kv_cache_interleaved_bf16": "e14ed2e68a317ef3f191a3613871166f7a519e93ea63ec67dbd478976a569f40",
+          "block_table_i32": "2986b763cfde44f27ecdee7eafd0d8f1cdd333bb0d55058bbc0b14a95d4108e6",
+          "topk_sorted_i32_hkv_q_k": "066b0023b12ce12a4de7514af4035d20e8e84b54cb91605598661d94b9b0346e",
+          "seq_lens_i32": "dcd851ae1be02f66bb83e520dd8b0a7a3ca8f77dfc191a7056fb49fa9f81e488",
+          "official_k_bf16": "0a7abcab7155e91e91607406ef4609a564f09e4d877b7e51931425320d93f54d",
+          "official_v_bf16": "5d3da6d31669f66b2d6fb898121705e41768fa042d005c976c96c33e55fd623a",
+          "official_indices_i32": "2986b763cfde44f27ecdee7eafd0d8f1cdd333bb0d55058bbc0b14a95d4108e6",
+          "official_topk_i32_q_hkv_k": "4ce1412f6fb4784881da44f799d9ac712a06590d7306fdb0259a5064174bb0d6"
+        }
+      },
+      "layout_bridge": {
+        "timing_excluded": true,
+        "vllm": "[physical,Hkv,P,2D] K|V",
+        "official": "K,V each [physical,Hkv,P,D] contiguous",
+        "conversion": "K=kv[..., :D].contiguous; V=kv[..., D:].contiguous; table remains 2D; topk [Hkv,Q,K]->[Q,Hkv,K]"
+      },
+      "plan": {
+        "timing_excluded": true,
+        "args": {
+          "num_qo_heads": 64,
+          "num_kv_heads": 4,
+          "page_size": 128,
+          "kv_block_num": 16,
+          "causal": true,
+          "split_prefill_decode": false,
+          "qo_lens": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "kv_lens_same_as_seq_lens": [
+            2697,
+            4046,
+            3547,
+            3835,
+            3453,
+            4047,
+            3342,
+            2570,
+            2716,
+            2819,
+            3820,
+            2581,
+            3412,
+            3087,
+            3196,
+            3117
+          ],
+          "qo_offset": [
+            2696,
+            4045,
+            3546,
+            3834,
+            3452,
+            4046,
+            3341,
+            2569,
+            2715,
+            2818,
+            3819,
+            2580,
+            3411,
+            3086,
+            3195,
+            3116
+          ],
+          "input_scale": "none (BF16 Q/K/V)",
+          "output_maxscore": false,
+          "output_o": true
+        }
+      },
+      "caller_owned_output": {
+        "source_wrapper": true,
+        "prepared_triton": true,
+        "official_msa": true,
+        "shape": [
+          16,
+          64,
+          128
+        ],
+        "dtype": "bfloat16"
+      },
+      "workspace_contract": {
+        "source_wrapper": "allocates o_partial/lse inside each call",
+        "prepared_triton": "persistent workspace, selected BF16 C=1",
+        "official_msa": "plan/workspace prepared outside timing"
+      },
+      "correctness": {
+        "common_oracle": "independent FP32",
+        "source_wrapper": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.496930003166199e-05,
+          "mean_abs": 4.430213266459759e-06,
+          "finite": true,
+          "pass": true
+        },
+        "prepared_triton": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 3.1822361052036285e-05,
+          "mean_abs": 3.369917976669967e-06,
+          "finite": true,
+          "pass": true
+        },
+        "official_msa": {
+          "reference": "independent_fp32_selected_page_causal_attention",
+          "rtol": 0.03,
+          "atol": 0.03,
+          "max_abs": 0.01089918427169323,
+          "mean_abs": 0.0022087092511355877,
+          "finite": true,
+          "pass": true
+        },
+        "all_pass": true
+      },
+      "latency": {
+        "valid": true,
+        "vendored_vllm_triton_source_wrapper": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.04569600149989128,
+          "median_ms": 0.0469760000705719,
+          "p90_ms": 0.0530879981815815,
+          "p10_us": 45.69600149989128,
+          "median_us": 46.9760000705719,
+          "p90_us": 53.0879981815815
+        },
+        "prepared_triton_selected_c1": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.031007999554276466,
+          "median_ms": 0.031199999153614044,
+          "p90_ms": 0.03136000037193298,
+          "p10_us": 31.007999554276466,
+          "median_us": 31.199999153614044,
+          "p90_us": 31.360000371932983
+        },
+        "official_msa": {
+          "protocol": "warmup then per-call CUDA event pairs on one stream; no inter-call synchronization",
+          "warmup": 20,
+          "repetitions": 100,
+          "p10_ms": 0.025087999179959297,
+          "median_ms": 0.02696000039577484,
+          "p90_ms": 0.02812799997627735,
+          "p10_us": 25.087999179959297,
+          "median_us": 26.96000039577484,
+          "p90_us": 28.12799997627735
+        },
+        "official_over_source_wrapper_median_speedup": 1.7424332114599657,
+        "official_over_prepared_median_speedup": 1.1572699812906417
+      }
+    }
+  ],
+  "all_correctness_pass": true
+}
+JSON_STRICT_GATE=PASS batches=1,4,8,16 paths=source-wrapper,prepared-c1,official
+JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_fair_bf16_crossover_b300_job4339.json
+LOG=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_fair_bf16_crossover_b300_job4339.log
+===== POST_AUDIT =====
+2026-08-19T15:47:46+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0
+===== END C2_BF16_FAIR_CROSSOVER RC=0 =====
+===== BEGIN C1_VSHARD_SOURCE_BOUND_RERUN =====
+===== PRE_AUDIT =====
+2026-08-19T15:47:46+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+BASELINE_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+PATCHED_STATUS_END
+BASELINE_STATUS_BEGIN
+?? run_baseline_audit.sh
+?? run_instruction_audit.sh
+BASELINE_STATUS_END
+bca3248e1bf480ea51eb3bb3da0e79d8f477fb914ea17d320c0bf90679aaaf7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/apply_vshard_patch.py
+7f508c60003439de27b184d70c130ca615439fcaa61e9970be4dc961ffcccaec  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/vshard.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+4d0909b74d92c6cde3171bab432af4463f7303a89c2fff0592200a93f5d5fdb3  /home/lcpu/85117379/flashkda-vshard-1ce47ea-r4/csrc/flash_kda.cpp
+4944a2d2f2ea3757cd8d5421507556a3e6ae860d303a26c86ca67accbaaff3d4  /home/lcpu/85117379/flashkda-vshard-1ce47ea-r4/csrc/fwd.h
+8c9a4ffbbf086901505be40494293ef8f4038fad9c118b40cab361c8944218c1  /home/lcpu/85117379/flashkda-vshard-1ce47ea-r4/csrc/smxx/fwd_launch.cu
+af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69  /home/lcpu/85117379/flashkda-vshard-1ce47ea-r4/csrc/smxx/fwd_kernel2_vshard.cuh
+device=NVIDIA B300 SXM6 AC
+extension=/home/lcpu/85117379/flashkda-vshard-1ce47ea-r4/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+extension_sha256=ed28f470cb32560675a51ef4936ffebea1c5f003b7cfb5f0518acb25a47cb838
+has_vshard=True
+===== SMALL_TRIPLE_REFERENCE_GATE =====
+device=NVIDIA B300 SXM6 AC capability=(10, 3)
+shape=[B=1,T=256,H=2,K=128,V=128], challenge=2 CTA/head
+Traceback (most recent call last):
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py", line 379, in <module>
+    main()
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py", line 351, in main
+    spec.loader.exec_module(torch_ref_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py", line 32, in <module>
+    sigmoid_ext = load_inline(
+                  ^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2285, in load_inline
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2382, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2496, in _write_ninja_file_and_build_library
+    verify_ninja_availability()
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2562, in verify_ninja_availability
+    raise RuntimeError("Ninja is required to load C++ extensions (pip install ninja to get it)")
+RuntimeError: Ninja is required to load C++ extensions (pip install ninja to get it)
+===== POST_AUDIT =====
+2026-08-19T15:47:50+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=1
+===== END C1_VSHARD_SOURCE_BOUND_RERUN RC=1 =====
+===== BEGIN C1_NCU_FULL_ROOFLINE =====
+===== PRE_AUDIT =====
+2026-08-19T15:47:50+00:00
+dev-slurm
+SLURM_JOB_ID=4339 CUDA_VISIBLE_DEVICES=0
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB, 952 MHz, 200.93 W
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+torch=2.13.0+cu130
+cuda=13.0
+extension=/home/lcpu/85117379/flashkda-1ce47ea/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+FLASH_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+NCU_BIN=/usr/local/bin/ncu
+83c9d49118f0a807137dcbb1ebca990cd7b063fd98dfceae03797ba316475201  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/ncu_single_case.py
+fc1d7778a417c7a69fa8553e61cb3be4f65f6dd8662fd131fcf978c4e8bad21a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/summarize_ncu_roofline.py
+===== NCU_FULL_K1_K2_FIXED_H96 =====
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 1335247 (/usr/bin/python3.12)
+==WARNING== Unable to access the following 6 metrics: ctc__rx_bytes_data_user.sum, ctc__rx_bytes_data_user.sum.pct_of_peak_sustained_elapsed, ctc__rx_bytes_data_user.sum.per_second, ctc__tx_bytes_data_user.sum, ctc__tx_bytes_data_user.sum.pct_of_peak_sustained_elapsed, ctc__tx_bytes_data_user.sum.per_second.
+
+
+==PROF== Profiling "_flash_kda_fwd_prepare": 0%....50%....100% - 40 passes
+==PROF== Profiling "_flash_kda_fwd_recurrence": 0%....50%....100% - 40 passes
+NCU_SINGLE_CASE shape=[1, 8192, 96, 128] state=bf16 seed=20260819 device=NVIDIA B300 SXM6 AC
+NCU_SINGLE_CASE_DONE
+==PROF== Disconnected from process 1335247
+==PROF== Report: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_full_b300_job4339.ncu-rep
+===== EXPORT_RAW_CSV =====
+WROTE /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_roofline_b300_job4339.md
+NCU_SUMMARY_HEAD
+# C1 FlashKDA：NCU full counter / roofline 证据摘录
+
+## 变量表
+
+| 变量 | 含义 | 取值/来源 |
+| --- | --- | --- |
+| `K1` | workspace prepare kernel | `_flash_kda_fwd_prepare` |
+| `K2` | 有状态 recurrence kernel | `_flash_kda_fwd_recurrence` |
+| `F` | 目标 kernel 的实际有效 FLOP | 必须由 NCU roofline/FLOP 指标或独立指令计数给出 |
+| `B` | 目标 kernel 的实际 DRAM bytes | `dram__bytes*`；不是输入张量大小的猜测 |
+| `I=F/B` | operational intensity | 仅在 `F` 与 `B` 同一 kernel 同一 run 都可得时计算 |
+| `P_roof` | roofline 上界 | `min(P_peak, I*BW_peak)` |
+
+## 输入与完整性
+
+- 原始 CSV：`/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_full_b300_job4339.csv`
+- CSV 导出布局：wide raw metric columns
+- CSV 数据行：3
+- 识别到 kernel：K1 prepare, K2 recurrence
+- 这份文件只摘录 NCU 实际输出；完整 CSV 和 `.ncu-rep` 才是原始证据。
+
+## 分 kernel 计数
+
+### K1 prepare
+
+- FLOP/instruction evidence:
+  - `derived__sm__sass_thread_inst_executed_op_ffma_pred_on_x2` = `37888.000000`
+  - `derived__sm__sass_thread_inst_executed_op_hfma_pred_on_x4` = `37888.000000`
+  - `derived__smsp__sass_thread_inst_executed_op_ffma_pred_on_x2` = `1211.283864`
+  - `derived__smsp__sass_thread_inst_executed_op_hfma_pred_on_x4` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `5.734067`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `5.633783`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.avg.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.max.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.min.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.sum.peak_sustained` = `18944.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.avg.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.max.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.min.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.sum.peak_sustained` = `9472.000000`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.avg.per_cycle_elapsed` = `1.023044`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.max.per_cycle_elapsed` = `1.084320`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.min.per_cycle_elapsed` = `0.954879`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.sum.per_cycle_elapsed` = `605.641932`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.avg.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.max.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.min.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.sum.per_cycle_elapsed` = `0`
+- DRAM byte evidence:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `70.250321`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `75.036510`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `36.989619`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `4.496021`
+  - `dram__bytes_read.sum` = `605.658880`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `28.779275`
+  - `dram__bytes_read.sum.per_second` = `2.207727`
+  - `dram__bytes_write.sum` = `627.761408`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `29.829528`
+  - `dram__bytes_write.sum.per_second` = `2.288294`
+  - `dram__sectors_read.sum` = `18926840.000000`
+  - `dram__sectors_write.sum` = `19617544.000000`
+- Tensor/SM:
+  - `SM_A.TriageCompute.sm__mem_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `TPC.TriageCompute.sm__pipe_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `4.001874`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_hmma_cycles_active_realtime.avg` = `116902.054054`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_imma_cycles_active_realtime.avg` = `0`
+  - `device__attribute_tensor_map_access_supported` = `1`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `5.734067`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `5.633783`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg` = `43530073.95`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.pct_of_peak_sustained_elapsed` = `4.097297`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_cycle_elapsed` = `83.91`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_second` = `158674304305.47`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max` = `44564480`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.pct_of_peak_sustained_elapsed` = `4.194661`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_cycle_elapsed` = `85.91`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_second` = `162444885104.40`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min` = `42205184`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.pct_of_peak_sustained_elapsed` = `3.972591`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_cycle_elapsed` = `81.36`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_second` = `153844861775.34`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum` = `6442450944`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.pct_of_peak_sustained_elapsed` = `4.097297`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained` = `303104`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained_elapsed.per_second` = `573153422139274.38`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_cycle_elapsed` = `12419.07`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_second` = `23483797037209.85`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained` = `3640.89`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained_elapsed.per_second` = `6884725791462.75`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_cycle_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_second` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.max` = `0`
+  - 其余 865 个匹配指标见原始 CSV；摘要不重复展开。
+- DRAM/L2:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `70.250321`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `75.036510`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `36.989619`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `4.496021`
+  - `dram__bytes_read.sum` = `605.658880`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `28.779275`
+  - `dram__bytes_read.sum.per_second` = `2.207727`
+  - `dram__bytes_write.sum` = `627.761408`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `29.829528`
+  - `dram__bytes_write.sum.per_second` = `2.288294`
+  - `lts__t_requests.sum` = `71361975.000000`
+  - `lts__t_requests_srcunit_gcc.sum` = `1456.000000`
+  - `lts__t_requests_srcunit_ltcfabric.sum` = `25336532.000000`
+  - `lts__t_requests_srcunit_tex.sum` = `45972968.000000`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_alu.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_cas.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_read.sum` = `4881896.000000`
+  - `lts__t_requests_srcunit_tex_op_red.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_write.sum` = `41091072.000000`
+  - `lts__t_sector_hit_rate.pct` = `45.384291`
+  - `lts__t_sector_op_read_hit_rate.pct` = `1.749463`
+  - `lts__t_sector_op_write_hit_rate.pct` = `65.743993`
+  - `lts__t_sectors.avg` = `498294.027174`
+  - `lts__t_sectors.avg.pct_of_peak_sustained_elapsed` = `30.967491`
+  - `lts__t_sectors.avg.peak_sustained` = `3.000000`
+  - `lts__t_sectors.avg.per_cycle_elapsed` = `0.929025`
+  - `lts__t_sectors.max` = `513443.000000`
+  - `lts__t_sectors.max.pct_of_peak_sustained_elapsed` = `31.908955`
+  - `lts__t_sectors.min` = `254147.000000`
+  - `lts__t_sectors.min.pct_of_peak_sustained_elapsed` = `15.794480`
+  - `lts__t_sectors.sum` = `91686101.000000`
+  - `lts__t_sectors.sum.pct_of_peak_sustained_elapsed` = `30.967491`
+  - `lts__t_sectors.sum.per_second` = `334.210971`
+  - `lts__t_sectors_data_ecc.avg.pct_of_peak_sustained_elapsed` = `0.000138`
+  - `lts__t_sectors_data_ecc.avg.peak_sustained` = `8.000000`
+  - `lts__t_sectors_data_ecc.avg.per_cycle_elapsed` = `0.000011`
+  - `lts__t_sectors_data_ecc.sum` = `1092.000000`
+  - `lts__t_sectors_data_ecc.sum.per_second` = `3.980520`
+  - `lts__t_sectors_evict_first_lookup_hit.sum` = `3961.000000`
+  - `lts__t_sectors_evict_first_lookup_miss.sum` = `8426.000000`
+  - `lts__t_sectors_evict_last_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_last_lookup_miss.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_miss.sum` = `0`
+  - 其余 170 个匹配指标见原始 CSV；摘要不重复展开。
+- Occupancy/waves:
+  - `Block Size` = `(256, 1, 1)`
+  - `Grid Size` = `(512, 96, 1)`
+  - `derived__pct_occupancy_per_barrier_count` = `2230`
+  - `derived__pct_occupancy_per_block_size` = `5190.000000`
+  - `derived__pct_occupancy_per_register_count` = `8524.000000`
+  - `derived__pct_occupancy_per_shared_mem_size` = `14.020000`
+  - `launch__block_dim_x` = `256`
+  - `launch__block_dim_y` = `1`
+  - `launch__block_dim_z` = `1`
+  - `launch__block_size` = `256`
+  - `launch__grid_dim_x` = `512`
+  - `launch__grid_dim_y` = `96`
+  - `launch__grid_dim_z` = `1`
+  - `launch__grid_size` = `49152`
+  - `launch__occupancy_cluster_gpu_pct` = `0`
+  - `launch__occupancy_cluster_pct` = `0`
+  - `launch__occupancy_limit_barriers` = `32.000000`
+  - `launch__occupancy_limit_blocks` = `32.000000`
+  - `launch__occupancy_limit_registers` = `8.000000`
+  - `launch__occupancy_limit_shared_mem` = `9.000000`
+  - `launch__occupancy_limit_warps` = `8.000000`
+  - `launch__occupancy_per_barrier_count` = `1440`
+  - `launch__occupancy_per_block_size` = `3339`
+  - `launch__occupancy_per_cluster_size` = `0`
+  - `launch__occupancy_per_register_count` = `5504`
+  - `launch__occupancy_per_shared_mem_size` = `9072`
+  - `launch__waves_per_multiprocessor` = `41.51`
+  - `sm__warps_active.avg.pct_of_peak_sustained_active` = `96.625428`
+  - `sm__warps_active.avg.per_cycle_active` = `61.840274`
+  - `sm__warps_active.max.pct_of_peak_sustained_active` = `97.543667`
+  - `sm__warps_active.max.per_cycle_active` = `62.427947`
+  - `sm__warps_active.min.pct_of_peak_sustained_active` = `95.697676`
+  - `sm__warps_active.min.per_cycle_active` = `61.246512`
+  - `sm__warps_active.sum.pct_of_peak_sustained_active` = `96.625428`
+  - `sm__warps_active.sum.per_cycle_active` = `9152.360569`
+  - `smsp__average_warps_active_per_inst_executed.ratio` = `21.594634`
+  - `smsp__warps_active.avg.peak_sustained` = `16.000000`
+  - `smsp__warps_active.avg.per_cycle_active` = `15.432588`
+  - `smsp__warps_active.max.peak_sustained` = `16.000000`
+  - `smsp__warps_active.max.per_cycle_active` = `15.570763`
+  - `smsp__warps_active.min.peak_sustained` = `16.000000`
+  - `smsp__warps_active.min.per_cycle_active` = `15.284643`
+  - `smsp__warps_active.sum.peak_sustained` = `9472.000000`
+  - `smsp__warps_active.sum.per_cycle_active` = `9136.092368`
+- Warp stall:
+  - `smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio` = `8.308038`
+  - `smsp__average_warps_issue_stalled_branch_resolving_per_issue_active.ratio` = `0.136913`
+  - `smsp__average_warps_issue_stalled_dispatch_stall_per_issue_active.ratio` = `0.246344`
+  - `smsp__average_warps_issue_stalled_drain_per_issue_active.ratio` = `0.003635`
+  - `smsp__average_warps_issue_stalled_lg_throttle_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.ratio` = `4.034395`
+  - `smsp__average_warps_issue_stalled_math_pipe_throttle_per_issue_active.ratio` = `0.543487`
+  - `smsp__average_warps_issue_stalled_membar_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_mio_throttle_per_issue_active.ratio` = `0.529872`
+  - `smsp__average_warps_issue_stalled_misc_per_issue_active.ratio` = `0.000092`
+  - `smsp__average_warps_issue_stalled_no_instruction_per_issue_active.ratio` = `0.219340`
+  - `smsp__average_warps_issue_stalled_not_selected_per_issue_active.ratio` = `2.177797`
+  - `smsp__average_warps_issue_stalled_selected_per_issue_active.ratio` = `1.000009`
+  - `smsp__average_warps_issue_stalled_short_scoreboard_per_issue_active.ratio` = `2.551617`
+  - `smsp__average_warps_issue_stalled_sleeping_per_issue_active.ratio` = `0.038831`
+  - `smsp__average_warps_issue_stalled_tex_throttle_per_issue_active.ratio` = `0.000000`
+  - `smsp__average_warps_issue_stalled_wait_per_issue_active.ratio` = `1.786703`
+  - `smsp__pcsamp_warps_issue_stalled_barrier` = `7205`
+  - `smsp__pcsamp_warps_issue_stalled_barrier_not_issued` = `1845`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving` = `114`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving_not_issued` = `35`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall` = `188`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall_not_issued` = `8`
+  - `smsp__pcsamp_warps_issue_stalled_drain` = `4`
+  - `smsp__pcsamp_warps_issue_stalled_drain_not_issued` = `1`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard` = `3498`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard_not_issued` = `1051`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle` = `429`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle_not_issued` = `63`
+  - `smsp__pcsamp_warps_issue_stalled_membar` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_membar_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle` = `418`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle_not_issued` = `188`
+  - `smsp__pcsamp_warps_issue_stalled_misc` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_misc_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions` = `221`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions_not_issued` = `65`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected` = `1782`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_selected` = `851`
+  - `smsp__pcsamp_warps_issue_stalled_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard` = `2181`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard_not_issued` = `676`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping_not_issued` = `0`
+===== POST_AUDIT =====
+2026-08-19T15:48:03+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB, 2032 MHz, 254.14 W
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+NCU_REPORT=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_full_b300_job4339.ncu-rep
+NCU_CSV=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_full_b300_job4339.csv
+NCU_SUMMARY=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_roofline_b300_job4339.md
+FINAL_RC=0
+===== END C1_NCU_FULL_ROOFLINE RC=0 =====
+===== TEAM_P1_POST_AUDIT =====
+2026-08-19T15:48:03+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+TEAM_P1_FINAL_RC=127

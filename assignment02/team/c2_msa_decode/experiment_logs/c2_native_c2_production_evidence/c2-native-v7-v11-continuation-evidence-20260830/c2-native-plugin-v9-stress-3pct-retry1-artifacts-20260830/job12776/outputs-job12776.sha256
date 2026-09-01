@@ -1,0 +1,14 @@
+8996ebc5db473bbd5c4782c021093eb4a1a32e6b4c96f8d2c20c23c0f4a83ce7  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/reference-v7-a-round-job12776.json
+36d6979079c952ee2925a689d2a6b0334216072b7dad39dded5e82e2509c791d  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/candidate-v9-parallel-merge-b1-round-job12776.json
+130bc73b7da5adf5c3c5337bf992b62516c316cd1b1997b4fd18213581cda63d  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/candidate-v9-parallel-merge-b2-round-job12776.json
+0ca880cc0530917a6851fd09b88e4d7fa211b5cff704dd0a185da7e6b0601e7d  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/reference-v7-a2-round-job12776.json
+c39bf9a5a1e1c24c046b6c764e6aa877c327e65305eb7e18af187c8037689679  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/worker-exit-status-job12776.json
+3a777d79028604d6cad4ab036f324d040df2c7790b728640d46e47093fc6d61f  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/v9-parallel-merge-vs-v7-3pct-confirmation-aggregate-job12776.json
+09ffc02950c5720648429745aa058ec316f397aff6593a4ea9ecf69700a5d680  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/v9-parallel-merge-vs-v7-3pct-significance-decision-job12776.json
+bc0740ee9a75f4f1ddfabb300fcf32c2106acee58cac1bf29f31d93d3ca5e5c5  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/fixtures-8-seeds-meta.json
+1e6b38c7587035b3981c873c69787b11329e65f7db3897146e36f6576be66ffa  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/fixture-writer-job12776.json
+c946f2253db4382eadce03f1224d4d3fcf058963d3055b6b48752d65283c07c5  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/inputs-job12776.sha256
+fc18091862879e71ee25cb09220cd88aa9abfa75031589bd55c0f3fa3a7fa8e2  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/reference-v7-plugin-ldd-job12776.txt
+357bc43736a7497cb2f014cf5d9c7a351a41fe8356a5807c8d5b32b8ace26dc7  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/candidate-v9-parallel-merge-plugin-ldd-job12776.txt
+7e0de169c2d8b01e4da7f2dc914bc971c9822df25621931ccdcc18f13be5499f  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/gpu-pre-job12776.txt
+407e0881a43412a9e092711120cd346d6fd9366670e500201c8174fda7697170  /home/lcpu/85117379/c2-native-plugin-v9-stress-3pct-retry1-artifacts-20260830/job12776/gpu-post-job12776.txt

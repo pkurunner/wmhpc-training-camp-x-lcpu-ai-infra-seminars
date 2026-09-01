@@ -1,0 +1,2 @@
+/var/lib/slurm/slurmd/job13662/slurm_script: line 204: tag: unbound variable
+BODY_RC=1 UTC=2026-08-31T10:10:48Z FINALIZING=1

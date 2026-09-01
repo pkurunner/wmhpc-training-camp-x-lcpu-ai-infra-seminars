@@ -1,0 +1,58 @@
+{
+  "schema": "c2-prepared-b1-c2-viability-anchor-v1",
+  "status": "pass",
+  "boundary": "Supportive prepared BF16 B=1 C=2 latency anchor only; inputs, data layout, implementation, and launch structure differ from the native cluster prototype, so their latency ratio is not a controlled speedup.",
+  "execution": {
+    "slurm_job_id": "10796",
+    "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "pre_gpu_memory_mib": 0,
+    "post_gpu_memory_mib": 0,
+    "final_rc": 0
+  },
+  "shape": {
+    "B": 1,
+    "Hq": 64,
+    "D": 128,
+    "storage": "bf16",
+    "num_topk_chunks": 2
+  },
+  "configuration": {
+    "decode_num_warps": 4,
+    "merge_num_warps": 4,
+    "decode_num_stages": 3,
+    "merge_num_stages": 3,
+    "pdl_mode": "auto",
+    "decode_maxnreg": null,
+    "merge_maxnreg": null,
+    "merge_bypassed": false,
+    "unique_workspace_bytes": 33280
+  },
+  "correctness": {
+    "oracle": "harness.reference.dense_sparse_attention_reference FP32 selected-page causal attention",
+    "finite": true,
+    "max_abs": 0.000030517578125,
+    "rtol": 0.03,
+    "atol": 0.03
+  },
+  "timing": {
+    "protocol": "20 warmups then 101 single-call CUDA-event samples",
+    "p10_us": 36.928001791238785,
+    "median_us": 37.98399865627289,
+    "p90_us": 42.27200150489807
+  },
+  "source_sha256": {
+    "challenge_v2/cli.py": "0217c4b91adaec9481effcedcf83345cdbbfbd0897c03090dcaf61117e877284",
+    "challenge_v2/prepared_tuned.py": "2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b",
+    "challenge/prepared_decode.py": "1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79",
+    "harness/data.py": "38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6",
+    "harness/reference.py": "712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc",
+    "harness/triton_baseline.py": "6b0a40463b4f1c05ca53649d6689377b4f755d1efb58b10700dad05705b53f71",
+    "vllm_msa_ref/sparse_attn.py": "5db5d5e692044e54bb57418cbb7dcf5c9cc94f789eaccf128eec6fa8df86d967"
+  },
+  "artifacts": {
+    "raw_json": "c2_prepared_b1_c2_viability_anchor_round_20260828.json",
+    "raw_json_sha256": "60bedcb5893cf1ca34a68d076621df6786b8e578e68feed37fc01b37c08353a3",
+    "slurm_log": "c2_prep_c2_anchor_10796.slurm.log",
+    "slurm_log_sha256": "cb6cff54e7161b6666be2afcfd20c017ce42117699cac3e69bad5cbd6114347f"
+  }
+}

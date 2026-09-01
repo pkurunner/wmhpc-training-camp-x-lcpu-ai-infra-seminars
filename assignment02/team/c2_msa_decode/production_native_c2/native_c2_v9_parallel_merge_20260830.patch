@@ -1,0 +1,130 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -85,6 +85,10 @@ __global__ void native_c2_msa_decode_kernel(
+   __shared__ float local_lse[kGqaGroup];
+   __shared__ __align__(8) std::uint64_t producer_ready_barrier;
+   __shared__ int producer_ready;
++  // Rank 0 first derives the four page-cluster weights once per query head,
++  // then publishes them for the CTA-wide element-parallel merge.
++  __shared__ float merge_weights[kGqaGroup][kProducerCtas];
++  __shared__ float merge_denominator[kGqaGroup];
+ 
+   __shared__ __align__(32) __nv_bfloat16 q_tile[kGqaGroup][kHeadDim];
+   // Reused for the current K or V 16x16 tile owned by each warp.  Staging is
+@@ -354,47 +358,75 @@ __global__ void native_c2_msa_decode_kernel(
+   }
+   __syncthreads();
+ 
+-  if (role == kMergeCta && thread < kGqaGroup) {
+-    std::int64_t const output_base =
+-        static_cast<std::int64_t>(batch) * output_token_stride +
+-        static_cast<std::int64_t>(kv_head * kGqaGroup + thread) *
+-            output_head_stride;
++  if (role == kMergeCta) {
+     if (producer_ready == 0) {
+       // A timed-out cluster protocol must be observably invalid; returning a
+       // plausible zero tensor would hide a liveness/correctness failure.
+-      for (int dim = 0; dim < kHeadDim; ++dim) {
+-        output[output_base + dim] = __float2bfloat16_rn(NAN);
++      // Use every merge-CTA thread so this failure path has the same output
++      // ownership as the normal element-parallel merge below.
++      for (int element = thread; element < kGqaGroup * kHeadDim;
++           element += kThreads) {
++        int const head = element / kHeadDim;
++        int const dim = element % kHeadDim;
++        std::int64_t const output_offset =
++            static_cast<std::int64_t>(batch) * output_token_stride +
++            static_cast<std::int64_t>(kv_head * kGqaGroup + head) *
++                output_head_stride +
++            dim;
++        output[output_offset] = __float2bfloat16_rn(NAN);
+       }
+     } else {
++      if (thread < kGqaGroup) {
++        float const* remote_lse1 = cluster.map_shared_rank(local_lse, 1);
++        float const* remote_lse2 = cluster.map_shared_rank(local_lse, 2);
++        float const* remote_lse3 = cluster.map_shared_rank(local_lse, 3);
++        float const lse0 = local_lse[thread];
++        float const lse1 = remote_lse1[thread];
++        float const lse2 = remote_lse2[thread];
++        float const lse3 = remote_lse3[thread];
++        float const lse_max =
++            fmaxf(fmaxf(lse0, lse1), fmaxf(lse2, lse3));
++        merge_weights[thread][0] =
++            isfinite(lse0) ? exp2f(lse0 - lse_max) : 0.0f;
++        merge_weights[thread][1] =
++            isfinite(lse1) ? exp2f(lse1 - lse_max) : 0.0f;
++        merge_weights[thread][2] =
++            isfinite(lse2) ? exp2f(lse2 - lse_max) : 0.0f;
++        merge_weights[thread][3] =
++            isfinite(lse3) ? exp2f(lse3 - lse_max) : 0.0f;
++        merge_denominator[thread] = merge_weights[thread][0] +
++                                    merge_weights[thread][1] +
++                                    merge_weights[thread][2] +
++                                    merge_weights[thread][3];
++      }
++      // Publish every head's four weights and denominator before any of the
++      // 256 merge CTA threads consumes them.
++      __syncthreads();
++
+       __nv_bfloat16 const* remote_partial1 =
+           cluster.map_shared_rank(local_partial, 1);
+       __nv_bfloat16 const* remote_partial2 =
+           cluster.map_shared_rank(local_partial, 2);
+       __nv_bfloat16 const* remote_partial3 =
+           cluster.map_shared_rank(local_partial, 3);
+-      float const* remote_lse1 = cluster.map_shared_rank(local_lse, 1);
+-      float const* remote_lse2 = cluster.map_shared_rank(local_lse, 2);
+-      float const* remote_lse3 = cluster.map_shared_rank(local_lse, 3);
+-      float const lse0 = local_lse[thread];
+-      float const lse1 = remote_lse1[thread];
+-      float const lse2 = remote_lse2[thread];
+-      float const lse3 = remote_lse3[thread];
+-      float const lse_max =
+-          fmaxf(fmaxf(lse0, lse1), fmaxf(lse2, lse3));
+-      float const weight0 = isfinite(lse0) ? exp2f(lse0 - lse_max) : 0.0f;
+-      float const weight1 = isfinite(lse1) ? exp2f(lse1 - lse_max) : 0.0f;
+-      float const weight2 = isfinite(lse2) ? exp2f(lse2 - lse_max) : 0.0f;
+-      float const weight3 = isfinite(lse3) ? exp2f(lse3 - lse_max) : 0.0f;
+-      float const denominator = weight0 + weight1 + weight2 + weight3;
+-      for (int dim = 0; dim < kHeadDim; ++dim) {
++      for (int element = thread; element < kGqaGroup * kHeadDim;
++           element += kThreads) {
++        int const head = element / kHeadDim;
++        int const dim = element % kHeadDim;
++        int const partial_offset = head * kHeadDim + dim;
++        float const weight0 = merge_weights[head][0];
++        float const weight1 = merge_weights[head][1];
++        float const weight2 = merge_weights[head][2];
++        float const weight3 = merge_weights[head][3];
++        float const denominator = merge_denominator[head];
+         float const partial0 =
+-            __bfloat162float(local_partial[thread * kHeadDim + dim]);
++            __bfloat162float(local_partial[partial_offset]);
+         float const partial1 = __bfloat162float(
+-            remote_partial1[thread * kHeadDim + dim]);
++            remote_partial1[partial_offset]);
+         float const partial2 = __bfloat162float(
+-            remote_partial2[thread * kHeadDim + dim]);
++            remote_partial2[partial_offset]);
+         float const partial3 = __bfloat162float(
+-            remote_partial3[thread * kHeadDim + dim]);
++            remote_partial3[partial_offset]);
+         float const merged = denominator > 0.0f
+                                  ? (partial0 * weight0 +
+                                     partial1 * weight1 +
+@@ -402,7 +434,12 @@ __global__ void native_c2_msa_decode_kernel(
+                                     partial3 * weight3) /
+                                        denominator
+                                  : 0.0f;
+-        output[output_base + dim] = __float2bfloat16_rn(merged);
++        std::int64_t const output_offset =
++            static_cast<std::int64_t>(batch) * output_token_stride +
++            static_cast<std::int64_t>(kv_head * kGqaGroup + head) *
++                output_head_stride +
++            dim;
++        output[output_offset] = __float2bfloat16_rn(merged);
+       }
+     }
+   }

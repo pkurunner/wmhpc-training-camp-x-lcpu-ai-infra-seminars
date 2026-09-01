@@ -1,0 +1,32 @@
+{
+  "accepted_for_fresh_integration": true,
+  "final_rc": 0,
+  "hard_gates": {
+    "clean_b300_before_after": true,
+    "direct_bitwise_companion": true,
+    "eight_seed_real_backend": true,
+    "loader_surface": true,
+    "record_and_install": true,
+    "stable_dso_preserved": true,
+    "wheel_identity": true
+  },
+  "performance": {
+    "reported": true,
+    "triton_parity_achieved": false,
+    "triton_parity_required": false
+  },
+  "schema": "c2-native-plugin-v6-fresh-backend-decision-v1",
+  "v5_comparison_boundary": {
+    "comparison_kind": "directional cross-job fresh-process observation only",
+    "contract_equal": true,
+    "directional_improvement_fraction": 0.08574544908911841,
+    "dual_dso_loaded": false,
+    "matching_seed": 20260829,
+    "not_a_paired_promotion_decision": true,
+    "promoted_v5_native_median_ms": 0.11718399822711945,
+    "reason": "v5 and v6 register the same _C schema/CUDA implementation; loading both would make dispatcher ownership ambiguous",
+    "same_python_process": false,
+    "same_slurm_job": false,
+    "v6_native_median_ms": 0.10713600367307663
+  }
+}

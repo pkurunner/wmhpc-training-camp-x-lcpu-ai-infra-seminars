@@ -1,0 +1,13 @@
+0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28  /home/lcpu/85117379/native_c2_operator_bench_20260829.py
+829505fce32c737f596b372819add7f7701dc793c87d58f429e61ba7806862d9  /home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-decision-job12985.json
+0e9b4da6ea78c812c66feab0d4c669e68d0dc9a65630d13fbbc37c2e66295142  /home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-aggregate-job12985.json
+501b9c56a29a81f779a35a34b2808b4122af7dcb23e8108d8c590306be43d957  /home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/vllm/_native_c2_msa_decode_plugin.abi3.so
+0e82b278b7aa44a034a96d2ddd19946a27928d95a9f9d03e8e1fe9f30680c5b4  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v11-q-fragment-reuse-20260830-job12825/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+f82d6890d14be7cfb1df54ec12fdff0b2de3096204591b554c46eb02862d5ab4  /home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/plugin-resource-gate-job12825.txt
+6d96a7437616c672c8640592ac99da0b722d0d6f4e7d8f78b18a3a6652b59128  /home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/plugin-v11-provenance-job12825.sha256
+064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6  /home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so
+535d90b856ed1062aa7b8a105eb2c5f236c450826e65496e646d0d5a27eb8aaf  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v12-q-row-padding-20260830-job12983/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+c4a6cd69617ce82e99459fcd7a975a37fbfad497e51b36a6ec09945ffa97d6c0  /home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-resource-gate-job12983.txt
+65bb886cece4a49b7ef7d7d4cab00588e4cc1f9238d2aa45dd5cf36f6952d2a2  /home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-v12-provenance-job12983.sha256
+83bf26e3f1c15343b507c7aaf7711d9ae2a13c0f0c0a45727de068b41afad606  /var/lib/slurm/slurmd/job12986/slurm_script
+83bf26e3f1c15343b507c7aaf7711d9ae2a13c0f0c0a45727de068b41afad606  /home/lcpu/85117379/profile_native_c2_v12_vs_v11_ncu_20260830.slurm

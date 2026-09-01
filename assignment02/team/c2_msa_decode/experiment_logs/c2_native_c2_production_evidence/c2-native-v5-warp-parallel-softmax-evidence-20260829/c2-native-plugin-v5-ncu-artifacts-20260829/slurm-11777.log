@@ -1,0 +1,22 @@
+
+===== PRE UTC=2026-08-29T19:10:51Z =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+/usr/local/cuda/bin/ncu
+NVIDIA (R) Nsight Compute Command Line Profiler
+Copyright (c) 2018-2025 NVIDIA Corporation
+Version 2025.3.1.0 (build 36398880) (public-release)
+/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/c2-native-v4-ncu-artifacts-20260829/native-c2-ncu-job11506.json: OK
+9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538  /home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so
+0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28  /home/lcpu/85117379/native_c2_operator_bench_20260829.py
+6409a54689ebbdd1f72fad76c2d72dfe588f79d3b8dd6c4dbaf1df5b630f0931  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v5-warp-parallel-softmax-20260829-job11760/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+1dc181ea69e771574949e192cffcd417831384ec6937371bcd6135aeafa22f4b  /home/lcpu/85117379/c2-native-v4-ncu-artifacts-20260829/native-c2-ncu-job11506.json
+unexpected pinned Python/Torch environment
+
+===== POST UTC=2026-08-29T19:10:52Z =====
+NVIDIA B300 SXM6 AC, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+FINAL_RC=1 UTC=2026-08-29T19:10:52Z

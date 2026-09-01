@@ -1,0 +1,3 @@
+checking file csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+Hunk #4 succeeded at 332 (offset 4 lines).
+Hunk #5 succeeded at 355 (offset 4 lines).

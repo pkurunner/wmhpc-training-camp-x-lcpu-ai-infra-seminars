@@ -1,0 +1,5393 @@
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/wheel-driver-verification-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/promotion-prerequisites-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/outputs-job12987.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/final-status-job12987.txt: OK
+/home/lcpu/85117379/native_c2_full_backend_bench_20260829.py: OK
+/var/lib/slurm/slurmd/job12991/slurm_script: OK
+/home/lcpu/85117379/validate_native_c2_plugin_v12_fresh_backend_20260830.slurm: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-provenance.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/c2-native-plugin-overlay-manifest.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/promotion-prerequisites-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/wheel-driver-verification-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/result-job12987.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/submitted-script-job12983.slurm: OK
+/home/lcpu/85117379/native_c2_decode.plugin-v1.cu: OK
+/home/lcpu/85117379/native_c2_plugin_schema_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_native_c2_plugin_cmake_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_python_dispatch_20260829.patch: OK
+/home/lcpu/85117379/exact_d4_native_c2_plugin_python_loader_20260829.patch: OK
+/home/lcpu/85117379/c2-native-plugin-v9-aot-artifacts-20260830/job12701/native_c2_decode.v9-parallel-merge.cu: OK
+/home/lcpu/85117379/native_c2_v11_q_fragment_reuse_20260830.patch: OK
+/home/lcpu/85117379/native_c2_v12_q_row_padding_20260830.patch: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v12-q-row-padding-20260830-job12983/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v12-q-row-padding-build-20260830-job12983/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/finalizer-diagnostics-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/final-status-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/v12-q-row-padding-directed-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/run-manifest-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/inputs-job12984.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-pre-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-post-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/finalizer-diagnostics-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/final-status-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-a-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-b1-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-b2-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-a2-round-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/worker-exit-status-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-aggregate-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-decision-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/fixtures-8-seeds-meta.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/fixture-writer-job12985.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/inputs-job12985.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/reference-v11-plugin-ldd-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/candidate-v12-q-row-padding-plugin-ldd-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/gpu-pre-job12985.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/gpu-post-job12985.txt: OK
+Using CPython 3.12.11 interpreter at: venv-vllm-d4da0c5/bin/python
+Resolved 1 package in 2ms
+Installed 1 package in 371ms
+ + vllm==0.26.1rc1.dev370+gd4da0c55a (from file:///home/lcpu/85117379/c2-native-plugin-v12-wheel-artifacts-20260830/job12987/vllm-0.26.1rc1.dev370+gd4da0c55a-cp38-abi3-manylinux_2_28_x86_64.whl)
+harness/__init__.py: OK
+harness/data.py: OK
+harness/reference.py: OK
+harness/triton_baseline.py: OK
+vllm_msa_ref/sparse_attn.py: OK
+harness/__init__.py: OK
+harness/data.py: OK
+harness/reference.py: OK
+harness/triton_baseline.py: OK
+vllm_msa_ref/sparse_attn.py: OK
+INFO 08-30 20:46:01 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:01 479132:479132 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:01 479132:479132 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:01 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 123916031623168,
+    "pointer_before": 123916031623168,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.557062882464379e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "702776e31183896e47ecf403ac58f4204f13fbbbb5c609066c246ae9a0854a43",
+      "packed_kv_fp8": "b1dcdbc5f595d1e380315779bb6fe39edbb1621e32ba0e801a83120c720f73fc",
+      "q_bf16_original_not_timed": "d1c9d90c4f2ee4ea3aca332f9e6a494a0313478116af3ba5e5bbe6073bca5011",
+      "q_bf16_shared_native_staging": "8c0250f202a332286dd875dbbf6de3896d218cdb0b185cfffcc408b92d6b5128",
+      "query_fp8": "df1d8ac3dcf605eb5c126af8e7ec323e0b212b857509ee6cfd3eac2d9a55b3a3",
+      "seq_lens_i32": "9ca7a635727ba2b2de898f1ec19157b7c71126c88a242a7cd3afea5dce7b1629",
+      "topk_token_major_i32": "db9f11221ffc84165e6366775241d9a8612f31ea0c929ab203fa3e1d0e64b705"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 979.3710000000001,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 31.588999999999942,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed17-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 17,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06508800014853477,
+      "p10_ms": 0.06393600255250931,
+      "p90_ms": 0.08569599688053131,
+      "raw_ms": [
+        0.1011200025677681,
+        0.09257599711418152,
+        0.06403200328350067,
+        0.08348800241947174,
+        0.0639680027961731,
+        0.07430399954319,
+        0.06406400352716446,
+        0.09577599912881851,
+        0.06393600255250931,
+        0.08348800241947174,
+        0.0639680027961731,
+        0.0753600001335144,
+        0.06393600255250931,
+        0.07619199901819229,
+        0.06406400352716446,
+        0.07123199850320816,
+        0.06380800157785416,
+        0.088639996945858,
+        0.06393600255250931,
+        0.07228799909353256,
+        0.06393600255250931,
+        0.06617599725723267,
+        0.0639680027961731,
+        0.0689919963479042,
+        0.06406400352716446,
+        0.06924799829721451,
+        0.06384000182151794,
+        0.08646400272846222,
+        0.0639680027961731,
+        0.07443200051784515,
+        0.06393600255250931,
+        0.07110399752855301,
+        0.06393600255250931,
+        0.07011199742555618,
+        0.06393600255250931,
+        0.06710399687290192,
+        0.10572800040245056,
+        0.088639996945858,
+        0.06393600255250931,
+        0.07212799787521362,
+        0.06393600255250931,
+        0.0700799971818924,
+        0.06403200328350067,
+        0.06915199756622314,
+        0.06393600255250931,
+        0.08860799670219421,
+        0.06393600255250931,
+        0.07705599814653397,
+        0.06393600255250931,
+        0.06700800359249115,
+        0.06393600255250931,
+        0.06908799707889557,
+        0.0639680027961731,
+        0.07123199850320816,
+        0.06384000182151794,
+        0.0854400023818016,
+        0.06390400230884552,
+        0.06787200272083282,
+        0.06403200328350067,
+        0.06815999746322632,
+        0.0639680027961731,
+        0.06400000303983688,
+        0.06403200328350067,
+        0.07119999825954437,
+        0.06393600255250931,
+        0.08569599688053131,
+        0.06387200206518173,
+        0.06710399687290192,
+        0.06393600255250931,
+        0.06496000289916992,
+        0.06403200328350067,
+        0.07004799693822861,
+        0.06390400230884552,
+        0.08339200168848038,
+        0.06406400352716446,
+        0.07327999919652939,
+        0.0639680027961731,
+        0.06700800359249115,
+        0.06403200328350067,
+        0.08659200370311737,
+        0.0639680027961731,
+        0.07631999999284744,
+        0.0639680027961731,
+        0.08755200356245041,
+        0.06393600255250931,
+        0.07433599978685379,
+        0.06377600133419037,
+        0.06905599683523178,
+        0.06393600255250931,
+        0.07088000327348709,
+        0.0639680027961731,
+        0.06806399673223495,
+        0.0639680027961731,
+        0.08444800227880478,
+        0.06400000303983688,
+        0.07123199850320816,
+        0.06403200328350067,
+        0.06803199648857117,
+        0.06409599632024765,
+        0.06521599739789963
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.2278203156971776,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.1011200025677681,
+        "native_a_3": 0.09257599711418152,
+        "triton_b_1": 0.036320000886917114,
+        "triton_b_2": 0.06835199892520905
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08348800241947174,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07430399954319,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.09577599912881851,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08348800241947174,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.0753600001335144,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07619199901819229,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07123199850320816,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06380800157785416,
+        "native_a_3": 0.088639996945858,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.03638400137424469
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07228799909353256,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06617599725723267,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.0689919963479042,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06924799829721451,
+        "triton_b_1": 0.028960000723600388,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.08646400272846222,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03436800092458725
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07443200051784515,
+        "triton_b_1": 0.0289280004799366,
+        "triton_b_2": 0.028896000236272812
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07110399752855301,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07011199742555618,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06710399687290192,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.10572800040245056,
+        "native_a_3": 0.088639996945858,
+        "triton_b_1": 0.07955200225114822,
+        "triton_b_2": 0.06585600227117538
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07212799787521362,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08860799670219421,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.0342399999499321
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07705599814653397,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06700800359249115,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06908799707889557,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07123199850320816,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.0854400023818016,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.036288000643253326
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.06787200272083282,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06815999746322632,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06400000303983688,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07119999825954437,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.028863999992609024
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08569599688053131,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03948799893260002
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.06710399687290192,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06496000289916992,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.0289280004799366
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07004799693822861,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.08339200168848038,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07327999919652939,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06700800359249115,
+        "triton_b_1": 0.029503999277949333,
+        "triton_b_2": 0.02985600009560585
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08659200370311737,
+        "triton_b_1": 0.030239999294281006,
+        "triton_b_2": 0.06755200028419495
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07631999999284744,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.08755200356245041,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.03747199848294258
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07433599978685379,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.06905599683523178,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07088000327348709,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06806399673223495,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.08444800227880478,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.036320000886917114
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07123199850320816,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06521599739789963,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029279999434947968
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02921600081026554,
+      "p10_ms": 0.029023999348282814,
+      "p90_ms": 0.03436800092458725,
+      "raw_ms": [
+        0.036320000886917114,
+        0.06835199892520905,
+        0.02924799919128418,
+        0.030239999294281006,
+        0.02908799983561039,
+        0.029184000566601753,
+        0.02908799983561039,
+        0.03017600066959858,
+        0.029184000566601753,
+        0.028991999104619026,
+        0.029184000566601753,
+        0.03030399978160858,
+        0.02908799983561039,
+        0.030368000268936157,
+        0.029184000566601753,
+        0.030112000182271004,
+        0.029343999922275543,
+        0.03638400137424469,
+        0.029120000079274178,
+        0.029279999434947968,
+        0.029055999591946602,
+        0.030368000268936157,
+        0.02908799983561039,
+        0.02937600016593933,
+        0.028960000723600388,
+        0.03017600066959858,
+        0.029152000322937965,
+        0.03436800092458725,
+        0.0289280004799366,
+        0.028896000236272812,
+        0.029055999591946602,
+        0.029184000566601753,
+        0.02924799919128418,
+        0.029055999591946602,
+        0.029152000322937965,
+        0.029343999922275543,
+        0.07955200225114822,
+        0.06585600227117538,
+        0.028991999104619026,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.03014400042593479,
+        0.02921600081026554,
+        0.029184000566601753,
+        0.029055999591946602,
+        0.0342399999499321,
+        0.028991999104619026,
+        0.029343999922275543,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.029152000322937965,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.036288000643253326,
+        0.02908799983561039,
+        0.03030399978160858,
+        0.02940800040960312,
+        0.030079999938607216,
+        0.02921600081026554,
+        0.029152000322937965,
+        0.02921600081026554,
+        0.028863999992609024,
+        0.02921600081026554,
+        0.03948799893260002,
+        0.02924799919128418,
+        0.029120000079274178,
+        0.029311999678611755,
+        0.0289280004799366,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.029503999277949333,
+        0.02985600009560585,
+        0.030239999294281006,
+        0.06755200028419495,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.029023999348282814,
+        0.03747199848294258,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.029023999348282814,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.028991999104619026,
+        0.029152000322937965,
+        0.036320000886917114,
+        0.02921600081026554,
+        0.029184000566601753,
+        0.029023999348282814,
+        0.030079999938607216,
+        0.02921600081026554,
+        0.029279999434947968
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4488692346299295,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.556289357220521e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:10 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:11 479432:479432 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:11 479432:479432 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:11 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 126124752109568,
+    "pointer_before": 126124752109568,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.566081204553484e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "2fec2dcfb5802987f19c1bd9d298924dde3aaaa2fff84e433a541a6d78bb6440",
+      "packed_kv_fp8": "cef86154aebc4f690cf066cfd1dd869bf46bd2464a2c9877310a27ae34ee2b1a",
+      "q_bf16_original_not_timed": "1087f14da0fd9715594214ddb88cc1101594b937fc5a0b7731c8d9f21df7026b",
+      "q_bf16_shared_native_staging": "e77323198aa5cd7b4bdecff06973bb82b97231113901fc3088fcf837822aa6ce",
+      "query_fp8": "110e139a62a5191840657c3eae426efdcad692103d5d14c1ad075e84b93c1fef",
+      "seq_lens_i32": "ac1030be8bde5811c619c0cd7e23969bf835418bdecd10a8bf77d3f5b259bf5e",
+      "topk_token_major_i32": "2c33f0b978316d6071179fd3632da64a5c1938b68634692a30cdddaac97ad89d"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 970.522,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 25.33000000000027,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed23-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 23,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06472000107169151,
+      "p10_ms": 0.06390400230884552,
+      "p90_ms": 0.08441600203514099,
+      "raw_ms": [
+        0.10236799716949463,
+        0.09292799979448318,
+        0.06390400230884552,
+        0.08160000294446945,
+        0.06377600133419037,
+        0.08144000172615051,
+        0.06390400230884552,
+        0.07622399926185608,
+        0.06412799656391144,
+        0.08553600311279297,
+        0.06403200328350067,
+        0.07631999999284744,
+        0.06406400352716446,
+        0.06611199676990509,
+        0.0639680027961731,
+        0.07827199995517731,
+        0.06390400230884552,
+        0.10214400291442871,
+        0.06374400109052658,
+        0.07311999797821045,
+        0.0639680027961731,
+        0.06598400324583054,
+        0.06406400352716446,
+        0.0671359971165657,
+        0.06393600255250931,
+        0.06505600363016129,
+        0.06390400230884552,
+        0.08451200276613235,
+        0.0639680027961731,
+        0.07129599899053574,
+        0.06406400352716446,
+        0.06601600348949432,
+        0.06400000303983688,
+        0.06800000369548798,
+        0.0639680027961731,
+        0.06604799628257751,
+        0.06387200206518173,
+        0.09446399658918381,
+        0.06400000303983688,
+        0.08144000172615051,
+        0.0639680027961731,
+        0.06924799829721451,
+        0.06400000303983688,
+        0.07017599791288376,
+        0.06403200328350067,
+        0.091839998960495,
+        0.06403200328350067,
+        0.07622399926185608,
+        0.06393600255250931,
+        0.06915199756622314,
+        0.06390400230884552,
+        0.07110399752855301,
+        0.06393600255250931,
+        0.0700799971818924,
+        0.06393600255250931,
+        0.08441600203514099,
+        0.06393600255250931,
+        0.0700799971818924,
+        0.06403200328350067,
+        0.06806399673223495,
+        0.06390400230884552,
+        0.069023996591568,
+        0.06598400324583054,
+        0.06803199648857117,
+        0.06393600255250931,
+        0.08339200168848038,
+        0.06403200328350067,
+        0.06812799721956253,
+        0.06403200328350067,
+        0.06703999638557434,
+        0.06393600255250931,
+        0.06915199756622314,
+        0.06393600255250931,
+        0.06464000046253204,
+        0.06403200328350067,
+        0.08451200276613235,
+        0.06393600255250931,
+        0.06598400324583054,
+        0.06393600255250931,
+        0.08339200168848038,
+        0.06393600255250931,
+        0.07212799787521362,
+        0.06409599632024765,
+        0.08876799792051315,
+        0.06387200206518173,
+        0.07430399954319,
+        0.06412799656391144,
+        0.0732479989528656,
+        0.06384000182151794,
+        0.06905599683523178,
+        0.06403200328350067,
+        0.06915199756622314,
+        0.06384000182151794,
+        0.0875839963555336,
+        0.06393600255250931,
+        0.06905599683523178,
+        0.06393600255250931,
+        0.06480000168085098,
+        0.06409599632024765,
+        0.0639680027961731
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.215224509747105,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.10236799716949463,
+        "native_a_3": 0.09292799979448318,
+        "triton_b_1": 0.0414079986512661,
+        "triton_b_2": 0.06943999975919724
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.08160000294446945,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.08144000172615051,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.07622399926185608,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08553600311279297,
+        "triton_b_1": 0.029983999207615852,
+        "triton_b_2": 0.04358400031924248
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07631999999284744,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06611199676990509,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07827199995517731,
+        "triton_b_1": 0.0289280004799366,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.10214400291442871,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06374400109052658,
+        "native_a_3": 0.07311999797821045,
+        "triton_b_1": 0.028960000723600388,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06598400324583054,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06505600363016129,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.08451200276613235,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07129599899053574,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06601600348949432,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06800000369548798,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06604799628257751,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030047999694943428
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.09446399658918381,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.1570879966020584
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.08144000172615051,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06924799829721451,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07017599791288376,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.091839998960495,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07622399926185608,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.07110399752855301,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08441600203514099,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.040383998304605484
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029888000339269638
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06806399673223495,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.069023996591568,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06598400324583054,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08339200168848038,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03219199925661087
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06812799721956253,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06703999638557434,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06464000046253204,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029632000252604485
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08451200276613235,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06598400324583054,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08339200168848038,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.06588800251483917
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07212799787521362,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029920000582933426
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.08876799792051315,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029952000826597214
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.07430399954319,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.0732479989528656,
+        "triton_b_1": 0.029952000826597214,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.06905599683523178,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.0875839963555336,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.033344000577926636
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06905599683523178,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.028896000236272812
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06480000168085098,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.0639680027961731,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030271999537944794
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02921600081026554,
+      "p10_ms": 0.029055999591946602,
+      "p90_ms": 0.03030399978160858,
+      "raw_ms": [
+        0.0414079986512661,
+        0.06943999975919724,
+        0.02937600016593933,
+        0.03014400042593479,
+        0.029184000566601753,
+        0.02924799919128418,
+        0.02908799983561039,
+        0.03017600066959858,
+        0.029983999207615852,
+        0.04358400031924248,
+        0.02921600081026554,
+        0.03033600002527237,
+        0.02921600081026554,
+        0.030208000913262367,
+        0.0289280004799366,
+        0.029184000566601753,
+        0.029184000566601753,
+        0.029184000566601753,
+        0.028960000723600388,
+        0.03030399978160858,
+        0.028991999104619026,
+        0.02924799919128418,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.028991999104619026,
+        0.029184000566601753,
+        0.030239999294281006,
+        0.029184000566601753,
+        0.03014400042593479,
+        0.029055999591946602,
+        0.029184000566601753,
+        0.02921600081026554,
+        0.030368000268936157,
+        0.02924799919128418,
+        0.030047999694943428,
+        0.029152000322937965,
+        0.1570879966020584,
+        0.02921600081026554,
+        0.030208000913262367,
+        0.029152000322937965,
+        0.029279999434947968,
+        0.029152000322937965,
+        0.029311999678611755,
+        0.02908799983561039,
+        0.029343999922275543,
+        0.02921600081026554,
+        0.029152000322937965,
+        0.02924799919128418,
+        0.03014400042593479,
+        0.029279999434947968,
+        0.028991999104619026,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.040383998304605484,
+        0.029184000566601753,
+        0.029888000339269638,
+        0.029120000079274178,
+        0.029311999678611755,
+        0.029184000566601753,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.03014400042593479,
+        0.029120000079274178,
+        0.03219199925661087,
+        0.02924799919128418,
+        0.030112000182271004,
+        0.029055999591946602,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.029632000252604485,
+        0.02921600081026554,
+        0.03017600066959858,
+        0.029023999348282814,
+        0.03014400042593479,
+        0.029055999591946602,
+        0.06588800251483917,
+        0.029152000322937965,
+        0.029920000582933426,
+        0.029152000322937965,
+        0.029952000826597214,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.029952000826597214,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.03014400042593479,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.029152000322937965,
+        0.033344000577926636,
+        0.029343999922275543,
+        0.028896000236272812,
+        0.029152000322937965,
+        0.02921600081026554,
+        0.029184000566601753,
+        0.030271999537944794
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4514215130791245,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5536322684492916e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:20 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:20 480057:480057 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:20 480057:480057 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:20 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 134596642209792,
+    "pointer_before": 134596642209792,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5711047985387268e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "282a0ff38627bebe3081610e19dec19556e9843bd8619e4af261dd5cb76439ed",
+      "packed_kv_fp8": "217ad0e83ddec77228bff7d7ffbee978929bb6f949fd814b9f6c1ab6f521ad55",
+      "q_bf16_original_not_timed": "50250a5b6c2836f048bbcde61bd4b2e3aea895ea3032040b4dee845aa0e83678",
+      "q_bf16_shared_native_staging": "f6d1ad83633b24a2eecf61c548a90c076a5f59ac14be9266d0ce7ae2143a7a3b",
+      "query_fp8": "5fbbd69e9e56200c78f38afb0140054fb536297f8149a3c3926e1c9ae47c388d",
+      "seq_lens_i32": "57dac3c844328c8de799577951e433089bc2e42737cd47508506326801d0aa4b",
+      "topk_token_major_i32": "ea7a7bf78b2d6b44c44519136f33c2547943c3b1416cf0e264758c74042cc5c6"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 993.4319999999999,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 27.43999999999994,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed42-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 42,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06628799811005592,
+      "p10_ms": 0.06412799656391144,
+      "p90_ms": 0.08668799698352814,
+      "raw_ms": [
+        0.09647999703884125,
+        0.09347199648618698,
+        0.06412799656391144,
+        0.08774399757385254,
+        0.06400000303983688,
+        0.08774399757385254,
+        0.06415999680757523,
+        0.07727999985218048,
+        0.06425599753856659,
+        0.07843200117349625,
+        0.06419199705123901,
+        0.07747200131416321,
+        0.06415999680757523,
+        0.0912960022687912,
+        0.06415999680757523,
+        0.08160000294446945,
+        0.06412799656391144,
+        0.07635200023651123,
+        0.06412799656391144,
+        0.07238399982452393,
+        0.06415999680757523,
+        0.07337599992752075,
+        0.06390400230884552,
+        0.08668799698352814,
+        0.06415999680757523,
+        0.07958400249481201,
+        0.06419199705123901,
+        0.07740800082683563,
+        0.0639680027961731,
+        0.07744000107049942,
+        0.0642239972949028,
+        0.06623999774456024,
+        0.06409599632024765,
+        0.08457600325345993,
+        0.06419199705123901,
+        0.06825599819421768,
+        0.06412799656391144,
+        0.07231999933719635,
+        0.06412799656391144,
+        0.07116799801588058,
+        0.06412799656391144,
+        0.08972799777984619,
+        0.06419199705123901,
+        0.08054400235414505,
+        0.06415999680757523,
+        0.07638400048017502,
+        0.06412799656391144,
+        0.08153600245714188,
+        0.06431999802589417,
+        0.07334399968385696,
+        0.06419199705123901,
+        0.08771199733018875,
+        0.06419199705123901,
+        0.07635200023651123,
+        0.06419199705123901,
+        0.07148800045251846,
+        0.06400000303983688,
+        0.06723199784755707,
+        0.06415999680757523,
+        0.06815999746322632,
+        0.06431999802589417,
+        0.08550400286912918,
+        0.06412799656391144,
+        0.07222399860620499,
+        0.06425599753856659,
+        0.0703359991312027,
+        0.06412799656391144,
+        0.0663359984755516,
+        0.06400000303983688,
+        0.07225599884986877,
+        0.0642239972949028,
+        0.08448000252246857,
+        0.06415999680757523,
+        0.0681919977068901,
+        0.06415999680757523,
+        0.07228799909353256,
+        0.0642239972949028,
+        0.07135999947786331,
+        0.06415999680757523,
+        0.09148799628019333,
+        0.06393600255250931,
+        0.08153600245714188,
+        0.06419199705123901,
+        0.07423999905586243,
+        0.06425599753856659,
+        0.06924799829721451,
+        0.06415999680757523,
+        0.07347200065851212,
+        0.06409599632024765,
+        0.09286399930715561,
+        0.06415999680757523,
+        0.07446400076150894,
+        0.0639680027961731,
+        0.07235199958086014,
+        0.06419199705123901,
+        0.07135999947786331,
+        0.06415999680757523,
+        0.08975999802350998,
+        0.06412799656391144,
+        0.07542400062084198
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.256535870629353,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09647999703884125,
+        "native_a_3": 0.09347199648618698,
+        "triton_b_1": 0.032255999743938446,
+        "triton_b_2": 0.06719999760389328
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08774399757385254,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.033440001308918
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.08774399757385254,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.0549440011382103
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07727999985218048,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.030527999624609947
+      },
+      {
+        "native_a_0": 0.06425599753856659,
+        "native_a_3": 0.07843200117349625,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07747200131416321,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.0912960022687912,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.030880000442266464
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.08160000294446945,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07635200023651123,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07238399982452393,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07337599992752075,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03049599938094616
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.08668799698352814,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.03939199820160866
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07958400249481201,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.030432000756263733
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07740800082683563,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03049599938094616
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07744000107049942,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030400000512599945
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.06623999774456024,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030400000512599945
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.08457600325345993,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.0416640006005764
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.06825599819421768,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07231999933719635,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07116799801588058,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.029440000653266907
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08972799777984619,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.08054400235414505,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07638400048017502,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.030400000512599945
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08153600245714188,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06431999802589417,
+        "native_a_3": 0.07334399968385696,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.08771199733018875,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.03328000009059906
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07635200023651123,
+        "triton_b_1": 0.02953599952161312,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07148800045251846,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06723199784755707,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06815999746322632,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06431999802589417,
+        "native_a_3": 0.08550400286912918,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.04265600070357323
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07222399860620499,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06425599753856659,
+        "native_a_3": 0.0703359991312027,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.0663359984755516,
+        "triton_b_1": 0.02956799976527691,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07225599884986877,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.08448000252246857,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03548799827694893
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.0681919977068901,
+        "triton_b_1": 0.02953599952161312,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07228799909353256,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.07135999947786331,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.09148799628019333,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.07379200309515
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08153600245714188,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07423999905586243,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06425599753856659,
+        "native_a_3": 0.06924799829721451,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07347200065851212,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.09286399930715561,
+        "triton_b_1": 0.0817599967122078,
+        "triton_b_2": 0.07273600250482559
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07446400076150894,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07235199958086014,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07135999947786331,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.08975999802350998,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07542400062084198,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029343999922275543
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02937600016593933,
+      "p10_ms": 0.029184000566601753,
+      "p90_ms": 0.03328000009059906,
+      "raw_ms": [
+        0.032255999743938446,
+        0.06719999760389328,
+        0.029184000566601753,
+        0.033440001308918,
+        0.029440000653266907,
+        0.0549440011382103,
+        0.02937600016593933,
+        0.030527999624609947,
+        0.029120000079274178,
+        0.02940800040960312,
+        0.029279999434947968,
+        0.029343999922275543,
+        0.029343999922275543,
+        0.030880000442266464,
+        0.02940800040960312,
+        0.02924799919128418,
+        0.02937600016593933,
+        0.029311999678611755,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.03049599938094616,
+        0.02940800040960312,
+        0.03939199820160866,
+        0.02908799983561039,
+        0.030432000756263733,
+        0.029184000566601753,
+        0.03049599938094616,
+        0.02924799919128418,
+        0.030400000512599945,
+        0.02924799919128418,
+        0.030400000512599945,
+        0.02924799919128418,
+        0.0416640006005764,
+        0.029152000322937965,
+        0.029311999678611755,
+        0.029279999434947968,
+        0.02940800040960312,
+        0.029311999678611755,
+        0.029440000653266907,
+        0.029311999678611755,
+        0.02940800040960312,
+        0.029279999434947968,
+        0.02921600081026554,
+        0.02937600016593933,
+        0.030400000512599945,
+        0.02924799919128418,
+        0.03030399978160858,
+        0.029184000566601753,
+        0.030271999537944794,
+        0.029311999678611755,
+        0.03328000009059906,
+        0.02953599952161312,
+        0.03014400042593479,
+        0.029343999922275543,
+        0.029311999678611755,
+        0.029343999922275543,
+        0.03033600002527237,
+        0.029343999922275543,
+        0.030368000268936157,
+        0.029184000566601753,
+        0.04265600070357323,
+        0.02921600081026554,
+        0.029343999922275543,
+        0.029311999678611755,
+        0.030079999938607216,
+        0.02956799976527691,
+        0.03017600066959858,
+        0.029343999922275543,
+        0.03030399978160858,
+        0.029184000566601753,
+        0.03548799827694893,
+        0.02953599952161312,
+        0.030112000182271004,
+        0.02937600016593933,
+        0.03033600002527237,
+        0.02924799919128418,
+        0.029343999922275543,
+        0.029472000896930695,
+        0.07379200309515,
+        0.02937600016593933,
+        0.03033600002527237,
+        0.029311999678611755,
+        0.030368000268936157,
+        0.029472000896930695,
+        0.030112000182271004,
+        0.029343999922275543,
+        0.029343999922275543,
+        0.0817599967122078,
+        0.07273600250482559,
+        0.029311999678611755,
+        0.03017600066959858,
+        0.029343999922275543,
+        0.029055999591946602,
+        0.029279999434947968,
+        0.03014400042593479,
+        0.029311999678611755,
+        0.030368000268936157,
+        0.029343999922275543,
+        0.029343999922275543
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4431571476508804,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5733673939830624e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:29 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:29 480189:480189 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:29 480189:480189 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:29 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 127267918053376,
+    "pointer_before": 127267918053376,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5589343951869523e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "b0a3b2812bd13cc03633bbb3caef7b6a8c44c1aedac7175ac5e148e09385844d",
+      "packed_kv_fp8": "f765a001fa25d6cef5e3dec4a93524ed8f41352719451eae41ea30fd327a244a",
+      "q_bf16_original_not_timed": "65c410d17117f60f6785f5fa71e4a2180578f02c1b33a4e547bb6a68eb7c8fe2",
+      "q_bf16_shared_native_staging": "14970d65ee2aef90722f04258bfd5eee463ad4ac702024d3a076cccb4fbbcd4f",
+      "query_fp8": "033a189a6dcbb94ffda34cbbaad9e874de6da365e0e0b72d7aa0338dc680749d",
+      "seq_lens_i32": "050e4a0975e993ba1bfd743265aaffc901990da3c38ac3769628706b2a7a87ea",
+      "topk_token_major_i32": "642c9353d57971ba06896641974c3ef45b451ed9aaaf71e47771d34129f9b35e"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 1002.5419999999999,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 27.389999999999986,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed2024-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 2024,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.0644799992442131,
+      "p10_ms": 0.06393600255250931,
+      "p90_ms": 0.08566399663686752,
+      "raw_ms": [
+        0.09564799815416336,
+        0.09244800359010696,
+        0.06393600255250931,
+        0.08748800307512283,
+        0.0639680027961731,
+        0.09577599912881851,
+        0.06406400352716446,
+        0.08457600325345993,
+        0.0639680027961731,
+        0.07228799909353256,
+        0.06403200328350067,
+        0.07529599964618683,
+        0.06393600255250931,
+        0.09267199784517288,
+        0.06406400352716446,
+        0.08460800349712372,
+        0.06403200328350067,
+        0.07862400263547897,
+        0.06377600133419037,
+        0.07116799801588058,
+        0.0639680027961731,
+        0.07318399846553802,
+        0.06406400352716446,
+        0.08659200370311737,
+        0.06393600255250931,
+        0.07123199850320816,
+        0.0639680027961731,
+        0.07423999905586243,
+        0.06400000303983688,
+        0.07411199808120728,
+        0.06409599632024765,
+        0.07321599870920181,
+        0.06400000303983688,
+        0.08342400193214417,
+        0.0639680027961731,
+        0.07014399766921997,
+        0.0639680027961731,
+        0.0671359971165657,
+        0.06400000303983688,
+        0.07001599669456482,
+        0.06400000303983688,
+        0.07011199742555618,
+        0.09465599805116653,
+        0.08534400165081024,
+        0.06406400352716446,
+        0.07318399846553802,
+        0.0639680027961731,
+        0.07423999905586243,
+        0.06400000303983688,
+        0.06911999732255936,
+        0.06415999680757523,
+        0.08566399663686752,
+        0.06377600133419037,
+        0.06694400310516357,
+        0.06403200328350067,
+        0.07014399766921997,
+        0.06393600255250931,
+        0.06716799736022949,
+        0.06400000303983688,
+        0.07023999840021133,
+        0.06387200206518173,
+        0.08755200356245041,
+        0.06406400352716446,
+        0.07100799679756165,
+        0.06406400352716446,
+        0.06806399673223495,
+        0.06412799656391144,
+        0.0671359971165657,
+        0.0639680027961731,
+        0.07731200009584427,
+        0.06377600133419037,
+        0.08553600311279297,
+        0.06393600255250931,
+        0.06480000168085098,
+        0.06403200328350067,
+        0.06611199676990509,
+        0.06409599632024765,
+        0.0671359971165657,
+        0.0639680027961731,
+        0.0920960009098053,
+        0.06390400230884552,
+        0.07516799867153168,
+        0.06387200206518173,
+        0.0689919963479042,
+        0.0639680027961731,
+        0.06703999638557434,
+        0.0639680027961731,
+        0.06703999638557434,
+        0.06393600255250931,
+        0.0862400010228157,
+        0.0639680027961731,
+        0.0711359977722168,
+        0.06400000303983688,
+        0.0650240033864975,
+        0.0639680027961731,
+        0.06406400352716446,
+        0.06380800157785416,
+        0.06400000303983688,
+        0.06400000303983688,
+        0.08444800227880478
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.204595221112696,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09564799815416336,
+        "native_a_3": 0.09244800359010696,
+        "triton_b_1": 0.03440000116825104,
+        "triton_b_2": 0.06844799965620041
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08748800307512283,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.09577599912881851,
+        "triton_b_1": 0.043136000633239746,
+        "triton_b_2": 0.07475200295448303
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08457600325345993,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07228799909353256,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07529599964618683,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.09267199784517288,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08460800349712372,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07862400263547897,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.07116799801588058,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07318399846553802,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08659200370311737,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.03328000009059906
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07123199850320816,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07423999905586243,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07411199808120728,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07321599870920181,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.08342400193214417,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.0363520011305809
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07014399766921997,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03001599945127964
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07001599669456482,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07011199742555618,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.09465599805116653,
+        "native_a_3": 0.08534400165081024,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.0650240033864975
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07318399846553802,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07423999905586243,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06911999732255936,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.08566399663686752,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.0352960005402565
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.06694400310516357,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07014399766921997,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06716799736022949,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07023999840021133,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.08755200356245041,
+        "triton_b_1": 0.030271999537944794,
+        "triton_b_2": 0.04960000142455101
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07100799679756165,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.029472000896930695
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06806399673223495,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07731200009584427,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.08553600311279297,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03951999917626381
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06480000168085098,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06611199676990509,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.0920960009098053,
+        "triton_b_1": 0.030208000913262367,
+        "triton_b_2": 0.07215999811887741
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.07516799867153168,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.0689919963479042,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06703999638557434,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06703999638557434,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.0862400010228157,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03436800092458725
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.0711359977722168,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.0650240033864975,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.02908799983561039
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06406400352716446,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06380800157785416,
+        "native_a_3": 0.06400000303983688,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.08444800227880478,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029888000339269638
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02924799919128418,
+      "p10_ms": 0.029120000079274178,
+      "p90_ms": 0.03436800092458725,
+      "raw_ms": [
+        0.03440000116825104,
+        0.06844799965620041,
+        0.029311999678611755,
+        0.02937600016593933,
+        0.043136000633239746,
+        0.07475200295448303,
+        0.02921600081026554,
+        0.030271999537944794,
+        0.029055999591946602,
+        0.03014400042593479,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.029152000322937965,
+        0.030239999294281006,
+        0.029343999922275543,
+        0.03017600066959858,
+        0.029055999591946602,
+        0.029279999434947968,
+        0.029055999591946602,
+        0.030112000182271004,
+        0.029120000079274178,
+        0.030208000913262367,
+        0.029311999678611755,
+        0.03328000009059906,
+        0.029184000566601753,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.029184000566601753,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.028991999104619026,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.0363520011305809,
+        0.029279999434947968,
+        0.03001599945127964,
+        0.02921600081026554,
+        0.029120000079274178,
+        0.029152000322937965,
+        0.03033600002527237,
+        0.02908799983561039,
+        0.030239999294281006,
+        0.029152000322937965,
+        0.0650240033864975,
+        0.029184000566601753,
+        0.029184000566601753,
+        0.029184000566601753,
+        0.03017600066959858,
+        0.029152000322937965,
+        0.029152000322937965,
+        0.029023999348282814,
+        0.0352960005402565,
+        0.029152000322937965,
+        0.03033600002527237,
+        0.02921600081026554,
+        0.03030399978160858,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.030208000913262367,
+        0.030271999537944794,
+        0.04960000142455101,
+        0.029023999348282814,
+        0.029472000896930695,
+        0.02908799983561039,
+        0.03017600066959858,
+        0.029184000566601753,
+        0.03030399978160858,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.03951999917626381,
+        0.029152000322937965,
+        0.029311999678611755,
+        0.02921600081026554,
+        0.030208000913262367,
+        0.029152000322937965,
+        0.02924799919128418,
+        0.030208000913262367,
+        0.07215999811887741,
+        0.029152000322937965,
+        0.03017600066959858,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.03017600066959858,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.03436800092458725,
+        0.029184000566601753,
+        0.030208000913262367,
+        0.029184000566601753,
+        0.02908799983561039,
+        0.029184000566601753,
+        0.03017600066959858,
+        0.029184000566601753,
+        0.030208000913262367,
+        0.02921600081026554,
+        0.029888000339269638
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4535980076629592,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5585362638812512e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:38 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:38 480362:480362 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:38 480362:480362 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:38 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 126326884007936,
+    "pointer_before": 126326884007936,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5545931496017147e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "0fb6090e3f35fce2b70e41aeb958dba78293db2eb388a5501d050b56d839f057",
+      "packed_kv_fp8": "a3f3b1d3d18e91269b8b38242aa9b11a30626a2a54312e8b04c6e02b517f36cc",
+      "q_bf16_original_not_timed": "6178595722e78619af3a45c621aba375e81e1fcd0491ab4ef44e85e46201d5c4",
+      "q_bf16_shared_native_staging": "294dabed9fe3c5bed16741d96f47cb117ddd6a348d17a76650866e8afea73096",
+      "query_fp8": "a03c58f62c402492c5c146a59b0ef9d8f03dec6773d49aa93750bc231fef9a88",
+      "seq_lens_i32": "9ab9ced530fa4ae003b5540a7af8a6ad5770d389827a3211e9baafd6d4f4a638",
+      "topk_token_major_i32": "d88276a8937da48b00b7b9c21e9c2e3e8d45f541c3d8e344ea9249ff259d8451"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 966.6019999999999,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 29.039999999999964,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed314159-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 314159,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06419199705123901,
+      "p10_ms": 0.06393600255250931,
+      "p90_ms": 0.08246400207281113,
+      "raw_ms": [
+        0.09600000083446503,
+        0.09180799871683121,
+        0.06412799656391144,
+        0.08774399757385254,
+        0.06415999680757523,
+        0.07849600166082382,
+        0.06419199705123901,
+        0.07116799801588058,
+        0.0642239972949028,
+        0.07043199986219406,
+        0.06406400352716446,
+        0.0751039981842041,
+        0.06419199705123901,
+        0.08451200276613235,
+        0.06419199705123901,
+        0.07628799974918365,
+        0.06403200328350067,
+        0.07449600100517273,
+        0.06419199705123901,
+        0.07030399888753891,
+        0.06412799656391144,
+        0.08153600245714188,
+        0.06406400352716446,
+        0.0814720019698143,
+        0.06406400352716446,
+        0.06908799707889557,
+        0.0639680027961731,
+        0.06940799951553345,
+        0.06387200206518173,
+        0.06710399687290192,
+        0.06409599632024765,
+        0.09081599861383438,
+        0.06406400352716446,
+        0.07052800059318542,
+        0.06387200206518173,
+        0.06400000303983688,
+        0.06403200328350067,
+        0.06812799721956253,
+        0.06403200328350067,
+        0.0671359971165657,
+        0.06387200206518173,
+        0.09347199648618698,
+        0.06393600255250931,
+        0.07311999797821045,
+        0.0642239972949028,
+        0.07126399874687195,
+        0.06400000303983688,
+        0.06918399780988693,
+        0.06409599632024765,
+        0.07737600058317184,
+        0.06387200206518173,
+        0.08540800213813782,
+        0.06412799656391144,
+        0.07017599791288376,
+        0.06406400352716446,
+        0.06505600363016129,
+        0.06403200328350067,
+        0.07020799815654755,
+        0.06384000182151794,
+        0.07340800017118454,
+        0.06387200206518173,
+        0.08454400300979614,
+        0.06409599632024765,
+        0.07132799923419952,
+        0.06406400352716446,
+        0.06393600255250931,
+        0.06415999680757523,
+        0.06617599725723267,
+        0.06428799778223038,
+        0.08246400207281113,
+        0.06415999680757523,
+        0.06915199756622314,
+        0.06406400352716446,
+        0.06729599833488464,
+        0.06409599632024765,
+        0.06310400366783142,
+        0.06406400352716446,
+        0.06617599725723267,
+        0.06406400352716446,
+        0.09171199798583984,
+        0.06393600255250931,
+        0.07737600058317184,
+        0.06406400352716446,
+        0.06611199676990509,
+        0.06406400352716446,
+        0.06918399780988693,
+        0.06403200328350067,
+        0.08463999629020691,
+        0.06406400352716446,
+        0.07337599992752075,
+        0.06415999680757523,
+        0.06412799656391144,
+        0.06406400352716446,
+        0.06390400230884552,
+        0.06406400352716446,
+        0.06406400352716446,
+        0.06406400352716446,
+        0.07942400127649307,
+        0.06409599632024765,
+        0.06918399780988693
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.1875680623386913,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09600000083446503,
+        "native_a_3": 0.09180799871683121,
+        "triton_b_1": 0.03446400165557861,
+        "triton_b_2": 0.06844799965620041
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08774399757385254,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.05084799975156784
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07849600166082382,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07116799801588058,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029472000896930695
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.07043199986219406,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0751039981842041,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.08451200276613235,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.038495998829603195
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07628799974918365,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07449600100517273,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07030399888753891,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029472000896930695
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08153600245714188,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0814720019698143,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06908799707889557,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06940799951553345,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.06710399687290192,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.09081599861383438,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07052800059318542,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.06400000303983688,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06812799721956253,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.09347199648618698,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.1029760017991066
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07311999797821045,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.07126399874687195,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06918399780988693,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07737600058317184,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.08540800213813782,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07017599791288376,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06505600363016129,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07020799815654755,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.07340800017118454,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.08454400300979614,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07132799923419952,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06393600255250931,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06617599725723267,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06428799778223038,
+        "native_a_3": 0.08246400207281113,
+        "triton_b_1": 0.029952000826597214,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029472000896930695
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06729599833488464,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06310400366783142,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06617599725723267,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.09171199798583984,
+        "triton_b_1": 0.03404799848794937,
+        "triton_b_2": 0.07327999919652939
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07737600058317184,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06611199676990509,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029023999348282814
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06918399780988693,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08463999629020691,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07337599992752075,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06412799656391144,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06390400230884552,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.029632000252604485
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06406400352716446,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07942400127649307,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06918399780988693,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029152000322937965
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.029343999922275543,
+      "p10_ms": 0.029152000322937965,
+      "p90_ms": 0.030271999537944794,
+      "raw_ms": [
+        0.03446400165557861,
+        0.06844799965620041,
+        0.02921600081026554,
+        0.05084799975156784,
+        0.029152000322937965,
+        0.02940800040960312,
+        0.029184000566601753,
+        0.029472000896930695,
+        0.029152000322937965,
+        0.02940800040960312,
+        0.029440000653266907,
+        0.030239999294281006,
+        0.02921600081026554,
+        0.038495998829603195,
+        0.029152000322937965,
+        0.02937600016593933,
+        0.029343999922275543,
+        0.030112000182271004,
+        0.029184000566601753,
+        0.029472000896930695,
+        0.029343999922275543,
+        0.02937600016593933,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.029440000653266907,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.02937600016593933,
+        0.02924799919128418,
+        0.030271999537944794,
+        0.029120000079274178,
+        0.02937600016593933,
+        0.029472000896930695,
+        0.03017600066959858,
+        0.02940800040960312,
+        0.030368000268936157,
+        0.02940800040960312,
+        0.029055999591946602,
+        0.029279999434947968,
+        0.030112000182271004,
+        0.02924799919128418,
+        0.1029760017991066,
+        0.029152000322937965,
+        0.029343999922275543,
+        0.02924799919128418,
+        0.02921600081026554,
+        0.029279999434947968,
+        0.03017600066959858,
+        0.02921600081026554,
+        0.030208000913262367,
+        0.02924799919128418,
+        0.030239999294281006,
+        0.029184000566601753,
+        0.03017600066959858,
+        0.029152000322937965,
+        0.03030399978160858,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.029279999434947968,
+        0.03030399978160858,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.029472000896930695,
+        0.029055999591946602,
+        0.02924799919128418,
+        0.030271999537944794,
+        0.029440000653266907,
+        0.02924799919128418,
+        0.029952000826597214,
+        0.030271999537944794,
+        0.029343999922275543,
+        0.029472000896930695,
+        0.02924799919128418,
+        0.030271999537944794,
+        0.029343999922275543,
+        0.029152000322937965,
+        0.029440000653266907,
+        0.03017600066959858,
+        0.03404799848794937,
+        0.07327999919652939,
+        0.029279999434947968,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.029023999348282814,
+        0.02924799919128418,
+        0.03014400042593479,
+        0.029343999922275543,
+        0.029343999922275543,
+        0.029343999922275543,
+        0.02924799919128418,
+        0.029311999678611755,
+        0.029343999922275543,
+        0.029311999678611755,
+        0.029632000252604485,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.029152000322937965
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.45712863394564157,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.568771262507653e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:47 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:48 480691:480691 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:48 480691:480691 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:48 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 124771434758144,
+    "pointer_before": 124771434758144,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.55454199052474e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "bfb51799ede669908865d963648e39b6b0629f389d1e39717484c510e28aad90",
+      "packed_kv_fp8": "469e85c7c370f73065193bc755fe2cde8d9ca305223398e478ec2c9af152f7f9",
+      "q_bf16_original_not_timed": "765571a4d72c436a549dcf545c06935883267dae72a41291ec08fb67bbf0db44",
+      "q_bf16_shared_native_staging": "cb5a069f1c133bc0074ecb26da4f5251de0e9b8901bbcc01a5517061b9c3f53a",
+      "query_fp8": "4320f99de18c7f5b301463fea0e2a51145fdc83f73fc29caba212ff1a3f3f1e1",
+      "seq_lens_i32": "1322667f5dcf5df8e77cb4627dcf497f08810895f1413d992bc33b61df6e7c93",
+      "topk_token_major_i32": "aab98bdc9911538a82cae71d7cfa5b459acd4d869fc278393e5433f2701cb3aa"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 968.4520000000001,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 32.24000000000001,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed20260801-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 20260801,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06415999680757523,
+      "p10_ms": 0.06390400230884552,
+      "p90_ms": 0.08553600311279297,
+      "raw_ms": [
+        0.09804800152778625,
+        0.09440000355243683,
+        0.06403200328350067,
+        0.0854400023818016,
+        0.06400000303983688,
+        0.0896959975361824,
+        0.0639680027961731,
+        0.07929600030183792,
+        0.06400000303983688,
+        0.07526399940252304,
+        0.06393600255250931,
+        0.0732479989528656,
+        0.06403200328350067,
+        0.07635200023651123,
+        0.06393600255250931,
+        0.08656000345945358,
+        0.06400000303983688,
+        0.07532799988985062,
+        0.06415999680757523,
+        0.0671359971165657,
+        0.06390400230884552,
+        0.0692799985408783,
+        0.06390400230884552,
+        0.07532799988985062,
+        0.06403200328350067,
+        0.08348800241947174,
+        0.06403200328350067,
+        0.06918399780988693,
+        0.06400000303983688,
+        0.07116799801588058,
+        0.06406400352716446,
+        0.07097599655389786,
+        0.06415999680757523,
+        0.15622399747371674,
+        0.06403200328350067,
+        0.08656000345945358,
+        0.06419199705123901,
+        0.07734400033950806,
+        0.06406400352716446,
+        0.07529599964618683,
+        0.06403200328350067,
+        0.07734400033950806,
+        0.06393600255250931,
+        0.08668799698352814,
+        0.06390400230884552,
+        0.0711359977722168,
+        0.06403200328350067,
+        0.07222399860620499,
+        0.06403200328350067,
+        0.07014399766921997,
+        0.06403200328350067,
+        0.07631999999284744,
+        0.06400000303983688,
+        0.08144000172615051,
+        0.06390400230884552,
+        0.0692799985408783,
+        0.06390400230884552,
+        0.06508799642324448,
+        0.06403200328350067,
+        0.07100799679756165,
+        0.06403200328350067,
+        0.09081599861383438,
+        0.06380800157785416,
+        0.07318399846553802,
+        0.06393600255250931,
+        0.06403200328350067,
+        0.06406400352716446,
+        0.0700799971818924,
+        0.06403200328350067,
+        0.0639680027961731,
+        0.06409599632024765,
+        0.0857279971241951,
+        0.06387200206518173,
+        0.07119999825954437,
+        0.06406400352716446,
+        0.0689919963479042,
+        0.06406400352716446,
+        0.0700799971818924,
+        0.06387200206518173,
+        0.0865280032157898,
+        0.06409599632024765,
+        0.08553600311279297,
+        0.06390400230884552,
+        0.07100799679756165,
+        0.06393600255250931,
+        0.06697600334882736,
+        0.06403200328350067,
+        0.06415999680757523,
+        0.06380800157785416,
+        0.07427199929952621,
+        0.06406400352716446,
+        0.08454400300979614,
+        0.06390400230884552,
+        0.0671359971165657,
+        0.06400000303983688,
+        0.06915199756622314,
+        0.06393600255250931,
+        0.06601600348949432,
+        0.06403200328350067,
+        0.0740479975938797
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.196056784918746,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09804800152778625,
+        "native_a_3": 0.09440000355243683,
+        "triton_b_1": 0.03532800078392029,
+        "triton_b_2": 0.06697600334882736
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.0854400023818016,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.0896959975361824,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.045632001012563705
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07929600030183792,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.029440000653266907
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07526399940252304,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.0732479989528656,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07635200023651123,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08656000345945358,
+        "triton_b_1": 0.030400000512599945,
+        "triton_b_2": 0.04649600014090538
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07532799988985062,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.0692799985408783,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.07532799988985062,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08348800241947174,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06918399780988693,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03001599945127964
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07116799801588058,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07097599655389786,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030432000756263733
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.15622399747371674,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08656000345945358,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.07734400033950806,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.07529599964618683,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07734400033950806,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08668799698352814,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03433600068092346
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.0711359977722168,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07222399860620499,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07014399766921997,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07631999999284744,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.08144000172615051,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.0692799985408783,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.02908799983561039
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.06508799642324448,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.07100799679756165,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.09081599861383438,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06380800157785416,
+        "native_a_3": 0.07318399846553802,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06403200328350067,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.0639680027961731,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.0857279971241951,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.07119999825954437,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0689919963479042,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029343999922275543
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.0865280032157898,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.06403200328350067
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.08553600311279297,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.042527999728918076
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.07100799679756165,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06697600334882736,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06415999680757523,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.030047999694943428
+      },
+      {
+        "native_a_0": 0.06380800157785416,
+        "native_a_3": 0.07427199929952621,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08454400300979614,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03328000009059906
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02908799983561039
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06601600348949432,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.0740479975938797,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.03030399978160858
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02921600081026554,
+      "p10_ms": 0.029055999591946602,
+      "p90_ms": 0.03030399978160858,
+      "raw_ms": [
+        0.03532800078392029,
+        0.06697600334882736,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.02921600081026554,
+        0.045632001012563705,
+        0.029023999348282814,
+        0.029440000653266907,
+        0.029184000566601753,
+        0.030271999537944794,
+        0.029184000566601753,
+        0.029279999434947968,
+        0.029184000566601753,
+        0.03030399978160858,
+        0.030400000512599945,
+        0.04649600014090538,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.02908799983561039,
+        0.02921600081026554,
+        0.029184000566601753,
+        0.02921600081026554,
+        0.029120000079274178,
+        0.029311999678611755,
+        0.029184000566601753,
+        0.029120000079274178,
+        0.029184000566601753,
+        0.03001599945127964,
+        0.029055999591946602,
+        0.029279999434947968,
+        0.029184000566601753,
+        0.030432000756263733,
+        0.029055999591946602,
+        0.030271999537944794,
+        0.029184000566601753,
+        0.03017600066959858,
+        0.029023999348282814,
+        0.02924799919128418,
+        0.02924799919128418,
+        0.030208000913262367,
+        0.029184000566601753,
+        0.029184000566601753,
+        0.029279999434947968,
+        0.03433600068092346,
+        0.02924799919128418,
+        0.030079999938607216,
+        0.029120000079274178,
+        0.030239999294281006,
+        0.02921600081026554,
+        0.030208000913262367,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.02921600081026554,
+        0.029152000322937965,
+        0.029343999922275543,
+        0.02908799983561039,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.029120000079274178,
+        0.02921600081026554,
+        0.029152000322937965,
+        0.02924799919128418,
+        0.029184000566601753,
+        0.03014400042593479,
+        0.028991999104619026,
+        0.029152000322937965,
+        0.029023999348282814,
+        0.03017600066959858,
+        0.029055999591946602,
+        0.028991999104619026,
+        0.029184000566601753,
+        0.028991999104619026,
+        0.02924799919128418,
+        0.029055999591946602,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.029120000079274178,
+        0.029343999922275543,
+        0.029184000566601753,
+        0.06403200328350067,
+        0.028991999104619026,
+        0.042527999728918076,
+        0.029184000566601753,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.02940800040960312,
+        0.030047999694943428,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.03328000009059906,
+        0.02921600081026554,
+        0.02908799983561039,
+        0.02940800040960312,
+        0.029055999591946602,
+        0.029152000322937965,
+        0.03017600066959858,
+        0.02908799983561039,
+        0.03030399978160858
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4553616312963419,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.564881808415521e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:46:57 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:46:57 480904:480904 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:46:57 480904:480904 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:46:57 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 125963623727104,
+    "pointer_before": 125963623727104,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5365424082556274e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "04791461a707a89d2f301d23eb5140ce324303aeda88f637c3671e7ac0b94991",
+      "packed_kv_fp8": "7e9f7e58c34de9c2fa9093cae00922488b755ff9a3a3043d4c73754071ce507a",
+      "q_bf16_original_not_timed": "3544a7414558b89a19c887610fda2e580a81b83a187b89f2bf53d57390cbb22e",
+      "q_bf16_shared_native_staging": "ec1598e331f72cae690b2fa8a700f261b0a64212f5f5cf31d22c8bdbf7cbd47b",
+      "query_fp8": "933432eb4626f77360b07c13ccc3627e788c7dfc50abdbb3f72e6e488e23829f",
+      "seq_lens_i32": "6a53e23585e337720fb1f52fdab8bf5a5df5e31e36cdc0d15eec3262f1dcaa61",
+      "topk_token_major_i32": "3e95ee58226c27e14cab9fe6642c73aa4a12d1c17615a41eb73d3df62cd67d2f"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 983.9820000000001,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 27.399999999999977,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed20260815-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 20260815,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06412799656391144,
+      "p10_ms": 0.06326399743556976,
+      "p90_ms": 0.08342400193214417,
+      "raw_ms": [
+        0.09907200187444687,
+        0.09087999910116196,
+        0.06326399743556976,
+        0.08163200318813324,
+        0.06406400352716446,
+        0.08249600231647491,
+        0.06415999680757523,
+        0.08364800363779068,
+        0.06412799656391144,
+        0.06915199756622314,
+        0.0639680027961731,
+        0.06614399701356888,
+        0.06409599632024765,
+        0.07228799909353256,
+        0.06339199841022491,
+        0.08364800363779068,
+        0.06406400352716446,
+        0.08575999736785889,
+        0.06419199705123901,
+        0.06409599632024765,
+        0.06409599632024765,
+        0.06841599941253662,
+        0.06400000303983688,
+        0.0671359971165657,
+        0.06406400352716446,
+        0.0878399983048439,
+        0.0631679967045784,
+        0.07228799909353256,
+        0.06412799656391144,
+        0.06604799628257751,
+        0.06329599767923355,
+        0.06732799857854843,
+        0.06406400352716446,
+        0.06403200328350067,
+        0.06412799656391144,
+        0.09366399794816971,
+        0.06412799656391144,
+        0.07222399860620499,
+        0.06425599753856659,
+        0.07020799815654755,
+        0.06415999680757523,
+        0.06431999802589417,
+        0.06409599632024765,
+        0.06412799656391144,
+        0.06406400352716446,
+        0.08563199639320374,
+        0.06409599632024765,
+        0.07126399874687195,
+        0.06400000303983688,
+        0.0682239979505539,
+        0.06400000303983688,
+        0.06310400366783142,
+        0.06400000303983688,
+        0.06921599805355072,
+        0.06412799656391144,
+        0.08153600245714188,
+        0.06409599632024765,
+        0.06412799656391144,
+        0.06406400352716446,
+        0.06387200206518173,
+        0.06409599632024765,
+        0.06390400230884552,
+        0.06409599632024765,
+        0.06390400230884552,
+        0.06409599632024765,
+        0.07036799937486649,
+        0.06419199705123901,
+        0.06403200328350067,
+        0.06415999680757523,
+        0.06505600363016129,
+        0.06521599739789963,
+        0.06409599632024765,
+        0.0631679967045784,
+        0.06319999694824219,
+        0.0631679967045784,
+        0.08342400193214417,
+        0.06412799656391144,
+        0.06707199662923813,
+        0.06412799656391144,
+        0.08540800213813782,
+        0.06409599632024765,
+        0.06511999666690826,
+        0.06419199705123901,
+        0.08755200356245041,
+        0.06412799656391144,
+        0.06310400366783142,
+        0.0631679967045784,
+        0.06707199662923813,
+        0.06400000303983688,
+        0.06409599632024765,
+        0.06319999694824219,
+        0.0642239972949028,
+        0.0639680027961731,
+        0.07849600166082382,
+        0.06406400352716446,
+        0.06499200314283371,
+        0.0639680027961731,
+        0.06409599632024765,
+        0.06319999694824219,
+        0.06412799656391144
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.1853870206437245,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09907200187444687,
+        "native_a_3": 0.09087999910116196,
+        "triton_b_1": 0.03248000144958496,
+        "triton_b_2": 0.06764800101518631
+      },
+      {
+        "native_a_0": 0.06326399743556976,
+        "native_a_3": 0.08163200318813324,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030432000756263733
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08249600231647491,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.03046399913728237
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.08364800363779068,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.04064000025391579
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06614399701356888,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.03046399913728237
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07228799909353256,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06339199841022491,
+        "native_a_3": 0.08364800363779068,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.029503999277949333
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08575999736785889,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.06409599632024765,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06841599941253662,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.0671359971165657,
+        "triton_b_1": 0.02956799976527691,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0878399983048439,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.0631679967045784,
+        "native_a_3": 0.07228799909353256,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029440000653266907
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.06604799628257751,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06329599767923355,
+        "native_a_3": 0.06732799857854843,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06403200328350067,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.09366399794816971,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.07446400076150894
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.07222399860620499,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.030432000756263733
+      },
+      {
+        "native_a_0": 0.06425599753856659,
+        "native_a_3": 0.07020799815654755,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.02953599952161312
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06431999802589417,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06412799656391144,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08563199639320374,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.03750399872660637
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07126399874687195,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.029055999591946602
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.0682239979505539,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06310400366783142,
+        "triton_b_1": 0.029311999678611755,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06921599805355072,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08153600245714188,
+        "triton_b_1": 0.029503999277949333,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06412799656391144,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06387200206518173,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.029503999277949333
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06390400230884552,
+        "triton_b_1": 0.028960000723600388,
+        "triton_b_2": 0.0297279991209507
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06390400230884552,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07036799937486649,
+        "triton_b_1": 0.029791999608278275,
+        "triton_b_2": 0.028991999104619026
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.06403200328350067,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.06505600363016129,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06521599739789963,
+        "native_a_3": 0.06409599632024765,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.02940800040960312
+      },
+      {
+        "native_a_0": 0.0631679967045784,
+        "native_a_3": 0.06319999694824219,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.0631679967045784,
+        "native_a_3": 0.08342400193214417,
+        "triton_b_1": 0.037567999213933945,
+        "triton_b_2": 0.0650240033864975
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.06707199662923813,
+        "triton_b_1": 0.029343999922275543,
+        "triton_b_2": 0.030592000111937523
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.08540800213813782,
+        "triton_b_1": 0.03046399913728237,
+        "triton_b_2": 0.05999999865889549
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06511999666690826,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06419199705123901,
+        "native_a_3": 0.08755200356245041,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.02956799976527691
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.06310400366783142,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0631679967045784,
+        "native_a_3": 0.06707199662923813,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03062400035560131
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.06409599632024765,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06319999694824219,
+        "native_a_3": 0.0642239972949028,
+        "triton_b_1": 0.02953599952161312,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.07849600166082382,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06499200314283371,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02937600016593933
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06409599632024765,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029311999678611755
+      },
+      {
+        "native_a_0": 0.06319999694824219,
+        "native_a_3": 0.06412799656391144,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02937600016593933
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.029343999922275543,
+      "p10_ms": 0.029152000322937965,
+      "p90_ms": 0.03046399913728237,
+      "raw_ms": [
+        0.03248000144958496,
+        0.06764800101518631,
+        0.02924799919128418,
+        0.030432000756263733,
+        0.029311999678611755,
+        0.03046399913728237,
+        0.029343999922275543,
+        0.04064000025391579,
+        0.029184000566601753,
+        0.03033600002527237,
+        0.02940800040960312,
+        0.03046399913728237,
+        0.029152000322937965,
+        0.030208000913262367,
+        0.029023999348282814,
+        0.029503999277949333,
+        0.029311999678611755,
+        0.029184000566601753,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.02924799919128418,
+        0.03030399978160858,
+        0.02956799976527691,
+        0.029184000566601753,
+        0.029311999678611755,
+        0.029311999678611755,
+        0.029343999922275543,
+        0.029440000653266907,
+        0.029279999434947968,
+        0.03030399978160858,
+        0.029311999678611755,
+        0.02937600016593933,
+        0.029279999434947968,
+        0.029311999678611755,
+        0.02940800040960312,
+        0.07446400076150894,
+        0.029120000079274178,
+        0.030432000756263733,
+        0.029184000566601753,
+        0.02953599952161312,
+        0.02924799919128418,
+        0.02921600081026554,
+        0.029343999922275543,
+        0.029055999591946602,
+        0.029311999678611755,
+        0.03750399872660637,
+        0.029472000896930695,
+        0.029055999591946602,
+        0.029311999678611755,
+        0.02921600081026554,
+        0.029311999678611755,
+        0.02924799919128418,
+        0.029279999434947968,
+        0.029279999434947968,
+        0.029503999277949333,
+        0.029120000079274178,
+        0.029279999434947968,
+        0.029311999678611755,
+        0.02908799983561039,
+        0.029503999277949333,
+        0.028960000723600388,
+        0.0297279991209507,
+        0.02937600016593933,
+        0.02940800040960312,
+        0.029791999608278275,
+        0.028991999104619026,
+        0.02940800040960312,
+        0.029152000322937965,
+        0.029184000566601753,
+        0.029279999434947968,
+        0.029279999434947968,
+        0.02940800040960312,
+        0.02937600016593933,
+        0.02937600016593933,
+        0.037567999213933945,
+        0.0650240033864975,
+        0.029343999922275543,
+        0.030592000111937523,
+        0.03046399913728237,
+        0.05999999865889549,
+        0.02924799919128418,
+        0.03030399978160858,
+        0.02940800040960312,
+        0.02956799976527691,
+        0.02937600016593933,
+        0.030239999294281006,
+        0.02937600016593933,
+        0.03062400035560131,
+        0.029279999434947968,
+        0.029120000079274178,
+        0.02953599952161312,
+        0.029184000566601753,
+        0.02940800040960312,
+        0.03030399978160858,
+        0.02921600081026554,
+        0.02937600016593933,
+        0.029279999434947968,
+        0.029311999678611755,
+        0.02921600081026554,
+        0.02937600016593933
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4575848536454844,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5492862480168696e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+INFO 08-30 20:47:06 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected native_c2
+USDT:2026-08-30 20:47:07 481264:481264 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:47:07 481264:481264 SyncActivityProfilerHandler.cpp:59] profiler_stop
+INFO 08-30 20:47:07 [sparse_attention_msa.py:197] MiniMax M3 MSA sparse decode selected Triton
+{
+  "all_gates_pass": true,
+  "boundary": "real MiniMaxM3SparseMSAImpl.forward backend layer; no model weights or server scheduler",
+  "builder": {
+    "checks": {
+      "decode_metadata_present": true,
+      "native_backend_did_not_make_cutlass_plan": true,
+      "native_decode_has_no_cutlass_metadata": true
+    },
+    "cutlass_plan_cache_size": 0,
+    "triton_checks": {
+      "triton_decode_metadata_present": true,
+      "triton_plan_cache_empty": true
+    },
+    "triton_cutlass_plan_cache_size": 0
+  },
+  "caller_output": {
+    "pointer_after": 125323103174656,
+    "pointer_before": 125323103174656,
+    "pointer_unchanged": true
+  },
+  "correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 3.0517578125e-05,
+    "mean_abs": 3.53356836058083e-06,
+    "oracle": "independent FP32 selected-page causal reference over exact native BF16-staged FP8 values",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "data_contract": {
+    "batch": 16,
+    "head_dim": 128,
+    "input_checksums": {
+      "block_table_i32": "1c3977db887f303d994ee6fb54fd008a17a6dd1847fecf37de573be410ab3915",
+      "packed_kv_fp8": "97de80078562168fb36765293b574df03e358255a10d3a10652955145dab33a0",
+      "q_bf16_original_not_timed": "c3bf1608f3e4dbbb88e52601cfd924e9912374e97f9a2002f98f60a4e9541dad",
+      "q_bf16_shared_native_staging": "ac69640899d4b9d7c3c0bbf9122d5a2f01664342f2166848ad827978b9747d38",
+      "query_fp8": "68dab1757aacd7b669ebb10ec2239411b2fabb2f88ee6c7eb650471e1d50c9f6",
+      "seq_lens_i32": "9a9d19ba22634e41354cec83783f70600adac9dc8d8c306f49c49ccbfba86e5c",
+      "topk_token_major_i32": "8e65531408ed5d18fe4933b83a69f86d548a1cbc3575fcfd5457749269cb0691"
+    },
+    "k_scale": 0.25,
+    "kv_heads": 4,
+    "page_size": 128,
+    "q_scale": 0.25,
+    "query_heads": 64,
+    "topk": 16,
+    "v_scale": 0.5
+  },
+  "environment": {
+    "compute_capability": [
+      10,
+      3
+    ],
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.13.0+cu130",
+    "vllm_import_root": "/tmp/c2-native-plugin-v12-fresh-runtime-12991.j7im4ES5/vllm"
+  },
+  "gates": {
+    "caller_owned_output": true,
+    "fair_native_vs_triton_abba_timing": true,
+    "fp32_oracle_correctness": true,
+    "native_static_selection": true,
+    "no_cutlass_plan": true,
+    "one_profiled_forward_reaches_dispatcher_and_cuda_kernel": true
+  },
+  "profiled_forward_calls": 1,
+  "profiling": {
+    "checks": {
+      "one_cpu_dispatcher_event": true,
+      "one_cuda_native_kernel_event": true,
+      "trace_nonempty": true
+    },
+    "cuda_kernel_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 0.0,
+        "cuda_total_us": 0.0,
+        "key": "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)",
+        "self_cpu_us": 0.0,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "dispatcher_events": [
+      {
+        "count": 1,
+        "cpu_total_us": 979.192,
+        "cuda_total_us": 0.0,
+        "key": "_C::native_c2_msa_decode",
+        "self_cpu_us": 41.40000000000009,
+        "self_cuda_us": 0.0
+      }
+    ],
+    "nearby_keys": [
+      "_C::native_c2_msa_decode",
+      "vllm::native_c2::native_c2_msa_decode_kernel(__nv_fp8_e4m3 const*, __nv_fp8_e4m3 const*, int const*, int const*, int const*, __nv_bfloat16*, long, long, long, long, long, long, long, long, long, long, int, int, float, float, float, float)"
+    ],
+    "pass": true,
+    "trace": "/home/lcpu/85117379/c2-native-plugin-v12-fresh-backend-artifacts-20260830/job12991/plugin-v12-wheel-full-backend-seed20260829-job12991.chrome.json"
+  },
+  "schema": "c2-native-c2-full-vllm-backend-v2",
+  "seed": 20260829,
+  "static_selection": {
+    "native_backend_alias": true,
+    "should_use_msa_decode": true,
+    "use_cutlass_decode_is_false": true,
+    "use_native_c2_decode": true
+  },
+  "timing": {
+    "caller_owned_output": {
+      "native": true,
+      "triton": true
+    },
+    "caller_owned_output_verification": "every warmup and timed call checks result.data_ptr() against its caller-owned output",
+    "comparison_input_semantics": "native stages query_fp8 with q_scale and Triton receives the same BF16 query values; packed FP8 KV, scalar scales, sparse metadata, and caller-owned output shapes are shared",
+    "native": {
+      "median_ms": 0.06593600288033485,
+      "p10_ms": 0.06393600255250931,
+      "p90_ms": 0.08755200356245041,
+      "raw_ms": [
+        0.09673599898815155,
+        0.09171199798583984,
+        0.0642239972949028,
+        0.08057600259780884,
+        0.06406400352716446,
+        0.09583999961614609,
+        0.06415999680757523,
+        0.08371199667453766,
+        0.06387200206518173,
+        0.07737600058317184,
+        0.06393600255250931,
+        0.07952000200748444,
+        0.06425599753856659,
+        0.09763199836015701,
+        0.06403200328350067,
+        0.08870399743318558,
+        0.06415999680757523,
+        0.07740800082683563,
+        0.0642239972949028,
+        0.07132799923419952,
+        0.06393600255250931,
+        0.07126399874687195,
+        0.06409599632024765,
+        0.08249600231647491,
+        0.06390400230884552,
+        0.08348800241947174,
+        0.06409599632024765,
+        0.07331199944019318,
+        0.0639680027961731,
+        0.06911999732255936,
+        0.06409599632024765,
+        0.07331199944019318,
+        0.06400000303983688,
+        0.0926399976015091,
+        0.06400000303983688,
+        0.07020799815654755,
+        0.06393600255250931,
+        0.06803199648857117,
+        0.06403200328350067,
+        0.0681919977068901,
+        0.0639680027961731,
+        0.06703999638557434,
+        0.06406400352716446,
+        0.08867199718952179,
+        0.06384000182151794,
+        0.07315199822187424,
+        0.06393600255250931,
+        0.07315199822187424,
+        0.06409599632024765,
+        0.07110399752855301,
+        0.06403200328350067,
+        0.06815999746322632,
+        0.06393600255250931,
+        0.09068799763917923,
+        0.06393600255250931,
+        0.07116799801588058,
+        0.06390400230884552,
+        0.06905599683523178,
+        0.06393600255250931,
+        0.06803199648857117,
+        0.06393600255250931,
+        0.08649600297212601,
+        0.06387200206518173,
+        0.06825599819421768,
+        0.06380800157785416,
+        0.06598400324583054,
+        0.06406400352716446,
+        0.06800000369548798,
+        0.06387200206518173,
+        0.06588800251483917,
+        0.06406400352716446,
+        0.0875839963555336,
+        0.0639680027961731,
+        0.06905599683523178,
+        0.06409599632024765,
+        0.06921599805355072,
+        0.06393600255250931,
+        0.06806399673223495,
+        0.06393600255250931,
+        0.09772799909114838,
+        0.06393600255250931,
+        0.07407999783754349,
+        0.06403200328350067,
+        0.06918399780988693,
+        0.06393600255250931,
+        0.06915199756622314,
+        0.06412799656391144,
+        0.06803199648857117,
+        0.06393600255250931,
+        0.08748800307512283,
+        0.06409599632024765,
+        0.07206399738788605,
+        0.06415999680757523,
+        0.07036799937486649,
+        0.06377600133419037,
+        0.0700799971818924,
+        0.06393600255250931,
+        0.06803199648857117,
+        0.06406400352716446,
+        0.08755200356245041
+      ],
+      "sample_count": 100
+    },
+    "native_over_triton_median_latency_ratio": 2.254376528428775,
+    "pass": true,
+    "pre_timing_checks": {
+      "distinct_output_buffers": true,
+      "native_hard_gates": true,
+      "triton_builder": true,
+      "triton_correctness": true,
+      "triton_static_selection": true
+    },
+    "protocol": "CUDA events; separate warmup excluded; ABBA=native,triton,triton,native; one default stream; input, metadata, output allocation, and oracle excluded",
+    "ratio_interpretation": "triton_over_native < 1 means native is slower; native_over_triton is the direct latency-regression factor",
+    "raw_cycles_ms": [
+      {
+        "native_a_0": 0.09673599898815155,
+        "native_a_3": 0.09171199798583984,
+        "triton_b_1": 0.033440001308918,
+        "triton_b_2": 0.06752000004053116
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.08057600259780884,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.030527999624609947
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.09583999961614609,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.03232000023126602
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.08371199667453766,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.07737600058317184,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.030368000268936157
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07952000200748444,
+        "triton_b_1": 0.029279999434947968,
+        "triton_b_2": 0.029279999434947968
+      },
+      {
+        "native_a_0": 0.06425599753856659,
+        "native_a_3": 0.09763199836015701,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.08870399743318558,
+        "triton_b_1": 0.029472000896930695,
+        "triton_b_2": 0.05395200103521347
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07740800082683563,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.030432000756263733
+      },
+      {
+        "native_a_0": 0.0642239972949028,
+        "native_a_3": 0.07132799923419952,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07126399874687195,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.08249600231647491,
+        "triton_b_1": 0.02937600016593933,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.08348800241947174,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.03347200155258179
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07331199944019318,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06911999732255936,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07331199944019318,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03033600002527237
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.0926399976015091,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06400000303983688,
+        "native_a_3": 0.07020799815654755,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.0681919977068901,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06703999638557434,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08867199718952179,
+        "triton_b_1": 0.029023999348282814,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06384000182151794,
+        "native_a_3": 0.07315199822187424,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07315199822187424,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07110399752855301,
+        "triton_b_1": 0.028991999104619026,
+        "triton_b_2": 0.029120000079274178
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06815999746322632,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.02908799983561039
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.09068799763917923,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.2022079974412918
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07116799801588058,
+        "triton_b_1": 0.029055999591946602,
+        "triton_b_2": 0.029888000339269638
+      },
+      {
+        "native_a_0": 0.06390400230884552,
+        "native_a_3": 0.06905599683523178,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029184000566601753
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08649600297212601,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03526400029659271
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.06825599819421768,
+        "triton_b_1": 0.02940800040960312,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.06380800157785416,
+        "native_a_3": 0.06598400324583054,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03017600066959858
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.06800000369548798,
+        "triton_b_1": 0.029184000566601753,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06387200206518173,
+        "native_a_3": 0.06588800251483917,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03030399978160858
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.0875839963555336,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.0363520011305809
+      },
+      {
+        "native_a_0": 0.0639680027961731,
+        "native_a_3": 0.06905599683523178,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.06921599805355072,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02924799919128418
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06806399673223495,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.029152000322937965
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.09772799909114838,
+        "triton_b_1": 0.03561599925160408,
+        "triton_b_2": 0.0751039981842041
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.07407999783754349,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.030271999537944794
+      },
+      {
+        "native_a_0": 0.06403200328350067,
+        "native_a_3": 0.06918399780988693,
+        "triton_b_1": 0.029440000653266907,
+        "triton_b_2": 0.030079999938607216
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06915199756622314,
+        "triton_b_1": 0.02924799919128418,
+        "triton_b_2": 0.030208000913262367
+      },
+      {
+        "native_a_0": 0.06412799656391144,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.029983999207615852,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.08748800307512283,
+        "triton_b_1": 0.029120000079274178,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06409599632024765,
+        "native_a_3": 0.07206399738788605,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.02921600081026554
+      },
+      {
+        "native_a_0": 0.06415999680757523,
+        "native_a_3": 0.07036799937486649,
+        "triton_b_1": 0.03001599945127964,
+        "triton_b_2": 0.030239999294281006
+      },
+      {
+        "native_a_0": 0.06377600133419037,
+        "native_a_3": 0.0700799971818924,
+        "triton_b_1": 0.029152000322937965,
+        "triton_b_2": 0.03014400042593479
+      },
+      {
+        "native_a_0": 0.06393600255250931,
+        "native_a_3": 0.06803199648857117,
+        "triton_b_1": 0.02908799983561039,
+        "triton_b_2": 0.030112000182271004
+      },
+      {
+        "native_a_0": 0.06406400352716446,
+        "native_a_3": 0.08755200356245041,
+        "triton_b_1": 0.02921600081026554,
+        "triton_b_2": 0.03440000116825104
+      }
+    ],
+    "repetitions": 50,
+    "triton": {
+      "median_ms": 0.02924799919128418,
+      "p10_ms": 0.029120000079274178,
+      "p90_ms": 0.03232000023126602,
+      "raw_ms": [
+        0.033440001308918,
+        0.06752000004053116,
+        0.02908799983561039,
+        0.030527999624609947,
+        0.029184000566601753,
+        0.03232000023126602,
+        0.02937600016593933,
+        0.03014400042593479,
+        0.029184000566601753,
+        0.030368000268936157,
+        0.029279999434947968,
+        0.029279999434947968,
+        0.029055999591946602,
+        0.03030399978160858,
+        0.029472000896930695,
+        0.05395200103521347,
+        0.029120000079274178,
+        0.030432000756263733,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.02937600016593933,
+        0.03014400042593479,
+        0.02937600016593933,
+        0.030208000913262367,
+        0.02924799919128418,
+        0.03347200155258179,
+        0.02921600081026554,
+        0.030239999294281006,
+        0.029120000079274178,
+        0.03017600066959858,
+        0.029120000079274178,
+        0.03033600002527237,
+        0.029152000322937965,
+        0.029184000566601753,
+        0.028991999104619026,
+        0.03030399978160858,
+        0.029120000079274178,
+        0.03014400042593479,
+        0.029184000566601753,
+        0.029120000079274178,
+        0.029152000322937965,
+        0.029120000079274178,
+        0.029023999348282814,
+        0.03030399978160858,
+        0.029120000079274178,
+        0.029120000079274178,
+        0.02908799983561039,
+        0.029120000079274178,
+        0.028991999104619026,
+        0.029120000079274178,
+        0.02940800040960312,
+        0.02908799983561039,
+        0.029152000322937965,
+        0.2022079974412918,
+        0.029055999591946602,
+        0.029888000339269638,
+        0.029152000322937965,
+        0.029184000566601753,
+        0.029152000322937965,
+        0.03017600066959858,
+        0.029120000079274178,
+        0.03526400029659271,
+        0.02940800040960312,
+        0.030079999938607216,
+        0.029120000079274178,
+        0.03017600066959858,
+        0.029184000566601753,
+        0.02924799919128418,
+        0.029152000322937965,
+        0.03030399978160858,
+        0.02921600081026554,
+        0.0363520011305809,
+        0.029152000322937965,
+        0.029152000322937965,
+        0.02921600081026554,
+        0.02924799919128418,
+        0.029152000322937965,
+        0.029152000322937965,
+        0.03561599925160408,
+        0.0751039981842041,
+        0.029152000322937965,
+        0.030271999537944794,
+        0.029440000653266907,
+        0.030079999938607216,
+        0.02924799919128418,
+        0.030208000913262367,
+        0.029983999207615852,
+        0.03014400042593479,
+        0.029120000079274178,
+        0.03014400042593479,
+        0.02921600081026554,
+        0.02921600081026554,
+        0.03001599945127964,
+        0.030239999294281006,
+        0.029152000322937965,
+        0.03014400042593479,
+        0.02908799983561039,
+        0.030112000182271004,
+        0.02921600081026554,
+        0.03440000116825104
+      ],
+      "sample_count": 100
+    },
+    "triton_over_native_median_speedup": 0.4435816232956286,
+    "warmup": 10
+  },
+  "triton_correctness": {
+    "allclose": true,
+    "atol": 0.0001,
+    "finite": true,
+    "max_abs": 6.103515625e-05,
+    "mean_abs": 3.5442080843495205e-06,
+    "oracle": "independent FP32 selected-page causal reference over the shared native-staged BF16 query/scalar-FP8-KV Triton inputs",
+    "pass": true,
+    "rtol": 0.001
+  },
+  "warmup_calls": 1
+}
+FINAL_RC=0 UTC=2026-08-30T20:47:10Z RUN_ID=12991 RUNTIME_CLEANUP_RC=0

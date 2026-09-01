@@ -1,0 +1,125 @@
+{
+  "schema": "c2-prepared-stage5-followup-summary-v1",
+  "generated_at_utc": "2026-08-28T12:20:00Z",
+  "scope": "B300 SM103, BF16, prepared C=1 decode; stage-3 control versus stage-5 candidate",
+  "configuration": {
+    "batch_policy_scope": [1, 16],
+    "num_topk_chunks": 1,
+    "decode_num_warps": 4,
+    "merge_num_warps": 4,
+    "control_decode_num_stages": 3,
+    "candidate_decode_num_stages": 5,
+    "merge_num_stages": 3,
+    "pdl_mode": "auto",
+    "decode_maxnreg": null,
+    "merge_maxnreg": null,
+    "merge_bypassed": true,
+    "storage": "bf16"
+  },
+  "abba_contract": {
+    "warmup_each": 30,
+    "abba_pairs": 101,
+    "samples_per_runner": 202,
+    "oracle": "independent FP32 selected-page causal-attention reference",
+    "strict_speedup_threshold": 1.1,
+    "runs": [
+      {
+        "slurm_job": 9943,
+        "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+        "batch": 1,
+        "control_median_us": 30.559999868273735,
+        "candidate_median_us": 27.35999971628189,
+        "speedup_stage5_vs_stage3": 1.1169590710955866,
+        "strict_10_percent_target_met": true,
+        "control_max_abs": 0.000030517578125,
+        "candidate_max_abs": 0.000030517578125
+      },
+      {
+        "slurm_job": 9943,
+        "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+        "batch": 16,
+        "control_median_us": 30.559999868273735,
+        "candidate_median_us": 28.511999174952507,
+        "speedup_stage5_vs_stage3": 1.071829431558078,
+        "strict_10_percent_target_met": false,
+        "control_max_abs": 0.00006103515625,
+        "candidate_max_abs": 0.00006103515625
+      },
+      {
+        "slurm_job": 10018,
+        "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+        "batch": 1,
+        "control_median_us": 30.848000198602676,
+        "candidate_median_us": 27.295999228954315,
+        "speedup_stage5_vs_stage3": 1.130128995822969,
+        "strict_10_percent_target_met": true,
+        "control_max_abs": 0.000030517578125,
+        "candidate_max_abs": 0.000030517578125
+      }
+    ]
+  },
+  "ncu_contract": {
+    "slurm_job": 10100,
+    "gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "ncu_version": "2025.3.1.0",
+    "matching_launches": {
+      "stage3": 0,
+      "stage5": 1
+    },
+    "timing_valid_for_benchmark": false,
+    "stage3": {
+      "gpu__time_duration.sum": {"value": 36224, "unit": "ns"},
+      "dram__bytes_read.sum": {"value": 4161536, "unit": "byte"},
+      "dram__bytes_write.sum": {"value": 0, "unit": "byte"},
+      "lts__t_bytes.sum": {"value": 6624896, "unit": "byte"},
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {"value": 13.18, "unit": "%"},
+      "smsp__inst_executed_pipe_tensor.sum": {"value": 16384, "unit": "inst"},
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {"value": 164.86, "unit": "%"},
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {"value": 147.66, "unit": "%"},
+      "smsp__warps_active.avg.per_cycle_active": {"value": 1, "unit": "warp"}
+    },
+    "stage5": {
+      "gpu__time_duration.sum": {"value": 27040, "unit": "ns"},
+      "dram__bytes_read.sum": {"value": 4165888, "unit": "byte"},
+      "dram__bytes_write.sum": {"value": 0, "unit": "byte"},
+      "lts__t_bytes.sum": {"value": 6676064, "unit": "byte"},
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {"value": 18.21, "unit": "%"},
+      "smsp__inst_executed_pipe_tensor.sum": {"value": 16384, "unit": "inst"},
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {"value": 22.46, "unit": "%"},
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {"value": 144.46, "unit": "%"},
+      "smsp__warps_active.avg.per_cycle_active": {"value": 1, "unit": "warp"}
+    },
+    "derived": {
+      "dram_total_change_percent_stage5_vs_stage3": 0.10457677165354173,
+      "l2_traffic_change_percent_stage5_vs_stage3": 0.7723592943949642,
+      "tensor_active_ratio_stage5_vs_stage3": 1.3816388467374812,
+      "long_scoreboard_relative_reduction_percent": 86.37631930122528,
+      "wait_relative_reduction_percent": 2.167140728701067,
+      "tensor_instruction_count_changed": false
+    }
+  },
+  "decision": {
+    "batch_1": "Allow the frozen stage-5 BF16 C=1 prepared decode as an opt-in B300 specialization.",
+    "batch_16": "Keep stage 3 under the strict 10 percent policy; stage 5 is a repeatable but sub-threshold gain.",
+    "batch_4_and_8": "Keep stage 3; the preceding clean compact sweep did not show a material stage-5 gain.",
+    "fp8": "Not tested by this follow-up; do not extrapolate the BF16 policy.",
+    "mechanism": "The B=1 gain is consistent with deeper software-pipeline latency hiding: memory traffic and tensor instruction count stay effectively fixed while long-scoreboard stalls fall sharply."
+  },
+  "remaining_challenges": [
+    "Same-pin d4da0c5 full-vLLM plan/extension end-to-end CUTLASS versus Triton comparison.",
+    "C>1 cluster/mbarrier partial-plus-merge fusion with phase, storage, and residency correctness.",
+    "Two-GPU roofline closure and policy validation outside B=1 BF16, especially FP8 and B=4/8/16."
+  ],
+  "failed_attempt": {
+    "slurm_job": 10049,
+    "final_rc": 1,
+    "reason": "The first validator assumed a long-form section CSV, while NCU 2025.3 exports explicit custom metrics as a wide Raw CSV. It stopped before stage 5 and contributed no performance conclusion."
+  },
+  "evidence_sha256": {
+    "prepared_stage5_abba_b1_job9943_json": "0af37525469a25bffc17ca5fef4ab4a752532d8027531c00fe412939702c9cc0",
+    "prepared_stage5_abba_b16_job9943_json": "0e01d14fa07f711214a8c901905abaa8245b3739ceca376258232251177e4aa9",
+    "prepared_stage5_abba_b1_job10018_json": "7fde1687b18ac4c093f87af831d0dd99e69dd2adba4cbf9e04b079c1d578313d",
+    "prepared_stage5_ncu_exact_manifest_job10100": "bfd4a9829d366a2dd6a446e6a823c2f1c8d9c5aa0e51585daa3cfed0fd5a5027",
+    "prepared_stage5_ncu_exact_slurm_log_job10100": "3da72ccfe4c41b8040c92bc58b6775c5c4c42fa7261dd4da7102f6becff08cd7"
+  }
+}

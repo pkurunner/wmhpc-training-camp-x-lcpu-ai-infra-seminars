@@ -1,0 +1,17 @@
+{
+  "aot_job_id": 12983,
+  "bootstrap_95pct_lower_bound_fraction": 0.034053072960836483,
+  "directed_all_gates_pass": true,
+  "directed_job_id": 12984,
+  "inputs_sha256": {
+    "aot_provenance": "65bb886cece4a49b7ef7d7d4cab00588e4cc1f9238d2aa45dd5cf36f6952d2a2",
+    "directed_result": "240b683c1b6921981cc814084697ff945a7714de1bace5956f74a09ea38765c8",
+    "stress_aggregate": "0e9b4da6ea78c812c66feab0d4c669e68d0dc9a65630d13fbbc37c2e66295142",
+    "stress_decision": "829505fce32c737f596b372819add7f7701dc793c87d58f429e61ba7806862d9"
+  },
+  "one_physical_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+  "paired_median_improvement_fraction": 0.036491182231437325,
+  "schema": "c2-native-plugin-v12-wheel-promotion-prerequisites-v1",
+  "stress_accepted": true,
+  "stress_job_id": 12985
+}

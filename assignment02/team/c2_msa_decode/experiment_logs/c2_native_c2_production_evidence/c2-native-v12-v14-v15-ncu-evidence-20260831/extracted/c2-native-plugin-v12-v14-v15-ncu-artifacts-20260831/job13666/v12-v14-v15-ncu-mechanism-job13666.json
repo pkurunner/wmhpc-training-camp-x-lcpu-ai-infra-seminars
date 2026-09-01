@@ -1,0 +1,292 @@
+{
+  "absolute_counters": {
+    "v12": {
+      "dram__bytes_read.sum": {
+        "unit": "byte",
+        "value": 8459264.0
+      },
+      "dram__bytes_write.sum": {
+        "unit": "byte",
+        "value": 0.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 796086.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 879211.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 2511254.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 2877083.0
+      },
+      "lts__t_bytes.sum": {
+        "unit": "byte",
+        "value": 52053056.0
+      },
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 3.29
+      },
+      "sm__warps_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 22.22
+      },
+      "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": {
+        "unit": "inst",
+        "value": 0.89
+      },
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {
+        "unit": "%",
+        "value": 152.11
+      },
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {
+        "unit": "%",
+        "value": 147.84
+      },
+      "smsp__cycles_elapsed.sum": {
+        "unit": "cycle",
+        "value": 71594840.0
+      },
+      "smsp__inst_executed_pipe_tensor.sum": {
+        "unit": "inst",
+        "value": 262144.0
+      },
+      "smsp__warps_active.avg.per_cycle_active": {
+        "unit": "warp",
+        "value": 3.56
+      }
+    },
+    "v14": {
+      "dram__bytes_read.sum": {
+        "unit": "byte",
+        "value": 8460032.0
+      },
+      "dram__bytes_write.sum": {
+        "unit": "byte",
+        "value": 0.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 268925.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 874279.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 1984093.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 2872151.0
+      },
+      "lts__t_bytes.sum": {
+        "unit": "byte",
+        "value": 52050304.0
+      },
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 3.37
+      },
+      "sm__warps_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 22.23
+      },
+      "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": {
+        "unit": "inst",
+        "value": 0.87
+      },
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {
+        "unit": "%",
+        "value": 150.95
+      },
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {
+        "unit": "%",
+        "value": 142.13
+      },
+      "smsp__cycles_elapsed.sum": {
+        "unit": "cycle",
+        "value": 69636000.0
+      },
+      "smsp__inst_executed_pipe_tensor.sum": {
+        "unit": "inst",
+        "value": 262144.0
+      },
+      "smsp__warps_active.avg.per_cycle_active": {
+        "unit": "warp",
+        "value": 3.56
+      }
+    },
+    "v15": {
+      "dram__bytes_read.sum": {
+        "unit": "byte",
+        "value": 8459520.0
+      },
+      "dram__bytes_write.sum": {
+        "unit": "byte",
+        "value": 0.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 861648.0
+      },
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 880455.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": {
+        "unit": "",
+        "value": 2576816.0
+      },
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": {
+        "unit": "",
+        "value": 2878327.0
+      },
+      "lts__t_bytes.sum": {
+        "unit": "byte",
+        "value": 52006656.0
+      },
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 3.28
+      },
+      "sm__warps_active.avg.pct_of_peak_sustained_active": {
+        "unit": "%",
+        "value": 22.23
+      },
+      "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": {
+        "unit": "inst",
+        "value": 0.89
+      },
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": {
+        "unit": "%",
+        "value": 152.25
+      },
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": {
+        "unit": "%",
+        "value": 147.79
+      },
+      "smsp__cycles_elapsed.sum": {
+        "unit": "cycle",
+        "value": 71575968.0
+      },
+      "smsp__inst_executed_pipe_tensor.sum": {
+        "unit": "inst",
+        "value": 262144.0
+      },
+      "smsp__warps_active.avg.per_cycle_active": {
+        "unit": "warp",
+        "value": 3.56
+      }
+    }
+  },
+  "all_collection_and_comparison_gates_pass": true,
+  "counter_ratios": {
+    "v14_over_v12": {
+      "dram__bytes_read.sum": 1.0000907880401888,
+      "dram__bytes_write.sum": null,
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": 0.337808980436787,
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": 0.994390425051552,
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": 0.790080573291272,
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": 0.9982857637405664,
+      "lts__t_bytes.sum": 0.9999471308658612,
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 1.0243161094224924,
+      "sm__warps_active.avg.pct_of_peak_sustained_active": 1.0004500450045004,
+      "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": 0.9775280898876404,
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": 0.9923739399119057,
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": 0.9613771645021645,
+      "smsp__cycles_elapsed.sum": 0.9726399276819391,
+      "smsp__inst_executed_pipe_tensor.sum": 1.0,
+      "smsp__warps_active.avg.per_cycle_active": 1.0
+    },
+    "v15_over_v12": {
+      "dram__bytes_read.sum": 1.000030262680063,
+      "dram__bytes_write.sum": null,
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": 1.082355423911487,
+      "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": 1.0014149049545558,
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": 1.0261072754886602,
+      "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": 1.0004323823817387,
+      "lts__t_bytes.sum": 0.9991086018081244,
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 0.9969604863221884,
+      "sm__warps_active.avg.pct_of_peak_sustained_active": 1.0004500450045004,
+      "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": 1.0,
+      "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": 1.0009203865623562,
+      "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": 0.9996617965367964,
+      "smsp__cycles_elapsed.sum": 0.9997364055845366,
+      "smsp__inst_executed_pipe_tensor.sum": 1.0,
+      "smsp__warps_active.avg.per_cycle_active": 1.0
+    }
+  },
+  "duration_metric_requested": false,
+  "historical_context": [
+    {
+      "accepted": true,
+      "aggregate": "/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-aggregate-job12985.json",
+      "aggregate_sha256": "0e9b4da6ea78c812c66feab0d4c669e68d0dc9a65630d13fbbc37c2e66295142",
+      "correctness_identity_gates_pass": true,
+      "decision": "/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/v12-q-row-padding-vs-v11-3pct-incremental-decision-job12985.json",
+      "decision_sha256": "829505fce32c737f596b372819add7f7701dc793c87d58f429e61ba7806862d9",
+      "final_status": "/home/lcpu/85117379/c2-native-plugin-v12-stress-3pct-artifacts-20260830/job12985/final-status-job12985.txt",
+      "final_status_sha256": "4e8c40bb6784b111dced540a2b977ff383d2a5cb41796a65711ef609bf409ca1"
+    },
+    {
+      "accepted": false,
+      "aggregate": "/home/lcpu/85117379/c2-native-plugin-v14-kv-stage-padding-stress-3pct-retry1-artifacts-20260831/job13539/aggregate-job13539.json",
+      "aggregate_sha256": "c79c6de05741bba52706788744d171270a7f35307ede795e1ceb399e1e20962e",
+      "correctness_identity_gates_pass": true,
+      "decision": "/home/lcpu/85117379/c2-native-plugin-v14-kv-stage-padding-stress-3pct-retry1-artifacts-20260831/job13539/decision-job13539.json",
+      "decision_sha256": "726b150e8ae17cdac6ab47606942fa441092b51a23209520cd1ce9fcfd194d23",
+      "final_status": "/home/lcpu/85117379/c2-native-plugin-v14-kv-stage-padding-stress-3pct-retry1-artifacts-20260831/job13539/final-status-job13539.txt",
+      "final_status_sha256": "3febddc26804e0400cae769067e824b9b1a4a290c4c34d486a4b826e5032f8fe"
+    },
+    {
+      "accepted": false,
+      "aggregate": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-stress-3pct-artifacts-20260831/job13576/aggregate-job13576.json",
+      "aggregate_sha256": "368fcbf5db6d14fff6e54a34e31b1930efbffd529b39cc2656d6a52c82cb72eb",
+      "correctness_identity_gates_pass": true,
+      "decision": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-stress-3pct-artifacts-20260831/job13576/decision-job13576.json",
+      "decision_sha256": "43f79d07814914a8fcbc5f7f2dc24979fd1e4c8d14d5f949d533760132f20011",
+      "final_status": "/home/lcpu/85117379/c2-native-plugin-v15-q-stage-stride144-stress-3pct-artifacts-20260831/job13576/final-status-job13576.txt",
+      "final_status_sha256": "be4688511462973cd55ec024c11796bcab803b4683f9457fc10b8bf8222bbd5c"
+    }
+  ],
+  "resources": {
+    "v12": {
+      "local": 0,
+      "registers": 127,
+      "shared_bytes": 31136,
+      "stack": 0
+    },
+    "v14": {
+      "local": 0,
+      "registers": 118,
+      "shared_bytes": 33184,
+      "stack": 0
+    },
+    "v15": {
+      "local": 0,
+      "registers": 127,
+      "shared_bytes": 31392,
+      "stack": 0
+    }
+  },
+  "same_collection_contract": {
+    "counter_catalog_size": 15,
+    "kernel_filter": "regex:.*native_c2_msa_decode_kernel.*",
+    "same_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "same_input_manifest_sha256": "2ab58f24fe3bafa892219d051d5a9507e850a822ff4701e3e505443094c136ec",
+    "same_physical_gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "seed": 20260829,
+    "separate_python_processes": true,
+    "single_native_kernel_action_each": true
+  },
+  "schema": "c2-native-v12-v14-v15-ncu-mechanism-v1",
+  "timing_valid_for_benchmark": false
+}

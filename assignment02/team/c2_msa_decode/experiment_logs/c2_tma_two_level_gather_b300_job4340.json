@@ -1,0 +1,25 @@
+{
+  "schema": "c2-tma-two-level-gather-v1",
+  "batch": 4,
+  "topk": 16,
+  "logical_pages": 64,
+  "physical_pages": 128,
+  "page_elems": 1024,
+  "payload_bytes": 262144,
+  "estimated_read_write_bytes_per_path": 1048576,
+  "correctness": {
+    "software_staged_mismatches": 0,
+    "gather_then_tma_mismatches": 0,
+    "contiguous_then_tma_mismatches": 0
+  },
+  "timing_ms_cuda_event": {
+    "software_staged": 0.00727168,
+    "gather_then_tma": 0.00821632,
+    "contiguous_then_tma": 0.00718592
+  },
+  "effective_gbps_estimated_read_write": {
+    "software_staged": 144.2,
+    "gather_then_tma": 127.621,
+    "contiguous_then_tma": 145.921
+  }
+}

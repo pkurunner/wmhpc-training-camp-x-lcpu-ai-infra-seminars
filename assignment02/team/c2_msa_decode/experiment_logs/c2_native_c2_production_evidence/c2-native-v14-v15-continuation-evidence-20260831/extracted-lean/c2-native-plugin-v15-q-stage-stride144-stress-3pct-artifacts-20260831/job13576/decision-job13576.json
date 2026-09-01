@@ -1,0 +1,16 @@
+{
+  "accepted": false,
+  "aggregate_sha256": "368fcbf5db6d14fff6e54a34e31b1930efbffd529b39cc2656d6a52c82cb72eb",
+  "all_correctness_and_resource_identity_gates_pass": true,
+  "cross_gpu_claim": "none; same physical GPU only.",
+  "performance": {
+    "bootstrap_95pct_lower_bound_fraction": -0.0011928154335800745,
+    "paired_median_improvement_fraction": -0.0009713217042129907,
+    "required_bootstrap_lower_bound_fraction": 0.0,
+    "required_bootstrap_lower_bound_relation": "strictly greater than",
+    "required_improvement_fraction": 0.03,
+    "required_improvement_relation": "strictly greater than"
+  },
+  "rejection_policy": "Return 3 if valid but non-significant; retain v12. Return 2 if identity/correctness/comparability fails.",
+  "schema": "c2-native-plugin-v15-q-stage-stride144-vs-v12-3pct-incremental-decision-v1"
+}

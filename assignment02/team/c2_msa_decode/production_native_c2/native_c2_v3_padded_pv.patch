@@ -1,0 +1,9 @@
+diff --git a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -100 +100 @@
+-  __shared__ __align__(32) float pv_contribution[kWarps][kTile][kGqaGroup];
++  __shared__ __align__(32) float pv_contribution[kWarps][kTile][20];
+@@ -276 +276 @@
+-                                kGqaGroup, wmma::mem_row_major);
++                                20, wmma::mem_row_major);

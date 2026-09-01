@@ -1,0 +1,63 @@
+{
+  "all_correctness_and_comparability_gates_pass": false,
+  "allocated_gpu_uuid": "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+  "bootstrap": {
+    "confidence": 0.95,
+    "lower_bound_fraction": null,
+    "method": "10,000 deterministic paired-seed resamples; statistic=1-median(candidate)/median(reference)",
+    "seed": 20260830
+  },
+  "candidate_paired_median_ms": null,
+  "candidate_seed_mean_ms": [],
+  "gpu_uuids": [
+    "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "GPU-778768b4-6c9e-e483-890e-0812760948ae",
+    "GPU-778768b4-6c9e-e483-890e-0812760948ae"
+  ],
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "5175d511caa8d6368b8fc5afebbe6d0130ca9eae7071f75c668064b1274dcf18",
+    "candidate_resource_gate": "f6e6ef806b913734c892371c2b8960f492966a288d70233063c0dfefb18ef53c",
+    "candidate_v10_k_prefetch_source": "0477c79e85750fb8a7006e4dc68bd7cab81c65103f0e55cd8c6d7c2e25a44ce6",
+    "candidate_v10_plugin": "1a34dd6bd1ff2aae4a6912183dec87e457d6d1332bbd428268a02cce8fcd49ef",
+    "driver_script": "c7d07b2138c9e23296678825bb3cb67b404138acb469a9e4649792b1e8fc3a48",
+    "fixed_fixture": "d62a775503a963f2d49db58d219efcc8a9548991dc2b23ca0ca0c0e4a9bd20c4",
+    "fixture_metadata": "f12e006a226bcc75d56aff5b6443c6d0707286f9ea29380f3fcc3bdccecb89dc",
+    "fresh_v10_directed_final_status": "ce8ccb1f8adbfaec6ddf094fc193410676aaff9a3df4004a840b8383e317e333",
+    "fresh_v10_directed_result": "31eff3f2d2126ec2aba50606af2a0aa1fe4501bf78c1c9fe9bad5178aa7700ea",
+    "reference_v7_job12484_plugin": "0873af3cf48ef756f9945fc6e711a03dd1208fcc6d4ce20a8041cf9a587e97db",
+    "worker_harness": "35d71a56abafc27d4d7456281b9aece5ae8f6554c8f8df27f76086b0c3339481"
+  },
+  "issues": [
+    "candidate_v10_k_prefetch_b1: worker gate",
+    "candidate_v10_k_prefetch_b1: per-seed correctness/stability/profiler gate seed=42",
+    "one or more isolated workers returned nonzero"
+  ],
+  "paired_median_improvement_fraction": null,
+  "paired_seed_improvement_fraction": [],
+  "process_isolation": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "reference_paired_median_ms": null,
+  "reference_seed_mean_ms": [],
+  "round_order": [
+    "reference_v7_a",
+    "candidate_v10_k_prefetch_b1",
+    "candidate_v10_k_prefetch_b2",
+    "reference_v7_a2"
+  ],
+  "schema": "c2-native-plugin-v10-k-prefetch-vs-v7-3pct-confirmation-aggregate-v1",
+  "threshold_provenance": "User-defined strict >3% significance criterion for the current four-hour optimization continuation; this is an incremental v7-to-v10 gate.",
+  "worker_exit_status": {
+    "exit_status": {
+      "candidate_v10_k_prefetch_b1": 1,
+      "candidate_v10_k_prefetch_b2": 0,
+      "reference_v7_a": 0,
+      "reference_v7_a2": 0
+    },
+    "schema": "c2-native-plugin-v10-k-prefetch-worker-exit-status-v1"
+  }
+}

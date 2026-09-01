@@ -1,0 +1,25 @@
+
+===== PRE UTC 2026-08-28T22:44:55Z job=10886 =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/audited-reference/runner SHA256 --
+240e43c297494920ae335786a848ad379f4379e90d5f61d1848a9b13e92bc129  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_batch_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+523347312f07345487a2591d6e52ef231c94ba8b6fe00e36e1fc16a02bb53431  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+227e4484f2840dff43bb47711733f1529b356556a05f001aa2adccfbd9e13d34  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_tc_qk_batch_abba_clean.sh
+{"evidence": {"tc_qk_candidate": {"ptx_bf16_mma_sync": 64, "ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "ptx_shuffle_down": 0, "ptx_shuffle_index": 0, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_hmma_16816_f32_bf16": 128, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1, "sass_shuffle_down": 0, "sass_shuffle_index": 0}, "warp_control": {"ptx_bf16_mma_sync": 0, "ptx_cluster_arrive": 2, "ptx_cluster_wait": 2, "ptx_mbarrier_acquire_wait": 1, "ptx_mbarrier_init": 1, "ptx_mbarrier_release_arrive": 1, "ptx_shuffle_down": 160, "ptx_shuffle_index": 32, "sass_cluster_arrive": 2, "sass_cluster_wait": 2, "sass_hmma_16816_f32_bf16": 0, "sass_mbarrier_acquire_wait": 1, "sass_mbarrier_init": 1, "sass_mbarrier_release_arrive": 1, "sass_shuffle_down": 160, "sass_shuffle_index": 32}}, "symbol_scoped_instruction_gate": "pass"}
+{"json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_tc_qk_batch_abba/c2_cluster_attention_tc_qk_batch_abba_clean_20260828T224455Z_job10886.json", "per_batch_promotion": {"1": true, "16": true, "4": true, "8": true}, "secondary_gate": "pass"}
+
+===== POST UTC 2026-08-28T22:45:11Z job=10886 =====
+NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040, 0, 0, 10.3
+-- compute apps --
+-- source/audited-reference/runner SHA256 --
+240e43c297494920ae335786a848ad379f4379e90d5f61d1848a9b13e92bc129  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_batch_abba.cu
+24938b464a5b179a7c0e6f2450dd72b231635c73e7b46ea6c5a3fac85357444a  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_warp_producer_abba.cu
+523347312f07345487a2591d6e52ef231c94ba8b6fe00e36e1fc16a02bb53431  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_tc_qk_abba.cu
+6d69cecbda9baf93b19bfba3162a4c33e42298bee43a9235de98e2acd369372f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/c2_cluster_attention_mbarrier_smoke.cu
+227e4484f2840dff43bb47711733f1529b356556a05f001aa2adccfbd9e13d34  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/challenge_v2/run_c2_cluster_attention_tc_qk_batch_abba_clean.sh
+Native batched ABI warp-control/TC-QK ABBA completed: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cluster_attention_tc_qk_batch_abba/c2_cluster_attention_tc_qk_batch_abba_clean_20260828T224455Z_job10886.json
+
+===== FINAL_RC=0 =====

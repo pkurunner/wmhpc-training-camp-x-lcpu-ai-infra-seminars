@@ -1,0 +1,88 @@
+--- a/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
++++ b/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+@@ -90,11 +90,11 @@ __global__ void native_c2_msa_decode_kernel(
+   // Reused for the current K or V 16x16 tile owned by each warp.  Staging is
+   // inside the kernel and timed; no split/contiguous/BF16 bridge exists.
+   __shared__ __align__(32) __nv_bfloat16 fp8_stage[kWarps][kTile][kTile];
+-  // One selected-page lookahead stores the unscaled E4M3 K encodings.  Its
+-  // [8 warps][8 K chunks][16 tokens][16 dimensions] layout is 16 KiB and is
++  // One selected-page lookahead stores already dequantized BF16 K values. Its
++  // [8 warps][8 K chunks][16 tokens][16 dimensions] layout is 32 KiB and is
+   // disjoint from the BF16 tile that WMMA consumes for the current page.
+   __shared__ __align__(32)
+-      __nv_fp8_e4m3 k_prefetch[kWarps][kTokenTiles][kTile][kTile];
++      __nv_bfloat16 k_prefetch[kWarps][kTokenTiles][kTile][kTile];
+   __shared__ __align__(32) float score_tiles[kTokenTiles][kGqaGroup][kTile];
+ 
+   __shared__ float running_max[kGqaGroup];
+@@ -204,16 +204,11 @@ __global__ void native_c2_msa_decode_kernel(
+ 
+ #pragma unroll
+       for (int k_offset = 0; k_offset < kHeadDim; k_offset += kTile) {
+-        for (int element = lane; element < kTile * kTile;
+-             element += kWarpSize) {
+-          int const token = element / kTile;
+-          int const dim = element % kTile;
+-          if (use_prefetched_k) {
+-            fp8_stage[warp][token][dim] = __float2bfloat16_rn(
+-                static_cast<float>(k_prefetch[warp][k_offset / kTile][token]
+-                                             [dim]) *
+-                k_scale);
+-          } else {
++        if (!use_prefetched_k) {
++          for (int element = lane; element < kTile * kTile;
++               element += kWarpSize) {
++            int const token = element / kTile;
++            int const dim = element % kTile;
+             std::int64_t const cache_offset =
+                 static_cast<std::int64_t>(physical_page) * kv_page_stride +
+                 static_cast<std::int64_t>(kv_head) * kv_head_stride +
+@@ -226,7 +221,14 @@ __global__ void native_c2_msa_decode_kernel(
+         }
+         __syncwarp();
+         wmma::load_matrix_sync(q_fragment, &q_tile[0][k_offset], kHeadDim);
+-        wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
++        if (use_prefetched_k) {
++          wmma::load_matrix_sync(
++              k_fragment,
++              &k_prefetch[warp][k_offset / kTile][0][0],
++              kTile);
++        } else {
++          wmma::load_matrix_sync(k_fragment, &fp8_stage[warp][0][0], kTile);
++        }
+         wmma::mma_sync(score_fragment, q_fragment, k_fragment,
+                        score_fragment);
+         __syncwarp();
+@@ -238,9 +240,9 @@ __global__ void native_c2_msa_decode_kernel(
+       for (int tile = 0; tile < kTokenTiles; ++tile) {
+         // Each softmax tile also fetches one 2 KiB K chunk for exactly the
+         // immediately next selected page.  It remains lane-private through
+-        // the current page's softmax/PV work, then enters its own raw-FP8
+-        // shared buffer before the existing CTA barrier publishes it.
+-        __nv_fp8_e4m3 key_prefetch[kTile / 2];
++        // the current page's softmax/PV work, then enters its own BF16 shared
++        // buffer before the existing CTA barrier publishes it.
++        __nv_bfloat16 key_prefetch[kTile / 2];
+         if (prefetch_next_k) {
+ #pragma unroll
+           for (int i = 0; i < kTile / 2; ++i) {
+@@ -254,7 +256,8 @@ __global__ void native_c2_msa_decode_kernel(
+                 static_cast<std::int64_t>(token_begin + token) *
+                     kv_token_stride +
+                 tile * kTile + dim;
+-            key_prefetch[i] = kv_cache[cache_offset];
++            key_prefetch[i] = __float2bfloat16_rn(
++                static_cast<float>(kv_cache[cache_offset]) * k_scale);
+           }
+         }
+ 
+@@ -329,7 +332,7 @@ __global__ void native_c2_msa_decode_kernel(
+         __syncthreads();
+ 
+         // Retire the K lookahead registers as soon as softmax finishes.  This
+-        // raw buffer is disjoint from the BF16 V stage used below; the CTA
++        // BF16 buffer is disjoint from the BF16 V stage used below; the CTA
+         // barrier at the end of the tile still publishes these stores before
+         // any subsequent page can consume them.
+         if (prefetch_next_k) {
+

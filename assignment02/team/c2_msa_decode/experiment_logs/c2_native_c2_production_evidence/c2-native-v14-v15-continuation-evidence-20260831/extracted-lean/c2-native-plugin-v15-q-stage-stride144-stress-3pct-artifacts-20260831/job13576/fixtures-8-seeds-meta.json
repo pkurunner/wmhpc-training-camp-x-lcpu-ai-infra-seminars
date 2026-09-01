@@ -1,0 +1,23 @@
+{
+  "base_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+  "contract": {
+    "k_scale": 0.25,
+    "max_logical_pages": 32,
+    "num_physical_pages": 64,
+    "q_scale": 0.25,
+    "scale": 0.08838834764831843,
+    "v_scale": 0.5
+  },
+  "fixture_sha256": "25769f0f09a68989e533e067ef64a1441ea577ada3d4b910262bfdedf9103242",
+  "schema": "c2-native-c2-v15-q-stage-stride144-fixed-fixtures-v1",
+  "seeds": [
+    17,
+    23,
+    42,
+    2024,
+    314159,
+    20260801,
+    20260815,
+    20260829
+  ]
+}

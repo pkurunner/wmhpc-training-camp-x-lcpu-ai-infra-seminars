@@ -1,0 +1,323 @@
+{
+  "schema": "c2-native-c2-production-closure-v4-v15-ncu-continuation",
+  "generated_utc": "2026-08-31T10:45:39Z",
+  "scope": "Additive successor closure for the v12 installed-wheel lifecycle completion, v13 distributed-merge stop-loss, the independent v14/v15 single-variable performance decisions, and the v12/v14/v15 mechanism-only NCU comparison. It retains every predecessor decision and does not reinterpret any historical threshold or comparison.",
+  "predecessor": {
+    "path": "c2_native_c2_production_closure_20260830.json",
+    "sha256": "2f89ba7d7c86a5fe4ea5f55346c0c23fae1d81257b17a42d62ef8060d37c2f98",
+    "sidecar_path": "c2_native_c2_production_closure_20260830.sha256",
+    "sidecar_sha256": "743b88a8113b86690ce7cb9ed0bcb0fa2c8aa694193f4cd217f4c95954344db8",
+    "retained_decisions": [
+      "The strict greater-than-3-percent continuation independently accepted v7 versus v6, v9 versus v7, v11 versus v9, and v12 versus v11.",
+      "The four accepted percentages have different adjacent baselines and must not be added, multiplied, or extrapolated to Triton, full-model, or service performance.",
+      "v12 remains the latest accepted direct-plugin, overlay-wheel, and fresh-real-backend candidate."
+    ],
+    "historical_manifest_boundary": "The 20260830 sidecar is retained byte-for-byte as historical evidence. Current reports and the corrected lifecycle script have intentionally changed since it was generated, so its current-file checks are expected to report drift. This successor does not rewrite or silently repair the historical manifest."
+  },
+  "environment": {
+    "gpu_model": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [10, 3],
+    "frozen_direct_plugin_contract": {
+      "batch": 16,
+      "query_length": 1,
+      "query_heads": 64,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "page_size": 128,
+      "topk": 16,
+      "kv_dtype": "packed E4M3",
+      "scale_policy": "per-tensor scalar q/k/v scales",
+      "output": "caller-owned BF16 tensor"
+    }
+  },
+  "threshold_provenance": {
+    "required_improvement_fraction": 0.03,
+    "strict_operator": ">",
+    "required_bootstrap_95pct_lcb_fraction": 0.0,
+    "protocol": "Four isolated Python processes in A-B1-B2-A2 order, eight fixed seeds, 30 warmups and 200 timing iterations per seed on one physical GPU UUID, after all correctness, identity, resource, profiler-event, fixture, and clean-GPU gates pass.",
+    "non_retroactivity": "This threshold applies only to the separately requested continuation. It does not revise the predecessor's original 5-percent decisions."
+  },
+  "accepted_adjacent_comparisons": [
+    {
+      "comparison": "v7 versus v6",
+      "job": 12599,
+      "paired_median_improvement_percent": 4.933389924748721,
+      "bootstrap_95pct_lcb_percent": 4.717096756994588
+    },
+    {
+      "comparison": "v9 versus v7",
+      "job": 12776,
+      "paired_median_improvement_percent": 28.101799262408667,
+      "bootstrap_95pct_lcb_percent": 27.92246601029489
+    },
+    {
+      "comparison": "v11 versus v9",
+      "job": 12905,
+      "paired_median_improvement_percent": 12.814628042666487,
+      "bootstrap_95pct_lcb_percent": 12.782150442086837
+    },
+    {
+      "comparison": "v12 versus v11",
+      "job": 12985,
+      "paired_median_improvement_percent": 3.6491182231437325,
+      "bootstrap_95pct_lcb_percent": 3.4053072960836483
+    }
+  ],
+  "v12_lifecycle_completion": {
+    "job": 13334,
+    "final_status": {
+      "final_rc": 0,
+      "original_rc": 0,
+      "finalizer_error": 0,
+      "tee_rc": 0,
+      "manifest_rc": 0,
+      "cleanup_rc": 0,
+      "post_apps_empty": true
+    },
+    "all_eight_lifecycle_gates_pass": true,
+    "coverage": "Eight concurrent first-load threads with exactly one real load_library call; a real backend forward; 1000 steady real forwards; CUDA Graph 100+100 replay with in-place query mutation; support, dynamic rejection, sequence-boundary, and dispatcher-persistence gates; bounded memory; clean GPU; and scratch cleanup.",
+    "symlink_audit": {
+      "allowed_links": 1,
+      "classification": "The sole allowlisted state/uv-cache/wheels-v6/url symlink remains inside the controlled state area, and the resolved target directory manifest is fixed by the audit; no other audit issue remains.",
+      "sha256": "a31bf38bae3d8e499e2a0366e10b9ed6e9ae5a69d5591c0c1fd23c9d90e03710"
+    },
+    "result_sha256": "723797b8b7905bc630dde0015404f31f7574e4b5d6eff0c4f97556ec4b82b4e5",
+    "final_status_sha256": "35e48cacfbc1cba179e4e35fa567e16c81e5ab3a996e0169cb399228a6a8d880",
+    "reviewed_script_sha256": "ca7f43d4df2d57c6c54ef030beebcb1d7dfb17b69b4ef84cb681909b20252b97",
+    "harness_sha256": "ebc4d0524e5830e5262f6501b7e6ab864d9467580b64ef5f0e9fda59ad6d6b79",
+    "decision": "v12 replaces v11 as the latest local experimental lifecycle-closed candidate. This is still not multi-process, long-running server, full-model, upstream, release, or service certification."
+  },
+  "v13_distributed_merge": {
+    "classification": "High-risk merge-topology experiment stopped under the predeclared directed-first rule.",
+    "aot": {
+      "job": 13428,
+      "final_rc": 0,
+      "plugin_sha256": "419dba9a3a426e161ea1fe783e3c6bec392c364f90e44824f5902d47ca2144e8",
+      "resources": {
+        "registers_per_thread": 121,
+        "stack_bytes": 0,
+        "shared_bytes": 30880,
+        "local_bytes": 0
+      }
+    },
+    "directed": {
+      "job": 13439,
+      "final_rc": 2,
+      "failure": "The first synchronized head-dimension-encoding invocation raised an illegal instruction.",
+      "oracle_rank_or_performance_data_present": false
+    },
+    "stress_run": false,
+    "decision": "Do not promote, debug further in this window, or infer a performance point estimate."
+  },
+  "v14_kv_stage_padding": {
+    "mechanism": "Starting from accepted v12, change only the reusable K/V shared staging leading stride from 16 to 24 BF16 elements.",
+    "source_sha256": "1f53ce18eb29565564c945bcfebb973192f7068d38f31d432e7a8a3046a9556d",
+    "aot": {
+      "job": 13487,
+      "final_rc": 0,
+      "plugin_sha256": "7e49201d9b08cfdcc028c94b3cefbc93f03417812caa51113813dfae1f0ca132",
+      "resources": {
+        "registers_per_thread": 118,
+        "stack_bytes": 0,
+        "shared_bytes": 33184,
+        "local_bytes": 0
+      }
+    },
+    "directed": {
+      "job": 13513,
+      "final_rc": 0,
+      "all_hard_gates_pass": true
+    },
+    "failed_pre_measurement_attempt": {
+      "job": 13518,
+      "performance_data_valid": false,
+      "reason": "The harness argument-unpack preflight failed before fixture creation or timing."
+    },
+    "valid_performance_decision": {
+      "job": 13539,
+      "final_rc": 3,
+      "accepted": false,
+      "paired_median_improvement_fraction": 0.0240452555,
+      "paired_median_improvement_percent": 2.40452555,
+      "bootstrap_95pct_lcb_fraction": 0.0229466423,
+      "bootstrap_95pct_lcb_percent": 2.29466423,
+      "all_correctness_identity_and_comparability_gates_pass": true,
+      "reason": "The point estimate did not strictly exceed 3 percent."
+    }
+  },
+  "v15_q_stage_stride144": {
+    "mechanism": "Independently starting from accepted v12, change only the Q shared staging leading stride from 136 to 144 BF16 elements; do not stack v14.",
+    "source_sha256": "b71fc21d4cffbe73757d501849eb9048009f32333d96beb0ae1452b49a9912af",
+    "aot": {
+      "job": 13564,
+      "final_rc": 0,
+      "plugin_sha256": "0c5ac4a1c890cac886fd41989746bce2740619965dee3e85bf8d85e05dd2f97d",
+      "resources": {
+        "registers_per_thread": 127,
+        "stack_bytes": 0,
+        "shared_bytes": 31392,
+        "local_bytes": 0
+      }
+    },
+    "directed": {
+      "job": 13575,
+      "final_rc": 0,
+      "all_hard_gates_pass": true
+    },
+    "valid_performance_decision": {
+      "job": 13576,
+      "final_rc": 3,
+      "accepted": false,
+      "paired_median_improvement_fraction": -0.0009713217,
+      "paired_median_improvement_percent": -0.09713217,
+      "bootstrap_95pct_lcb_fraction": -0.0011928154,
+      "bootstrap_95pct_lcb_percent": -0.11928154,
+      "all_correctness_identity_and_comparability_gates_pass": true,
+      "reason": "The candidate was directionally flat-to-negative and did not strictly exceed 3 percent."
+    }
+  },
+  "v12_v14_v15_ncu_mechanism": {
+    "failed_pre_collection_attempt": {
+      "job": 13662,
+      "scheduler_state": "FAILED",
+      "exit_code": "1:0",
+      "submitted_script_sha256": "b7ca528028c53b7690925bba3d430a79442e71552cfc0d4f788c45a8e3421b78",
+      "reason": "Bash set -u rejected snapshot() before the first snapshot or NCU call because tag was referenced in the same local declaration that assigned it. No GPU, correctness, counter, or performance datum exists."
+    },
+    "accepted_collection": {
+      "job": 13666,
+      "scheduler_state_observed_immediately_after_completion": "COMPLETED",
+      "scheduler_exit_code_observed_immediately_after_completion": "0:0",
+      "runtime_seconds": 43,
+      "profile_script_sha256": "8314a34199fb61128dd0f52b354b808d495f56890f9c20730c9cf9ab1c237665",
+      "final_rc": 0,
+      "original_rc": 0,
+      "finalizer_error": 0,
+      "tee_rc": 0,
+      "runtime_cleanup_rc": 0,
+      "manifest_rc": 0,
+      "post_apps_empty": true,
+      "gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+      "same_input_manifest_sha256": "2ab58f24fe3bafa892219d051d5a9507e850a822ff4701e3e505443094c136ec",
+      "same_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+      "separate_python_processes": true,
+      "single_native_kernel_action_each": true,
+      "counter_count": 15,
+      "result_sha256": "4d6769b83afca56639919e757497f8c703c7a0e814a5af51e7e37c49d943dbc7",
+      "outputs_manifest_sha256": "eae329cf63c6f13650eddfa66c8bf9fcc51b8dfbd3e338a68e17255aa8fb1af0",
+      "final_status_sha256": "6b14e291b641224497044fcbc371f309a95b6e8a80d5dda4e67a7d67df35f6f6",
+      "final_status_sidecar_sha256": "9d4a917a0cc03b91303f35a8667a4436e0f3f0bc01a3a8d0820115a627c599fd"
+    },
+    "selected_counter_ratios": {
+      "v14_over_v12": {
+        "shared_load_bank_conflicts": 0.337808980436787,
+        "shared_load_wavefronts": 0.790080573291272,
+        "long_scoreboard_stall": 0.9923739399119057,
+        "wait_stall": 0.9613771645021645,
+        "tensor_instructions": 1.0
+      },
+      "v15_over_v12": {
+        "shared_load_bank_conflicts": 1.082355423911487,
+        "shared_load_wavefronts": 1.0261072754886602,
+        "long_scoreboard_stall": 1.0009203865623562,
+        "wait_stall": 0.9996617965367964,
+        "tensor_instructions": 1.0
+      }
+    },
+    "interpretation": "v14 strongly reduces the targeted shared-load conflict and wavefront counters while tensor work remains identical, so its padding mechanism is supported. Together with the small long-scoreboard change and the valid 2.404526-percent ABBA result, this shows that the measured conflict reduction was insufficient to cross the performance gate; one NCU collection does not identify a sole remaining bottleneck. v15 increases the targeted load-conflict and wavefront counters and is consistent with its flat-to-negative ABBA decision.",
+    "decision_boundary": "NCU replay, cycles, and counter ratios are not benchmark timings. They do not promote v14/v15, replace jobs13539/13576, or change v12 as the accepted baseline.",
+    "scheduler_retention_boundary": "COMPLETED/0:0 was observed immediately after job13666 ended. Before archive creation, slurmctld had purged the record and slurmdbd was unavailable; therefore the archive validates immutable job outputs but is not claimed as an independent scheduler-state attestation."
+  },
+  "failed_audit_addendum": [
+    {
+      "job": 13439,
+      "stage": "v13 first directed synchronized call",
+      "performance_data_valid": false,
+      "reason": "illegal instruction; no oracle, rank, or timing result"
+    },
+    {
+      "job": 13518,
+      "stage": "v14 stress pre-measurement harness",
+      "performance_data_valid": false,
+      "reason": "argument-unpack failure before fixture creation or timing"
+    },
+    {
+      "job": 13662,
+      "stage": "v12/v14/v15 NCU pre-snapshot Bash gate",
+      "ncu_collection_valid": false,
+      "reason": "set-u local declaration failure before GPU snapshot or NCU invocation"
+    }
+  ],
+  "claims_boundary": {
+    "closed": [
+      "Job13334 closes the controlled single-process installed-wheel lifecycle for v12, making v12 the latest local lifecycle-closed candidate.",
+      "Jobs13539 and 13576 are valid, fully gated, same-GPU performance decisions: v14 and v15 are rejected under the strict greater-than-3-percent point rule.",
+      "Job13666 provides same-input, same-harness, same-GPU, isolated-process, single-logical-action mechanism counters that explain the v14/v15 outcomes without changing them.",
+      "The v12 lifecycle, v13 stop-loss, v14/v15 continuation, and job13666 NCU packages have been downloaded and independently verified locally within their declared archive boundaries."
+    ],
+    "not_closed": [
+      "Triton parity or lead; the fresh v12 native-over-Triton per-seed ratio median remains 2.209910.",
+      "Strict performance reproduction of the frozen v12 workload on a second controlled physical GPU UUID.",
+      "Full-model weights, scheduler/server, HTTP, quality, TTFT, throughput, or service E2E evidence.",
+      "Official upstream, release, signed-wheel, or CI acceptance.",
+      "Multi-process loading and long-duration server lifecycle coverage.",
+      "Broad sequence-length, batch, top-k, page, mode, and production-trace coverage outside the frozen contract.",
+      "Any additive or multiplicative combination of adjacent v7, v9, v11, and v12 percentages."
+    ],
+    "priority": "First freeze this successor closure and update the report. If time remains, only one profile-supported, non-padding, resource-bounded single-variable native candidate is justified. Cross-GPU, full-model/server, and official release work remain blocked on external scheduling, model, or authority prerequisites."
+  },
+  "archive": {
+    "v12_lifecycle": {
+      "root": "c2_native_c2_production_evidence/c2-native-v12-lifecycle-closure-evidence-20260831",
+      "tar_sha256": "3d854587e029cd75fd41c6bba219f131ac231151dc775983995377eb510775cc",
+      "manifest_sha256": "7a7ca310b0e314bce6d3022a103a8e6d44005051e2f4221b2df2c2e88b5eeb30",
+      "sidecar_sha256": "06c98bba1867d55287e2c102bb36a327a0271c089b006a18c509b9908c5339d2",
+      "manifest_records": 27,
+      "tar_members": 28,
+      "local_verification": true
+    },
+    "v13_stoploss": {
+      "root": "c2_native_c2_production_evidence/c2-native-v13-distributed-merge-stoploss-evidence-20260831",
+      "tar_sha256": "fc07620839afe75376080c614c44919b57e1028f4ccc17165fa84a0741fa2f34",
+      "manifest_sha256": "77f47df152d23279a655930fa225de308aa62881956689fd747115c5ec165afe",
+      "sidecar_sha256": "1cc27f68462750bd9610fd7d01a4da63dfa33ec9deedc8e95dcc94eb8c262e0f",
+      "manifest_records": 76,
+      "tar_members": 77,
+      "local_verification": true
+    },
+    "v14_v15_continuation": {
+      "root": "c2_native_c2_production_evidence/c2-native-v14-v15-continuation-evidence-20260831",
+      "remote_full_tar_sha256": "0a5260556ad189ec0b0b9c405fa0b5f10aaa0f84d98ab4ab9fa0ca0d21301458",
+      "remote_full_tar_size_bytes": 111213020,
+      "full_manifest_sha256": "7948c961adf92642e29fd8c053399a5a8c3ea311735aaeceba610cede3fb378e",
+      "full_manifest_records": 159,
+      "full_sidecar_sha256": "858194dbe17a2e1a3b169d2304a4c8ce50adb984cee0074648fbbcb57ffd8efc",
+      "local_lean_tar_sha256": "5ae30832ed5345b4d51cb69b378f472774d7792355a6e5ab93c107e7a9671846",
+      "local_lean_tar_size_bytes": 1180522,
+      "lean_manifest_sha256": "a5a3e77cc71c481ad9eb955f0bfa01534df4b7676df998a7417db6ce743890aa",
+      "lean_manifest_records": 161,
+      "lean_tar_members": 162,
+      "excluded_fixture_list_sha256": "3155bece20632d81f2f4d48aac8bdd3d838fe7e905a8c7b62694cb65e3f2f357",
+      "excluded_fixture_count": 2,
+      "boundary": "Only the two immutable 8-seed fixture payloads are absent locally. Their paths and SHA-256 values remain fixed by the full manifest and exclusion list; every retained lean-manifest record passed local verification."
+    },
+    "v12_v14_v15_ncu": {
+      "root": "c2_native_c2_production_evidence/c2-native-v12-v14-v15-ncu-evidence-20260831",
+      "tar_sha256": "8ccfb059901a718511b9ebe38a5b01d3191ca42f90e876731186707fc5843322",
+      "tar_size_bytes": 106678,
+      "manifest_sha256": "376d7092207d22d5f1305354279dc948224acb1d084550553d1228973719f3df",
+      "sidecar_sha256": "eba407010b299afd34152c6beac44c98c9296ceeb63188464b74c3a24e9ee8eb",
+      "manifest_records": 30,
+      "tar_members": 31,
+      "operator_audit_sha256": "4835643e8973d2eaf89a28b8ddc25a134c6496bdb1bcca639f16546d5b8566a6",
+      "local_verification": true
+    },
+    "successor_aggregate": {
+      "path": "c2_native_c2_v12_v15_continuation_evidence_aggregate_20260831.sha256",
+      "sha256": "4621acc48be3779f9d2e2962f8eef9b3d6daa9c818f3bf7d22b4469a2c94ec8d",
+      "verified_file_records": 53,
+      "selection": "Top-level v12 lifecycle, v13 stop-loss, v14/v15 lean/full-manifest, and NCU packages plus retained failure audits, the predecessor closure, and 31 reviewed production source/script/audit files. Extracted duplicate trees, interrupted .part transfers, sync-client metadata, and staging directories are excluded."
+    },
+    "non_evidence_transfer_artifacts": "Interrupted .part files, sync-client .baiduyun metadata, download-staging directories, and extracted duplicate trees are excluded from every aggregate and must not be interpreted as evidence packages."
+  }
+}

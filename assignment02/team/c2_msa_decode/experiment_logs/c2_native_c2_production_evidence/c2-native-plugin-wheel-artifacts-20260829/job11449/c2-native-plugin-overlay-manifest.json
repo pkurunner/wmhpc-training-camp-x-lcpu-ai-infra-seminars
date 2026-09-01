@@ -1,0 +1,31 @@
+{
+  "baseline_stable_member_byte_identical": true,
+  "baseline_stable_member_sha256": "cee888ed2e3a4d6f27564bd615b20d9e49d472ff3db03429b21823ab39800442",
+  "baseline_wheel_sha256": "91156a7bcfbf729a7213a6ac2a16b64b45c48e36863db30cf7101ddcb5447e06",
+  "derived_wheel_sha256": "42048803bc7312dfecbfd1c6a9b6d3562e42105af07f9f63b4da5c263cfb6060",
+  "derived_wheel_size": 313128721,
+  "expected_dispatch_member_sha256": {
+    "vllm/_custom_ops.py": "b57dfa819424b89bed8bf39924d5a4a3d2ebf327b39f3ae7c2e9e65b61c2398d",
+    "vllm/config/attention.py": "caf68c29d8d36324d252a66f0811a25b26d11da9860732359076fbb76625b5ae",
+    "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py": "6d75e6eec2d6e7d3006fdc1edf65be96f634a2a8bdcc1ba878393988e5fc8412",
+    "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py": "07d00372ca1995aa96159a0b9f8949b1b40f817a63f49224e88aafac1b722200",
+    "vllm/v1/attention/backends/registry.py": "cd539941417fd5faf6672676de0f8ae15c9adb2a915b47cdd508e154c34faea4"
+  },
+  "experimental_overlay_same_distribution_version": true,
+  "overlay_archive_members": [
+    "vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "vllm/_custom_ops.py",
+    "vllm/config/attention.py",
+    "vllm/v1/attention/backends/registry.py",
+    "vllm/models/minimax_m3/nvidia/msa_native_c2_decode.py",
+    "vllm/models/minimax_m3/nvidia/sparse_attention_msa.py"
+  ],
+  "packager_sha256": "84f607ec46f4535a5d5e3506631d4eeb9a044f9e8d48f4aa0eec57984ca2866e",
+  "plugin_archive_member": "vllm/_native_c2_msa_decode_plugin.abi3.so",
+  "plugin_checkout_commit": "d4da0c55af3aa231b6209bf77871f3ed36eab0d2",
+  "plugin_sha256": "f464b2b24eb6b8f9d7d45a187f44f43d4467f2c9106e87ad45ff86000478bf8d",
+  "provenance_file": "c2-native-plugin-overlay-provenance.json",
+  "provenance_sha256": "9fa6b676ce8cfd3c00c4e2dadba010e1a2c48010abd0837958822baab102aeb7",
+  "record_member": "vllm-0.26.1rc1.dev370+gd4da0c55a.dist-info/RECORD",
+  "schema": "c2-native-plugin-overlay-manifest-v1"
+}

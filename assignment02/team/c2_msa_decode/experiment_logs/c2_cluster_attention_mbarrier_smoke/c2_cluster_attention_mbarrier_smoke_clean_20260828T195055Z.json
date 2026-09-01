@@ -1,0 +1,119 @@
+{
+  "adversarial_causal_tail": true,
+  "adversarial_unselected_visible_pages": true,
+  "allclose": true,
+  "block_table_abi": "[B,max_blocks], shared by all KV heads",
+  "boundary": "cluster communication prerequisite only; real BF16 QK causal selected attention producers; not a performance implementation or full C=2 fusion",
+  "build": {
+    "binary_sha256": "73ca9ed985a30005b00603b44e2c26199b1e8822414b9f94d4f662fd4857a427",
+    "compile_flags": "-std=c++17 -O3 -arch=sm_103a",
+    "mbarrier_ptx_evidence": {
+      "local_acquire_wait": "mbarrier.try_wait.parity.acquire.cluster.shared::cta.b64",
+      "remote_release_arrive": "mbarrier.arrive.release.cluster.shared::cluster.b64"
+    },
+    "nvcc_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Wed_Aug_20_01:58:59_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.88\nBuild cuda_13.0.r13.0/compiler.36424714_0",
+    "ptx_sha256": "471c35d3efd02942b559a0833d1cfee8fedec7c64d564c22914aa3366757717f",
+    "sass_sha256": "865401d904ced66ad0575b2eb94bcb68c1a1dc18d876449974e4d3109a4c0786"
+  },
+  "caller_output_dtype": "bfloat16",
+  "caller_owned_output": true,
+  "capability": [
+    10,
+    3
+  ],
+  "cluster_launch_supported": true,
+  "clusters": 4,
+  "cuda_driver": 13000,
+  "cuda_runtime": 13000,
+  "device": "NVIDIA B300 SXM6 AC",
+  "execution": {
+    "gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+    "slurm_job_id": "10724"
+  },
+  "finite": true,
+  "global_inter_cta_scratch": false,
+  "global_seed_inputs": true,
+  "hierarchy_valid": true,
+  "host_precomputed_partials": false,
+  "init_sync": "cooperative_groups::cluster_group::sync: rank-2 mbarrier initialization and cluster residency only",
+  "input_indirection": "topk_idx -> block_table -> physical KV page",
+  "lifetime_sync": "cooperative_groups::cluster_group::sync: producer CTA-local shared partial lifetime after DSM consumer reads",
+  "max_abs": 0.000158179551,
+  "max_rel": 13.8656559,
+  "mbarrier_expected_arrivals": 2,
+  "mbarrier_max_polls": 16777216,
+  "mbarrier_phase": "rank-2 local shared mbarrier starts at parity 0 and completes after two remote DSM release arrivals",
+  "mbarrier_readiness_observed": true,
+  "mbarrier_verified": true,
+  "mbarrier_wait_parity": 0,
+  "num_ctas": 4,
+  "oracle_accumulator_dtype": "float64",
+  "oracle_finite": true,
+  "oracle_softmax": "independent two-pass natural-exp direct attention",
+  "partial_dtype": "bfloat16",
+  "producer": "one-thread-per-head online BF16 QK causal selected attention",
+  "producer_ready_sync": "cuda::ptx::mbarrier_arrive(sem_release, scope_cluster, space_cluster, remote DSM) -> mbarrier_try_wait_parity(sem_acquire, scope_cluster, local shared, parity=0)",
+  "remote_shared_api": "cooperative_groups::cluster_group::map_shared_rank",
+  "resource_model": {
+    "num_regs": 166,
+    "shared_mem_per_block": 49152,
+    "static_shared_bytes": 4172,
+    "static_shared_fits": true
+  },
+  "schema": "c2-cluster-attention-mbarrier-smoke-v1",
+  "seeds": [
+    {
+      "adversarial_masked_tokens": 508,
+      "adversarial_unselected_visible_pages": 4,
+      "allclose": true,
+      "finite": true,
+      "hierarchy_valid": true,
+      "max_abs": 0.000158179551,
+      "max_rel": 3.53245878,
+      "mbarrier_timeout_sentinel_absent": true,
+      "oracle_finite": true,
+      "seed": 17,
+      "sentinel_clean": true,
+      "sequence_length": 2049
+    },
+    {
+      "adversarial_masked_tokens": 508,
+      "adversarial_unselected_visible_pages": 64,
+      "allclose": true,
+      "finite": true,
+      "hierarchy_valid": true,
+      "max_abs": 0.000116787851,
+      "max_rel": 13.8656559,
+      "mbarrier_timeout_sentinel_absent": true,
+      "oracle_finite": true,
+      "seed": 2026,
+      "sentinel_clean": true,
+      "sequence_length": 3969
+    }
+  ],
+  "selected_pages_per_role": 8,
+  "sentinel_clean": true,
+  "shape": {
+    "B": 1,
+    "D": 128,
+    "G": 16,
+    "Hkv": 4,
+    "Hq": 64,
+    "logical_pages": 32,
+    "page_size": 128,
+    "selected_pages": 16
+  },
+  "source_sha256": {
+    "challenge_v2/c2_cluster_attention_mbarrier_smoke.cu": "6b5f2f1bb87e92dc7944bc0705fe95840164def96e5d45c47836bcf80386a8ee",
+    "challenge_v2/run_c2_cluster_attention_mbarrier_smoke_clean.sh": "9a97f900e4864533f7a5a85ac5df0633d31fdf1018d6e68761362200f9f0ee5d"
+  },
+  "status": "pass",
+  "sync_api": "cooperative_groups::cluster_group::sync (init + lifetime only)",
+  "threads_per_block": 256,
+  "tolerance": {
+    "atol": 0.000500000024,
+    "reason": "BF16 producer partial O is merged against a direct FP64 oracle",
+    "rtol": 0.00499999989
+  },
+  "triton_version": "3.7.1"
+}

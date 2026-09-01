@@ -1,0 +1,26 @@
+{
+  "accepted_for_fresh_integration": true,
+  "final_rc": 0,
+  "hard_gates": {
+    "clean_b300_before_after": true,
+    "direct_v11_bitwise_and_promotion_evidence": true,
+    "eight_seed_real_backend": true,
+    "loader_surface": true,
+    "record_and_install": true,
+    "stable_dso_preserved": true,
+    "wheel_identity": true
+  },
+  "performance": {
+    "reported": true,
+    "triton_parity_achieved": false,
+    "triton_parity_required": false,
+    "v11_vs_v9_fresh_wheel_comparator": "not available; not a promotion decision"
+  },
+  "schema": "c2-native-plugin-v11-fresh-backend-decision-v1",
+  "v11_vs_v9_fresh_wheel_boundary": {
+    "available": false,
+    "comparison_kind": "none",
+    "fresh_native_over_triton_is_not_v11_vs_v9_promotion": true,
+    "reason": "no v9 fresh-wheel comparator was run; accepted v9->v11 promotion remains the separate direct job12905 same-GPU ABBA result"
+  }
+}

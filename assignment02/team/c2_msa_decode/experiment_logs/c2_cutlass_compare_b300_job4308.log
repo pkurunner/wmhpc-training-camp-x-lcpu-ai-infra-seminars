@@ -1,0 +1,280 @@
+===== PRE_AUDIT =====
+2026-08-19T14:00:54+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== SOURCE_PINS =====
+80434d7f67877c6570ca19cac444b84bc9855dac
+ eb61c911471867a5fd2466bfd8f29306cea6ebf8 python/fmha_sm100/cutlass (v4.3.0-51-geb61c911)
+torch=2.13.0+cu130
+fmha_sm100=/home/lcpu/85117379/msa-official/python/fmha_sm100/__init__.py
+===== OFFICIAL_MINIMAX_MSA_CUTLASS_SPARSE_DECODE_B16 =====
+Output file: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cutlass_msa_b300_job4308.csv
+MiniMax sparse attention sweep  |  GPU 0  |  dtype fp8  |  output_mode o
+sections: sparse_decode
+
+Sparse Decode (dense+sparse pairs, MBU, topk=16, fp8)
+-------------------------------------------------------------------------------------------------------------
+   q_len   kv_len  dtype   bsz  h_q  h_kv  dim     lat(ms)   std(ms)     TFLOPs       GB/s   MFU/MBU   split%
+-------------------------------------------------------------------------------------------------------------
+  · Sparse Decode q=8 k=4096 b=16 topk=16
+       8     4096    fp8    16   64     4  128      0.0348    0.0002     493.03    2017.88    25.22%  -83.98%
+       8     4096    fp8    16   64     4  128      0.0656    0.0009     131.01     559.73     7.00%    1.12%
+
+Results saved to /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cutlass_msa_b300_job4308.csv
+===== OUR_TRITON_SELECTED_POLICY_B16_FP8_SCALAR =====
+{
+  "evidence_class": "final_correctness_gated",
+  "challenge_benchmark": [
+    {
+      "implementation": "baseline_caller_owned_output",
+      "execution_mode": "eager",
+      "batch": 1,
+      "storage": "fp8-scalar",
+      "chunks": 16,
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.062948,
+      "single_step_host_latency_p10_ms": 0.06132,
+      "single_step_host_latency_p90_ms": 0.072379,
+      "single_step_cuda_latency_median_ms": 0.05152000114321709,
+      "single_step_cuda_latency_p10_ms": 0.05020799860358238,
+      "single_step_cuda_latency_p90_ms": 0.06038400158286095,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.04225760102272034,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.0416128009557724,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.043049600720405576,
+      "steady_state_cuda_decodes_per_second": 23664.381692238923
+    },
+    {
+      "implementation": "prepared_persistent_workspace",
+      "execution_mode": "eager",
+      "batch": 1,
+      "storage": "fp8-scalar",
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "num_topk_chunks": 16,
+      "decode_num_warps": 4,
+      "merge_num_warps": 4,
+      "caller_output_bytes": 16384,
+      "logical_partial_output_bytes": 262144,
+      "unique_partial_output_bytes": 262144,
+      "partial_lse_bytes": 4096,
+      "unique_workspace_bytes": 266240,
+      "partial_output_aliases_caller_output": false,
+      "merge_bypassed": false,
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.051529,
+      "single_step_host_latency_p10_ms": 0.049609,
+      "single_step_host_latency_p90_ms": 0.057021,
+      "single_step_cuda_latency_median_ms": 0.039455998688936234,
+      "single_step_cuda_latency_p10_ms": 0.03840000182390213,
+      "single_step_cuda_latency_p90_ms": 0.04428799822926521,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.032995200157165526,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.032683199644088744,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.034465599060058597,
+      "steady_state_cuda_decodes_per_second": 30307.438513381203
+    },
+    {
+      "implementation": "baseline_caller_owned_output",
+      "execution_mode": "eager",
+      "batch": 4,
+      "storage": "fp8-scalar",
+      "chunks": 16,
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.06233,
+      "single_step_host_latency_p10_ms": 0.06127,
+      "single_step_host_latency_p90_ms": 0.07031,
+      "single_step_cuda_latency_median_ms": 0.05081599950790405,
+      "single_step_cuda_latency_p10_ms": 0.04982399940490723,
+      "single_step_cuda_latency_p90_ms": 0.056095998734235764,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.04244000017642975,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.041993600130081174,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.04304800033569336,
+      "steady_state_cuda_decodes_per_second": 23562.67662212165
+    },
+    {
+      "implementation": "prepared_persistent_workspace",
+      "execution_mode": "eager",
+      "batch": 4,
+      "storage": "fp8-scalar",
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "num_topk_chunks": 4,
+      "decode_num_warps": 4,
+      "merge_num_warps": 4,
+      "caller_output_bytes": 65536,
+      "logical_partial_output_bytes": 262144,
+      "unique_partial_output_bytes": 262144,
+      "partial_lse_bytes": 4096,
+      "unique_workspace_bytes": 266240,
+      "partial_output_aliases_caller_output": false,
+      "merge_bypassed": false,
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.05177,
+      "single_step_host_latency_p10_ms": 0.05061,
+      "single_step_host_latency_p90_ms": 0.06103,
+      "single_step_cuda_latency_median_ms": 0.040352001786231995,
+      "single_step_cuda_latency_p10_ms": 0.039135999977588654,
+      "single_step_cuda_latency_p90_ms": 0.045504000037908554,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.03299359977245331,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.03282879889011383,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.03354400098323822,
+      "steady_state_cuda_decodes_per_second": 30308.908603386473
+    },
+    {
+      "implementation": "baseline_caller_owned_output",
+      "execution_mode": "eager",
+      "batch": 8,
+      "storage": "fp8-scalar",
+      "chunks": 8,
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.06121,
+      "single_step_host_latency_p10_ms": 0.059979,
+      "single_step_host_latency_p90_ms": 0.0686,
+      "single_step_cuda_latency_median_ms": 0.050303999334573746,
+      "single_step_cuda_latency_p10_ms": 0.04899200052022934,
+      "single_step_cuda_latency_p90_ms": 0.055615998804569244,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.04251520037651062,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.041812801361083986,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.0434224009513855,
+      "steady_state_cuda_decodes_per_second": 23520.99934009705
+    },
+    {
+      "implementation": "prepared_persistent_workspace",
+      "execution_mode": "eager",
+      "batch": 8,
+      "storage": "fp8-scalar",
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "num_topk_chunks": 8,
+      "decode_num_warps": 4,
+      "merge_num_warps": 4,
+      "caller_output_bytes": 131072,
+      "logical_partial_output_bytes": 1048576,
+      "unique_partial_output_bytes": 1048576,
+      "partial_lse_bytes": 16384,
+      "unique_workspace_bytes": 1064960,
+      "partial_output_aliases_caller_output": false,
+      "merge_bypassed": false,
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.05125,
+      "single_step_host_latency_p10_ms": 0.050269,
+      "single_step_host_latency_p90_ms": 0.05835,
+      "single_step_cuda_latency_median_ms": 0.03993599861860275,
+      "single_step_cuda_latency_p10_ms": 0.038943998515605927,
+      "single_step_cuda_latency_p90_ms": 0.04556800052523613,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.033048000931739804,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.03264159858226776,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.0335312008857727,
+      "steady_state_cuda_decodes_per_second": 30259.016334013253
+    },
+    {
+      "implementation": "baseline_caller_owned_output",
+      "execution_mode": "eager",
+      "batch": 16,
+      "storage": "fp8-scalar",
+      "chunks": 4,
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.069949,
+      "single_step_host_latency_p10_ms": 0.06817,
+      "single_step_host_latency_p90_ms": 0.077829,
+      "single_step_cuda_latency_median_ms": 0.058368001133203506,
+      "single_step_cuda_latency_p10_ms": 0.05696000158786774,
+      "single_step_cuda_latency_p90_ms": 0.062144000083208084,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.042972800135612485,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.042519998550415036,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.04403040111064911,
+      "steady_state_cuda_decodes_per_second": 23270.533845693673
+    },
+    {
+      "implementation": "prepared_persistent_workspace",
+      "execution_mode": "eager",
+      "batch": 16,
+      "storage": "fp8-scalar",
+      "caller_output_preallocated_outside_timing": true,
+      "correctness_checked_before_timing": true,
+      "evidence_class": "final_correctness_gated",
+      "num_topk_chunks": 4,
+      "decode_num_warps": 4,
+      "merge_num_warps": 4,
+      "caller_output_bytes": 262144,
+      "logical_partial_output_bytes": 1048576,
+      "unique_partial_output_bytes": 1048576,
+      "partial_lse_bytes": 16384,
+      "unique_workspace_bytes": 1064960,
+      "partial_output_aliases_caller_output": false,
+      "merge_bypassed": false,
+      "latency_protocol": "one_call_then_device_synchronize_per_sample",
+      "latency_samples": 21,
+      "single_step_host_latency_median_ms": 0.060069,
+      "single_step_host_latency_p10_ms": 0.058919,
+      "single_step_host_latency_p90_ms": 0.06878,
+      "single_step_cuda_latency_median_ms": 0.04886399954557419,
+      "single_step_cuda_latency_p10_ms": 0.047807998955249786,
+      "single_step_cuda_latency_p90_ms": 0.05318399891257286,
+      "throughput_protocol": "steady_state_grouped_cuda_events",
+      "throughput_samples": 21,
+      "throughput_inner_calls": 20,
+      "steady_state_cuda_time_per_decode_median_ms": 0.033563199639320376,
+      "steady_state_cuda_time_per_decode_p10_ms": 0.03333120048046112,
+      "steady_state_cuda_time_per_decode_p90_ms": 0.03380799889564514,
+      "steady_state_cuda_decodes_per_second": 29794.537193899345
+    }
+  ],
+  "correctness_gate": {
+    "manifest": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_challenge_b300_mode_gate.json",
+    "sha256": "6b5e076199f64aa5d4f58db7cf8f98c467515e52baef7d55262bcc05c41a9fb6"
+  }
+}
+CUTLASS_CSV=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c2_msa_decode/experiment_logs/c2_cutlass_msa_b300_job4308.csv
+===== POST_AUDIT =====
+2026-08-19T14:03:12+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

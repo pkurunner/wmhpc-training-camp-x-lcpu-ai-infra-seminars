@@ -1,0 +1,44 @@
+===== PRE UTC=2026-08-30T20:18:08Z =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+COMPUTE_APPS
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/native_c2_decode.v12-q-row-padding.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-resource-gate-job12983.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-v12-provenance-job12983.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/outputs-job12983.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/var/lib/slurm/slurmd/job12984/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/submitted-script-job12984.slurm: OK
+064f967ade97ad79420f5a24be006733a6271c3743c0e729e116d7236831d7b6  /home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so
+AOT_EVIDENCE_BOUND job=12983 parent=/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983
+AST_OK /home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py
+USDT:2026-08-30 20:18:13 433962:433962 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 20:18:13 433962:433962 SyncActivityProfilerHandler.cpp:59] profiler_stop
+===== POST UTC=2026-08-30T20:18:14Z =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+COMPUTE_APPS
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/native_c2_decode.v12-q-row-padding.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-resource-gate-job12983.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/plugin-v12-provenance-job12983.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/final-status-job12983.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-aot-artifacts-20260830/job12983/outputs-job12983.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/submitted-script-job12984.slurm: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/run-manifest-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-pre-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/v12-q-row-padding-directed-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/run-manifest-job12984.json: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/inputs-job12984.sha256: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-pre-job12984.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v12-directed-artifacts-20260830/job12984/gpu-post-job12984.txt: OK
+===== FINAL_POST UTC=2026-08-30T20:18:14Z =====
+NVIDIA B300 SXM6 AC, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 580.126.09, 275040, 0, 0, 10.3
+COMPUTE_APPS

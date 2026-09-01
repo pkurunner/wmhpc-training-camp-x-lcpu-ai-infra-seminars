@@ -1,0 +1,54 @@
+
+===== PRE UTC 2026-08-20T01:42:06Z =====
+NVIDIA GeForce RTX 5090, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 580.142, 32607, 0, 1
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+7e00dc41ba108ac86390ec5e44bcf9d087aaf1a5b4957848a9ff7118f638a678  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+2898cc9554289ad916203b9bcc5b50249457e5955f8087e69362141f9a341c8d  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/reference.py
+5b53deb985c6fd4c348669792f4aa4c391e5d6af1c866b5c2cc8f7120daad153  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+===== fixed AB/BA batch B=1 =====
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError: selected_chunks
+STRICT-10 GATE FAILED for B=1; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=4 =====
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError: selected_chunks
+STRICT-10 GATE FAILED for B=4; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=8 =====
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError: selected_chunks
+STRICT-10 GATE FAILED for B=8; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== fixed AB/BA batch B=16 =====
+Traceback (most recent call last):
+  File "<stdin>", line 19, in <module>
+AssertionError: selected_chunks
+STRICT-10 GATE FAILED for B=16; preserving complete JSON and continuing only to collect fixed-config evidence.
+
+===== POST UTC 2026-08-20T01:42:52Z =====
+NVIDIA GeForce RTX 5090, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 580.142, 32607, 0, 2
+-- compute apps --
+-- source SHA256 --
+7c638d53baad41582756dc2411fa0ede33ddb253b96440bfcb072331855bd9aa  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse.py
+7e00dc41ba108ac86390ec5e44bcf9d087aaf1a5b4957848a9ff7118f638a678  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_abba_cli.py
+68fb3d8bf1f09c22d9c94cef974a6d9725c579af59907817bc804d3f37cfb739  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/c1_no_lse_cli.py
+2898cc9554289ad916203b9bcc5b50249457e5955f8087e69362141f9a341c8d  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/cli.py
+2989da46d15a1d2c183c18cd1b9a93831a98a21a236653b56847f6fafb01650b  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/prepared_tuned.py
+1b3bb68025e31cd25d782417b0ef20c49a193eb42a342e175536e2159bef0e79  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge/prepared_decode.py
+38faefb89b38e3bc26b135b762a6bbbd813dcc695423982b423a806fe41c11d6  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/data.py
+712c1632367700137392d2c43bd5c6962130d945f01f1f585cc6338788ce53cc  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/harness/reference.py
+5b53deb985c6fd4c348669792f4aa4c391e5d6af1c866b5c2cc8f7120daad153  /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/challenge_v2/run_nolse_abba_clean_audit.sh
+
+C2 no-LSE fixed AB/BA audit completed: /home/lcpu/85117379/codex-a02-team/assignment02/team/c2_msa_decode/experiment_logs/optimization_v2/c2_nolse_abba_clean_audit_20260820T014206Z.log

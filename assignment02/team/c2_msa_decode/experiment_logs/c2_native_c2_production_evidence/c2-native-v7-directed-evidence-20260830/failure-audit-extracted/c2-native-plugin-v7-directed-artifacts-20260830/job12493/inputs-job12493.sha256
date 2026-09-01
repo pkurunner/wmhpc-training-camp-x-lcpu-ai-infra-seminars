@@ -1,0 +1,10 @@
+0873af3cf48ef756f9945fc6e711a03dd1208fcc6d4ce20a8041cf9a587e97db  /home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/vllm/_native_c2_msa_decode_plugin.abi3.so
+1d638ce66c3b17b2b83298fa98f44770b14b94154c0f56cf5ff84d508a12e9a3  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v7-v-prefetch-20260830-job12484/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+b81de9672602acb339a7e0cb471bf42dd02fdfb3039409da19d48188a75fddda  /home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-resource-gate-job12484.txt
+943e0f84afba0982bb0453cb6fabdd9f4156787aa6bb6b8240b91cd88ad27e02  /home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-v7-provenance-job12484.sha256
+0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28  /home/lcpu/85117379/native_c2_operator_bench_20260829.py
+43ad54c5ad72cc40bf8b8a6e17592fa16cacc1d1e62f5f8c42ac2a4d3206cdd1  /home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py
+c38ec0bc7ffb9d85567d3cbbf4c2991077eb6cb3a52874778ddac01d107577a5  /home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py
+a2b5ffd0d4f480874ebe97eef55cbf5d542252cf526e259ce392e8854e08196f  /var/lib/slurm/slurmd/job12493/slurm_script
+875527b7e7a944b5bb6776112a3416ca33e0d7960129a2bb7d878cd7e1d6b5ee  /home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12493/run-manifest-job12493.json
+7f9823779b9b3c22b18fa3217b9117d8cc835249168175daafea1604d9d307c0  /home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12493/gpu-pre-job12493.txt

@@ -1,0 +1,10 @@
+v14 job13487 AOT and job13513 directed passed.  job13518 stopped before
+fixture generation or timing because of an inline-Python argument-unpack bug.
+The independently reviewed retry job13539 was a valid RC=3 rejection:
+v12->v14 paired-median improvement 0.0240452555 with bootstrap LCB
+0.0229466423, so the predeclared strict point >0.03 gate did not pass.
+
+v15 job13564 AOT and job13575 directed passed.  job13576 was a valid RC=3
+rejection: v12->v15 paired-median improvement -0.0009713217 with bootstrap
+LCB -0.0011928154.  Both decisions retain v12.  These independent percentages
+must not be added to or multiplied with any historical version comparison.

@@ -1,0 +1,126 @@
+{
+  "all_collection_and_comparison_gates_pass": true,
+  "candidate": {
+    "aot_job": 12825,
+    "plugin": "/home/lcpu/85117379/c2-native-plugin-v11-aot-artifacts-20260830/job12825/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "plugin_sha256": "501b9c56a29a81f779a35a34b2808b4122af7dcb23e8108d8c590306be43d957",
+    "source": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-v11-q-fragment-reuse-20260830-job12825/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu",
+    "summary": "/home/lcpu/85117379/c2-native-plugin-v11-vs-v9-ncu-artifacts-20260830/job12965/native-c2-v11-ncu-job12965.json",
+    "summary_sha256": "0fcffe4feb32aebb01a226ba351c37012122d03ceb1a0d5306381565ad149801",
+    "version": "v11"
+  },
+  "decision_boundary": "NCU counters and NCU duration are mechanism evidence only. They do not promote, reject, or recompute the +12.814628042666487% job12905 ABBA decision.",
+  "explained_performance_evidence": {
+    "accepted_bootstrap_95pct_lower_bound_fraction": 0.12782150442086837,
+    "accepted_point_improvement_fraction": 0.12814628042666487,
+    "aggregate_sha256": "85b9489cc36155a18c239729f4fcea7b746c67c7c3bed8b10944c73ddd7635b9",
+    "decision_sha256": "ae34d33010be4f71bc9bfbbd2a0f8857e04c6071099314f538c6b406735b1569",
+    "job": 12905
+  },
+  "mechanism_observations": {
+    "active_warps_ratio": 0.994413407821229,
+    "elapsed_cycles_ratio": 0.8805737559293654,
+    "hypothesis": "v11 reuses Q fragments in the WMMA feed; counters test the memory/stall consequences, not a new performance criterion.",
+    "long_scoreboard_stall_decreased": true,
+    "occupancy_ratio": 0.992397137745975,
+    "registers_per_thread_increased": true,
+    "shared_bytes_unchanged_exactly": true,
+    "shared_load_bank_conflicts_decreased": true,
+    "shared_load_wavefronts_decreased": true,
+    "shared_store_bank_conflicts_decreased": false,
+    "shared_store_wavefronts_decreased": false,
+    "tensor_cycles_active_ratio": 1.1382978723404256,
+    "tensor_instructions_ratio": 1.0
+  },
+  "reference": {
+    "aot_job": 12701,
+    "plugin": "/home/lcpu/85117379/c2-native-plugin-v9-aot-artifacts-20260830/job12701/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "plugin_sha256": "a98a7bee3a5983cce7e824d8539381fc0c2f8e82cdb6f65c9ebfea18284fc592",
+    "source": "/home/lcpu/85117379/vllm-d4-native-c2-plugin-v9-parallel-merge-20260830-job12701/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu",
+    "summary": "/home/lcpu/85117379/c2-native-plugin-v11-vs-v9-ncu-artifacts-20260830/job12965/native-c2-v9-ncu-job12965.json",
+    "summary_sha256": "b19a8499afc69fa16079208eef3cf99bbf1ecf50e79b6fb5cfc2e2bb45433241",
+    "version": "v9"
+  },
+  "resources": {
+    "ncu_launch_v11": {
+      "launch__barrier_count": 1.0,
+      "launch__cluster_max_active": 71.0,
+      "launch__cluster_max_potential_size": 8.0,
+      "launch__cluster_size": 4.0,
+      "launch__occupancy_cluster_gpu_pct": 1.5,
+      "launch__occupancy_cluster_pct": 6.0,
+      "launch__registers_per_thread": 127.0,
+      "launch__shared_mem_per_block": 30880.0
+    },
+    "ncu_launch_v9": {
+      "launch__barrier_count": 1.0,
+      "launch__cluster_max_active": 142.0,
+      "launch__cluster_max_potential_size": 8.0,
+      "launch__cluster_size": 4.0,
+      "launch__occupancy_cluster_gpu_pct": 6.0,
+      "launch__occupancy_cluster_pct": 11.99,
+      "launch__registers_per_thread": 64.0,
+      "launch__shared_mem_per_block": 30880.0
+    },
+    "v11_aot": {
+      "local": 0,
+      "registers": 127,
+      "shared_bytes": 30880,
+      "stack": 0
+    },
+    "v9_aot": {
+      "local": 0,
+      "registers": 64,
+      "shared_bytes": 30880,
+      "stack": 0
+    }
+  },
+  "same_collection_contract": {
+    "kernel_filter": "regex:.*native_c2_msa_decode_kernel.*",
+    "reason": "each DSO registers the same stable _C schema/CUDA implementation",
+    "same_harness_sha256": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "same_input_manifest_sha256": "2ab58f24fe3bafa892219d051d5a9507e850a822ff4701e3e505443094c136ec",
+    "same_metric_set": true,
+    "same_physical_gpu_uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+    "seed": 20260829,
+    "separate_python_processes": true,
+    "single_native_kernel_action_each": true
+  },
+  "schema": "c2-native-v11-v9-ncu-mechanism-comparison-v1",
+  "v11_minus_v9": {
+    "dram__bytes_read.sum": -768.0,
+    "dram__bytes_write.sum": 0.0,
+    "gpu__time_duration.sum": -15488.0,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": -1381091.0,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": 1535.0,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": -1577699.0,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": 1535.0,
+    "lts__t_bytes.sum": 311744.0,
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 0.3900000000000001,
+    "sm__warps_active.avg.pct_of_peak_sustained_active": -0.16999999999999815,
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": -0.010000000000000009,
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": -70.94999999999999,
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": 2.7700000000000102,
+    "smsp__cycles_elapsed.sum": -10024016.0,
+    "smsp__inst_executed_pipe_tensor.sum": 0.0,
+    "smsp__warps_active.avg.per_cycle_active": -0.020000000000000018
+  },
+  "v11_over_v9": {
+    "dram__bytes_read.sum": 0.9999092229484386,
+    "dram__bytes_write.sum": null,
+    "gpu__time_duration.sum": 0.8819800048768593,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum": 0.47589225267235596,
+    "l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum": 1.0017627246325551,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_ld.sum": 0.6530168659817758,
+    "l1tex__data_pipe_lsu_wavefronts_mem_shared_op_st.sum": 1.0005350887497853,
+    "lts__t_bytes.sum": 1.005991238843301,
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": 1.1382978723404256,
+    "sm__warps_active.avg.pct_of_peak_sustained_active": 0.992397137745975,
+    "smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio": 0.9888888888888889,
+    "smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct": 0.6830041998034135,
+    "smsp__average_warps_issue_stalled_wait_per_issue_active.pct": 1.019257508342603,
+    "smsp__cycles_elapsed.sum": 0.8805737559293654,
+    "smsp__inst_executed_pipe_tensor.sum": 1.0,
+    "smsp__warps_active.avg.per_cycle_active": 0.994413407821229
+  }
+}

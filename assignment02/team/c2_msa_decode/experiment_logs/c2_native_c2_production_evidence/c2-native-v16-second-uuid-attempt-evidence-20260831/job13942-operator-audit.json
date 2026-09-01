@@ -1,0 +1,55 @@
+{
+  "schema": "c2-native-plugin-v16-v12-second-uuid-replay-allocation-audit-v1",
+  "generated_utc": "2026-08-31T13:57:30Z",
+  "job": 13942,
+  "intent": "Attempt one strict replay of the accepted job13789 v16-versus-v12 eight-seed ABBA on a B300 UUID different from the original promotion GPU.",
+  "reviewed_script": {
+    "path": "production_native_c2/validate_native_c2_plugin_v16_k_chunk_lookahead_second_uuid_replay_3pct.slurm",
+    "sha256": "93f4beb869361622500fbbd09221bb443c6f5406b436d9aa50a1e8022b3ff4a1",
+    "independent_review": "GO with P0=0 and P1=0",
+    "original_job13789_script_sha256": "3210f7aff183a909f4c0a32bfc3f8268709b30b96b685a8fd8686116ef379e30"
+  },
+  "pre_registered_allocation_rule": {
+    "original_job13789_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "required_replay_gpu_relation": "allocated UUID must differ from the original UUID before any fixture copy or performance action",
+    "same_uuid_action": "return RC3, retain allocation evidence, perform no performance measurement, and do not retry opportunistically"
+  },
+  "operator_pre_submit_identity_check": {
+    "job13789_fixture_sha256": "2c571f37c94c744492bed673741930be8a4738b1d35d4d547aa71caab6f1d4a7",
+    "job13789_fixture_meta_sha256": "6abbad750e8df0a8954bc843c5081edede582b5684cd28674773b2b34a37bf63",
+    "script_and_fixture_hashes_matched": true,
+    "artifact_root_owner_mode_and_emptiness": "canonical, owner 85117379, mode 0700, empty"
+  },
+  "observed": {
+    "allocated_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "allocated_original_uuid": true,
+    "stopped_before_fixture_copy": true,
+    "stopped_before_any_A_or_B_worker": true,
+    "fixture_or_meta_created_in_job_directory": false,
+    "aggregate_or_decision_created": false,
+    "performance_measurement_produced": false,
+    "candidate_decision_produced": false,
+    "pre_and_final_post_compute_apps_empty": true,
+    "pre_and_final_post_uuid_same": true,
+    "final_status": {
+      "final_rc": 3,
+      "original_rc": 3,
+      "finalizer_error": 0,
+      "utc": "2026-08-31T13:54:21Z"
+    }
+  },
+  "local_evidence_hashes": {
+    "submitted_script": "93f4beb869361622500fbbd09221bb443c6f5406b436d9aa50a1e8022b3ff4a1",
+    "gpu_pre": "a821847f80313be8c534a61c0be551b56c7631ed677a634b60ffb738abd53863",
+    "gpu_final_post": "e862e104a634424b01d38b980b597492fc4cb1b284eb1aa043b8acb2cb57323a",
+    "driver_log": "e0cfaed2c8ffa838f04f6b8960126e01e5cf7b85f57f3da21fbe6eb279dd9b6a",
+    "final_status": "04372ad5553712dcfb7058b0f16e28256ec40a94e5f32e362d7869a43dab8043",
+    "final_status_sidecar": "beed4e84ae4dcbefc8e3e2948bfffbb4b222c13af3f181716d76dc5ab110a4e3"
+  },
+  "classification": "Controlled allocation rejection, not an infrastructure failure, candidate rejection, performance result, or second-UUID reproduction.",
+  "closure": {
+    "strict_second_gpu_v16_vs_v12_performance_reproduction_complete": false,
+    "retry_this_allocation_attempt": false,
+    "boundary": "The attempt directly supports the claim that the current one-GPU Slurm contract cannot select a physical UUID. It supplies no v16-versus-v12 performance datum and does not alter job13789 acceptance."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "accepted": true,
+  "all_correctness_and_comparability_gates_pass": true,
+  "candidate": {
+    "library": "/home/lcpu/85117379/c2-native-plugin-v5-aot-artifacts-20260829/job11760/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "median_of_16_seed_means_ms": 0.11655215917155147,
+    "seed_mean_ms": [
+      0.1163855991140008,
+      0.1164153591543436,
+      0.11643791913986207,
+      0.11651679914444685,
+      0.11652191914618015,
+      0.11652671918272972,
+      0.11653279919177294,
+      0.1165417592227459,
+      0.11656255912035704,
+      0.11660591918975115,
+      0.11664575926959514,
+      0.11664703920483589,
+      0.11672383915632963,
+      0.1167363191768527,
+      0.11674271918833255,
+      0.1168703992292285
+    ]
+  },
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_v5_plugin": "9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538",
+    "candidate_v5_source": "6409a54689ebbdd1f72fad76c2d72dfe588f79d3b8dd6c4dbaf1df5b630f0931",
+    "reference_v4_job11496_plugin": "e00877088ac94bc17d7c501dff418561f195f6e349af46f532ead0a6aa3763d5",
+    "stress_harness": "0a929ead3a6d0513c8555ec74df543f2f69cc0ce0e3d84fffb0a924913420068"
+  },
+  "reference": {
+    "job": 11496,
+    "library": "/home/lcpu/85117379/c2-native-plugin-v4-aot-artifacts-20260829/job11496/vllm/_native_c2_msa_decode_plugin.abi3.so",
+    "median_of_16_seed_means_ms": 0.15392840016633272,
+    "seed_mean_ms": [
+      0.1534947197139263,
+      0.1536166401952505,
+      0.15366400025784968,
+      0.1536732802540064,
+      0.15369791984558107,
+      0.15371296085417271,
+      0.15390240095555782,
+      0.1539160005003214,
+      0.15394079983234404,
+      0.15394720040261745,
+      0.15397040076553822,
+      0.15399744048714636,
+      0.15402224071323872,
+      0.1540921610593796,
+      0.15411232016980647,
+      0.15417360067367553
+    ]
+  },
+  "rejection_policy": "If accepted is false, do not submit a v5 wheel job; retain v4.",
+  "relative_improvement_fraction": 0.24281575689991608,
+  "required_improvement_fraction": 0.05,
+  "required_v5_max_ms": 0.14623198015801608,
+  "schema": "c2-native-plugin-v5-vs-v4-direct-stress-promotion-v1",
+  "shared_contract": {
+    "atol": 0.0001,
+    "comparison_processes": "ABBA: four distinct Python processes",
+    "four_run_contract_identical": true,
+    "iters": 200,
+    "oracle_dtype": "float64",
+    "rtol": 0.001,
+    "run_order": [
+      "reference_v4_a",
+      "candidate_v5_b1",
+      "candidate_v5_b2",
+      "reference_v4_a2"
+    ],
+    "seeds": [
+      17,
+      23,
+      42,
+      2024,
+      314159,
+      20260801,
+      20260815,
+      20260829
+    ],
+    "stability_repeats": 4,
+    "warmup": 30
+  }
+}

@@ -1,0 +1,24 @@
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v7-v-prefetch-20260830-job12484/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-resource-gate-job12484.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-v7-provenance-job12484.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/var/lib/slurm/slurmd/job12500/slurm_script: OK
+/home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12500/submitted-script-job12500.slurm: OK
+0873af3cf48ef756f9945fc6e711a03dd1208fcc6d4ce20a8041cf9a587e97db  /home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/vllm/_native_c2_msa_decode_plugin.abi3.so
+1d638ce66c3b17b2b83298fa98f44770b14b94154c0f56cf5ff84d508a12e9a3  /home/lcpu/85117379/vllm-d4-native-c2-plugin-v7-v-prefetch-20260830-job12484/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu
+AST_OK /home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py
+USDT:2026-08-30 09:32:35 2062053:2062053 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-08-30 09:32:35 2062053:2062053 SyncActivityProfilerHandler.cpp:59] profiler_stop
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/vllm/_native_c2_msa_decode_plugin.abi3.so: OK
+/home/lcpu/85117379/vllm-d4-native-c2-plugin-v7-v-prefetch-20260830-job12484/csrc/libtorch_stable/attention/minimax_m3/native_c2_decode.cu: OK
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-resource-gate-job12484.txt: OK
+/home/lcpu/85117379/c2-native-plugin-v7-aot-artifacts-20260830/job12484/plugin-v7-provenance-job12484.sha256: OK
+/home/lcpu/85117379/native_c2_operator_bench_20260829.py: OK
+/home/lcpu/85117379/native_c2_v5_softmax_directed_20260829.py: OK
+/home/lcpu/85117379/native_c2_v6_register_numerator_directed_20260830.py: OK
+/home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12500/submitted-script-job12500.slurm: OK
+/home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12500/run-manifest-job12500.json: OK
+/home/lcpu/85117379/c2-native-plugin-v7-directed-artifacts-20260830/job12500/gpu-pre-job12500.txt: OK

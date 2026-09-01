@@ -1,0 +1,9 @@
+{
+  "added_ops": [
+    "_C::native_c2_msa_decode"
+  ],
+  "all_baseline_op_names_preserved": true,
+  "native_c2_has_cuda_kernel": true,
+  "plugin_sha256": "1da5f731da796656759f0e673e3479392b6b8337c054a61aa4ca1fd0afb4edd4",
+  "schema": "c2-native-plugin-v16-k-chunk-lookahead-fresh-installed-postloader-surface-v1"
+}

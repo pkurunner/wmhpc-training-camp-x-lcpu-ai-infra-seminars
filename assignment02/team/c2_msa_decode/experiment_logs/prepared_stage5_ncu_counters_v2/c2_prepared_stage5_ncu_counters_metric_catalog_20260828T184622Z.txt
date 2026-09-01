@@ -1,0 +1,70 @@
+dram__bytes_read.sum                                                        Counter         byte            # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.peak_sustained                                         Counter         byte/cycle      # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.peak_sustained_active                                  Counter         byte            # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.peak_sustained_active.per_second                       Counter         byte/s          # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.peak_sustained_elapsed                                 Counter         byte            # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.peak_sustained_elapsed.per_second                      Counter         byte/s          # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.per_cycle_active                                       Counter         byte/cycle      # of bytes read from DRAM (This counter metric represents the sum of  
+dram__bytes_read.sum.per_cycle_elapsed                                      Counter         byte/cycle      # of bytes read from DRAM (This counter metric represents the sum of  
+dram__bytes_read.sum.per_second                                             Counter         byte/s          # of bytes read from DRAM (This counter metric represents the sum of  
+dram__bytes_read.sum.pct_of_peak_sustained_active                           Counter         %               # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_read.sum.pct_of_peak_sustained_elapsed                          Counter         %               # of bytes read from DRAM (This counter metric represents the sum     
+dram__bytes_write.sum                                                       Counter         byte            # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.peak_sustained                                        Counter         byte/cycle      # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.peak_sustained_active                                 Counter         byte            # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.peak_sustained_active.per_second                      Counter         byte/s          # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.peak_sustained_elapsed                                Counter         byte            # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.peak_sustained_elapsed.per_second                     Counter         byte/s          # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.per_cycle_active                                      Counter         byte/cycle      # of bytes written to DRAM (This counter metric represents the sum of 
+dram__bytes_write.sum.per_cycle_elapsed                                     Counter         byte/cycle      # of bytes written to DRAM (This counter metric represents the sum of 
+dram__bytes_write.sum.per_second                                            Counter         byte/s          # of bytes written to DRAM (This counter metric represents the sum of 
+dram__bytes_write.sum.pct_of_peak_sustained_active                          Counter         %               # of bytes written to DRAM (This counter metric represents the sum    
+dram__bytes_write.sum.pct_of_peak_sustained_elapsed                         Counter         %               # of bytes written to DRAM (This counter metric represents the sum    
+gpu__time_duration.sum                                                      Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.peak_sustained                                       Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.peak_sustained_active                                Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.peak_sustained_active.per_second                     Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.peak_sustained_elapsed                               Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.peak_sustained_elapsed.per_second                    Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.per_cycle_active                                     Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.per_cycle_elapsed                                    Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.per_second                                           Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.pct_of_peak_sustained_active                         Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+gpu__time_duration.sum.pct_of_peak_sustained_elapsed                        Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+lts__t_bytes.sum                                                            Counter         byte            # of bytes requested (This counter metric represents the sum across   
+lts__t_bytes.sum.peak_sustained                                             Counter         byte/cycle      # of bytes requested (This counter metric represents the sum peak     
+lts__t_bytes.sum.peak_sustained_active                                      Counter         byte            # of bytes requested (This counter metric represents the sum peak     
+lts__t_bytes.sum.peak_sustained_active.per_second                           Counter         byte/s          # of bytes requested (This counter metric represents the sum peak     
+lts__t_bytes.sum.peak_sustained_elapsed                                     Counter         byte            # of bytes requested (This counter metric represents the sum peak     
+lts__t_bytes.sum.peak_sustained_elapsed.per_second                          Counter         byte/s          # of bytes requested (This counter metric represents the sum peak     
+lts__t_bytes.sum.per_cycle_active                                           Counter         byte/cycle      # of bytes requested (This counter metric represents the sum of the   
+lts__t_bytes.sum.per_cycle_elapsed                                          Counter         byte/cycle      # of bytes requested (This counter metric represents the sum of the   
+lts__t_bytes.sum.per_second                                                 Counter         byte/s          # of bytes requested (This counter metric represents the sum of the   
+lts__t_bytes.sum.pct_of_peak_sustained_active                               Counter         %               # of bytes requested (This counter metric represents the sum percent  
+lts__t_bytes.sum.pct_of_peak_sustained_elapsed                              Counter         %               # of bytes requested (This counter metric represents the sum percent  
+sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active              Counter         %               # of cycles where tensor pipe was active (This counter metric         
+smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.pct         Ratio           %               average # of warps resident per issue cycle, waiting for a scoreboard 
+smsp__average_warps_issue_stalled_wait_per_issue_active.pct                  Ratio           %               average # of warps resident per issue cycle, waiting on a fixed       
+smsp__inst_executed_pipe_tensor.sum                                               Counter         inst            # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.peak_sustained                                Counter         inst/cycle      # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.peak_sustained_active                         Counter         inst            # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.peak_sustained_active.per_second              Counter         inst/s          # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.peak_sustained_elapsed                        Counter         inst            # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.peak_sustained_elapsed.per_second             Counter         inst/s          # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.per_cycle_active                              Counter         inst/cycle      # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.per_cycle_elapsed                             Counter         inst/cycle      # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.per_second                                    Counter         inst/s          # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.pct_of_peak_sustained_active                  Counter         %               # of warp instructions executed by tensor pipe (This counter metric   
+smsp__inst_executed_pipe_tensor.sum.pct_of_peak_sustained_elapsed                 Counter         %               # of warp instructions executed by tensor pipe (This counter metric   
+smsp__warps_active.avg.per_cycle_active                                     Counter         warp            cumulative # of active warps (This counter metric represents the avg  
+syslts__t_bytes.sum                                                         Counter                         # of bytes requested (This counter metric represents the sum across   
+syslts__t_bytes.sum.peak_sustained                                          Counter                         # of bytes requested (This counter metric represents the sum peak     
+syslts__t_bytes.sum.peak_sustained_active                                   Counter                         # of bytes requested (This counter metric represents the sum peak     
+syslts__t_bytes.sum.peak_sustained_active.per_second                        Counter                         # of bytes requested (This counter metric represents the sum peak     
+syslts__t_bytes.sum.peak_sustained_elapsed                                  Counter                         # of bytes requested (This counter metric represents the sum peak     
+syslts__t_bytes.sum.peak_sustained_elapsed.per_second                       Counter                         # of bytes requested (This counter metric represents the sum peak     
+syslts__t_bytes.sum.per_cycle_active                                        Counter                         # of bytes requested (This counter metric represents the sum of the   
+syslts__t_bytes.sum.per_cycle_elapsed                                       Counter                         # of bytes requested (This counter metric represents the sum of the   
+syslts__t_bytes.sum.per_second                                              Counter                         # of bytes requested (This counter metric represents the sum of the   
+syslts__t_bytes.sum.pct_of_peak_sustained_active                            Counter         %               # of bytes requested (This counter metric represents the sum percent  
+syslts__t_bytes.sum.pct_of_peak_sustained_elapsed                           Counter         %               # of bytes requested (This counter metric represents the sum percent  

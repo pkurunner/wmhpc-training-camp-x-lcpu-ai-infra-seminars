@@ -1,0 +1,82 @@
+{
+  "all_correctness_and_comparability_gates_pass": true,
+  "bootstrap": {
+    "confidence": 0.95,
+    "lower_bound_fraction": 0.07749162883589655,
+    "method": "10,000 deterministic paired-seed resamples; statistic=1-median(candidate)/median(reference)",
+    "seed": 20260830
+  },
+  "candidate_paired_median_ms": 0.10758536054752767,
+  "candidate_seed_mean_ms": [
+    0.10770328052341938,
+    0.10758944062516093,
+    0.10762816086411475,
+    0.10744872076436877,
+    0.10754312090575695,
+    0.10762304045259953,
+    0.1075812804698944,
+    0.1073944010399282
+  ],
+  "gpu_uuids": [
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1"
+  ],
+  "input_checksums": {
+    "base_harness": "0b51fede1e6258eea0b535acba2a86e371b284e9655352156cdeb3d310d90c28",
+    "candidate_provenance": "e2067f586f338139283fdf54b9cd6cc2b57ac5a2d189f04bfa3dfc732e0839d8",
+    "candidate_resource_gate": "2f5d0898888446b79808b02c709dd2f0b33309679629cdc335c263482a965560",
+    "candidate_v6_job12278_plugin": "0d5492bee11b2a785d5f16681614b0a1fc6c74ddb33351d44f50b124580e21a4",
+    "candidate_v6_source": "c7f05928fd2ba3a0e29d3154f2bf56849e9d7ad6fd3eddc24b0890722e117f02",
+    "driver_script": "3d6af25828ff41c44f6c770ed21bf7896174bddb8fa07ed910f602ec18aebe59",
+    "fixed_fixture": "448450f22c7bd7667a0caafefbf0c5549ae32b84a76a7a55d0133bd37cc676d3",
+    "fixture_metadata": "59b350ffa0591fb645597dc15fd3bc8683888c85de5d9b4bf08bac366f3d0a78",
+    "reference_v5_job11760_plugin": "9ab755faf79ec7bc574a8f5afa09b22b9acedc8257d3ccfad6fc98cc3f1d2538",
+    "worker_harness": "1d356a8a2d10decc93fca38b62049174de33e6dd9818d0c2e31aef105f8abbcf"
+  },
+  "issues": [],
+  "paired_median_improvement_fraction": 0.07795777856212582,
+  "paired_seed_improvement_fraction": [
+    0.07719455258297181,
+    0.07755345796933899,
+    0.07862698401975665,
+    0.0790581072174732,
+    0.07839055716673105,
+    0.07809753218920157,
+    0.07742978672266532,
+    0.07854056091216666
+  ],
+  "process_isolation": {
+    "reason": "both DSOs register the same _C schema/CUDA impl; separate workers prevent ambiguous repeated registration",
+    "same_python_process": false,
+    "same_slurm_step": true
+  },
+  "reference_paired_median_ms": 0.11668159878812731,
+  "reference_seed_mean_ms": [
+    0.11671287899836899,
+    0.11663487879559398,
+    0.11681279893964529,
+    0.11667263874784112,
+    0.11669055882841349,
+    0.11674015875905752,
+    0.11661039877682924,
+    0.11654815880581737
+  ],
+  "round_order": [
+    "reference_v5_a",
+    "candidate_v6_b1",
+    "candidate_v6_b2",
+    "reference_v5_a2"
+  ],
+  "schema": "c2-native-plugin-v6-vs-v5-fixed-fixture-aggregate-v1",
+  "worker_exit_status": {
+    "exit_status": {
+      "candidate_v6_b1": 0,
+      "candidate_v6_b2": 0,
+      "reference_v5_a": 0,
+      "reference_v5_a2": 0
+    },
+    "schema": "c2-native-plugin-v6-worker-exit-status-v1"
+  }
+}
