@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "scope": "strict_dense_bf16_to_fp32_hmma_tensor_contraction_roofline",
+  "excludes": [
+    "scalar_ops",
+    "sfu_ops",
+    "control_ops",
+    "address_ops"
+  ],
+  "configuration": {
+    "batch": 1,
+    "tokens": 8192,
+    "heads": 12,
+    "chunk": 16,
+    "dim": 128,
+    "device": "NVIDIA B300",
+    "compute_capability": "10.3",
+    "candidate": "vshard4_prefetch2"
+  },
+  "input": {
+    "path": "D:\\\u8f6f\u5fae\\26\u6625\u5b63\\\u79d1\u7814\\Linux_HPC\\assignment02\\team\\c1_flashkda\\challenge_vshard4_prefetch2\\results\\c1_h12_ncu_b300_sm103a_h12_r1_vshard4_p2_full_job10085_raw.csv",
+    "sha256": "dabc28857805b77948774643a8abe838918a05dfc3ceef00b0d25e0c56f3edd6",
+    "ncu_units": {
+      "gpu__time_duration.sum": "us",
+      "dram__bytes_read.sum": "Mbyte",
+      "dram__bytes_write.sum": "Mbyte",
+      "dram__bytes.sum.peak_sustained": "Kbyte/cycle",
+      "dram__cycles_elapsed.avg.per_second": "Ghz",
+      "sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum": "",
+      "sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained_elapsed.per_second": ""
+    }
+  },
+  "phases": [
+    {
+      "phase": "K1_prepare",
+      "ncu_row_id": 0,
+      "kernel_name_prefix": "void _flash_kda_fwd_prepare",
+      "theory": {
+        "head_tiles": 6144,
+        "tensor_flops_per_head_tile": 131072,
+        "tensor_flops_total": 805306368
+      },
+      "validation": {
+        "ncu_hmma_flops": 805306368,
+        "theory_equals_ncu": true,
+        "difference_flops": 0
+      },
+      "measured": {
+        "duration_us_ncu_replay": 41.472,
+        "dram_read_bytes": 75736064,
+        "dram_write_bytes": 33484800,
+        "dram_total_bytes": 109220864,
+        "peak_tensor_flops_per_s": 577012444444444.5,
+        "peak_dram_bytes_per_s": 7661481600000.0
+      },
+      "roofline": {
+        "tensor_arithmetic_intensity_flops_per_byte": 7.373191700809105,
+        "achieved_tensor_flops_per_s": 19418074074074.074,
+        "ridge_point_flops_per_byte": 75.31342820746897,
+        "memory_roof_flops_per_s": 56489572549021.664,
+        "selected_roof_flops_per_s": 56489572549021.664,
+        "selected_branch": "memory",
+        "roof_efficiency": 0.34374616761744947,
+        "compute_peak_utilization": 0.0336527821211379,
+        "dram_payload_rate_bytes_per_s": 2633604938271.605,
+        "dram_peak_utilization": 0.34374616761744947
+      }
+    },
+    {
+      "phase": "K2_recurrence",
+      "ncu_row_id": 1,
+      "kernel_name_prefix": "void _flash_kda_fwd_recurrence_vshard4_p2",
+      "theory": {
+        "head_tiles": 6144,
+        "tensor_flops_per_head_tile": 1703936,
+        "tensor_flops_total": 10468982784
+      },
+      "validation": {
+        "ncu_hmma_flops": 10468982784,
+        "theory_equals_ncu": true,
+        "difference_flops": 0
+      },
+      "measured": {
+        "duration_us_ncu_replay": 470.72,
+        "dram_read_bytes": 110724096,
+        "dram_write_bytes": 16110336,
+        "dram_total_bytes": 126834432,
+        "peak_tensor_flops_per_s": 579304993065941.5,
+        "peak_dram_bytes_per_s": 7671646080000.0
+      },
+      "roofline": {
+        "tensor_arithmetic_intensity_flops_per_byte": 82.54054217706435,
+        "achieved_tensor_flops_per_s": 22240361114887.832,
+        "ridge_point_flops_per_byte": 75.51247633492778,
+        "memory_roof_flops_per_s": 633221826833750.4,
+        "selected_roof_flops_per_s": 579304993065941.5,
+        "selected_branch": "compute",
+        "roof_efficiency": 0.038391454209952304,
+        "compute_peak_utilization": 0.038391454209952304,
+        "dram_payload_rate_bytes_per_s": 269447722637.66147,
+        "dram_peak_utilization": 0.03512254343173003
+      }
+    }
+  ],
+  "interpretation_guard": "A selected compute-roof branch identifies I_TC >= ridge only; it does not prove compute saturation when grid-level parallelism is low."
+}

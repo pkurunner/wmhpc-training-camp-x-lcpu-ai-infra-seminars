@@ -1,0 +1,933 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T20:27:08+00:00
+dev-slurm
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py
+e8c605aad52182109b84d175584a1a9bac32e9d8771c3cbad0ecaecbbe516dbb  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_clean_seqcount_dispatch_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+===== PYTHON_COMPILE_GATE =====
+===== SEQUENCE_COUNT_HEAD_MATRIX =====
+correctness m024_n01_h24_fixed: M=24, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m024_n01_h24_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m024_n01_h24_balanced_varlen: M=24, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m024_n01_h24_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n01_h24_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m024_n01_h24_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m024_n02_h12_fixed: M=24, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m024_n02_h12_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/bf16_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_fixed/bf16_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m024_n02_h12_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_fixed/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m024_n02_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/final_state
+correctness m024_n02_h12_balanced_varlen: M=24, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m024_n02_h12_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_balanced_varlen/bf16_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/baseline_vs_pinned_torch_ref/output
+PASS exact: m024_n02_h12_balanced_varlen/fp32_final_only/baseline_vs_pinned_torch_ref/final_state
+correctness m036_n01_h36_fixed: M=36, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m036_n01_h36_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m036_n01_h36_balanced_varlen: M=36, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m036_n01_h36_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n01_h36_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m036_n01_h36_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m036_n03_h12_fixed: M=36, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m036_n03_h12_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m036_n03_h12_balanced_varlen: M=36, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m036_n03_h12_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m036_n03_h12_skewed_varlen: M=36, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m036_n03_h12_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m036_n03_h12_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m036_n03_h12_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m036_n03_h12_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n01_h37_fixed: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n01_h37_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n01_h37_balanced_varlen: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n01_h37_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n01_h37_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n01_h37_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n37_h01_fixed: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n37_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n37_h01_balanced_varlen: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n37_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n01_h38_fixed: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n01_h38_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n01_h38_balanced_varlen: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n01_h38_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n01_h38_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n01_h38_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n38_h01_fixed: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n38_h01_balanced_varlen: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n38_h01_skewed_varlen: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m039_n01_h39_fixed: M=39, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m039_n01_h39_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m039_n01_h39_balanced_varlen: M=39, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m039_n01_h39_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n01_h39_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m039_n01_h39_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m039_n39_h01_fixed: M=39, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m039_n39_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m039_n39_h01_balanced_varlen: M=39, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m039_n39_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m039_n39_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m039_n39_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m040_n01_h40_fixed: M=40, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m040_n01_h40_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m040_n01_h40_balanced_varlen: M=40, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m040_n01_h40_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n01_h40_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m040_n01_h40_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m040_n40_h01_fixed: M=40, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m040_n40_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m040_n40_h01_balanced_varlen: M=40, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m040_n40_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m040_n40_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m040_n40_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m048_n01_h48_fixed: M=48, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m048_n01_h48_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m048_n01_h48_balanced_varlen: M=48, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m048_n01_h48_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n01_h48_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m048_n01_h48_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m048_n04_h12_fixed: M=48, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m048_n04_h12_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m048_n04_h12_balanced_varlen: M=48, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m048_n04_h12_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m048_n04_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m048_n04_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m072_n01_h72_fixed: M=72, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m072_n01_h72_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m072_n01_h72_balanced_varlen: M=72, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m072_n01_h72_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n01_h72_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m072_n01_h72_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m072_n06_h12_fixed: M=72, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m072_n06_h12_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m072_n06_h12_balanced_varlen: M=72, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m072_n06_h12_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m072_n06_h12_skewed_varlen: M=72, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m072_n06_h12_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m072_n06_h12_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m072_n06_h12_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m075_n01_h75_fixed: M=75, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m075_n01_h75_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m075_n01_h75_balanced_varlen: M=75, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m075_n01_h75_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n01_h75_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m075_n01_h75_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m075_n75_h01_fixed: M=75, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m075_n75_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m075_n75_h01_balanced_varlen: M=75, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m075_n75_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m075_n75_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m075_n75_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m076_n01_h76_fixed: M=76, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m076_n01_h76_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m076_n01_h76_balanced_varlen: M=76, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m076_n01_h76_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n01_h76_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m076_n01_h76_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m076_n76_h01_fixed: M=76, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m076_n76_h01_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m076_n76_h01_balanced_varlen: M=76, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m076_n76_h01_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m076_n76_h01_skewed_varlen: M=76, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m076_n76_h01_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m076_n76_h01_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m076_n76_h01_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m096_n01_h96_fixed: M=96, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m096_n01_h96_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m096_n01_h96_balanced_varlen: M=96, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m096_n01_h96_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n01_h96_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m096_n01_h96_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m096_n08_h12_fixed: M=96, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m096_n08_h12_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m096_n08_h12_balanced_varlen: M=96, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m096_n08_h12_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m096_n08_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m096_n08_h12_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n37_h01_t257_control_fixed: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n37_h01_t257_control_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_fixed/bf16_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/final_state
+correctness m037_n37_h01_t257_control_balanced_varlen: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m037_n37_h01_t257_control_skewed_varlen: M=37, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m037_n37_h01_t257_control_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n38_h01_t257_control_fixed: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_t257_control_fixed/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_fixed/bf16_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_fixed/fp32_final_only/baseline_vs_pinned_torch_ref/final_state
+correctness m038_n38_h01_t257_control_balanced_varlen: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_balanced_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+correctness m038_n38_h01_t257_control_skewed_varlen: M=38, contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/none/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/none/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/none/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/baseline_vs_pinned_torch_ref/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_both/baseline_vs_pinned_torch_ref/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: m038_n38_h01_t257_control_skewed_varlen/fp32_final_only/vshard4_p2_vs_baseline/final_state
+benchmark m024_n01_h24_fixed: M=24, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m024_n01_h24_balanced_varlen: M=24, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m024_n02_h12_fixed: M=24, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m024_n02_h12_balanced_varlen: M=24, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m036_n01_h36_fixed: M=36, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m036_n01_h36_balanced_varlen: M=36, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m036_n03_h12_fixed: M=36, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m036_n03_h12_balanced_varlen: M=36, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m036_n03_h12_skewed_varlen: M=36, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n01_h37_fixed: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n01_h37_balanced_varlen: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n37_h01_fixed: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n37_h01_balanced_varlen: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n01_h38_fixed: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n01_h38_balanced_varlen: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_fixed: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_balanced_varlen: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_skewed_varlen: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m039_n01_h39_fixed: M=39, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m039_n01_h39_balanced_varlen: M=39, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m039_n39_h01_fixed: M=39, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m039_n39_h01_balanced_varlen: M=39, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m040_n01_h40_fixed: M=40, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m040_n01_h40_balanced_varlen: M=40, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m040_n40_h01_fixed: M=40, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m040_n40_h01_balanced_varlen: M=40, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m048_n01_h48_fixed: M=48, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m048_n01_h48_balanced_varlen: M=48, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m048_n04_h12_fixed: M=48, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m048_n04_h12_balanced_varlen: M=48, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m072_n01_h72_fixed: M=72, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m072_n01_h72_balanced_varlen: M=72, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m072_n06_h12_fixed: M=72, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m072_n06_h12_balanced_varlen: M=72, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m072_n06_h12_skewed_varlen: M=72, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m075_n01_h75_fixed: M=75, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m075_n01_h75_balanced_varlen: M=75, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m075_n75_h01_fixed: M=75, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m075_n75_h01_balanced_varlen: M=75, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m076_n01_h76_fixed: M=76, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m076_n01_h76_balanced_varlen: M=76, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m076_n76_h01_fixed: M=76, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m076_n76_h01_balanced_varlen: M=76, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m076_n76_h01_skewed_varlen: M=76, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m096_n01_h96_fixed: M=96, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m096_n01_h96_balanced_varlen: M=96, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m096_n08_h12_fixed: M=96, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m096_n08_h12_balanced_varlen: M=96, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n37_h01_t257_control_fixed: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n37_h01_t257_control_balanced_varlen: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m037_n37_h01_t257_control_skewed_varlen: M=37, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_t257_control_fixed: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_t257_control_balanced_varlen: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+benchmark m038_n38_h01_t257_control_skewed_varlen: M=38, contracts=('none', 'fp32_final_only', 'fp32_both'), samples=1000
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_seqcount_dispatch_b300_sm103a_r2.json
+AFTER_MATRIX_COMPUTE_APPS_BEGIN
+
+AFTER_MATRIX_COMPUTE_APPS_END
+AFTER_MATRIX_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T20:32:36+00:00
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

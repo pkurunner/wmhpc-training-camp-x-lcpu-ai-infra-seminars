@@ -1,0 +1,17 @@
+TP8 Slurm quota dry-run evidence
+Date: 2026-08-28 (America/New_York session date)
+
+Command executed on SSH alias b300-login:
+
+sbatch --test-only --parsable --partition=gpu --nodes=1 --gres=gpu:8 \
+  --cpus-per-task=16 --mem=64G --time=00:05:00 \
+  --job-name=c1_tp8_quota_probe --wrap=true
+
+Scheduler response:
+
+sbatch: error: QOSMaxGRESPerUser
+allocation failure: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+
+This was an sbatch --test-only dry run; it did not create or cancel a job.  It
+supports only the scheduler-blocker claim.  It is not a TP8 correctness or
+performance result.

@@ -1,0 +1,36 @@
+===== PRE_AUDIT =====
+2026-08-19T20:59:32+08:00
+gj-5090-1
+SLURM_JOB_ID=6848 CUDA_VISIBLE_DEVICES=0
+0, GPU-04a5a4c1-bcd8-d070-2531-cecfeec61a26, 00000000:40:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB, 2400 MHz, 62.57 W
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+FLASH_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+CUTLASS_PIN=5c149f52a436782210263fb2f19b354443a61c6a
+FLA_PIN=a3edffc
+torch=2.13.0+cu130
+cuda=13.0
+device=NVIDIA GeForce RTX 5090
+extension=/home/lcpu/85117379/flashkda-1ce47ea/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+===== OFFICIAL_FIXED_H96 =====
+shape=[8192,96,128] warmup=5 iters=20 repeats=3
+  flash_kda (bf16 state) : mean=2.6293 ms, min=2.6098 ms, max=2.9959 ms
+  flash_kda (no state)   : mean=2.6232 ms, min=2.6011 ms, max=2.9112 ms
+  flash_kda (fp32 state) : mean=2.6332 ms, min=2.6172 ms, max=2.8916 ms
+  chunk_kda : mean=5.4374 ms, min=5.4105 ms, max=5.7173 ms
+  chunk_gated_delta_rule : mean=3.0829 ms, min=3.0635 ms, max=3.2444 ms
+===== OFFICIAL_FIXED_H64 =====
+shape=[8192,64,128] warmup=5 iters=20 repeats=3
+  flash_kda (bf16 state) : mean=2.2128 ms, min=2.2043 ms, max=2.2646 ms
+  flash_kda (no state)   : mean=2.2101 ms, min=2.2021 ms, max=2.2396 ms
+  flash_kda (fp32 state) : mean=2.2183 ms, min=2.2084 ms, max=2.2584 ms
+  chunk_kda : mean=3.5290 ms, min=3.5099 ms, max=3.7404 ms
+  chunk_gated_delta_rule : mean=2.0000 ms, min=1.9888 ms, max=2.1387 ms
+===== POST_AUDIT =====
+2026-08-19T21:02:13+08:00
+0, GPU-04a5a4c1-bcd8-d070-2531-cecfeec61a26, 00000000:40:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB, 2400 MHz, 63.36 W
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

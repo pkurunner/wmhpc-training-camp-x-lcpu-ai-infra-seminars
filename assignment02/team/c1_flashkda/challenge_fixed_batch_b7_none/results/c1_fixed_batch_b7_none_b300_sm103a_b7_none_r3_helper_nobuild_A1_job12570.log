@@ -1,0 +1,122 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-30T11:06:47+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PROTOCOL_SHELL_PATH=/var/lib/slurm/slurmd/job12570/slurm_script
+PROTOCOL_SHELL_SHA256=26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945
+EXPECTED_PROTOCOL_SHELL_SHA256=26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945
+PINNED_REFERENCE_HELPER_PATH=/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+PINNED_REFERENCE_HELPER_SHA256=8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f
+26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945  /var/lib/slurm/slurmd/job12570/slurm_script
+===== PATCHED_TRACKED_DIRTY_OVERLAY =====
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+613c86a211023ee5284b44a57398dfa2916a5cb272133b1768ce233470b71083  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/fwd.h
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+481462766589ee3ec23c7ab0454a923f2f28aa506826413433fda0450030f534  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/run_fixed_batch_b7_none.py
+2fd71aecd563dc9c5c314de78f52050dddd76539266fcc54d9d93982c2892705  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/analyze_fixed_batch_b7_none.py
+26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945  /var/lib/slurm/slurmd/job12570/slurm_script
+9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f  /home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d  /home/lcpu/85117379/fla-a3edffc/fla/__init__.py
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py
+86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py
+0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py
+===== COMPILE_AND_PLAN_GATE =====
+runner self-test PASS (pinned reference helper missing-environment gates reject before JIT)
+analyzer self-test PASS (single-read SHA/parse, strict JSON types, Unicode jobs, and forged A1/A2 bindings rejected)
+===== A1_A2_PRECONDITION=not_applicable =====
+wrote B7-none plan /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1.plan.json
+===== A1_MAIN_0 =====
+2026-08-30T11:06:47+00:00
+PASS exact: raw/none/baseline_vs_reference/output
+PASS exact: raw/none/v2_vs_reference/output
+PASS exact: raw/none/v2_vs_baseline/output
+PASS exact: raw/bf16_both/baseline_vs_reference/output
+PASS exact: raw/bf16_both/baseline_vs_reference/final_state
+PASS exact: raw/bf16_both/v2_vs_reference/output
+PASS exact: raw/bf16_both/v2_vs_reference/final_state
+PASS exact: raw/bf16_both/v2_vs_baseline/output
+PASS exact: raw/bf16_both/v2_vs_baseline/final_state
+PASS exact: raw/fp32_both/baseline_vs_reference/output
+PASS exact: raw/fp32_both/baseline_vs_reference/final_state
+PASS exact: raw/fp32_both/v2_vs_reference/output
+PASS exact: raw/fp32_both/v2_vs_reference/final_state
+PASS exact: raw/fp32_both/v2_vs_baseline/output
+PASS exact: raw/fp32_both/v2_vs_baseline/final_state
+PASS exact: raw/fp32_final_only/baseline_vs_reference/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/final_state
+PASS exact: raw/fp32_final_only/v2_vs_reference/output
+PASS exact: raw/fp32_final_only/v2_vs_reference/final_state
+PASS exact: raw/fp32_final_only/v2_vs_baseline/output
+PASS exact: raw/fp32_final_only/v2_vs_baseline/final_state
+PASS exact: public/0/0/v2_vs_pinned/output
+PASS exact: public/0/1/v2_vs_pinned/output
+wrote B7-none public artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1_main0.json
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_BEGIN
+
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_END
+BETWEEN_MAIN_0_AND_1_MEMORY_USED_MIB=0
+===== A1_MAIN_1 =====
+2026-08-30T11:07:16+00:00
+PASS exact: raw/none/baseline_vs_reference/output
+PASS exact: raw/none/v2_vs_reference/output
+PASS exact: raw/none/v2_vs_baseline/output
+PASS exact: raw/bf16_both/baseline_vs_reference/output
+PASS exact: raw/bf16_both/baseline_vs_reference/final_state
+PASS exact: raw/bf16_both/v2_vs_reference/output
+PASS exact: raw/bf16_both/v2_vs_reference/final_state
+PASS exact: raw/bf16_both/v2_vs_baseline/output
+PASS exact: raw/bf16_both/v2_vs_baseline/final_state
+PASS exact: raw/fp32_both/baseline_vs_reference/output
+PASS exact: raw/fp32_both/baseline_vs_reference/final_state
+PASS exact: raw/fp32_both/v2_vs_reference/output
+PASS exact: raw/fp32_both/v2_vs_reference/final_state
+PASS exact: raw/fp32_both/v2_vs_baseline/output
+PASS exact: raw/fp32_both/v2_vs_baseline/final_state
+PASS exact: raw/fp32_final_only/baseline_vs_reference/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/final_state
+PASS exact: raw/fp32_final_only/v2_vs_reference/output
+PASS exact: raw/fp32_final_only/v2_vs_reference/final_state
+PASS exact: raw/fp32_final_only/v2_vs_baseline/output
+PASS exact: raw/fp32_final_only/v2_vs_baseline/final_state
+PASS exact: public/1/0/v2_vs_pinned/output
+PASS exact: public/1/1/v2_vs_pinned/output
+wrote B7-none public artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1_main1.json
+AFTER_MAIN_1_COMPUTE_APPS_BEGIN
+
+AFTER_MAIN_1_COMPUTE_APPS_END
+AFTER_MAIN_1_MEMORY_USED_MIB=0
+===== INDEPENDENT_STDLIB_ALLOCATION_AUDIT =====
+wrote A1 B7-none audit /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1.allocation_audit.json; STOP_keep_production_baseline
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_BEGIN
+
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_END
+AFTER_INDEPENDENT_AUDIT_MEMORY_USED_MIB=0
+ALLOCATION_ID=A1
+ALLOCATION_ELIGIBLE=false
+STOP: B7 none did not meet every preregistered repeat/percentile gate
+===== POST_AUDIT =====
+2026-08-30T11:07:43+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=95

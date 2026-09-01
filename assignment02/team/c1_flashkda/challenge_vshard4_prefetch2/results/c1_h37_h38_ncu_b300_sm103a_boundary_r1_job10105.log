@@ -1,0 +1,55 @@
+===== PRE_AUDIT =====
+2026-08-28T12:14:52+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, NVIDIA B300 SXM6 AC, 10.3, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+a6d76d9238a6dbd5933f64178b4c8f9f4e891dbd73c36a134588c27e67e046d4  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/ncu_single_variant.py
+fbc664c1a346a38c31df6591d741f33decd8ba824a2974dc4b5373e50c46943b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/run_clean_h37_h38_ncu_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+===== H37_VSHARD4_P2_NCU_BASIC =====
+BEFORE_H37_COMPUTE_APPS_BEGIN
+
+BEFORE_H37_COMPUTE_APPS_END
+BEFORE_H37_MEMORY_USED_MIB=0
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 1900202 (/usr/bin/python3.12)
+==PROF== Profiling "_flash_kda_fwd_recurrence_vshard4_p2": 0%....50%....100% - 10 passes
+{"capability": [10, 3], "device": "NVIDIA B300 SXM6 AC", "extension": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so", "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005", "final_state_checksum": {"abs_sum": 15711.7392578125, "max_abs": 0.71484375, "sum": 45.233970642089844}, "output_checksum": {"abs_sum": 103602.6171875, "max_abs": 0.09228515625, "sum": 12.144352912902832}, "public_wrapper": "vshard4_prefetch2.fwd -> flash_kda_C.fwd_vshard4_p2", "public_wrapper_calls": 1, "schema_version": 1, "scope": "one selected public wrapper call only; no benchmark and no exact/reference matrix", "seed": 20260828, "shape": {"B": 1, "D": 128, "H": 37, "T": 8192}, "state": {"final_shape": [1, 37, 128, 128], "initial_shape": [1, 37, 128, 128], "mode": "bf16"}, "variant": "vshard4_p2"}
+==PROF== Disconnected from process 1900202
+==PROF== Report: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h37_vshard4_p2_basic_job10105.ncu-rep
+efcbef508899cad0ee89169545aa1435e3f0a6279b8bb045e2da680103c2c9f8  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h37_vshard4_p2_basic_job10105.ncu-rep
+eaffd22af70ce8e47b65b6cef50b71d725580101a46764523a9627109a6dd41c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h37_vshard4_p2_basic_job10105.csv
+AFTER_H37_COMPUTE_APPS_BEGIN
+
+AFTER_H37_COMPUTE_APPS_END
+AFTER_H37_MEMORY_USED_MIB=0
+===== H38_VSHARD4_P2_NCU_BASIC =====
+BEFORE_H38_COMPUTE_APPS_BEGIN
+
+BEFORE_H38_COMPUTE_APPS_END
+BEFORE_H38_MEMORY_USED_MIB=0
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 1900754 (/usr/bin/python3.12)
+==PROF== Profiling "_flash_kda_fwd_recurrence_vshard4_p2": 0%....50%....100% - 10 passes
+{"capability": [10, 3], "device": "NVIDIA B300 SXM6 AC", "extension": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so", "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005", "final_state_checksum": {"abs_sum": 17699.87109375, "max_abs": 0.69140625, "sum": 20.786544799804688}, "output_checksum": {"abs_sum": 105914.34375, "max_abs": 0.1015625, "sum": -26.34394073486328}, "public_wrapper": "vshard4_prefetch2.fwd -> flash_kda_C.fwd_vshard4_p2", "public_wrapper_calls": 1, "schema_version": 1, "scope": "one selected public wrapper call only; no benchmark and no exact/reference matrix", "seed": 20260828, "shape": {"B": 1, "D": 128, "H": 38, "T": 8192}, "state": {"final_shape": [1, 38, 128, 128], "initial_shape": [1, 38, 128, 128], "mode": "bf16"}, "variant": "vshard4_p2"}
+==PROF== Disconnected from process 1900754
+==PROF== Report: /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h38_vshard4_p2_basic_job10105.ncu-rep
+843b9836a45c5ccd395ac014f137fad4c2c516e7872567f08b9040b43680f47c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h38_vshard4_p2_basic_job10105.ncu-rep
+2f65eeca1f6c0d66c3759eedf28b57af3a7ce100f136717d67153375271d5e7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_h38_vshard4_p2_basic_job10105.csv
+AFTER_H38_COMPUTE_APPS_BEGIN
+
+AFTER_H38_COMPUTE_APPS_END
+AFTER_H38_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T12:15:02+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, NVIDIA B300 SXM6 AC, 10.3, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+LOG=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_job10105.log
+MANIFEST=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_h37_h38_ncu_b300_sm103a_boundary_r1_job10105.sha256
+FINAL_RC=0

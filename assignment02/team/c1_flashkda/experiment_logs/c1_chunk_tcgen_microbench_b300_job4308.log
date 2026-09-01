@@ -1,0 +1,8 @@
+C1_MICROBENCH_PRE
+0, NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040 MiB, 0 MiB
+{"all_assertions_pass": true, "bf16_boundary": {"first_subnormal_C": 19, "first_zero_C": 20, "last_nonzero_C": 19}, "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_chunk_tcgen_microbench_b300.json", "neumann_fixed_Q": [{"C": 16, "Q": 16384, "ms": 0.29324319362640383, "tflops": 2.74620651221652, "time_ratio_vs_C16": 1.0, "total_flop": 805306368}, {"C": 32, "Q": 16384, "ms": 0.485097599029541, "tflops": 17.707641945011765, "time_ratio_vs_C16": 1.6542501567745254, "total_flop": 8589934592}, {"C": 64, "Q": 16384, "ms": 1.0764399528503419, "tflops": 79.79947761372496, "time_ratio_vs_C16": 3.670809676905041, "total_flop": 85899345920}], "tcgen05_single_useful_flop_percent": 0.78125}
+C1_MICROBENCH_POST
+0, NVIDIA B300 SXM6 AC, GPU-778768b4-6c9e-e483-890e-0812760948ae, 580.126.09, 275040 MiB, 0 MiB
+C1_MICROBENCH_FINAL_RC=0
+C1_MICROBENCH_JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_chunk_tcgen_microbench_b300.json
+C1_MICROBENCH_LOG=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_chunk_tcgen_microbench_b300_job4308.log

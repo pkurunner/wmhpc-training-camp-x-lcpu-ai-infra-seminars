@@ -1,0 +1,88 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-30T08:26:29+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+ecddc9250c19f899616ae85fb6ff0e4a7047b414f8144b5836b0a65975f07f64  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/run_tail8191_dispatch.py
+40297138e2a9fd6c0b58c159bd8801750e0842c2c30f6b6a708e29bfb779594f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/analyze_tail8191_dispatch.py
+f7ad41d6368e82dc75ed2a384542ee527f5487f38a001b054f25840855327b45  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+3cd5ce30fb7869cca13131bc6255b6ec0cf2f9eaa86ac2a20d2fa7d9b0709342  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d  /home/lcpu/85117379/fla-a3edffc/fla/__init__.py
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py
+86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py
+0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py
+===== COMPILE_AND_PLAN_GATE =====
+analyzer self-test PASS
+wrote tail8191 plan /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r2_A2.plan.json
+===== A2_MAIN_0 =====
+2026-08-30T08:26:29+00:00
+PASS exact: raw/none/baseline_vs_reference/output
+PASS exact: raw/none/vshard4_vs_reference/output
+PASS exact: raw/none/vshard4_vs_baseline/output
+PASS exact: public/0/0/none/c1_vs_pinned/output
+PASS exact: public/0/1/none/c1_vs_pinned/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/final_state
+PASS exact: raw/fp32_final_only/vshard4_vs_reference/output
+PASS exact: raw/fp32_final_only/vshard4_vs_reference/final_state
+PASS exact: raw/fp32_final_only/vshard4_vs_baseline/output
+PASS exact: raw/fp32_final_only/vshard4_vs_baseline/final_state
+PASS exact: public/0/0/fp32_final_only/c1_vs_pinned/output
+PASS exact: public/0/0/fp32_final_only/c1_vs_pinned/final_state
+PASS exact: public/0/1/fp32_final_only/c1_vs_pinned/output
+PASS exact: public/0/1/fp32_final_only/c1_vs_pinned/final_state
+wrote tail8191 public artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r2_A2_main0.json
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_BEGIN
+
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_END
+BETWEEN_MAIN_0_AND_1_MEMORY_USED_MIB=0
+===== A2_MAIN_1 =====
+2026-08-30T08:26:46+00:00
+PASS exact: raw/none/baseline_vs_reference/output
+PASS exact: raw/none/vshard4_vs_reference/output
+PASS exact: raw/none/vshard4_vs_baseline/output
+PASS exact: public/1/0/none/c1_vs_pinned/output
+PASS exact: public/1/1/none/c1_vs_pinned/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/output
+PASS exact: raw/fp32_final_only/baseline_vs_reference/final_state
+PASS exact: raw/fp32_final_only/vshard4_vs_reference/output
+PASS exact: raw/fp32_final_only/vshard4_vs_reference/final_state
+PASS exact: raw/fp32_final_only/vshard4_vs_baseline/output
+PASS exact: raw/fp32_final_only/vshard4_vs_baseline/final_state
+PASS exact: public/1/0/fp32_final_only/c1_vs_pinned/output
+PASS exact: public/1/0/fp32_final_only/c1_vs_pinned/final_state
+PASS exact: public/1/1/fp32_final_only/c1_vs_pinned/output
+PASS exact: public/1/1/fp32_final_only/c1_vs_pinned/final_state
+wrote tail8191 public artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r2_A2_main1.json
+AFTER_MAIN_1_COMPUTE_APPS_BEGIN
+
+AFTER_MAIN_1_COMPUTE_APPS_END
+AFTER_MAIN_1_MEMORY_USED_MIB=0
+===== INDEPENDENT_STDLIB_ALLOCATION_AUDIT =====
+wrote A2 tail8191 audit /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r2_A2.allocation_audit.json; eligible_for_cross_allocation_freeze_review
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_BEGIN
+
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_END
+AFTER_INDEPENDENT_AUDIT_MEMORY_USED_MIB=0
+ALLOCATION_ID=A2
+ALLOCATION_ELIGIBLE=true
+===== POST_AUDIT =====
+2026-08-30T08:27:04+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

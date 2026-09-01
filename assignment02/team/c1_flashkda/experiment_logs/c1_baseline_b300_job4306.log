@@ -1,0 +1,49 @@
+===== PRE_AUDIT =====
+2026-08-19T13:19:18+00:00
+dev-slurm
+SLURM_JOB_ID=4306 CUDA_VISIBLE_DEVICES=0
+0, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 00000000:08:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB, 120 MHz, 191.84 W
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+FLASH_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+CUTLASS_PIN=5c149f52a436782210263fb2f19b354443a61c6a
+FLA_PIN=a3edffc
+torch=2.13.0+cu130
+cuda=13.0
+device=NVIDIA B300 SXM6 AC
+extension=/home/lcpu/85117379/flashkda-1ce47ea/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+===== OFFICIAL_FIXED_H96 =====
+shape=[8192,96,128] warmup=30 iters=200 repeats=5
+  flash_kda (bf16 state) : mean=1.0306 ms, min=1.0257 ms, max=1.1520 ms
+  flash_kda (no state)   : mean=1.0286 ms, min=1.0265 ms, max=1.1140 ms
+  flash_kda (fp32 state) : mean=0.9994 ms, min=0.9968 ms, max=1.1245 ms
+  chunk_kda : mean=2.3503 ms, min=2.3424 ms, max=2.5740 ms
+  chunk_gated_delta_rule : mean=1.2958 ms, min=1.2898 ms, max=1.5288 ms
+===== OFFICIAL_FIXED_H64 =====
+shape=[8192,64,128] warmup=30 iters=200 repeats=5
+  flash_kda (bf16 state) : mean=0.9411 ms, min=0.9364 ms, max=1.0840 ms
+  flash_kda (no state)   : mean=0.9393 ms, min=0.9374 ms, max=1.0839 ms
+  flash_kda (fp32 state) : mean=0.9102 ms, min=0.9086 ms, max=1.0493 ms
+  chunk_kda : mean=1.6279 ms, min=1.6196 ms, max=1.9156 ms
+  chunk_gated_delta_rule : mean=0.8898 ms, min=0.8830 ms, max=1.0292 ms
+===== OFFICIAL_VARLEN_H96 =====
+varlen shape=[8192,96,128] seq_lens=[1300, 547, 2048, 963, 271, 3063] warmup=30 iters=200 repeats=5
+  flash_kda (bf16 state) : mean=0.8604 ms, min=0.8202 ms, max=0.9303 ms
+  flash_kda (no state)   : mean=0.8581 ms, min=0.8045 ms, max=0.9031 ms
+  flash_kda (fp32 state) : mean=0.8718 ms, min=0.8272 ms, max=0.9609 ms
+  chunk_kda : mean=2.3744 ms, min=2.3619 ms, max=2.8467 ms
+  chunk_gated_delta_rule : mean=1.3025 ms, min=1.2966 ms, max=1.5155 ms
+varlen shape=[8192,96,128] seq_lens=[1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024] warmup=30 iters=200 repeats=5
+  flash_kda (bf16 state) : mean=0.7150 ms, min=0.6928 ms, max=0.7484 ms
+  flash_kda (no state)   : mean=0.7149 ms, min=0.7069 ms, max=0.7396 ms
+  flash_kda (fp32 state) : mean=0.7352 ms, min=0.7235 ms, max=0.8269 ms
+  chunk_kda : mean=2.3278 ms, min=2.3190 ms, max=2.5686 ms
+  chunk_gated_delta_rule : mean=1.2541 ms, min=1.2488 ms, max=1.3748 ms
+===== POST_AUDIT =====
+2026-08-19T13:22:39+00:00
+0, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 00000000:08:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB, 2032 MHz, 264.49 W
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

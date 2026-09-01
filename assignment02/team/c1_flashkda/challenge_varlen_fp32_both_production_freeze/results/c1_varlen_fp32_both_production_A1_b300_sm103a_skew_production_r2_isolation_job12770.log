@@ -1,0 +1,63 @@
+===== PRE_SOURCE_SNAPSHOT =====
+9f76b876ad0749698a9b4fafae13d88c6877dce55efee07a988e06b9624c3707  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/run_varlen_fp32_both_production_freeze.py
+1cdfbfd9014121bf0a44693165541dc278ae1b5083dc73153aedab14222d0873  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/analyze_varlen_fp32_both_production_freeze.py
+05b1274dc4ac816047ac599cb0dffa7d3561591bfb6f50cea6b0dd1b11c9db35  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/run_clean_varlen_fp32_both_production_freeze.sh
+9633179c6a5e8ce61b1857a102f81074c6bdfdc63163e13980f40c24d6583c29  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+152ac4ba897c1887963553d592456b7f988c89105e6f6cb507a44757058d5fd1  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py
+f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py
+8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f  /home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+===== PRE_AUDIT =====
+dev-slurm
+PASS exact: skew_n6_h12_t12288/fp32_both/pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned-torch-ref/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned-torch-ref/final
+PASS exact: skew_n6_h12_t12288/fp32_both/direct/output
+PASS exact: skew_n6_h12_t12288/fp32_both/direct/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public/final
+PASS exact: adjacent_offset_fallback/pinned/output
+PASS exact: adjacent_offset_fallback/pinned/final
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/results/c1_varlen_fp32_both_production_A1_b300_sm103a_skew_production_r2_isolation_pid0.json
+PASS exact: skew_n6_h12_t12288/fp32_both/pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned-torch-ref/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-pinned-torch-ref/final
+PASS exact: skew_n6_h12_t12288/fp32_both/direct/output
+PASS exact: skew_n6_h12_t12288/fp32_both/direct/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public/final
+PASS exact: adjacent_offset_fallback/pinned/output
+PASS exact: adjacent_offset_fallback/pinned/final
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/results/c1_varlen_fp32_both_production_A1_b300_sm103a_skew_production_r2_isolation_pid1.json
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/results/c1_varlen_fp32_both_production_A1_b300_sm103a_skew_production_r2_isolation_allocation.json
+ALLOCATION_MANIFEST=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/results/c1_varlen_fp32_both_production_A1_b300_sm103a_skew_production_r2_isolation_allocation.json
+NO_PRODUCTION_CHANGE=1
+===== POST_AUDIT =====
+===== POST_SOURCE_SNAPSHOT =====
+9f76b876ad0749698a9b4fafae13d88c6877dce55efee07a988e06b9624c3707  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/run_varlen_fp32_both_production_freeze.py
+1cdfbfd9014121bf0a44693165541dc278ae1b5083dc73153aedab14222d0873  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/analyze_varlen_fp32_both_production_freeze.py
+05b1274dc4ac816047ac599cb0dffa7d3561591bfb6f50cea6b0dd1b11c9db35  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both_production_freeze/run_clean_varlen_fp32_both_production_freeze.sh
+9633179c6a5e8ce61b1857a102f81074c6bdfdc63163e13980f40c24d6583c29  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+152ac4ba897c1887963553d592456b7f988c89105e6f6cb507a44757058d5fd1  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py
+f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py
+8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f  /home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+FINAL_RC=0

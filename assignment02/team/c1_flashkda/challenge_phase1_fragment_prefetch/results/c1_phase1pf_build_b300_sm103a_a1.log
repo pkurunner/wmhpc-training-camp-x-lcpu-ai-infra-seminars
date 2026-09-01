@@ -1,0 +1,106 @@
+2026-08-30T08:08:34+00:00
+dev-slurm
+SLURM_JOB_ID=12383
+da55ca534cd81d7e21f699fdd4d179c7339797c5c7b79e394d1e2f6dfa09b226  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_phase1_fragment_prefetch/apply_phase1_fragment_prefetch_patch.py
+70d3ae3e9a8135117e497239c8b90e837ef004571a10508761fab17f23608b24  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_phase1_fragment_prefetch/ptxas_audit.py
+177443f13d51ce7a6456c97cd9589ce34fa44c4c1d47819677ad2216558bf339  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_phase1_fragment_prefetch/build_fresh_b300_sm103a.sh
+bca3248e1bf480ea51eb3bb3da0e79d8f477fb914ea17d320c0bf90679aaaf7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/apply_vshard_patch.py
+46222004dfa3e8b00d6ff14a9f64305c8743e2598cd151410ec406d289444580  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4/apply_vshard4_patch.py
+f83e3551907ec8f1a5c1f5c3421e94dc1e3d1941e9f35c845d1d982eef38ccb0  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/apply_prefetch2_patch.py
+1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+ 5c149f52a436782210263fb2f19b354443a61c6a cutlass (5c149f5)
+Cloning into '/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1'...
+HEAD is now at 1ce47ea optimize kda prepare cu_seqlens scan with prefix-sum and binary search (#13)
+-5c149f52a436782210263fb2f19b354443a61c6a cutlass
+static check passed: P2S3 preserved + isolated Phase-1 two-slot candidate
+applied: baseline/vshard2-P2S3/vshard4-P2S3 + Phase-1 two-slot candidate
+CUTLASS already provisioned from pinned local archive; skipping network submodule update
+running build_ext
+W0830 08:08:36.489000 1792324 torch/utils/cpp_extension.py:781] Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
+building 'flash_kda_C' extension
+/usr/bin/g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/examples/common -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/tools/util/include -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/csrc -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/include -I/usr/include/python3.12 -c csrc/flash_kda.cpp -o build/temp.linux-x86_64-cpython-312/csrc/flash_kda.o -O3 -Wno-psabi -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=flash_kda_C -std=c++20
+In file included from /home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/bfloat16.h:50,
+                 from csrc/fwd.h:4,
+                 from csrc/flash_kda.cpp:3:
+/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/platform/platform.h:658:21: warning: ‘long4’ is deprecated: use long4_16a or long4_32a [-Wdeprecated-declarations]
+  658 | struct alignment_of<long4> {
+      |                     ^~~~~
+In file included from /usr/local/cuda/include/driver_types.h:61,
+                 from /usr/local/cuda/include/builtin_types.h:59,
+                 from /usr/local/cuda/include/cuda_runtime_api.h:150,
+                 from /home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include/c10/cuda/CUDAStream.h:4,
+                 from csrc/flash_kda.cpp:2:
+/usr/local/cuda/include/vector_types.h:532:98: note: declared here
+  532 | typedef __device_builtin__ struct long4 __VECTOR_TYPE_DEPRECATED__("use long4_16a or long4_32a") long4;
+      |                                                                                                  ^~~~~
+/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/platform/platform.h:662:21: warning: ‘ulong4’ is deprecated: use ulong4_16a or ulong4_32a [-Wdeprecated-declarations]
+  662 | struct alignment_of<ulong4> {
+      |                     ^~~~~~
+/usr/local/cuda/include/vector_types.h:533:101: note: declared here
+  533 | typedef __device_builtin__ struct ulong4 __VECTOR_TYPE_DEPRECATED__("use ulong4_16a or ulong4_32a") ulong4;
+      |                                                                                                     ^~~~~~
+/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/platform/platform.h:666:21: warning: ‘longlong4’ is deprecated: use longlong4_16a or longlong4_32a [-Wdeprecated-declarations]
+  666 | struct alignment_of<longlong4> {
+      |                     ^~~~~~~~~
+/usr/local/cuda/include/vector_types.h:550:110: note: declared here
+  550 | typedef __device_builtin__ struct longlong4 __VECTOR_TYPE_DEPRECATED__("use longlong4_16a or longlong4_32a") longlong4;
+      |                                                                                                              ^~~~~~~~~
+/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/platform/platform.h:670:21: warning: ‘ulonglong4’ is deprecated: use ulonglong4_16a or ulonglong4_32a [-Wdeprecated-declarations]
+  670 | struct alignment_of<ulonglong4> {
+      |                     ^~~~~~~~~~
+/usr/local/cuda/include/vector_types.h:551:113: note: declared here
+  551 | typedef __device_builtin__ struct ulonglong4 __VECTOR_TYPE_DEPRECATED__("use ulonglong4_16a or ulonglong4_32a") ulonglong4;
+      |                                                                                                                 ^~~~~~~~~~
+/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include/cutlass/platform/platform.h:674:21: warning: ‘double4’ is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  674 | struct alignment_of<double4> {
+      |                     ^~~~~~~
+/usr/local/cuda/include/vector_types.h:561:104: note: declared here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                                                                                        ^~~~~~~
+/usr/local/cuda/bin/nvcc -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/examples/common -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/tools/util/include -I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/csrc -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/include -I/usr/include/python3.12 -c csrc/smxx/fwd_launch.cu -o build/temp.linux-x86_64-cpython-312/csrc/smxx/fwd_launch.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -O3 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ -U__CUDA_NO_HALF2_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math --ptxas-options=-v,--register-usage-level=10,--warn-on-spills -lineinfo --threads 8 -gencode arch=compute_103a,code=sm_103a -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=flash_kda_C -ccbin /usr/bin/gcc -std=c++20
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(553): error: "auto" type cannot appear in top-level array type
+              auto tCrAi_k[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(556): error: "auto" type cannot appear in top-level array type
+              auto tCrAi_k_view[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(559): error: "auto" type cannot appear in top-level array type
+              auto tCrA_k[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(563): error: "auto" type cannot appear in top-level array type
+              auto tCrAi_q[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(566): error: "auto" type cannot appear in top-level array type
+              auto tCrAi_q_view[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(569): error: "auto" type cannot appear in top-level array type
+              auto tCrA_q[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(573): error: "auto" type cannot appear in top-level array type
+              auto tCrBi[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(576): error: "auto" type cannot appear in top-level array type
+              auto tCrBi_view[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(579): error: "auto" type cannot appear in top-level array type
+              auto tCrB[2] = {
+              ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(683): error: expression preceding parentheses of apparent call must have (pointer-to-) function type
+                  gemm(thr_mma, tCrA_k(_,_,Int<0>{}), tCrB_u_tmp(_,_,Int<0>{}), u_acc[i]);
+                                ^
+
+csrc/smxx/fwd_kernel2_vshard4_p2_phase1pf.cuh(708): error: expression preceding parentheses of apparent call must have (pointer-to-) function type
+                  gemm(thr_mma, tCrA_k(_,_,Int<0>{}), tCrB_u_arr[i](_,_,Int<0>{}), out_acc[i]);
+                                ^
+
+11 errors detected in the compilation of "csrc/smxx/fwd_launch.cu".
+error: Command '['/usr/local/cuda/bin/nvcc', '-I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/include', '-I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/examples/common', '-I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/cutlass/tools/util/include', '-I/home/lcpu/85117379/flashkda-phase1-prefetch-1ce47ea-b300-r1/csrc', '-I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include', '-I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include', '-I/usr/local/cuda/include', '-I/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/include', '-I/usr/include/python3.12', '-c', 'csrc/smxx/fwd_launch.cu', '-o', 'build/temp.linux-x86_64-cpython-312/csrc/smxx/fwd_launch.o', '-D__CUDA_NO_HALF_OPERATORS__', '-D__CUDA_NO_HALF_CONVERSIONS__', '-D__CUDA_NO_BFLOAT16_CONVERSIONS__', '-D__CUDA_NO_HALF2_OPERATORS__', '--expt-relaxed-constexpr', '--compiler-options', "'-fPIC'", '-O3', '-U__CUDA_NO_HALF_OPERATORS__', '-U__CUDA_NO_HALF_CONVERSIONS__', '-U__CUDA_NO_HALF2_OPERATORS__', '-U__CUDA_NO_BFLOAT16_CONVERSIONS__', '--expt-relaxed-constexpr', '--expt-extended-lambda', '--use_fast_math', '--ptxas-options=-v,--register-usage-level=10,--warn-on-spills', '-lineinfo', '--threads', '8', '-gencode', 'arch=compute_103a,code=sm_103a', '-DTORCH_API_INCLUDE_EXTENSION_H', '-DTORCH_EXTENSION_NAME=flash_kda_C', '-ccbin', '/usr/bin/gcc', '-std=c++20']' returned non-zero exit status 255.

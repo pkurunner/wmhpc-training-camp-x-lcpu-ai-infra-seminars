@@ -1,0 +1,59 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T18:19:30+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+fd647a6b75e952431f2f192d7c8645246b4d97a938a6820f0915fedb09787844  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_state_contracts.py
+84818283005eecbcbb7f5c532182f2ebec4221d4292d95d893acb74d09905bdc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_clean_state_contracts_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+613c86a211023ee5284b44a57398dfa2916a5cb272133b1768ce233470b71083  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/fwd.h
+===== H12_REAL_FLA_STATE_CONTRACTS =====
+PASS exact: none/baseline_vs_vshard2_p2/output
+PASS exact: none/vshard2_p2_vs_torch_ref/output
+PASS exact: none/baseline_vs_vshard4_p2/output
+PASS exact: none/vshard4_p2_vs_torch_ref/output
+PASS exact: bf16_both/baseline_vs_vshard2_p2/output
+PASS exact: bf16_both/vshard2_p2_vs_torch_ref/output
+PASS exact: bf16_both/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16_both/vshard2_p2_vs_torch_ref/final_state
+PASS exact: bf16_both/baseline_vs_vshard4_p2/output
+PASS exact: bf16_both/vshard4_p2_vs_torch_ref/output
+PASS exact: bf16_both/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16_both/vshard4_p2_vs_torch_ref/final_state
+PASS exact: fp32_both/baseline_vs_vshard2_p2/output
+PASS exact: fp32_both/vshard2_p2_vs_torch_ref/output
+PASS exact: fp32_both/baseline_vs_vshard2_p2/final_state
+PASS exact: fp32_both/vshard2_p2_vs_torch_ref/final_state
+PASS exact: fp32_both/baseline_vs_vshard4_p2/output
+PASS exact: fp32_both/vshard4_p2_vs_torch_ref/output
+PASS exact: fp32_both/baseline_vs_vshard4_p2/final_state
+PASS exact: fp32_both/vshard4_p2_vs_torch_ref/final_state
+PASS exact: fp32_final_only/baseline_vs_vshard2_p2/output
+PASS exact: fp32_final_only/vshard2_p2_vs_torch_ref/output
+PASS exact: fp32_final_only/baseline_vs_vshard2_p2/final_state
+PASS exact: fp32_final_only/vshard2_p2_vs_torch_ref/final_state
+PASS exact: fp32_final_only/baseline_vs_vshard4_p2/output
+PASS exact: fp32_final_only/vshard4_p2_vs_torch_ref/output
+PASS exact: fp32_final_only/baseline_vs_vshard4_p2/final_state
+PASS exact: fp32_final_only/vshard4_p2_vs_torch_ref/final_state
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/results/c1_tp8_dispatch_b300_sm103a_h12_realstate_r1_h12_state_contracts.json
+AFTER_STATE_CONTRACTS_COMPUTE_APPS_BEGIN
+
+AFTER_STATE_CONTRACTS_COMPUTE_APPS_END
+AFTER_STATE_CONTRACTS_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T18:19:49+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

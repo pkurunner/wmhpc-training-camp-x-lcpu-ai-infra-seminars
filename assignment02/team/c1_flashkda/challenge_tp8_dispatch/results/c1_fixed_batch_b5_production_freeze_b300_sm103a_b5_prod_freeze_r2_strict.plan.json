@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "purpose": "real pinned-FLA/public-registry fixed-batch correctness integration audit",
+  "shape": {
+    "H": 12,
+    "T": 2048,
+    "K": 128,
+    "V": 128
+  },
+  "seed": 20260831,
+  "matrix": [
+    {
+      "cell": "b2_h12_t2048/none",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b2_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b2_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/none",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/none",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b5_h12_t2048/none",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b5_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b5_h12_t2048/fp32_both",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b6_h12_t2048/none",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b6_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b6_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/none",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/fp32_final_only",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    }
+  ],
+  "positive_cells": [
+    "b2_h12_t2048/none",
+    "b2_h12_t2048/fp32_final_only",
+    "b2_h12_t2048/fp32_both",
+    "b3_h12_t2048/none",
+    "b3_h12_t2048/fp32_final_only",
+    "b3_h12_t2048/fp32_both",
+    "b4_h12_t2048/none",
+    "b4_h12_t2048/fp32_final_only",
+    "b5_h12_t2048/none",
+    "b5_h12_t2048/fp32_final_only",
+    "b5_h12_t2048/fp32_both",
+    "b6_h12_t2048/none",
+    "b6_h12_t2048/fp32_final_only"
+  ],
+  "negative_cells": [
+    "b4_h12_t2048/fp32_both",
+    "b6_h12_t2048/fp32_both",
+    "b8_h12_t2048/none",
+    "b8_h12_t2048/fp32_final_only",
+    "b8_h12_t2048/fp32_both"
+  ],
+  "performance_observation": "not_run; this is a correctness/registry integration gate, not a release latency gate",
+  "identity": {},
+  "registry": {},
+  "cells": {},
+  "gates": {
+    "scope": {
+      "required_cells": 18,
+      "actual_cells": 18,
+      "passed": true
+    },
+    "clean_gpu_shell_gate": {
+      "required": true,
+      "passed": false
+    },
+    "device": {
+      "required": "B300, capability 10.3, 148 SM",
+      "passed": false
+    },
+    "extension": {
+      "required_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "passed": false
+    },
+    "fla_pin": {
+      "commit": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d",
+      "file_hashes": {
+        "fla/__init__.py": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d",
+        "fla/ops/backends/__init__.py": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635",
+        "fla/ops/kda/__init__.py": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb",
+        "fla/ops/kda/backends/__init__.py": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797",
+        "fla/ops/kda/backends/flash_kda.py": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2",
+        "fla/ops/kda/chunk.py": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+      },
+      "passed": false
+    },
+    "registry": {
+      "passed": false
+    }
+  },
+  "complete": false,
+  "describe_only": true
+}

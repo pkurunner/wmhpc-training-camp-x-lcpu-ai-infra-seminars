@@ -1,0 +1,209 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T18:41:46+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+ff771c0b2f1b66f3062bc310c14634bf23830f706aec39f1b8ff03ff8b567621  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_tail/run_varlen_tail.py
+74bba6ed383dc2c0d13b98508784917df6a06c151b5afa08105a629fd1c14bbd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_tail/run_clean_varlen_tail_audit.sh
+8b72eaeca5242a44c2e96d02dbef6bdfa5778ce3e488344d79ba7749e4e3a956  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+===== VARLEN_BATCH_TAIL_MATRIX =====
+PASS exact: fixed_t1/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t1/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t1/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t1/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t1/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t1/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t1/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t1/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t1/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t1/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t1/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t1/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t1/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t1/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t15/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t15/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t15/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t15/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t15/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t15/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t15/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t15/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t15/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t15/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t15/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t15/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t15/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t15/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t17/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t17/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t17/none/baseline_vs_torch_ref/output
+PASS exact: fixed_t17/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t17/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t17/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t17/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t17/bf16_both/baseline_vs_torch_ref/output
+PASS exact: fixed_t17/bf16_both/baseline_vs_torch_ref/final_state
+PASS exact: fixed_t17/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t17/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t17/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t17/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t17/fp32_both/baseline_vs_torch_ref/output
+PASS exact: fixed_t17/fp32_both/baseline_vs_torch_ref/final_state
+PASS exact: fixed_t17/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t17/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t17/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t17/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t17/fp32_final_only/baseline_vs_torch_ref/output
+PASS exact: fixed_t17/fp32_final_only/baseline_vs_torch_ref/final_state
+PASS exact: fixed_t31/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t31/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t31/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t31/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t31/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t31/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t31/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t31/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t31/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t31/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t31/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t31/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t31/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t31/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t127/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t127/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t127/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t127/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t127/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t127/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t127/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t127/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t127/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t127/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_t127/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_t127/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_t127/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_t127/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_tail_t8191/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_tail_t8191/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/none/vshard2_p2_vs_baseline/output
+PASS exact: batch_b2_t17/none/vshard4_p2_vs_baseline/output
+PASS exact: batch_b2_t17/none/baseline_vs_torch_ref/output
+PASS exact: batch_b2_t17/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b2_t17/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b2_t17/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/bf16_both/baseline_vs_torch_ref/output
+PASS exact: batch_b2_t17/bf16_both/baseline_vs_torch_ref/final_state
+PASS exact: batch_b2_t17/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b2_t17/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b2_t17/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/fp32_both/baseline_vs_torch_ref/output
+PASS exact: batch_b2_t17/fp32_both/baseline_vs_torch_ref/final_state
+PASS exact: batch_b2_t17/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: batch_b2_t17/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: batch_b2_t17/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b2_t17/fp32_final_only/baseline_vs_torch_ref/output
+PASS exact: batch_b2_t17/fp32_final_only/baseline_vs_torch_ref/final_state
+PASS exact: batch_b4_t127/none/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t127/none/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t127/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t127/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t127/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t127/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b4_t127/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t127/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t127/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t127/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b4_t127/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t127/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t127/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t127/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/none/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/none/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: batch_b4_t2048/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: batch_b4_t2048/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_short/none/vshard2_p2_vs_baseline/output
+PASS exact: varlen_short/none/vshard4_p2_vs_baseline/output
+PASS exact: varlen_short/none/baseline_vs_torch_ref/output
+PASS exact: varlen_short/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: varlen_short/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_short/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: varlen_short/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_short/bf16_both/baseline_vs_torch_ref/output
+PASS exact: varlen_short/bf16_both/baseline_vs_torch_ref/final_state
+PASS exact: varlen_short/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: varlen_short/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_short/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: varlen_short/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_short/fp32_both/baseline_vs_torch_ref/output
+PASS exact: varlen_short/fp32_both/baseline_vs_torch_ref/final_state
+PASS exact: varlen_short/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: varlen_short/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_short/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: varlen_short/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_short/fp32_final_only/baseline_vs_torch_ref/output
+PASS exact: varlen_short/fp32_final_only/baseline_vs_torch_ref/final_state
+PASS exact: varlen_mixed_t8192/none/vshard2_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/none/vshard4_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/none/baseline_vs_torch_ref/output
+PASS exact: varlen_mixed_t8192/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_mixed_t8192/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_mixed_t8192/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_mixed_t8192/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: varlen_mixed_t8192/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: varlen_mixed_t8192/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: varlen_mixed_t8192/fp32_final_only/vshard4_p2_vs_baseline/final_state
+PASS exact: runtime_dispatch_varlen/public_vs_baseline/output
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_tail/results/c1_varlen_tail_b300_sm103a_r1.json
+AFTER_MATRIX_COMPUTE_APPS_BEGIN
+
+AFTER_MATRIX_COMPUTE_APPS_END
+AFTER_MATRIX_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T18:42:01+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "purpose": "independent B=5 discovery audit; no production mapping or release authority",
+  "diagnostic_only": true,
+  "discovery_only": true,
+  "no_release_authority": true,
+  "no_production_mapping": true,
+  "source_identity": {
+    "analyzer": {
+      "path": "D:\\软微\\26春季\\科研\\Linux_HPC\\assignment02\\team\\c1_flashkda\\challenge_seqcount_dispatch\\analyze_fixed_batch_b5_discovery.py",
+      "sha256": "7f93cb81dd76263e6eeb8017872636fd0c636578d975a1f2580f845c61f1735d",
+      "sha256_gate_pass": true
+    },
+    "runner_expected_sha256": "45f54fd2db41415b8c2d225797d63590d6e6406f067fdf76badddef775d2ceae"
+  },
+  "artifacts": [
+    {
+      "path": "assignment02\\team\\c1_flashkda\\challenge_seqcount_dispatch\\results\\c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1_main0.json",
+      "sha256": "0cb8294acade0b47363661593c353adf68d427f6c5f4a6aafd5adead6f76a9ac",
+      "sha256_gate_pass": true
+    },
+    {
+      "path": "assignment02\\team\\c1_flashkda\\challenge_seqcount_dispatch\\results\\c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1_main1.json",
+      "sha256": "13ad71a1947642ea4838b7e799408512272b67c80bbfd2780ed93c08f24e73e3",
+      "sha256_gate_pass": true
+    }
+  ],
+  "identity_consistency": {
+    "distinct_fresh_pids": [
+      292783,
+      293166
+    ],
+    "same_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "same_extension_so": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "same_pinned_torch_reference_sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+    "passed": true
+  },
+  "contract_assessment": {
+    "none": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.07117410275870117,
+            "p95": 0.07515721925822794,
+            "p99": 0.06684413703850978
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.07132675936982968,
+            "p95": 0.07858039777030768,
+            "p99": 0.0689151722280621
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.07097890226030401,
+            "p95": 0.07331505553677142,
+            "p99": 0.06777394167843886
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.07189023167731512,
+            "p95": 0.07100900502771634,
+            "p99": 0.06202266288038394
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "vshard2_p2",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": true,
+      "optimized_winner_not_baseline": true,
+      "eligible_for_confirmation": true
+    },
+    "fp32_final_only": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.06701034827129981,
+            "p95": 0.06283527641550024,
+            "p99": 0.0664577390115213
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.06733319545122907,
+            "p95": 0.06407022534957107,
+            "p99": 0.06632769363055013
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.0673092305173264,
+            "p95": 0.05934384734590914,
+            "p99": 0.06201087704413477
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.06745415581341985,
+            "p95": 0.060592112002146425,
+            "p99": 0.062330066965230246
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "vshard2_p2",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": true,
+      "optimized_winner_not_baseline": true,
+      "eligible_for_confirmation": true
+    },
+    "fp32_both": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.023651118994733267,
+            "p95": 0.028071696232804255,
+            "p99": 0.02456568725878805
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.023197404681341016,
+            "p95": 0.027475725883555624,
+            "p99": 0.02518490614670643
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.02337204900073786,
+            "p95": 0.028208833184284243,
+            "p99": 0.026789292098775785
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.022920920917359533,
+            "p95": 0.027157183149765673,
+            "p99": 0.0236160914052288
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "vshard2_p2",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": true,
+      "optimized_winner_not_baseline": true,
+      "eligible_for_confirmation": true
+    }
+  },
+  "second_allocation_decision": {
+    "eligible": true,
+    "decision": "eligible_for_independent_confirmation",
+    "meaning": "eligible only for an independently authorized confirmation allocation; never a production mapping",
+    "automatic_second_allocation_submitted": false
+  },
+  "complete": true
+}

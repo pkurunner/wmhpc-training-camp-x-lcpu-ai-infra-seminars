@@ -1,0 +1,776 @@
+{
+  "schema_version": 2,
+  "purpose": "v5 public-registry cross-map read-only regression; no production source or map mutation",
+  "allocation_id": "A1",
+  "process_index": 0,
+  "allocation": {
+    "slurm_job_id": "12911",
+    "cuda_visible_devices": "0"
+  },
+  "process": {
+    "pid": 65061,
+    "fresh_python_process_required": true
+  },
+  "positive_cells": {},
+  "public_registry_negative_controls": {},
+  "source_pre_torch": {
+    "auto_dispatch": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+      "sha256": "9633179c6a5e8ce61b1857a102f81074c6bdfdc63163e13980f40c24d6583c29"
+    },
+    "fla_backend": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+      "sha256": "152ac4ba897c1887963553d592456b7f988c89105e6f6cb507a44757058d5fd1"
+    },
+    "runner": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py",
+      "sha256": "25a93559ddf305d10ba54134d4aaaefb145934c354676996867c53024793efad"
+    },
+    "analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/analyze_v5_crossmap_regression.py",
+      "sha256": "8332b26f91fe8c0871287ae09a14d21ce4e3c5dbac9133270be18becd7322cf2"
+    },
+    "protocol_shell": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_clean_v5_crossmap_regression.sh",
+      "sha256": "2974e679df6502883b7ee34bac492b9a1f704296765db2c21fd8cd0746b435df"
+    },
+    "supporting_helpers": {
+      "varlen_helper": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py",
+        "sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14"
+      },
+      "tail_helper": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/run_tail8191_production_freeze.py",
+        "sha256": "f4144f5fbdd61396ff907c6290b767b5570e04d19087f8332f9db10e56e7b1dc"
+      },
+      "shared_seqcount": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+        "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f"
+      },
+      "confirmation": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+        "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b"
+      },
+      "varlen_metadata": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+        "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd"
+      },
+      "harness": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+        "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52"
+      },
+      "reference_torch_ref": {
+        "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+        "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5"
+      }
+    },
+    "fla_sources": {
+      "fla/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/__init__.py",
+        "sha256": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d"
+      },
+      "fla/ops/backends/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py",
+        "sha256": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635"
+      },
+      "fla/ops/kda/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py",
+        "sha256": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb"
+      },
+      "fla/ops/kda/backends/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py",
+        "sha256": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797"
+      },
+      "fla/ops/kda/backends/flash_kda.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py",
+        "sha256": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2"
+      },
+      "fla/ops/kda/chunk.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py",
+        "sha256": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+      }
+    },
+    "passed": true
+  },
+  "bootstrap": {
+    "source_ledger_mode": "canonical_path_sha256_without_module_import",
+    "stages": [
+      "source_ledger_pre_torch",
+      "pre_torch_clean_gpu",
+      "heavy_runtime_import",
+      "loaded_module_identity",
+      "canonical_map_pre"
+    ],
+    "heavy_runtime_import_after_clean_gate": true,
+    "passed": true
+  },
+  "source_pre": {
+    "ledger": {
+      "auto_dispatch": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+        "sha256": "9633179c6a5e8ce61b1857a102f81074c6bdfdc63163e13980f40c24d6583c29"
+      },
+      "fla_backend": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+        "sha256": "152ac4ba897c1887963553d592456b7f988c89105e6f6cb507a44757058d5fd1"
+      },
+      "runner": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py",
+        "sha256": "25a93559ddf305d10ba54134d4aaaefb145934c354676996867c53024793efad"
+      },
+      "analyzer": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/analyze_v5_crossmap_regression.py",
+        "sha256": "8332b26f91fe8c0871287ae09a14d21ce4e3c5dbac9133270be18becd7322cf2"
+      },
+      "protocol_shell": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_clean_v5_crossmap_regression.sh",
+        "sha256": "2974e679df6502883b7ee34bac492b9a1f704296765db2c21fd8cd0746b435df"
+      },
+      "supporting_helpers": {
+        "varlen_helper": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py",
+          "sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14"
+        },
+        "tail_helper": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/run_tail8191_production_freeze.py",
+          "sha256": "f4144f5fbdd61396ff907c6290b767b5570e04d19087f8332f9db10e56e7b1dc"
+        },
+        "shared_seqcount": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f"
+        },
+        "confirmation": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b"
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd"
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52"
+        },
+        "reference_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5"
+        }
+      },
+      "fla_sources": {
+        "fla/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/__init__.py",
+          "sha256": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d"
+        },
+        "fla/ops/backends/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py",
+          "sha256": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635"
+        },
+        "fla/ops/kda/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py",
+          "sha256": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb"
+        },
+        "fla/ops/kda/backends/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py",
+          "sha256": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797"
+        },
+        "fla/ops/kda/backends/flash_kda.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py",
+          "sha256": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2"
+        },
+        "fla/ops/kda/chunk.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py",
+          "sha256": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+        }
+      },
+      "passed": true
+    },
+    "loaded_modules": {
+      "modules": {
+        "auto_dispatch": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.auto_dispatch",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py"
+        },
+        "fla_backend": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.fla_backend",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py"
+        },
+        "varlen_metadata": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.varlen_metadata",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py"
+        },
+        "shared_seqcount": {
+          "module": "assignment02.team.c1_flashkda.challenge_seqcount_dispatch.run_seqcount_dispatch",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py"
+        },
+        "confirmation": {
+          "module": "assignment02.team.c1_flashkda.challenge_varlen_dispatch.run_varlen_dispatch_confirmation",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py"
+        },
+        "varlen_helper": {
+          "module": "assignment02.team.c1_flashkda.challenge_varlen_dispatch.run_varlen_fla_handoff_candidate",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py"
+        },
+        "tail_helper": {
+          "module": "assignment02.team.c1_flashkda.challenge_tail8191_production_freeze.run_tail8191_production_freeze",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/run_tail8191_production_freeze.py"
+        },
+        "harness": {
+          "module": "assignment02.team.c1_flashkda.harness.validate_and_bench",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py"
+        },
+        "fla_ops_kda": {
+          "module": "fla.ops.kda",
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py"
+        }
+      },
+      "passed": true
+    },
+    "passed": true
+  },
+  "source_post": {
+    "ledger": {
+      "auto_dispatch": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+        "sha256": "9633179c6a5e8ce61b1857a102f81074c6bdfdc63163e13980f40c24d6583c29"
+      },
+      "fla_backend": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+        "sha256": "152ac4ba897c1887963553d592456b7f988c89105e6f6cb507a44757058d5fd1"
+      },
+      "runner": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py",
+        "sha256": "25a93559ddf305d10ba54134d4aaaefb145934c354676996867c53024793efad"
+      },
+      "analyzer": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/analyze_v5_crossmap_regression.py",
+        "sha256": "8332b26f91fe8c0871287ae09a14d21ce4e3c5dbac9133270be18becd7322cf2"
+      },
+      "protocol_shell": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_clean_v5_crossmap_regression.sh",
+        "sha256": "2974e679df6502883b7ee34bac492b9a1f704296765db2c21fd8cd0746b435df"
+      },
+      "supporting_helpers": {
+        "varlen_helper": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py",
+          "sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14"
+        },
+        "tail_helper": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/run_tail8191_production_freeze.py",
+          "sha256": "f4144f5fbdd61396ff907c6290b767b5570e04d19087f8332f9db10e56e7b1dc"
+        },
+        "shared_seqcount": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f"
+        },
+        "confirmation": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b"
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd"
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52"
+        },
+        "reference_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5"
+        }
+      },
+      "fla_sources": {
+        "fla/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/__init__.py",
+          "sha256": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d"
+        },
+        "fla/ops/backends/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py",
+          "sha256": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635"
+        },
+        "fla/ops/kda/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py",
+          "sha256": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb"
+        },
+        "fla/ops/kda/backends/__init__.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py",
+          "sha256": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797"
+        },
+        "fla/ops/kda/backends/flash_kda.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py",
+          "sha256": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2"
+        },
+        "fla/ops/kda/chunk.py": {
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py",
+          "sha256": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+        }
+      },
+      "passed": true
+    },
+    "loaded_modules": {
+      "modules": {
+        "auto_dispatch": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.auto_dispatch",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py"
+        },
+        "fla_backend": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.fla_backend",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py"
+        },
+        "varlen_metadata": {
+          "module": "assignment02.team.c1_flashkda.challenge_tp8_dispatch.varlen_metadata",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py"
+        },
+        "shared_seqcount": {
+          "module": "assignment02.team.c1_flashkda.challenge_seqcount_dispatch.run_seqcount_dispatch",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py"
+        },
+        "confirmation": {
+          "module": "assignment02.team.c1_flashkda.challenge_varlen_dispatch.run_varlen_dispatch_confirmation",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py"
+        },
+        "varlen_helper": {
+          "module": "assignment02.team.c1_flashkda.challenge_varlen_dispatch.run_varlen_fla_handoff_candidate",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_handoff_candidate.py"
+        },
+        "tail_helper": {
+          "module": "assignment02.team.c1_flashkda.challenge_tail8191_production_freeze.run_tail8191_production_freeze",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/run_tail8191_production_freeze.py"
+        },
+        "harness": {
+          "module": "assignment02.team.c1_flashkda.harness.validate_and_bench",
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py"
+        },
+        "fla_ops_kda": {
+          "module": "fla.ops.kda",
+          "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py"
+        }
+      },
+      "passed": true
+    },
+    "passed": true
+  },
+  "map_pre": {
+    "entries": {
+      "fixed_batch": [
+        {
+          "first": 2,
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 5,
+          "contract": "fp32_both",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 2,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 4,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 5,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 6,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 2,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 4,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 5,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 6,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        }
+      ],
+      "fixed_single_batch": [
+        {
+          "first": 8191,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 8191,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        }
+      ],
+      "varlen": [
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "none",
+          "variant": "vshard2_p2"
+        }
+      ]
+    },
+    "object_ids": {
+      "fixed_batch": 128770931665152,
+      "fixed_single_batch": 128770931660480,
+      "varlen": 128770931666496
+    },
+    "digest": "a4fb43fb4dc98fe8cebacdaa3199600c66676887e6a47447d83d4bab7322117b"
+  },
+  "map_post": {
+    "entries": {
+      "fixed_batch": [
+        {
+          "first": 2,
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 5,
+          "contract": "fp32_both",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 2,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 4,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 5,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 6,
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 2,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 3,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 4,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 5,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        },
+        {
+          "first": 6,
+          "contract": "none",
+          "variant": "vshard2_p2"
+        }
+      ],
+      "fixed_single_batch": [
+        {
+          "first": 8191,
+          "contract": "fp32_final_only",
+          "variant": "vshard4_p2"
+        },
+        {
+          "first": 8191,
+          "contract": "none",
+          "variant": "vshard4_p2"
+        }
+      ],
+      "varlen": [
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "fp32_both",
+          "variant": "vshard4_p2"
+        },
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        },
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "none",
+          "variant": "vshard2_p2"
+        }
+      ]
+    },
+    "object_ids": {
+      "fixed_batch": 128770931665152,
+      "fixed_single_batch": 128770931660480,
+      "varlen": 128770931666496
+    },
+    "digest": "a4fb43fb4dc98fe8cebacdaa3199600c66676887e6a47447d83d4bab7322117b"
+  },
+  "map_readonly": {
+    "content_unchanged": true,
+    "object_ids_unchanged_within_raw_pid": true,
+    "passed": true
+  },
+  "identity": {
+    "pre_torch_clean_gpu": {
+      "index": "0",
+      "uuid": "GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a",
+      "name": "NVIDIA B300 SXM6 AC",
+      "compute_capability": "10.3",
+      "memory_used_mib": 0,
+      "compute_apps": [],
+      "torch_modules_before_gate": [],
+      "heavy_modules_before_gate": [],
+      "passed": true
+    },
+    "runtime": {
+      "device": {
+        "name": "NVIDIA B300 SXM6 AC",
+        "capability": [
+          10,
+          3
+        ],
+        "multiprocessor_count": 148,
+        "passed": true
+      },
+      "extension": {
+        "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+        "sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+        "passed": true
+      },
+      "flash_kda_python": {
+        "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+        "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84"
+      },
+      "source_trees": {
+        "patched": {
+          "root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+          "commit": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b",
+          "passed": true
+        },
+        "reference": {
+          "root": "/home/lcpu/85117379/flashkda-1ce47ea",
+          "commit": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b",
+          "tracked_status_clean": true,
+          "passed": true
+        }
+      },
+      "fla": {
+        "root": "/home/lcpu/85117379/fla-a3edffc",
+        "commit": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d",
+        "tracked_status_clean": true,
+        "files": {
+          "fla/__init__.py": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d",
+          "fla/ops/backends/__init__.py": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635",
+          "fla/ops/kda/__init__.py": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb",
+          "fla/ops/kda/backends/__init__.py": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797",
+          "fla/ops/kda/backends/flash_kda.py": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2",
+          "fla/ops/kda/chunk.py": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+        },
+        "loaded_modules": {
+          "fla": "/home/lcpu/85117379/fla-a3edffc/fla/__init__.py",
+          "fla.ops.backends": "/home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py",
+          "fla.ops.kda": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py",
+          "fla.ops.kda.backends": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py",
+          "fla.ops.kda.backends.flash_kda": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py",
+          "fla.ops.kda.chunk": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py"
+        },
+        "public_callables": {
+          "fla.ops.kda.chunk_kda": {
+            "implementation_identity_match": true,
+            "module": "fla.ops.kda.chunk",
+            "qualname": "chunk_kda",
+            "source_path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py",
+            "passed": true
+          }
+        },
+        "passed": true
+      }
+    },
+    "patched_dirty_set": {
+      "root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+      "commit": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b",
+      "tracked_status": [
+        " M csrc/flash_kda.cpp",
+        " M csrc/fwd.h",
+        " M csrc/smxx/fwd_launch.cu"
+      ],
+      "tracked_dirty_sha256": {
+        "csrc/flash_kda.cpp": "38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4",
+        "csrc/fwd.h": "613c86a211023ee5284b44a57398dfa2916a5cb272133b1768ce233470b71083",
+        "csrc/smxx/fwd_launch.cu": "a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928"
+      },
+      "passed": true
+    },
+    "reference_clean": {
+      "root": "/home/lcpu/85117379/flashkda-1ce47ea",
+      "commit": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b",
+      "tracked_status": [],
+      "tracked_dirty_sha256": {},
+      "passed": true
+    },
+    "fla_clean": {
+      "root": "/home/lcpu/85117379/fla-a3edffc",
+      "commit": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d",
+      "tracked_status": [],
+      "tracked_dirty_sha256": {},
+      "passed": true
+    },
+    "pinned_reference_helper": {
+      "identity": {
+        "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+        "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f"
+      },
+      "load_proof": {
+        "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+        "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+        "load_contract": "direct cached binary; exactly one pinned load_inline('sigmoid_ext') intercepted",
+        "intercepted_names": [
+          "sigmoid_ext"
+        ],
+        "no_build": true
+      }
+    },
+    "registry": {
+      "public_callable": "fla.ops.kda.chunk_kda",
+      "snapshot": [
+        {
+          "backend_type": "triton_ascend",
+          "priority": 0,
+          "id": 128770935350016
+        },
+        {
+          "backend_type": "c1_b300_flash_kda",
+          "priority": 2,
+          "id": 128758578735024
+        },
+        {
+          "backend_type": "flash_kda",
+          "priority": 3,
+          "id": 128758584607040
+        },
+        {
+          "backend_type": "tilelang",
+          "priority": 5,
+          "id": 128770935350256
+        }
+      ],
+      "test_only_route_installed": false
+    },
+    "registry_spies_restored": {
+      "c1": true,
+      "pinned": true,
+      "passed": true
+    }
+  },
+  "performance": {},
+  "complete": false,
+  "failure": {
+    "type": "NameError",
+    "message": "name 'torch' is not defined"
+  }
+}

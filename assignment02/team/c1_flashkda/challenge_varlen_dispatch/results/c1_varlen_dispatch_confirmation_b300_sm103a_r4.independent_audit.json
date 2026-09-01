@@ -1,0 +1,433 @@
+{
+  "artifact": "D:\\软微\\26春季\\科研\\Linux_HPC\\assignment02\\team\\c1_flashkda\\challenge_varlen_dispatch\\results\\c1_varlen_dispatch_confirmation_b300_sm103a_r4.json",
+  "artifact_sha256": "447d7f49a624fa5b92adc431b350450f99d53f5b20f3a07a1bf4d2f76a64e51c",
+  "independent_audit_pass": true,
+  "exact_flag_count": 92,
+  "promotion_cell_count": 11,
+  "record_only_cell_count": 1,
+  "global_minimum_promotion_margin": 0.027530210113523967,
+  "promotion_cells": [
+    {
+      "case": "equal_n2_h12_t2048",
+      "contract": "none",
+      "expected": "vshard4_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.10929728066036204,
+            "p95": 0.10508706396075196,
+            "p99": 0.10977531631158777
+          },
+          "minimum_margin": 0.10508706396075196
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.10874746096568888,
+            "p95": 0.10265265180535099,
+            "p99": 0.11186378843775491
+          },
+          "minimum_margin": 0.10265265180535099
+        }
+      ]
+    },
+    {
+      "case": "equal_n2_h12_t2048",
+      "contract": "fp32_final_only",
+      "expected": "vshard4_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.08653849339768405,
+            "p95": 0.08899432096468063,
+            "p99": 0.07912880927031973
+          },
+          "minimum_margin": 0.07912880927031973
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.08604425278979955,
+            "p95": 0.09020317845004011,
+            "p99": 0.09325943527568703
+          },
+          "minimum_margin": 0.08604425278979955
+        }
+      ]
+    },
+    {
+      "case": "equal_n2_h12_t2048",
+      "contract": "fp32_both",
+      "expected": "vshard4_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.18251091939757313,
+            "p95": 0.17852450840913336,
+            "p99": 0.15391576592138967
+          },
+          "minimum_margin": 0.15391576592138967
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.1819047746602913,
+            "p95": 0.17821597065240669,
+            "p99": 0.14969125197773048
+          },
+          "minimum_margin": 0.14969125197773048
+        }
+      ]
+    },
+    {
+      "case": "equal_n4_h12_t2048",
+      "contract": "none",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.05026673353162514,
+            "p95": 0.051343550472111366,
+            "p99": 0.05541388506247813
+          },
+          "minimum_margin": 0.05026673353162514
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.04962815599186232,
+            "p95": 0.049248606552312335,
+            "p99": 0.05700686796321963
+          },
+          "minimum_margin": 0.049248606552312335
+        }
+      ]
+    },
+    {
+      "case": "equal_n4_h12_t2048",
+      "contract": "fp32_final_only",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.050535756241615104,
+            "p95": 0.04980195232234452,
+            "p99": 0.05584398820885794
+          },
+          "minimum_margin": 0.04980195232234452
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.05052767374939893,
+            "p95": 0.04773120244512796,
+            "p99": 0.04731039907155887
+          },
+          "minimum_margin": 0.04731039907155887
+        }
+      ]
+    },
+    {
+      "case": "equal_n4_h12_t2048",
+      "contract": "fp32_both",
+      "expected": "vshard4_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.03027562883562096,
+            "p95": 0.0356983107449933,
+            "p99": 0.027530210113523967
+          },
+          "minimum_margin": 0.027530210113523967
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.03059531514566327,
+            "p95": 0.03540241941966582,
+            "p99": 0.031572876391779525
+          },
+          "minimum_margin": 0.03059531514566327
+        }
+      ]
+    },
+    {
+      "case": "mixed_n6_h12_t8192",
+      "contract": "none",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.04962357718593324,
+            "p95": 0.051363139096393784,
+            "p99": 0.049183002164443046
+          },
+          "minimum_margin": 0.049183002164443046
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.049139129243697344,
+            "p95": 0.050762705844654255,
+            "p99": 0.048612526588583505
+          },
+          "minimum_margin": 0.048612526588583505
+        }
+      ]
+    },
+    {
+      "case": "mixed_n6_h12_t8192",
+      "contract": "fp32_final_only",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.051671678348475636,
+            "p95": 0.04994908151864874,
+            "p99": 0.05371474631376083
+          },
+          "minimum_margin": 0.04994908151864874
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.05202639431444411,
+            "p95": 0.050144618867556945,
+            "p99": 0.051263175920709614
+          },
+          "minimum_margin": 0.050144618867556945
+        }
+      ]
+    },
+    {
+      "case": "skew_n6_h12_t12288",
+      "contract": "none",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.06153170729705826,
+            "p95": 0.06343298273502707,
+            "p99": 0.059942989201772656
+          },
+          "minimum_margin": 0.059942989201772656
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.06219231321888241,
+            "p95": 0.0624989357628285,
+            "p99": 0.06124206607865923
+          },
+          "minimum_margin": 0.06124206607865923
+        }
+      ]
+    },
+    {
+      "case": "skew_n6_h12_t12288",
+      "contract": "fp32_final_only",
+      "expected": "vshard2_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.06895796666131604,
+            "p95": 0.06939677200132732,
+            "p99": 0.06558144612917882
+          },
+          "minimum_margin": 0.06558144612917882
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.06893971942616295,
+            "p95": 0.07016755920114903,
+            "p99": 0.07055558627716407
+          },
+          "minimum_margin": 0.06893971942616295
+        }
+      ]
+    },
+    {
+      "case": "skew_n6_h12_t12288",
+      "contract": "fp32_both",
+      "expected": "vshard4_p2",
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.04265842392498698,
+            "p95": 0.04061254136956971,
+            "p99": 0.046150950952130954
+          },
+          "minimum_margin": 0.04061254136956971
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.04260183033257792,
+            "p95": 0.04119705133747176,
+            "p99": 0.04180935725487189
+          },
+          "minimum_margin": 0.04119705133747176
+        }
+      ]
+    }
+  ],
+  "record_only_cells": [
+    {
+      "case": "mixed_n6_h12_t8192",
+      "contract": "fp32_both",
+      "expected": null,
+      "repeats": [
+        {
+          "repeat": 0,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.041161444990208906,
+            "p95": 0.03953192352080381,
+            "p99": 0.03792158220454578
+          },
+          "minimum_margin": 0.03792158220454578
+        },
+        {
+          "repeat": 1,
+          "winner_by_percentile": {
+            "p50": "vshard4_p2",
+            "p95": "vshard4_p2",
+            "p99": "vshard4_p2"
+          },
+          "margin_by_percentile": {
+            "p50": 0.041365419528935465,
+            "p95": 0.039851176923290765,
+            "p99": 0.039635342860571576
+          },
+          "minimum_margin": 0.039635342860571576
+        }
+      ]
+    }
+  ]
+}

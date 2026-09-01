@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "purpose": "independent B=5 cross-allocation confirmation chain; no dispatcher, map, or release authority",
+  "diagnostic_only": true,
+  "confirmation_only": true,
+  "no_release_authority": true,
+  "no_production_mapping": true,
+  "source_identity": {
+    "confirmation_analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/analyze_fixed_batch_b5_confirmation.py",
+      "sha256": "ed59853c673f93dfff33858ac7308e6d387c093b74eea0150ad509ecae3de149",
+      "sha256_gate_pass": true
+    },
+    "measurement_runner_expected_sha256": "45f54fd2db41415b8c2d225797d63590d6e6406f067fdf76badddef775d2ceae",
+    "measurement_discovery_analyzer_expected_sha256": "7f93cb81dd76263e6eeb8017872636fd0c636578d975a1f2580f845c61f1735d"
+  },
+  "input_audits": {
+    "historical_discovery": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1.independent_audit.json",
+      "sha256": "9acf5a9d8820206fc6fc72adda834811036c5d70860f2ffe614f39efce22a516",
+      "sha256_gate_pass": true
+    },
+    "current_measurement": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1.measurement_audit.json",
+      "sha256": "b589cd959390f2af9e34c504902b981a8a9e5d345b67cb8787ae97196a7afe4b",
+      "sha256_gate_pass": true
+    }
+  },
+  "historical_assessment": {
+    "expected_candidate": "vshard2_p2",
+    "contracts": {
+      "none": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      },
+      "fp32_final_only": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      },
+      "fp32_both": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      }
+    },
+    "all_three_contracts_pass": true
+  },
+  "current_assessment": {
+    "expected_candidate": "vshard2_p2",
+    "contracts": {
+      "none": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      },
+      "fp32_final_only": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      },
+      "fp32_both": {
+        "common_winner": "vshard2_p2",
+        "candidate_matches_vshard2_p2": true,
+        "same_winner_all_four_repeats_and_percentiles": true,
+        "margin_at_least_2_percent_every_repeat_and_percentile": true,
+        "optimized_winner_not_baseline": true,
+        "eligible_for_confirmation": true,
+        "contract_pass": true
+      }
+    },
+    "all_three_contracts_pass": true
+  },
+  "current_measurement_seed_provenance": {
+    "expected_seed": 20260830,
+    "raw_main_artifacts": [
+      {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1_main0.json",
+        "sha256": "0a16870ca6e53f57fc326163a18c430282a03533c2947408f909ad02efc93079",
+        "process_index": 0,
+        "seed_formula_gate_pass": true
+      },
+      {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1_main1.json",
+        "sha256": "00ef51564fe11bc9c37e09561299656a38c8c62001927fd2c20ace00e07162db",
+        "process_index": 1,
+        "seed_formula_gate_pass": true
+      }
+    ],
+    "passed": true
+  },
+  "independent_allocation_evidence": {
+    "historical_main_artifact_sha256": [
+      "0cb8294acade0b47363661593c353adf68d427f6c5f4a6aafd5adead6f76a9ac",
+      "13ad71a1947642ea4838b7e799408512272b67c80bbfd2780ed93c08f24e73e3"
+    ],
+    "current_main_artifact_sha256": [
+      "00ef51564fe11bc9c37e09561299656a38c8c62001927fd2c20ace00e07162db",
+      "0a16870ca6e53f57fc326163a18c430282a03533c2947408f909ad02efc93079"
+    ],
+    "artifact_sha_sets_disjoint": true,
+    "historical_slurm": {
+      "job_id": 11781,
+      "log_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1_job11781.log",
+      "log_sha256": "824ef6ec8a7f25f6eafaa0ae5465d72164d046184061bcd4af23efa1e466db2f",
+      "log_sha256_gate_pass": true
+    },
+    "current_slurm": {
+      "job_id": 11782,
+      "log_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1_job11782.log",
+      "log_sha256_observed_before_confirmation_analysis": "6d66f64718047f0ab1c42eaad0fa35bec2cc5d4624945153d1bc459d53be2f87"
+    },
+    "distinct_slurm_job_ids": true,
+    "distinct_slurm_log_paths": true,
+    "historical_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "current_gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "same_gpu_uuid_across_allocations": true,
+    "independence_evidence_pass": true
+  },
+  "public_integration_decision": {
+    "eligible_for_public_integration_review": true,
+    "decision": "eligible_for_public_integration_review",
+    "meaning": "eligible only for human public-integration review; never a dispatcher edit, production mapping, or release",
+    "automatic_public_integration": false
+  },
+  "complete": true
+}

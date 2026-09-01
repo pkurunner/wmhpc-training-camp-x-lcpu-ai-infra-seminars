@@ -1,0 +1,32 @@
+AUDIT=c1_tp8_quota_reprobe
+TIMESTAMP_UTC=2026-08-30T06:27:43+00:00
+HOST=b300-login
+USER=85117379
+
+COMMAND:
+ssh b300-login '{ set +e; sinfo -p gpu; squeue -u $(id -un); for n in 8 4 2 1; do sbatch --test-only -p gpu --gres=gpu:$n --time=00:02:00 --job-name=c1_quota_probe_g${n} --wrap="nvidia-smi -L"; done; }'
+
+PARTITION|AVAIL|TIMELIMIT|NODES|GRES|STATE
+gpu*|up|1:00:00|1|gpu:8|mixed
+
+PROBE_GPU_COUNT=8
+sbatch: error: QOSMaxGRESPerUser
+allocation failure: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+PROBE_RC=1
+
+PROBE_GPU_COUNT=4
+sbatch: error: QOSMaxGRESPerUser
+allocation failure: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+PROBE_RC=1
+
+PROBE_GPU_COUNT=2
+sbatch: error: QOSMaxGRESPerUser
+allocation failure: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+PROBE_RC=1
+
+PROBE_GPU_COUNT=1
+sbatch: Job 12212 to start at 2026-08-30T08:50:18 using 30 processors on nodes dev-slurm in partition gpu
+PROBE_RC=0
+
+INTERPRETATION:
+The partition physically advertises eight GPUs, but this user's current QOS rejects every request above one GPU. `--test-only` did not create jobs. A one-GPU request remains admissible; this does not satisfy the full concurrent TP8 requirement.

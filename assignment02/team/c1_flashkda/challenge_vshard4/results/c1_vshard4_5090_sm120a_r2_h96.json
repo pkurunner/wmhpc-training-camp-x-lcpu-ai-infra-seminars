@@ -1,0 +1,51 @@
+{
+  "device": "NVIDIA GeForce RTX 5090",
+  "capability": [
+    12,
+    0
+  ],
+  "candidate": "fwd_vshard4",
+  "extension": {
+    "extension": "/home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "extension_sha256": "a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163"
+  },
+  "states": [
+    "bf16"
+  ],
+  "seed": 20260819,
+  "build_target": "sm120a",
+  "shape": {
+    "B": 1,
+    "T": 8192,
+    "H": 96,
+    "K": 128,
+    "V": 128
+  },
+  "correctness": {
+    "bf16": {
+      "baseline_vs_candidate_exact": true,
+      "output_max_abs": 0.0,
+      "final_state_max_abs": 0.0
+    }
+  },
+  "benchmarks": {
+    "bf16": {
+      "baseline": {
+        "mean_ms": 2.6581139359474184,
+        "median_ms": 2.6287039518356323,
+        "min_ms": 2.5954880714416504,
+        "max_ms": 3.0932159423828125,
+        "samples": 1000
+      },
+      "vshard4": {
+        "mean_ms": 4.945361692905426,
+        "median_ms": 4.906655788421631,
+        "min_ms": 4.865695953369141,
+        "max_ms": 5.7830400466918945,
+        "samples": 1000
+      },
+      "speedup_median_x": 0.5357424822908214,
+      "event_contract": "AB/BA alternating one-public-fwd-call/event; includes wrapper workspace allocation"
+    }
+  }
+}

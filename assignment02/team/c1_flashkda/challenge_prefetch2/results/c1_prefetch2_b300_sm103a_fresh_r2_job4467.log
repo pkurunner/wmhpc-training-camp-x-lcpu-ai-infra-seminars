@@ -1,0 +1,64 @@
+===== PRE_AUDIT =====
+2026-08-20T02:48:12+00:00
+dev-slurm
+CUDA_VISIBLE_DEVICES=0
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+C1_BUILD_TARGET=B300_SM103a
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+23d58a30a43bab13fc0fb76ef414cd51db5e2b4dc550ef464d927834a525e021  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/apply_prefetch2_patch.py
+a35e1fd1823e733d18f4937ba66ca7a317b52a33db5474a2180db01fa8b7d53d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+2d5d8e8b5b7c7e0ca3741a95ae54055710eee3b51149544b2d8a5fbcdabbab72  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_prefetch2_final.py
+282f0c97b9aacac84daf8c33a53f174138fd1ba20ded083018ad92c625dd0354  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_clean_prefetch2_audit.sh
+bca3248e1bf480ea51eb3bb3da0e79d8f477fb914ea17d320c0bf90679aaaf7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/apply_vshard_patch.py
+7f508c60003439de27b184d70c130ca615439fcaa61e9970be4dc961ffcccaec  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/vshard.py
+d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+669b9f25373893e92c2fb16956518d0e5538c0314bdb7a666754c32e51be8764  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/flash_kda.cpp
+ded20fe0d6d711f7d5a877776a0a4173ec216f2361ed7e71cc6a0fc93b5d463c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/fwd.h
+203bb6540d56a74e691e44860e20f187cfc4f9e03fab98fe6c34453f238b2db6  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_launch.cu
+f8a634154ca26a18855adbd3db17d6208a874b16f173d0eb9814bfefff03b9b9  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2.cuh
+af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard.cuh
+03ba5a268150c9d219f935654a6b27f9acbb0635a5686c7ea50a18f15d625c3c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard_p2.cuh
+===== SMALL_EXACT_MATRIX =====
+Traceback (most recent call last):
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_prefetch2_final.py", line 267, in <module>
+    main()
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_prefetch2_final.py", line 226, in main
+    torch_ref = common._load_torch_ref(args.reference_root)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py", line 55, in _load_torch_ref
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/tests/torch_ref.py", line 32, in <module>
+    sigmoid_ext = load_inline(
+                  ^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2285, in load_inline
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2382, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2496, in _write_ninja_file_and_build_library
+    verify_ninja_availability()
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2562, in verify_ninja_availability
+    raise RuntimeError("Ninja is required to load C++ extensions (pip install ninja to get it)")
+RuntimeError: Ninja is required to load C++ extensions (pip install ninja to get it)
+===== POST_AUDIT =====
+2026-08-20T02:48:13+00:00
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=1

@@ -1,0 +1,132 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T21:23:14+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard4.cuh
+?? csrc/smxx/fwd_kernel2_vshard4_p2.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+FLA_STATUS_BEGIN
+FLA_STATUS_END
+f559e5b26a220d54f14de0df78b3b4577ec3d74052a8bb11f4f9339f9ab77928  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_fixed_batch_fla_integration.py
+783c6bdc9694f76a3f218645f0c8129d0fb123ede6238a584e848dcc8a99d22f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_clean_fixed_batch_fla_integration_audit.sh
+63f3903ca535f80156bf6ee2f518d0d964b35936cbf1f4bba395580fba4cb8d1  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+05c3dc935fba97bb849a1df3644debb6ffbbd759eab3a338e3c4fc5b8de38fd9  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+df6c1b9f96bd179bb1189053e41edb5abf6e887b78044100336a47a360bb092f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/test_auto_dispatch_policy.py
+4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py
+0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+===== CPU_POLICY_TESTS =====
+PASS test_all_device_whitelist_dimensions_fail_closed
+PASS test_all_tensor_contract_misses_fail_closed
+PASS test_cross_length_entries_are_exactly_whitelisted
+PASS test_exact_fixed_batch_public_contract_entries_and_fallbacks
+PASS test_kernel_exceptions_are_not_caught_or_replayed
+PASS test_opt_in_backend_registration_is_idempotent
+PASS test_positive_boundaries
+PASS test_real_fla_h12_state_contracts_are_explicitly_whitelisted
+PASS test_symbol_fallback_is_prelaunch_and_last_decision_is_observable
+PASS test_unverified_state_contracts_select_baseline
+PASS test_wrong_extension_sha_fails_closed_before_launch
+PASS 11 CPU-only dispatcher tests
+===== PYTHON_COMPILE_GATE =====
+===== FIXED_BATCH_FLA_INTEGRATION =====
+FLA public integration b2_h12_t2048/none: expected=vshard4_p2
+PASS exact: b2_h12_t2048/none/direct_custom_vs_pinned/output
+PASS exact: b2_h12_t2048/none/public_registry_vs_pinned/output
+FLA public integration b2_h12_t2048/fp32_final_only: expected=vshard4_p2
+PASS exact: b2_h12_t2048/fp32_final_only/direct_custom_vs_pinned/output
+PASS exact: b2_h12_t2048/fp32_final_only/direct_custom_vs_pinned/final_state
+PASS exact: b2_h12_t2048/fp32_final_only/public_registry_vs_pinned/output
+PASS exact: b2_h12_t2048/fp32_final_only/public_registry_vs_pinned/final_state
+FLA public integration b2_h12_t2048/fp32_both: expected=vshard4_p2
+PASS exact: b2_h12_t2048/fp32_both/direct_custom_vs_pinned/output
+PASS exact: b2_h12_t2048/fp32_both/direct_custom_vs_pinned/final_state
+PASS exact: b2_h12_t2048/fp32_both/public_registry_vs_pinned/output
+PASS exact: b2_h12_t2048/fp32_both/public_registry_vs_pinned/final_state
+FLA public integration b3_h12_t2048/none: expected=vshard4_p2
+PASS exact: b3_h12_t2048/none/direct_custom_vs_pinned/output
+PASS exact: b3_h12_t2048/none/public_registry_vs_pinned/output
+FLA public integration b3_h12_t2048/fp32_final_only: expected=vshard4_p2
+PASS exact: b3_h12_t2048/fp32_final_only/direct_custom_vs_pinned/output
+PASS exact: b3_h12_t2048/fp32_final_only/direct_custom_vs_pinned/final_state
+PASS exact: b3_h12_t2048/fp32_final_only/public_registry_vs_pinned/output
+PASS exact: b3_h12_t2048/fp32_final_only/public_registry_vs_pinned/final_state
+FLA public integration b3_h12_t2048/fp32_both: expected=vshard4_p2
+PASS exact: b3_h12_t2048/fp32_both/direct_custom_vs_pinned/output
+PASS exact: b3_h12_t2048/fp32_both/direct_custom_vs_pinned/final_state
+PASS exact: b3_h12_t2048/fp32_both/public_registry_vs_pinned/output
+PASS exact: b3_h12_t2048/fp32_both/public_registry_vs_pinned/final_state
+FLA public integration b4_h12_t2048/none: expected=vshard2_p2
+PASS exact: b4_h12_t2048/none/direct_custom_vs_pinned/output
+PASS exact: b4_h12_t2048/none/public_registry_vs_pinned/output
+FLA public integration b4_h12_t2048/fp32_final_only: expected=vshard2_p2
+PASS exact: b4_h12_t2048/fp32_final_only/direct_custom_vs_pinned/output
+PASS exact: b4_h12_t2048/fp32_final_only/direct_custom_vs_pinned/final_state
+PASS exact: b4_h12_t2048/fp32_final_only/public_registry_vs_pinned/output
+PASS exact: b4_h12_t2048/fp32_final_only/public_registry_vs_pinned/final_state
+FLA public integration b4_h12_t2048/fp32_both: expected=baseline
+PASS exact: b4_h12_t2048/fp32_both/direct_custom_vs_pinned/output
+PASS exact: b4_h12_t2048/fp32_both/direct_custom_vs_pinned/final_state
+PASS exact: b4_h12_t2048/fp32_both/public_registry_vs_pinned/output
+PASS exact: b4_h12_t2048/fp32_both/public_registry_vs_pinned/final_state
+FLA public integration b6_h12_t2048/none: expected=vshard2_p2
+PASS exact: b6_h12_t2048/none/direct_custom_vs_pinned/output
+PASS exact: b6_h12_t2048/none/public_registry_vs_pinned/output
+FLA public integration b6_h12_t2048/fp32_final_only: expected=vshard2_p2
+PASS exact: b6_h12_t2048/fp32_final_only/direct_custom_vs_pinned/output
+PASS exact: b6_h12_t2048/fp32_final_only/direct_custom_vs_pinned/final_state
+PASS exact: b6_h12_t2048/fp32_final_only/public_registry_vs_pinned/output
+PASS exact: b6_h12_t2048/fp32_final_only/public_registry_vs_pinned/final_state
+FLA public integration b6_h12_t2048/fp32_both: expected=baseline
+PASS exact: b6_h12_t2048/fp32_both/direct_custom_vs_pinned/output
+PASS exact: b6_h12_t2048/fp32_both/direct_custom_vs_pinned/final_state
+PASS exact: b6_h12_t2048/fp32_both/public_registry_vs_pinned/output
+PASS exact: b6_h12_t2048/fp32_both/public_registry_vs_pinned/final_state
+FLA public integration b8_h12_t2048/none: expected=baseline
+PASS exact: b8_h12_t2048/none/direct_custom_vs_pinned/output
+PASS exact: b8_h12_t2048/none/public_registry_vs_pinned/output
+FLA public integration b8_h12_t2048/fp32_final_only: expected=baseline
+PASS exact: b8_h12_t2048/fp32_final_only/direct_custom_vs_pinned/output
+PASS exact: b8_h12_t2048/fp32_final_only/direct_custom_vs_pinned/final_state
+PASS exact: b8_h12_t2048/fp32_final_only/public_registry_vs_pinned/output
+PASS exact: b8_h12_t2048/fp32_final_only/public_registry_vs_pinned/final_state
+FLA public integration b8_h12_t2048/fp32_both: expected=baseline
+PASS exact: b8_h12_t2048/fp32_both/direct_custom_vs_pinned/output
+PASS exact: b8_h12_t2048/fp32_both/direct_custom_vs_pinned/final_state
+PASS exact: b8_h12_t2048/fp32_both/public_registry_vs_pinned/output
+PASS exact: b8_h12_t2048/fp32_both/public_registry_vs_pinned/final_state
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/results/c1_fixed_batch_fla_integration_b300_sm103a_r1.json; 15/15 public FLA cells passed
+AFTER_FLA_INTEGRATION_COMPUTE_APPS_BEGIN
+
+AFTER_FLA_INTEGRATION_COMPUTE_APPS_END
+AFTER_FLA_INTEGRATION_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T21:23:21+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

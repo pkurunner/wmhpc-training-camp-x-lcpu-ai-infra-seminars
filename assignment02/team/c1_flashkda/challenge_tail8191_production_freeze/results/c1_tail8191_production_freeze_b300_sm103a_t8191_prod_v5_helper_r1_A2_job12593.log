@@ -1,0 +1,76 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== A1_PREREQUISITE =====
+verified fixed A1 as eligible prerequisite in a distinct Slurm job
+===== PRE_AUDIT =====
+2026-08-30T11:43:47+00:00
+dev-slurm
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== COMPILE_AND_PLAN_GATE =====
+analyzer self-test PASS: raw recompute, strict identity types, helper/schema-3 rejection, A1 prerequisite rejection, and production decision-key rejection
+runner self-test PASS: helper proof requires one intercepted sigmoid_ext request and no build
+wrote production-freeze plan /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/results/c1_tail8191_production_freeze_b300_sm103a_t8191_prod_v5_helper_r1_A2.plan.json
+===== A2_MAIN_0 =====
+2026-08-30T11:43:47+00:00
+PASS exact: raw/none/baseline_reference/output
+PASS exact: raw/none/v4_reference/output
+PASS exact: raw/none/v4_baseline/output
+PASS exact: public/0/0/none/output
+PASS exact: public/0/1/none/output
+PASS exact: raw/fp32_final_only/baseline_reference/output
+PASS exact: raw/fp32_final_only/baseline_reference/final
+PASS exact: raw/fp32_final_only/v4_reference/output
+PASS exact: raw/fp32_final_only/v4_reference/final
+PASS exact: raw/fp32_final_only/v4_baseline/output
+PASS exact: raw/fp32_final_only/v4_baseline/final
+PASS exact: public/0/0/fp32_final_only/output
+PASS exact: public/0/0/fp32_final_only/final
+PASS exact: public/0/1/fp32_final_only/output
+PASS exact: public/0/1/fp32_final_only/final
+wrote production-freeze artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/results/c1_tail8191_production_freeze_b300_sm103a_t8191_prod_v5_helper_r1_A2_main0.json
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_BEGIN
+
+BETWEEN_MAIN_0_AND_1_COMPUTE_APPS_END
+BETWEEN_MAIN_0_AND_1_MEMORY_USED_MIB=0
+===== A2_MAIN_1 =====
+2026-08-30T11:44:05+00:00
+PASS exact: raw/none/baseline_reference/output
+PASS exact: raw/none/v4_reference/output
+PASS exact: raw/none/v4_baseline/output
+PASS exact: public/1/0/none/output
+PASS exact: public/1/1/none/output
+PASS exact: raw/fp32_final_only/baseline_reference/output
+PASS exact: raw/fp32_final_only/baseline_reference/final
+PASS exact: raw/fp32_final_only/v4_reference/output
+PASS exact: raw/fp32_final_only/v4_reference/final
+PASS exact: raw/fp32_final_only/v4_baseline/output
+PASS exact: raw/fp32_final_only/v4_baseline/final
+PASS exact: public/1/0/fp32_final_only/output
+PASS exact: public/1/0/fp32_final_only/final
+PASS exact: public/1/1/fp32_final_only/output
+PASS exact: public/1/1/fp32_final_only/final
+wrote production-freeze artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/results/c1_tail8191_production_freeze_b300_sm103a_t8191_prod_v5_helper_r1_A2_main1.json
+AFTER_MAIN_1_COMPUTE_APPS_BEGIN
+
+AFTER_MAIN_1_COMPUTE_APPS_END
+AFTER_MAIN_1_MEMORY_USED_MIB=0
+===== INDEPENDENT_STDLIB_ALLOCATION_AUDIT =====
+wrote A2 production-freeze allocation audit /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_production_freeze/results/c1_tail8191_production_freeze_b300_sm103a_t8191_prod_v5_helper_r1_A2.allocation_audit.json; eligible=True
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_BEGIN
+
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_END
+AFTER_INDEPENDENT_AUDIT_MEMORY_USED_MIB=0
+ALLOCATION_ID=A2
+ALLOCATION_ELIGIBLE=true
+===== POST_AUDIT =====
+2026-08-30T11:44:22+00:00
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

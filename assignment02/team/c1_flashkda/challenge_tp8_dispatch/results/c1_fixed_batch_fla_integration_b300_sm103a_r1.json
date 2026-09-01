@@ -1,0 +1,1501 @@
+{
+  "schema_version": 1,
+  "purpose": "real pinned-FLA/public-registry fixed-batch correctness integration audit",
+  "shape": {
+    "H": 12,
+    "T": 2048,
+    "K": 128,
+    "V": 128
+  },
+  "seed": 20260829,
+  "matrix": [
+    {
+      "cell": "b2_h12_t2048/none",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b2_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b2_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/none",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b3_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/none",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b4_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b6_h12_t2048/none",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b6_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2",
+      "release_role": "positive"
+    },
+    {
+      "cell": "b6_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/none",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/fp32_final_only",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    },
+    {
+      "cell": "b8_h12_t2048/fp32_both",
+      "expected_variant": "baseline",
+      "release_role": "negative"
+    }
+  ],
+  "positive_cells": [
+    "b2_h12_t2048/none",
+    "b2_h12_t2048/fp32_final_only",
+    "b2_h12_t2048/fp32_both",
+    "b3_h12_t2048/none",
+    "b3_h12_t2048/fp32_final_only",
+    "b3_h12_t2048/fp32_both",
+    "b4_h12_t2048/none",
+    "b4_h12_t2048/fp32_final_only",
+    "b6_h12_t2048/none",
+    "b6_h12_t2048/fp32_final_only"
+  ],
+  "negative_cells": [
+    "b4_h12_t2048/fp32_both",
+    "b6_h12_t2048/fp32_both",
+    "b8_h12_t2048/none",
+    "b8_h12_t2048/fp32_final_only",
+    "b8_h12_t2048/fp32_both"
+  ],
+  "performance_observation": "not_run; this is a correctness/registry integration gate, not a release latency gate",
+  "identity": {
+    "device": {
+      "name": "NVIDIA B300 SXM6 AC",
+      "capability": [
+        10,
+        3
+      ],
+      "multiprocessor_count": 148,
+      "gate_pass": true
+    },
+    "extension": {
+      "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "required_symbols": [
+        "fwd",
+        "fwd_vshard_p2",
+        "fwd_vshard4_p2",
+        "get_workspace_size"
+      ],
+      "gate_pass": true
+    },
+    "flash_kda_python": {
+      "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+      "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84",
+      "gate_pass": true
+    },
+    "fla": {
+      "root": "/home/lcpu/85117379/fla-a3edffc",
+      "commit": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d",
+      "files": {
+        "fla/ops/backends/__init__.py": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635",
+        "fla/ops/kda/backends/__init__.py": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797",
+        "fla/ops/kda/backends/flash_kda.py": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2",
+        "fla/ops/kda/chunk.py": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+      },
+      "gate_pass": true
+    }
+  },
+  "registry": {
+    "backend_order": [
+      {
+        "backend_type": "triton_ascend",
+        "priority": 0,
+        "available": false,
+        "enabled": true
+      },
+      {
+        "backend_type": "c1_b300_flash_kda",
+        "priority": 2,
+        "available": true,
+        "enabled": true
+      },
+      {
+        "backend_type": "flash_kda",
+        "priority": 3,
+        "available": true,
+        "enabled": true
+      },
+      {
+        "backend_type": "tilelang",
+        "priority": 5,
+        "available": true,
+        "enabled": true
+      }
+    ],
+    "registration_idempotent": true,
+    "custom_before_pinned": true
+  },
+  "cells": {
+    "b2_h12_t2048/none": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_custom_backend_spy": {
+        "before": 0,
+        "after": 1,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b2_h12_t2048_none_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b2_h12_t2048/fp32_final_only": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          2,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 1,
+        "after": 2,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b2_h12_t2048_fp32_final_only_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b2_h12_t2048/fp32_both": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          2,
+          12,
+          128,
+          128
+        ],
+        "construction": "deterministic non-symmetric contiguous affine FP32 values"
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          2,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 2,
+        "after": 3,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b2_h12_t2048_fp32_both_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b3_h12_t2048/none": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_custom_backend_spy": {
+        "before": 3,
+        "after": 4,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b3_h12_t2048_none_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b3_h12_t2048/fp32_final_only": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          3,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 4,
+        "after": 5,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b3_h12_t2048_fp32_final_only_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b3_h12_t2048/fp32_both": {
+      "expected_variant": "vshard4_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          3,
+          12,
+          128,
+          128
+        ],
+        "construction": "deterministic non-symmetric contiguous affine FP32 values"
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          3,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 5,
+        "after": 6,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard4_p2",
+        "chosen_variant": "vshard4_p2",
+        "reason": "fixed_batch_b3_h12_t2048_fp32_both_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b4_h12_t2048/none": {
+      "expected_variant": "vshard2_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_custom_backend_spy": {
+        "before": 6,
+        "after": 7,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard2_p2",
+        "chosen_variant": "vshard2_p2",
+        "reason": "fixed_batch_b4_h12_t2048_none_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b4_h12_t2048/fp32_final_only": {
+      "expected_variant": "vshard2_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 7,
+        "after": 8,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard2_p2",
+        "chosen_variant": "vshard2_p2",
+        "reason": "fixed_batch_b4_h12_t2048_fp32_final_only_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b4_h12_t2048/fp32_both": {
+      "expected_variant": "baseline",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          12,
+          128,
+          128
+        ],
+        "construction": "deterministic non-symmetric contiguous affine FP32 values"
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 8,
+        "after": 9,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "baseline",
+        "chosen_variant": "baseline",
+        "reason": "fixed_batch_b4_fp32_both_not_whitelisted",
+        "extension_sha256": null
+      },
+      "cell_gate_pass": true
+    },
+    "b6_h12_t2048/none": {
+      "expected_variant": "vshard2_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_custom_backend_spy": {
+        "before": 9,
+        "after": 10,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard2_p2",
+        "chosen_variant": "vshard2_p2",
+        "reason": "fixed_batch_b6_h12_t2048_none_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b6_h12_t2048/fp32_final_only": {
+      "expected_variant": "vshard2_p2",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          6,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 10,
+        "after": 11,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "vshard2_p2",
+        "chosen_variant": "vshard2_p2",
+        "reason": "fixed_batch_b6_h12_t2048_fp32_final_only_whitelist_hit",
+        "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+      },
+      "cell_gate_pass": true
+    },
+    "b6_h12_t2048/fp32_both": {
+      "expected_variant": "baseline",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          6,
+          12,
+          128,
+          128
+        ],
+        "construction": "deterministic non-symmetric contiguous affine FP32 values"
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          6,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            6,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 11,
+        "after": 12,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "baseline",
+        "chosen_variant": "baseline",
+        "reason": "fixed_batch_b6_fp32_both_not_whitelisted",
+        "extension_sha256": null
+      },
+      "cell_gate_pass": true
+    },
+    "b8_h12_t2048/none": {
+      "expected_variant": "baseline",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": false
+        },
+        "pinned_final": {
+          "present": false
+        }
+      },
+      "public_custom_backend_spy": {
+        "before": 12,
+        "after": 13,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "baseline",
+        "chosen_variant": "baseline",
+        "reason": "fixed_batch_shape_not_whitelisted",
+        "extension_sha256": null
+      },
+      "cell_gate_pass": true
+    },
+    "b8_h12_t2048/fp32_final_only": {
+      "expected_variant": "baseline",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": false,
+        "dtype": null,
+        "shape": null,
+        "construction": null
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          8,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 13,
+        "after": 14,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "baseline",
+        "chosen_variant": "baseline",
+        "reason": "fixed_batch_shape_not_whitelisted",
+        "extension_sha256": null
+      },
+      "cell_gate_pass": true
+    },
+    "b8_h12_t2048/fp32_both": {
+      "expected_variant": "baseline",
+      "verifiers": {
+        "pinned_flash_kda": {
+          "passed": true,
+          "reason": null
+        },
+        "custom_backend": {
+          "passed": true,
+          "reason": null
+        }
+      },
+      "initial_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          8,
+          12,
+          128,
+          128
+        ],
+        "construction": "deterministic non-symmetric contiguous affine FP32 values"
+      },
+      "expected_final_state": {
+        "present": true,
+        "dtype": "torch.float32",
+        "shape": [
+          8,
+          12,
+          128,
+          128
+        ]
+      },
+      "direct_custom_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_registry_vs_pinned": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "actual_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "pinned_final": {
+          "present": true,
+          "dtype": "torch.float32",
+          "shape": [
+            8,
+            12,
+            128,
+            128
+          ],
+          "contiguous": true
+        },
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "public_custom_backend_spy": {
+        "before": 14,
+        "after": 15,
+        "delta": 1,
+        "passed": true
+      },
+      "public_decision": {
+        "requested_variant": "baseline",
+        "chosen_variant": "baseline",
+        "reason": "fixed_batch_shape_not_whitelisted",
+        "extension_sha256": null
+      },
+      "cell_gate_pass": true
+    }
+  },
+  "gates": {
+    "scope": {
+      "required_cells": 15,
+      "actual_cells": 15,
+      "passed": true
+    },
+    "clean_gpu_shell_gate": {
+      "required": true,
+      "passed": true
+    },
+    "device": {
+      "required": "B300, capability 10.3, 148 SM",
+      "passed": true
+    },
+    "extension": {
+      "required_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "passed": true
+    },
+    "fla_pin": {
+      "commit": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d",
+      "file_hashes": {
+        "fla/ops/backends/__init__.py": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635",
+        "fla/ops/kda/backends/__init__.py": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797",
+        "fla/ops/kda/backends/flash_kda.py": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2",
+        "fla/ops/kda/chunk.py": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+      },
+      "passed": true
+    },
+    "registry": {
+      "passed": true
+    }
+  },
+  "complete": true
+}

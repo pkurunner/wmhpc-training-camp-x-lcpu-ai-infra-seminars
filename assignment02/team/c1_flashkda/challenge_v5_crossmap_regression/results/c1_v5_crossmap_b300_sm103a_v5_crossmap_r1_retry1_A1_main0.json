@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "v5 public-registry cross-map read-only regression; no production source or map mutation",
+  "allocation_id": "A1",
+  "process_index": 0,
+  "allocation": {
+    "slurm_job_id": "12882",
+    "cuda_visible_devices": "0"
+  },
+  "process": {
+    "pid": 10865,
+    "fresh_python_process_required": true
+  },
+  "positive_cells": {},
+  "public_registry_negative_controls": {},
+  "source_pre": {},
+  "source_post": {},
+  "map_pre": {},
+  "map_post": {},
+  "map_readonly": {},
+  "identity": {},
+  "performance": {},
+  "complete": false
+}

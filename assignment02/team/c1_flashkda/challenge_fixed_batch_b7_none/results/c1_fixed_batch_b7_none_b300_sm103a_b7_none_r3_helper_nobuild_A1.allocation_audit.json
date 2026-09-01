@@ -1,0 +1,256 @@
+{
+  "schema_version": 3,
+  "kind": "fresh_b7_none_vshard2_p2_allocation_audit",
+  "purpose": "fresh B7 none allocation audit; historic discovery excluded",
+  "allocation_id": "A1",
+  "source_identity": {
+    "analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/analyze_fixed_batch_b7_none.py",
+      "sha256": "2fd71aecd563dc9c5c314de78f52050dddd76539266fcc54d9d93982c2892705"
+    },
+    "expected_runner_sha256": "481462766589ee3ec23c7ab0454a923f2f28aa506826413433fda0450030f534",
+    "expected_protocol_shell_sha256": "26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945"
+  },
+  "protocol_identity": {
+    "runner": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/run_fixed_batch_b7_none.py",
+      "sha256": "481462766589ee3ec23c7ab0454a923f2f28aa506826413433fda0450030f534"
+    },
+    "analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/analyze_fixed_batch_b7_none.py",
+      "sha256": "2fd71aecd563dc9c5c314de78f52050dddd76539266fcc54d9d93982c2892705"
+    },
+    "protocol_shell": {
+      "path": "/var/lib/slurm/slurmd/job12570/slurm_script",
+      "sha256": "26e6a805507f124de9bf4e750ed8d7642441cbe89dc57fa416227dba467e6945"
+    },
+    "extension": {
+      "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+    },
+    "flash_kda_python": {
+      "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+      "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84"
+    },
+    "auto_dispatch": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+      "sha256": "9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c"
+    },
+    "fla_backend": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+      "sha256": "206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656"
+    },
+    "harness": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+      "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52"
+    },
+    "reference_torch_ref": {
+      "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+      "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5"
+    },
+    "pinned_reference_helper": {
+      "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+      "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f"
+    },
+    "commits": {
+      "patched": {
+        "root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+        "head": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b"
+      },
+      "reference": {
+        "root": "/home/lcpu/85117379/flashkda-1ce47ea",
+        "head": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b"
+      },
+      "fla": {
+        "root": "/home/lcpu/85117379/fla-a3edffc",
+        "head": "a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d"
+      }
+    },
+    "patched_dirty_overlay": {
+      "root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+      "git_status_porcelain_v1": {
+        "csrc/flash_kda.cpp": " M",
+        "csrc/fwd.h": " M",
+        "csrc/smxx/fwd_launch.cu": " M"
+      },
+      "files": {
+        "csrc/flash_kda.cpp": {
+          "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp",
+          "sha256": "38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4"
+        },
+        "csrc/fwd.h": {
+          "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/fwd.h",
+          "sha256": "613c86a211023ee5284b44a57398dfa2916a5cb272133b1768ce233470b71083"
+        },
+        "csrc/smxx/fwd_launch.cu": {
+          "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu",
+          "sha256": "a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928"
+        }
+      }
+    },
+    "fla_source_map": {
+      "fla/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/__init__.py",
+        "sha256": "b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d"
+      },
+      "fla/ops/backends/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py",
+        "sha256": "a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635"
+      },
+      "fla/ops/kda/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py",
+        "sha256": "24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb"
+      },
+      "fla/ops/kda/backends/__init__.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py",
+        "sha256": "86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797"
+      },
+      "fla/ops/kda/backends/flash_kda.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py",
+        "sha256": "0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2"
+      },
+      "fla/ops/kda/chunk.py": {
+        "path": "/home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py",
+        "sha256": "a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8"
+      }
+    }
+  },
+  "runtime_identity": {
+    "device": {
+      "name": "NVIDIA B300 SXM6 AC",
+      "capability": [
+        10,
+        3
+      ],
+      "multiprocessor_count": 148,
+      "gate_pass": true
+    },
+    "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+    "pinned_reference_helper_load": {
+      "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+      "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+      "load_contract": "direct cached binary; exactly one pinned load_inline('sigmoid_ext') intercepted",
+      "intercepted_names": [
+        "sigmoid_ext"
+      ],
+      "no_build": true
+    },
+    "slurm_job_id": "12570",
+    "pids": [
+      2283616,
+      2284814
+    ]
+  },
+  "main_artifacts": [
+    {
+      "process_index": 0,
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1_main0.json",
+      "sha256": "1a591ede1db1798ef0bb0663cb453e414f84d6fdb82b49781e0a4416c86907fc",
+      "content_identity": {
+        "allocation_id": "A1",
+        "process_index": 0,
+        "protocol_identity_sha256": "d676880cf841630ae8fd5be2ffedb48c067dc213e77894f36df3448554fac824",
+        "runtime_identity": {
+          "device": {
+            "name": "NVIDIA B300 SXM6 AC",
+            "capability": [
+              10,
+              3
+            ],
+            "multiprocessor_count": 148,
+            "gate_pass": true
+          },
+          "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+          "pinned_reference_helper_load": {
+            "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+            "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+            "load_contract": "direct cached binary; exactly one pinned load_inline('sigmoid_ext') intercepted",
+            "intercepted_names": [
+              "sigmoid_ext"
+            ],
+            "no_build": true
+          }
+        }
+      }
+    },
+    {
+      "process_index": 1,
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7_none/results/c1_fixed_batch_b7_none_b300_sm103a_b7_none_r3_helper_nobuild_A1_main1.json",
+      "sha256": "57f2becd4efee4f808ace0211b70979debf4f06d4aebdb896a96169248ac1dfd",
+      "content_identity": {
+        "allocation_id": "A1",
+        "process_index": 1,
+        "protocol_identity_sha256": "d676880cf841630ae8fd5be2ffedb48c067dc213e77894f36df3448554fac824",
+        "runtime_identity": {
+          "device": {
+            "name": "NVIDIA B300 SXM6 AC",
+            "capability": [
+              10,
+              3
+            ],
+            "multiprocessor_count": 148,
+            "gate_pass": true
+          },
+          "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1",
+          "pinned_reference_helper_load": {
+            "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+            "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+            "load_contract": "direct cached binary; exactly one pinned load_inline('sigmoid_ext') intercepted",
+            "intercepted_names": [
+              "sigmoid_ext"
+            ],
+            "no_build": true
+          }
+        }
+      }
+    }
+  ],
+  "repeat_assessment": [
+    {
+      "process_index": 0,
+      "repeat_index": 0,
+      "margins": {
+        "p50": -0.010312698570177248,
+        "p95": -0.017829529913470865,
+        "p99": -0.027329569783693608
+      },
+      "repeat_gate_pass": false
+    },
+    {
+      "process_index": 0,
+      "repeat_index": 1,
+      "margins": {
+        "p50": -0.009399175871921517,
+        "p95": -0.01466087714544595,
+        "p99": -0.02528219429914713
+      },
+      "repeat_gate_pass": false
+    },
+    {
+      "process_index": 1,
+      "repeat_index": 0,
+      "margins": {
+        "p50": -0.009552088875246056,
+        "p95": -0.034735300721724816,
+        "p99": -0.041427853848705176
+      },
+      "repeat_gate_pass": false
+    },
+    {
+      "process_index": 1,
+      "repeat_index": 1,
+      "margins": {
+        "p50": -0.00857709802585005,
+        "p95": -0.01398582505186552,
+        "p99": -0.022895440790123622
+      },
+      "repeat_gate_pass": false
+    }
+  ],
+  "a1_prerequisite": null,
+  "allocation_gate": {
+    "eligible": false,
+    "decision": "STOP_keep_production_baseline"
+  },
+  "complete": true
+}

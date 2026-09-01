@@ -1,0 +1,41 @@
+{
+  "device": "NVIDIA B300 SXM6 AC",
+  "capability": [
+    10,
+    3
+  ],
+  "variant": "warp8",
+  "shape": {
+    "B": 1,
+    "T": 8192,
+    "H": 96,
+    "K": 128,
+    "V": 128
+  },
+  "state": "bf16",
+  "seed": 20260819,
+  "event_contract": "one CUDA-event pair per full Python forward call; same wrapper ABI/workspace policy",
+  "correctness": {
+    "baseline_vs_candidate_exact": true,
+    "output_max_abs": 0.0,
+    "final_state_max_abs": 0.0
+  },
+  "baseline": {
+    "mean_ms": 1.0305456991195678,
+    "median_ms": 1.030784010887146,
+    "min_ms": 1.0266879796981812,
+    "max_ms": 1.1043519973754883,
+    "samples": 1000
+  },
+  "candidate": {
+    "mean_ms": 1.051011264204979,
+    "median_ms": 1.0511839985847473,
+    "min_ms": 1.0480639934539795,
+    "max_ms": 1.0743039846420288,
+    "samples": 1000
+  },
+  "baseline_over_candidate_median_x": 0.9805933235998011,
+  "frozen_current_best_ms": 1.029888,
+  "strict_10pct_target_ms": 0.9362618181818181,
+  "strict_10pct_target_met": false
+}

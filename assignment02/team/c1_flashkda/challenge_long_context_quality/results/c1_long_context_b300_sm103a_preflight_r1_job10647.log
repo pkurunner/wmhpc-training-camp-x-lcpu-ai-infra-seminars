@@ -1,0 +1,52 @@
+===== ENVIRONMENT_GATE =====
+===== PRE_AUDIT =====
+2026-08-28T18:51:07+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+26567197ee67f795605573046a8531d0f255c9879671fb3c445d0bf59f3ef9eb  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/run_long_context_quality.py
+01d609a8e99b1a4f26b15553de734e1ee3193c476a51500f7da5f3e8db2a63bc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/run_clean_long_context_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py
+27fb0a5ca31d02e5596aef1c80d8fd1e85b5e542f03efb8c2bb85475872f6cfa  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/fused_recurrent.py
+60a32285d4b67068ff633b48bbe8ab31028066d24f00d27e12199a88fc73f016  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/fla_kda_ref/naive.py
+===== LONG_CONTEXT_QUALITY =====
+PASS exact: preflight/seed0/segment0/candidate_vs_baseline/output
+PASS exact: preflight/seed0/segment0/candidate_vs_baseline/state
+PASS exact: preflight/seed0/segment0/baseline_vs_torch_ref/output
+PASS exact: preflight/seed0/segment0/baseline_vs_torch_ref/state
+PASS exact: preflight/seed0/bf16_vs_fp32_abi/output
+PASS exact: preflight/seed0/bf16_vs_fp32_abi/state
+PASS exact: preflight/seed0/segment1/candidate_vs_baseline/output
+PASS exact: preflight/seed0/segment1/candidate_vs_baseline/state
+PASS exact: preflight/seed0/segment1/baseline_vs_torch_ref/output
+PASS exact: preflight/seed0/segment1/baseline_vs_torch_ref/state
+PASS exact: preflight/seed1/segment0/candidate_vs_baseline/output
+PASS exact: preflight/seed1/segment0/candidate_vs_baseline/state
+PASS exact: preflight/seed1/segment0/baseline_vs_torch_ref/output
+PASS exact: preflight/seed1/segment0/baseline_vs_torch_ref/state
+PASS exact: preflight/seed1/bf16_vs_fp32_abi/output
+PASS exact: preflight/seed1/bf16_vs_fp32_abi/state
+PASS exact: preflight/seed1/segment1/candidate_vs_baseline/output
+PASS exact: preflight/seed1/segment1/candidate_vs_baseline/state
+PASS exact: preflight/seed1/segment1/baseline_vs_torch_ref/output
+PASS exact: preflight/seed1/segment1/baseline_vs_torch_ref/state
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/results/c1_long_context_b300_sm103a_preflight_r1.json
+AFTER_QUALITY_COMPUTE_APPS_BEGIN
+
+AFTER_QUALITY_COMPUTE_APPS_END
+AFTER_QUALITY_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T18:51:14+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

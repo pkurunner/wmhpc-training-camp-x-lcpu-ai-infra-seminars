@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "purpose": "B=5 fixed-batch raw-wrapper discovery only; direct calls only, no dispatcher/map mutation, no production mapping, and no release authority",
+  "diagnostic_only": true,
+  "discovery_only": true,
+  "no_release_authority": true,
+  "no_production_mapping": true,
+  "process": {
+    "pid": 306138,
+    "process_index": 0,
+    "fresh_python_process_required": true
+  },
+  "target": {
+    "B": 5,
+    "H": 12,
+    "T": 2048,
+    "K": 128,
+    "V": 128,
+    "form": "fixed",
+    "case_name": "b5_h12_t2048",
+    "lengths": [
+      2048,
+      2048,
+      2048,
+      2048,
+      2048
+    ]
+  },
+  "pre_registered": {
+    "raw_abi_contracts": [
+      "none",
+      "bf16_both",
+      "fp32_both",
+      "fp32_final_only"
+    ],
+    "pinned_torch_reference_contracts": [
+      "none",
+      "fp32_final_only",
+      "fp32_both"
+    ],
+    "performance_contracts": [
+      "none",
+      "fp32_final_only",
+      "fp32_both"
+    ],
+    "variants": [
+      "baseline",
+      "vshard2_p2",
+      "vshard4_p2"
+    ],
+    "fresh_main_processes": 2,
+    "required_process_indices": [
+      0,
+      1
+    ],
+    "repeats_per_process": 2,
+    "warmup_per_path_per_repeat": 100,
+    "cuda_event_samples_per_path_per_repeat": 1000,
+    "required_percentiles": [
+      "p50",
+      "p95",
+      "p99"
+    ],
+    "minimum_runner_up_margin": 0.02,
+    "optimized_winner_required": [
+      "vshard2_p2",
+      "vshard4_p2"
+    ],
+    "performance_success_rule": "For each public state contract, all four repeats across the two fresh processes must choose one identical non-baseline winner at P50/P95/P99, with that custom winner's runner-up margin at least 2% at every percentile.  A baseline winner is a valid negative and is not confirmation-eligible.  Passing only permits independent confirmation, never a production mapping."
+  },
+  "identity": {
+    "runner": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_fixed_batch_b5_discovery.py",
+      "sha256": "45f54fd2db41415b8c2d225797d63590d6e6406f067fdf76badddef775d2ceae",
+      "sha256_gate_pass": true
+    }
+  },
+  "gates": {
+    "clean_gpu_shell": {
+      "required": true,
+      "passed": false
+    },
+    "device": {
+      "required": "B300 capability 10.3 with 148 SMs",
+      "passed": false
+    },
+    "extension": {
+      "required_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "passed": false
+    },
+    "pinned_commits": {
+      "required": true,
+      "passed": false
+    },
+    "runner_source": {
+      "required": true,
+      "passed": false
+    },
+    "python_sources": {
+      "required_flash_kda_sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84",
+      "required_pinned_loader_sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b",
+      "passed": false
+    },
+    "pinned_reference_helper": {
+      "required_sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+      "passed": false
+    },
+    "no_dispatcher_or_map_mutation": {
+      "method": "direct raw ABI wrapper calls only; auto_dispatch is not imported",
+      "passed": true
+    },
+    "raw_abi_exact": {
+      "required": true,
+      "passed": false
+    },
+    "pinned_torch_reference_exact": {
+      "required": true,
+      "passed": false
+    }
+  },
+  "correctness": {},
+  "performance": {},
+  "complete": false,
+  "describe_only": true
+}

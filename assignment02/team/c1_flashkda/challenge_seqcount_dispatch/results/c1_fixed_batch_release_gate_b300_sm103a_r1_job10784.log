@@ -1,0 +1,119 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T21:05:35+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard4.cuh
+?? csrc/smxx/fwd_kernel2_vshard4_p2.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+42ddfc77cb233371f3ade0cf0e501c5e661c70475e46808e91eccec5d67e7eb4  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_fixed_batch_release_gate.py
+c2b592f3deffdf9e729bd59a7d5a1392b01844745c1e1f5453c01c492740a1fc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_clean_fixed_batch_release_gate_audit.sh
+46cd27f2fbdcaeeb61011c49c6175a0c05d15d4365bfda800cf52040dbe414f7  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_seqcount_dispatch_b300_sm103a_r2.json
+b7084ecf73461ba0e590b7db74719af3ba83fd98f1f174103cc451515dfb9795  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_confirmation_b300_sm103a_r1.json
+4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py
+752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+===== PYTHON_COMPILE_GATE =====
+===== FIXED_BATCH_RELEASE_GATE =====
+raw ABI exactness b2_h12_t2048: contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b2_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/final_state
+raw ABI exactness b3_h12_t2048: contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b3_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/final_state
+raw ABI exactness b4_h12_t2048: contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b4_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/final_state
+raw ABI exactness b6_h12_t2048: contracts=('none', 'bf16_both', 'fp32_both', 'fp32_final_only')
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/none/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/none/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/bf16_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/bf16_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/bf16_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/bf16_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_both/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_both/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_both/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_both/vshard4_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_final_only/vshard2_p2_vs_baseline/final_state
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/output
+PASS exact: fixed_batch_release_gate/b6_h12_t2048/fp32_final_only/vshard4_p2_vs_baseline/final_state
+release benchmark b2_h12_t2048/none: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b2_h12_t2048/fp32_final_only: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b2_h12_t2048/fp32_both: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b3_h12_t2048/none: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b3_h12_t2048/fp32_final_only: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b3_h12_t2048/fp32_both: expected=vshard4_p2, repeats=2, samples=1000
+release benchmark b4_h12_t2048/none: expected=vshard2_p2, repeats=2, samples=1000
+release benchmark b4_h12_t2048/fp32_final_only: expected=vshard2_p2, repeats=2, samples=1000
+release benchmark b6_h12_t2048/none: expected=vshard2_p2, repeats=2, samples=1000
+release benchmark b6_h12_t2048/fp32_final_only: expected=vshard2_p2, repeats=2, samples=1000
+release benchmark b6_h12_t2048/fp32_both: expected=vshard2_p2, repeats=2, samples=1000
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_release_gate_b300_sm103a_r1.json; public_fla_integration_candidates={'b2_h12_t2048/none': 'vshard4_p2', 'b2_h12_t2048/fp32_final_only': 'vshard4_p2', 'b2_h12_t2048/fp32_both': 'vshard4_p2', 'b3_h12_t2048/none': 'vshard4_p2', 'b3_h12_t2048/fp32_final_only': 'vshard4_p2', 'b3_h12_t2048/fp32_both': 'vshard4_p2', 'b4_h12_t2048/none': 'vshard2_p2', 'b4_h12_t2048/fp32_final_only': 'vshard2_p2', 'b6_h12_t2048/none': 'vshard2_p2', 'b6_h12_t2048/fp32_final_only': 'vshard2_p2'}; fallback={'b4_h12_t2048/fp32_both': 'baseline', 'b8_h12_t2048/none': 'baseline', 'b8_h12_t2048/fp32_final_only': 'baseline', 'b8_h12_t2048/fp32_both': 'baseline', 'unlisted_new_b_gt1_fixed_batch_cells': 'baseline', 'b6_h12_t2048/fp32_both': 'baseline'}
+AFTER_RELEASE_GATE_COMPUTE_APPS_BEGIN
+
+AFTER_RELEASE_GATE_COMPUTE_APPS_END
+AFTER_RELEASE_GATE_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T21:05:54+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

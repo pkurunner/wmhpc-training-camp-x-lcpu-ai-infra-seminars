@@ -1,0 +1,43 @@
+{
+  "schema_version": 4,
+  "purpose": "two-allocation real C1 production public-route T8191 freeze",
+  "describe_only": true,
+  "allocation_id": "A2",
+  "process_index": 0,
+  "shape": {
+    "B": 1,
+    "H": 12,
+    "T": 8191,
+    "K": 128,
+    "V": 128
+  },
+  "scale": 0.08838834764831843,
+  "lower_bound": -5.0,
+  "contracts": [
+    "none",
+    "fp32_final_only"
+  ],
+  "public_paths": [
+    "pinned_public",
+    "c1_production_public"
+  ],
+  "fresh_pids_per_allocation": 2,
+  "repeats_per_pid": 2,
+  "samples_per_path_repeat": 1000,
+  "required_percentiles": [
+    "p50",
+    "p95",
+    "p99"
+  ],
+  "minimum_c1_margin": 0.02,
+  "test_only_route_installed": false,
+  "pinned_reference_helper": {
+    "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+    "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+    "load_contract": "direct cached binary; exactly one pinned load_inline('sigmoid_ext') intercepted",
+    "intercepted_names": [
+      "sigmoid_ext"
+    ],
+    "no_build": true
+  }
+}

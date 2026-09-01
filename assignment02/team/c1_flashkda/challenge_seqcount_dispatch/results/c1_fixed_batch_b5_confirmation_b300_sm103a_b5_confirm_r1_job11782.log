@@ -1,0 +1,160 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-29T19:48:17+00:00
+dev-slurm
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 120 MHz, 120 MHz, 3996 MHz, 186.04 W, 34
+PRE_GPU_TIMING_END
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+SLURM_JOB_ID=11782
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+REFERENCE_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+63a88849e142b7321f7f190623255201a107c7c843813b249d32fa4c89448995  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_clean_fixed_batch_b5_confirmation.sh
+45f54fd2db41415b8c2d225797d63590d6e6406f067fdf76badddef775d2ceae  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_fixed_batch_b5_discovery.py
+7f93cb81dd76263e6eeb8017872636fd0c636578d975a1f2580f845c61f1735d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/analyze_fixed_batch_b5_discovery.py
+ed59853c673f93dfff33858ac7308e6d387c093b74eea0150ad509ecae3de149  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/analyze_fixed_batch_b5_confirmation.py
+4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py
+752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py
+8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f  /home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+9acf5a9d8820206fc6fc72adda834811036c5d70860f2ffe614f39efce22a516  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1.independent_audit.json
+824ef6ec8a7f25f6eafaa0ae5465d72164d046184061bcd4af23efa1e466db2f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1_job11781.log
+===== DESCRIBE_AND_PYTHON_COMPILE_GATE =====
+wrote B=5 discovery description /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1.plan.json
+===== B5_CONFIRMATION_MAIN_0 =====
+2026-08-29T19:48:17+00:00
+MAIN_0_PRE_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 120 MHz, 120 MHz, 3996 MHz, 186.04 W, 34
+MAIN_0_PRE_GPU_TIMING_END
+MAIN_0_PRE_COMPUTE_APPS_BEGIN
+
+MAIN_0_PRE_COMPUTE_APPS_END
+MAIN_0_PRE_MEMORY_USED_MIB=0
+B=5 raw ABI exactness none
+PASS exact: b5_h12_t2048/none/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/none/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/none/baseline_vs_pinned_torch_reference/output
+B=5 raw ABI exactness bf16_both
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard4_p2/final_state
+B=5 raw ABI exactness fp32_both
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard4_p2/final_state
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_pinned_torch_reference/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_pinned_torch_reference/final_state
+B=5 raw ABI exactness fp32_final_only
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard4_p2/final_state
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_pinned_torch_reference/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_pinned_torch_reference/final_state
+B=5 direct cyclic benchmark process=0 contract=none repeat=0 samples=1000
+B=5 direct cyclic benchmark process=0 contract=none repeat=1 samples=1000
+B=5 direct cyclic benchmark process=0 contract=fp32_final_only repeat=0 samples=1000
+B=5 direct cyclic benchmark process=0 contract=fp32_final_only repeat=1 samples=1000
+B=5 direct cyclic benchmark process=0 contract=fp32_both repeat=0 samples=1000
+B=5 direct cyclic benchmark process=0 contract=fp32_both repeat=1 samples=1000
+wrote B=5 discovery artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1_main0.json; discovery-only/no-release-authority
+MAIN_0_POST_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 2032 MHz, 2032 MHz, 3996 MHz, 404.28 W, 38
+MAIN_0_POST_GPU_TIMING_END
+MAIN_0_POST_COMPUTE_APPS_BEGIN
+
+MAIN_0_POST_COMPUTE_APPS_END
+MAIN_0_POST_MEMORY_USED_MIB=0
+===== B5_CONFIRMATION_MAIN_1 =====
+2026-08-29T19:48:36+00:00
+MAIN_1_PRE_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 2032 MHz, 2032 MHz, 3996 MHz, 383.68 W, 38
+MAIN_1_PRE_GPU_TIMING_END
+MAIN_1_PRE_COMPUTE_APPS_BEGIN
+
+MAIN_1_PRE_COMPUTE_APPS_END
+MAIN_1_PRE_MEMORY_USED_MIB=0
+B=5 raw ABI exactness none
+PASS exact: b5_h12_t2048/none/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/none/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/none/baseline_vs_pinned_torch_reference/output
+B=5 raw ABI exactness bf16_both
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/bf16_both/baseline_vs_vshard4_p2/final_state
+B=5 raw ABI exactness fp32_both
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_vshard4_p2/final_state
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_pinned_torch_reference/output
+PASS exact: b5_h12_t2048/fp32_both/baseline_vs_pinned_torch_reference/final_state
+B=5 raw ABI exactness fp32_final_only
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard2_p2/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard2_p2/final_state
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard4_p2/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_vshard4_p2/final_state
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_pinned_torch_reference/output
+PASS exact: b5_h12_t2048/fp32_final_only/baseline_vs_pinned_torch_reference/final_state
+B=5 direct cyclic benchmark process=1 contract=none repeat=0 samples=1000
+B=5 direct cyclic benchmark process=1 contract=none repeat=1 samples=1000
+B=5 direct cyclic benchmark process=1 contract=fp32_final_only repeat=0 samples=1000
+B=5 direct cyclic benchmark process=1 contract=fp32_final_only repeat=1 samples=1000
+B=5 direct cyclic benchmark process=1 contract=fp32_both repeat=0 samples=1000
+B=5 direct cyclic benchmark process=1 contract=fp32_both repeat=1 samples=1000
+wrote B=5 discovery artifact /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1_main1.json; discovery-only/no-release-authority
+MAIN_1_POST_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 2032 MHz, 2032 MHz, 3996 MHz, 388.24 W, 39
+MAIN_1_POST_GPU_TIMING_END
+MAIN_1_POST_COMPUTE_APPS_BEGIN
+
+MAIN_1_POST_COMPUTE_APPS_END
+MAIN_1_POST_MEMORY_USED_MIB=0
+===== CURRENT_MEASUREMENT_STDLIB_AUDIT =====
+BEFORE_MEASUREMENT_AUDIT_COMPUTE_APPS_BEGIN
+
+BEFORE_MEASUREMENT_AUDIT_COMPUTE_APPS_END
+BEFORE_MEASUREMENT_AUDIT_MEMORY_USED_MIB=0
+wrote independent B=5 discovery audit /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1.measurement_audit.json; eligible_for_independent_confirmation
+AFTER_MEASUREMENT_AUDIT_COMPUTE_APPS_BEGIN
+
+AFTER_MEASUREMENT_AUDIT_COMPUTE_APPS_END
+AFTER_MEASUREMENT_AUDIT_MEMORY_USED_MIB=0
+===== CROSS_ALLOCATION_CONFIRMATION_CHAIN =====
+BEFORE_CONFIRMATION_CHAIN_COMPUTE_APPS_BEGIN
+
+BEFORE_CONFIRMATION_CHAIN_COMPUTE_APPS_END
+BEFORE_CONFIRMATION_CHAIN_MEMORY_USED_MIB=0
+wrote B=5 confirmation chain /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/results/c1_fixed_batch_b5_confirmation_b300_sm103a_b5_confirm_r1.confirmation_chain.json; eligible_for_public_integration_review
+AFTER_CONFIRMATION_CHAIN_COMPUTE_APPS_BEGIN
+
+AFTER_CONFIRMATION_CHAIN_COMPUTE_APPS_END
+AFTER_CONFIRMATION_CHAIN_MEMORY_USED_MIB=0
+CONFIRMATION_ONLY=1
+PUBLIC_INTEGRATION_ELIGIBLE=true
+PUBLIC_INTEGRATION=not_automatic
+===== POST_AUDIT =====
+2026-08-29T19:48:54+00:00
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, 00000000:07:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_GPU_TIMING_BEGIN
+0, GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1, P0, 2032 MHz, 2032 MHz, 3996 MHz, 261.78 W, 38
+POST_GPU_TIMING_END
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

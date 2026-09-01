@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "purpose": "public FLA packed-varlen C1/pinned integration audit; no policy mutation",
+  "seed": 20260830,
+  "positive_cells": [
+    {
+      "cell": "equal_n2_h12_t2048/none",
+      "expected_variant": "vshard4_p2"
+    },
+    {
+      "cell": "equal_n2_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard4_p2"
+    },
+    {
+      "cell": "equal_n2_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2"
+    },
+    {
+      "cell": "equal_n4_h12_t2048/none",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "equal_n4_h12_t2048/fp32_final_only",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "equal_n4_h12_t2048/fp32_both",
+      "expected_variant": "vshard4_p2"
+    },
+    {
+      "cell": "mixed_n6_h12_t8192/none",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "mixed_n6_h12_t8192/fp32_final_only",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "skew_n6_h12_t12288/none",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "skew_n6_h12_t12288/fp32_final_only",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "skew_n6_h12_t12288/fp32_both",
+      "expected_variant": "vshard4_p2"
+    }
+  ],
+  "record_only_cell": {
+    "cell": "mixed_n6_h12_t8192/fp32_both",
+    "action": "pinned_baseline_only"
+  },
+  "performance": {
+    "pre_registered": {
+      "cells": [
+        "equal_n2_h12_t2048/none",
+        "equal_n2_h12_t2048/fp32_final_only",
+        "equal_n2_h12_t2048/fp32_both",
+        "equal_n4_h12_t2048/none",
+        "equal_n4_h12_t2048/fp32_final_only",
+        "equal_n4_h12_t2048/fp32_both",
+        "mixed_n6_h12_t8192/none",
+        "mixed_n6_h12_t8192/fp32_final_only",
+        "skew_n6_h12_t12288/none",
+        "skew_n6_h12_t12288/fp32_final_only",
+        "skew_n6_h12_t12288/fp32_both"
+      ],
+      "fixed_measurement_seed": 20260901,
+      "paths": [
+        "public_registry_c1",
+        "public_registry_pinned"
+      ],
+      "repeats": 2,
+      "warmup_per_path_per_repeat": 100,
+      "cyclic_cuda_event_samples_per_path_per_repeat": 1000,
+      "percentiles": [
+        "p50",
+        "p95",
+        "p99"
+      ],
+      "minimum_c1_margin_over_pinned": 0.02,
+      "release_rule": "A cell releases only if both repeats have C1 as P50/P95/P99 winner with every margin >=2%; failures remain recorded and do not invalidate completed correctness evidence.",
+      "timing_contract": "one current-stream CUDA-event pair wraps each complete public chunk_kda call; start.record is immediately synchronized before the public call and end.record is immediately synchronized before elapsed_time, so the start marker precedes host dispatch/preflight and neither synchronization is in the sample value; samples alternate C1->pinned then pinned->C1 so each path is first exactly 500 times; C1_B300_FLASH_KDA selection changes happen before event record and never inside a sample; no direct raw wrapper is timed.",
+      "timed_public_calls": 44000,
+      "warmup_public_calls": 4400,
+      "timed_event_synchronizations": 88000,
+      "one_hour_mean_call_budget_ms_including_warmup": 74.3801652892562
+    },
+    "cold_miss_observations": {},
+    "cells": {},
+    "performance_release_cells": [],
+    "failed_cells": [],
+    "complete": false
+  },
+  "negative_cases": [
+    "same_n_total_different_split",
+    "varlen_env_unset",
+    "cpu_missing_or_malformed",
+    "gpu_structural_mismatch_preflight",
+    "allow_neg_eigval_semantic_fallback",
+    "fixed_representative_non_regression"
+  ],
+  "identity": {
+    "integration_runner": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_integration.py",
+      "sha256": "15e891d52adf5014893a9d3492cc9a6c0f28ce83dad1b5bf28cd461f58383677",
+      "sha256_gate_pass": true,
+      "expected_sha256_environment": "C1_VARLEN_FLA_INTEGRATION_RUNNER_SHA256"
+    }
+  },
+  "registry": {},
+  "positive_results": {},
+  "negative_results": {},
+  "cache_observations": {},
+  "performance_release_cells": [],
+  "performance_failed_cells": [],
+  "gates": {
+    "scope": {
+      "positive_cells": 11,
+      "required": 11,
+      "passed": true
+    },
+    "clean_gpu": {
+      "passed": false
+    },
+    "device": {
+      "passed": false
+    },
+    "extension": {
+      "passed": false
+    },
+    "fla_pin": {
+      "passed": false
+    },
+    "registry_spy_identity": {
+      "passed": false
+    },
+    "python_nvidia_clean": {
+      "passed": false
+    }
+  },
+  "complete": false
+}

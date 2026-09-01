@@ -1,0 +1,65 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-28T18:35:47+00:00
+dev-slurm
+0, GPU-3313f980-9de7-f4ee-9a38-4643f36424d3, 00000000:0A:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=
+0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+8b72eaeca5242a44c2e96d02dbef6bdfa5778ce3e488344d79ba7749e4e3a956  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+05c3dc935fba97bb849a1df3644debb6ffbbd759eab3a338e3c4fc5b8de38fd9  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+e34f2686a4baa0201c74b0aeafd285e5f8ccc605ba14882a90ed86d7f3340237  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/test_auto_dispatch_policy.py
+fd647a6b75e952431f2f192d7c8645246b4d97a938a6820f0915fedb09787844  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_state_contracts.py
+acec2749295de7ba60db85428571df37c0a46d5028781bf52bd34b29ebcab0e9  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_tp8_fla.py
+42c6a557d81a0bb91adfb3f139868acbb39c2571dfcf04aa9a4e91056ab9350c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/run_clean_tp8_fla_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+===== CPU_POLICY_GATE =====
+PASS test_all_device_whitelist_dimensions_fail_closed
+PASS test_all_tensor_contract_misses_fail_closed
+PASS test_kernel_exceptions_are_not_caught_or_replayed
+PASS test_opt_in_backend_registration_is_idempotent
+PASS test_positive_boundaries
+PASS test_real_fla_h12_state_contracts_are_explicitly_whitelisted
+PASS test_symbol_fallback_is_prelaunch_and_last_decision_is_observable
+PASS test_unverified_state_contracts_select_baseline
+PASS 8 CPU-only dispatcher tests
+===== TP8_REAL_FLA =====
+[W828 18:35:55.851569935 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+PASS exact: none/c1_auto_backend_vs_pinned/output
+PASS exact: none/public_chunk_kda_vs_pinned/output
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W828 18:35:55.203814670 ProcessGroupNCCL.cpp:5276] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+PASS exact: fp32_final_only/c1_auto_backend_vs_pinned/output
+PASS exact: fp32_final_only/c1_auto_backend_vs_pinned/final_state
+PASS exact: fp32_final_only/public_chunk_kda_vs_pinned/output
+PASS exact: fp32_final_only/public_chunk_kda_vs_pinned/final_state
+PASS exact: fp32_both/c1_auto_backend_vs_pinned/output
+PASS exact: fp32_both/c1_auto_backend_vs_pinned/final_state
+PASS exact: fp32_both/public_chunk_kda_vs_pinned/output
+PASS exact: fp32_both/public_chunk_kda_vs_pinned/final_state
+PASS exact: fallback_t256/public_vs_pinned/output
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/results/c1_tp8_dispatch_b300_sm103a_tp8_shard_r1_tp8_fla.json
+AFTER_TP8_FLA_COMPUTE_APPS_BEGIN
+
+AFTER_TP8_FLA_COMPUTE_APPS_END
+AFTER_TP8_FLA_MEMORY_USED_MIB=
+0
+===== POST_AUDIT =====
+2026-08-28T18:36:12+00:00
+0, GPU-3313f980-9de7-f4ee-9a38-4643f36424d3, 00000000:0A:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=
+0
+FINAL_RC=0

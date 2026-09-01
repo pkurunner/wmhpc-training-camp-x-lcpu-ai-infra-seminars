@@ -1,0 +1,135 @@
+{
+  "device": "NVIDIA B300 SXM6 AC",
+  "capability": [
+    10,
+    3
+  ],
+  "build_target": "B300_SM103a_P3S3",
+  "shape": {
+    "B": 1,
+    "T": 8192,
+    "H": 64,
+    "K": 128,
+    "V": 128
+  },
+  "extension": {
+    "path": "/home/lcpu/85117379/flashkda-prefetch3-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "sha256": "a9139b428289af4cda8a834052e143bf5e10d494454adc5f64ac6ed64eb7354a",
+    "symbols": [
+      "fwd",
+      "fwd_vshard",
+      "fwd_vshard_p2",
+      "fwd_vshard_p3",
+      "get_workspace_size"
+    ]
+  },
+  "phase": "exact",
+  "seed": 20260820,
+  "correctness": {
+    "none": {
+      "p3_vs_p2": {
+        "output_exact": true,
+        "output_max_abs": 0.0
+      },
+      "p2_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        }
+      },
+      "p3_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        }
+      }
+    },
+    "bf16": {
+      "p3_vs_p2": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "p2_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        },
+        "final_state_close": true,
+        "final_state_bitwise_exact": true,
+        "final_state_max_abs": 0.0,
+        "final_state_tolerance": {
+          "rtol": 0.05,
+          "atol": 0.05
+        }
+      },
+      "p3_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        },
+        "final_state_close": true,
+        "final_state_bitwise_exact": true,
+        "final_state_max_abs": 0.0,
+        "final_state_tolerance": {
+          "rtol": 0.05,
+          "atol": 0.05
+        }
+      }
+    },
+    "fp32": {
+      "p3_vs_p2": {
+        "output_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_exact": true,
+        "final_state_max_abs": 0.0
+      },
+      "p2_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        },
+        "final_state_close": true,
+        "final_state_bitwise_exact": true,
+        "final_state_max_abs": 0.0,
+        "final_state_tolerance": {
+          "rtol": 0.05,
+          "atol": 0.05
+        }
+      },
+      "p3_vs_torch_ref": {
+        "output_close": true,
+        "output_bitwise_exact": true,
+        "output_max_abs": 0.0,
+        "output_tolerance": {
+          "rtol": 0.02,
+          "atol": 0.02
+        },
+        "final_state_close": true,
+        "final_state_bitwise_exact": true,
+        "final_state_max_abs": 0.0,
+        "final_state_tolerance": {
+          "rtol": 0.05,
+          "atol": 0.05
+        }
+      }
+    }
+  },
+  "exact_gate_pass": true
+}

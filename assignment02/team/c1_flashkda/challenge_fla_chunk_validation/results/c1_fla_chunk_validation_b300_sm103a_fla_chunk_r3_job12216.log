@@ -1,0 +1,208 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-30T06:39:44+00:00
+dev-slurm
+SLURM_JOB_ID=12216
+CUDA_VISIBLE_DEVICES=0
+0, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 00000000:08:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+A02_ROOT=/home/lcpu/85117379/codex-a02-20260819-main/assignment02
+PATCHED_ROOT=/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1
+FLA_ROOT=/home/lcpu/85117379/fla-a3edffc
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+PATCHED_STATUS_END
+FLA_STATUS_BEGIN
+FLA_STATUS_END
+08ff3979ac83e55905fd581fd8ed0afc3a1faa4ce705ba62fcb56060cc499c0c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fla_chunk_validation/run_fla_chunk_validation.py
+a25540d8e3005b26d0235f12803da6338d24d4ef84425047384364cf40a38939  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fla_chunk_validation/run_clean_fla_chunk_validation.sh
+c8a789a04e94af35d4b0109e52ee232856f5bf5e1eef2fafedac4838ece30b52  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/tests/test_fwd.py
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/tests/torch_ref.py
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+74a888a0b51fd94a8c950f91befaa3a2af3decf898fc178440ac143f8ab555f6  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk_fwd.py
+27fb0a5ca31d02e5596aef1c80d8fd1e85b5e542f03efb8c2bb85475872f6cfa  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/fused_recurrent.py
+===== PYTHON_COMPILE_GATE =====
+===== OFFICIAL_FLA_CHUNK_TESTS =====
+===== OFFICIAL_TEST test_fwd_vs_fla =====
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning:   g=-8_bias=0 ht diff: 0.006141 ratio: 0.009628
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=-8_bias=0 chunk_kda ht diff: 0.003522 ratio: 0.006833
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=0_bias={-8,8} ht diff: 0.006501 ratio: 0.007842
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=0_bias=U(-8,8) ht diff: 0.010456 ratio: 0.005583
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=0_bias=N(0,8) ht diff: 0.018679 ratio: 0.009340
+  warnings.warn(msg)
+
+================================================================================
+Case: g=-8_bias=0
+  chunk_kda  | Output err_ratio: 5.409708e-03, State err_ratio: 6.832830e-03
+  flash_kda  | Output err_ratio: 4.296166e-03, State err_ratio: 9.627505e-03
+
+================================================================================
+Case: g=-4_bias=0
+  chunk_kda  | Output err_ratio: 2.935093e-03, State err_ratio: 2.880401e-03
+  flash_kda  | Output err_ratio: 3.360355e-03, State err_ratio: 4.106858e-03
+
+================================================================================
+Case: g=0_bias=0
+  chunk_kda  | Output err_ratio: 3.791582e-03, State err_ratio: 2.827969e-03
+  flash_kda  | Output err_ratio: 4.324799e-03, State err_ratio: 3.776810e-03
+
+================================================================================
+Case: g=8_bias=0
+  chunk_kda  | Output err_ratio: 3.883446e-03, State err_ratio: 2.477734e-03
+  flash_kda  | Output err_ratio: 4.240590e-03, State err_ratio: 4.273142e-03
+
+================================================================================
+Case: g=U(-8,8)_bias=0
+  chunk_kda  | Output err_ratio: 3.271943e-03, State err_ratio: 2.871605e-03
+  flash_kda  | Output err_ratio: 3.523340e-03, State err_ratio: 4.162949e-03
+
+================================================================================
+Case: g=N(0,8)_bias=0
+  chunk_kda  | Output err_ratio: 3.230172e-03, State err_ratio: 2.872885e-03
+  flash_kda  | Output err_ratio: 3.508272e-03, State err_ratio: 4.600360e-03
+
+================================================================================
+Case: g=0_bias={-4,4}
+  chunk_kda  | Output err_ratio: 2.525625e-03, State err_ratio: 2.146759e-03
+  flash_kda  | Output err_ratio: 3.149180e-03, State err_ratio: 3.428290e-03
+
+================================================================================
+Case: g=0_bias={-8,8}
+  chunk_kda  | Output err_ratio: 2.827679e-03, State err_ratio: 4.781050e-03
+  flash_kda  | Output err_ratio: 3.234408e-03, State err_ratio: 7.841610e-03
+
+================================================================================
+Case: g=0_bias=U(-8,8)
+  chunk_kda  | Output err_ratio: 2.374326e-03, State err_ratio: 1.902025e-03
+  flash_kda  | Output err_ratio: 2.924999e-03, State err_ratio: 5.582569e-03
+
+================================================================================
+Case: g=0_bias=N(0,8)
+  chunk_kda  | Output err_ratio: 2.385749e-03, State err_ratio: 2.569919e-03
+  flash_kda  | Output err_ratio: 3.198369e-03, State err_ratio: 9.339514e-03
+
+Plot saved to: plot.png
+
+================================================================================
+Assert results: Success
+===== OFFICIAL_TEST test_fwd_varlen_vs_fla =====
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning:   g=-8_bias=0 ht diff: 0.038424 ratio: 0.008926
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=0_bias={-8,8} ht diff: 0.043673 ratio: 0.008188
+  warnings.warn(msg)
+/home/lcpu/85117379/fla-a3edffc/fla/utils/_testing.py:39: UserWarning: g=0_bias=N(0,8) ht diff: 0.038990 ratio: 0.008465
+  warnings.warn(msg)
+seq_lens: [1300, 547, 2048, 963, 271, 3063], T_total: 8192, N: 6
+
+================================================================================
+Case: g=-8_bias=0
+  chunk_kda   | Output err_ratio: 6.088918e-03, State err_ratio: 3.617549e-03
+  flash_kda   | Output err_ratio: 5.149881e-03, State err_ratio: 8.926108e-03
+
+================================================================================
+Case: g=-4_bias=0
+  chunk_kda   | Output err_ratio: 2.978897e-03, State err_ratio: 3.003493e-03
+  flash_kda   | Output err_ratio: 3.408409e-03, State err_ratio: 3.996816e-03
+
+================================================================================
+Case: g=0_bias=0
+  chunk_kda   | Output err_ratio: 3.790465e-03, State err_ratio: 3.172484e-03
+  flash_kda   | Output err_ratio: 4.320283e-03, State err_ratio: 4.415291e-03
+
+================================================================================
+Case: g=8_bias=0
+  chunk_kda   | Output err_ratio: 3.883342e-03, State err_ratio: 2.942293e-03
+  flash_kda   | Output err_ratio: 4.242973e-03, State err_ratio: 4.345194e-03
+
+================================================================================
+Case: g=U(-8,8)_bias=0
+  chunk_kda   | Output err_ratio: 3.279318e-03, State err_ratio: 2.963140e-03
+  flash_kda   | Output err_ratio: 3.533363e-03, State err_ratio: 4.401782e-03
+
+================================================================================
+Case: g=N(0,8)_bias=0
+  chunk_kda   | Output err_ratio: 3.232504e-03, State err_ratio: 2.980757e-03
+  flash_kda   | Output err_ratio: 3.512006e-03, State err_ratio: 4.787129e-03
+
+================================================================================
+Case: g=0_bias={-4,4}
+  chunk_kda   | Output err_ratio: 2.554242e-03, State err_ratio: 2.299101e-03
+  flash_kda   | Output err_ratio: 3.178931e-03, State err_ratio: 3.351419e-03
+
+================================================================================
+Case: g=0_bias={-8,8}
+  chunk_kda   | Output err_ratio: 3.140977e-03, State err_ratio: 2.833408e-03
+  flash_kda   | Output err_ratio: 3.725702e-03, State err_ratio: 8.188459e-03
+
+================================================================================
+Case: g=0_bias=U(-8,8)
+  chunk_kda   | Output err_ratio: 2.451951e-03, State err_ratio: 1.794003e-03
+  flash_kda   | Output err_ratio: 3.029634e-03, State err_ratio: 5.660967e-03
+
+================================================================================
+Case: g=0_bias=N(0,8)
+  chunk_kda   | Output err_ratio: 2.526042e-03, State err_ratio: 1.806991e-03
+  flash_kda   | Output err_ratio: 3.430947e-03, State err_ratio: 8.465252e-03
+
+Plot saved to: plot_varlen.png
+
+================================================================================
+Assert results: Success
+{
+  "coverage": {
+    "passed": true,
+    "required_tests": [
+      "test_fwd_vs_fla",
+      "test_fwd_varlen_vs_fla"
+    ],
+    "per_test_call_counts": {
+      "test_fwd_vs_fla": {
+        "candidate_flash_kda": 10,
+        "fused_recurrent_gold": 10,
+        "triton_chunk_kda": 10
+      },
+      "test_fwd_varlen_vs_fla": {
+        "candidate_flash_kda": 10,
+        "fused_recurrent_gold": 10,
+        "triton_chunk_kda": 10
+      }
+    },
+    "total_call_counts": {
+      "candidate_flash_kda": 20,
+      "fused_recurrent_gold": 20,
+      "triton_chunk_kda": 20
+    },
+    "fixed_and_varlen_covered_for_each_path": true,
+    "output_and_final_state_observed_for_each_call": true
+  },
+  "json": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fla_chunk_validation/results/c1_fla_chunk_validation_b300_sm103a_fla_chunk_r3.json"
+}
+AFTER_OFFICIAL_TESTS_COMPUTE_APPS_BEGIN
+
+AFTER_OFFICIAL_TESTS_COMPUTE_APPS_END
+AFTER_OFFICIAL_TESTS_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-30T06:41:21+00:00
+0, GPU-0c223cf1-4325-822f-1e38-43ae57897edd, 00000000:08:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

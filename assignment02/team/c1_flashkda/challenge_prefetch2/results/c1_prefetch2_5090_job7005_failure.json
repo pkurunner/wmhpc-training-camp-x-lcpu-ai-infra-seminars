@@ -1,0 +1,36 @@
+{
+  "experiment": "C1 value-shard Phase-6 PREFETCH=2",
+  "job_id": 7005,
+  "platform": "NVIDIA GeForce RTX 5090",
+  "capability": [12, 0],
+  "build_target": "SM120a",
+  "slurm_state": "FAILED",
+  "exit_code": "1:0",
+  "source_commit": "1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b",
+  "generator_sha256": "23d58a30a43bab13fc0fb76ef414cd51db5e2b4dc550ef464d927834a525e021",
+  "extension_sha256": "d01d8bf29aa38814cb70c424c1392cb4f90e44745e1e7c20635d7ff99f032b3d",
+  "p1_header_sha256": "af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69",
+  "p2_header_sha256": "03ba5a268150c9d219f935654a6b27f9acbb0635a5686c7ea50a18f15d625c3c",
+  "exact_gate": {
+    "shape_at_stop": {"B": 1, "T": 256, "H": 1, "K": 128, "V": 128},
+    "state_mode_at_stop": "none",
+    "p1_vs_baseline_output_exact": true,
+    "p2_vs_p1_output_exact": true,
+    "p2_vs_torch_ref_output_exact": false,
+    "p2_vs_torch_ref_output_max_abs": 0.000007629395,
+    "inference": "Because P2 equals P1 bit-for-bit, P1/baseline has the same one-ULP difference from torch_ref on SM120a."
+  },
+  "benchmark": {
+    "ran": false,
+    "reason": "The required exact gate failed; stop-before-performance discipline was applied."
+  },
+  "audit": {
+    "pre_compute_apps_empty": true,
+    "pre_memory_used_mib": 0,
+    "post_compute_apps_empty": true,
+    "post_memory_used_mib": 0,
+    "valid_clean_allocation": true
+  },
+  "log": "c1_prefetch2_5090_job7005.out",
+  "log_sha256": "ddc4617ca8426daaac1bab1e77098e7ca4ab3d3ff35569aa19f0ab08bd109e2a"
+}

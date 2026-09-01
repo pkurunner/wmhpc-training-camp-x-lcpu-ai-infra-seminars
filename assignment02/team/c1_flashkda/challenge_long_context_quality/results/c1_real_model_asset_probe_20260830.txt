@@ -1,0 +1,29 @@
+AUDIT=c1_real_model_asset_probe_v2
+TIMESTAMP_UTC=2026-08-30T06:28:29+00:00
+HOST=b300-login
+USER=85117379
+
+SCOPE:
+- /home/lcpu/85117379, same filesystem only
+- /mnt, same filesystem only
+- excludes site-packages and .git trees
+- weight candidates: *.safetensors, pytorch_model*.bin, model*.bin, *.gguf larger than 100 MiB
+- launcher candidates inside the C1 tree: filenames containing torchrun, launcher, model+eval, or perplex
+
+SCAN_ROOT=/home/lcpu/85117379
+SCAN_RC=0
+SCAN_ROOT=/mnt
+SCAN_RC=0
+LARGE_WEIGHT_CANDIDATE_COUNT=0
+C1_LAUNCHER_CANDIDATE_COUNT=0
+
+ADDITIONAL_STANDARD_ROOT_CHECK:
+ROOT=/home/lcpu/85117379/.cache/huggingface STATUS=absent
+ROOT=/home/lcpu/85117379/models STATUS=absent
+ROOT=/models STATUS=absent
+ROOT=/data STATUS=absent
+ROOT=/mnt STATUS=present
+ROOT=/share STATUS=absent
+
+INTERPRETATION:
+No locally accessible large model-weight shard or C1 model-evaluation/TP launcher was found in the audited roots at this timestamp. This is an asset-availability probe, not proof that no suitable asset exists anywhere outside the user's accessible paths. Synthetic recurrence evidence therefore cannot be promoted to real Kimi logits, perplexity, or downstream-task quality.

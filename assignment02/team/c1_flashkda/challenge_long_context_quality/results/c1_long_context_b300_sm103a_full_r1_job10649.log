@@ -1,0 +1,144 @@
+===== ENVIRONMENT_GATE =====
+===== PRE_AUDIT =====
+2026-08-28T18:52:05+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+26567197ee67f795605573046a8531d0f255c9879671fb3c445d0bf59f3ef9eb  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/run_long_context_quality.py
+01d609a8e99b1a4f26b15553de734e1ee3193c476a51500f7da5f3e8db2a63bc  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/run_clean_long_context_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py
+27fb0a5ca31d02e5596aef1c80d8fd1e85b5e542f03efb8c2bb85475872f6cfa  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/fused_recurrent.py
+60a32285d4b67068ff633b48bbe8ab31028066d24f00d27e12199a88fc73f016  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/fla_kda_ref/naive.py
+===== LONG_CONTEXT_QUALITY =====
+PASS exact: preflight/seed0/segment0/candidate_vs_baseline/output
+PASS exact: preflight/seed0/segment0/candidate_vs_baseline/state
+PASS exact: preflight/seed0/segment0/baseline_vs_torch_ref/output
+PASS exact: preflight/seed0/segment0/baseline_vs_torch_ref/state
+PASS exact: preflight/seed0/bf16_vs_fp32_abi/output
+PASS exact: preflight/seed0/bf16_vs_fp32_abi/state
+PASS exact: preflight/seed0/segment1/candidate_vs_baseline/output
+PASS exact: preflight/seed0/segment1/candidate_vs_baseline/state
+PASS exact: preflight/seed0/segment1/baseline_vs_torch_ref/output
+PASS exact: preflight/seed0/segment1/baseline_vs_torch_ref/state
+PASS exact: preflight/seed1/segment0/candidate_vs_baseline/output
+PASS exact: preflight/seed1/segment0/candidate_vs_baseline/state
+PASS exact: preflight/seed1/segment0/baseline_vs_torch_ref/output
+PASS exact: preflight/seed1/segment0/baseline_vs_torch_ref/state
+PASS exact: preflight/seed1/bf16_vs_fp32_abi/output
+PASS exact: preflight/seed1/bf16_vs_fp32_abi/state
+PASS exact: preflight/seed1/segment1/candidate_vs_baseline/output
+PASS exact: preflight/seed1/segment1/candidate_vs_baseline/state
+PASS exact: preflight/seed1/segment1/baseline_vs_torch_ref/output
+PASS exact: preflight/seed1/segment1/baseline_vs_torch_ref/state
+quality H=1 seed=0 regime=random_service segment=1/32 output_rel=0.004938602 state_rel=0.003880937
+quality H=1 seed=0 regime=random_service segment=4/32 output_rel=0.005007719 state_rel=0.004473006
+quality H=1 seed=0 regime=random_service segment=8/32 output_rel=0.005028829 state_rel=0.004000605
+quality H=1 seed=0 regime=random_service segment=12/32 output_rel=0.005088324 state_rel=0.003953116
+quality H=1 seed=0 regime=random_service segment=16/32 output_rel=0.005000099 state_rel=0.004264633
+quality H=1 seed=0 regime=random_service segment=20/32 output_rel=0.005008372 state_rel=0.004120552
+quality H=1 seed=0 regime=random_service segment=24/32 output_rel=0.004995041 state_rel=0.004407809
+quality H=1 seed=0 regime=random_service segment=28/32 output_rel=0.004991152 state_rel=0.00413983
+quality H=1 seed=0 regime=random_service segment=32/32 output_rel=0.005085339 state_rel=0.004121663
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=1/32 output_rel=0.008857789 state_rel=0.00825563
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=4/32 output_rel=0.008958686 state_rel=0.00829513
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=8/32 output_rel=0.008980431 state_rel=0.008157021
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=12/32 output_rel=0.008970595 state_rel=0.00824054
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=16/32 output_rel=0.008955478 state_rel=0.008256686
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=20/32 output_rel=0.008981751 state_rel=0.008209146
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=24/32 output_rel=0.008960952 state_rel=0.008117247
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=28/32 output_rel=0.008943963 state_rel=0.008236058
+quality H=1 seed=0 regime=retention_stress_gm8_bm4 segment=32/32 output_rel=0.008962277 state_rel=0.008178082
+quality H=1 seed=1 regime=random_service segment=1/32 output_rel=0.004997316 state_rel=0.004156846
+quality H=1 seed=1 regime=random_service segment=4/32 output_rel=0.005018902 state_rel=0.003732031
+quality H=1 seed=1 regime=random_service segment=8/32 output_rel=0.004999366 state_rel=0.004291387
+quality H=1 seed=1 regime=random_service segment=12/32 output_rel=0.004979856 state_rel=0.004316797
+quality H=1 seed=1 regime=random_service segment=16/32 output_rel=0.004975098 state_rel=0.003926097
+quality H=1 seed=1 regime=random_service segment=20/32 output_rel=0.005015519 state_rel=0.004535947
+quality H=1 seed=1 regime=random_service segment=24/32 output_rel=0.004934336 state_rel=0.00447198
+quality H=1 seed=1 regime=random_service segment=28/32 output_rel=0.004999514 state_rel=0.004204169
+quality H=1 seed=1 regime=random_service segment=32/32 output_rel=0.005000409 state_rel=0.004177478
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=1/32 output_rel=0.008888734 state_rel=0.008228145
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=4/32 output_rel=0.008977207 state_rel=0.008258066
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=8/32 output_rel=0.008978368 state_rel=0.008279082
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=12/32 output_rel=0.008949955 state_rel=0.008163526
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=16/32 output_rel=0.008949588 state_rel=0.008216769
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=20/32 output_rel=0.008964658 state_rel=0.008186013
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=24/32 output_rel=0.008955489 state_rel=0.008412775
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=28/32 output_rel=0.008956423 state_rel=0.008205155
+quality H=1 seed=1 regime=retention_stress_gm8_bm4 segment=32/32 output_rel=0.008955961 state_rel=0.008262178
+quality H=1 seed=2 regime=random_service segment=1/32 output_rel=0.004958243 state_rel=0.004631693
+quality H=1 seed=2 regime=random_service segment=4/32 output_rel=0.00495877 state_rel=0.004409753
+quality H=1 seed=2 regime=random_service segment=8/32 output_rel=0.005009305 state_rel=0.004260107
+quality H=1 seed=2 regime=random_service segment=12/32 output_rel=0.004997704 state_rel=0.004178773
+quality H=1 seed=2 regime=random_service segment=16/32 output_rel=0.005032909 state_rel=0.003721017
+quality H=1 seed=2 regime=random_service segment=20/32 output_rel=0.005010797 state_rel=0.004936904
+quality H=1 seed=2 regime=random_service segment=24/32 output_rel=0.004960703 state_rel=0.004249041
+quality H=1 seed=2 regime=random_service segment=28/32 output_rel=0.005052389 state_rel=0.004462278
+quality H=1 seed=2 regime=random_service segment=32/32 output_rel=0.004908766 state_rel=0.005348355
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=1/32 output_rel=0.008872779 state_rel=0.00835574
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=4/32 output_rel=0.00892374 state_rel=0.008204432
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=8/32 output_rel=0.008956238 state_rel=0.008249803
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=12/32 output_rel=0.008962892 state_rel=0.008313052
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=16/32 output_rel=0.008978451 state_rel=0.008281365
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=20/32 output_rel=0.00895176 state_rel=0.008267716
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=24/32 output_rel=0.008981236 state_rel=0.008185138
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=28/32 output_rel=0.008951346 state_rel=0.00819796
+quality H=1 seed=2 regime=retention_stress_gm8_bm4 segment=32/32 output_rel=0.008970812 state_rel=0.008312875
+quality H=1 seed=3 regime=random_service segment=1/32 output_rel=0.004931098 state_rel=0.004346464
+quality H=1 seed=3 regime=random_service segment=4/32 output_rel=0.004977199 state_rel=0.004245246
+quality H=1 seed=3 regime=random_service segment=8/32 output_rel=0.00494225 state_rel=0.004507445
+quality H=1 seed=3 regime=random_service segment=12/32 output_rel=0.00505651 state_rel=0.004377388
+quality H=1 seed=3 regime=random_service segment=16/32 output_rel=0.004953169 state_rel=0.004364208
+quality H=1 seed=3 regime=random_service segment=20/32 output_rel=0.004981913 state_rel=0.004420116
+quality H=1 seed=3 regime=random_service segment=24/32 output_rel=0.004972285 state_rel=0.004829335
+quality H=1 seed=3 regime=random_service segment=28/32 output_rel=0.004985588 state_rel=0.004454275
+quality H=1 seed=3 regime=random_service segment=32/32 output_rel=0.004981972 state_rel=0.004109899
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=1/32 output_rel=0.008913412 state_rel=0.008278889
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=4/32 output_rel=0.008982655 state_rel=0.008225041
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=8/32 output_rel=0.008976882 state_rel=0.008363701
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=12/32 output_rel=0.00896793 state_rel=0.00820678
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=16/32 output_rel=0.008960949 state_rel=0.008200821
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=20/32 output_rel=0.008976488 state_rel=0.008294756
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=24/32 output_rel=0.008983065 state_rel=0.008288884
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=28/32 output_rel=0.008963006 state_rel=0.008237064
+quality H=1 seed=3 regime=retention_stress_gm8_bm4 segment=32/32 output_rel=0.008971858 state_rel=0.008276818
+quality H=12 seed=0 regime=random_service segment=1/16 output_rel=0.004958056 state_rel=0.004278783
+quality H=12 seed=0 regime=random_service segment=4/16 output_rel=0.004981966 state_rel=0.004246923
+quality H=12 seed=0 regime=random_service segment=8/16 output_rel=0.004964038 state_rel=0.004411939
+quality H=12 seed=0 regime=random_service segment=12/16 output_rel=0.004969105 state_rel=0.004296658
+quality H=12 seed=0 regime=random_service segment=16/16 output_rel=0.004959887 state_rel=0.004318421
+quality H=12 seed=0 regime=retention_stress_gm8_bm4 segment=1/16 output_rel=0.008874407 state_rel=0.0082507
+quality H=12 seed=0 regime=retention_stress_gm8_bm4 segment=4/16 output_rel=0.008963478 state_rel=0.008226812
+quality H=12 seed=0 regime=retention_stress_gm8_bm4 segment=8/16 output_rel=0.008971426 state_rel=0.008219839
+quality H=12 seed=0 regime=retention_stress_gm8_bm4 segment=12/16 output_rel=0.008959888 state_rel=0.008236284
+quality H=12 seed=0 regime=retention_stress_gm8_bm4 segment=16/16 output_rel=0.008971947 state_rel=0.008226381
+quality H=12 seed=1 regime=random_service segment=1/16 output_rel=0.004972629 state_rel=0.004254512
+quality H=12 seed=1 regime=random_service segment=4/16 output_rel=0.004989158 state_rel=0.004354048
+quality H=12 seed=1 regime=random_service segment=8/16 output_rel=0.0049889 state_rel=0.004468992
+quality H=12 seed=1 regime=random_service segment=12/16 output_rel=0.004989967 state_rel=0.004477591
+quality H=12 seed=1 regime=random_service segment=16/16 output_rel=0.00497943 state_rel=0.004067501
+quality H=12 seed=1 regime=retention_stress_gm8_bm4 segment=1/16 output_rel=0.0088729 state_rel=0.008236835
+quality H=12 seed=1 regime=retention_stress_gm8_bm4 segment=4/16 output_rel=0.008957669 state_rel=0.008252763
+quality H=12 seed=1 regime=retention_stress_gm8_bm4 segment=8/16 output_rel=0.008969055 state_rel=0.008266806
+quality H=12 seed=1 regime=retention_stress_gm8_bm4 segment=12/16 output_rel=0.008978357 state_rel=0.008248457
+quality H=12 seed=1 regime=retention_stress_gm8_bm4 segment=16/16 output_rel=0.008961167 state_rel=0.008255829
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_long_context_quality/results/c1_long_context_b300_sm103a_full_r1.json
+AFTER_QUALITY_COMPUTE_APPS_BEGIN
+
+AFTER_QUALITY_COMPUTE_APPS_END
+AFTER_QUALITY_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T18:52:15+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

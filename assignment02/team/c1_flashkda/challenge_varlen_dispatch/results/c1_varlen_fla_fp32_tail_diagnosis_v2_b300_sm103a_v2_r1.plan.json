@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "purpose": "corrected diagnostic-only B300 FP32-both tail study; never whitelist promotion authority",
+  "diagnostic_only": true,
+  "no_release_authority": true,
+  "whitelist_action": "unchanged",
+  "mode": "stability_main",
+  "process_index": 0,
+  "process": {
+    "pid": 265200,
+    "fresh_python_process_required": true
+  },
+  "target": {
+    "cell": "skew_n6_h12_t12288/fp32_both",
+    "offsets": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      12288
+    ],
+    "temporary_variant": "vshard4_p2",
+    "production_status": "not_whitelisted; temporary process-local target only"
+  },
+  "pre_registered": {
+    "main_processes": 3,
+    "main_process_indices": [
+      0,
+      1,
+      2
+    ],
+    "repeats_per_process": 2,
+    "cuda_event_samples_per_path_per_repeat": 1000,
+    "warmup_per_path_per_repeat": 100,
+    "paired_block_size": 100,
+    "tail_threshold_ms": 1.2,
+    "balanced_order": "even pair C1 first, odd pair pinned first",
+    "timing_contract": "select_path, route-count snapshots, and CUDA Event construction are outside; after start.record/start.synchronize and before end.record/end.synchronize, the only invoked operation is candidate._call(public_fn, x, initial, final, gpu, cpu); route accounting, decision inspection, elapsed_time, and raw-pair recording are outside",
+    "relative_candidate_gate": "all six repeats: C1 wins P50/P95/P99 and each margin >=2%",
+    "corrected_tail_rule": "all six repeats: C1 p99 <=1.20ms, paired delta p99 <=0ms, joint(C1>pinned and C1>1.20ms)=0",
+    "telemetry_policy": "per-main-process GPU state and separate telemetry sidecar are explanatory only and excluded from every gate",
+    "allocation_policy": "second independent allocation is eligible only after all first-allocation gates pass; any relative margin failure stops"
+  },
+  "identity": {},
+  "gates": {
+    "production_map_before": {
+      "passed": false
+    },
+    "temporary_target_map": {
+      "passed": false
+    },
+    "map_restored": {
+      "passed": false
+    },
+    "target_correctness": {
+      "passed": false
+    },
+    "route": {
+      "passed": false
+    },
+    "prepare_spy_restored": {
+      "passed": false
+    },
+    "prepare_spy_restored_after_restore": {
+      "passed": false
+    },
+    "backend_methods_restored": {
+      "passed": false
+    },
+    "clean_gpu": {
+      "passed": false
+    },
+    "python_nvidia_clean": {
+      "passed": false
+    },
+    "device": {
+      "passed": false
+    },
+    "extension": {
+      "passed": false
+    },
+    "fla_pin": {
+      "passed": false
+    }
+  },
+  "map": {
+    "installed": false,
+    "restored": false
+  },
+  "correctness": {},
+  "performance": {
+    "repeats": [],
+    "complete": false
+  },
+  "complete": false,
+  "describe_only": true
+}

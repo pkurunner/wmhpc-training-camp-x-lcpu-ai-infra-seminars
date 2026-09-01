@@ -1,0 +1,127 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/ninja
+/usr/local/cuda/bin/nvcc
+===== PRE_AUDIT =====
+2026-08-20T02:51:10+00:00
+dev-slurm
+CUDA_VISIBLE_DEVICES=0
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+C1_BUILD_TARGET=B300_SM103a
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+23d58a30a43bab13fc0fb76ef414cd51db5e2b4dc550ef464d927834a525e021  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/apply_prefetch2_patch.py
+a35e1fd1823e733d18f4937ba66ca7a317b52a33db5474a2180db01fa8b7d53d  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+2d5d8e8b5b7c7e0ca3741a95ae54055710eee3b51149544b2d8a5fbcdabbab72  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_prefetch2_final.py
+193f7a98d5e4f51958b15a084bf25ed24e12bd653a318a5f51ae91105c066e25  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/run_clean_prefetch2_audit.sh
+bca3248e1bf480ea51eb3bb3da0e79d8f477fb914ea17d320c0bf90679aaaf7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/apply_vshard_patch.py
+7f508c60003439de27b184d70c130ca615439fcaa61e9970be4dc961ffcccaec  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/vshard.py
+d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+669b9f25373893e92c2fb16956518d0e5538c0314bdb7a666754c32e51be8764  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/flash_kda.cpp
+ded20fe0d6d711f7d5a877776a0a4173ec216f2361ed7e71cc6a0fc93b5d463c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/fwd.h
+203bb6540d56a74e691e44860e20f187cfc4f9e03fab98fe6c34453f238b2db6  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_launch.cu
+f8a634154ca26a18855adbd3db17d6208a874b16f173d0eb9814bfefff03b9b9  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2.cuh
+af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard.cuh
+03ba5a268150c9d219f935654a6b27f9acbb0635a5686c7ea50a18f15d625c3c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard_p2.cuh
+===== SMALL_EXACT_MATRIX =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a
+extension_sha256=d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f
+PASS exact: none/p1_vs_baseline/output
+PASS exact: none/p2_vs_p1/output
+PASS close: none/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vs_baseline/output
+PASS exact: bf16/p1_vs_baseline/final_state
+PASS exact: bf16/p2_vs_p1/output
+PASS exact: bf16/p2_vs_p1/final_state
+PASS close: bf16/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vs_baseline/output
+PASS exact: fp32/p1_vs_baseline/final_state
+PASS exact: fp32/p2_vs_p1/output
+PASS exact: fp32/p2_vs_p1/final_state
+PASS close: fp32/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/p1_vs_baseline/output
+PASS exact: none/p2_vs_p1/output
+PASS close: none/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vs_baseline/output
+PASS exact: bf16/p1_vs_baseline/final_state
+PASS exact: bf16/p2_vs_p1/output
+PASS exact: bf16/p2_vs_p1/final_state
+PASS close: bf16/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vs_baseline/output
+PASS exact: fp32/p1_vs_baseline/final_state
+PASS exact: fp32/p2_vs_p1/output
+PASS exact: fp32/p2_vs_p1/final_state
+PASS close: fp32/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/p1_vs_baseline/output
+PASS exact: none/p2_vs_p1/output
+PASS close: none/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vs_baseline/output
+PASS exact: bf16/p1_vs_baseline/final_state
+PASS exact: bf16/p2_vs_p1/output
+PASS exact: bf16/p2_vs_p1/final_state
+PASS close: bf16/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vs_baseline/output
+PASS exact: fp32/p1_vs_baseline/final_state
+PASS exact: fp32/p2_vs_p1/output
+PASS exact: fp32/p2_vs_p1/final_state
+PASS close: fp32/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/results/c1_prefetch2_b300_sm103a_fresh_r2_envfix2_small_matrix.json
+BETWEEN_EXACT_AND_BENCH_COMPUTE_APPS_BEGIN
+
+BETWEEN_EXACT_AND_BENCH_COMPUTE_APPS_END
+BETWEEN_EXACT_AND_BENCH_MEMORY_USED_MIB=0
+===== H64_BF16_P1_P2_ABBA =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a
+extension_sha256=d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f
+PASS exact: bf16/p1_vs_baseline/output
+PASS exact: bf16/p1_vs_baseline/final_state
+PASS exact: bf16/p2_vs_p1/output
+PASS exact: bf16/p2_vs_p1/final_state
+PASS close: bf16/p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/results/c1_prefetch2_b300_sm103a_fresh_r2_envfix2_h64_bf16.json
+AFTER_BENCH_COMPUTE_APPS_BEGIN
+
+AFTER_BENCH_COMPUTE_APPS_END
+AFTER_BENCH_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-20T02:51:33+00:00
+0, GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a, 00000000:06:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

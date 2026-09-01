@@ -1,0 +1,35 @@
+AUDIT=c1_real_model_asset_probe_v3
+TIMESTAMP_UTC=2026-08-31T06:59:02.056905+00:00
+HOST=b300-login
+USER=85117379
+
+SCOPE:
+- /home/lcpu/85117379, same filesystem only
+- /mnt, same filesystem only
+- excludes site-packages, .git, node_modules and __pycache__ trees
+- weight candidates: *.safetensors, pytorch_model*.bin, model*.bin, *.gguf larger than 100 MiB
+- launcher candidates inside the remote C1 tree: filenames containing torchrun, launcher,
+  perplex, model+eval, or eval+model
+
+SCAN_ROOT=/home/lcpu/85117379
+SCAN_STATUS=complete
+SCAN_ROOT=/mnt
+SCAN_STATUS=complete
+LARGE_WEIGHT_CANDIDATE_COUNT=0
+C1_LAUNCHER_CANDIDATE_COUNT=0
+
+ADDITIONAL_STANDARD_ROOT_CHECK:
+ROOT=/home/lcpu/85117379/.cache/huggingface STATUS=absent
+ROOT=/home/lcpu/85117379/models STATUS=absent
+ROOT=/models STATUS=absent
+ROOT=/data STATUS=absent
+ROOT=/mnt STATUS=present
+ROOT=/share STATUS=absent
+
+INTERPRETATION:
+No locally accessible large model-weight shard or C1 model-evaluation/TP launcher was
+found in the audited roots at this timestamp.  This is an asset-availability probe,
+not proof that no suitable asset exists outside the user's accessible paths.  Do not
+promote synthetic recurrence evidence to real-model logits, perplexity, or downstream
+quality, and do not spend this experiment window rerunning synthetic seeds as a
+substitute for the missing assets.

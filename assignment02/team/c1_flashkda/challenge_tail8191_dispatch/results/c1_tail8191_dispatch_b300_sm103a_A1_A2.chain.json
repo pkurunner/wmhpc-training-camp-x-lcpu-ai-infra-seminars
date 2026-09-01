@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "two-clean-allocation tail8191 public-freeze eligibility chain; no automatic source change",
+  "source_identity": {
+    "analyzer_sha256": "40297138e2a9fd6c0b58c159bd8801750e0842c2c30f6b6a708e29bfb779594f"
+  },
+  "allocations": {
+    "A1": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r1_A1.allocation_audit.json",
+      "sha256": "de574828e589707b9c83a7c1e9860c346e28819e09a61f9c7c1a150b0c953539",
+      "slurm_job_id": "12406",
+      "gpu_uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a"
+    },
+    "A2": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r2_A2.allocation_audit.json",
+      "sha256": "73f8d3ac128fa5217a5b20cb153dc9250c21bd952ee8d4977118436bbe36c5cf",
+      "slurm_job_id": "12415",
+      "gpu_uuid": "GPU-dadf9f3b-df58-d3fa-07b0-5fe223423db1"
+    }
+  },
+  "eligible_for_public_freeze": true,
+  "automatic_production_mutation": false,
+  "next_step": "manual integration/review may consider only the exact (T=8191, none/fp32_final_only) table; bf16_both and fp32_both remain baseline negative controls",
+  "complete": true
+}

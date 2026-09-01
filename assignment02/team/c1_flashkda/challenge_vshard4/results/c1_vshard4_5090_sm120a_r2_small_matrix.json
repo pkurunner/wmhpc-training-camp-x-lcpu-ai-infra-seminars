@@ -1,0 +1,80 @@
+{
+  "device": "NVIDIA GeForce RTX 5090",
+  "capability": [
+    12,
+    0
+  ],
+  "candidate": "fwd_vshard4",
+  "extension": {
+    "extension": "/home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "extension_sha256": "a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163"
+  },
+  "states": [
+    "none",
+    "bf16",
+    "fp32"
+  ],
+  "seed": 20260819,
+  "build_target": "sm120a",
+  "shape_matrix": {
+    "B": 1,
+    "T": 256,
+    "H": [
+      1,
+      2,
+      4
+    ],
+    "K": 128,
+    "V": 128
+  },
+  "correctness_matrix": {
+    "H1": {
+      "none": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0
+      },
+      "bf16": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      },
+      "fp32": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      }
+    },
+    "H2": {
+      "none": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0
+      },
+      "bf16": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      },
+      "fp32": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      }
+    },
+    "H4": {
+      "none": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0
+      },
+      "bf16": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      },
+      "fp32": {
+        "baseline_vs_candidate_exact": true,
+        "output_max_abs": 0.0,
+        "final_state_max_abs": 0.0
+      }
+    }
+  }
+}

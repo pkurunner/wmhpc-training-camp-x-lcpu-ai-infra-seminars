@@ -1,0 +1,534 @@
+{
+  "schema_version": 2,
+  "kind": "one_allocation_relative_only",
+  "allocation_id": "A1",
+  "a1_prerequisite": null,
+  "allocation_identity": {
+    "slurm_job_id": "12528",
+    "gpu_uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a",
+    "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+    "fresh_pids": [
+      2151251,
+      2152340
+    ]
+  },
+  "protocol_identity": {
+    "schema_version": 2,
+    "target": {
+      "cell": "skew_n6_h12_t12288/fp32_both",
+      "offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        12288
+      ],
+      "variant": "vshard4_p2"
+    },
+    "runner": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_varlen_fp32_both_release.py",
+      "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_varlen_fp32_both_release.py",
+      "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02",
+      "sha256": "a98a791d1897e17e565e5fc159188dc82260d9af47bae4bfa5fb0f5051022009",
+      "sha256_gate_pass": true
+    },
+    "analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/analyze_varlen_fp32_both_release.py",
+      "sha256": "b15737f8b7cd8c7e7c96fed76f3d108fcb0ec6f0d25eee29e854c062ee435ed8",
+      "sha256_gate_pass": true
+    },
+    "protocol_shell": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+      "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+      "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02",
+      "sha256": "5fd18b11fa42fea93575fa588388631c60e89262b950b3a2fd640f57b905f00f",
+      "sha256_gate_pass": true
+    },
+    "candidate_helper_sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14",
+    "runtime_import_ledger_authority": "owned_runner_current_runtime_import_ledger",
+    "runtime_import_identity_keys": [
+      "auto_dispatch",
+      "confirmation_runner",
+      "fla_backend",
+      "harness",
+      "pinned_reference_helper",
+      "pinned_torch_ref",
+      "prefetch2",
+      "shared_seqcount_runner",
+      "varlen_metadata",
+      "vshard4_prefetch2"
+    ]
+  },
+  "source_identity": {
+    "candidate_helper_sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14",
+    "production_wrapper": {
+      "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+      "expected_path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+      "expected_root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+      "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84",
+      "sha256_gate_pass": true
+    },
+    "runtime_import_ledger_authority": "owned_runner_current_runtime_import_ledger",
+    "runtime_import_identities_by_pid": [
+      {
+        "auto_dispatch": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c",
+          "sha256_gate_pass": true
+        },
+        "confirmation_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b",
+          "sha256_gate_pass": true
+        },
+        "fla_backend": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656",
+          "sha256_gate_pass": true
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52",
+          "sha256_gate_pass": true
+        },
+        "pinned_reference_helper": {
+          "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_root": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext",
+          "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+          "sha256_gate_pass": true
+        },
+        "pinned_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_root": "/home/lcpu/85117379/flashkda-1ce47ea",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+          "sha256_gate_pass": true
+        },
+        "prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0",
+          "sha256_gate_pass": true
+        },
+        "shared_seqcount_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f",
+          "sha256_gate_pass": true
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd",
+          "sha256_gate_pass": true
+        },
+        "vshard4_prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385",
+          "sha256_gate_pass": true
+        }
+      },
+      {
+        "auto_dispatch": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c",
+          "sha256_gate_pass": true
+        },
+        "confirmation_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b",
+          "sha256_gate_pass": true
+        },
+        "fla_backend": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656",
+          "sha256_gate_pass": true
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52",
+          "sha256_gate_pass": true
+        },
+        "pinned_reference_helper": {
+          "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_root": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext",
+          "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+          "sha256_gate_pass": true
+        },
+        "pinned_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_root": "/home/lcpu/85117379/flashkda-1ce47ea",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+          "sha256_gate_pass": true
+        },
+        "prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0",
+          "sha256_gate_pass": true
+        },
+        "shared_seqcount_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f",
+          "sha256_gate_pass": true
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd",
+          "sha256_gate_pass": true
+        },
+        "vshard4_prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385",
+          "sha256_gate_pass": true
+        }
+      }
+    ]
+  },
+  "runner_records": [
+    {
+      "pid": 2151251,
+      "job_id": "12528",
+      "gpu_uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a",
+      "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "target": {
+        "cell": "skew_n6_h12_t12288/fp32_both",
+        "offsets": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          12288
+        ],
+        "variant": "vshard4_p2"
+      },
+      "runner_sha256": "a98a791d1897e17e565e5fc159188dc82260d9af47bae4bfa5fb0f5051022009",
+      "candidate_helper_sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14",
+      "protocol_shell": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+        "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+        "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02",
+        "sha256": "5fd18b11fa42fea93575fa588388631c60e89262b950b3a2fd640f57b905f00f",
+        "sha256_gate_pass": true
+      },
+      "production_wrapper": {
+        "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+        "expected_path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+        "expected_root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+        "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84",
+        "sha256_gate_pass": true
+      },
+      "runtime_import_ledger_authority": "owned_runner_current_runtime_import_ledger",
+      "runtime_import_identities": {
+        "auto_dispatch": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c",
+          "sha256_gate_pass": true
+        },
+        "confirmation_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b",
+          "sha256_gate_pass": true
+        },
+        "fla_backend": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656",
+          "sha256_gate_pass": true
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52",
+          "sha256_gate_pass": true
+        },
+        "pinned_reference_helper": {
+          "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_root": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext",
+          "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+          "sha256_gate_pass": true
+        },
+        "pinned_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_root": "/home/lcpu/85117379/flashkda-1ce47ea",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+          "sha256_gate_pass": true
+        },
+        "prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0",
+          "sha256_gate_pass": true
+        },
+        "shared_seqcount_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f",
+          "sha256_gate_pass": true
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd",
+          "sha256_gate_pass": true
+        },
+        "vshard4_prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385",
+          "sha256_gate_pass": true
+        }
+      },
+      "minimum_speedups_x": {
+        "p50_ms": 1.1060495861070194,
+        "p95_ms": 1.1011815352962755,
+        "p99_ms": 1.1006665665231872
+      },
+      "relative_performance_pass": true
+    },
+    {
+      "pid": 2152340,
+      "job_id": "12528",
+      "gpu_uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a",
+      "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+      "target": {
+        "cell": "skew_n6_h12_t12288/fp32_both",
+        "offsets": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          12288
+        ],
+        "variant": "vshard4_p2"
+      },
+      "runner_sha256": "a98a791d1897e17e565e5fc159188dc82260d9af47bae4bfa5fb0f5051022009",
+      "candidate_helper_sha256": "e07481e7e66551f1f9eaafa7f1fb9db9ef193f1694ff831ee0a07802c8ffbe14",
+      "protocol_shell": {
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+        "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/run_clean_varlen_fp32_both_release.sh",
+        "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02",
+        "sha256": "5fd18b11fa42fea93575fa588388631c60e89262b950b3a2fd640f57b905f00f",
+        "sha256_gate_pass": true
+      },
+      "production_wrapper": {
+        "path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+        "expected_path": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py",
+        "expected_root": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1",
+        "sha256": "9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84",
+        "sha256_gate_pass": true
+      },
+      "runtime_import_ledger_authority": "owned_runner_current_runtime_import_ledger",
+      "runtime_import_identities": {
+        "auto_dispatch": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9cdd460058254016af58723875bdf99ebe74f8e016a4c6027eb7fb38c8e9a88c",
+          "sha256_gate_pass": true
+        },
+        "confirmation_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b",
+          "sha256_gate_pass": true
+        },
+        "fla_backend": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "206e448abcd3d64826f87a20e7d57c790fef6adacd91e26edcb10a3711b9b656",
+          "sha256_gate_pass": true
+        },
+        "harness": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52",
+          "sha256_gate_pass": true
+        },
+        "pinned_reference_helper": {
+          "path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_path": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so",
+          "expected_root": "/home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext",
+          "sha256": "8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f",
+          "sha256_gate_pass": true
+        },
+        "pinned_torch_ref": {
+          "path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_path": "/home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py",
+          "expected_root": "/home/lcpu/85117379/flashkda-1ce47ea",
+          "sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+          "sha256_gate_pass": true
+        },
+        "prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0",
+          "sha256_gate_pass": true
+        },
+        "shared_seqcount_runner": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f",
+          "sha256_gate_pass": true
+        },
+        "varlen_metadata": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd",
+          "sha256_gate_pass": true
+        },
+        "vshard4_prefetch2": {
+          "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py",
+          "expected_root": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda",
+          "sha256": "445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385",
+          "sha256_gate_pass": true
+        }
+      },
+      "minimum_speedups_x": {
+        "p50_ms": 1.1051758150264082,
+        "p95_ms": 1.0522066843744378,
+        "p99_ms": 1.0215160828582475
+      },
+      "relative_performance_pass": true
+    }
+  ],
+  "input_artifacts": {
+    "raw_runner_json": [
+      {
+        "process_index": 0,
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/results/c1_varlen_fp32_both_A1_b300_sm103a_skew_fp32_both_release_r4_pid0.json",
+        "sha256": "bcfc5956df781bfbc2e54a41c3d13ea9a027248452bf5a7b734c55899c95526b",
+        "cli_expected_sha256": "bcfc5956df781bfbc2e54a41c3d13ea9a027248452bf5a7b734c55899c95526b"
+      },
+      {
+        "process_index": 1,
+        "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/results/c1_varlen_fp32_both_A1_b300_sm103a_skew_fp32_both_release_r4_pid1.json",
+        "sha256": "9597ae0d237e47cc16d0b54ded06253f74561657ec8ef2da42829b97eaa8e589",
+        "cli_expected_sha256": "9597ae0d237e47cc16d0b54ded06253f74561657ec8ef2da42829b97eaa8e589"
+      }
+    ],
+    "telemetry_csv": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/results/c1_varlen_fp32_both_A1_b300_sm103a_skew_fp32_both_release_r4_telemetry.csv",
+      "sha256": "2878400c0941f3c74b9fc7caffa9713d78a1d560499789bf38ee6ba73b1fd161",
+      "cli_expected_sha256": "2878400c0941f3c74b9fc7caffa9713d78a1d560499789bf38ee6ba73b1fd161",
+      "window": {
+        "main0_start_ns": 1788083934535023358,
+        "main1_end_ns": 1788083963191489650
+      }
+    },
+    "telemetry_window_sidecar": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/results/c1_varlen_fp32_both_A1_b300_sm103a_skew_fp32_both_release_r4_telemetry_window.json",
+      "sha256": "5f8d804e1502be104dbe011626b3afa086a3255d6976d9acb93d6189a8faccc1",
+      "cli_expected_sha256": "5f8d804e1502be104dbe011626b3afa086a3255d6976d9acb93d6189a8faccc1"
+    }
+  },
+  "telemetry": {
+    "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/results/c1_varlen_fp32_both_A1_b300_sm103a_skew_fp32_both_release_r4_telemetry.csv",
+    "sha256": "2878400c0941f3c74b9fc7caffa9713d78a1d560499789bf38ee6ba73b1fd161",
+    "samples": 125,
+    "uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a",
+    "window": {
+      "main0_start_ns": 1788083934535023358,
+      "main1_end_ns": 1788083963191489650
+    },
+    "checks": {
+      "all_pstate_p0": true,
+      "sm_clock_positive_and_within_95pct_median": false,
+      "memory_clock_positive_and_within_95pct_median": true,
+      "temperature_below_85c": true,
+      "power_positive_and_not_over_limit": true,
+      "timestamp_coverage_and_max_gap": true
+    },
+    "allocation_telemetry_valid": false,
+    "summary": {
+      "max_adjacent_gap_ns": 573228212,
+      "sm_clock_mhz_min_median_max": [
+        120.0,
+        2032.0,
+        2032.0
+      ],
+      "memory_clock_mhz_min_median_max": [
+        3996.0,
+        3996.0,
+        3996.0
+      ],
+      "temperature_c_min_max": [
+        34.0,
+        39.0
+      ],
+      "power_w_min_max": [
+        183.38,
+        381.96
+      ],
+      "power_limit_w_min_max": [
+        1100.0,
+        1100.0
+      ]
+    }
+  },
+  "analyzer": {
+    "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_fp32_both/analyze_varlen_fp32_both_release.py",
+    "sha256": "b15737f8b7cd8c7e7c96fed76f3d108fcb0ec6f0d25eee29e854c062ee435ed8",
+    "sha256_gate_pass": true
+  },
+  "allocation_valid": false,
+  "relative_performance_pass": true,
+  "allocation_pass": false,
+  "classification": "telemetry_invalid_not_performance_failure"
+}

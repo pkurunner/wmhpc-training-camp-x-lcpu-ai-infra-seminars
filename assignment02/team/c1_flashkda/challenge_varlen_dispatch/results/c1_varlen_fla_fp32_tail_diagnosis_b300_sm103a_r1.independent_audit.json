@@ -1,0 +1,652 @@
+{
+  "schema_version": 1,
+  "purpose": "independent diagnostic-only fp32-both tail audit; no whitelist/promotion authority",
+  "diagnostic_only": true,
+  "no_release_authority": true,
+  "analyzer": {
+    "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/analyze_varlen_fla_fp32_tail_diagnosis.py",
+    "sha256": "7d841aeb5f66e91b5f4c0c6fb5e159ba4bee71bea4959e3cc67d752b6f49a101",
+    "sha256_gate_pass": true
+  },
+  "main_inputs": [
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_fp32_tail_diagnosis_b300_sm103a_r1_main0.json",
+      "sha256": "cb701eda812172b15c4d9474234c16b62b8784eb8e463946680a91a4d6eff0b4",
+      "process_index": 0
+    },
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_fp32_tail_diagnosis_b300_sm103a_r1_main1.json",
+      "sha256": "3a2cf62beed4a512cbc16c1dc6ce8ad80d978669e56eb0ae41f01834cc4bbd63",
+      "process_index": 1
+    },
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_fp32_tail_diagnosis_b300_sm103a_r1_main2.json",
+      "sha256": "cb247d6768329a947ffaadd29a1ed195cd096e33134b1c8a34652f39737b7c44",
+      "process_index": 2
+    }
+  ],
+  "non_gating_telemetry_input": {
+    "json_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_fp32_tail_diagnosis_b300_sm103a_r1_telemetry.json",
+    "json_sha256": "70a13c31f0063b7f901d27d94fbdfe40b4a942e2c90fa86d563c88730c0a81a8",
+    "process_index": 3,
+    "telemetry": {
+      "available": true,
+      "csv_path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_fp32_tail_diagnosis_b300_sm103a_r1_telemetry.csv",
+      "csv_sha256": "b0de3d15d2bf48bd4d04e0e23c57b50739e20a5e12dfee58ef0bf55b42c6ed31",
+      "fields": [
+        "timestamp",
+        "index",
+        "uuid",
+        "pstate",
+        "clocks.current.graphics",
+        "clocks.current.sm",
+        "clocks.current.memory",
+        "power.draw",
+        "utilization.gpu",
+        "utilization.memory",
+        "temperature.gpu"
+      ],
+      "samples": 85,
+      "first_timestamp": "2026/08/29 15:17:23.422",
+      "last_timestamp": "2026/08/29 15:17:40.238",
+      "numeric_summaries": {
+        "clocks.current.graphics": {
+          "samples": 85,
+          "min": 1095.0,
+          "mean": 1095.0,
+          "max": 1095.0
+        },
+        "clocks.current.sm": {
+          "samples": 85,
+          "min": 1095.0,
+          "mean": 1095.0,
+          "max": 1095.0
+        },
+        "clocks.current.memory": {
+          "samples": 85,
+          "min": 3996.0,
+          "mean": 3996.0,
+          "max": 3996.0
+        },
+        "power.draw": {
+          "samples": 85,
+          "min": 201.68,
+          "mean": 230.81729411764707,
+          "max": 261.81
+        },
+        "utilization.gpu": {
+          "samples": 85,
+          "min": 0.0,
+          "mean": 65.41176470588235,
+          "max": 100.0
+        },
+        "utilization.memory": {
+          "samples": 85,
+          "min": 0.0,
+          "mean": 1.4823529411764707,
+          "max": 3.0
+        },
+        "temperature.gpu": {
+          "samples": 85,
+          "min": 35.0,
+          "mean": 35.65882352941176,
+          "max": 37.0
+        }
+      },
+      "unavailable_numeric_fields": [],
+      "excluded_from_stability": true,
+      "interpretation": "single non-gating process sidecar; descriptive only, not time-aligned tightly enough to establish causality"
+    }
+  },
+  "main_stability": {
+    "scope": "only the three stability_main processes; telemetry process excluded",
+    "processes": 3,
+    "repeats": [
+      {
+        "process_index": 0,
+        "repeat_index": 0,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7294998401403427,
+          "p50_ms": 1.7272000312805176,
+          "p95_ms": 1.7436175882816314,
+          "p99_ms": 1.7854524993896486,
+          "min_ms": 1.713312029838562,
+          "max_ms": 2.0655040740966797
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.0047272607088087,
+          "p50_ms": 2.0044959783554077,
+          "p95_ms": 2.017505574226379,
+          "p99_ms": 2.0251200199127197,
+          "min_ms": 1.982591986656189,
+          "max_ms": 2.0519039630889893
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.27522742056846616,
+          "delta_p50_ms": -0.27665597200393677,
+          "delta_p95_ms": -0.2558991611003876,
+          "delta_p99_ms": -0.23069988369941713,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": false
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16054651577866608,
+            "p95": 0.15708030693511743,
+            "p99": 0.1342334901684592
+          },
+          "passed": true
+        }
+      },
+      {
+        "process_index": 0,
+        "repeat_index": 1,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7264740509986878,
+          "p50_ms": 1.7251520156860352,
+          "p95_ms": 1.7374768555164337,
+          "p99_ms": 1.7524079477787018,
+          "min_ms": 1.7141120433807373,
+          "max_ms": 1.8500479459762573
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.004769181847572,
+          "p50_ms": 2.004415988922119,
+          "p95_ms": 2.0182735323905945,
+          "p99_ms": 2.0232064342498783,
+          "min_ms": 1.983232021331787,
+          "max_ms": 2.050976037979126
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2782951308488846,
+          "delta_p50_ms": -0.27899205684661865,
+          "delta_p95_ms": -0.26047512888908386,
+          "delta_p99_ms": -0.24431747436523438,
+          "c1_gt_pinned_count": 0,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 0
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": true
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16187789290269006,
+            "p95": 0.16161175096096403,
+            "p99": 0.154529364474997
+          },
+          "passed": true
+        }
+      },
+      {
+        "process_index": 1,
+        "repeat_index": 0,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7285872970819474,
+          "p50_ms": 1.726207971572876,
+          "p95_ms": 1.7415071547031402,
+          "p99_ms": 1.7770377755165099,
+          "min_ms": 1.711135983467102,
+          "max_ms": 2.0370240211486816
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.0050140489339827,
+          "p50_ms": 2.0049760341644287,
+          "p95_ms": 2.018056046962738,
+          "p99_ms": 2.0239999294281006,
+          "min_ms": 1.9803520441055298,
+          "max_ms": 2.0479679107666016
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2764267518520355,
+          "delta_p50_ms": -0.2780159115791321,
+          "delta_p95_ms": -0.256990385055542,
+          "delta_p99_ms": -0.23495385527610782,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": false
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16149158570826572,
+            "p95": 0.15879859667113383,
+            "p99": 0.13897405970439158
+          },
+          "passed": true
+        }
+      },
+      {
+        "process_index": 1,
+        "repeat_index": 1,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7262020486593246,
+          "p50_ms": 1.7248799800872803,
+          "p95_ms": 1.736451244354248,
+          "p99_ms": 1.755010542869568,
+          "min_ms": 1.7116800546646118,
+          "max_ms": 1.87283194065094
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.004507874250412,
+          "p50_ms": 2.004512071609497,
+          "p95_ms": 2.016579246520996,
+          "p99_ms": 2.0206153082847593,
+          "min_ms": 1.9831680059432983,
+          "max_ms": 2.035936117172241
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.27830582559108735,
+          "delta_p50_ms": -0.2789759635925293,
+          "delta_p95_ms": -0.26098233461380005,
+          "delta_p99_ms": -0.25100291371345523,
+          "c1_gt_pinned_count": 0,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 0
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": true
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16211683986735537,
+            "p95": 0.16132212354221465,
+            "p99": 0.1513408375205021
+          },
+          "passed": true
+        }
+      },
+      {
+        "process_index": 2,
+        "repeat_index": 0,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7293407365083695,
+          "p50_ms": 1.7268959879875183,
+          "p95_ms": 1.744355183839798,
+          "p99_ms": 1.7662150251865385,
+          "min_ms": 1.71343994140625,
+          "max_ms": 2.100192070007324
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.0049555538892747,
+          "p50_ms": 2.005023956298828,
+          "p95_ms": 2.01913754940033,
+          "p99_ms": 2.0248652386665342,
+          "min_ms": 1.9800959825515747,
+          "max_ms": 2.0595200061798096
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.27561481738090515,
+          "delta_p50_ms": -0.27671998739242554,
+          "delta_p95_ms": -0.25550238490104676,
+          "delta_p99_ms": -0.24149735212326048,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": false
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16105658374679144,
+            "p95": 0.15752661390649902,
+            "p99": 0.14644321885591394
+          },
+          "passed": true
+        }
+      },
+      {
+        "process_index": 2,
+        "repeat_index": 1,
+        "c1": {
+          "samples": 1000,
+          "mean_ms": 1.7279556157588958,
+          "p50_ms": 1.7261599898338318,
+          "p95_ms": 1.7421455919742583,
+          "p99_ms": 1.7592162966728209,
+          "min_ms": 1.7149759531021118,
+          "max_ms": 1.8407039642333984
+        },
+        "pinned": {
+          "samples": 1000,
+          "mean_ms": 2.0054497323036196,
+          "p50_ms": 2.0048320293426514,
+          "p95_ms": 2.0209600925445557,
+          "p99_ms": 2.025314507484436,
+          "min_ms": 1.9812480211257935,
+          "max_ms": 2.0509119033813477
+        },
+        "paired": {
+          "paired_samples": 1000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2774941165447235,
+          "delta_p50_ms": -0.27801597118377686,
+          "delta_p95_ms": -0.2590384006500244,
+          "delta_p99_ms": -0.2514559030532837,
+          "c1_gt_pinned_count": 0,
+          "c1_gt_threshold_count": 1000,
+          "pinned_gt_threshold_count": 1000,
+          "c1_gt_pinned_and_gt_threshold_count": 0
+        },
+        "criteria": {
+          "c1_p99_le_1_20": false,
+          "paired_p99_le_0": true,
+          "joint_tail_excess_count_zero": true
+        },
+        "relative_candidate_gate": {
+          "definition": "C1 must win P50/P95/P99 against pinned with each margin >=2% in this repeat; diagnostic only",
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16144044651136058,
+            "p95": 0.16004087250499843,
+            "p99": 0.1512595189772188
+          },
+          "passed": true
+        }
+      }
+    ],
+    "all_samples": {
+      "c1": {
+        "samples": 6000,
+        "mean_ms": 1.7280099315245947,
+        "p50_ms": 1.7260479927062988,
+        "p95_ms": 1.7410591661930084,
+        "p99_ms": 1.7661913454532627,
+        "min_ms": 1.711135983467102,
+        "max_ms": 2.100192070007324
+      },
+      "pinned": {
+        "samples": 6000,
+        "mean_ms": 2.004903941988945,
+        "p50_ms": 2.004672050476074,
+        "p95_ms": 2.0183680057525635,
+        "p99_ms": 2.024480104446411,
+        "min_ms": 1.9800959825515747,
+        "max_ms": 2.0595200061798096
+      },
+      "paired": {
+        "paired_samples": 6000,
+        "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+        "delta_mean_ms": -0.27689401046435036,
+        "delta_p50_ms": -0.278048038482666,
+        "delta_p95_ms": -0.25756800174713135,
+        "delta_p99_ms": -0.24150311112403866,
+        "c1_gt_pinned_count": 3,
+        "c1_gt_threshold_count": 6000,
+        "pinned_gt_threshold_count": 6000,
+        "c1_gt_pinned_and_gt_threshold_count": 3
+      }
+    },
+    "parity_by_first_path": {
+      "public_registry_c1": {
+        "c1": {
+          "samples": 3000,
+          "mean_ms": 1.7252519046465555,
+          "p50_ms": 1.723520040512085,
+          "p95_ms": 1.7379535913467408,
+          "p99_ms": 1.7608370721340179,
+          "min_ms": 1.711135983467102,
+          "max_ms": 1.8703360557556152
+        },
+        "pinned": {
+          "samples": 3000,
+          "mean_ms": 2.007460204601288,
+          "p50_ms": 2.0070080757141113,
+          "p95_ms": 2.0205440521240234,
+          "p99_ms": 2.025056207180023,
+          "min_ms": 1.9844160079956055,
+          "max_ms": 2.0595200061798096
+        },
+        "paired": {
+          "paired_samples": 3000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.28220829995473223,
+          "delta_p50_ms": -0.28329604864120483,
+          "delta_p95_ms": -0.26562872529029846,
+          "delta_p99_ms": -0.252254114151001,
+          "c1_gt_pinned_count": 0,
+          "c1_gt_threshold_count": 3000,
+          "pinned_gt_threshold_count": 3000,
+          "c1_gt_pinned_and_gt_threshold_count": 0
+        }
+      },
+      "public_registry_pinned": {
+        "c1": {
+          "samples": 3000,
+          "mean_ms": 1.7307679584026336,
+          "p50_ms": 1.7283519506454468,
+          "p95_ms": 1.7440976381301878,
+          "p99_ms": 1.772772179841995,
+          "min_ms": 1.7151999473571777,
+          "max_ms": 2.100192070007324
+        },
+        "pinned": {
+          "samples": 3000,
+          "mean_ms": 2.002347679376602,
+          "p50_ms": 2.002016067504883,
+          "p95_ms": 2.015455961227417,
+          "p99_ms": 2.020448930263519,
+          "min_ms": 1.9800959825515747,
+          "max_ms": 2.0519039630889893
+        },
+        "paired": {
+          "paired_samples": 3000,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2715797209739685,
+          "delta_p50_ms": -0.27337610721588135,
+          "delta_p95_ms": -0.25426558256149295,
+          "delta_p99_ms": -0.23650214433670066,
+          "c1_gt_pinned_count": 3,
+          "c1_gt_threshold_count": 3000,
+          "pinned_gt_threshold_count": 3000,
+          "c1_gt_pinned_and_gt_threshold_count": 3
+        }
+      }
+    },
+    "tail_excess_blocks": [
+      {
+        "process_index": 0,
+        "repeat_index": 0,
+        "block_index": 2,
+        "epoch_ns_start": 1788016601006434528,
+        "epoch_ns_end": 1788016601383980197,
+        "paired": {
+          "paired_samples": 100,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.27091167330741883,
+          "delta_p50_ms": -0.2739839553833008,
+          "delta_p95_ms": -0.2572047531604767,
+          "delta_p99_ms": -0.23626082539558255,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 100,
+          "pinned_gt_threshold_count": 100,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        }
+      },
+      {
+        "process_index": 1,
+        "repeat_index": 0,
+        "block_index": 2,
+        "epoch_ns_start": 1788016617941187514,
+        "epoch_ns_end": 1788016618319092341,
+        "paired": {
+          "paired_samples": 100,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2732047998905182,
+          "delta_p50_ms": -0.279151976108551,
+          "delta_p95_ms": -0.24967998266220096,
+          "delta_p99_ms": -0.14164227247238068,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 100,
+          "pinned_gt_threshold_count": 100,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        }
+      },
+      {
+        "process_index": 2,
+        "repeat_index": 0,
+        "block_index": 2,
+        "epoch_ns_start": 1788016634908365993,
+        "epoch_ns_end": 1788016635285495927,
+        "paired": {
+          "paired_samples": 100,
+          "delta_definition": "public_registry_c1_ms - public_registry_pinned_ms for the same alternating-order pair",
+          "delta_mean_ms": -0.2739971315860748,
+          "delta_p50_ms": -0.27822405099868774,
+          "delta_p95_ms": -0.25984169244766236,
+          "delta_p99_ms": -0.24071198940276925,
+          "c1_gt_pinned_count": 1,
+          "c1_gt_threshold_count": 100,
+          "pinned_gt_threshold_count": 100,
+          "c1_gt_pinned_and_gt_threshold_count": 1
+        }
+      }
+    ],
+    "pre_registered_stability_rule": {
+      "tail_stable": false,
+      "failed_repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": false
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": true
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": false
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": true
+          }
+        },
+        {
+          "process_index": 2,
+          "repeat_index": 0,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": false
+          }
+        },
+        {
+          "process_index": 2,
+          "repeat_index": 1,
+          "criteria": {
+            "c1_p99_le_1_20": false,
+            "paired_p99_le_0": true,
+            "joint_tail_excess_count_zero": true
+          }
+        }
+      ],
+      "classification": "c1_tail_excess_observed"
+    },
+    "relative_candidate_gate": {
+      "scope": "only the six main repeats; diagnostic only and never a whitelist authority",
+      "passed": true,
+      "failed_repeats": []
+    }
+  },
+  "promotion_decision": {
+    "action": "do_not_change_production_whitelist",
+    "reason": "This experiment is pre-registered diagnostic evidence only; telemetry is explicitly excluded from stability and promotion logic."
+  },
+  "complete": true
+}

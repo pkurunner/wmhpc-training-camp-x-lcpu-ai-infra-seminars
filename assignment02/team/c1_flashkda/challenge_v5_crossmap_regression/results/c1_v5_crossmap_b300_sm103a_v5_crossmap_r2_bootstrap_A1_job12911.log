@@ -1,0 +1,15 @@
+V5_CROSSMAP_PRE_CLEAN_GPU uuid=GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a memory_mib=0
+Traceback (most recent call last):
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py", line 1059, in <module>
+    main()
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py", line 1018, in main
+    result["public_registry_negative_controls"] = _public_registry_negative_controls(args.seed + args.process_index * 1000, chunk_kda, originals, counts, c1, pinned, torch_ref)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_v5_crossmap_regression/run_v5_crossmap_regression.py", line 827, in _public_registry_negative_controls
+    x = shared._make_inputs(_case(cell), seed + index)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py", line 281, in _make_inputs
+    generator = torch.Generator(device="cuda").manual_seed(seed)
+                ^^^^^
+NameError: name 'torch' is not defined
+V5_CROSSMAP_FINAL_CLEAN_GPU uuid=GPU-3924bd78-8b2f-8e85-3f20-8b0687d0bb0a memory_mib=0

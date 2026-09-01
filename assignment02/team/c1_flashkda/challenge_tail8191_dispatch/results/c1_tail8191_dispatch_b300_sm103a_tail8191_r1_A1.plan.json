@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "purpose": "two-allocation public FLA test-only tail8191 route; never production dispatch",
+  "describe_only": true,
+  "allocation_id": "A1",
+  "shape": {
+    "B": 1,
+    "H": 12,
+    "T": 8191,
+    "K": 128,
+    "V": 128
+  },
+  "contracts": [
+    "none",
+    "fp32_final_only"
+  ],
+  "raw_abi_exact_paths": [
+    "baseline_vs_reference",
+    "vshard4_vs_reference"
+  ],
+  "public_paths": [
+    "pinned_public",
+    "c1_test_route_public"
+  ],
+  "fresh_pids_per_allocation": 2,
+  "repeats_per_pid": 2,
+  "samples_per_path_repeat": 1000,
+  "required_percentiles": [
+    "p50",
+    "p95",
+    "p99"
+  ],
+  "minimum_c1_margin": 0.02,
+  "allocation_gate": "both contracts, 2 fresh PID x 2 repeats x P50/P95/P99 must make C1 public route >=2% faster",
+  "freeze_gate": "both separately clean A1 and A2 allocations must pass; this runner itself has no release authority"
+}

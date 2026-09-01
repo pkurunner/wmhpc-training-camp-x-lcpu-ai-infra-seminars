@@ -1,0 +1,3116 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+/usr/local/bin/nvcc
+T=8192 STATES=bf16 WARMUP=30 SAMPLES=500 HEADS=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96
+===== PRE_AUDIT =====
+2026-08-28T12:44:48+00:00
+dev-slurm
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+C1_BUILD_TARGET=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard4.cuh
+?? csrc/smxx/fwd_kernel2_vshard4_p2.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+d4d9b2638c0b02c7fbb239684995554d94f3a581070818069e7b6450e9140813  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/apply_vshard4_prefetch2_patch.py
+445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py
+07512895c5813faf545982e2c132551d93b4410e4b0e673ea49c4a727848329b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/run_vshard4_prefetch2_final.py
+d27c1916cc997a8b1982696326acc7b4a86904f00f7ac5e3197104463c3aa823  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/run_clean_head_sweep_audit.sh
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+38d5657833946849e6cc9b4bad10c8965702cd7d032a3e2f0c77abd141aae7e4  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/flash_kda.cpp
+613c86a211023ee5284b44a57398dfa2916a5cb272133b1768ce233470b71083  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/fwd.h
+a4859c8cc365db86ed068849db78190e4199c7d4b645a77695f1200579aae928  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_launch.cu
+af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_kernel2_vshard.cuh
+03ba5a268150c9d219f935654a6b27f9acbb0635a5686c7ea50a18f15d625c3c  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_kernel2_vshard_p2.cuh
+8246a4a7c43846a9b7861e59d7d4f269b2aa4645f929e354352bbed50366db74  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_kernel2_vshard4.cuh
+4979edb29dfa39b4088092a019d709169efff757a15c1fbb36549866ad1be482  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/csrc/smxx/fwd_kernel2_vshard4_p2.cuh
+===== H1_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H1_COMPUTE_APPS_BEGIN
+
+PRE_H1_COMPUTE_APPS_END
+PRE_H1_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h1_bf16_cyclic.json
+POST_H1_COMPUTE_APPS_BEGIN
+
+POST_H1_COMPUTE_APPS_END
+POST_H1_MEMORY_USED_MIB=0
+===== H2_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H2_COMPUTE_APPS_BEGIN
+
+PRE_H2_COMPUTE_APPS_END
+PRE_H2_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h2_bf16_cyclic.json
+POST_H2_COMPUTE_APPS_BEGIN
+
+POST_H2_COMPUTE_APPS_END
+POST_H2_MEMORY_USED_MIB=0
+===== H3_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H3_COMPUTE_APPS_BEGIN
+
+PRE_H3_COMPUTE_APPS_END
+PRE_H3_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h3_bf16_cyclic.json
+POST_H3_COMPUTE_APPS_BEGIN
+
+POST_H3_COMPUTE_APPS_END
+POST_H3_MEMORY_USED_MIB=0
+===== H4_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H4_COMPUTE_APPS_BEGIN
+
+PRE_H4_COMPUTE_APPS_END
+PRE_H4_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h4_bf16_cyclic.json
+POST_H4_COMPUTE_APPS_BEGIN
+
+POST_H4_COMPUTE_APPS_END
+POST_H4_MEMORY_USED_MIB=0
+===== H5_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H5_COMPUTE_APPS_BEGIN
+
+PRE_H5_COMPUTE_APPS_END
+PRE_H5_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h5_bf16_cyclic.json
+POST_H5_COMPUTE_APPS_BEGIN
+
+POST_H5_COMPUTE_APPS_END
+POST_H5_MEMORY_USED_MIB=0
+===== H6_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H6_COMPUTE_APPS_BEGIN
+
+PRE_H6_COMPUTE_APPS_END
+PRE_H6_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h6_bf16_cyclic.json
+POST_H6_COMPUTE_APPS_BEGIN
+
+POST_H6_COMPUTE_APPS_END
+POST_H6_MEMORY_USED_MIB=0
+===== H7_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H7_COMPUTE_APPS_BEGIN
+
+PRE_H7_COMPUTE_APPS_END
+PRE_H7_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h7_bf16_cyclic.json
+POST_H7_COMPUTE_APPS_BEGIN
+
+POST_H7_COMPUTE_APPS_END
+POST_H7_MEMORY_USED_MIB=0
+===== H8_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H8_COMPUTE_APPS_BEGIN
+
+PRE_H8_COMPUTE_APPS_END
+PRE_H8_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h8_bf16_cyclic.json
+POST_H8_COMPUTE_APPS_BEGIN
+
+POST_H8_COMPUTE_APPS_END
+POST_H8_MEMORY_USED_MIB=0
+===== H9_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H9_COMPUTE_APPS_BEGIN
+
+PRE_H9_COMPUTE_APPS_END
+PRE_H9_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h9_bf16_cyclic.json
+POST_H9_COMPUTE_APPS_BEGIN
+
+POST_H9_COMPUTE_APPS_END
+POST_H9_MEMORY_USED_MIB=0
+===== H10_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H10_COMPUTE_APPS_BEGIN
+
+PRE_H10_COMPUTE_APPS_END
+PRE_H10_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h10_bf16_cyclic.json
+POST_H10_COMPUTE_APPS_BEGIN
+
+POST_H10_COMPUTE_APPS_END
+POST_H10_MEMORY_USED_MIB=0
+===== H11_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H11_COMPUTE_APPS_BEGIN
+
+PRE_H11_COMPUTE_APPS_END
+PRE_H11_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h11_bf16_cyclic.json
+POST_H11_COMPUTE_APPS_BEGIN
+
+POST_H11_COMPUTE_APPS_END
+POST_H11_MEMORY_USED_MIB=0
+===== H12_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H12_COMPUTE_APPS_BEGIN
+
+PRE_H12_COMPUTE_APPS_END
+PRE_H12_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h12_bf16_cyclic.json
+POST_H12_COMPUTE_APPS_BEGIN
+
+POST_H12_COMPUTE_APPS_END
+POST_H12_MEMORY_USED_MIB=0
+===== H13_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H13_COMPUTE_APPS_BEGIN
+
+PRE_H13_COMPUTE_APPS_END
+PRE_H13_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h13_bf16_cyclic.json
+POST_H13_COMPUTE_APPS_BEGIN
+
+POST_H13_COMPUTE_APPS_END
+POST_H13_MEMORY_USED_MIB=0
+===== H14_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H14_COMPUTE_APPS_BEGIN
+
+PRE_H14_COMPUTE_APPS_END
+PRE_H14_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h14_bf16_cyclic.json
+POST_H14_COMPUTE_APPS_BEGIN
+
+POST_H14_COMPUTE_APPS_END
+POST_H14_MEMORY_USED_MIB=0
+===== H15_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H15_COMPUTE_APPS_BEGIN
+
+PRE_H15_COMPUTE_APPS_END
+PRE_H15_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h15_bf16_cyclic.json
+POST_H15_COMPUTE_APPS_BEGIN
+
+POST_H15_COMPUTE_APPS_END
+POST_H15_MEMORY_USED_MIB=0
+===== H16_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H16_COMPUTE_APPS_BEGIN
+
+PRE_H16_COMPUTE_APPS_END
+PRE_H16_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h16_bf16_cyclic.json
+POST_H16_COMPUTE_APPS_BEGIN
+
+POST_H16_COMPUTE_APPS_END
+POST_H16_MEMORY_USED_MIB=0
+===== H17_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H17_COMPUTE_APPS_BEGIN
+
+PRE_H17_COMPUTE_APPS_END
+PRE_H17_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h17_bf16_cyclic.json
+POST_H17_COMPUTE_APPS_BEGIN
+
+POST_H17_COMPUTE_APPS_END
+POST_H17_MEMORY_USED_MIB=0
+===== H18_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H18_COMPUTE_APPS_BEGIN
+
+PRE_H18_COMPUTE_APPS_END
+PRE_H18_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h18_bf16_cyclic.json
+POST_H18_COMPUTE_APPS_BEGIN
+
+POST_H18_COMPUTE_APPS_END
+POST_H18_MEMORY_USED_MIB=0
+===== H19_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H19_COMPUTE_APPS_BEGIN
+
+PRE_H19_COMPUTE_APPS_END
+PRE_H19_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h19_bf16_cyclic.json
+POST_H19_COMPUTE_APPS_BEGIN
+
+POST_H19_COMPUTE_APPS_END
+POST_H19_MEMORY_USED_MIB=0
+===== H20_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H20_COMPUTE_APPS_BEGIN
+
+PRE_H20_COMPUTE_APPS_END
+PRE_H20_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h20_bf16_cyclic.json
+POST_H20_COMPUTE_APPS_BEGIN
+
+POST_H20_COMPUTE_APPS_END
+POST_H20_MEMORY_USED_MIB=0
+===== H21_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H21_COMPUTE_APPS_BEGIN
+
+PRE_H21_COMPUTE_APPS_END
+PRE_H21_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h21_bf16_cyclic.json
+POST_H21_COMPUTE_APPS_BEGIN
+
+POST_H21_COMPUTE_APPS_END
+POST_H21_MEMORY_USED_MIB=0
+===== H22_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H22_COMPUTE_APPS_BEGIN
+
+PRE_H22_COMPUTE_APPS_END
+PRE_H22_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h22_bf16_cyclic.json
+POST_H22_COMPUTE_APPS_BEGIN
+
+POST_H22_COMPUTE_APPS_END
+POST_H22_MEMORY_USED_MIB=0
+===== H23_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H23_COMPUTE_APPS_BEGIN
+
+PRE_H23_COMPUTE_APPS_END
+PRE_H23_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h23_bf16_cyclic.json
+POST_H23_COMPUTE_APPS_BEGIN
+
+POST_H23_COMPUTE_APPS_END
+POST_H23_MEMORY_USED_MIB=0
+===== H24_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H24_COMPUTE_APPS_BEGIN
+
+PRE_H24_COMPUTE_APPS_END
+PRE_H24_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h24_bf16_cyclic.json
+POST_H24_COMPUTE_APPS_BEGIN
+
+POST_H24_COMPUTE_APPS_END
+POST_H24_MEMORY_USED_MIB=0
+===== H25_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H25_COMPUTE_APPS_BEGIN
+
+PRE_H25_COMPUTE_APPS_END
+PRE_H25_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h25_bf16_cyclic.json
+POST_H25_COMPUTE_APPS_BEGIN
+
+POST_H25_COMPUTE_APPS_END
+POST_H25_MEMORY_USED_MIB=0
+===== H26_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H26_COMPUTE_APPS_BEGIN
+
+PRE_H26_COMPUTE_APPS_END
+PRE_H26_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h26_bf16_cyclic.json
+POST_H26_COMPUTE_APPS_BEGIN
+
+POST_H26_COMPUTE_APPS_END
+POST_H26_MEMORY_USED_MIB=0
+===== H27_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H27_COMPUTE_APPS_BEGIN
+
+PRE_H27_COMPUTE_APPS_END
+PRE_H27_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h27_bf16_cyclic.json
+POST_H27_COMPUTE_APPS_BEGIN
+
+POST_H27_COMPUTE_APPS_END
+POST_H27_MEMORY_USED_MIB=0
+===== H28_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H28_COMPUTE_APPS_BEGIN
+
+PRE_H28_COMPUTE_APPS_END
+PRE_H28_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h28_bf16_cyclic.json
+POST_H28_COMPUTE_APPS_BEGIN
+
+POST_H28_COMPUTE_APPS_END
+POST_H28_MEMORY_USED_MIB=0
+===== H29_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H29_COMPUTE_APPS_BEGIN
+
+PRE_H29_COMPUTE_APPS_END
+PRE_H29_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h29_bf16_cyclic.json
+POST_H29_COMPUTE_APPS_BEGIN
+
+POST_H29_COMPUTE_APPS_END
+POST_H29_MEMORY_USED_MIB=0
+===== H30_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H30_COMPUTE_APPS_BEGIN
+
+PRE_H30_COMPUTE_APPS_END
+PRE_H30_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h30_bf16_cyclic.json
+POST_H30_COMPUTE_APPS_BEGIN
+
+POST_H30_COMPUTE_APPS_END
+POST_H30_MEMORY_USED_MIB=0
+===== H31_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H31_COMPUTE_APPS_BEGIN
+
+PRE_H31_COMPUTE_APPS_END
+PRE_H31_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h31_bf16_cyclic.json
+POST_H31_COMPUTE_APPS_BEGIN
+
+POST_H31_COMPUTE_APPS_END
+POST_H31_MEMORY_USED_MIB=0
+===== H32_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H32_COMPUTE_APPS_BEGIN
+
+PRE_H32_COMPUTE_APPS_END
+PRE_H32_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h32_bf16_cyclic.json
+POST_H32_COMPUTE_APPS_BEGIN
+
+POST_H32_COMPUTE_APPS_END
+POST_H32_MEMORY_USED_MIB=0
+===== H33_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H33_COMPUTE_APPS_BEGIN
+
+PRE_H33_COMPUTE_APPS_END
+PRE_H33_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h33_bf16_cyclic.json
+POST_H33_COMPUTE_APPS_BEGIN
+
+POST_H33_COMPUTE_APPS_END
+POST_H33_MEMORY_USED_MIB=0
+===== H34_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H34_COMPUTE_APPS_BEGIN
+
+PRE_H34_COMPUTE_APPS_END
+PRE_H34_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h34_bf16_cyclic.json
+POST_H34_COMPUTE_APPS_BEGIN
+
+POST_H34_COMPUTE_APPS_END
+POST_H34_MEMORY_USED_MIB=0
+===== H35_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H35_COMPUTE_APPS_BEGIN
+
+PRE_H35_COMPUTE_APPS_END
+PRE_H35_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h35_bf16_cyclic.json
+POST_H35_COMPUTE_APPS_BEGIN
+
+POST_H35_COMPUTE_APPS_END
+POST_H35_MEMORY_USED_MIB=0
+===== H36_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H36_COMPUTE_APPS_BEGIN
+
+PRE_H36_COMPUTE_APPS_END
+PRE_H36_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h36_bf16_cyclic.json
+POST_H36_COMPUTE_APPS_BEGIN
+
+POST_H36_COMPUTE_APPS_END
+POST_H36_MEMORY_USED_MIB=0
+===== H37_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H37_COMPUTE_APPS_BEGIN
+
+PRE_H37_COMPUTE_APPS_END
+PRE_H37_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h37_bf16_cyclic.json
+POST_H37_COMPUTE_APPS_BEGIN
+
+POST_H37_COMPUTE_APPS_END
+POST_H37_MEMORY_USED_MIB=0
+===== H38_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H38_COMPUTE_APPS_BEGIN
+
+PRE_H38_COMPUTE_APPS_END
+PRE_H38_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h38_bf16_cyclic.json
+POST_H38_COMPUTE_APPS_BEGIN
+
+POST_H38_COMPUTE_APPS_END
+POST_H38_MEMORY_USED_MIB=0
+===== H39_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H39_COMPUTE_APPS_BEGIN
+
+PRE_H39_COMPUTE_APPS_END
+PRE_H39_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h39_bf16_cyclic.json
+POST_H39_COMPUTE_APPS_BEGIN
+
+POST_H39_COMPUTE_APPS_END
+POST_H39_MEMORY_USED_MIB=0
+===== H40_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H40_COMPUTE_APPS_BEGIN
+
+PRE_H40_COMPUTE_APPS_END
+PRE_H40_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h40_bf16_cyclic.json
+POST_H40_COMPUTE_APPS_BEGIN
+
+POST_H40_COMPUTE_APPS_END
+POST_H40_MEMORY_USED_MIB=0
+===== H41_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H41_COMPUTE_APPS_BEGIN
+
+PRE_H41_COMPUTE_APPS_END
+PRE_H41_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h41_bf16_cyclic.json
+POST_H41_COMPUTE_APPS_BEGIN
+
+POST_H41_COMPUTE_APPS_END
+POST_H41_MEMORY_USED_MIB=0
+===== H42_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H42_COMPUTE_APPS_BEGIN
+
+PRE_H42_COMPUTE_APPS_END
+PRE_H42_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h42_bf16_cyclic.json
+POST_H42_COMPUTE_APPS_BEGIN
+
+POST_H42_COMPUTE_APPS_END
+POST_H42_MEMORY_USED_MIB=0
+===== H43_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H43_COMPUTE_APPS_BEGIN
+
+PRE_H43_COMPUTE_APPS_END
+PRE_H43_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h43_bf16_cyclic.json
+POST_H43_COMPUTE_APPS_BEGIN
+
+POST_H43_COMPUTE_APPS_END
+POST_H43_MEMORY_USED_MIB=0
+===== H44_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H44_COMPUTE_APPS_BEGIN
+
+PRE_H44_COMPUTE_APPS_END
+PRE_H44_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h44_bf16_cyclic.json
+POST_H44_COMPUTE_APPS_BEGIN
+
+POST_H44_COMPUTE_APPS_END
+POST_H44_MEMORY_USED_MIB=0
+===== H45_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H45_COMPUTE_APPS_BEGIN
+
+PRE_H45_COMPUTE_APPS_END
+PRE_H45_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h45_bf16_cyclic.json
+POST_H45_COMPUTE_APPS_BEGIN
+
+POST_H45_COMPUTE_APPS_END
+POST_H45_MEMORY_USED_MIB=0
+===== H46_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H46_COMPUTE_APPS_BEGIN
+
+PRE_H46_COMPUTE_APPS_END
+PRE_H46_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h46_bf16_cyclic.json
+POST_H46_COMPUTE_APPS_BEGIN
+
+POST_H46_COMPUTE_APPS_END
+POST_H46_MEMORY_USED_MIB=0
+===== H47_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H47_COMPUTE_APPS_BEGIN
+
+PRE_H47_COMPUTE_APPS_END
+PRE_H47_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h47_bf16_cyclic.json
+POST_H47_COMPUTE_APPS_BEGIN
+
+POST_H47_COMPUTE_APPS_END
+POST_H47_MEMORY_USED_MIB=0
+===== H48_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H48_COMPUTE_APPS_BEGIN
+
+PRE_H48_COMPUTE_APPS_END
+PRE_H48_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h48_bf16_cyclic.json
+POST_H48_COMPUTE_APPS_BEGIN
+
+POST_H48_COMPUTE_APPS_END
+POST_H48_MEMORY_USED_MIB=0
+===== H49_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H49_COMPUTE_APPS_BEGIN
+
+PRE_H49_COMPUTE_APPS_END
+PRE_H49_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h49_bf16_cyclic.json
+POST_H49_COMPUTE_APPS_BEGIN
+
+POST_H49_COMPUTE_APPS_END
+POST_H49_MEMORY_USED_MIB=0
+===== H50_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H50_COMPUTE_APPS_BEGIN
+
+PRE_H50_COMPUTE_APPS_END
+PRE_H50_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h50_bf16_cyclic.json
+POST_H50_COMPUTE_APPS_BEGIN
+
+POST_H50_COMPUTE_APPS_END
+POST_H50_MEMORY_USED_MIB=0
+===== H51_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H51_COMPUTE_APPS_BEGIN
+
+PRE_H51_COMPUTE_APPS_END
+PRE_H51_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h51_bf16_cyclic.json
+POST_H51_COMPUTE_APPS_BEGIN
+
+POST_H51_COMPUTE_APPS_END
+POST_H51_MEMORY_USED_MIB=0
+===== H52_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H52_COMPUTE_APPS_BEGIN
+
+PRE_H52_COMPUTE_APPS_END
+PRE_H52_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h52_bf16_cyclic.json
+POST_H52_COMPUTE_APPS_BEGIN
+
+POST_H52_COMPUTE_APPS_END
+POST_H52_MEMORY_USED_MIB=0
+===== H53_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H53_COMPUTE_APPS_BEGIN
+
+PRE_H53_COMPUTE_APPS_END
+PRE_H53_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h53_bf16_cyclic.json
+POST_H53_COMPUTE_APPS_BEGIN
+
+POST_H53_COMPUTE_APPS_END
+POST_H53_MEMORY_USED_MIB=0
+===== H54_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H54_COMPUTE_APPS_BEGIN
+
+PRE_H54_COMPUTE_APPS_END
+PRE_H54_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h54_bf16_cyclic.json
+POST_H54_COMPUTE_APPS_BEGIN
+
+POST_H54_COMPUTE_APPS_END
+POST_H54_MEMORY_USED_MIB=0
+===== H55_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H55_COMPUTE_APPS_BEGIN
+
+PRE_H55_COMPUTE_APPS_END
+PRE_H55_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h55_bf16_cyclic.json
+POST_H55_COMPUTE_APPS_BEGIN
+
+POST_H55_COMPUTE_APPS_END
+POST_H55_MEMORY_USED_MIB=0
+===== H56_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H56_COMPUTE_APPS_BEGIN
+
+PRE_H56_COMPUTE_APPS_END
+PRE_H56_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h56_bf16_cyclic.json
+POST_H56_COMPUTE_APPS_BEGIN
+
+POST_H56_COMPUTE_APPS_END
+POST_H56_MEMORY_USED_MIB=0
+===== H57_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H57_COMPUTE_APPS_BEGIN
+
+PRE_H57_COMPUTE_APPS_END
+PRE_H57_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h57_bf16_cyclic.json
+POST_H57_COMPUTE_APPS_BEGIN
+
+POST_H57_COMPUTE_APPS_END
+POST_H57_MEMORY_USED_MIB=0
+===== H58_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H58_COMPUTE_APPS_BEGIN
+
+PRE_H58_COMPUTE_APPS_END
+PRE_H58_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h58_bf16_cyclic.json
+POST_H58_COMPUTE_APPS_BEGIN
+
+POST_H58_COMPUTE_APPS_END
+POST_H58_MEMORY_USED_MIB=0
+===== H59_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H59_COMPUTE_APPS_BEGIN
+
+PRE_H59_COMPUTE_APPS_END
+PRE_H59_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h59_bf16_cyclic.json
+POST_H59_COMPUTE_APPS_BEGIN
+
+POST_H59_COMPUTE_APPS_END
+POST_H59_MEMORY_USED_MIB=0
+===== H60_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H60_COMPUTE_APPS_BEGIN
+
+PRE_H60_COMPUTE_APPS_END
+PRE_H60_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h60_bf16_cyclic.json
+POST_H60_COMPUTE_APPS_BEGIN
+
+POST_H60_COMPUTE_APPS_END
+POST_H60_MEMORY_USED_MIB=0
+===== H61_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H61_COMPUTE_APPS_BEGIN
+
+PRE_H61_COMPUTE_APPS_END
+PRE_H61_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h61_bf16_cyclic.json
+POST_H61_COMPUTE_APPS_BEGIN
+
+POST_H61_COMPUTE_APPS_END
+POST_H61_MEMORY_USED_MIB=0
+===== H62_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H62_COMPUTE_APPS_BEGIN
+
+PRE_H62_COMPUTE_APPS_END
+PRE_H62_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h62_bf16_cyclic.json
+POST_H62_COMPUTE_APPS_BEGIN
+
+POST_H62_COMPUTE_APPS_END
+POST_H62_MEMORY_USED_MIB=0
+===== H63_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H63_COMPUTE_APPS_BEGIN
+
+PRE_H63_COMPUTE_APPS_END
+PRE_H63_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h63_bf16_cyclic.json
+POST_H63_COMPUTE_APPS_BEGIN
+
+POST_H63_COMPUTE_APPS_END
+POST_H63_MEMORY_USED_MIB=0
+===== H64_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H64_COMPUTE_APPS_BEGIN
+
+PRE_H64_COMPUTE_APPS_END
+PRE_H64_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h64_bf16_cyclic.json
+POST_H64_COMPUTE_APPS_BEGIN
+
+POST_H64_COMPUTE_APPS_END
+POST_H64_MEMORY_USED_MIB=0
+===== H65_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H65_COMPUTE_APPS_BEGIN
+
+PRE_H65_COMPUTE_APPS_END
+PRE_H65_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h65_bf16_cyclic.json
+POST_H65_COMPUTE_APPS_BEGIN
+
+POST_H65_COMPUTE_APPS_END
+POST_H65_MEMORY_USED_MIB=0
+===== H66_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H66_COMPUTE_APPS_BEGIN
+
+PRE_H66_COMPUTE_APPS_END
+PRE_H66_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h66_bf16_cyclic.json
+POST_H66_COMPUTE_APPS_BEGIN
+
+POST_H66_COMPUTE_APPS_END
+POST_H66_MEMORY_USED_MIB=0
+===== H67_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H67_COMPUTE_APPS_BEGIN
+
+PRE_H67_COMPUTE_APPS_END
+PRE_H67_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h67_bf16_cyclic.json
+POST_H67_COMPUTE_APPS_BEGIN
+
+POST_H67_COMPUTE_APPS_END
+POST_H67_MEMORY_USED_MIB=0
+===== H68_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H68_COMPUTE_APPS_BEGIN
+
+PRE_H68_COMPUTE_APPS_END
+PRE_H68_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h68_bf16_cyclic.json
+POST_H68_COMPUTE_APPS_BEGIN
+
+POST_H68_COMPUTE_APPS_END
+POST_H68_MEMORY_USED_MIB=0
+===== H69_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H69_COMPUTE_APPS_BEGIN
+
+PRE_H69_COMPUTE_APPS_END
+PRE_H69_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h69_bf16_cyclic.json
+POST_H69_COMPUTE_APPS_BEGIN
+
+POST_H69_COMPUTE_APPS_END
+POST_H69_MEMORY_USED_MIB=0
+===== H70_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H70_COMPUTE_APPS_BEGIN
+
+PRE_H70_COMPUTE_APPS_END
+PRE_H70_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h70_bf16_cyclic.json
+POST_H70_COMPUTE_APPS_BEGIN
+
+POST_H70_COMPUTE_APPS_END
+POST_H70_MEMORY_USED_MIB=0
+===== H71_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H71_COMPUTE_APPS_BEGIN
+
+PRE_H71_COMPUTE_APPS_END
+PRE_H71_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h71_bf16_cyclic.json
+POST_H71_COMPUTE_APPS_BEGIN
+
+POST_H71_COMPUTE_APPS_END
+POST_H71_MEMORY_USED_MIB=0
+===== H72_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H72_COMPUTE_APPS_BEGIN
+
+PRE_H72_COMPUTE_APPS_END
+PRE_H72_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h72_bf16_cyclic.json
+POST_H72_COMPUTE_APPS_BEGIN
+
+POST_H72_COMPUTE_APPS_END
+POST_H72_MEMORY_USED_MIB=0
+===== H73_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H73_COMPUTE_APPS_BEGIN
+
+PRE_H73_COMPUTE_APPS_END
+PRE_H73_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h73_bf16_cyclic.json
+POST_H73_COMPUTE_APPS_BEGIN
+
+POST_H73_COMPUTE_APPS_END
+POST_H73_MEMORY_USED_MIB=0
+===== H74_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H74_COMPUTE_APPS_BEGIN
+
+PRE_H74_COMPUTE_APPS_END
+PRE_H74_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h74_bf16_cyclic.json
+POST_H74_COMPUTE_APPS_BEGIN
+
+POST_H74_COMPUTE_APPS_END
+POST_H74_MEMORY_USED_MIB=0
+===== H75_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H75_COMPUTE_APPS_BEGIN
+
+PRE_H75_COMPUTE_APPS_END
+PRE_H75_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h75_bf16_cyclic.json
+POST_H75_COMPUTE_APPS_BEGIN
+
+POST_H75_COMPUTE_APPS_END
+POST_H75_MEMORY_USED_MIB=0
+===== H76_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H76_COMPUTE_APPS_BEGIN
+
+PRE_H76_COMPUTE_APPS_END
+PRE_H76_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h76_bf16_cyclic.json
+POST_H76_COMPUTE_APPS_BEGIN
+
+POST_H76_COMPUTE_APPS_END
+POST_H76_MEMORY_USED_MIB=0
+===== H77_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H77_COMPUTE_APPS_BEGIN
+
+PRE_H77_COMPUTE_APPS_END
+PRE_H77_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h77_bf16_cyclic.json
+POST_H77_COMPUTE_APPS_BEGIN
+
+POST_H77_COMPUTE_APPS_END
+POST_H77_MEMORY_USED_MIB=0
+===== H78_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H78_COMPUTE_APPS_BEGIN
+
+PRE_H78_COMPUTE_APPS_END
+PRE_H78_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h78_bf16_cyclic.json
+POST_H78_COMPUTE_APPS_BEGIN
+
+POST_H78_COMPUTE_APPS_END
+POST_H78_MEMORY_USED_MIB=0
+===== H79_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H79_COMPUTE_APPS_BEGIN
+
+PRE_H79_COMPUTE_APPS_END
+PRE_H79_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h79_bf16_cyclic.json
+POST_H79_COMPUTE_APPS_BEGIN
+
+POST_H79_COMPUTE_APPS_END
+POST_H79_MEMORY_USED_MIB=0
+===== H80_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H80_COMPUTE_APPS_BEGIN
+
+PRE_H80_COMPUTE_APPS_END
+PRE_H80_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h80_bf16_cyclic.json
+POST_H80_COMPUTE_APPS_BEGIN
+
+POST_H80_COMPUTE_APPS_END
+POST_H80_MEMORY_USED_MIB=0
+===== H81_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H81_COMPUTE_APPS_BEGIN
+
+PRE_H81_COMPUTE_APPS_END
+PRE_H81_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h81_bf16_cyclic.json
+POST_H81_COMPUTE_APPS_BEGIN
+
+POST_H81_COMPUTE_APPS_END
+POST_H81_MEMORY_USED_MIB=0
+===== H82_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H82_COMPUTE_APPS_BEGIN
+
+PRE_H82_COMPUTE_APPS_END
+PRE_H82_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h82_bf16_cyclic.json
+POST_H82_COMPUTE_APPS_BEGIN
+
+POST_H82_COMPUTE_APPS_END
+POST_H82_MEMORY_USED_MIB=0
+===== H83_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H83_COMPUTE_APPS_BEGIN
+
+PRE_H83_COMPUTE_APPS_END
+PRE_H83_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h83_bf16_cyclic.json
+POST_H83_COMPUTE_APPS_BEGIN
+
+POST_H83_COMPUTE_APPS_END
+POST_H83_MEMORY_USED_MIB=0
+===== H84_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H84_COMPUTE_APPS_BEGIN
+
+PRE_H84_COMPUTE_APPS_END
+PRE_H84_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h84_bf16_cyclic.json
+POST_H84_COMPUTE_APPS_BEGIN
+
+POST_H84_COMPUTE_APPS_END
+POST_H84_MEMORY_USED_MIB=0
+===== H85_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H85_COMPUTE_APPS_BEGIN
+
+PRE_H85_COMPUTE_APPS_END
+PRE_H85_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h85_bf16_cyclic.json
+POST_H85_COMPUTE_APPS_BEGIN
+
+POST_H85_COMPUTE_APPS_END
+POST_H85_MEMORY_USED_MIB=0
+===== H86_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H86_COMPUTE_APPS_BEGIN
+
+PRE_H86_COMPUTE_APPS_END
+PRE_H86_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h86_bf16_cyclic.json
+POST_H86_COMPUTE_APPS_BEGIN
+
+POST_H86_COMPUTE_APPS_END
+POST_H86_MEMORY_USED_MIB=0
+===== H87_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H87_COMPUTE_APPS_BEGIN
+
+PRE_H87_COMPUTE_APPS_END
+PRE_H87_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h87_bf16_cyclic.json
+POST_H87_COMPUTE_APPS_BEGIN
+
+POST_H87_COMPUTE_APPS_END
+POST_H87_MEMORY_USED_MIB=0
+===== H88_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H88_COMPUTE_APPS_BEGIN
+
+PRE_H88_COMPUTE_APPS_END
+PRE_H88_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h88_bf16_cyclic.json
+POST_H88_COMPUTE_APPS_BEGIN
+
+POST_H88_COMPUTE_APPS_END
+POST_H88_MEMORY_USED_MIB=0
+===== H89_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H89_COMPUTE_APPS_BEGIN
+
+PRE_H89_COMPUTE_APPS_END
+PRE_H89_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h89_bf16_cyclic.json
+POST_H89_COMPUTE_APPS_BEGIN
+
+POST_H89_COMPUTE_APPS_END
+POST_H89_MEMORY_USED_MIB=0
+===== H90_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H90_COMPUTE_APPS_BEGIN
+
+PRE_H90_COMPUTE_APPS_END
+PRE_H90_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h90_bf16_cyclic.json
+POST_H90_COMPUTE_APPS_BEGIN
+
+POST_H90_COMPUTE_APPS_END
+POST_H90_MEMORY_USED_MIB=0
+===== H91_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H91_COMPUTE_APPS_BEGIN
+
+PRE_H91_COMPUTE_APPS_END
+PRE_H91_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h91_bf16_cyclic.json
+POST_H91_COMPUTE_APPS_BEGIN
+
+POST_H91_COMPUTE_APPS_END
+POST_H91_MEMORY_USED_MIB=0
+===== H92_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H92_COMPUTE_APPS_BEGIN
+
+PRE_H92_COMPUTE_APPS_END
+PRE_H92_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h92_bf16_cyclic.json
+POST_H92_COMPUTE_APPS_BEGIN
+
+POST_H92_COMPUTE_APPS_END
+POST_H92_MEMORY_USED_MIB=0
+===== H93_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H93_COMPUTE_APPS_BEGIN
+
+PRE_H93_COMPUTE_APPS_END
+PRE_H93_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h93_bf16_cyclic.json
+POST_H93_COMPUTE_APPS_BEGIN
+
+POST_H93_COMPUTE_APPS_END
+POST_H93_MEMORY_USED_MIB=0
+===== H94_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H94_COMPUTE_APPS_BEGIN
+
+PRE_H94_COMPUTE_APPS_END
+PRE_H94_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h94_bf16_cyclic.json
+POST_H94_COMPUTE_APPS_BEGIN
+
+POST_H94_COMPUTE_APPS_END
+POST_H94_MEMORY_USED_MIB=0
+===== H95_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H95_COMPUTE_APPS_BEGIN
+
+PRE_H95_COMPUTE_APPS_END
+PRE_H95_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h95_bf16_cyclic.json
+POST_H95_COMPUTE_APPS_BEGIN
+
+POST_H95_COMPUTE_APPS_END
+POST_H95_MEMORY_USED_MIB=0
+===== H96_BF16_EXACT_AND_FOUR_PATH_CYCLIC =====
+PRE_H96_COMPUTE_APPS_BEGIN
+
+PRE_H96_COMPUTE_APPS_END
+PRE_H96_MEMORY_USED_MIB=0
+device=NVIDIA B300 SXM6 AC capability=[10, 3] build_target=B300_SM103a_VSHARD4_P2_HSWEEP_FULL_R1
+extension_sha256=8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005
+PASS exact: bf16/baseline_vs_vshard2_p1/output
+PASS exact: bf16/baseline_vs_vshard2_p1/final_state
+PASS exact: bf16/baseline_vs_vshard2_p2/output
+PASS exact: bf16/baseline_vs_vshard2_p2/final_state
+PASS exact: bf16/baseline_vs_vshard4_p1/output
+PASS exact: bf16/baseline_vs_vshard4_p1/final_state
+PASS exact: bf16/baseline_vs_vshard4_p2/output
+PASS exact: bf16/baseline_vs_vshard4_p2/final_state
+PASS exact: bf16/vshard2_p1_vs_p2/output
+PASS exact: bf16/vshard2_p1_vs_p2/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard2_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p1_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_p2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/results/c1_vshard4_p2_b300_sm103a_hs_full_r1_h96_bf16_cyclic.json
+POST_H96_COMPUTE_APPS_BEGIN
+
+POST_H96_COMPUTE_APPS_END
+POST_H96_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T13:11:55+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

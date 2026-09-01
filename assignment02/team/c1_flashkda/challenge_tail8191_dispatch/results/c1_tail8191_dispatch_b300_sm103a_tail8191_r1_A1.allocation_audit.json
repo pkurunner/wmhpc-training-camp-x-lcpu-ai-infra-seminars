@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "purpose": "one clean allocation audit; never production mutation",
+  "allocation_id": "A1",
+  "source_identity": {
+    "analyzer_sha256": "40297138e2a9fd6c0b58c159bd8801750e0842c2c30f6b6a708e29bfb779594f",
+    "runner_sha256": "ecddc9250c19f899616ae85fb6ff0e4a7047b414f8144b5836b0a65975f07f64"
+  },
+  "artifacts": [
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r1_A1_main0.json",
+      "sha256": "9f41610517545abd89bfd96496bf70e995924f6762334005971165064671205d"
+    },
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tail8191_dispatch/results/c1_tail8191_dispatch_b300_sm103a_tail8191_r1_A1_main1.json",
+      "sha256": "25255d53e75d1b290ac5762350eb850797250ebed95c484dba428f87df2f0f9f"
+    }
+  ],
+  "identity_consistency": {
+    "distinct_pids": [
+      1843960,
+      1845789
+    ],
+    "slurm_job_id": "12406",
+    "gpu_uuid": "GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a",
+    "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+    "reference_torch_ref_sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+    "passed": true
+  },
+  "contract_assessment": {
+    "none": {
+      "all_four_repeats": [
+        {
+          "margins": {
+            "p50": 0.4716927258401462,
+            "p95": 0.46410662076164555,
+            "p99": 0.4582926971858148
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.4723110187752204,
+            "p95": 0.4620467754108024,
+            "p99": 0.4384656281729433
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.4732720374586452,
+            "p95": 0.46789618339989625,
+            "p99": 0.4223935904791891
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.47425002715059184,
+            "p95": 0.44516693098083926,
+            "p99": 0.38211419248604783
+          },
+          "repeat_gate_pass": true
+        }
+      ],
+      "contract_gate_pass": true
+    },
+    "fp32_final_only": {
+      "all_four_repeats": [
+        {
+          "margins": {
+            "p50": 0.417502083108658,
+            "p95": 0.409381822857102,
+            "p99": 0.40344290911284864
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.41709378878722636,
+            "p95": 0.40713129462185793,
+            "p99": 0.39761724933125997
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.4191405561234003,
+            "p95": 0.37299906163126706,
+            "p99": 0.3577457870972147
+          },
+          "repeat_gate_pass": true
+        },
+        {
+          "margins": {
+            "p50": 0.41963444209222023,
+            "p95": 0.4116216567876314,
+            "p99": 0.37453804953122916
+          },
+          "repeat_gate_pass": true
+        }
+      ],
+      "contract_gate_pass": true
+    }
+  },
+  "allocation_gate": {
+    "eligible": true,
+    "decision": "eligible_for_A2_only",
+    "meaning": "A1/A2 both must pass the separate chain before any public-freeze eligibility label"
+  },
+  "complete": true
+}

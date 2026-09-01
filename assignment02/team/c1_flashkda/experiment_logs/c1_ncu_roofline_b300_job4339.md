@@ -1,0 +1,512 @@
+# C1 FlashKDA：NCU full counter / roofline 证据摘录
+
+## 变量表
+
+| 变量 | 含义 | 取值/来源 |
+| --- | --- | --- |
+| `K1` | workspace prepare kernel | `_flash_kda_fwd_prepare` |
+| `K2` | 有状态 recurrence kernel | `_flash_kda_fwd_recurrence` |
+| `F` | 目标 kernel 的实际有效 FLOP | 必须由 NCU roofline/FLOP 指标或独立指令计数给出 |
+| `B` | 目标 kernel 的实际 DRAM bytes | `dram__bytes*`；不是输入张量大小的猜测 |
+| `I=F/B` | operational intensity | 仅在 `F` 与 `B` 同一 kernel 同一 run 都可得时计算 |
+| `P_roof` | roofline 上界 | `min(P_peak, I*BW_peak)` |
+
+## 输入与完整性
+
+- 原始 CSV：`/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_ncu_full_b300_job4339.csv`
+- CSV 导出布局：wide raw metric columns
+- CSV 数据行：3
+- 识别到 kernel：K1 prepare, K2 recurrence
+- 这份文件只摘录 NCU 实际输出；完整 CSV 和 `.ncu-rep` 才是原始证据。
+
+## 分 kernel 计数
+
+### K1 prepare
+
+- FLOP/instruction evidence:
+  - `derived__sm__sass_thread_inst_executed_op_ffma_pred_on_x2` = `37888.000000`
+  - `derived__sm__sass_thread_inst_executed_op_hfma_pred_on_x4` = `37888.000000`
+  - `derived__smsp__sass_thread_inst_executed_op_ffma_pred_on_x2` = `1211.283864`
+  - `derived__smsp__sass_thread_inst_executed_op_hfma_pred_on_x4` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `5.734067`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `5.633783`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.avg.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.max.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.min.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.sum.peak_sustained` = `18944.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.avg.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.max.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.min.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.sum.peak_sustained` = `9472.000000`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.avg.per_cycle_elapsed` = `1.023044`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.max.per_cycle_elapsed` = `1.084320`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.min.per_cycle_elapsed` = `0.954879`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.sum.per_cycle_elapsed` = `605.641932`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.avg.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.max.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.min.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.sum.per_cycle_elapsed` = `0`
+- DRAM byte evidence:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `70.250321`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `75.036510`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `36.989619`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `4.496021`
+  - `dram__bytes_read.sum` = `605.658880`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `28.779275`
+  - `dram__bytes_read.sum.per_second` = `2.207727`
+  - `dram__bytes_write.sum` = `627.761408`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `29.829528`
+  - `dram__bytes_write.sum.per_second` = `2.288294`
+  - `dram__sectors_read.sum` = `18926840.000000`
+  - `dram__sectors_write.sum` = `19617544.000000`
+- Tensor/SM:
+  - `SM_A.TriageCompute.sm__mem_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `TPC.TriageCompute.sm__pipe_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `4.001874`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_hmma_cycles_active_realtime.avg` = `116902.054054`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_imma_cycles_active_realtime.avg` = `0`
+  - `device__attribute_tensor_map_access_supported` = `1`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `5.734067`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `5.633783`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg` = `43530073.95`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.pct_of_peak_sustained_elapsed` = `4.097297`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_cycle_elapsed` = `83.91`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_second` = `158674304305.47`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max` = `44564480`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.pct_of_peak_sustained_elapsed` = `4.194661`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_cycle_elapsed` = `85.91`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_second` = `162444885104.40`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min` = `42205184`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.pct_of_peak_sustained_elapsed` = `3.972591`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained_elapsed.per_second` = `3872658257697.80`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_cycle_elapsed` = `81.36`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_second` = `153844861775.34`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum` = `6442450944`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.pct_of_peak_sustained_elapsed` = `4.097297`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained` = `303104`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained_elapsed.per_second` = `573153422139274.38`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_cycle_elapsed` = `12419.07`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_second` = `23483797037209.85`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained` = `3640.89`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained_elapsed.per_second` = `6884725791462.75`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_cycle_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_second` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.max` = `0`
+  - 其余 865 个匹配指标见原始 CSV；摘要不重复展开。
+- DRAM/L2:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `70.250321`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `75.036510`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `36.989619`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `4.496021`
+  - `dram__bytes_read.sum` = `605.658880`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `28.779275`
+  - `dram__bytes_read.sum.per_second` = `2.207727`
+  - `dram__bytes_write.sum` = `627.761408`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `29.829528`
+  - `dram__bytes_write.sum.per_second` = `2.288294`
+  - `lts__t_requests.sum` = `71361975.000000`
+  - `lts__t_requests_srcunit_gcc.sum` = `1456.000000`
+  - `lts__t_requests_srcunit_ltcfabric.sum` = `25336532.000000`
+  - `lts__t_requests_srcunit_tex.sum` = `45972968.000000`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_alu.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_cas.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_read.sum` = `4881896.000000`
+  - `lts__t_requests_srcunit_tex_op_red.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_write.sum` = `41091072.000000`
+  - `lts__t_sector_hit_rate.pct` = `45.384291`
+  - `lts__t_sector_op_read_hit_rate.pct` = `1.749463`
+  - `lts__t_sector_op_write_hit_rate.pct` = `65.743993`
+  - `lts__t_sectors.avg` = `498294.027174`
+  - `lts__t_sectors.avg.pct_of_peak_sustained_elapsed` = `30.967491`
+  - `lts__t_sectors.avg.peak_sustained` = `3.000000`
+  - `lts__t_sectors.avg.per_cycle_elapsed` = `0.929025`
+  - `lts__t_sectors.max` = `513443.000000`
+  - `lts__t_sectors.max.pct_of_peak_sustained_elapsed` = `31.908955`
+  - `lts__t_sectors.min` = `254147.000000`
+  - `lts__t_sectors.min.pct_of_peak_sustained_elapsed` = `15.794480`
+  - `lts__t_sectors.sum` = `91686101.000000`
+  - `lts__t_sectors.sum.pct_of_peak_sustained_elapsed` = `30.967491`
+  - `lts__t_sectors.sum.per_second` = `334.210971`
+  - `lts__t_sectors_data_ecc.avg.pct_of_peak_sustained_elapsed` = `0.000138`
+  - `lts__t_sectors_data_ecc.avg.peak_sustained` = `8.000000`
+  - `lts__t_sectors_data_ecc.avg.per_cycle_elapsed` = `0.000011`
+  - `lts__t_sectors_data_ecc.sum` = `1092.000000`
+  - `lts__t_sectors_data_ecc.sum.per_second` = `3.980520`
+  - `lts__t_sectors_evict_first_lookup_hit.sum` = `3961.000000`
+  - `lts__t_sectors_evict_first_lookup_miss.sum` = `8426.000000`
+  - `lts__t_sectors_evict_last_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_last_lookup_miss.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_miss.sum` = `0`
+  - 其余 170 个匹配指标见原始 CSV；摘要不重复展开。
+- Occupancy/waves:
+  - `Block Size` = `(256, 1, 1)`
+  - `Grid Size` = `(512, 96, 1)`
+  - `derived__pct_occupancy_per_barrier_count` = `2230`
+  - `derived__pct_occupancy_per_block_size` = `5190.000000`
+  - `derived__pct_occupancy_per_register_count` = `8524.000000`
+  - `derived__pct_occupancy_per_shared_mem_size` = `14.020000`
+  - `launch__block_dim_x` = `256`
+  - `launch__block_dim_y` = `1`
+  - `launch__block_dim_z` = `1`
+  - `launch__block_size` = `256`
+  - `launch__grid_dim_x` = `512`
+  - `launch__grid_dim_y` = `96`
+  - `launch__grid_dim_z` = `1`
+  - `launch__grid_size` = `49152`
+  - `launch__occupancy_cluster_gpu_pct` = `0`
+  - `launch__occupancy_cluster_pct` = `0`
+  - `launch__occupancy_limit_barriers` = `32.000000`
+  - `launch__occupancy_limit_blocks` = `32.000000`
+  - `launch__occupancy_limit_registers` = `8.000000`
+  - `launch__occupancy_limit_shared_mem` = `9.000000`
+  - `launch__occupancy_limit_warps` = `8.000000`
+  - `launch__occupancy_per_barrier_count` = `1440`
+  - `launch__occupancy_per_block_size` = `3339`
+  - `launch__occupancy_per_cluster_size` = `0`
+  - `launch__occupancy_per_register_count` = `5504`
+  - `launch__occupancy_per_shared_mem_size` = `9072`
+  - `launch__waves_per_multiprocessor` = `41.51`
+  - `sm__warps_active.avg.pct_of_peak_sustained_active` = `96.625428`
+  - `sm__warps_active.avg.per_cycle_active` = `61.840274`
+  - `sm__warps_active.max.pct_of_peak_sustained_active` = `97.543667`
+  - `sm__warps_active.max.per_cycle_active` = `62.427947`
+  - `sm__warps_active.min.pct_of_peak_sustained_active` = `95.697676`
+  - `sm__warps_active.min.per_cycle_active` = `61.246512`
+  - `sm__warps_active.sum.pct_of_peak_sustained_active` = `96.625428`
+  - `sm__warps_active.sum.per_cycle_active` = `9152.360569`
+  - `smsp__average_warps_active_per_inst_executed.ratio` = `21.594634`
+  - `smsp__warps_active.avg.peak_sustained` = `16.000000`
+  - `smsp__warps_active.avg.per_cycle_active` = `15.432588`
+  - `smsp__warps_active.max.peak_sustained` = `16.000000`
+  - `smsp__warps_active.max.per_cycle_active` = `15.570763`
+  - `smsp__warps_active.min.peak_sustained` = `16.000000`
+  - `smsp__warps_active.min.per_cycle_active` = `15.284643`
+  - `smsp__warps_active.sum.peak_sustained` = `9472.000000`
+  - `smsp__warps_active.sum.per_cycle_active` = `9136.092368`
+- Warp stall:
+  - `smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio` = `8.308038`
+  - `smsp__average_warps_issue_stalled_branch_resolving_per_issue_active.ratio` = `0.136913`
+  - `smsp__average_warps_issue_stalled_dispatch_stall_per_issue_active.ratio` = `0.246344`
+  - `smsp__average_warps_issue_stalled_drain_per_issue_active.ratio` = `0.003635`
+  - `smsp__average_warps_issue_stalled_lg_throttle_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.ratio` = `4.034395`
+  - `smsp__average_warps_issue_stalled_math_pipe_throttle_per_issue_active.ratio` = `0.543487`
+  - `smsp__average_warps_issue_stalled_membar_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_mio_throttle_per_issue_active.ratio` = `0.529872`
+  - `smsp__average_warps_issue_stalled_misc_per_issue_active.ratio` = `0.000092`
+  - `smsp__average_warps_issue_stalled_no_instruction_per_issue_active.ratio` = `0.219340`
+  - `smsp__average_warps_issue_stalled_not_selected_per_issue_active.ratio` = `2.177797`
+  - `smsp__average_warps_issue_stalled_selected_per_issue_active.ratio` = `1.000009`
+  - `smsp__average_warps_issue_stalled_short_scoreboard_per_issue_active.ratio` = `2.551617`
+  - `smsp__average_warps_issue_stalled_sleeping_per_issue_active.ratio` = `0.038831`
+  - `smsp__average_warps_issue_stalled_tex_throttle_per_issue_active.ratio` = `0.000000`
+  - `smsp__average_warps_issue_stalled_wait_per_issue_active.ratio` = `1.786703`
+  - `smsp__pcsamp_warps_issue_stalled_barrier` = `7205`
+  - `smsp__pcsamp_warps_issue_stalled_barrier_not_issued` = `1845`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving` = `114`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving_not_issued` = `35`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall` = `188`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall_not_issued` = `8`
+  - `smsp__pcsamp_warps_issue_stalled_drain` = `4`
+  - `smsp__pcsamp_warps_issue_stalled_drain_not_issued` = `1`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard` = `3498`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard_not_issued` = `1051`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle` = `429`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle_not_issued` = `63`
+  - `smsp__pcsamp_warps_issue_stalled_membar` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_membar_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle` = `418`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle_not_issued` = `188`
+  - `smsp__pcsamp_warps_issue_stalled_misc` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_misc_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions` = `221`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions_not_issued` = `65`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected` = `1782`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_selected` = `851`
+  - `smsp__pcsamp_warps_issue_stalled_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard` = `2181`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard_not_issued` = `676`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_tex_throttle` = `0`
+  - 其余 3 个匹配指标见原始 CSV；摘要不重复展开。
+
+### K2 recurrence
+
+- FLOP/instruction evidence:
+  - `derived__sm__sass_thread_inst_executed_op_ffma_pred_on_x2` = `37888.000000`
+  - `derived__sm__sass_thread_inst_executed_op_hfma_pred_on_x4` = `37888.000000`
+  - `derived__smsp__sass_thread_inst_executed_op_ffma_pred_on_x2` = `1147.926993`
+  - `derived__smsp__sass_thread_inst_executed_op_hfma_pred_on_x4` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `30.329143`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `19.390659`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.avg.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.max.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.min.peak_sustained` = `128.000000`
+  - `sm__sass_thread_inst_executed_op_ffma_pred_on.sum.peak_sustained` = `18944.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.avg.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.max.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.min.peak_sustained` = `64.000000`
+  - `sm__sass_thread_inst_executed_op_hfma_pred_on.sum.peak_sustained` = `9472.000000`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.avg.per_cycle_elapsed` = `0.969533`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.max.per_cycle_elapsed` = `1.494697`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.min.per_cycle_elapsed` = `0.000000`
+  - `smsp__sass_thread_inst_executed_op_ffma_pred_on.sum.per_cycle_elapsed` = `573.963497`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.avg.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.max.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.min.per_cycle_elapsed` = `0`
+  - `smsp__sass_thread_inst_executed_op_hfma_pred_on.sum.per_cycle_elapsed` = `0`
+- DRAM byte evidence:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `22.341100`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `23.858319`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `11.845176`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `1.429830`
+  - `dram__bytes_read.sum` = `885.591296`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `15.394061`
+  - `dram__bytes_read.sum.per_second` = `1.181015`
+  - `dram__bytes_write.sum` = `186.575616`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `3.243208`
+  - `dram__bytes_write.sum.per_second` = `0.248815`
+  - `dram__sectors_read.sum` = `27674728.000000`
+  - `dram__sectors_write.sum` = `5830488.000000`
+- Tensor/SM:
+  - `SM_A.TriageCompute.sm__mem_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `TPC.TriageCompute.sm__pipe_tensor_cycles_active_realtime.avg.pct_of_peak_sustained_elapsed` = `16.357462`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_hmma_cycles_active_realtime.avg` = `1105255.783784`
+  - `TPC.TriageCompute.sm__pipe_tensor_subpipe_imma_cycles_active_realtime.avg` = `0`
+  - `device__attribute_tensor_map_access_supported` = `1`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_active` = `30.329143`
+  - `sm__inst_executed_pipe_tensor_subpipe_hmma.avg.pct_of_peak_sustained_elapsed` = `19.390659`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__inst_executed_pipe_tensor_subpipe_imma.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.max.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.min.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_active` = `0`
+  - `sm__mem_tensor_cycles_active.sum.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg` = `565890961.30`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.pct_of_peak_sustained_elapsed` = `19.390659`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.peak_sustained_elapsed.per_second` = `3891905843111.07`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_cycle_elapsed` = `397.12`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.avg.per_second` = `754666177635.84`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max` = `872415232`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.pct_of_peak_sustained_elapsed` = `29.893932`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.peak_sustained_elapsed.per_second` = `3891905843111.07`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_cycle_elapsed` = `612.23`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.max.per_second` = `1163443690521.91`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.pct_of_peak_sustained_elapsed` = `0.000000`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained` = `2048`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.peak_sustained_elapsed.per_second` = `3891905843111.07`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_cycle_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.min.per_second` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum` = `83751862272`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.pct_of_peak_sustained_elapsed` = `19.390659`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained` = `303104`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.peak_sustained_elapsed.per_second` = `576002064780437.88`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_cycle_elapsed` = `58773.86`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_off.sum.per_second` = `111690594290103.70`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.pct_of_peak_sustained_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained` = `3640.89`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.peak_sustained_elapsed.per_second` = `6918943721086.34`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_cycle_elapsed` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.avg.per_second` = `0`
+  - `sm__ops_path_tensor_op_hmma_src_bf16_dst_fp32_sparsity_on.max` = `0`
+  - 其余 865 个匹配指标见原始 CSV；摘要不重复展开。
+- DRAM/L2:
+  - `dram__bytes.avg.peak_sustained` = `30.000000`
+  - `dram__bytes.avg.per_second` = `22.341100`
+  - `dram__bytes.max.peak_sustained` = `32.000000`
+  - `dram__bytes.max.per_second` = `23.858319`
+  - `dram__bytes.min.peak_sustained` = `16.000000`
+  - `dram__bytes.min.per_second` = `11.845176`
+  - `dram__bytes.sum.peak_sustained` = `1.920000`
+  - `dram__bytes.sum.per_second` = `1.429830`
+  - `dram__bytes_read.sum` = `885.591296`
+  - `dram__bytes_read.sum.pct_of_peak_sustained_elapsed` = `15.394061`
+  - `dram__bytes_read.sum.per_second` = `1.181015`
+  - `dram__bytes_write.sum` = `186.575616`
+  - `dram__bytes_write.sum.pct_of_peak_sustained_elapsed` = `3.243208`
+  - `dram__bytes_write.sum.per_second` = `0.248815`
+  - `lts__t_requests.sum` = `73530106.000000`
+  - `lts__t_requests_srcunit_gcc.sum` = `2384.000000`
+  - `lts__t_requests_srcunit_ltcfabric.sum` = `13093426.000000`
+  - `lts__t_requests_srcunit_tex.sum` = `60395520.000000`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_alu.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_atom_dot_cas.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_read.sum` = `47616000.000000`
+  - `lts__t_requests_srcunit_tex_op_red.sum` = `0`
+  - `lts__t_requests_srcunit_tex_op_write.sum` = `12779520.000000`
+  - `lts__t_sector_hit_rate.pct` = `53.078298`
+  - `lts__t_sector_op_read_hit_rate.pct` = `49.540119`
+  - `lts__t_sector_op_write_hit_rate.pct` = `68.717060`
+  - `lts__t_sectors.avg` = `551918.875000`
+  - `lts__t_sectors.avg.pct_of_peak_sustained_elapsed` = `12.481916`
+  - `lts__t_sectors.avg.peak_sustained` = `3.000000`
+  - `lts__t_sectors.avg.per_cycle_elapsed` = `0.374457`
+  - `lts__t_sectors.max` = `567563.000000`
+  - `lts__t_sectors.max.pct_of_peak_sustained_elapsed` = `12.835716`
+  - `lts__t_sectors.min` = `281343.000000`
+  - `lts__t_sectors.min.pct_of_peak_sustained_elapsed` = `6.362710`
+  - `lts__t_sectors.sum` = `101553073.000000`
+  - `lts__t_sectors.sum.pct_of_peak_sustained_elapsed` = `12.481916`
+  - `lts__t_sectors.sum.per_second` = `135.430100`
+  - `lts__t_sectors_data_ecc.avg.pct_of_peak_sustained_elapsed` = `0.000003`
+  - `lts__t_sectors_data_ecc.avg.peak_sustained` = `8.000000`
+  - `lts__t_sectors_data_ecc.avg.per_cycle_elapsed` = `0.000000`
+  - `lts__t_sectors_data_ecc.sum` = `69.000000`
+  - `lts__t_sectors_data_ecc.sum.per_second` = `0.092018`
+  - `lts__t_sectors_evict_first_lookup_hit.sum` = `4945.000000`
+  - `lts__t_sectors_evict_first_lookup_miss.sum` = `874.000000`
+  - `lts__t_sectors_evict_last_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_last_lookup_miss.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_hit.sum` = `0`
+  - `lts__t_sectors_evict_normal_demote_lookup_miss.sum` = `0`
+  - 其余 170 个匹配指标见原始 CSV；摘要不重复展开。
+- Occupancy/waves:
+  - `Block Size` = `(192, 1, 1)`
+  - `Grid Size` = `(1, 96, 1)`
+  - `derived__pct_occupancy_per_barrier_count` = `882`
+  - `derived__pct_occupancy_per_block_size` = `1163.000000`
+  - `derived__pct_occupancy_per_register_count` = `3834.000000`
+  - `derived__pct_occupancy_per_shared_mem_size` = `8.069000`
+  - `launch__block_dim_x` = `192`
+  - `launch__block_dim_y` = `1`
+  - `launch__block_dim_z` = `1`
+  - `launch__block_size` = `192`
+  - `launch__grid_dim_x` = `1`
+  - `launch__grid_dim_y` = `96`
+  - `launch__grid_dim_z` = `1`
+  - `launch__grid_size` = `96`
+  - `launch__occupancy_cluster_gpu_pct` = `0`
+  - `launch__occupancy_cluster_pct` = `0`
+  - `launch__occupancy_limit_barriers` = `7.000000`
+  - `launch__occupancy_limit_blocks` = `32.000000`
+  - `launch__occupancy_limit_registers` = `4.000000`
+  - `launch__occupancy_limit_shared_mem` = `2.000000`
+  - `launch__occupancy_limit_warps` = `10.000000`
+  - `launch__occupancy_per_barrier_count` = `588`
+  - `launch__occupancy_per_block_size` = `758`
+  - `launch__occupancy_per_cluster_size` = `0`
+  - `launch__occupancy_per_register_count` = `2556`
+  - `launch__occupancy_per_shared_mem_size` = `5292`
+  - `launch__waves_per_multiprocessor` = `0.32`
+  - `sm__warps_active.avg.pct_of_peak_sustained_active` = `9.365785`
+  - `sm__warps_active.avg.per_cycle_active` = `5.994102`
+  - `sm__warps_active.max.pct_of_peak_sustained_active` = `14.589936`
+  - `sm__warps_active.max.per_cycle_active` = `9.337559`
+  - `sm__warps_active.min.pct_of_peak_sustained_active` = `0.000000`
+  - `sm__warps_active.min.per_cycle_active` = `0.000000`
+  - `sm__warps_active.sum.pct_of_peak_sustained_active` = `9.365785`
+  - `sm__warps_active.sum.per_cycle_active` = `887.127118`
+  - `smsp__average_warps_active_per_inst_executed.ratio` = `4.659586`
+  - `smsp__warps_active.avg.peak_sustained` = `16.000000`
+  - `smsp__warps_active.avg.per_cycle_active` = `1.499903`
+  - `smsp__warps_active.max.peak_sustained` = `16.000000`
+  - `smsp__warps_active.max.per_cycle_active` = `3.116822`
+  - `smsp__warps_active.min.peak_sustained` = `16.000000`
+  - `smsp__warps_active.min.per_cycle_active` = `0.000000`
+  - `smsp__warps_active.sum.peak_sustained` = `9472.000000`
+  - `smsp__warps_active.sum.per_cycle_active` = `887.942364`
+- Warp stall:
+  - `smsp__average_warps_issue_stalled_barrier_per_issue_active.ratio` = `0.122759`
+  - `smsp__average_warps_issue_stalled_branch_resolving_per_issue_active.ratio` = `0.122187`
+  - `smsp__average_warps_issue_stalled_dispatch_stall_per_issue_active.ratio` = `0.080759`
+  - `smsp__average_warps_issue_stalled_drain_per_issue_active.ratio` = `0.000618`
+  - `smsp__average_warps_issue_stalled_lg_throttle_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_long_scoreboard_per_issue_active.ratio` = `0.413727`
+  - `smsp__average_warps_issue_stalled_math_pipe_throttle_per_issue_active.ratio` = `0.005251`
+  - `smsp__average_warps_issue_stalled_membar_per_issue_active.ratio` = `0`
+  - `smsp__average_warps_issue_stalled_mio_throttle_per_issue_active.ratio` = `0.133684`
+  - `smsp__average_warps_issue_stalled_misc_per_issue_active.ratio` = `0.002604`
+  - `smsp__average_warps_issue_stalled_no_instruction_per_issue_active.ratio` = `0.073405`
+  - `smsp__average_warps_issue_stalled_not_selected_per_issue_active.ratio` = `0.048954`
+  - `smsp__average_warps_issue_stalled_selected_per_issue_active.ratio` = `0.999993`
+  - `smsp__average_warps_issue_stalled_short_scoreboard_per_issue_active.ratio` = `0.769999`
+  - `smsp__average_warps_issue_stalled_sleeping_per_issue_active.ratio` = `0.773963`
+  - `smsp__average_warps_issue_stalled_tex_throttle_per_issue_active.ratio` = `0.000000`
+  - `smsp__average_warps_issue_stalled_wait_per_issue_active.ratio` = `1.104384`
+  - `smsp__pcsamp_warps_issue_stalled_barrier` = `1179`
+  - `smsp__pcsamp_warps_issue_stalled_barrier_not_issued` = `1174`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving` = `894`
+  - `smsp__pcsamp_warps_issue_stalled_branch_resolving_not_issued` = `821`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall` = `615`
+  - `smsp__pcsamp_warps_issue_stalled_dispatch_stall_not_issued` = `81`
+  - `smsp__pcsamp_warps_issue_stalled_drain` = `39`
+  - `smsp__pcsamp_warps_issue_stalled_drain_not_issued` = `39`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_lg_throttle_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard` = `2652`
+  - `smsp__pcsamp_warps_issue_stalled_long_scoreboard_not_issued` = `2315`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle` = `26`
+  - `smsp__pcsamp_warps_issue_stalled_math_pipe_throttle_not_issued` = `12`
+  - `smsp__pcsamp_warps_issue_stalled_membar` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_membar_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle` = `712`
+  - `smsp__pcsamp_warps_issue_stalled_mio_throttle_not_issued` = `580`
+  - `smsp__pcsamp_warps_issue_stalled_misc` = `12`
+  - `smsp__pcsamp_warps_issue_stalled_misc_not_issued` = `8`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions` = `471`
+  - `smsp__pcsamp_warps_issue_stalled_no_instructions_not_issued` = `424`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected` = `277`
+  - `smsp__pcsamp_warps_issue_stalled_not_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_selected` = `7535`
+  - `smsp__pcsamp_warps_issue_stalled_selected_not_issued` = `0`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard` = `6024`
+  - `smsp__pcsamp_warps_issue_stalled_short_scoreboard_not_issued` = `5779`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping` = `4071`
+  - `smsp__pcsamp_warps_issue_stalled_sleeping_not_issued` = `2267`
+  - `smsp__pcsamp_warps_issue_stalled_tex_throttle` = `0`
+  - 其余 3 个匹配指标见原始 CSV；摘要不重复展开。
+
+## Roofline 判读纪律
+
+1. 对每个 kernel 单独取同一 profile 的 `F`、`B`、SM/Tensor、DRAM/L2、occupancy/waves/stall；不得把 K1 与 K2 相加后套一个瓶颈标签。
+2. 只有 raw report 含有可解释的实际 FLOP 与 DRAM bytes，才能算 `I=F/B`，再与该卡已记录的 `P_peak/BW_peak` 比较。缓存 hit 不能替代 DRAM bytes。
+3. 若 K2 的 waves/occupancy 偏低而 DRAM/SM 均非饱和，优先报告“并行度受限”；若 `I` 与 roofline 及 achieved bandwidth/compute 一致，才报告 memory-/compute-bound。
+
+### 自动完整性结论
+
+- **COUNTER_SET_COMPLETE**：K1/K2 的六类计数均已找到，其中包含可换算的 FLOP/指令证据和 DRAM bytes/sectors 证据；仍需由 reviewer 从原始 report 核对换算与 `F/B`。

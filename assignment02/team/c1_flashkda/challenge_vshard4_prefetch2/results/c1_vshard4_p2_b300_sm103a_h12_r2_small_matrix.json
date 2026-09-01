@@ -1,0 +1,914 @@
+{
+  "device": "NVIDIA B300 SXM6 AC",
+  "capability": [
+    10,
+    3
+  ],
+  "build_target": "B300_SM103a_VSHARD4_P2_H12_R1",
+  "candidate": "fwd_vshard4_p2",
+  "comparison_paths": [
+    "baseline",
+    "vshard2_p2",
+    "vshard4_p1",
+    "vshard4_p2"
+  ],
+  "extension": {
+    "extension": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "extension_sha256": "8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005",
+    "required_symbols": [
+      "fwd",
+      "fwd_vshard",
+      "fwd_vshard_p2",
+      "fwd_vshard4",
+      "fwd_vshard4_p2",
+      "get_workspace_size"
+    ]
+  },
+  "states": [
+    "none",
+    "bf16",
+    "fp32"
+  ],
+  "seed": 20260828,
+  "shape_matrix": {
+    "B": 1,
+    "T": 256,
+    "H": [
+      1,
+      2,
+      4
+    ],
+    "K": 128,
+    "V": 128
+  },
+  "correctness_matrix": {
+    "H1": {
+      "none": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          }
+        }
+      },
+      "bf16": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      },
+      "fp32": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      }
+    },
+    "H2": {
+      "none": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          }
+        }
+      },
+      "bf16": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      },
+      "fp32": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      }
+    },
+    "H4": {
+      "none": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            }
+          }
+        }
+      },
+      "bf16": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      },
+      "fp32": {
+        "exact": {
+          "baseline_vs_vshard2_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard2_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p1": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          },
+          "baseline_vs_vshard4_p2": {
+            "output_exact": true,
+            "output_max_abs": 0.0,
+            "final_state_exact": true,
+            "final_state_max_abs": 0.0
+          }
+        },
+        "torch_ref_tolerance": {
+          "baseline": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard2_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p1": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          },
+          "vshard4_p2": {
+            "output_close": true,
+            "output_bitwise_exact": true,
+            "output_max_abs": 0.0,
+            "output_tolerance": {
+              "rtol": 0.02,
+              "atol": 0.02
+            },
+            "final_state_close": true,
+            "final_state_bitwise_exact": true,
+            "final_state_max_abs": 0.0,
+            "final_state_tolerance": {
+              "rtol": 0.05,
+              "atol": 0.05
+            }
+          }
+        }
+      }
+    }
+  },
+  "exact_gate_pass": true
+}

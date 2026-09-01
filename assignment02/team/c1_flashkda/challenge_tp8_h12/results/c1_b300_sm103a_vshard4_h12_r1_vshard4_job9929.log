@@ -1,0 +1,115 @@
+===== PRE_AUDIT =====
+2026-08-28T11:21:31+00:00
+dev-slurm
+CUDA_VISIBLE_DEVICES=0
+0, GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a, 00000000:09:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== IDENTITY =====
+C1_BUILD_TARGET=B300_SM103a_VSHARD4_H12_FINAL_R1
+VARIANT=vshard4
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard4.cuh
+PATCHED_STATUS_END
+11c91bbfaf70378c2d82ef1f9819edc39f1bd90a44093fd10656ad763767de08  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/run_h12.py
+a7777f5e8d1cb2084a572739e7260d7094fae3cca1c54d616075567a219142cd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/run_clean_h12_audit.sh
+023507adf14f0a76ec6ba28fe06429dd866b788f2aeb0662a65c445b8384338d  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-r4/csrc/flash_kda.cpp
+e12e2465343b447802705eee19c9c540d2bc3c1bf1f95a0e223d7bb8e6eda237  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-r4/csrc/fwd.h
+66a841d34d440f0beea55729d8ae0ae4edae50c28d5f879db5023cf732837586  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-r4/csrc/smxx/fwd_launch.cu
+8246a4a7c43846a9b7861e59d7d4f269b2aa4645f929e354352bbed50366db74  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-r4/csrc/smxx/fwd_kernel2_vshard4.cuh
+46222004dfa3e8b00d6ff14a9f64305c8743e2598cd151410ec406d289444580  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4/apply_vshard4_patch.py
+cd4834b5e1681c8e991805744fa0850d5b96fd3305cbcc198c225f48cf253d38  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4/vshard4.py
+===== SMALL_EXACT_MATRIX =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] variant=vshard4
+extension_sha256=521cf2367e23876d7c403eaa998815659a96d3b9e7d951c620299c8f6816478b
+PASS exact: none/vshard4_vs_baseline/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/vshard4_vs_baseline/output
+PASS exact: bf16/vshard4_vs_baseline/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/vshard4_vs_baseline/output
+PASS exact: fp32/vshard4_vs_baseline/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/vshard4_vs_baseline/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/vshard4_vs_baseline/output
+PASS exact: bf16/vshard4_vs_baseline/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/vshard4_vs_baseline/output
+PASS exact: fp32/vshard4_vs_baseline/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/vshard4_vs_baseline/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/vshard4_vs_baseline/output
+PASS exact: bf16/vshard4_vs_baseline/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/vshard4_vs_baseline/output
+PASS exact: fp32/vshard4_vs_baseline/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/vshard4_vs_baseline/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/vshard4_vs_baseline/output
+PASS exact: bf16/vshard4_vs_baseline/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/vshard4_vs_baseline/output
+PASS exact: fp32/vshard4_vs_baseline/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/vshard4_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS small exact/reference matrix
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/results/c1_b300_sm103a_vshard4_h12_r1_vshard4_small_matrix.json
+BETWEEN_SMALL_AND_OFFICIAL_COMPUTE_APPS_BEGIN
+
+BETWEEN_SMALL_AND_OFFICIAL_COMPUTE_APPS_END
+BETWEEN_SMALL_AND_OFFICIAL_MEMORY_USED_MIB=0
+===== H12_BF16_FORMAL_GATE_AND_BENCH =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] variant=vshard4
+extension_sha256=521cf2367e23876d7c403eaa998815659a96d3b9e7d951c620299c8f6816478b
+PASS exact: bf16/vshard4_vs_baseline/output
+PASS exact: bf16/vshard4_vs_baseline/final_state
+PASS official H12 BF16 exact gate and benchmark
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/results/c1_b300_sm103a_vshard4_h12_r1_vshard4_h12_bf16.json
+AFTER_OFFICIAL_COMPUTE_APPS_BEGIN
+
+AFTER_OFFICIAL_COMPUTE_APPS_END
+AFTER_OFFICIAL_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T11:21:38+00:00
+0, GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a, 00000000:09:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

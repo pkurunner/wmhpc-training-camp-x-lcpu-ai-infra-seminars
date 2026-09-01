@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "purpose": "diagnostic-only B300 fp32-both tail-latency study; never a production whitelist or promotion authority",
+  "diagnostic_only": true,
+  "no_release_authority": true,
+  "mode": "stability_main",
+  "process_index": 0,
+  "process": {
+    "pid": 4155725,
+    "fresh_python_process_required": true
+  },
+  "target": {
+    "cell": "skew_n6_h12_t12288/fp32_both",
+    "offsets": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      12288
+    ],
+    "temporary_variant": "vshard4_p2",
+    "production_status": "not_whitelisted; temporary process-local diagnostic target only"
+  },
+  "pre_registered": {
+    "main_processes": 3,
+    "main_process_indices": [
+      0,
+      1,
+      2
+    ],
+    "repeats_per_process": 2,
+    "cuda_event_samples_per_path_per_repeat": 1000,
+    "warmup_per_path_per_repeat": 100,
+    "paired_block_size": 100,
+    "tail_threshold_ms": 1.2,
+    "balanced_order": "even pair C1 first, odd pair pinned first",
+    "stability_rule": {
+      "scope": "all six repeats from the three stability_main processes only",
+      "tail_stable_if_all": [
+        "C1 p99 <= 1.20 ms",
+        "paired (C1-pinned) p99 <= 0 ms",
+        "count(C1 > pinned and C1 > 1.20 ms) == 0"
+      ],
+      "otherwise": "tail instability or relative tail regression is observed; this remains diagnostic-only and cannot alter the whitelist"
+    },
+    "relative_candidate_gate": {
+      "scope": "all six repeats from the three stability_main processes only",
+      "rule": "C1 must win P50/P95/P99 against pinned in every repeat with each margin >=2%",
+      "policy": "reported only; it has no release authority in this diagnostic"
+    },
+    "telemetry_policy": "The separately-run non_gating_telemetry process is explanatory only and is excluded from every stability classification."
+  },
+  "identity": {},
+  "gates": {
+    "production_map_before": {
+      "passed": false
+    },
+    "temporary_target_map": {
+      "passed": false
+    },
+    "map_restored": {
+      "passed": false
+    },
+    "target_correctness": {
+      "passed": false
+    },
+    "route": {
+      "passed": false
+    },
+    "prepare_spy_restored": {
+      "passed": false
+    },
+    "backend_methods_restored": {
+      "passed": false
+    },
+    "clean_gpu": {
+      "passed": false
+    },
+    "python_nvidia_clean": {
+      "passed": false
+    }
+  },
+  "map": {
+    "installed": false,
+    "restored": false
+  },
+  "correctness": {},
+  "performance": {
+    "repeats": [],
+    "complete": false
+  },
+  "complete": false,
+  "describe_only": true
+}

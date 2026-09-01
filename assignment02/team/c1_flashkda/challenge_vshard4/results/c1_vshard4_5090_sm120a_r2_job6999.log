@@ -1,0 +1,62 @@
+===== PRE_AUDIT =====
+2026-08-20T09:48:38+08:00
+gj-5090-1
+0, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 00000000:16:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+C1_BUILD_TARGET=sm120a
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard4.cuh
+PATCHED_STATUS_END
+46222004dfa3e8b00d6ff14a9f64305c8743e2598cd151410ec406d289444580  /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/apply_vshard4_patch.py
+cd4834b5e1681c8e991805744fa0850d5b96fd3305cbcc198c225f48cf253d38  /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/vshard4.py
+99846e249ac57746d08c9a06a7cfb20dfc9164e770c9c40eee96f8c6008dc1a9  /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/run_vshard4_final.py
+a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+023507adf14f0a76ec6ba28fe06429dd866b788f2aeb0662a65c445b8384338d  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/csrc/flash_kda.cpp
+e12e2465343b447802705eee19c9c540d2bc3c1bf1f95a0e223d7bb8e6eda237  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/csrc/fwd.h
+66a841d34d440f0beea55729d8ae0ae4edae50c28d5f879db5023cf732837586  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/csrc/smxx/fwd_launch.cu
+8246a4a7c43846a9b7861e59d7d4f269b2aa4645f929e354352bbed50366db74  /home/lcpu/85117379/flashkda-vshard4-1ce47ea-5090-r1/csrc/smxx/fwd_kernel2_vshard4.cuh
+===== SMALL_EXACT_MATRIX =====
+device=NVIDIA GeForce RTX 5090 capability=(12, 0)
+candidate=fwd_vshard4 extension_sha256=a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163
+PASS exact: none/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/final_state
+PASS exact: fp32/baseline_vs_vshard4/output
+PASS exact: fp32/baseline_vs_vshard4/final_state
+PASS exact: none/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/final_state
+PASS exact: fp32/baseline_vs_vshard4/output
+PASS exact: fp32/baseline_vs_vshard4/final_state
+PASS exact: none/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/final_state
+PASS exact: fp32/baseline_vs_vshard4/output
+PASS exact: fp32/baseline_vs_vshard4/final_state
+wrote /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/results/c1_vshard4_5090_sm120a_r2_small_matrix.json
+===== FULL_CALL_H64_BF16 =====
+device=NVIDIA GeForce RTX 5090 capability=(12, 0)
+candidate=fwd_vshard4 extension_sha256=a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163
+PASS exact: bf16/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/final_state
+wrote /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/results/c1_vshard4_5090_sm120a_r2_h64.json
+===== FULL_CALL_H96_BF16 =====
+device=NVIDIA GeForce RTX 5090 capability=(12, 0)
+candidate=fwd_vshard4 extension_sha256=a85d14f61b64807c06c76774a33e0e87781feda21e6f6a2198fac67b89971163
+PASS exact: bf16/baseline_vs_vshard4/output
+PASS exact: bf16/baseline_vs_vshard4/final_state
+wrote /home/lcpu/85117379/c1-vshard4-support-5090/assignment02/team/c1_flashkda/challenge_vshard4/results/c1_vshard4_5090_sm120a_r2_h96.json
+===== POST_AUDIT =====
+2026-08-20T09:49:12+08:00
+0, GPU-a86a0f98-b11b-6726-5e9a-788e5eee7084, 00000000:16:00.0, NVIDIA GeForce RTX 5090, 12.0, 580.142, 0 MiB, 32607 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+FINAL_RC=0

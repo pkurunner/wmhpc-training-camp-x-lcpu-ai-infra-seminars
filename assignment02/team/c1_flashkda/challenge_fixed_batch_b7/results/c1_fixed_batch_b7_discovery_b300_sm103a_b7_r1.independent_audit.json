@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "purpose": "independent B=7 discovery audit; no production mapping or release authority",
+  "diagnostic_only": true,
+  "discovery_only": true,
+  "no_release_authority": true,
+  "no_production_mapping": true,
+  "source_identity": {
+    "analyzer": {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7/analyze_fixed_batch_b7_discovery.py",
+      "sha256": "a96e4cb9ba1954f59854512bb8808691d6ca5cb3b3e164445963daa3a8f32430",
+      "sha256_gate_pass": true
+    },
+    "runner_expected_sha256": "d36c22917eeecfa8ec23a9abda8d42fd0b87587e07852653343127e302609981"
+  },
+  "artifacts": [
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7/results/c1_fixed_batch_b7_discovery_b300_sm103a_b7_r1_main0.json",
+      "sha256": "5f0172c8c60c8858fc6607cbc293c346d8984f05643e331623200b98cfaa67fb",
+      "sha256_gate_pass": true
+    },
+    {
+      "path": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_fixed_batch_b7/results/c1_fixed_batch_b7_discovery_b300_sm103a_b7_r1_main1.json",
+      "sha256": "6b4df1c960411233cfec6d9543f69e117bcfbfd89842afad9488bf1085810708",
+      "sha256_gate_pass": true
+    }
+  ],
+  "identity_consistency": {
+    "distinct_fresh_pids": [
+      1539810,
+      1541228
+    ],
+    "same_gpu_uuid": "GPU-0c223cf1-4325-822f-1e38-43ae57897edd",
+    "same_extension_so": "/home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so",
+    "same_pinned_torch_reference_sha256": "bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5",
+    "passed": true
+  },
+  "contract_assessment": {
+    "none": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.027707213361104266,
+            "p95": 0.032449209007840984,
+            "p99": 0.03526088264499405
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.028429674780717784,
+            "p95": 0.022847364763950884,
+            "p99": 0.02768720756490728
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.027683767335075382,
+            "p95": 0.03118840694151892,
+            "p99": 0.023872187014061685
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "vshard2_p2",
+            "p95": "vshard2_p2",
+            "p99": "vshard2_p2"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.02767038696814539,
+            "p95": 0.024682549237158957,
+            "p99": 0.031485050243209356
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "vshard2_p2",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": true,
+      "optimized_winner_not_baseline": true,
+      "eligible_for_confirmation": true
+    },
+    "fp32_final_only": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.012543818274479701,
+            "p95": 0.022092323710587003,
+            "p99": 0.0158842283504379
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.012545218012609327,
+            "p95": 0.016505469009254092,
+            "p99": 0.019752787871376576
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.012885314532221193,
+            "p95": 0.017547213363635628,
+            "p99": 0.018991464001697933
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.012706986512172058,
+            "p95": 0.014195972832916848,
+            "p99": 0.014512626677463336
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "baseline",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": false,
+      "optimized_winner_not_baseline": false,
+      "eligible_for_confirmation": false
+    },
+    "fp32_both": {
+      "repeats": [
+        {
+          "process_index": 0,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.020025904569986652,
+            "p95": 0.025514052421107714,
+            "p99": 0.01766483484705894
+          }
+        },
+        {
+          "process_index": 0,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.02061250530382175,
+            "p95": 0.02391482899434738,
+            "p99": 0.017151191983572067
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 0,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.02048745247573569,
+            "p95": 0.02442251545156826,
+            "p99": 0.0302390978410354
+          }
+        },
+        {
+          "process_index": 1,
+          "repeat_index": 1,
+          "winner_by_percentile": {
+            "p50": "baseline",
+            "p95": "baseline",
+            "p99": "baseline"
+          },
+          "winner_margin_over_runner_up": {
+            "p50": 0.020665271921789685,
+            "p95": 0.02210636008972755,
+            "p99": 0.022398787666550568
+          }
+        }
+      ],
+      "common_winner_all_four_repeats_and_percentiles": "baseline",
+      "same_winner_all_four_repeats_and_percentiles": true,
+      "margin_at_least_2_percent_every_repeat_and_percentile": false,
+      "optimized_winner_not_baseline": false,
+      "eligible_for_confirmation": false
+    }
+  },
+  "second_allocation_decision": {
+    "eligible": false,
+    "decision": "baseline_stop_no_second_allocation",
+    "meaning": "eligible only for an independently authorized confirmation allocation; never a production mapping",
+    "negative_action": "baseline_stop_no_second_allocation",
+    "automatic_second_allocation_submitted": false
+  },
+  "complete": true
+}

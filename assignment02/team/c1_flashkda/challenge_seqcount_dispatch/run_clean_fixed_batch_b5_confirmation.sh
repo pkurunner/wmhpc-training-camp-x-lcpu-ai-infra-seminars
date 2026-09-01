@@ -1,0 +1,231 @@
+#!/usr/bin/env bash
+# One independently authorized B=5 confirmation allocation on one clean B300.
+# It reuses the frozen raw-wrapper measurement engine.  This script never
+# builds code, changes a dispatcher/map, submits another job, or promotes a
+# measured result into production.
+set -Eeuo pipefail
+
+if [[ "${C1_FIXED_BATCH_B5_CONFIRMATION_GPU_AUTHORIZED:-0}" != 1 || "${1:-}" != "--authorized-by-parent" ]]; then
+    echo "refusing GPU run: set C1_FIXED_BATCH_B5_CONFIRMATION_GPU_AUTHORIZED=1 and pass --authorized-by-parent" >&2
+    exit 64
+fi
+shift
+
+: "${A02_ROOT:?set A02_ROOT}"
+: "${PATCHED_ROOT:?set PATCHED_ROOT to the prebuilt audited worktree}"
+: "${REFERENCE_ROOT:?set REFERENCE_ROOT to the pinned upstream reference worktree}"
+: "${FLA_ROOT:?set FLA_ROOT to the pinned FLA worktree}"
+: "${C1_PINNED_REFERENCE_HELPER_PATH:?set C1_PINNED_REFERENCE_HELPER_PATH}"
+: "${LABEL:?set LABEL}"
+: "${SLURM_JOB_ID:?run this confirmation only inside its own Slurm allocation}"
+
+PYTHON_BIN="${PYTHON_BIN:-python}"
+OWNED="$A02_ROOT/team/c1_flashkda/challenge_seqcount_dispatch"
+RESULTS_DIR="${RESULTS_DIR:-$OWNED/results}"
+HISTORY_AUDIT="${HISTORY_AUDIT:-$OWNED/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1.independent_audit.json}"
+HISTORY_LOG="${HISTORY_LOG:-$OWNED/results/c1_fixed_batch_b5_discovery_b300_sm103a_b5_r1_job11781.log}"
+EXPECTED_HISTORY_AUDIT_SHA256="9acf5a9d8820206fc6fc72adda834811036c5d70860f2ffe614f39efce22a516"
+EXPECTED_HISTORY_LOG_SHA256="824ef6ec8a7f25f6eafaa0ae5465d72164d046184061bcd4af23efa1e466db2f"
+EXPECTED_HISTORY_SLURM_JOB_ID="11781"
+EXPECTED_PATCHED_COMMIT="1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b"
+EXPECTED_REFERENCE_COMMIT="1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b"
+EXPECTED_FLA_COMMIT="a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d"
+EXPECTED_SO_SHA256="8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005"
+EXPECTED_HELPER_SHA256="8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f"
+EXPECTED_RUNNER_SHA256="45f54fd2db41415b8c2d225797d63590d6e6406f067fdf76badddef775d2ceae"
+EXPECTED_DISCOVERY_ANALYZER_SHA256="7f93cb81dd76263e6eeb8017872636fd0c636578d975a1f2580f845c61f1735d"
+EXPECTED_CONFIRMATION_ANALYZER_SHA256="ed59853c673f93dfff33858ac7308e6d387c093b74eea0150ad509ecae3de149"
+EXPECTED_SHARED_SHA256="4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f"
+EXPECTED_VSHARD2_SHA256="752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0"
+EXPECTED_VSHARD4_SHA256="445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385"
+EXPECTED_HARNESS_SHA256="5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52"
+EXPECTED_FLASH_KDA_PYTHON_SHA256="9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84"
+EXPECTED_PINNED_LOADER_SHA256="9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b"
+GPU_TIMING_FIELDS="index,uuid,pstate,clocks.current.graphics,clocks.current.sm,clocks.current.memory,power.draw,temperature.gpu"
+
+mkdir -p "$RESULTS_DIR"
+LOG="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}_job${SLURM_JOB_ID}.log"
+exec > >(tee "$LOG") 2>&1
+
+gpu_query() { nvidia-smi --query-gpu=index,uuid,pci.bus_id,name,compute_cap,driver_version,memory.used,memory.total --format=csv,noheader; }
+gpu_timing_query() { nvidia-smi --query-gpu="$GPU_TIMING_FIELDS" --format=csv,noheader; }
+print_timing_state() {
+    local stage="$1"
+    echo "${stage}_GPU_TIMING_BEGIN"
+    gpu_timing_query
+    echo "${stage}_GPU_TIMING_END"
+}
+app_query() { nvidia-smi --query-compute-apps=gpu_uuid,pid,process_name,used_memory --format=csv,noheader; }
+memory_query() { nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits; }
+require_clean() {
+    local stage="$1" apps used
+    apps="$(app_query)" || { echo "$stage: compute-app query failed" >&2; return 92; }
+    used="$(memory_query)" || { echo "$stage: memory query failed" >&2; return 92; }
+    echo "${stage}_COMPUTE_APPS_BEGIN"; printf '%s\n' "$apps"; echo "${stage}_COMPUTE_APPS_END"
+    printf '%s_MEMORY_USED_MIB=%s\n' "$stage" "$used"
+    [[ -z "$apps" ]] || return 1
+    [[ "$(printf '%s\n' "$used" | sed '/^[[:space:]]*$/d' | wc -l)" -eq 1 ]] || return 1
+    while IFS= read -r line; do [[ "$line" =~ ^[[:space:]]*0[[:space:]]*$ ]] || return 1; done <<<"$used"
+}
+require_sha() {
+    local path="$1" expected="$2" label="$3"
+    [[ -f "$path" ]] || { echo "missing $label: $path" >&2; return 86; }
+    [[ "$(sha256sum "$path" | awk '{print $1}')" == "$expected" ]] || {
+        echo "$label SHA256 gate failed" >&2; return 87;
+    }
+}
+require_commit() {
+    local path="$1" expected="$2" label="$3"
+    [[ "$(git -C "$path" rev-parse HEAD)" == "$expected" ]] || {
+        echo "$label commit gate failed" >&2; return 85;
+    }
+}
+finish() {
+    local rc=$?
+    trap - EXIT
+    echo "===== POST_AUDIT ====="; date -Is
+    gpu_query || rc=92
+    print_timing_state POST || rc=92
+    require_clean POST || rc=91
+    echo "FINAL_RC=$rc"
+    exit "$rc"
+}
+trap finish EXIT
+
+echo "===== ENVIRONMENT_GATE ====="
+command -v "$PYTHON_BIN"
+require_commit "$PATCHED_ROOT" "$EXPECTED_PATCHED_COMMIT" "patched"
+require_commit "$REFERENCE_ROOT" "$EXPECTED_REFERENCE_COMMIT" "reference"
+require_commit "$FLA_ROOT" "$EXPECTED_FLA_COMMIT" "FLA"
+[[ -z "$(git -C "$REFERENCE_ROOT" status --short --untracked-files=no)" ]] || {
+    echo "reference tracked/staged worktree is not clean" >&2; exit 84;
+}
+[[ -z "$(git -C "$FLA_ROOT" status --short --untracked-files=no)" ]] || {
+    echo "FLA tracked/staged worktree is not clean" >&2; exit 84;
+}
+SO_PATHS=("$PATCHED_ROOT"/flash_kda_C.cpython-*-linux-gnu.so)
+[[ "${#SO_PATHS[@]}" -eq 1 && -f "${SO_PATHS[0]}" ]] || {
+    echo "expected exactly one prebuilt flash_kda_C.cpython-*-linux-gnu.so" >&2; exit 89;
+}
+require_sha "${SO_PATHS[0]}" "$EXPECTED_SO_SHA256" "extension"
+require_sha "$C1_PINNED_REFERENCE_HELPER_PATH" "$EXPECTED_HELPER_SHA256" "pinned reference helper"
+require_sha "$OWNED/run_fixed_batch_b5_discovery.py" "$EXPECTED_RUNNER_SHA256" "B=5 runner"
+require_sha "$OWNED/analyze_fixed_batch_b5_discovery.py" "$EXPECTED_DISCOVERY_ANALYZER_SHA256" "B=5 discovery analyzer"
+require_sha "$OWNED/analyze_fixed_batch_b5_confirmation.py" "$EXPECTED_CONFIRMATION_ANALYZER_SHA256" "B=5 confirmation analyzer"
+require_sha "$OWNED/run_seqcount_dispatch.py" "$EXPECTED_SHARED_SHA256" "shared input/state helper"
+require_sha "$A02_ROOT/team/c1_flashkda/challenge_prefetch2/prefetch2.py" "$EXPECTED_VSHARD2_SHA256" "vshard2 wrapper"
+require_sha "$A02_ROOT/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py" "$EXPECTED_VSHARD4_SHA256" "vshard4 wrapper"
+require_sha "$A02_ROOT/team/c1_flashkda/harness/validate_and_bench.py" "$EXPECTED_HARNESS_SHA256" "validation harness"
+require_sha "$PATCHED_ROOT/flash_kda/__init__.py" "$EXPECTED_FLASH_KDA_PYTHON_SHA256" "loaded flash_kda Python wrapper"
+require_sha "$A02_ROOT/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py" "$EXPECTED_PINNED_LOADER_SHA256" "pinned-reference loader"
+require_sha "$HISTORY_AUDIT" "$EXPECTED_HISTORY_AUDIT_SHA256" "frozen B=5 history audit"
+require_sha "$HISTORY_LOG" "$EXPECTED_HISTORY_LOG_SHA256" "frozen B=5 history Slurm log"
+[[ "$(gpu_query | sed '/^[[:space:]]*$/d' | wc -l)" -eq 1 ]] || {
+    echo "expected exactly one visible B300 GPU" >&2; exit 88;
+}
+
+echo "===== PRE_AUDIT ====="; date -Is; hostname; gpu_query
+print_timing_state PRE
+require_clean PRE || exit 90
+
+echo "===== SOURCE_IDENTITY ====="
+printf 'SLURM_JOB_ID=%s\n' "$SLURM_JOB_ID"
+printf 'PATCHED_COMMIT=%s\n' "$(git -C "$PATCHED_ROOT" rev-parse HEAD)"
+printf 'REFERENCE_COMMIT=%s\n' "$(git -C "$REFERENCE_ROOT" rev-parse HEAD)"
+printf 'FLA_COMMIT=%s\n' "$(git -C "$FLA_ROOT" rev-parse HEAD)"
+sha256sum \
+    "$OWNED/run_clean_fixed_batch_b5_confirmation.sh" \
+    "$OWNED/run_fixed_batch_b5_discovery.py" \
+    "$OWNED/analyze_fixed_batch_b5_discovery.py" \
+    "$OWNED/analyze_fixed_batch_b5_confirmation.py" \
+    "$OWNED/run_seqcount_dispatch.py" \
+    "$A02_ROOT/team/c1_flashkda/challenge_prefetch2/prefetch2.py" \
+    "$A02_ROOT/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py" \
+    "$A02_ROOT/team/c1_flashkda/harness/validate_and_bench.py" \
+    "$PATCHED_ROOT/flash_kda/__init__.py" \
+    "$A02_ROOT/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py" \
+    "$C1_PINNED_REFERENCE_HELPER_PATH" \
+    "${SO_PATHS[0]}" \
+    "$HISTORY_AUDIT" \
+    "$HISTORY_LOG"
+
+echo "===== DESCRIBE_AND_PYTHON_COMPILE_GATE ====="
+"$PYTHON_BIN" "$OWNED/run_fixed_batch_b5_discovery.py" \
+    --describe --process-index 0 --expected-runner-sha256 "$EXPECTED_RUNNER_SHA256" \
+    --json "$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}.plan.json"
+"$PYTHON_BIN" -m py_compile \
+    "$OWNED/run_fixed_batch_b5_discovery.py" \
+    "$OWNED/analyze_fixed_batch_b5_discovery.py" \
+    "$OWNED/analyze_fixed_batch_b5_confirmation.py"
+
+# No setup.py, NVCC, build, patch generator, git mutation, or source mutation
+# is present below.  Both measurement invocations are fresh Python processes.
+export PATH="$(dirname "$PYTHON_BIN"):$PATH"
+export PYTHONPATH="$FLA_ROOT:$PATCHED_ROOT:$A02_ROOT${PYTHONPATH:+:$PYTHONPATH}"
+export C1_FIXED_BATCH_B5_DISCOVERY_CLEAN_GPU=1
+export C1_PINNED_REFERENCE_HELPER_SHA256="$EXPECTED_HELPER_SHA256"
+cd "$PATCHED_ROOT"
+
+run_main() {
+    local index="$1" artifact="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}_main${1}.json"
+    echo "===== B5_CONFIRMATION_MAIN_${index} ====="; date -Is
+    print_timing_state "MAIN_${index}_PRE"
+    require_clean "MAIN_${index}_PRE" || return 93
+    "$PYTHON_BIN" "$OWNED/run_fixed_batch_b5_discovery.py" \
+        --process-index "$index" \
+        --seed 20260830 \
+        --expected-runner-sha256 "$EXPECTED_RUNNER_SHA256" \
+        --reference-root "$REFERENCE_ROOT" \
+        --patched-root "$PATCHED_ROOT" \
+        --fla-root "$FLA_ROOT" \
+        --json "$artifact"
+    print_timing_state "MAIN_${index}_POST"
+    require_clean "MAIN_${index}_POST" || return 93
+}
+
+run_main 0
+run_main 1
+
+main0="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}_main0.json"
+main1="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}_main1.json"
+MEASUREMENT_AUDIT="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}.measurement_audit.json"
+CHAIN="$RESULTS_DIR/c1_fixed_batch_b5_confirmation_${LABEL}.confirmation_chain.json"
+echo "===== CURRENT_MEASUREMENT_STDLIB_AUDIT ====="
+require_clean BEFORE_MEASUREMENT_AUDIT || exit 94
+"$PYTHON_BIN" "$OWNED/analyze_fixed_batch_b5_discovery.py" "$main0" "$main1" \
+    --expected-main-sha256 "$(sha256sum "$main0" | awk '{print $1}')" "$(sha256sum "$main1" | awk '{print $1}')" \
+    --expected-runner-sha256 "$EXPECTED_RUNNER_SHA256" \
+    --expected-analyzer-sha256 "$EXPECTED_DISCOVERY_ANALYZER_SHA256" \
+    --json "$MEASUREMENT_AUDIT"
+require_clean AFTER_MEASUREMENT_AUDIT || exit 94
+
+echo "===== CROSS_ALLOCATION_CONFIRMATION_CHAIN ====="
+require_clean BEFORE_CONFIRMATION_CHAIN || exit 95
+"$PYTHON_BIN" "$OWNED/analyze_fixed_batch_b5_confirmation.py" "$HISTORY_AUDIT" "$MEASUREMENT_AUDIT" \
+    --expected-history-audit-sha256 "$EXPECTED_HISTORY_AUDIT_SHA256" \
+    --expected-measurement-audit-sha256 "$(sha256sum "$MEASUREMENT_AUDIT" | awk '{print $1}')" \
+    --expected-runner-sha256 "$EXPECTED_RUNNER_SHA256" \
+    --expected-discovery-analyzer-sha256 "$EXPECTED_DISCOVERY_ANALYZER_SHA256" \
+    --expected-confirmation-analyzer-sha256 "$EXPECTED_CONFIRMATION_ANALYZER_SHA256" \
+    --expected-current-seed 20260830 \
+    --history-slurm-log "$HISTORY_LOG" \
+    --expected-history-slurm-log-sha256 "$EXPECTED_HISTORY_LOG_SHA256" \
+    --history-slurm-job-id "$EXPECTED_HISTORY_SLURM_JOB_ID" \
+    --current-slurm-log "$LOG" \
+    --current-slurm-job-id "$SLURM_JOB_ID" \
+    --json "$CHAIN"
+require_clean AFTER_CONFIRMATION_CHAIN || exit 95
+eligibility="$($PYTHON_BIN - "$CHAIN" <<'PY'
+import json
+import sys
+
+with open(sys.argv[1], encoding="utf-8") as handle:
+    value = json.load(handle)["public_integration_decision"]["eligible_for_public_integration_review"]
+if type(value) is not bool:
+    raise SystemExit("public-integration eligibility is not an exact bool")
+print(str(value).lower())
+PY
+)"
+echo "CONFIRMATION_ONLY=1"
+echo "PUBLIC_INTEGRATION_ELIGIBLE=$eligibility"
+echo "PUBLIC_INTEGRATION=not_automatic"

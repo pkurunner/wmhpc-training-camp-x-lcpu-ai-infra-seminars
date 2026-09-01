@@ -1,0 +1,245 @@
+{
+  "schema_version": 4,
+  "purpose": "r6 public FLA packed-varlen C1/pinned production freeze; no policy mutation",
+  "seed": 20260830,
+  "positive_cells": [
+    {
+      "cell": "skew_n6_h12_t12288/none",
+      "expected_variant": "vshard2_p2"
+    },
+    {
+      "cell": "skew_n6_h12_t12288/fp32_final_only",
+      "expected_variant": "vshard2_p2"
+    }
+  ],
+  "record_only_cell": {
+    "cell": "mixed_n6_h12_t8192/fp32_both",
+    "action": "pinned_baseline_only"
+  },
+  "policy_fallback_cells": {
+    "equal_n2_h12_t2048/none": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "equal_n2_h12_t2048/fp32_final_only": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "equal_n2_h12_t2048/fp32_both": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "equal_n4_h12_t2048/none": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "equal_n4_h12_t2048/fp32_final_only": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "equal_n4_h12_t2048/fp32_both": {
+      "classification": "raw_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "mixed_n6_h12_t8192/none": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "mixed_n6_h12_t8192/fp32_final_only": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    },
+    "mixed_n6_h12_t8192/fp32_both": {
+      "classification": "record_only",
+      "action": "pinned_baseline_only"
+    },
+    "skew_n6_h12_t12288/fp32_both": {
+      "classification": "public_release_failed",
+      "action": "pinned_baseline_only"
+    }
+  },
+  "performance": {
+    "pre_registered": {
+      "cells": [
+        "skew_n6_h12_t12288/none",
+        "skew_n6_h12_t12288/fp32_final_only"
+      ],
+      "fixed_measurement_seed": 20260901,
+      "paths": [
+        "public_registry_c1",
+        "public_registry_pinned"
+      ],
+      "repeats": 2,
+      "warmup_per_path_per_repeat": 100,
+      "cyclic_cuda_event_samples_per_path_per_repeat": 1000,
+      "percentiles": [
+        "p50",
+        "p95",
+        "p99"
+      ],
+      "minimum_c1_margin_over_pinned": 0.02,
+      "prepare_spy_in_timed_region": false,
+      "release_rule": "A cell releases only if both repeats have C1 as P50/P95/P99 winner with every margin >=2%; failures remain recorded and do not invalidate completed correctness evidence.",
+      "timing_contract": "one current-stream CUDA-event pair wraps each complete public chunk_kda call; start.record is immediately synchronized before the public call and end.record is immediately synchronized before elapsed_time, so the start marker precedes host dispatch/preflight and neither synchronization is in the sample value; samples alternate C1->pinned then pinned->C1 so each path is first exactly 500 times; C1_B300_FLASH_KDA selection changes happen before event record and never inside a sample; no direct raw wrapper is timed.",
+      "timed_public_calls": 8000,
+      "warmup_public_calls": 800,
+      "timed_event_synchronizations": 16000,
+      "one_hour_mean_call_budget_ms_including_warmup": 409.09090909090907
+    },
+    "cold_miss_observations": {},
+    "cells": {},
+    "performance_release_cells": [],
+    "failed_cells": [],
+    "complete": false
+  },
+  "negative_cases": [
+    "same_n_total_different_split",
+    "varlen_env_unset",
+    "cpu_missing_or_malformed",
+    "gpu_structural_mismatch_preflight",
+    "allow_neg_eigval_semantic_fallback",
+    "fixed_representative_non_regression"
+  ],
+  "identity": {},
+  "registry": {},
+  "positive_results": {},
+  "negative_results": {},
+  "cache_observations": {},
+  "performance_release_cells": [],
+  "performance_failed_cells": [],
+  "gates": {
+    "scope": {
+      "positive_cells": 2,
+      "policy_fallback_cells": 10,
+      "required_positive_cells": 2,
+      "required_policy_fallback_cells": 10,
+      "passed": true
+    },
+    "production_map": {
+      "passed": true,
+      "exact_entries": [
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "none",
+          "variant": "vshard2_p2"
+        },
+        {
+          "offsets": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12288
+          ],
+          "contract": "fp32_final_only",
+          "variant": "vshard2_p2"
+        }
+      ],
+      "entry_count": 2,
+      "checked_before_cuda_initialization": true,
+      "runner_mutates_production_map": false
+    },
+    "prepare_spy_restored": {
+      "passed": false
+    },
+    "clean_gpu": {
+      "passed": false
+    },
+    "device": {
+      "passed": false
+    },
+    "extension": {
+      "passed": false
+    },
+    "fla_pin": {
+      "passed": false
+    },
+    "inference_mode": {
+      "passed": false
+    },
+    "registry_spy_identity": {
+      "passed": false
+    },
+    "python_nvidia_clean": {
+      "passed": false
+    }
+  },
+  "complete": false,
+  "production_map_before_gpu": {
+    "passed": true,
+    "exact_entries": [
+      {
+        "offsets": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          12288
+        ],
+        "contract": "none",
+        "variant": "vshard2_p2"
+      },
+      {
+        "offsets": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          12288
+        ],
+        "contract": "fp32_final_only",
+        "variant": "vshard2_p2"
+      }
+    ],
+    "entry_count": 2,
+    "checked_before_cuda_initialization": true,
+    "runner_mutates_production_map": false
+  },
+  "cpu_construction_check": {
+    "offsets": [
+      0,
+      3,
+      8
+    ],
+    "sequence_count": 2,
+    "total_tokens": 8,
+    "prepare_spy_restore": {
+      "normal": {
+        "restore": {
+          "had_instance_shadow": false,
+          "descriptor_binding_restored": true,
+          "passed": true
+        },
+        "no_shadow_gate": {
+          "instance_shadow": false,
+          "descriptor_binding": true,
+          "passed": true
+        }
+      },
+      "preexisting_instance_override": {
+        "restore": {
+          "had_instance_shadow": true,
+          "descriptor_binding_restored": null,
+          "passed": true
+        },
+        "exact_value_restored": true
+      }
+    },
+    "passed": true
+  },
+  "cpu_only": true
+}

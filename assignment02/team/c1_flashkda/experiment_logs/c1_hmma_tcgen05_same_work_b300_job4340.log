@@ -1,0 +1,71 @@
+===== PRE_AUDIT =====
+2026-08-19T15:51:39+00:00
+dev-slurm
+SLURM_JOB_ID=4340 CUDA_VISIBLE_DEVICES=0 ARCH=103a
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+===== BUILD =====
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+ARCH=103a TILES=4096 WARMUP=20 ITERS=50 REPEATS=7
+f60f8ef983242eadf4794e32e59d6b1029b4fc86e21d786fe1137f71f36af419  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/microbench/hmma_tcgen05_fair.cu
+de349949a80ef8519fc728fc853ec620f89bfe71fc95bfe988f12f403757761b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/microbench/run_hmma_tcgen05_audit.sh
+===== SASS_AUDIT =====
+SASS_HMMA=14
+SASS_UTCHMMA=4
+SASS_LDTM=8
+		Function : _ZN49_GLOBAL__N__b631adbe_20_hmma_tcgen05_fair_cu_main14hmma_same_workILi64EEEvPK13__nv_bfloat16S3_Pf
+        /*0350*/                   HMMA.16816.F32.BF16 R12, R8.reuse, R12, RZ ;                                 /* 0x0000000c080c723c */
+        /*0360*/                   HMMA.16816.F32.BF16 R8, R8, R4, RZ ;                                         /* 0x000000040808723c */
+        /*0390*/                   HMMA.16816.F32.BF16 R12, R4.reuse, R20, R12 ;                                /* 0x00000014040c723c */
+        /*03c0*/                   HMMA.16816.F32.BF16 R8, R4, R20, R8 ;                                        /* 0x000000140408723c */
+        /*0430*/                   HMMA.16816.F32.BF16 R12, R4.reuse, R20, R12 ;                                /* 0x00000014040c723c */
+        /*0460*/                   HMMA.16816.F32.BF16 R8, R4, R20, R8 ;                                        /* 0x000000140408723c */
+        /*04f0*/                   HMMA.16816.F32.BF16 R12, R4.reuse, R22, R12 ;                                /* 0x00000016040c723c */
+        /*0500*/                   HMMA.16816.F32.BF16 R8, R4, R20, R8 ;                                        /* 0x000000140408723c */
+		Function : _ZN49_GLOBAL__N__b631adbe_20_hmma_tcgen05_fair_cu_main14hmma_same_workILi32EEEvPK13__nv_bfloat16S3_Pf
+        /*0350*/                   HMMA.16816.F32.BF16 R4, R12.reuse, R4, RZ ;                                  /* 0x000000040c04723c */
+        /*0360*/                   HMMA.16816.F32.BF16 R12, R12, R10, RZ ;                                      /* 0x0000000a0c0c723c */
+        /*03b0*/                   HMMA.16816.F32.BF16 R4, R8.reuse, R22, R4 ;                                  /* 0x000000160804723c */
+        /*03c0*/                   HMMA.16816.F32.BF16 R12, R8, R18, R12 ;                                      /* 0x00000012080c723c */
+		Function : _ZN49_GLOBAL__N__b631adbe_20_hmma_tcgen05_fair_cu_main14hmma_same_workILi16EEEvPK13__nv_bfloat16S3_Pf
+        /*02a0*/                   HMMA.16816.F32.BF16 R4, R8.reuse, R4, RZ ;                                   /* 0x000000040804723c */
+        /*02b0*/                   HMMA.16816.F32.BF16 R8, R8, R22, RZ ;                                        /* 0x000000160808723c */
+		Function : _ZN49_GLOBAL__N__b631adbe_20_hmma_tcgen05_fair_cu_main17tcgen05_same_workEPK13__nv_bfloat16S2_Pf
+        /*1390*/                   UTCHMMA gdesc[UR6], gdesc[UR8], tmem[UR4], tmem[UR22], idesc[UR23], !UPT ;   /* 0x00ff1608060075ea */
+        /*13d0*/                   UTCHMMA gdesc[UR10], gdesc[UR12], tmem[UR4], tmem[UR22], idesc[UR23], UPT ;  /* 0x00ff160c0a0075ea */
+        /*13e0*/                   UTCHMMA gdesc[UR14], gdesc[UR16], tmem[UR4], tmem[UR22], idesc[UR23], UPT ;  /* 0x00ff16100e0075ea */
+        /*13f0*/                   UTCHMMA gdesc[UR18], gdesc[UR20], tmem[UR4], tmem[UR22], idesc[UR23], UPT ;  /* 0x00ff1614120075ea */
+        /*1500*/                   LDTM.x8 R12, tmem[UR5] ;                                                     /* 0x00000005000c79ee */
+        /*1520*/                   LDTM.x8 R4, tmem[UR5+0x8] ;                                                  /* 0x00000805000479ee */
+        /*17a0*/                   LDTM.x8 R12, tmem[UR5+0x10] ;                                                /* 0x00001005000c79ee */
+        /*1840*/                   LDTM.x8 R4, tmem[UR5+0x18] ;                                                 /* 0x00001805000479ee */
+        /*18e0*/                   LDTM.x8 R12, tmem[UR5+0x20] ;                                                /* 0x00002005000c79ee */
+        /*1980*/                   LDTM.x8 R4, tmem[UR5+0x28] ;                                                 /* 0x00002805000479ee */
+        /*1a30*/                   LDTM.x8 R12, tmem[UR5+0x30] ;                                                /* 0x00003005000c79ee */
+        /*1ac0*/                   LDTM.x8 R4, tmem[UR28+0x38] ;                                                /* 0x0000381c000479ee */
+===== SAME_LOGICAL_WORK_GATE_AND_TIMING =====
+DEVICE name=NVIDIA B300 SXM6 AC cc=10.3 tiles=4096 warmup=20 iters=50 repeats=7
+GATE C=16 exact_bitwise=PASS mismatches=0/16384
+GATE C=32 exact_bitwise=PASS mismatches=0/16384
+GATE C=64 exact_bitwise=PASS mismatches=0/16384
+RESULT C=16 tiles=4096 hmma_ms=0.056799360 tcgen05_ms=0.242131189 hmma_logical_tflops=18.904118 tcgen05_effective_tflops=4.434546 tcgen05_physical_tflops=17.738183 hmma_over_tcgen=0.234581 tcgen05_useful_fraction=25.000000% zero_padded_k=48
+RESULT C=32 tiles=4096 hmma_ms=0.088442236 tcgen05_ms=0.242168307 hmma_logical_tflops=24.281200 tcgen05_effective_tflops=8.867732 tcgen05_physical_tflops=17.735464 hmma_over_tcgen=0.365210 tcgen05_useful_fraction=50.000000% zero_padded_k=32
+RESULT C=64 tiles=4096 hmma_ms=0.152294397 tcgen05_ms=0.242264956 hmma_logical_tflops=28.201742 tcgen05_effective_tflops=17.728389 tcgen05_physical_tflops=17.728389 hmma_over_tcgen=0.628627 tcgen05_useful_fraction=100.000000% zero_padded_k=0
+JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_hmma_tcgen05_same_work_b300_job4340.json
+ALL_GATES=PASS
+JSON_STRICT_PARSE=PASS
+===== POST_AUDIT =====
+2026-08-19T15:51:43+00:00
+0, GPU-778768b4-6c9e-e483-890e-0812760948ae, 00000000:05:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+C1_HMMA_TCGEN05_JSON=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_hmma_tcgen05_same_work_b300_job4340.json
+C1_HMMA_TCGEN05_SASS=/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/experiment_logs/c1_hmma_tcgen05_same_work_b300_job4340.sass
+C1_HMMA_TCGEN05_FINAL_RC=0

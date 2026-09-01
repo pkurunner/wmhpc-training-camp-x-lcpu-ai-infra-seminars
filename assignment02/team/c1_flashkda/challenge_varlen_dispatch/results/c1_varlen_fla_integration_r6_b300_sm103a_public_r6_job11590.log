@@ -1,0 +1,351 @@
+===== ENVIRONMENT_GATE =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/bin/python
+===== PRE_AUDIT =====
+2026-08-29T13:18:20+00:00
+dev-slurm
+0, GPU-ab0e8f8b-abe0-a03f-c8e9-65622211a5f4, 00000000:0C:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== SOURCE_IDENTITY =====
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+PATCHED_STATUS_END
+REFERENCE_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+REFERENCE_STATUS_BEGIN
+REFERENCE_STATUS_END
+FLA_COMMIT=a3edffc39eb5a3d45e9deab5ff9ec4f14f88474d
+FLA_STATUS_BEGIN
+FLA_STATUS_END
+===== R6_SOURCE_IDENTITY =====
+71a016307d385d846dfc9e58fefeb041446616a08d3ee36d73f2ac2d3d5ac058  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_fla_integration_r6.py
+9cb9c626fdfa2426e64611f1596f1f71148b855b9aa7ab7b2ad363b0aa28cb0b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/analyze_varlen_fla_integration_r6.py
+90a2eed93d55b349e47fb39a0ab88f4d416feb21517ea0791dd1dce104ef335c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_clean_varlen_fla_integration_r6_audit.sh
+9ab690ea977dd18ecc6d41d451b442e38c7d524d97e06da07180f37ec7b6f480  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/test_auto_dispatch_policy.py
+85ef2c1dcec8ca2c000b76553b921dcd1d5c92417c40617b2541194dc3435826  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/test_varlen_metadata_policy.py
+2b817adb7d21d1f223e8df4616eeccd74e34a5b1944492211f0f0254147ba883  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/auto_dispatch.py
+8555995c04ecd666a580ddee02eae1d34820ef1a601cbad5d10f9c6b8505974b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/fla_backend.py
+f89a97ba284c7a24a3df54efca7bb60eb70f9cbda659200bd6cb3e8dfdaf4ccd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_dispatch/varlen_metadata.py
+9445d94a38cb8acc0ab6b15352df01a8d9c93a8b2b6daf0d9adb39a7315c740b  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/run_varlen_dispatch_confirmation.py
+4ba4b26241c97c59ca7ffe8b4d8f4a965bc259bb7e40aa4a93d1271b06cdb83f  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_seqcount_dispatch/run_seqcount_dispatch.py
+752126488487ac317a7ee167b660b0895562e4877aedbc4ce2a599c1f59a10d0  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+445c90815919fb8c1db3bc79289d10029ea77b1d9accb393c326c120ba1f8385  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard4_prefetch2/vshard4_prefetch2.py
+5c92ac532525827b72ae5a714303eed896ef1f4742db17e0c970bd8055287d52  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/harness/validate_and_bench.py
+8c524aab9a5bf91e069d7216c3e1879fa6e3b1f61a5affa7ee3eeaa91008622f  /home/lcpu/85117379/.cache/torch_extensions/py312_cu130/sigmoid_ext/sigmoid_ext.so
+8f8cb97077d2496834d065c7cc1e39980e14e1f9b1665cdfd3aa8ae2dfe3e005  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda_C.cpython-312-x86_64-linux-gnu.so
+9cb9bd39186f6993f0067a8ff720cd233ef4b474444f1fd0fcd2bf06cab5fb84  /home/lcpu/85117379/flashkda-vshard4-prefetch2-1ce47ea-b300-r1/flash_kda/__init__.py
+bb037c8b74bb7caa9bdddd144a0f221309c72116456fe7cb2fbd95dbd9b406a5  /home/lcpu/85117379/flashkda-1ce47ea/tests/torch_ref.py
+b7e0d26abd3162884ce94f37d0210a25344025055383d377937f300a3bf5f45d  /home/lcpu/85117379/fla-a3edffc/fla/__init__.py
+a6934ff1ae38c412bf7cbc7cc5009522c103931c55ea06db51088c50a6e6e635  /home/lcpu/85117379/fla-a3edffc/fla/ops/backends/__init__.py
+24564f0101f87a26056e9061ed771caf0d8f6d9a00b4dbded701ea7525b45acb  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/__init__.py
+86a2e1c1313dcfc6c64a3ba906dd824448edca36c31a961595c250cfaf8dd797  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/__init__.py
+0d35a0bb8532135528e9c53a4cb0d16f282a55c974a84faab350ef72203bd5a2  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/backends/flash_kda.py
+a15aa6ac257af5c8f7a1d6afc21a417391568e90a8898d4e228ddeb48cb0e9b8  /home/lcpu/85117379/fla-a3edffc/fla/ops/kda/chunk.py
+===== CPU_POLICY_TESTS =====
+PASS test_all_device_whitelist_dimensions_fail_closed
+PASS test_all_tensor_contract_misses_fail_closed
+PASS test_cross_length_entries_are_exactly_whitelisted
+PASS test_exact_fixed_batch_public_contract_entries_and_fallbacks
+PASS test_fixed_body_clears_handoff_without_calling_take
+PASS test_kernel_exceptions_are_not_caught_or_replayed
+PASS test_last_decision_is_thread_local_diagnostic_state
+PASS test_only_released_varlen_public_cells_are_whitelisted
+PASS test_opt_in_backend_registration_is_idempotent
+PASS test_positive_boundaries
+PASS test_public_positional_order_and_allow_neg_eigval_guard
+PASS test_public_pre_dispatch_errors_are_guarded_before_pinned_fallback
+PASS test_real_fla_h12_state_contracts_are_explicitly_whitelisted
+PASS test_registration_fails_closed_on_pinned_import_or_registry_conflict
+PASS test_symbol_fallback_is_prelaunch_and_last_decision_is_observable
+PASS test_unverified_state_contracts_select_baseline
+PASS test_varlen_backend_preflight_is_explicit_and_never_reads_gpu_values
+PASS test_varlen_handoff_body_reuses_only_the_descriptor_then_calls_auto_dispatch
+PASS test_varlen_handoff_is_one_shot_thread_local_and_fresh
+PASS test_varlen_handoff_mismatch_or_cpu_mutation_forces_full_prepare_path
+PASS test_varlen_handoff_refuses_noncanonical_deferred_scalar_values
+PASS test_varlen_workspace_uses_authenticated_sequence_count
+PASS test_verifier_entry_clears_a_previous_varlen_handoff
+PASS test_verifier_uses_canonical_signature_after_instance_spy_install
+PASS test_wrong_extension_sha_fails_closed_before_launch
+PASS 25 CPU-only dispatcher tests
+PASS test_cache_miss_hit_stream_order_and_stats
+PASS test_capture_hit_is_fail_closed_before_wait_or_record_stream
+PASS test_capture_miss_is_fail_closed_before_h2d
+PASS test_capture_probe_selects_q_device_in_multi_gpu_process
+PASS test_concurrent_same_key_publishes_one_miss_without_deadlock
+PASS test_cpu_authority_rejects_all_tuple_and_q_boundaries
+PASS test_descriptor_cannot_be_normally_constructed_or_bare_object_forged
+PASS test_explicit_cpu_issue_canonicalizes_and_authenticates_identity
+PASS test_fresh_cpu_validation_reads_once_and_reuses_the_full_issue_contract
+PASS test_gpu_validation_reads_no_gpu_values_and_requires_only_structure
+PASS test_module_avoids_top_level_torch_import
+PASS 11 CPU-only varlen metadata tests
+===== CPU_R6_DESCRIBE_AND_CONSTRUCTION =====
+wrote packed-varlen FLA integration plan /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_integration_r6_b300_sm103a_public_r6.plan.json
+wrote packed-varlen FLA CPU construction check /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_integration_r6_b300_sm103a_public_r6.cpu.json
+===== VARLEN_FLA_INTEGRATION_R6 =====
+/home/lcpu/85117379/codex-a02-20260819-main/assignment02/.venv/lib/python3.12/site-packages/torch/cuda/graphs.py:169: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:210.)
+  super().capture_end()
+PASS exact: equal_n2_h12_t2048/none/direct-pinned/output
+PASS exact: equal_n2_h12_t2048/none/public-direct-pinned/output
+PASS exact: equal_n2_h12_t2048/none/public-torch-ref/output
+PASS exact: equal_n2_h12_t2048/fp32_final_only/direct-pinned/output
+PASS exact: equal_n2_h12_t2048/fp32_final_only/direct-pinned/final
+PASS exact: equal_n2_h12_t2048/fp32_final_only/public-direct-pinned/output
+PASS exact: equal_n2_h12_t2048/fp32_final_only/public-direct-pinned/final
+PASS exact: equal_n2_h12_t2048/fp32_final_only/public-torch-ref/output
+PASS exact: equal_n2_h12_t2048/fp32_final_only/public-torch-ref/final
+PASS exact: equal_n2_h12_t2048/fp32_both/direct-pinned/output
+PASS exact: equal_n2_h12_t2048/fp32_both/direct-pinned/final
+PASS exact: equal_n2_h12_t2048/fp32_both/public-direct-pinned/output
+PASS exact: equal_n2_h12_t2048/fp32_both/public-direct-pinned/final
+PASS exact: equal_n2_h12_t2048/fp32_both/public-torch-ref/output
+PASS exact: equal_n2_h12_t2048/fp32_both/public-torch-ref/final
+PASS exact: equal_n4_h12_t2048/none/direct-pinned/output
+PASS exact: equal_n4_h12_t2048/none/public-direct-pinned/output
+PASS exact: equal_n4_h12_t2048/none/public-torch-ref/output
+PASS exact: equal_n4_h12_t2048/fp32_final_only/direct-pinned/output
+PASS exact: equal_n4_h12_t2048/fp32_final_only/direct-pinned/final
+PASS exact: equal_n4_h12_t2048/fp32_final_only/public-direct-pinned/output
+PASS exact: equal_n4_h12_t2048/fp32_final_only/public-direct-pinned/final
+PASS exact: equal_n4_h12_t2048/fp32_final_only/public-torch-ref/output
+PASS exact: equal_n4_h12_t2048/fp32_final_only/public-torch-ref/final
+PASS exact: equal_n4_h12_t2048/fp32_both/direct-pinned/output
+PASS exact: equal_n4_h12_t2048/fp32_both/direct-pinned/final
+PASS exact: equal_n4_h12_t2048/fp32_both/public-direct-pinned/output
+PASS exact: equal_n4_h12_t2048/fp32_both/public-direct-pinned/final
+PASS exact: equal_n4_h12_t2048/fp32_both/public-torch-ref/output
+PASS exact: equal_n4_h12_t2048/fp32_both/public-torch-ref/final
+PASS exact: mixed_n6_h12_t8192/none/direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/none/public-direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/none/public-torch-ref/output
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/direct-pinned/final
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/public-direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/public-direct-pinned/final
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/public-torch-ref/output
+PASS exact: mixed_n6_h12_t8192/fp32_final_only/public-torch-ref/final
+PASS exact: mixed_n6_h12_t8192/fp32_both/direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/fp32_both/direct-pinned/final
+PASS exact: mixed_n6_h12_t8192/fp32_both/public-direct-pinned/output
+PASS exact: mixed_n6_h12_t8192/fp32_both/public-direct-pinned/final
+PASS exact: mixed_n6_h12_t8192/fp32_both/public-torch-ref/output
+PASS exact: mixed_n6_h12_t8192/fp32_both/public-torch-ref/final
+PASS exact: skew_n6_h12_t12288/none/pinned/output
+PASS exact: skew_n6_h12_t12288/none/direct-pinned/output
+PASS exact: skew_n6_h12_t12288/none/public-pinned/output
+PASS exact: skew_n6_h12_t12288/none/public-pinned-torch-ref/output
+PASS exact: skew_n6_h12_t12288/none/direct/output
+PASS exact: skew_n6_h12_t12288/none/public/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_final_only/direct-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/direct-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public-pinned-torch-ref/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public-pinned-torch-ref/final
+PASS exact: skew_n6_h12_t12288/fp32_final_only/direct/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/direct/final
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public/output
+PASS exact: skew_n6_h12_t12288/fp32_final_only/public/final
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/direct-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-direct-pinned/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-direct-pinned/final
+PASS exact: skew_n6_h12_t12288/fp32_both/public-torch-ref/output
+PASS exact: skew_n6_h12_t12288/fp32_both/public-torch-ref/final
+PASS exact: cpu_canonical/direct/output
+PASS exact: cpu_canonical/public/output
+PASS exact: fixed/direct/output
+PASS exact: fixed/public/output
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_integration_r6_b300_sm103a_public_r6.json; positive=2, negative=17
+AFTER_R6_INTEGRATION_COMPUTE_APPS_BEGIN
+
+AFTER_R6_INTEGRATION_COMPUTE_APPS_END
+AFTER_R6_INTEGRATION_MEMORY_USED_MIB=0
+===== INDEPENDENT_AUDIT =====
+{
+  "audit_schema_version": 1,
+  "artifact": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_varlen_dispatch/results/c1_varlen_fla_integration_r6_b300_sm103a_public_r6.json",
+  "artifact_sha256": "e8fc8a09bdf9b7cac547d25ae81f8e9c2ad909e46a9d813a0721d1f800ced9f8",
+  "independent_audit_pass": true,
+  "positive_correctness_route_and_immutability": {
+    "skew_n6_h12_t12288/none": {
+      "expected_variant": "vshard2_p2",
+      "correctness": "exact",
+      "route": "public_registry_c1",
+      "immutability": true
+    },
+    "skew_n6_h12_t12288/fp32_final_only": {
+      "expected_variant": "vshard2_p2",
+      "correctness": "exact",
+      "route": "public_registry_c1",
+      "immutability": true
+    }
+  },
+  "negative_capture_multistream_hot_sync_and_fixed_regression": "passed",
+  "performance_cells": {
+    "skew_n6_h12_t12288/none": {
+      "expected_variant": "vshard2_p2",
+      "repeats": [
+        {
+          "recomputed_from_raw_samples": true,
+          "summaries": {
+            "public_registry_c1": {
+              "samples": 1000,
+              "mean_ms": 0.9832256959080696,
+              "p50_ms": 0.9811199903488159,
+              "p95_ms": 0.9904639720916748,
+              "p99_ms": 0.9980409598350525
+            },
+            "public_registry_pinned": {
+              "samples": 1000,
+              "mean_ms": 1.2034343361854554,
+              "p50_ms": 1.2032320499420166,
+              "p95_ms": 1.2089008390903473,
+              "p99_ms": 1.212608300447464
+            }
+          },
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.22638623387363,
+            "p95": 0.22053994204087468,
+            "p99": 0.21498851174191613
+          },
+          "winner_gate_pass": true,
+          "margin_gate_pass": true,
+          "repeat_gate_pass": true
+        },
+        {
+          "recomputed_from_raw_samples": true,
+          "summaries": {
+            "public_registry_c1": {
+              "samples": 1000,
+              "mean_ms": 0.9811409925222396,
+              "p50_ms": 0.9807360172271729,
+              "p95_ms": 0.9885135799646377,
+              "p99_ms": 0.9936028909683228
+            },
+            "public_registry_pinned": {
+              "samples": 1000,
+              "mean_ms": 1.203300573706627,
+              "p50_ms": 1.2034239768981934,
+              "p95_ms": 1.2085568130016326,
+              "p99_ms": 1.212224006652832
+            }
+          },
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.22706207966199132,
+            "p95": 0.22260011141664493,
+            "p99": 0.22002866303201918
+          },
+          "winner_gate_pass": true,
+          "margin_gate_pass": true,
+          "repeat_gate_pass": true
+        }
+      ],
+      "performance_release": true
+    },
+    "skew_n6_h12_t12288/fp32_final_only": {
+      "expected_variant": "vshard2_p2",
+      "repeats": [
+        {
+          "recomputed_from_raw_samples": true,
+          "summaries": {
+            "public_registry_c1": {
+              "samples": 1000,
+              "mean_ms": 0.9933234233856201,
+              "p50_ms": 0.9888319969177246,
+              "p95_ms": 0.9986703753471374,
+              "p99_ms": 1.0269450008869172
+            },
+            "public_registry_pinned": {
+              "samples": 1000,
+              "mean_ms": 1.154604833841324,
+              "p50_ms": 1.1526399850845337,
+              "p95_ms": 1.1578320384025573,
+              "p99_ms": 1.1621167981624603
+            }
+          },
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16565805786767918,
+            "p95": 0.1593735700832173,
+            "p99": 0.13162515729547586
+          },
+          "winner_gate_pass": true,
+          "margin_gate_pass": true,
+          "repeat_gate_pass": true
+        },
+        {
+          "recomputed_from_raw_samples": true,
+          "summaries": {
+            "public_registry_c1": {
+              "samples": 1000,
+              "mean_ms": 0.989320639371872,
+              "p50_ms": 0.9883840084075928,
+              "p95_ms": 0.998304009437561,
+              "p99_ms": 1.0061738061904908
+            },
+            "public_registry_pinned": {
+              "samples": 1000,
+              "mean_ms": 1.1532403529882431,
+              "p50_ms": 1.1530879735946655,
+              "p95_ms": 1.1585343718528747,
+              "p99_ms": 1.1632969439029694
+            }
+          },
+          "winner_by_percentile": {
+            "p50": "public_registry_c1",
+            "p95": "public_registry_c1",
+            "p99": "public_registry_c1"
+          },
+          "c1_margin_over_pinned_by_percentile": {
+            "p50": 0.16663964995996938,
+            "p95": 0.16050257326481798,
+            "p99": 0.1561590420519572
+          },
+          "winner_gate_pass": true,
+          "margin_gate_pass": true,
+          "repeat_gate_pass": true
+        }
+      ],
+      "performance_release": true
+    }
+  },
+  "independently_performance_release_cells": [
+    "skew_n6_h12_t12288/none",
+    "skew_n6_h12_t12288/fp32_final_only"
+  ],
+  "independently_performance_failed_cells": []
+}
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_BEGIN
+
+AFTER_INDEPENDENT_AUDIT_COMPUTE_APPS_END
+AFTER_INDEPENDENT_AUDIT_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-29T13:19:15+00:00
+0, GPU-ab0e8f8b-abe0-a03f-c8e9-65622211a5f4, 00000000:0C:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0

@@ -1,0 +1,757 @@
+{
+  "schema": "c1_chunk_tcgen_microbench/v2",
+  "timestamp_unix": 1787148739.9525924,
+  "device": {
+    "torch": "2.13.0+cu130",
+    "cuda_runtime": "13.0",
+    "device": "NVIDIA B300 SXM6 AC",
+    "compute_capability": [
+      10,
+      3
+    ],
+    "multiprocessors": 148,
+    "total_memory_bytes": 287428640768
+  },
+  "variables": {
+    "C": "KDA chunk and triangular matrix edge",
+    "g_i": -5,
+    "r(C)": "exp(-5*(C-1))",
+    "L": "strict lower triangular FP16 proxy matrix",
+    "P_j": "L^(2^j)",
+    "N_C": "doubling Neumann product",
+    "Q": "independent matrix batch",
+    "M_t_N_t_K_t": [
+      128,
+      64,
+      64
+    ]
+  },
+  "bf16_decay": {
+    "formula": "r(C)=exp(-5*(C-1))",
+    "bf16_min_normal": 1.1754943508222875e-38,
+    "bf16_min_subnormal": 9.183549615799121e-41,
+    "all_C_1_to_64": [
+      {
+        "C": 1,
+        "r_fp32": 1.0,
+        "r_bf16_as_fp32": 1.0,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 2,
+        "r_fp32": 0.0067379469983279705,
+        "r_bf16_as_fp32": 0.006744384765625,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 3,
+        "r_fp32": 4.539993096841499e-05,
+        "r_bf16_as_fp32": 4.5299530029296875e-05,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 4,
+        "r_fp32": 3.0590231858695915e-07,
+        "r_bf16_as_fp32": 3.0547380447387695e-07,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 5,
+        "r_fp32": 2.061153470123145e-09,
+        "r_bf16_as_fp32": 2.066371962428093e-09,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 6,
+        "r_fp32": 1.3887944613766301e-11,
+        "r_bf16_as_fp32": 1.3869794202037156e-11,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 7,
+        "r_fp32": 9.357622912219837e-14,
+        "r_bf16_as_fp32": 9.370282327836321e-14,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 8,
+        "r_fp32": 6.305116853596367e-16,
+        "r_bf16_as_fp32": 6.314393452555578e-16,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 9,
+        "r_fp32": 4.24835413113866e-18,
+        "r_bf16_as_fp32": 4.255493527005605e-18,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 10,
+        "r_fp32": 2.862518609581133e-20,
+        "r_bf16_as_fp32": 2.8587361969832636e-20,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 11,
+        "r_fp32": 1.9287498933537385e-22,
+        "r_bf16_as_fp32": 1.9273308272485545e-22,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 12,
+        "r_fp32": 1.2995814853898995e-24,
+        "r_bf16_as_fp32": 1.2989320556496763e-24,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 13,
+        "r_fp32": 8.75651089272076e-27,
+        "r_bf16_as_fp32": 8.734267942607043e-27,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 14,
+        "r_fp32": 5.90009059760205e-29,
+        "r_bf16_as_fp32": 5.916456789157589e-29,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 15,
+        "r_fp32": 3.975449954226706e-31,
+        "r_bf16_as_fp32": 3.975119405215255e-31,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 16,
+        "r_fp32": 2.6786371807851483e-33,
+        "r_bf16_as_fp32": 2.68426485998971e-33,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 17,
+        "r_fp32": 1.8048514720778033e-35,
+        "r_bf16_as_fp32": 1.8055593228630336e-35,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 18,
+        "r_fp32": 1.2160993840594577e-37,
+        "r_bf16_as_fp32": 1.2195753889781233e-37,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 19,
+        "r_fp32": 8.194008692231508e-40,
+        "r_bf16_as_fp32": 8.265194654219209e-40,
+        "classification": "subnormal",
+        "nonzero": true
+      },
+      {
+        "C": 20,
+        "r_fp32": 5.521115949439779e-42,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 21,
+        "r_fp32": 3.783505853677006e-44,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 22,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 23,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 24,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 25,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 26,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 27,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 28,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 29,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 30,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 31,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 32,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 33,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 34,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 35,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 36,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 37,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 38,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 39,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 40,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 41,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 42,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 43,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 44,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 45,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 46,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 47,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 48,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 49,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 50,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 51,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 52,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 53,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 54,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 55,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 56,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 57,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 58,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 59,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 60,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 61,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 62,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 63,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 64,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      }
+    ],
+    "selected_C_16_32_64": [
+      {
+        "C": 16,
+        "r_fp32": 2.6786371807851483e-33,
+        "r_bf16_as_fp32": 2.68426485998971e-33,
+        "classification": "normal",
+        "nonzero": true
+      },
+      {
+        "C": 32,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      },
+      {
+        "C": 64,
+        "r_fp32": 0.0,
+        "r_bf16_as_fp32": 0.0,
+        "classification": "zero",
+        "nonzero": false
+      }
+    ],
+    "observed_boundary": {
+      "last_nonzero_C": 19,
+      "first_zero_C": 20,
+      "first_subnormal_C": 19
+    },
+    "assertions": {
+      "C16_nonzero": true,
+      "C32_zero": true,
+      "C64_zero": true,
+      "expected_boundary_last_nonzero_C19": true,
+      "expected_boundary_first_zero_C20": true,
+      "expected_first_subnormal_C19": true
+    }
+  },
+  "neumann_doubling_proxy": {
+    "comparison_rule": "Only fixed_Q_same_parallelism has equal Q and valid wall-time ratios. equal_input_matrix_bytes changes Q by C and is throughput-efficiency evidence only.",
+    "fixed_Q": 16384,
+    "equal_input_matrix_bytes": [
+      {
+        "C": 16,
+        "measurement_basis": "equal_input_matrix_bytes",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 262144,
+        "auto_Q_for_equal_input_matrix_bytes": 262144,
+        "matrix_bytes_per_input": 134217728,
+        "dense_gemm_count_per_matrix": 6,
+        "gemm_fma_flop_per_matrix": 49152,
+        "total_gemm_fma_flop_per_proxy": 12884901888,
+        "gemm_fma_flop_ratio_vs_C16": 1.0,
+        "cuda_event_ms_per_proxy": 4.647321701049805,
+        "cuda_event_ms_samples": [
+          4.647550582885742,
+          4.647225570678711,
+          4.647407913208008,
+          4.6470897674560545,
+          4.647321701049805
+        ],
+        "proxy_tensorcore_tflops": 2.7725435674249472,
+        "algebra_gate": {
+          "max_abs_err_fp32": 9.313225746154785e-10,
+          "pass": true
+        },
+        "checksum": 0.0017404556274414062
+      },
+      {
+        "C": 32,
+        "measurement_basis": "equal_input_matrix_bytes",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 65536,
+        "auto_Q_for_equal_input_matrix_bytes": 65536,
+        "matrix_bytes_per_input": 134217728,
+        "dense_gemm_count_per_matrix": 8,
+        "gemm_fma_flop_per_matrix": 524288,
+        "total_gemm_fma_flop_per_proxy": 34359738368,
+        "gemm_fma_flop_ratio_vs_C16": 10.666666666666666,
+        "cuda_event_ms_per_proxy": 1.8911632537841796,
+        "cuda_event_ms_samples": [
+          1.8911632537841796,
+          1.8916032791137696,
+          1.891059112548828,
+          1.8911088943481444,
+          1.8924224853515625
+        ],
+        "proxy_tensorcore_tflops": 18.168573389551035,
+        "algebra_gate": {
+          "max_abs_err_fp32": 1.3969838619232178e-09,
+          "pass": true
+        },
+        "checksum": -0.0001919269561767578
+      },
+      {
+        "C": 64,
+        "measurement_basis": "equal_input_matrix_bytes",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 16384,
+        "auto_Q_for_equal_input_matrix_bytes": 16384,
+        "matrix_bytes_per_input": 134217728,
+        "dense_gemm_count_per_matrix": 10,
+        "gemm_fma_flop_per_matrix": 5242880,
+        "total_gemm_fma_flop_per_proxy": 85899345920,
+        "gemm_fma_flop_ratio_vs_C16": 106.66666666666667,
+        "cuda_event_ms_per_proxy": 1.0767855644226074,
+        "cuda_event_ms_samples": [
+          1.0772751808166503,
+          1.0767536163330078,
+          1.0767855644226074,
+          1.0758912086486816,
+          1.0768287658691407
+        ],
+        "proxy_tensorcore_tflops": 79.77386469334851,
+        "algebra_gate": {
+          "max_abs_err_fp32": 1.862645149230957e-09,
+          "pass": true
+        },
+        "checksum": 0.00017070770263671875
+      }
+    ],
+    "fixed_Q_same_parallelism": [
+      {
+        "C": 16,
+        "measurement_basis": "fixed_Q_same_independent_matrices",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 16384,
+        "auto_Q_for_equal_input_matrix_bytes": 262144,
+        "matrix_bytes_per_input": 8388608,
+        "dense_gemm_count_per_matrix": 6,
+        "gemm_fma_flop_per_matrix": 49152,
+        "total_gemm_fma_flop_per_proxy": 805306368,
+        "gemm_fma_flop_ratio_vs_C16": 1.0,
+        "cuda_event_ms_per_proxy": 0.29324319362640383,
+        "cuda_event_ms_samples": [
+          0.2933743953704834,
+          0.2932607889175415,
+          0.29324319362640383,
+          0.29316799640655516,
+          0.29315838813781736
+        ],
+        "proxy_tensorcore_tflops": 2.74620651221652,
+        "algebra_gate": {
+          "max_abs_err_fp32": 9.313225746154785e-10,
+          "pass": true
+        },
+        "checksum": 0.0017404556274414062,
+        "time_ratio_vs_C16_same_Q": 1.0
+      },
+      {
+        "C": 32,
+        "measurement_basis": "fixed_Q_same_independent_matrices",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 16384,
+        "auto_Q_for_equal_input_matrix_bytes": 65536,
+        "matrix_bytes_per_input": 33554432,
+        "dense_gemm_count_per_matrix": 8,
+        "gemm_fma_flop_per_matrix": 524288,
+        "total_gemm_fma_flop_per_proxy": 8589934592,
+        "gemm_fma_flop_ratio_vs_C16": 10.666666666666666,
+        "cuda_event_ms_per_proxy": 0.485097599029541,
+        "cuda_event_ms_samples": [
+          0.4848336219787598,
+          0.4852303981781006,
+          0.4844223976135254,
+          0.4851424217224121,
+          0.485097599029541
+        ],
+        "proxy_tensorcore_tflops": 17.707641945011765,
+        "algebra_gate": {
+          "max_abs_err_fp32": 1.3969838619232178e-09,
+          "pass": true
+        },
+        "checksum": -0.0001919269561767578,
+        "time_ratio_vs_C16_same_Q": 1.6542501567745254
+      },
+      {
+        "C": 64,
+        "measurement_basis": "fixed_Q_same_independent_matrices",
+        "proxy_definition": "FP16 batched dense doubling Neumann; not compiled FlashKDA CHUNK variant",
+        "Q_independent_matrices": 16384,
+        "auto_Q_for_equal_input_matrix_bytes": 16384,
+        "matrix_bytes_per_input": 134217728,
+        "dense_gemm_count_per_matrix": 10,
+        "gemm_fma_flop_per_matrix": 5242880,
+        "total_gemm_fma_flop_per_proxy": 85899345920,
+        "gemm_fma_flop_ratio_vs_C16": 106.66666666666667,
+        "cuda_event_ms_per_proxy": 1.0764399528503419,
+        "cuda_event_ms_samples": [
+          1.0762080192565917,
+          1.0767056465148925,
+          1.0766639709472656,
+          1.0764399528503419,
+          1.0764096260070801
+        ],
+        "proxy_tensorcore_tflops": 79.79947761372496,
+        "algebra_gate": {
+          "max_abs_err_fp32": 1.862645149230957e-09,
+          "pass": true
+        },
+        "checksum": 0.00017070770263671875,
+        "time_ratio_vs_C16_same_Q": 3.670809676905041
+      }
+    ]
+  },
+  "tcgen05_geometry_and_proxy": {
+    "existing_m3_source": "assignment02/cuda/m3_tcgen05/02_single_tile.cu",
+    "tcgen05_min_tile_MNK": [
+      128,
+      64,
+      64
+    ],
+    "flashkda_neumann_subproblem_MNK": [
+      16,
+      16,
+      16
+    ],
+    "single_subproblem_dimension_utilization_MNK": [
+      0.125,
+      0.25,
+      0.25
+    ],
+    "single_subproblem_useful_flop_fraction": 0.0078125,
+    "single_subproblem_useful_flop_percent": 0.78125,
+    "independent_C16_gemms_packable_along_MN": 32,
+    "packed_MN_only_useful_flop_fraction": 0.25,
+    "packed_MN_only_useful_flop_percent": 25.0,
+    "tcgen05_tile_fma_flop": 1048576,
+    "single_C16_fma_flop": 8192,
+    "fma_ratio_tile_to_single_C16": 128,
+    "throughput_proxy_boundary": "geometry-only useful-FLOP fraction; M3 executable has correctness output but no timing, so this field is not an observed tcgen05 throughput",
+    "why_K_cannot_pack_independent_gemms": "K is one output's reduction axis; packing independent products along K would sum them, not produce independent outputs",
+    "m3_correctness_gate": {
+      "attempted": true,
+      "binary": "/home/lcpu/85117379/codex-a02-20260819-main/assignment02/cuda/bin/m3_tcgen05/02_single_tile",
+      "runs": [
+        {
+          "seed": 1,
+          "returncode": 0,
+          "pass_token": true,
+          "output_tail": "PASS seed=1\n"
+        },
+        {
+          "seed": 7,
+          "returncode": 0,
+          "pass_token": true,
+          "output_tail": "PASS seed=7\n"
+        },
+        {
+          "seed": 42,
+          "returncode": 0,
+          "pass_token": true,
+          "output_tail": "PASS seed=42\n"
+        }
+      ],
+      "pass": true
+    }
+  },
+  "assertions": {
+    "C16_nonzero": true,
+    "C32_zero": true,
+    "C64_zero": true,
+    "expected_boundary_last_nonzero_C19": true,
+    "expected_boundary_first_zero_C20": true,
+    "expected_first_subnormal_C19": true,
+    "neumann_equal_bytes_C16_algebra": true,
+    "neumann_equal_bytes_C32_algebra": true,
+    "neumann_equal_bytes_C64_algebra": true,
+    "neumann_fixed_Q_C16_algebra": true,
+    "neumann_fixed_Q_C32_algebra": true,
+    "neumann_fixed_Q_C64_algebra": true,
+    "supplied_m3_tcgen05_strict_gate": true
+  },
+  "all_assertions_pass": true,
+  "elapsed_wall_seconds": 2.901582717895508
+}

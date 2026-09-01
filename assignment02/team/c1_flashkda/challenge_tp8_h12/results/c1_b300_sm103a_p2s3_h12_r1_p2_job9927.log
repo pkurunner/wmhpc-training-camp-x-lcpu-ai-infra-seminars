@@ -1,0 +1,183 @@
+===== PRE_AUDIT =====
+2026-08-28T11:20:45+00:00
+dev-slurm
+CUDA_VISIBLE_DEVICES=0
+0, GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a, 00000000:09:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+PRE_COMPUTE_APPS_BEGIN
+
+PRE_COMPUTE_APPS_END
+PRE_MEMORY_USED_MIB=0
+===== IDENTITY =====
+C1_BUILD_TARGET=B300_SM103a_P2S3_H12_FINAL_R1
+VARIANT=p2
+PATCHED_COMMIT=1ce47ea3bb22c84eb9cc665028399cf35e8ffb0b
+PATCHED_STATUS_BEGIN
+ M csrc/flash_kda.cpp
+ M csrc/fwd.h
+ M csrc/smxx/fwd_launch.cu
+?? csrc/smxx/fwd_kernel2_vshard.cuh
+?? csrc/smxx/fwd_kernel2_vshard_p2.cuh
+PATCHED_STATUS_END
+11c91bbfaf70378c2d82ef1f9819edc39f1bd90a44093fd10656ad763767de08  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/run_h12.py
+a7777f5e8d1cb2084a572739e7260d7094fae3cca1c54d616075567a219142cd  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/run_clean_h12_audit.sh
+669b9f25373893e92c2fb16956518d0e5538c0314bdb7a666754c32e51be8764  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/flash_kda.cpp
+ded20fe0d6d711f7d5a877776a0a4173ec216f2361ed7e71cc6a0fc93b5d463c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/fwd.h
+203bb6540d56a74e691e44860e20f187cfc4f9e03fab98fe6c34453f238b2db6  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_launch.cu
+af588b32f6ad4a8043874eb82f6b997a34eca98736a8dc7fe61543c7d684ae69  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard.cuh
+03ba5a268150c9d219f935654a6b27f9acbb0635a5686c7ea50a18f15d625c3c  /home/lcpu/85117379/flashkda-prefetch2-1ce47ea-b300-r2/csrc/smxx/fwd_kernel2_vshard_p2.cuh
+bca3248e1bf480ea51eb3bb3da0e79d8f477fb914ea17d320c0bf90679aaaf7c  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/apply_vshard_patch.py
+7f508c60003439de27b184d70c130ca615439fcaa61e9970be4dc961ffcccaec  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_vshard/vshard.py
+9a2b255679a4848b02556a0e938099e9585cf3ced5728ebefaedd42cb15b0a93  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/apply_prefetch2_patch.py
+7123b67503f809e74be8db38e19cce9f3bebbab62ff753f7b81c38791242b4d5  /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_prefetch2/prefetch2.py
+===== SMALL_EXACT_MATRIX =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] variant=p2
+extension_sha256=d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f
+PASS exact: none/p1_vshard_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_p1_vshard/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vshard_vs_baseline/output
+PASS exact: bf16/p1_vshard_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_baseline/output
+PASS exact: bf16/p2_prefetch2_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/output
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vshard_vs_baseline/output
+PASS exact: fp32/p1_vshard_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_baseline/output
+PASS exact: fp32/p2_prefetch2_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/output
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/p1_vshard_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_p1_vshard/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vshard_vs_baseline/output
+PASS exact: bf16/p1_vshard_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_baseline/output
+PASS exact: bf16/p2_prefetch2_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/output
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vshard_vs_baseline/output
+PASS exact: fp32/p1_vshard_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_baseline/output
+PASS exact: fp32/p2_prefetch2_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/output
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/p1_vshard_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_p1_vshard/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vshard_vs_baseline/output
+PASS exact: bf16/p1_vshard_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_baseline/output
+PASS exact: bf16/p2_prefetch2_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/output
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vshard_vs_baseline/output
+PASS exact: fp32/p1_vshard_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_baseline/output
+PASS exact: fp32/p2_prefetch2_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/output
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: none/p1_vshard_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_baseline/output
+PASS exact: none/p2_prefetch2_vs_p1_vshard/output
+PASS close: none/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: none/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS exact: bf16/p1_vshard_vs_baseline/output
+PASS exact: bf16/p1_vshard_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_baseline/output
+PASS exact: bf16/p2_prefetch2_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/output
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: bf16/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: bf16/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS exact: fp32/p1_vshard_vs_baseline/output
+PASS exact: fp32/p1_vshard_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_baseline/output
+PASS exact: fp32/p2_prefetch2_vs_baseline/final_state
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/output
+PASS exact: fp32/p2_prefetch2_vs_p1_vshard/final_state
+PASS close: fp32/baseline_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/baseline_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p1_vshard_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/output (rtol=0.02, atol=0.02, max_abs=0)
+PASS close: fp32/p2_prefetch2_vs_torch_ref/final_state (rtol=0.05, atol=0.05, max_abs=0)
+PASS small exact/reference matrix
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/results/c1_b300_sm103a_p2s3_h12_r1_p2_small_matrix.json
+BETWEEN_SMALL_AND_OFFICIAL_COMPUTE_APPS_BEGIN
+
+BETWEEN_SMALL_AND_OFFICIAL_COMPUTE_APPS_END
+BETWEEN_SMALL_AND_OFFICIAL_MEMORY_USED_MIB=0
+===== H12_BF16_FORMAL_GATE_AND_BENCH =====
+device=NVIDIA B300 SXM6 AC capability=[10, 3] variant=p2
+extension_sha256=d576a7fa9b646086eb0007554a9548524379afe26939366adbc40bfc785ec87f
+PASS exact: bf16/p1_vshard_vs_baseline/output
+PASS exact: bf16/p1_vshard_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_baseline/output
+PASS exact: bf16/p2_prefetch2_vs_baseline/final_state
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/output
+PASS exact: bf16/p2_prefetch2_vs_p1_vshard/final_state
+PASS official H12 BF16 exact gate and benchmark
+wrote /home/lcpu/85117379/codex-a02-20260819-main/assignment02/team/c1_flashkda/challenge_tp8_h12/results/c1_b300_sm103a_p2s3_h12_r1_p2_h12_bf16.json
+AFTER_OFFICIAL_COMPUTE_APPS_BEGIN
+
+AFTER_OFFICIAL_COMPUTE_APPS_END
+AFTER_OFFICIAL_MEMORY_USED_MIB=0
+===== POST_AUDIT =====
+2026-08-28T11:20:53+00:00
+0, GPU-0ff6ec41-3275-1f3d-41d8-8b17413a205a, 00000000:09:00.0, NVIDIA B300 SXM6 AC, 10.3, 580.126.09, 0 MiB, 275040 MiB
+POST_COMPUTE_APPS_BEGIN
+
+POST_COMPUTE_APPS_END
+POST_MEMORY_USED_MIB=0
+FINAL_RC=0
